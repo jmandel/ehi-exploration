@@ -85,4 +85,50 @@
     <span class="hljs-punctuation">}</span>
   <span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span>
-</code></div></div></pre><p>This JSON structure includes:</p><ol><li>table_name: The name of the table.</li><li>description: A brief description of the table's purpose and contents.</li><li>primary_key: An object that holds information about the primary key, including:<ul><li>column_name: The name of the primary key column.</li><li>ordinal_position: The ordinal position of the primary key column in the table.</li></ul></li><li>columns: An array of objects, each representing a column in the table, with:<ul><li>index: The index of the column.</li><li>name: The name of the column.</li><li>type: The data type of the column.</li><li>discontinued: Whether the column is discontinued or not.</li><li>description: A brief description of the column's purpose and contents.</li></ul></li></ol><p>We can use this JSON structure as a blueprint for creating a JSON representation of the RX_COPAY table documentation.</p></div></div></div><div class="flex justify-between"></div></div></div></div></body></html>
+</code></div></div></pre><p>This JSON structure includes:</p><ol><li>table_name: The name of the table.</li><li>description: A brief description of the table's purpose and contents.</li><li>primary_key: An object that holds information about the primary key, including:<ul><li>column_name: The name of the primary key column.</li><li>ordinal_position: The ordinal position of the primary key column in the table.</li></ul></li><li>columns: An array of objects, each representing a column in the table, with:<ul><li>index: The index of the column.</li><li>name: The name of the column.</li><li>type: The data type of the column.</li><li>discontinued: Whether the column is discontinued or not.</li><li>description: A brief description of the column's purpose and contents.</li></ul></li></ol><p>We can use this JSON structure as a blueprint for creating a JSON representation of the RX_COPAY table documentation.</p></div></div></div><div class="flex justify-between"></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 dark:bg-gray-800"><div class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-2xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"><div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">That looks pretty good. Can you write a Deno script to extract this JSON structure from the HTML I pasted earlier?</div></div></div></div></div><div class="group w-full text-gray-800 dark:text-gray-100 border-b border-black/10 dark:border-gray-900/50 bg-gray-50 dark:bg-[#444654]"><div class="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-2xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto"><div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]"><div class="flex flex-grow flex-col gap-3"><div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap flex flex-row gap-2 text-red-500"><div class="text-red-500 markdown prose w-full break-words dark:prose-invert light"><p>Certainly! Here's a Deno script that extracts the JSON structure from the provided HTML using the DOMParser API. Save the following code as <code>extract_json.ts</code>.</p><pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-comment">// extract_json.ts</span>
+<span class="hljs-keyword">import</span> { parse } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/std/html/mod.ts"</span>;
+
+<span class="hljs-keyword">const</span> html = <span class="hljs-string">`
+&lt;!-- Your provided HTML code goes here --&gt;
+`</span>;
+
+<span class="hljs-keyword">const</span> parser = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DOMParser</span>();
+<span class="hljs-keyword">const</span> doc = parser.<span class="hljs-title function_">parseFromString</span>(html, <span class="hljs-string">"text/html"</span>);
+
+<span class="hljs-keyword">const</span> table_name = doc.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".Header2 td"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+<span class="hljs-keyword">const</span> description = doc.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".T1Value"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+<span class="hljs-keyword">const</span> primary_key_column_name = doc.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".List tbody tr td"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+<span class="hljs-keyword">const</span> primary_key_ordinal_position = doc.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".List tbody tr td:nth-child(2)"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+
+<span class="hljs-keyword">const</span> column_rows = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(doc.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">".SubList.List tr"</span>));
+<span class="hljs-keyword">const</span> columns = column_rows
+  .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">row, index</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> name = row.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".T1Head:nth-child(2)"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">type</span> = row.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">".T1Head:nth-child(3)"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">const</span> discontinued = row.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"td:nth-child(4)"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() === <span class="hljs-string">"No"</span> ? <span class="hljs-literal">false</span> : <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">const</span> description = row.<span class="hljs-property">nextElementSibling</span>?.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"td"</span>)?.<span class="hljs-property">textContent</span>?.<span class="hljs-title function_">trim</span>() ?? <span class="hljs-string">""</span>;
+    
+    <span class="hljs-keyword">if</span> (!name) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">index</span>: index + <span class="hljs-number">1</span>,
+      name,
+      <span class="hljs-keyword">type</span>,
+      discontinued,
+      description
+    };
+  })
+  .<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">column</span> =&gt;</span> column !== <span class="hljs-literal">null</span>);
+
+<span class="hljs-keyword">const</span> table_json = {
+  table_name,
+  description,
+  <span class="hljs-attr">primary_key</span>: {
+    <span class="hljs-attr">column_name</span>: primary_key_column_name,
+    <span class="hljs-attr">ordinal_position</span>: primary_key_ordinal_position,
+  },
+  columns,
+};
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(table_json, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+</code></div></div></pre><p>To run the script:</p><ol><li>Make sure you have Deno installed on your machine. If you haven't installed it yet, follow the instructions at <a href="https://deno.land/" target="_new">https://deno.land/</a>.</li><li>Save the HTML content you provided earlier as a string in the <code>html</code> variable at the beginning of the script.</li></ol></div><div class="py-2 px-3 border text-gray-600 rounded-md text-sm dark:text-gray-100 border-red-500 bg-red-500/10">network error</div></div></div><div class="flex justify-between"></div></div></div></div></body></html>
