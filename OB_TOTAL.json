@@ -1,0 +1,115 @@
+{
+  "table_name": "OB_TOTAL",
+  "description": "This patient information table holds the obstetrics information for each patient history contact.  The table contains information on multiple births, induced abortions, spontaneous abortions, ectopics, molars, gravidity, parity, abortions, related comments, full-term, premature, living, and live births.  These values are all running totals across the patient's lifetime, calculated at the time of the history contact.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contact serial number is unique across all patients and all contacts"
+    },
+    {
+      "index": 7,
+      "name": "OB_MULTIPLE_BIRTHS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column holds the number of multiple births."
+    },
+    {
+      "index": 12,
+      "name": "OB_THERAPEUTIC_AB",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column holds the number of induced abortions. Along with values in columns OB_SPONTANEOUS_AB and OB_ECTOPICS comprise OB_ABORTIONS."
+    },
+    {
+      "index": 17,
+      "name": "OB_SPONTANEOUS_AB",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column holds the number of spontaneous abortions.  Along with the value in OB_THERAPEUTIC_AB and OB_ECTOPICS, comprise OB_ABORTIONS."
+    },
+    {
+      "index": 22,
+      "name": "OB_ECTOPICS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column holds the number of ectopic pregnancies. This number is included with the values in column OB_THERAPEUTIC_AB and OB_SPONTANEOUS_AB to calculate the value in OB_ABORTIONS."
+    },
+    {
+      "index": 27,
+      "name": "OB_GRAVIDITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column holds the number of total pregnancies for a patient. This column is the sum of the values in columns OB_PARITY and OB_ABORTIONS."
+    },
+    {
+      "index": 32,
+      "name": "OB_PARITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column contains information regarding how many pregnancies the patient carried past a gestational age (GA) of 24 weeks. The value in this column, along with the value in OB_ABORTIONS,  comprises OB_GRAVIDITY."
+    },
+    {
+      "index": 37,
+      "name": "OB_ABORTIONS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is used to comment on obstetrics abortions reported at each contact. This column along with value in column OB_PARITY, makes up column OB_GRAVIDITY.  This item is the sum total of columns OB_THERAPEUTIC_AB, OB_SPONTANEOUS_AB, OB_ECTOPICS."
+    },
+    {
+      "index": 42,
+      "name": "OB_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This holds general comments for the patient's obstetric history."
+    },
+    {
+      "index": 47,
+      "name": "OB_FULL_TERM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This holds the number of full term pregnancies for a patient.  Along with the value in column OB_PREMATURE, sums to the value in column OB_PARITY."
+    },
+    {
+      "index": 52,
+      "name": "OB_PREMATURE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This items holds the number of pregnancies which ended at a premature gestational age (GA). Along with column OB_FULL_TERM, sums to OB_PARITY."
+    },
+    {
+      "index": 57,
+      "name": "OB_LIVING",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the number of the patient's currently living children as documented in the obstetric history."
+    },
+    {
+      "index": 62,
+      "name": "OB_PREG_HX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the patient has a history of pregnancy, or if they have not been asked. It uses category values 1, 2, and 3, which represent the string values, 'Yes', 'No', and 'Not asked' respectively.  These string values can be found by linking to table ZC_OB_PREG_HX.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNot Asked\n\n\nDefer\n\n\nNot Currently\n\n\nNever"
+    },
+    {
+      "index": 75,
+      "name": "OB_LIVE_BIRTHS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A count of the number of children born alive for a patient."
+    },
+    {
+      "index": 80,
+      "name": "OB_MOLAR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of molar pregnancies the patient has had."
+    }
+  ]
+}

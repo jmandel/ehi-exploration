@@ -1,0 +1,122 @@
+{
+  "table_name": "PT_GOALS_UPDATES",
+  "description": "This table contains data for the Discrete Goals (IGO) masterfile that is over-time data.",
+  "primary_key": {
+    "column_name": "GOAL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "GOAL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the goal record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user (EMP) ID of the person who entered this data."
+    },
+    {
+      "index": 22,
+      "name": "PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient CSN (contact serial number I.E. unique contact identifier) associated with a particular IGO (goal) contact."
+    },
+    {
+      "index": 27,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Current status of the goal record\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nDone\n\n\nDeleted"
+    },
+    {
+      "index": 37,
+      "name": "INSTNT_OF_EDIT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant of edit for this contact."
+    },
+    {
+      "index": 42,
+      "name": "DISPLAY_NAME_OT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Display name for the goal"
+    },
+    {
+      "index": 47,
+      "name": "LOW_VALUE_OVERRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Low value for the goal value range"
+    },
+    {
+      "index": 52,
+      "name": "HIGH_VALUE_OVERRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "High value for goal value range"
+    },
+    {
+      "index": 57,
+      "name": "COMPLIANCE_VALUE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Current outcome value for the goal. This column stores the manually tracked goal compliance value.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot on track\n\n\nOn track\n\n\nImproving\n\n\nNo change\n\n\nWorsening"
+    },
+    {
+      "index": 69,
+      "name": "MYC_EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the proxy/patient (WPR) ID of the proxy/patient who added or edited a goal from MyChart."
+    },
+    {
+      "index": 74,
+      "name": "PT_STATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not a goal is patient-stated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 83,
+      "name": "LONG_RANGE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the goal is a long-range goal or a short-term goal.\n\n\n The category values for this column were already listed for column: PT_STATED_YN"
+    },
+    {
+      "index": 89,
+      "name": "LINKED_LONG_RANGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the long-range goal that this short-term goal is linked to."
+    },
+    {
+      "index": 94,
+      "name": "OUTPAT_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Outpatient Priority\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHigh\n\n\nMedium\n\n\nLow"
+    }
+  ]
+}

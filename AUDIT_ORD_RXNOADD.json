@@ -1,0 +1,59 @@
+{
+  "table_name": "AUDIT_ORD_RXNOADD",
+  "description": "This table provides general information on changes to specified no-add items in the order (ORD) master file.  The detail item information is saved in AUDIT_ORD_RXITEMS table.",
+  "primary_key": {
+    "column_name": "ORDER_MED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication order (prescription) record. NOTE: This is an internal unique identifier for ORD master file records in this table and cannot be used to link to CLARITY_MEDICATION."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for each change."
+    },
+    {
+      "index": 12,
+      "name": "AUDIT_EMP_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user ID who made the change."
+    },
+    {
+      "index": 17,
+      "name": "AUDIT_UPDATE_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant of change."
+    },
+    {
+      "index": 22,
+      "name": "AUDIT_UPD_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment for the change."
+    },
+    {
+      "index": 27,
+      "name": "AUDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action category to cause the change.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRx Verify\n\n\nAdmin Instruction Change\n\n\nRate Change\n\n\nOrder Duration Change\n\n\nOrder Modified\n\n\nMultistep\n\n\nOrders Correction Utility\n\n\nAdjust Times for Linked Orders\n\n\nPatient Transfer\n\n\nPharmacy Review\n\n\nPrescription Transfer\n\n\nPrescription Refill\n\n\nDeferred\n\n\nSigned & Held Modification\n\n\nRx FAM Autoverify\n\n\nOrder Transmittal\n\n\nRIS Change Order\n\n\nAutomated adjustment due to Inventory\n\n\nAdjust Times\n\n\nRx Autoverify\n\n\nNotification Requests Modified\n\n\nAutomatic End Time Adjustment on Administration\n\n\nSmartForm Change\n\n\nOriginal Provider Change\n\n\nAdministration Responsibility Change\n\n\nPrescription Transfer Canceled\n\n\nSign Order\n\n\nOrder Released\n\n\nAutomatic Adjustment on Prescription Fill\n\n\nProvider Hold Action\n\n\nAutomatic Order Substitution\n\n\nAutomatic Prescription Expiration Date Update"
+    },
+    {
+      "index": 66,
+      "name": "AUDIT_OTX_PASS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item records the number of the order transmittal pass."
+    }
+  ]
+}

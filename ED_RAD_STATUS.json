@@ -1,0 +1,52 @@
+{
+  "table_name": "ED_RAD_STATUS",
+  "description": "The ED_RAD_STATUS table contains information about ED patients' \"radiology\" status. One row in this table corresponds to one ED \"radiology\" status change. If a patient's ED \"radiology\" status is changed five times in a single encounter, this table will contain five rows for that encounter.",
+  "primary_key": {
+    "column_name": "INPATIENT_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the Inpatient Data Store record for this row. This column is frequently used to link to PAT_ENC_HSP.INPATIENT_DATA_ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ED_RAD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ED radiology status category number for the ED encounter.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRad Ordered\n\n\nRad Sent\n\n\nRad Returned\n\n\nRad Reported\n\n\nRad Resulted\n\n\nPt Ready for X-Ray\n\n\nPt at X-Ray\n\n\nPt Returned from X-Ray\n\n\nImage Exam Started\n\n\nImage Available\n\n\nImage Ordered\n\n\nImage Sent\n\n\nImage Returned\n\n\nImage Reported\n\n\nImage Resulted\n\n\nProcedure Ordered\n\n\nProcedure Resulted\n\n\nProcedure Completed"
+    },
+    {
+      "index": 37,
+      "name": "RAD_STATUS_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the ED radiology status was set."
+    },
+    {
+      "index": 42,
+      "name": "RAD_STATUS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who is associated with this status change. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 47,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI). This column is frequently used to link to PAT_ENC_HSP.PAT_ENC_CSN_ID."
+    }
+  ]
+}

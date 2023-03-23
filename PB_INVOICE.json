@@ -1,0 +1,87 @@
+{
+  "table_name": "PB_INVOICE",
+  "description": "The PB_INVOICE table contains information about premium billing invoices.",
+  "primary_key": {
+    "column_name": "PB_INVC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PB_INVC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the premium billing invoice."
+    },
+    {
+      "index": 7,
+      "name": "INV_CREATE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date invoice was created."
+    },
+    {
+      "index": 12,
+      "name": "INV_DUE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Due date for the invoice."
+    },
+    {
+      "index": 17,
+      "name": "INV_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the current status of the invoice (printed, payment received, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nPrinted\n\n\nPayment Received\n\n\nClosed\n\n\nCancelled\n\n\nApproved\n\n\nRejected\n\n\nReleased\n\n\nDisputed\n\n\nNot Printed - Paperless"
+    },
+    {
+      "index": 34,
+      "name": "PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the premium billing account associated with the invoice."
+    },
+    {
+      "index": 39,
+      "name": "EFF_MONTH",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Effective period for the invoice. This date will correspond to the cycle date of the billing cycle used to generate this invoice."
+    },
+    {
+      "index": 44,
+      "name": "INV_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Invoice number generated using the account ID and the account invoicing sequence number."
+    },
+    {
+      "index": 49,
+      "name": "CYL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Cycle date for the invoice."
+    },
+    {
+      "index": 54,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The extract date and time of the record for this table."
+    },
+    {
+      "index": 59,
+      "name": "PRESUMED_PAYMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the payment that pays this invoice."
+    },
+    {
+      "index": 64,
+      "name": "GRACE_EXCLUSION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Controls whether an invoice is considered an exception to the FFM grace period rules\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

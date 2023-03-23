@@ -1,0 +1,150 @@
+{
+  "table_name": "TPL_CYCLES",
+  "description": "The cycle information for the treatment plan.",
+  "primary_key": {
+    "column_name": "TREATMENT_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The treatment plan ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number that corresponds to each cycle in the treatment plan in this row."
+    },
+    {
+      "index": 12,
+      "name": "CYCLE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment plan level ID for the cycle in this row."
+    },
+    {
+      "index": 17,
+      "name": "CYCLE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cycle name of the cycle in this row."
+    },
+    {
+      "index": 22,
+      "name": "CYCLE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cycle status of the cycle in this row.  For example, Planned, Started, Completed, Deleted, or Snapshot.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlanned\n\n\nStarted\n\n\nCompleted\n\n\nDeleted\n\n\nSnapshot"
+    },
+    {
+      "index": 34,
+      "name": "CYCLE_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date of the cycle in this row, in calendar format."
+    },
+    {
+      "index": 39,
+      "name": "CYCLE_WAIT_AFTER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of days to wait after the cycle in this row."
+    },
+    {
+      "index": 44,
+      "name": "CYCLE_MAX_LEAD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The max lead for the cycle in this row."
+    },
+    {
+      "index": 49,
+      "name": "CYCLE_MAX_LAG",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The max lag for the cycle in this row."
+    },
+    {
+      "index": 54,
+      "name": "ANCHOR_DAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The treatment plan level ID of the anchor day for the cycle in this row."
+    },
+    {
+      "index": 59,
+      "name": "CYCLE_CREATED_BY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the person who created the cycle in this row."
+    },
+    {
+      "index": 64,
+      "name": "CYCLE_CREATED_ON_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time of creation in external format for the cycle in this row."
+    },
+    {
+      "index": 69,
+      "name": "CYCLE_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cycle creation comment for the cycle in this row."
+    },
+    {
+      "index": 74,
+      "name": "CYCLE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The cycle number of this cycle for this treatment plan."
+    },
+    {
+      "index": 79,
+      "name": "CYC_STAT_CHG_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user who changed the cycle status."
+    },
+    {
+      "index": 84,
+      "name": "CYC_STAT_CHG_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant at which the cycle status changed."
+    },
+    {
+      "index": 89,
+      "name": "CYC_STAT_CHG_COMM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores comment entered by user when changing the status."
+    },
+    {
+      "index": 94,
+      "name": "CYC_SOURCE_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique ID of the cycle from which it was created."
+    },
+    {
+      "index": 99,
+      "name": "PRL_CYCLE_SRC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this treatment plan cycle was created from a protocol, this item will be set to the Cycle ID (I PRL 200) that created this treatment plan cycle. This column will match the CL_PRL_CYCLES__PRL_CYCLE_ID column."
+    },
+    {
+      "index": 104,
+      "name": "CONVERSION_CYC_TRGT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If this cycle was replaced by another cycle when conversion is accepted or discarded, this will be the line of the cycle that replaced it (SI TPL 1000)."
+    }
+  ]
+}

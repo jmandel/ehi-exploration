@@ -1,0 +1,38 @@
+{
+  "table_name": "PB_TX_SET_BEF_INV",
+  "description": "This table lists invoices associated with a premium billing payment transaction set prior being committed.",
+  "primary_key": {
+    "column_name": "TRANSACTION_SET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TRANSACTION_SET_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the set record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "BEF_INVOICE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Invoices associated with this transaction set prior being commited."
+    },
+    {
+      "index": 17,
+      "name": "BEF_INV_PORTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The invoice portion covered by this transaction set prior being commited.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire Invoice\n\n\nCustom Portion of Invoice\n\n\nRemaining Invoice\n\n\nAll Outstanding Txs\n\n\nNone. Custom PTS Advice used in PBU"
+    }
+  ]
+}

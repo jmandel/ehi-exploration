@@ -1,0 +1,38 @@
+{
+  "table_name": "ORDER_RPTD_SIG_DIFFS",
+  "description": "When a patient reports taking a medication differently from how it was prescribed, the specific fields (dose, frequency, etc.) that differ from the prescription are recorded as entries in this table. Sig lines in ORDER_RPTD_SIG_HX that don't indicate a variance (e.g. the line for the sig as it was first prescribed) have no entries in this table.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record, indicating where the reported sig differs."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of where the patient sig differs from the prescribed sig within this record."
+    },
+    {
+      "index": 17,
+      "name": "DIFFERENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Exactly which discrete portion of the sig differs between what was prescribed and what the patient reports taking.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDose\n\n\nDose Unit\n\n\nRoute\n\n\nFrequency\n\n\nPRN Reasons\n\n\nPRN Comment\n\n\nInstructions\n\n\nIndications\n\n\nIndications Comment\n\n\nFree-Text Sig\n\n\nUsage Code\n\n\nBruksomr�de\n\n\nBruksomr�de (Discrete)"
+    }
+  ]
+}

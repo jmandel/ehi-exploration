@@ -1,0 +1,52 @@
+{
+  "table_name": "V_PB_TX_DTL_SNAPSHOT",
+  "description": "This view pivots the information provided in PB_TX_DTL_SNAP_ITEM and PB_TX_DTL_SNAP_VALUE into a more human-readable format. It also joins the metadata provided in PB_TX_DTL_SNAP_META associated with each snapshot.",
+  "primary_key": {
+    "column_name": "TRANSACTION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TRANSACTION_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID for the premium billing detail transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "SNAPSHOT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the snapshot was taken in UTC."
+    },
+    {
+      "index": 17,
+      "name": "SNAPSHOT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user that triggered the snapshot."
+    },
+    {
+      "index": 22,
+      "name": "AMOUNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The amount associated with the detail transaction record in the snapshot and is initially populated during the computation stage of premium billing. It is derived from the PB_TX_DTL_SNAP_ITEM table where the SNAPSHOT_ITEM column value is 110, joined on its matching row in the PB_TX_DTL_SNAP_VALUE table with the value in the SNAPSHOT_VALUE column."
+    },
+    {
+      "index": 27,
+      "name": "OUTSTANDING_AMOUNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The outstanding amount associated with the detail transaction record in the snapshot and is initially populated during the invoicing stage of premium billing. It is derived from the PB_TX_DTL_SNAP_ITEM table where the SNAPSHOT_ITEM column value is 440, joined on its matching row in the PB_TX_DTL_SNAP_VALUE table with the value in the SNAPSHOT_VALUE column."
+    }
+  ]
+}

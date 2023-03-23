@@ -1,0 +1,269 @@
+{
+  "table_name": "TPL_TXDAYS",
+  "description": "This table contains the treatment days in a treatment plan record or the steps in a pathway record.",
+  "primary_key": {
+    "column_name": "TREATMENT_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The treatment plan ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number that corresponds to each treatment day in the treatment plan in this row."
+    },
+    {
+      "index": 12,
+      "name": "TREATMENT_DAY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The treatment day row ID of a treatment day in the treatment plan."
+    },
+    {
+      "index": 17,
+      "name": "TX_DAY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment day type (outpatient or inpatient) of a treatment day in the treatment plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient"
+    },
+    {
+      "index": 26,
+      "name": "TREATMENT_DAY_DAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact date (DAT) of a treatment day record in the treatment plan."
+    },
+    {
+      "index": 31,
+      "name": "TREATMENT_DAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment day name of a treatment day in the treatment plan."
+    },
+    {
+      "index": 36,
+      "name": "TRT_CYCLE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cycle containing a treatment day in the treatment plan."
+    },
+    {
+      "index": 41,
+      "name": "TREATMENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The planned date in external format when a treatment day in the treatment plan is expected to occur."
+    },
+    {
+      "index": 46,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the first patient encounter in which an order from this treatment day was released."
+    },
+    {
+      "index": 51,
+      "name": "TRT_DAY_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of a treatment day in the treatment plan. For example, Planned, Scheduled, Deferred, Canceled, Completed, or Deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlanned\n\n\nScheduled\n\n\nCompleted\n\n\nDeleted\n\n\nStarted\n\n\nDeferred\n\n\nCanceled\n\n\nGiven Externally\n\n\nUnscheduled\n\n\nNon-Treatment Orders"
+    },
+    {
+      "index": 68,
+      "name": "TRT_DAY_WAIT_AFTER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of days to wait after a treatment day in the treatment plan."
+    },
+    {
+      "index": 73,
+      "name": "TRT_DAY_MAX_LEAD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The max lead of a treatment day in the treatment plan."
+    },
+    {
+      "index": 78,
+      "name": "TRT_DAY_MAX_LAG",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The max lag of a treatment day in the treatment plan."
+    },
+    {
+      "index": 83,
+      "name": "TRT_DAY_UNIQ_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A cycle-level unique ID of a treatment day in the treatment plan."
+    },
+    {
+      "index": 88,
+      "name": "TRT_DAY_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The treatment day number for this treatment day."
+    },
+    {
+      "index": 93,
+      "name": "STEP_START_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The start date and time of the step."
+    },
+    {
+      "index": 98,
+      "name": "MANUAL_STRT_STP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This flag indicates whether the step should be manually started. Y indicates that the step should be started manually. A null value or N indicates that the step doesn't need to be started manually.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 107,
+      "name": "MANUAL_STRT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who manually started the step."
+    },
+    {
+      "index": 112,
+      "name": "MANUAL_STRT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the step was manually started."
+    },
+    {
+      "index": 117,
+      "name": "STEP_DURATION_SECS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the duration of the step in seconds. This value can be added to the start date and time to get the end date and time of the step."
+    },
+    {
+      "index": 122,
+      "name": "TX_STAT_CHG_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the ID of the user who changed the status of this treatment day."
+    },
+    {
+      "index": 127,
+      "name": "DAY_LENGTH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of calendar days that are represented by the treatment day."
+    },
+    {
+      "index": 132,
+      "name": "TX_STATUS_CHG_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant at which the day status changed."
+    },
+    {
+      "index": 137,
+      "name": "DAY_CREATED_BY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the user who created the treatment day."
+    },
+    {
+      "index": 142,
+      "name": "DAY_CREATE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant when the treatment day was created."
+    },
+    {
+      "index": 147,
+      "name": "DAY_CREATE_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional comment entered by user when creating the treatment day."
+    },
+    {
+      "index": 152,
+      "name": "DAY_SOURCE_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique ID of the day from which it was created."
+    },
+    {
+      "index": 157,
+      "name": "TX_PLANNED_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the planned date for the treatment day."
+    },
+    {
+      "index": 162,
+      "name": "TX_STARTED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant at which the day was started."
+    },
+    {
+      "index": 167,
+      "name": "DAY_SOURCE_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When the treatment plan day is created from a protocol (PRL), the source treatment day (OSQ)'s contact serial number will be set in this item.  If the treatment plan day is copied or deferred, this item will be copied into the new day."
+    },
+    {
+      "index": 172,
+      "name": "AUTO_COMP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the \"Status\" item of the day. Used in the cases where the system changes the status of the day (mainly auto-completes a day) so that we can determine if we need to let the user know about it the next time they open the plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nReverted\n\n\nFinal"
+    },
+    {
+      "index": 182,
+      "name": "TREAT_DAY_CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The contact date real of the treatment day (TRG) record which is held in this row.  The contact date real is a unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 187,
+      "name": "DEFERRED_FROM_LN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If this treatment day was created by deferring another treatment day, this item will contain the line number of that deferred treatment day."
+    },
+    {
+      "index": 192,
+      "name": "CONVERSION_TARGET",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If this day was replaced for conversion, this will be the day (given by line in SI TPl 5000) that replaced it."
+    },
+    {
+      "index": 197,
+      "name": "DAY_SOURCE_INSTANCE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "For the clinical protocol treatment day contact indicated by the contact serial number in the DAY_SOURCE_CSN column, this column stores the instance number (or repetition number) represented by this day in the treatment plan."
+    },
+    {
+      "index": 202,
+      "name": "TX_SCHED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date for which the treatment day is scheduled."
+    },
+    {
+      "index": 207,
+      "name": "TX_SCHED_CONFLICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the scheduled date of the treatment day is outside tolerance range or if multiple appointments are scheduled for the same treatment day.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOutside Tolerance\n\n\nMultiple Orders"
+    }
+  ]
+}

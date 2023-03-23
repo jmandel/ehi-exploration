@@ -1,0 +1,73 @@
+{
+  "table_name": "AP_CLAIM_PX_AUTH_INFO",
+  "description": "This table contains information about the service-level authorizations used for the AP Claim's services.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AUTH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The matching Authorization ID for the AP Claims procedure."
+    },
+    {
+      "index": 17,
+      "name": "OPERATIONAL_MATCH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the authorization is needed for the operational authorizations requirements. 'Y' indicates that this is needed to satisfy the operational authorizations requirements. 'N' or NULL indicate that it's not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 26,
+      "name": "BENEFIT_MATCH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the authorization is needed for the benefits authorizations requirements. 'Y' indicates that this is needed to satisfy the benefits authorizations requirements. 'N' or NULL indicate that it's not.\n\n\n The category values for this column were already listed for column: OPERATIONAL_MATCH_YN"
+    },
+    {
+      "index": 32,
+      "name": "VENDOR_CONTRACT_MATCH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the authorization is needed for the vendor contract. 'Y' indicates that this is needed for the vendor contract. 'N' or NULL indicate that it's not.\n\n\n The category values for this column were already listed for column: OPERATIONAL_MATCH_YN"
+    },
+    {
+      "index": 38,
+      "name": "COUNTS_USED",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The count used from this authorization. Note that this remains set even if the claim gets voided, or the service line is deleted."
+    },
+    {
+      "index": 43,
+      "name": "COUNTS_CALCULATED",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The count used that is calculated during AP claim adjudication."
+    },
+    {
+      "index": 48,
+      "name": "COUNTS_SHARED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the service-level authorization count used is shared with a previously-adjudicated claim or service.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes, shared with another claim\n\n\nYes, shared with another service"
+    }
+  ]
+}

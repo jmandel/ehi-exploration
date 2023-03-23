@@ -1,0 +1,129 @@
+{
+  "table_name": "DOCS_RCVD_TREAT_RESTR",
+  "description": "This table contains treatment restrictions for the received document.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "TRT_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A unique reference identifier for a specific treatment restriction"
+    },
+    {
+      "index": 27,
+      "name": "CODE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code status category ID for the received document.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n<Disabled>\n\n\nFull Code\n\n\nDNR\n\n\nPartial Code"
+    },
+    {
+      "index": 38,
+      "name": "CODE_STS_DISP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code status display name"
+    },
+    {
+      "index": 43,
+      "name": "TREATMENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment category ID for the received document\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdmission to intensive care unit\n\n\nCardiopulmonary resuscitation\n\n\nArtificial respiration\n\n\nAdministration of blood product\n\n\nOther"
+    },
+    {
+      "index": 55,
+      "name": "TREAT_PERMITTED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment permitted category ID for the received document.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nYes with limitations\n\n\nNo"
+    },
+    {
+      "index": 65,
+      "name": "TREAT_LIMITS_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record for the limitations or circumstances that apply to the treatment restriction"
+    },
+    {
+      "index": 70,
+      "name": "TREAT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date of the treatment restriction"
+    },
+    {
+      "index": 75,
+      "name": "TREAT_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The end date of the treatment restriction"
+    },
+    {
+      "index": 80,
+      "name": "TREAT_EXPLANATION_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record for additional free-text notes on the treatment restriction"
+    },
+    {
+      "index": 85,
+      "name": "TREAT_RESTR_CHKSUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the checksum of the treatment restriction"
+    },
+    {
+      "index": 90,
+      "name": "TREAT_RESTR_SRC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the CSN of the source DXR that has the treatment restriction information"
+    },
+    {
+      "index": 95,
+      "name": "TREAT_LAST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant we consider the date this treatment restriction was last changed"
+    },
+    {
+      "index": 100,
+      "name": "TREATMENT_DISP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name of the code for the medical treatment the treatment restriction relates to"
+    }
+  ]
+}

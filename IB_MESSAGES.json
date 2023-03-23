@@ -1,0 +1,388 @@
+{
+  "table_name": "IB_MESSAGES",
+  "description": "The IB_MESSAGES table contains basic information about In Basket messages.",
+  "primary_key": {
+    "column_name": "MSG_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the In Basket Message."
+    },
+    {
+      "index": 7,
+      "name": "CREATE_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time the message record was created."
+    },
+    {
+      "index": 12,
+      "name": "REGARDING_TOPIC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A short description of the message contents."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 22,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The encounter date of the patient associated with this message."
+    },
+    {
+      "index": 27,
+      "name": "SENDER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the sender (networked to the User master file)."
+    },
+    {
+      "index": 32,
+      "name": "NAME_OF_CALLER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the caller."
+    },
+    {
+      "index": 37,
+      "name": "TRANSCRIPTION_LINE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the ID of the dictation transcription for a transcription created outside of Epic and sent to In Basket through an interface.  It is networked to the Notes (HNO) master file."
+    },
+    {
+      "index": 42,
+      "name": "ORDER_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order procedure (networked to the Orders master file)."
+    },
+    {
+      "index": 47,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order procedure (networked to the Orders master file)."
+    },
+    {
+      "index": 52,
+      "name": "ORD_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The internal date of the ordered procedure."
+    },
+    {
+      "index": 57,
+      "name": "PAT_EMAIL_RESP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the patient wants an e-mail response to their In Basket message.  Y indicates that the patient does want an e-mail response and N indicates that the patient does not want an e-mail response.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYES\n\n\nNO"
+    },
+    {
+      "index": 66,
+      "name": "APPT_STATUS_C",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Appointment Notification Email Message Type - The Appointment Status of the specific encounter"
+    },
+    {
+      "index": 71,
+      "name": "CANCEL_REASON_C",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Appointment Notification Email Message Type - If the APPT_STATUS_C column is canceled, this column contains the link to the reason for cancellation"
+    },
+    {
+      "index": 76,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system. This column should be replaced with IB_MESSAGE_PAT_ENCS.PAT_ENC_CSN_ID instead. Historical records will still have this data populated, as well as data moving forward, but it may not contain all of the encounter contact serial numbers (CSNs) as the new column and table would"
+    },
+    {
+      "index": 81,
+      "name": "PAT_ORDENC_DT_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The new orders only encounter associated with this message. This will be used if a reflex action is performed on a result and the original contact is owned elsewhere."
+    },
+    {
+      "index": 86,
+      "name": "DICT_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the ID of the dictation transcription for a dictation transcribed in Epic (not in a third party system).  It is networked to the notes (HNO) master file."
+    },
+    {
+      "index": 91,
+      "name": "TASK_ID_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the task ID this message is associated with"
+    },
+    {
+      "index": 96,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores referral record that is related to the In Basket message"
+    },
+    {
+      "index": 101,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores claim record that is related to the In Basket message"
+    },
+    {
+      "index": 106,
+      "name": "ORGANIZATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Care Everywhere organization related to this message"
+    },
+    {
+      "index": 111,
+      "name": "ORGANIZATION_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "index": 116,
+      "name": "QUERY_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Outcome of the Care Everywhere search.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSuccessful\n\n\nUnsuccessful"
+    },
+    {
+      "index": 125,
+      "name": "QUERY_INSTANT",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Instant the query was performed"
+    },
+    {
+      "index": 130,
+      "name": "QUERY_USER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who performed the query"
+    },
+    {
+      "index": 135,
+      "name": "QUERY_ENC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Encounter associated with the query"
+    },
+    {
+      "index": 140,
+      "name": "QUERY_ENC_PROV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Provider for the encounter associated with the query"
+    },
+    {
+      "index": 145,
+      "name": "QUERY_DEPT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Login department for the user performing the query"
+    },
+    {
+      "index": 150,
+      "name": "QUERY_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason for performing the query\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOther\n\n\nAutomatic System Request\n\n\nPCP Review\n\n\nEmergency Visit\n\n\nReferral\n\n\nScheduled Visit\n\n\nUrgent Care\n\n\nWalk In\n\n\nAdmission\n\n\nPhone / E-mail Encounter\n\n\nCare Coordination\n\n\nBackground Batch Request\n\n\nBackground Verification Query\n\n\nData Request\n\n\nChart Gateway Batch Query\n\n\nChart Gateway Targeted Query\n\n\nPatient Portal Initiated\n\n\nChart Correction\n\n\nChart Gateway Link Forwarded Query\n\n\nSwitch from Standalone to Gateway\n\n\nOrders Anywhere Query\n\n\nPrior Authorization\n\n\nPayer Platform ADT\n\n\nPayer Platform Update Notification\n\n\nPayer Platform Scheduled Appointment\n\n\nNetwork Affiliation\n\n\nPatient Newly Enabled\n\n\nBook Anywhere\n\n\nAutomatic Query to Payer Before Appointment\n\n\nTreatment\n\n\nPayment\n\n\nHealthcare Operations\n\n\nSystem Administration\n\n\nFraud Detection\n\n\nPsychotherapy\n\n\nTraining\n\n\nLegal Disclosure\n\n\nMarketing\n\n\nFacility Directory\n\n\nFamily Disclosure\n\n\nIndividual Present Disclosure\n\n\nEmergency\n\n\nDisaster Relief\n\n\nPublic Health\n\n\nAbuse Disclosure\n\n\nHealth Oversight Disclosure\n\n\nJudicial Disclosure\n\n\nLaw Enforcement Disclosure\n\n\nDeceased Disclosure\n\n\nOrgan Donation Disclosure\n\n\nResearch Disclosure\n\n\nHealth Safety Threat\n\n\nGovernment Disclosure\n\n\nWorkers Compensation\n\n\nInsurance or Disability Coverage Disclosure\n\n\nRequest of the Individual"
+    },
+    {
+      "index": 213,
+      "name": "QUERY_PAT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient name used for the query"
+    },
+    {
+      "index": 218,
+      "name": "QUERY_PAT_STATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "State used for the patient query"
+    },
+    {
+      "index": 223,
+      "name": "QUERY_PAT_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Zip code used for the patient query"
+    },
+    {
+      "index": 228,
+      "name": "QUERY_PAT_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Sex used during the patient query\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 241,
+      "name": "QUERY_PAT_DOB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date of birth used for the patient query"
+    },
+    {
+      "index": 246,
+      "name": "QUERY_PAT_SSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "SSN used for the patient query"
+    },
+    {
+      "index": 251,
+      "name": "QUERY_PAT_HOME_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Home phone number used for the patient query"
+    },
+    {
+      "index": 256,
+      "name": "QUERY_PAT_WORK_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Work phone number used during the patient query"
+    },
+    {
+      "index": 261,
+      "name": "QUERY_PAT_CELL_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Cell phone number used during the patient query"
+    },
+    {
+      "index": 266,
+      "name": "MYCHART_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Note ID for a message that is a result of a 3rd party questionnaire being submitted."
+    },
+    {
+      "index": 271,
+      "name": "PEF_MSG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of a patient-entered flowsheet message, either Alert or Notification.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNotification Message\n\n\nAlert Message"
+    },
+    {
+      "index": 280,
+      "name": "PEF_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For patient-entered flowsheet messages, the episode ID that the flowsheet is a part of."
+    },
+    {
+      "index": 285,
+      "name": "PEF_LAST_NOTIF_DAT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Last notification date of a patient-entered flowsheet message."
+    },
+    {
+      "index": 290,
+      "name": "PEF_INSTANT_SVD_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "For patient-entered flowsheet messages, the date and time the patient entered the data that triggered this message."
+    },
+    {
+      "index": 295,
+      "name": "NCS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column extracts the linked Customer Relationship Management record (NCS master file)."
+    },
+    {
+      "index": 300,
+      "name": "DENTAL_TRT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores dental treatment plan ID."
+    },
+    {
+      "index": 305,
+      "name": "DTP_PMT_PLAN_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores orthodontic payment plan line."
+    },
+    {
+      "index": 310,
+      "name": "DEFICIENCY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deficiency type category number for the In Basket message.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSurgery Report\n\n\nAdmission Diagnosis\n\n\nDischarge Summary\n\n\nAnesthesiology Report\n\n\nTransfer Report\n\n\nResult\n\n\nImage\n\n\nVerbal/cosign Order\n\n\nInitial Assessment\n\n\nWork List Task\n\n\nH&P\n\n\nDictation\n\n\nConsult\n\n\nHB Final Diagnosis\n\n\nPre-Op Diagnosis\n\n\nDischarge Diagnosis\n\n\nMedications Not Administered\n\n\nDRG Code\n\n\nICD Codes\n\n\nCPT/HCPCS Codes\n\n\nPost-Op Diagnosis\n\n\nOR Nursing Report\n\n\nPre-Op Notes\n\n\nPost-Op Notes\n\n\nProgress Notes\n\n\nProcedures\n\n\nED Notes\n\n\nGeneral Notes\n\n\nDocument\n\n\nED Navigator Data\n\n\nED Disposition\n\n\nED Chief Complaint\n\n\nED Clinical Impression\n\n\nCoding/CDI Query\n\n\nProcessing Needed\n\n\nED Provider Notes\n\n\nScan Signature\n\n\nOpen Encounter\n\n\nClinic Transcription\n\n\nED Events\n\n\nFlowsheet\n\n\nED Allergies Reviewed\n\n\nMedications Reviewed\n\n\nMedication List Status\n\n\nHistory Reviewed\n\n\nNarrator Sign Off\n\n\nProblem List - Present on Admission\n\n\nIncomplete Note\n\n\nPatient Learning Assessment\n\n\nAnalysis Needed\n\n\nProblem List - Additional Dx Data\n\n\nProblem List - Specialty Episode Linkage\n\n\nAny Note\n\n\nED Triage Notes\n\n\nED DBC Clinical Episode Link\n\n\nVerbal Treatment Plan\n\n\nPreliminary Cause of Death\n\n\nStudy Review\n\n\nHH Encounter OASIS and POC Integration\n\n\nHH Order\n\n\nHH Encounter OASIS Integration\n\n\nHH Attestation\n\n\nHH Encounter No Integration\n\n\nHome Care Supervisory Visit\n\n\nHome Care Pended Orders\n\n\nHospice Non-Covered Documentation\n\n\nHH Specialty Plan of Care - Manually Created\n\n\nHH EVV Encounter\n\n\nSpecialty Plan of Care - Signature\n\n\nSpecialty Plan of Care - Contribution\n\n\nAN Ready for Procedure\n\n\nAN Attestation\n\n\nAN Event\n\n\nAN Staff\n\n\nAN Preprocedure Note\n\n\nAN Postprocedure Note\n\n\nAN Close Encounter Check Failed\n\n\nDBC Info Reviewed\n\n\nAN Procedure Note\n\n\nED Course Review Needed\n\n\nED Course SmartLink Missing\n\n\nReady to View"
+    },
+    {
+      "index": 399,
+      "name": "TRANSCRIPT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note that this In Basket deficiency creation error occurred for."
+    },
+    {
+      "index": 404,
+      "name": "LAB_RESULT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the result record of the In Basket message."
+    },
+    {
+      "index": 409,
+      "name": "LAB_HOLD_LN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the hold of the specimen associated with this In Basket message."
+    },
+    {
+      "index": 414,
+      "name": "LAB_REQ_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores a pointer to a requisition record (REQ). The REQ record may be a requisition, a case, or both."
+    },
+    {
+      "index": 419,
+      "name": "LAB_AP_CASE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The case number is the Anatomic Pathology accession number."
+    },
+    {
+      "index": 424,
+      "name": "AN_MSG_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason the message was sent from Anesthesia.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNeed Relief"
+    },
+    {
+      "index": 432,
+      "name": "FREE_TEXT_SIG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text sig received from a pharmacy interface."
+    }
+  ]
+}

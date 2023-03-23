@@ -1,0 +1,101 @@
+{
+  "table_name": "COD_CONTACT_INFO",
+  "description": "The table COD_CONTACT_INFO contains information about coding records (records in the COD master file). A row in this table contains information about each individual contact for coding records. Coding records store information from Clinical Documentation Improvement (CDI) reviews. A single coding record is created for the hospital account, with each contact (or row) containing information from a separate CDI review of the account.",
+  "primary_key": {
+    "column_name": "CONTACT_SERIAL_NUM",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CODING_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the coding record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The contact number of the contact."
+    },
+    {
+      "index": 22,
+      "name": "CNCT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact type of the contact.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRecord Creation\n\n\nCDI Working Review\n\n\nCDI Baseline Review\n\n\nCDI Possible Review"
+    },
+    {
+      "index": 33,
+      "name": "CDI_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the clinical documentation improvement (CDI) specialist who performed the CDI review."
+    },
+    {
+      "index": 38,
+      "name": "CDI_NEXT_REVIEW_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The next review date for a clinical documentation improvement (CDI) review."
+    },
+    {
+      "index": 43,
+      "name": "CDI_PX_CODE_SET_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure code set in a clinical documentation improvement (CDI) review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nICD-9-CM Volume 3\n\n\nICD-10-PCS\n\n\nOPCS-4\n\n\nA&E Investigation/Treatment"
+    },
+    {
+      "index": 54,
+      "name": "CDI_DX_CODE_SET_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The diagnosis code set in a clinical documentation improvement (CDI) review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nICD-9-CM\n\n\nICD-10-CM\n\n\nICD-10-CA\n\n\nICD-10-UK\n\n\nDBC\n\n\nICD-10 Dutch\n\n\nICD-10-AM\n\n\nA&E Diagnoses\n\n\nSKS\n\n\nICD-10-THL\n\n\nICPC-2\n\n\nICD-O-3\n\n\nICD-10-GM\n\n\nICD-9-CM Supplemental\n\n\nICD-10-BE\n\n\nICD-10-NO"
+    },
+    {
+      "index": 77,
+      "name": "CONTACT_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the current status of a contact on the coding record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nActive\n\n\nRestored\n\n\nCombined\n\n\nDeleted"
+    },
+    {
+      "index": 88,
+      "name": "CDI_REVIEW_LOC_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The date and time that a clinical documentation improvement (CDI) review took place, relative to the timezone of the location in which the review took place."
+    },
+    {
+      "index": 93,
+      "name": "LINKED_QUERY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column is reserved for future development."
+    },
+    {
+      "index": 98,
+      "name": "SOURCE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the contact serial number from the source coding record associated with this coding contact. This item is set when a coding contact is merged from another coding record."
+    }
+  ]
+}

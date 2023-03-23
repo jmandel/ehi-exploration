@@ -1,0 +1,178 @@
+{
+  "table_name": "HSP_BFH_ACT_DATA_BDC",
+  "description": "This table stores billing activity history action-specific data. Every time a billing activity (ATM) is performed on a record or group of records, an activity history record (BFH) is logged. These activity history records store specific data related to each action that was performed on the activity. Each action (and its related data) is logged as a line in related group BFH 300. This table is specifically for actions performed on insurance follow-up (BDC) records.",
+  "primary_key": {
+    "column_name": "BFH_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "BFH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the billing activity history record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action category ID for this row in the billing activity history. The other data in this row represent specific values associated with this action performed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSend Breeze Letter\n\n\nSend to Pre-Collect\n\n\nSend to Bad Debt\n\n\nReturn from Agency\n\n\nWrite-Off Self-Pay\n\n\nUpdate Billing/Statement Note\n\n\nChange Notification Date\n\n\nAdd to Workqueue\n\n\nAdd Note\n\n\nOutsource Account\n\n\nChange Agency\n\n\nUpdate Billing Indicators\n\n\nSend Letter\n\n\nChange Self-Pay Follow-up Date\n\n\nSend to External Agency AR\n\n\nModify SNF PPS Codes\n\n\nDefer\n\n\nChange Self-Pay Follow-up Level\n\n\nAdd Charge\n\n\nReverse Transaction\n\n\nReprice Charge\n\n\nCorrect Charge\n\n\nUpdate Stop Bills\n\n\nEnable Paperless Billing\n\n\nDisable Paperless Billing\n\n\nPost Adjustment\n\n\nTransfer Follow-up Record\n\n\nNext Responsible Party\n\n\nTransfer to Self-Pay\n\n\nUndo Billing\n\n\nSubmit Claim Status Request\n\n\nUpdate Guarantor Status\n\n\nPost Refund\n\n\nChange Bundled Episode\n\n\nDuplicate and Send Charge\n\n\nInitiate Informational Claim\n\n\nEvaluate Pricing Contracts\n\n\nOverride Home Health Discharge Disposition\n\n\nChange Financial Assistance\n\n\nReevaluate Self-Pay Discounts\n\n\nUnlock Pay as Guest\n\n\nChange Admit/Discharge Dates\n\n\nUpdate Additional Payment Reconciliation\n\n\nChange Account Class\n\n\nOverride Surcharge\n\n\nOverride Expected Reimbursement\n\n\nUpdate Invoice Numbers\n\n\nDischarge Account\n\n\nCombine Account\n\n\nUncombine Account\n\n\nReopen Account\n\n\nClose Account\n\n\nOverride Claim Sent Dates\n\n\nOverride Claim ICN\n\n\nCreate Related Account\n\n\nAdd Guarantor Note\n\n\nUpdate Coding Status\n\n\nUpdate Abstracting Status\n\n\nUpdate CDI Review Status\n\n\nChange Assigned Coder\n\n\nChange Assigned Abstracter\n\n\nChange Assigned CDI Specialist\n\n\nInitiate Homing\n\n\nInitiate Billing\n\n\nPost Not Allowed Adjustment\n\n\nOverride Self-Pay Discount\n\n\nUpdate Settlement Numbers\n\n\nAdmission Day Billing\n\n\nSend Detail Bill\n\n\nSend Statement\n\n\nProcess Late Charges\n\n\nUndo All Billing\n\n\nSend Guarantor Detail Bill\n\n\nUndo Discharge\n\n\nOverride DNB Warnings\n\n\nOverride RAP Checks\n\n\nUpdate Coding Flags\n\n\nOverride Expected Self-Pay Liability\n\n\nCreate Trust Account Series\n\n\nChange Next Statement Date\n\n\nChange Next Payment Plan Auto Pay Date\n\n\nLog Denial/Remark\n\n\nContest Account\n\n\nComplete\n\n\nTransfer\n\n\nSkip\n\n\nRoute\n\n\nReevaluate Expected Reimbursement\n\n\nReevaluate APC Grouping\n\n\nUndo Informational Bucket\n\n\nInitiate No-Pay Claim\n\n\nInitiate Exhaust Claim\n\n\nResearch Review\n\n\nSend Denied Amount to Self-Pay\n\n\nIgnore Denied Amount\n\n\nVoid DBC\n\n\nUndo Close DBC\n\n\nPark DBC\n\n\nUnpark DBC\n\n\nReprice DBC\n\n\nSend In Basket Message for DBC\n\n\nFlag for Review\n\n\nClose DBC\n\n\nRecalculate DBC Close Dates\n\n\nUpdate Visit Auto Pay\n\n\nTerminate Visit Auto Pay\n\n\nSet Up Recurring Payment\n\n\nUpdate Recurring Payment\n\n\nTerminate Recurring Payment\n\n\nSplit Account\n\n\nUpdate SNF Exhaust Date\n\n\nProcess Payment Plan Payment Now\n\n\nChange Next Visit Auto Pay Date\n\n\nSet Up Recurring Trust Transfer\n\n\nUpdate Recurring Trust Transfer\n\n\nTerminate Recurring Trust Transfer\n\n\nProcess Recurring Trust Transfer Now\n\n\nPerform One-Time Trust Transfer\n\n\nClose Recurring Series\n\n\nReopen Recurring Series\n\n\nOverride Send DBC to Grouper Checks\n\n\nSend DBC to Grouper\n\n\nClose Case\n\n\nRefund\n\n\nLog Correspondence\n\n\nLog Variance\n\n\nMark for Separate Service Area Billing\n\n\nUnmark for Separate Service Area Billing\n\n\nSend to Billing Service Area\n\n\nReturn to Care Service Area\n\n\nSend Claim Detail Bill\n\n\nProcess Visit Auto Pay Payment Now\n\n\nProcess Recurring Payment Now\n\n\nResubmit Charge\n\n\nPerform Workqueue Action\n\n\nResubmit Claim\n\n\nPrint Claim\n\n\nTransfer to Insurance\n\n\nVoid Charge\n\n\nPost Split Write-off\n\n\nSend Guarantor Letter\n\n\nSend Invoice Letter\n\n\nInitiate RAP\n\n\nInitiate Secondary RAP\n\n\nInitiate Notice of Election\n\n\nInitiate Home Health No-Pay RAP\n\n\nInitiate Home Health Notice of Admission\n\n\nTransaction Reverse\n\n\nTransfer Transaction\n\n\nCharge Duplicate and Send \n\n\nResearch Correct\n\n\nClient Correct\n\n\nQuick Correct\n\n\nContest Charge\n\n\nPost Transaction Refund\n\n\nAdd Corresponding Charge\n\n\nEdit Refund\n\n\nUpdate Denial/Remark\n\n\nVoid Denial/Remark\n\n\nReopen Denial/Remark\n\n\nUpdate Correspondence\n\n\nVoid Correspondence\n\n\nReopen Correspondence\n\n\nUpdate Variance\n\n\nVoid Variance\n\n\nReopen Variance\n\n\nGenerate Release\n\n\nReset Self-Pay Aging Date\n\n\nReset Insurance Aging Date\n\n\nReplace Claim\n\n\nSubmit Cancel Claim\n\n\nRecalculate Discount\n\n\nRepost\n\n\nReprint Refund Slip\n\n\nUndistribute\n\n\nTransfer to HB\n\n\nRefund Request\n\n\nVoid Transaction\n\n\nSend to Collection Agency\n\n\nRecall from Collection Agency\n\n\nRefund Review\n\n\nEdit Visit Filing Order\n\n\nChange AP Import Status\n\n\nEdit Payment\n\n\nEdit Adjustment\n\n\nPost Debit Adjustment\n\n\nPB Demand Claim\n\n\nTransfer Visit/Invoice\n\n\nPB Accept Filing Order\n\n\nPB Reject Filing Order\n\n\nPost PB Debit Adjustment\n\n\nTurn On Automatic Self-Pay Write-Off\n\n\nTurn Off Automatic Self-Pay Write-Off\n\n\nPB Undistribute\n\n\nOverride Posted Not Billed Warnings\n\n\nRetroadjudication\n\n\nUpdate Payment Plan\n\n\nTerminate Payment Plan\n\n\nSet Reminder\n\n\nSend Balance Notification\n\n\nUpdate PB Billing Status\n\n\nDemand Claim\n\n\nRemove From Claim Queue\n\n\nRehome\n\n\nAdd to Credit Workqueue\n\n\nSend Tapestry Letter"
+    },
+    {
+      "index": 225,
+      "name": "ACT_BDC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence record status category ID that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCreated\n\n\nTransferred\n\n\nReopened\n\n\nCompleted\n\n\nVoided"
+    },
+    {
+      "index": 237,
+      "name": "ACT_BDC_RESOLVE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence record resolution reason category ID that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAuto-Closed\n\n\nNo Outstanding Insurance Balance \n\n\nClaim Resubmitted\n\n\nPB Charges Voided\n\n\nPB Charges Reposted\n\n\nPB Payment Undistributed\n\n\nPB Original Follow-up Completed"
+    },
+    {
+      "index": 251,
+      "name": "ACT_BDC_OWNING_AREA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence record owning area category ID that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 257,
+      "name": "ACT_BDC_DENIAL_CATEGORY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the category ID of the denial record denial category that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdjudication\n\n\nRegistration/Eligibility\n\n\nAuthorization\n\n\nCoding\n\n\nBundled\n\n\nContract Related\n\n\nNon-Covered\n\n\nMiscellaneous\n\n\nTimely Filing\n\n\nInformational\n\n\nProvider Enrollment/Credentialing\n\n\nDuplicate\n\n\nAdditional Documentation Needed\n\n\nBilling Error\n\n\nCoordination of Benefits\n\n\nDenied Days\n\n\nExceeds Approved Days\n\n\nMedical Necessity/Level of Care\n\n\nPatient Responsible"
+    },
+    {
+      "index": 283,
+      "name": "ACT_BDC_ROOT_CAUSE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence record root cause category ID that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 289,
+      "name": "ACT_BDC_RPT_REMIT_CODE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence record reporting remittance code ID that is set as a result of this action."
+    },
+    {
+      "index": 294,
+      "name": "ACT_BDC_RPT_REMIT_CODE_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 299,
+      "name": "ACT_BDC_SOURCE_AREA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial/correspondence source area category ID that is set as a result of this action.\n\n\n The category values for this column were already listed for column: ACT_BDC_OWNING_AREA_C_NAME"
+    },
+    {
+      "index": 305,
+      "name": "ACT_BDC_PREVENTABLE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial record preventable status that is set as a result of this action. 'Y' indicates that the denial was preventable. 'N' or NULL indicate that it was not preventable.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 314,
+      "name": "ACT_BDC_APPEAL_STAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial appeal stage (I BDC 10130).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStage 1\n\n\nStage 2\n\n\nStage 3"
+    },
+    {
+      "index": 324,
+      "name": "ACT_BDC_APPEAL_DUE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores the denial appeal due date (I BDC 10022)."
+    },
+    {
+      "index": 329,
+      "name": "ACT_BDC_APPEAL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial appealing user (I BDC 10027)."
+    },
+    {
+      "index": 334,
+      "name": "ACT_BDC_APPEAL_SUBMIT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores the denial appeal submission date (I BDC 10023)."
+    },
+    {
+      "index": 339,
+      "name": "ACT_BDC_APPEAL_SUBMIT_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the denial appeal submission method (I BDC 10028).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPayer Website\n\n\nFax\n\n\nMail\n\n\nResubmitted Claim\n\n\nOther"
+    },
+    {
+      "index": 351,
+      "name": "ACT_BDC_RES_OWNER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column represents the resolution owner for the follow-up records."
+    },
+    {
+      "index": 356,
+      "name": "ACT_BDC_SOURCE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column represents the caused by user for the follow-up records."
+    },
+    {
+      "index": 361,
+      "name": "ACT_BDC_SOURCE_DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the caused-by department for the follow-up records."
+    },
+    {
+      "index": 366,
+      "name": "ACT_BDC_APPEAL_SELECT_LN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column indicates whether denial resubmission had a manually-selected line.\n\n\n The category values for this column were already listed for column: ACT_BDC_PREVENTABLE_YN"
+    },
+    {
+      "index": 372,
+      "name": "ACT_BDC_APPEAL_OVRIDE_DATA_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column indicates whether resubmitted lines had override data.\n\n\n The category values for this column were already listed for column: ACT_BDC_PREVENTABLE_YN"
+    },
+    {
+      "index": 378,
+      "name": "ACT_BDC_NEXT_FOLLOWUP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The Next Follow-up Date that was changed as a result of this action."
+    },
+    {
+      "index": 383,
+      "name": "ACT_BDC_APPEAL_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The appeal level set as a result of this action.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLevel 1\n\n\nLevel 2\n\n\nLevel 3"
+    }
+  ]
+}

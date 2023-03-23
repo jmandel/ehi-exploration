@@ -1,0 +1,164 @@
+{
+  "table_name": "AUTH_REQUEST",
+  "description": "This table contains information about an individual authorization request.",
+  "primary_key": {
+    "column_name": "AUTH_REQUEST_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the authorization request."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Chronicles record status category ID for the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "EXTERNAL_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external identifier of the authorization request."
+    },
+    {
+      "index": 22,
+      "name": "LAST_EDIT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) of the latest published (non-draft) contact of the authorization request."
+    },
+    {
+      "index": 27,
+      "name": "REQUEST_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The request context category ID for the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUtilization Management\n\n\nUtilization Management Appeals"
+    },
+    {
+      "index": 36,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient/member that this authorization request is for. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 41,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the referral record that this authorization request is associated with."
+    },
+    {
+      "index": 46,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage record that applies to this authorization request."
+    },
+    {
+      "index": 51,
+      "name": "REQUEST_CREATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) that this authorization request was initiated."
+    },
+    {
+      "index": 56,
+      "name": "LOB_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the line of business associated with the coverage when the authorization request was processed."
+    },
+    {
+      "index": 61,
+      "name": "LOB_ID_LOB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the line of business record."
+    },
+    {
+      "index": 66,
+      "name": "PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the payer associated with the coverage when the authorization request was processed."
+    },
+    {
+      "index": 71,
+      "name": "PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 76,
+      "name": "BENEFIT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the plan associated with the coverage when the authorization request was processed."
+    },
+    {
+      "index": 81,
+      "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 86,
+      "name": "ORDER_ENTRY_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When an authorization request is received, if any of the requested services were created during order entry, this column will be populated as a pointer back to the order."
+    },
+    {
+      "index": 91,
+      "name": "DECISION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user responsible for the decision of the authorization request. In the case of medical director review, this is the person who conducted the medical director review rather than the user who changed the status in the system. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 96,
+      "name": "UM_DECISION_USER_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The decision user role category ID for the user making the decision on the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNon-Medical Director\n\n\nMedical Director\n\n\nAuto Status Assignment\n\n\nDecision Made Externally"
+    },
+    {
+      "index": 107,
+      "name": "RESP_PARTY_AGENCY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the responsibility class of the party responsible for rendering a decision for the authorization request."
+    },
+    {
+      "index": 112,
+      "name": "RESP_PARTY_AGENCY_ID_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the agency."
+    },
+    {
+      "index": 117,
+      "name": "EXT_TRACKED_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Keeps track of the reason why this auth request's turnaround time is tracked externally.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLegacy Auth Request\n\n\nRouted Through Payer Platform\n\n\nIncoming 278N"
+    },
+    {
+      "index": 127,
+      "name": "APPEALED_AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Authorization Request that was adversely determined and is being appealed by this Request."
+    }
+  ]
+}

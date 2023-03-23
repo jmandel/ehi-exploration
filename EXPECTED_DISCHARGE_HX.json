@@ -1,0 +1,73 @@
+{
+  "table_name": "EXPECTED_DISCHARGE_HX",
+  "description": "This is the expected discharge status history.  It will track changes made to the patient's expected discharge throughout the encounter.  This table contains data about the expected discharge date (I EPT 10442), approximate expected discharge time (I EPT 10443), exact expected discharge time (I EPT 10444), comments about the expected discharge (I EPT 10445), the date and time that the expected discharge was entered (I EPT 10446), the user that made the change (I EPT 10447), and whether the expected discharge date and time was unknown (I EPT 10454).  Each time the information is entered or modified, it will add a line to this table.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "EXPECTED_DISCHARGE_APPROX_HX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Approximate time the patient is expected to be discharged.  Each value in this column denotes a time range (e.g. Morning, Midday, Afternoon, Evening).  If the approximate time is empty, the patient may have an associated exact time (check column EXPECTED_DISCH_DTTM_HX_TIME).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMorning\n\n\nMidday\n\n\nAfternoon\n\n\nEvening"
+    },
+    {
+      "index": 28,
+      "name": "EXPECTED_DISCH_DTTM_HX_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the date and exact time the patient is expected to be discharged (e.g. 10/16/2015 8:00AM).  If an exact time is empty, the patient may have an associated approximate time (check column EXPECTED_DISCHARGE_APPROX_HX_C)."
+    },
+    {
+      "index": 33,
+      "name": "EXPECTED_DISCHARGE_COMMENT_HX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the comment entered about the expected discharge."
+    },
+    {
+      "index": 38,
+      "name": "EXPECTED_DISCH_UPD_HX_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the date and time when the expected discharge items were updated."
+    },
+    {
+      "index": 43,
+      "name": "EXPECTED_DISCHARGE_UPD_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason the expected discharge date and / or time was updated.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUser Entered\n\n\nModel Prediction\n\n\nExpected Discharge Date Update\n\n\nExpected Length of Stay Update\n\n\nAdmission Planning Reservation Updated\n\n\nDischarge Order Filed"
+    },
+    {
+      "index": 56,
+      "name": "EXPECTED_DISCHARGE_UNKNOWN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the expected discharge date is unknown for this patient. 'Y' indicates that the expected discharge date is unknown and documented. 'N' indicates that the expected discharge date is known and documented. NULL should not be stored in the column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

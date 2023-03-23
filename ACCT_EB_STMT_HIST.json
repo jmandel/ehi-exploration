@@ -1,0 +1,479 @@
+{
+  "table_name": "ACCT_EB_STMT_HIST",
+  "description": "This table contains enterprise statement history information.",
+  "primary_key": {
+    "column_name": "ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the guarantor record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACCEPT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Enterprise statement acceptance date."
+    },
+    {
+      "index": 17,
+      "name": "END_BATCH_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "End batch date for the enterprise statement."
+    },
+    {
+      "index": 22,
+      "name": "PRINT_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the Statement Print record."
+    },
+    {
+      "index": 27,
+      "name": "IS_DEMAND_STMT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the statement was a demand statement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 36,
+      "name": "FOLLOW_UP_CYC_LVL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Enterprise guarantor follow up cycle level. This is used for looking up follow up cycle level message to be printed on statement."
+    },
+    {
+      "index": 41,
+      "name": "PREV_BALANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Previous non-demand statement balance."
+    },
+    {
+      "index": 46,
+      "name": "PREV_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Previous non-demand statement amount due."
+    },
+    {
+      "index": 51,
+      "name": "NEW_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "New charges since last non-demand statement."
+    },
+    {
+      "index": 56,
+      "name": "NEW_PAYMENTS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "New payments since last non-demand statement."
+    },
+    {
+      "index": 61,
+      "name": "NEW_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "New adjustments since last non-demand statement."
+    },
+    {
+      "index": 66,
+      "name": "TOTAL_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total charges amount on the statement."
+    },
+    {
+      "index": 71,
+      "name": "TOTAL_PAYMENTS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total payments amount on the statement."
+    },
+    {
+      "index": 76,
+      "name": "TOTAL_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total adjustments amount on the statement."
+    },
+    {
+      "index": 81,
+      "name": "CUR_BALANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Current statement balance."
+    },
+    {
+      "index": 86,
+      "name": "CUR_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Current statement amount due"
+    },
+    {
+      "index": 91,
+      "name": "PROC_PROF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether this statement contains balance from billing system Professional Billing. This will be YES if billing system Professional Billing is using enterprise statement in the guarantor's service area.\n\n\n The category values for this column were already listed for column: IS_DEMAND_STMT_YN"
+    },
+    {
+      "index": 97,
+      "name": "PROC_HOSP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether this statement contains balance from billing system Hospital Billing. This will be YES if billing system Hospital Billing is using enterprise statement in the guarantor's service area.\n\n\n The category values for this column were already listed for column: IS_DEMAND_STMT_YN"
+    },
+    {
+      "index": 103,
+      "name": "INVOICE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Invoice number for the statement."
+    },
+    {
+      "index": 108,
+      "name": "HB_PREV_BAL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the previous statement amount due."
+    },
+    {
+      "index": 113,
+      "name": "HB_PREV_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the hospital portion of the previous statement amount due."
+    },
+    {
+      "index": 118,
+      "name": "HB_NEW_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the new charges."
+    },
+    {
+      "index": 123,
+      "name": "HB_NEW_PAYMENT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the new payments."
+    },
+    {
+      "index": 128,
+      "name": "HB_NEW_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the new adjustments."
+    },
+    {
+      "index": 133,
+      "name": "HB_TOT_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the total charges."
+    },
+    {
+      "index": 138,
+      "name": "HB_TOT_PAYMENT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the total payments."
+    },
+    {
+      "index": 143,
+      "name": "HB_TOT_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the total adjustments."
+    },
+    {
+      "index": 148,
+      "name": "HB_CUR_BALANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the current balance."
+    },
+    {
+      "index": 153,
+      "name": "HB_CUR_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital portion of the current amount due."
+    },
+    {
+      "index": 158,
+      "name": "HB_PMTPLAN_TOT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital billing payment plan original balance."
+    },
+    {
+      "index": 163,
+      "name": "HB_PMTPLAN_BAL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital billing payment plan current balance."
+    },
+    {
+      "index": 168,
+      "name": "HB_PMTPLAN_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital billing payment plan current amount due."
+    },
+    {
+      "index": 173,
+      "name": "HB_PRORATION_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the prorated self-pay balance contributed to the hospital portion of current balance."
+    },
+    {
+      "index": 178,
+      "name": "PREV_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the previous insurance balance that was shown on the statement."
+    },
+    {
+      "index": 183,
+      "name": "CUR_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the current insurance balance from the statement."
+    },
+    {
+      "index": 188,
+      "name": "IS_INFO_STMT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the statement is informational. This item is \"1\" if the statement was informational, and \"0\" or \" if not. A statement is informational if no self-pay balance was due for the guarantor.\n\n\n The category values for this column were already listed for column: IS_DEMAND_STMT_YN"
+    },
+    {
+      "index": 194,
+      "name": "PB_PREV_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the previous insurance balance for professional billing."
+    },
+    {
+      "index": 199,
+      "name": "PB_CUR_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the current insurance balance for professional billing."
+    },
+    {
+      "index": 204,
+      "name": "HB_PREV_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the previous insurance balance for hospital billing."
+    },
+    {
+      "index": 209,
+      "name": "HB_CUR_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the current insurance balance for hospital billing."
+    },
+    {
+      "index": 214,
+      "name": "STMT_SP_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The guarantor self-pay follow-up level for the statement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLevel 1\n\n\nLevel 2\n\n\nLevel 3\n\n\nLevel 4\n\n\nLevel 5\n\n\nLevel 6\n\n\nLevel 7\n\n\nLevel 8\n\n\nLevel 9\n\n\nLevel 10"
+    },
+    {
+      "index": 231,
+      "name": "STMT_DVRY_MTD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores how the statement was delivered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaper, No Electronic Notification\n\n\nPaperless, No Electronic Notification\n\n\nPaper and Electronic Notification\n\n\nPaperless, Electronic Notification"
+    },
+    {
+      "index": 242,
+      "name": "STMT_FST_VW_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant the statement was first viewed in MyChart. The date and time for this column is stored in Coordinated Universal Time (UTC) and can be converted to local time by using the EFN_UTC_TO_LOCAL Clarity database function."
+    },
+    {
+      "index": 247,
+      "name": "STMT_LST_VW_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant the statement was last viewed in MyChart. The date and time for this column is stored in Coordinated Universal Time (UTC) and can be converted to local time by using the EFN_UTC_TO_LOCAL Clarity database function."
+    },
+    {
+      "index": 252,
+      "name": "STMT_PAPER_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason why the statement was sent via paper.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaperless Billing is disabled for the service area\n\n\nUser specified\n\n\nForced to paper because of self-pay follow-up level\n\n\nForced to paper because of guarantor rule\n\n\nForced to paper because of hospital account rule\n\n\nGuarantor declined paperless billing\n\n\nFinancial Assistance Program Not Allowed In MyChart\n\n\nNot self-pay correspondence\n\n\nForm is not allowed to be displayed in MyChart\n\n\nGuarantor missing associated patient or MyChart account\n\n\nGuarantor is not MyChart active\n\n\nGuarantor is not available in MyChart\n\n\nNo access to billing features in MyChart\n\n\nMyChart tickler could not be sent\n\n\nProfessional billing letter not marked as Sent\n\n\nPatient is not active on MyChart\n\n\nQueued for printing based on estimate rule\n\n\nPatient is deceased"
+    },
+    {
+      "index": 277,
+      "name": "EB_PMT_PLAN_TOT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Enterprise payment plan total. This is the total amount this payment was created to capture."
+    },
+    {
+      "index": 282,
+      "name": "EB_PMT_PLAN_BAL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Enterprise payment plan balance. This is how much remains to be paid for this payment plan."
+    },
+    {
+      "index": 287,
+      "name": "EB_PMT_PLAN_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Enterprise payment plan due. This is how much was due for the next payment under this plan for each line in the history."
+    },
+    {
+      "index": 292,
+      "name": "PB_HELD_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Professional billing held amount. This is the amount that is held from the patient statement due to some or all of the charges being with insurance at the time the statement is sent."
+    },
+    {
+      "index": 297,
+      "name": "PB_VOID_TRANS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Professional billing void/transfer amount. This is the amount of the balance that was voided or transferred since the previous statement."
+    },
+    {
+      "index": 302,
+      "name": "STMT_HIST_IS_MYC_NOTIF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores if the statement/detail bill notification was sent via MyChart.\n\n\n The category values for this column were already listed for column: IS_DEMAND_STMT_YN"
+    },
+    {
+      "index": 308,
+      "name": "STMT_HX_CNTST_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the contested balance on the statement."
+    },
+    {
+      "index": 313,
+      "name": "STMT_HX_TOT_SCH_PMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total amount of all scheduled payments on the statement."
+    },
+    {
+      "index": 318,
+      "name": "STMT_HX_PAY_NOW",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The pay now amount on the statement. This is the amount due subtracted by the total scheduled payment amount."
+    },
+    {
+      "index": 323,
+      "name": "PB_CUR_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The professional portion of the current statement amount due."
+    },
+    {
+      "index": 328,
+      "name": "PB_CUR_BALANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The professional portion of the current statement balance."
+    },
+    {
+      "index": 333,
+      "name": "PB_NEW_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total new professional adjustment amount posted since last statement."
+    },
+    {
+      "index": 338,
+      "name": "PB_NEW_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total new professional charge amount posted since last statement."
+    },
+    {
+      "index": 343,
+      "name": "PB_NEW_PAYMENT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total new professional payment amount posted since last statement."
+    },
+    {
+      "index": 348,
+      "name": "PB_PMTPLAN_BAL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The professional payment plan balance."
+    },
+    {
+      "index": 353,
+      "name": "PB_PMTPLAN_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The professional payment plan amount due."
+    },
+    {
+      "index": 358,
+      "name": "PB_PMTPLAN_TOT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The professional payment plan total amount."
+    },
+    {
+      "index": 363,
+      "name": "PB_PREV_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The previous professional portion statement amount due."
+    },
+    {
+      "index": 368,
+      "name": "PB_TOT_ADJS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total professional adjustment amount."
+    },
+    {
+      "index": 373,
+      "name": "PB_TOT_CHARGES_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total professional charge amount."
+    },
+    {
+      "index": 378,
+      "name": "PB_TOT_PAYMENT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total professional payment amount."
+    }
+  ]
+}

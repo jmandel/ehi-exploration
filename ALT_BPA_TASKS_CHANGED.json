@@ -1,0 +1,52 @@
+{
+  "table_name": "ALT_BPA_TASKS_CHANGED",
+  "description": "This table contains information about individual task records that were changed as a result of a BestPractice Advisory follow-up action. The records included in this table are Task (LTK) records.",
+  "primary_key": {
+    "column_name": "ALERT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ALERT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the alert record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "BPA_FLWUP_TASKS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient-assigned task (LTK) that was added, removed or changed as a result of BPA evaluation."
+    },
+    {
+      "index": 27,
+      "name": "TSKTMPLT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the change action that occurred for the patient-assigned task. This indicates whether the task was added, removed, or modified.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdd\n\n\nRemove\n\n\nAdd Every Time"
+    }
+  ]
+}

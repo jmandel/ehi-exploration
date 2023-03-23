@@ -1,0 +1,479 @@
+{
+  "table_name": "ARPB_TRANSACTIONS",
+  "description": "This table contains information about professional billing transactions.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A transaction's unique internal identification number. A patient's record can include charges, payments, or adjustments and the patient's account balance will reflect these transactions."
+    },
+    {
+      "index": 7,
+      "name": "POST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when a transaction is entered into the billing system.  This differs from the service date, which is the date when the service was performed."
+    },
+    {
+      "index": 12,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date a medical service is performed."
+    },
+    {
+      "index": 17,
+      "name": "TX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of this transaction: Charge, payment or adjustment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nAdjustment\n\n\nAP Claim Tx\n\n\nAP Claim Refund Tx\n\n\nAP Claim DRG Tx\n\n\nPharmacy Claim Tx"
+    },
+    {
+      "index": 31,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The internal ID of the record that maintains the patient's transactions. A patient may use more than one account and an account may contain more than one patient."
+    },
+    {
+      "index": 36,
+      "name": "DEBIT_CREDIT_FLAG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains a 1 if the transaction is a debit and a -1 if the transaction is a credit. A charge is always a debit, a payment is always a credit, and an adjustment can be either a debit or a credit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDebit\n\n\nCredit"
+    },
+    {
+      "index": 45,
+      "name": "SERV_PROVIDER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal identifier of the provider who performed the medical services on the patient."
+    },
+    {
+      "index": 50,
+      "name": "BILLING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The billing provider associated with the transaction."
+    },
+    {
+      "index": 55,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department ID of the department associated with the transaction."
+    },
+    {
+      "index": 60,
+      "name": "POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The place of service ID of the place of service associated with the transaction"
+    },
+    {
+      "index": 65,
+      "name": "LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The location ID of the location associated with the transaction."
+    },
+    {
+      "index": 70,
+      "name": "SERVICE_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The service area ID of the service area associated with the transaction."
+    },
+    {
+      "index": 75,
+      "name": "MODIFIER_ONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The first procedure modifier associated with this transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 80,
+      "name": "MODIFIER_TWO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The second procedure modifier associated with this transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 85,
+      "name": "MODIFIER_THREE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The third procedure modifier associated with this transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 90,
+      "name": "MODIFIER_FOUR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fourth procedure modifier associated with this transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 95,
+      "name": "PRIMARY_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The primary diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 100,
+      "name": "DX_TWO_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The second diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 105,
+      "name": "DX_THREE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The third diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 110,
+      "name": "DX_FOUR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The fourth diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 115,
+      "name": "DX_FIVE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The fifth diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 120,
+      "name": "DX_SIX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sixth diagnosis ID associated with the transaction."
+    },
+    {
+      "index": 125,
+      "name": "PROCEDURE_QUANTITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The quantity as entered in Charge Entry for the procedure of this transaction (TX_ID). If the row has a DETAIL_TYPE value of 10-13, this column displays a negative value. If the row has a DETAIL_TYPE value of 20-33, 43-45, 50, or 51, this column displays a zero."
+    },
+    {
+      "index": 130,
+      "name": "AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The original amount of this transaction."
+    },
+    {
+      "index": 135,
+      "name": "OUTSTANDING_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The outstanding amount of the transaction."
+    },
+    {
+      "index": 140,
+      "name": "INSURANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The insurance portion of the transaction."
+    },
+    {
+      "index": 145,
+      "name": "PATIENT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient or self-pay portion of the transaction."
+    },
+    {
+      "index": 150,
+      "name": "VOID_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "If this transaction is voided, this column will have the date in which this transaction is voided."
+    },
+    {
+      "index": 155,
+      "name": "LAST_ACTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column contains the most recent date when an action is performed on this transaction."
+    },
+    {
+      "index": 160,
+      "name": "PROV_SPECIALTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the provider specialty of the provider associated with the transaction. The procedure category of the charge on the transaction may affect what specialty is recorded here and in the \"Encounter Specialty\" displayed in Hyperspace.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 166,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Procedure ID of the procedure associated with the transaction."
+    },
+    {
+      "index": 171,
+      "name": "TOTAL_MATCH_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the total amount matched to the transaction, including adjustments."
+    },
+    {
+      "index": 176,
+      "name": "TOTAL_MTCH_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the total insurance amount matched to the transaction, including adjustments."
+    },
+    {
+      "index": 181,
+      "name": "TOTAL_MTCH_ADJ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the total adjustment amount matched to the transaction."
+    },
+    {
+      "index": 186,
+      "name": "TOTAL_MTCH_INS_ADJ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the total insurance adjustment amount matched to the transaction."
+    },
+    {
+      "index": 191,
+      "name": "REPOST_ETR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the repost source transaction."
+    },
+    {
+      "index": 196,
+      "name": "REPOST_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The repost type category ID for the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRepost\n\n\nCorrection"
+    },
+    {
+      "index": 205,
+      "name": "DISCOUNT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The discount type category ID for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNone\n\n\nPercentage\n\n\nFee Schedule\n\n\nExtension"
+    },
+    {
+      "index": 216,
+      "name": "ENC_FORM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The encounter form number corresponding to the charge transaction. If you are not using encounter forms, a negative number is stored in this item."
+    },
+    {
+      "index": 221,
+      "name": "BEN_SELF_PAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the adjudicated self-pay amount calculated by the benefits engine"
+    },
+    {
+      "index": 226,
+      "name": "BEN_ADJ_COPAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the copay part of the adjudicated self-pay amount calculated by the benefits engine"
+    },
+    {
+      "index": 231,
+      "name": "BEN_ADJ_COINS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the coinsurance part of the adjudicated self-pay amount calculated by the benefits engine"
+    },
+    {
+      "index": 236,
+      "name": "VISIT_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the visit number for this transaction."
+    },
+    {
+      "index": 241,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Referral (RFL) ID for this transaction."
+    },
+    {
+      "index": 246,
+      "name": "ORIGINAL_EPM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the original payor (EPM) ID for this transaction."
+    },
+    {
+      "index": 251,
+      "name": "ORIGINAL_EPM_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 256,
+      "name": "ORIGINAL_FC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the original financial class for this transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+    },
+    {
+      "index": 277,
+      "name": "ORIGINAL_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the original coverage (CVG) ID for this transaction."
+    },
+    {
+      "index": 282,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the current payor (EPM) ID for this transaction."
+    },
+    {
+      "index": 287,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 292,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the current coverage (CVG) ID for this transaction."
+    },
+    {
+      "index": 297,
+      "name": "ASGN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the assignment flag for a coverage.  This item is set to Yes if the charge is currently assigned to the payor in the PAYOR_ID column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 306,
+      "name": "FACILITY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the facility (EAF) ID for this transaction."
+    },
+    {
+      "index": 311,
+      "name": "PAYMENT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the payment source for credit transactions. This is a list of possible sources including Cash, Check, Credit Card, etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCash\n\n\nCheck\n\n\nCredit Card\n\n\nEOB\n\n\nVoucher\n\n\nBank Account\n\n\nTrust Account"
+    },
+    {
+      "index": 325,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the user who posted the transaction."
+    },
+    {
+      "index": 330,
+      "name": "NOT_BILL_INS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the transaction is marked for do not bill insurance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 339,
+      "name": "CHG_ROUTER_SRC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the universal charge line (UCL) ID for this transaction."
+    },
+    {
+      "index": 344,
+      "name": "RECEIVE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the charge entry batch receive date."
+    },
+    {
+      "index": 349,
+      "name": "CE_CODED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date this�charge session was coded, from charge entry."
+    },
+    {
+      "index": 354,
+      "name": "PANEL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the panel procedure that generated this transaction."
+    },
+    {
+      "index": 359,
+      "name": "BILL_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Networked to BIL: the Bill Area for this transaction."
+    },
+    {
+      "index": 364,
+      "name": "BILL_AREA_ID_BILL_AREA_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record name of this bill area, financial subdivision, or financial division."
+    },
+    {
+      "index": 369,
+      "name": "CREDIT_SRC_MODULE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The module that creates a payment or credit adjustment\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccount Maintenance\n\n\nPayment Posting\n\n\nAdjustment Posting\n\n\nCollection (text)\n\n\nCollection Workqueue\n\n\nCharge Entry\n\n\nRetroadjudication\n\n\nSmall Balance Write-off in Bills\n\n\nTransfer\n\n\nTransaction Import\n\n\nClaim Processing\n\n\nMyChart Web\n\n\nElectronic Remittance\n\n\nClaim Bundling Utility\n\n\nReal Time Charge Interface\n\n\nSecondary Write-off\n\n\nDental Treatment Plan\n\n\nTransaction Maintenance Utilities\n\n\nFollow-up workqueue User\n\n\nCheck-in/Check-out\n\n\nCharge Homing\n\n\nRelease of Information\n\n\nEnterprise Payment Posting\n\n\nReimbursement Recalculation Utility\n\n\nCharge Correction\n\n\nCharge Repost\n\n\nClaim Edit Workqueue\n\n\nPatient Refund\n\n\nHB Integrity Checks\n\n\nWelcome\n\n\nPB Extract Framework\n\n\nSBO Collection Actions\n\n\nNightly Processing\n\n\nWeb Service\n\n\nAuto Pay Payment Plan\n\n\nPharmacy\n\n\nPayment Collection\n\n\nFinancial Assistance\n\n\nCredit Workqueue System\n\n\nCredit Workqueue User\n\n\nFollow-up Workqueue System\n\n\nSelf-Pay Discount\n\n\nAdjustment Review Workqueue\n\n\nCharge Router Void\n\n\nCharge Router Repost\n\n\nRescheduling Repost\n\n\nPrepay Discount Adjustment\n\n\nBundled Payment Distribution\n\n\nAccount Workqueue\n\n\nClaim run Accept\n\n\nChange Guarantor\n\n\nMyChart Mobile\n\n\nGuest Pay\n\n\nVisit Auto Pay\n\n\nDental Upgrade Adjustment\n\n\nPromotion Discount\n\n\nDiscretionary Discount\n\n\nNon-Primary Not Allowed Adjustment\n\n\nEstimate\n\n\nAdjustment Review WQ Decline\n\n\nTwo-Way SMS"
+    },
+    {
+      "index": 437,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date that this row was last updated."
+    },
+    {
+      "index": 442,
+      "name": "CLAIM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The most recent date that this transaction has been on an accepted claim run."
+    },
+    {
+      "index": 447,
+      "name": "IPP_INV_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the original invoice number that user posts to in GUI payment posting or remittance."
+    },
+    {
+      "index": 452,
+      "name": "IPP_INV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the original invoice ID that user posts to in�graphical user interface�(GUI) payment posting or remittance."
+    }
+  ]
+}

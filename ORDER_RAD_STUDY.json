@@ -1,0 +1,94 @@
+{
+  "table_name": "ORDER_RAD_STUDY",
+  "description": "This table stores information about actions performed on the study in imaging departments.",
+  "primary_key": {
+    "column_name": "ORDER_PROC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order record associated with this procedure order."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "STUDY_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mode category ID for this study (Study Review, Transcription Entry).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStudy Review\n\n\nTranscription Entry\n\n\nTech Entry\n\n\nRevise Results\n\n\nWet Read\n\n\nProcedure Documentation\n\n\nReading Work List\n\n\nExternal Order"
+    },
+    {
+      "index": 27,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the user performing the study action."
+    },
+    {
+      "index": 32,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "*** Deprecated *** The deprecated column's data is no longer populated in Chronicles and is no longer available. Study user login department."
+    },
+    {
+      "index": 37,
+      "name": "STUDY_CHAR_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The character count for the current study. Typically used to track transcriptionist productivity."
+    },
+    {
+      "index": 42,
+      "name": "AUDIT_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action category ID for the study (sent to transcription, signed, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAppointment Scheduled\n\n\nBegan Exam\n\n\nEnded Exam\n\n\nPhysicians Assigned\n\n\nSaved\n\n\nSigned\n\n\nStatus Changed\n\n\nAppointment Canceled\n\n\nAppt Rescheduled\n\n\nSent to Transcription\n\n\nTranscribed\n\n\nMarked as Preliminary\n\n\nMarked as Queued Prelim\n\n\nSent to Queued Trans\n\n\nQueued Signed\n\n\nStatus Coordinated\n\n\nUnlinked from Appointment\n\n\nLinked to Appointment\n\n\nNeeds Review\n\n\nQueued Needs Review\n\n\nProcedure Changed\n\n\nAccession Number Changed\n\n\nModifier Changed\n\n\nAppointment Reassigned\n\n\nRemoved\n\n\nProcedure Started\n\n\nProcedure Finished\n\n\nProcedure Discontinued\n\n\nDICOM Message Linked\n\n\nSystem Removed\n\n\nOverride Begin/End Stop\n\n\nOrder Released\n\n\nFinalized Protocol\n\n\nCleared Protocol\n\n\nEOD Processing\n\n\nFinal by Administrator\n\n\nBackground Processing\n\n\nSent for Resident Revision\n\n\nExternal Read Added to Work List\n\n\nPermanent Transfer Added To Study History\n\n\nBack to Lists\n\n\nUnlinked from Study\n\n\nLinked to Study\n\n\nClaim Study\n\n\nMove Result\n\n\nDICOM SR Results Filed\n\n\nRevise Final Study\n\n\nMarked as Wet Read\n\n\nMarked as No Protocols Needed\n\n\nSaved in Update Asmt/Recs Activity\n\n\nFlagged For Scheduling\n\n\nSigned After Procedure Changed\n\n\nProcedure Changed After Final\n\n\nSent for Tech Revision\n\n\nReassigned Protocol\n\n\nCompleted by Tech\n\n\nRouted Protocol\n\n\nDocumented by Tech\n\n\nResult Tracking Updated\n\n\nResult Tracking Required\n\n\nResult Tracking Completed\n\n\nProvider Changed After Final\n\n\nAuto Finalized\n\n\nProcedure Correction\n\n\nScreening Form Created\n\n\nScreening Form Completed\n\n\nOrder Canceled\n\n\nUpdated Protocol\n\n\nLetter Needed\n\n\nLetter Not Needed\n\n\nCC Recipients Changed\n\n\nQT Elements Edited\n\n\nUpdated Image Availability\n\n\nRefreshed Mammo Reporting Data\n\n\nImages Linked to Order\n\n\nImages Unlinked from Order\n\n\nStudy Marked as Reviewed\n\n\nSign Order\n\n\nChange Order\n\n\nOrder Updated by Interface\n\n\nPatient Contact Mover\n\n\nLast Procedure Changed\n\n\nMammo History Updated\n\n\nSynchronized Protocol\n\n\nScreening Form Created From Order Sign\n\n\nOrdering Provider Changed\n\n\nOrdering Department Changed\n\n\nDiagnosis Changed\n\n\nResulting Agency Change\n\n\nPerformable Changed After Final\n\n\nOrder Placed\n\n\nFindings Copied from a Previous Study\n\n\nVerified Findings Copied from a Previous Study\n\n\nStudy Restored\n\n\nOrder Note\n\n\nAutomatic Comparison Selection\n\n\nUpdate Comparison Studies\n\n\nCorrect ECG Scheduling\n\n\nReading Physician Updated \n\n\nUpdated By Conversion\n\n\nCreated By Care Everywhere Order Reconciliation\n\n\nUpdated by Administrative Utility"
+    },
+    {
+      "index": 151,
+      "name": "STUDY_TIME",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The amount of time (in seconds) the study was open."
+    },
+    {
+      "index": 156,
+      "name": "DISCREPANCY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The discrepancy category ID, populated when another physician has a discrepancy with the previous result for this exam.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDiscrepancy\n\n\nNo Discrepancy"
+    },
+    {
+      "index": 165,
+      "name": "DISCREPANCY_CMNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free text comment associated with a discrepancy."
+    },
+    {
+      "index": 170,
+      "name": "DISCREPANCY_READ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a discrepancy has been acted on for this order. 'Y' indicates the discrepancy has been acted upon.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 179,
+      "name": "STUDY_LINE_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This stores the number of imaging result text lines added with the contact. It is intended to be used in imaging transcription productivity reporting. STUDY_CHAR_CNT and STUDY_WORD_CNT can also be used for character and word counts of result text added in any given contact. All contacts should be reported on, not just the most recent contact."
+    }
+  ]
+}

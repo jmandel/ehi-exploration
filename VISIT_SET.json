@@ -1,0 +1,66 @@
+{
+  "table_name": "VISIT_SET",
+  "description": "The VISIT_SET table contains high-level information about a single visit set, which is a template for recurring visits to address the care required for a patient. Most workflow-related information in VST is overtime and found in the VISIT_SET_VERSION table.",
+  "primary_key": {
+    "column_name": "VISIT_SET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "VISIT_SET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the visit set record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...). Category values are stored in table ZC_RECORD_STATUS_2.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "RECORD_TYPE_VST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of this visit set record, used to differentiate various implementations of the VST masterfile.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nService Planning"
+    },
+    {
+      "index": 25,
+      "name": "SCHEDULING_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department in which to schedule visits created from this visit set."
+    },
+    {
+      "index": 30,
+      "name": "ORDER_COMMENT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The note record that contains order comments for all versions of the visit set. The order comment is reviewed and approved by a physician."
+    },
+    {
+      "index": 35,
+      "name": "SCHED_INSTRUCTIONS_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The note record that contains scheduling instructions for all versions of the visit set. Scheduling instructions serve to provide additional context to schedulers and are neither reviewed nor approved by a physician."
+    },
+    {
+      "index": 40,
+      "name": "RECORD_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the record was created"
+    },
+    {
+      "index": 45,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the patient to whom this visit set belongs. This value is populated for visit sets associated with a Compass Rose episode."
+    }
+  ]
+}

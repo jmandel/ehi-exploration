@@ -1,0 +1,87 @@
+{
+  "table_name": "UNOS_IMMUNO_INFO",
+  "description": "This table contains immunosuppression information reported to the United Network for Organ Sharing (UNOS) for each registry record or form. Information from this table can be linked to the PATIENT table by joining  with the UNOS_INFO table.",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Registry data record ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "IMMUNO_IDENTIFIER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The immunosuppression drug ID."
+    },
+    {
+      "index": 17,
+      "name": "UNOS_DRUG_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunosuppression drug code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSandimmune\n\n\nNeoral\n\n\nPrograf (tacrolimus)\n\n\nRapamune (sirolimus)\n\n\nLeflunomide (LFL)\n\n\nImuran (azathioprine, AZA)\n\n\nCellCept (MMF)\n\n\nCytoxan (cyclophosphamide)\n\n\nMethotrexate (Folex PFS, Mexate-AQ, Rheumatrex)\n\n\nAtgam\n\n\nNRATG / NRATS\n\n\nOKT3 (Orthoclone, Muromonab)\n\n\nT10B9 (Medimmune)\n\n\nThymoglobulin\n\n\nZenapax - Daclizumab\n\n\nSimulect (basiliximab)\n\n\nGengraf\n\n\nZortress (everolimus)\n\n\nEON (Generic Cyclosporine)\n\n\nMyfortic (mycophenolic acid)\n\n\nGeneric Cyclosporine\n\n\nSteroids (prednisone, methylprednisolone, Solumedrol, Medrol)\n\n\nCampath (alemtuzumab)\n\n\nFTY 720\n\n\nRituxan (rituximab)\n\n\nAstagraf XL (extended release tacrolimus)\n\n\nGeneric Tacrolimus (generic Prograf)\n\n\nGeneric MMF (generic CellCept)\n\n\nNulojix (belatacept)\n\n\nGeneric Myfortic (generic mycophenolic acid)\n\n\nGeneric Sirolimus\n\n\nEnvarsus XR (tacrolimus XR)\n\n\nOther Immunosuppressive Medication\n\n\nOther Investigational Immunosuppressive Medication\n\n\nALG\n\n\nCyclosporin\n\n\nOKT4"
+    },
+    {
+      "index": 61,
+      "name": "IMM_PREV_MAINT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the drug was used previously for maintenance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 70,
+      "name": "IMM_CUR_MAINT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the drug is currently being used in the follow-up period for maintenance.\n\n\n The category values for this column were already listed for column: IMM_PREV_MAINT_YN"
+    },
+    {
+      "index": 76,
+      "name": "IMM_ANTI_REJECT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the drug was used as an anti-rejection agent.\n\n\n The category values for this column were already listed for column: IMM_PREV_MAINT_YN"
+    },
+    {
+      "index": 82,
+      "name": "IMM_DRUG_CODE_OTHER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The drug code's description, if it is not one of the available options in column UNOS_DRUG_CODE_C."
+    },
+    {
+      "index": 87,
+      "name": "UNOS_IMM_INDU_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this drug was used for induction.\n\n\n The category values for this column were already listed for column: IMM_PREV_MAINT_YN"
+    },
+    {
+      "index": 93,
+      "name": "UNOS_IMM_INDU_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total number of days this drug was administered for induction if this drug was used for induction."
+    },
+    {
+      "index": 98,
+      "name": "UNOS_IMM_INDU_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this drug was used for induction, and the number of days used for induction is not available, this indicates why.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nN/A\n\n\nNot Done\n\n\nMissing\n\n\nUnknown"
+    }
+  ]
+}

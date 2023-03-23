@@ -1,0 +1,31 @@
+{
+  "table_name": "AP_CLAIM_PROC_IDS_CSR",
+  "description": "This table stores the linkages between AP claims (CLM records) and service lines (ETR records) that store adjudication results for cost-sharing reduction (CSR) reconciliation. A common use case for this table is to link from claim-level summary tables to service-line-level summary tables. For example, one path is to join AP_CLAIM to AP_CLAIM_PROC_IDS_CSR on CLAIM_ID and AP_CLAIM_PROC_IDS_CSR to AP_CLAIM_PROC on TX_ID.",
+  "primary_key": {
+    "column_name": "CLAIM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID for the claim record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The service line number of the claim this row corresponds to, as stored in Chronicles CLM item 19250."
+    },
+    {
+      "index": 12,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the transaction record that stores all service line information for cost-sharing reduction (CSR) reconciliation calculations. These records are commonly referred to as procedures, services, transactions, or service lines."
+    }
+  ]
+}

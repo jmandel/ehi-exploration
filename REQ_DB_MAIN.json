@@ -1,0 +1,472 @@
+{
+  "table_name": "REQ_DB_MAIN",
+  "description": "The main table for requisition entries. It contains mostly patient demographics and items that don't change much over time.",
+  "primary_key": {
+    "column_name": "REQUISITION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REQUISITION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the requisition record."
+    },
+    {
+      "index": 7,
+      "name": "REQ_GROUPER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a requisition is created for a non-participating submitter it is attached to a requisition grouper record rather than a patient record."
+    },
+    {
+      "index": 12,
+      "name": "REQ_PAT_CONTACT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the patient contact that this requisition is linked to."
+    },
+    {
+      "index": 17,
+      "name": "REQ_LAB_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the laboratory associated with this requisition."
+    },
+    {
+      "index": 22,
+      "name": "REQ_SUBMITTER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the submitter associated with this requisition."
+    },
+    {
+      "index": 27,
+      "name": "REQ_SUBMITTER_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the submitter record."
+    },
+    {
+      "index": 32,
+      "name": "REQ_COLL_SITE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Used for toxicology submitters to track where the specimen was collected."
+    },
+    {
+      "index": 37,
+      "name": "REQ_COLL_SITE_ID_COL_SITE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the collection site."
+    },
+    {
+      "index": 42,
+      "name": "REQ_SUBM_PT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the patient's ID at the submitter site."
+    },
+    {
+      "index": 47,
+      "name": "REQ_AUTH_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The authorizing provider associated with this requisition."
+    },
+    {
+      "index": 52,
+      "name": "REQ_EMPLOYER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the patient's employer."
+    },
+    {
+      "index": 57,
+      "name": "REQ_EMPLOYER_ID_EMPLOYER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer."
+    },
+    {
+      "index": 62,
+      "name": "REQ_EMPLOYER_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the patient's ID at the employer's site."
+    },
+    {
+      "index": 67,
+      "name": "REQ_STUDY_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text study number that can be entered during requisition entry"
+    },
+    {
+      "index": 72,
+      "name": "REQ_INTERVAL_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Interval number often used in research studies"
+    },
+    {
+      "index": 77,
+      "name": "REQ_ROOM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the room number associated with this requisition."
+    },
+    {
+      "index": 82,
+      "name": "REQ_CHART_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the chart number associated with this requisition."
+    },
+    {
+      "index": 87,
+      "name": "REQ_COUNSELOR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the counselor associated with this requisition."
+    },
+    {
+      "index": 92,
+      "name": "REQ_COUNSEL_PHN_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phone number for the counselor associated with this requisition."
+    },
+    {
+      "index": 97,
+      "name": "REQ_PAT_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the city of the patient associated with this requisition."
+    },
+    {
+      "index": 102,
+      "name": "REQ_PAT_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ZIP of the patient associated with this requisition."
+    },
+    {
+      "index": 107,
+      "name": "REQ_PAT_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the county of the patient associated with this requisition.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 113,
+      "name": "REQ_PAT_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the country of the patient associated with this requisition.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 119,
+      "name": "REQ_BILL_TO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Designates which entity should be primarily responsible for the charges generated by the requisition.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClient Bill\n\n\nPatient Bill"
+    },
+    {
+      "index": 128,
+      "name": "REQ_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The account that should be used for requisition billing."
+    },
+    {
+      "index": 133,
+      "name": "REQ_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Coverage attached to the requisition for billing."
+    },
+    {
+      "index": 138,
+      "name": "REQ_COMMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments associated with the requisition"
+    },
+    {
+      "index": 143,
+      "name": "TIME_COLL_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores time collected entered in Express Requisition Entry. This item is only used temporarily until an specimen (OVS) record is created for the requisition (REQ) record."
+    },
+    {
+      "index": 148,
+      "name": "REQ_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether the requisition is active, closed or canceled\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Progress\n\n\nCompleted\n\n\nCanceled\n\n\nGenerating"
+    },
+    {
+      "index": 159,
+      "name": "EXTERNAL_VISIT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External visit identifier of the requisition"
+    },
+    {
+      "index": 164,
+      "name": "PATIENT_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores patient gender entered during requisition entry.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 177,
+      "name": "PATIENT_DOB",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Patient date of birth as it was entered during requisition entry."
+    },
+    {
+      "index": 182,
+      "name": "AGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Age of the requisition's patient"
+    },
+    {
+      "index": 187,
+      "name": "AGE_UNITS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Units for the age of the requisition's patient\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYears\n\n\nMonths\n\n\nWeeks\n\n\nDays\n\n\nHours"
+    },
+    {
+      "index": 199,
+      "name": "PATIENT_SSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "SSN as it was entered during requisition entry."
+    },
+    {
+      "index": 204,
+      "name": "NON_HUMAN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate the requisition's patient is non-human\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 213,
+      "name": "OUT_SPEC_DET_FLG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column determines whether Specimen Details have been saved for the Requisition. Note it is only used and set from the Web Outreach system- if Specimen Details are saved in another way, this column will not get updated until the next time the Specimen Details data is accessed from the Web Outreach system.\n\n\n The category values for this column were already listed for column: NON_HUMAN_YN"
+    },
+    {
+      "index": 219,
+      "name": "ACUTE_CONVAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Item to store acute/convalescent flag entered in Express Req Entry. This item is only used temporarily until a Specimen (OVS) record is created for the Requisition (REQ) record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAcute\n\n\nConvalescent"
+    },
+    {
+      "index": 228,
+      "name": "DATE_ENTR_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the requisition was created in Requisition Entry. If the requisition was pre-printed, this item stores the date it was pre-printed, and once the requisition is received in the lab, the date it was received."
+    },
+    {
+      "index": 233,
+      "name": "STUDY_NUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the study number associated with this requisition.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 239,
+      "name": "INTERNAL_COMMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores internal comments related to the requisition. These are not sent on any external reports."
+    },
+    {
+      "index": 244,
+      "name": "REQUISITION_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the name of the Requisition record."
+    },
+    {
+      "index": 249,
+      "name": "REQ_PAT_HOUSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the house number of the patient associated with this requisition."
+    },
+    {
+      "index": 254,
+      "name": "REQ_PAT_DISTRICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the district of the patient associated with this requisition.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 260,
+      "name": "ORDERING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the ordering provider record for this row."
+    },
+    {
+      "index": 265,
+      "name": "ORD_PROV_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment associated with the ordering provider for this row."
+    },
+    {
+      "index": 270,
+      "name": "AUTH_PROV_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment associated with the authorizing provider for this row."
+    },
+    {
+      "index": 275,
+      "name": "PAT_BIRTH_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Patient date and time of birth as it was entered during requisition entry."
+    },
+    {
+      "index": 280,
+      "name": "LAB_BILL_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The billing encounter to use by default for charges from this requisition's orders."
+    },
+    {
+      "index": 285,
+      "name": "ETHNIC_GROUP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ethnic group category number for the requisition's patient.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 291,
+      "name": "SUBM_PAT_ALIAS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "References an alternate form of a patient's name that is sent either by interface or paper requisition form from an outside submitter. This is used in reporting results back to the submitter. The name is stored in the Person Name database."
+    },
+    {
+      "index": 296,
+      "name": "ENTERING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record who created this requisition. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 301,
+      "name": "INSTANT_PAT_ASSOC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the patient was associated with the requisition."
+    },
+    {
+      "index": 306,
+      "name": "GENDER_IDENTITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The gender identity category ID for the requisition.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nTransgender Female\n\n\nTransgender Male\n\n\nOther\n\n\nChoose not to disclose"
+    },
+    {
+      "index": 319,
+      "name": "SEX_ASGN_AT_BIRTH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The sex assigned at birth category ID for the requisition.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNot recorded on birth certificate\n\n\nChoose not to disclose\n\n\nUncertain"
+    },
+    {
+      "index": 332,
+      "name": "AUTOPSY_REC_FROM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization or person that an autopsy was received from on a requisition."
+    },
+    {
+      "index": 337,
+      "name": "AUTOPSY_GEST_AGE_WEEKS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Gestational Age in Weeks of the deceased patient received on a requisition. This field is a free text field."
+    },
+    {
+      "index": 342,
+      "name": "AUTOPSY_MOMS_CHART",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Mother's Chart Number for still born from the autopsy requisition. This will be a free text string to accommodate any type of chart number (numeric, alphanumeric, etc.) from the sending organization."
+    },
+    {
+      "index": 347,
+      "name": "AUTOPSY_FNRL_HOME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stated funeral home for an autopsy that sent the specimens in a requisition."
+    },
+    {
+      "index": 352,
+      "name": "AUTOPSY_DEATH_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the date and time of death of the autopsy patient from a requisition."
+    },
+    {
+      "index": 357,
+      "name": "REQ_ORDER_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the requisition was ordered."
+    },
+    {
+      "index": 362,
+      "name": "PAT_ADDR_HX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the type of address associated with this requisition.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPermanent\n\n\nTemporary\n\n\nConfidential\n\n\nCorrespondence\n\n\nNext of Kin \n\n\nSubscriber Home"
+    },
+    {
+      "index": 375,
+      "name": "AUTH_PROV_ADDR_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider address associated with the requisition that is used to route results from the requisition to the Authorizing Provider."
+    },
+    {
+      "index": 380,
+      "name": "ORD_PROV_ADDR_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider address associated with the requisition that is used to route results from the requisition to the Ordering Provider."
+    },
+    {
+      "index": 385,
+      "name": "ACCT_SERIAL_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The account serial number associated with the requistion."
+    },
+    {
+      "index": 390,
+      "name": "HIDE_FRM_OTH_DEPT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies if this requisition is viewable only in the department it was created in. Indicates whether this requisition is viewable only in the department it was created in. 'Y' indicates that the requisition is hidden in other departments. 'N' or null indicate that the requisition is visible in other departments.\n\n\n The category values for this column were already listed for column: NON_HUMAN_YN"
+    }
+  ]
+}

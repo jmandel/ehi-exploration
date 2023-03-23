@@ -1,0 +1,101 @@
+{
+  "table_name": "PREDICTED_LOS",
+  "description": "The PREDICTED_LOS table contains the predicted length of stay audit trail history.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 32,
+      "name": "PRED_LOS_ENTRY_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of update for the Predicted Length of Stay."
+    },
+    {
+      "index": 37,
+      "name": "PRED_LENGTH_OF_STAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Length of Stay determined by the Predictive Model.\""
+    },
+    {
+      "index": 42,
+      "name": "PRED_LOS_EVENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Event Trigger that caused the Predictive Model to run."
+    },
+    {
+      "index": 47,
+      "name": "PRED_LOS_EVENT_EVENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the event."
+    },
+    {
+      "index": 52,
+      "name": "UPD_PRED_LOS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the prediction value was copied to the operational item.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 61,
+      "name": "PRED_LOS_TRIG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Event Trigger that caused the Predictive Model to run.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdmission\n\n\nDischarge\n\n\nTransfer\n\n\nED Arrival\n\n\nED Dismissal\n\n\nL&D Assessment\n\n\nL&D Admission\n\n\nNewborn Admission\n\n\nUndo Admission\n\n\nUndo Discharge\n\n\nUndo Transfer\n\n\nUpdate Admission\n\n\nUpdate Discharge\n\n\nUpdate Transfer\n\n\nPreadmission\n\n\nAdded Isolation Status\n\n\nRemoved Isolation Status\n\n\nInsert Patient Update\n\n\nUpdate Patient Update\n\n\nPending Event Created\n\n\nBed Requested Ready to Plan\n\n\nBed Request Assigned\n\n\nBed Request Rejected\n\n\nBed Request Approved\n\n\nPending Event Updated\n\n\nHOV Confirm\n\n\nPending Event Canceled\n\n\nPending Event Completed\n\n\nPending Event Restored\n\n\nAppointment Scheduled\n\n\nAppointment Signed In\n\n\nAppointment Checked In\n\n\nAppointment Checked Out\n\n\nAppointment Canceled\n\n\nAppointment Sign In Canceled\n\n\nAppointment Check In Canceled\n\n\nHOV Discharge\n\n\nInpatient Admission\n\n\nDelivery\n\n\nObservation Admission\n\n\nAfter Merge\n\n\nED Roomed\n\n\nTransport Request Put In Pending List\n\n\nPrimary Transport Request Assigned\n\n\nTransport Request In Progress\n\n\nPrimary Transport Request Completed\n\n\nTransport Request Delayed\n\n\nPrimary Transport Request Canceled\n\n\nTransport Request Unassigned\n\n\nSecondary Transport Request Assigned\n\n\nSecondary Transport Request Completed\n\n\nSecondary Transport Request Canceled\n\n\nTransporter Request For Additional Help\n\n\nTransport Warning Escalation\n\n\nTransport Escalation\n\n\nInsert Transfer\n\n\nTransfer Failure - Patient Location Update Generated\n\n\nPrimary Transport Request Acknowledged\n\n\nSecondary Transport Request Acknowledged\n\n\nLeave of Absence\n\n\nReturn From Leave of Absence\n\n\nUndo Leave of Absence\n\n\nUndo Return From Leave of Absence\n\n\nUpdate Leave of Absence\n\n\nUpdate Return From Leave of Absence\n\n\nConvert Discharge to Leave of Absence\n\n\nConvert Leave of Absence to Discharge\n\n\nBed Requested\n\n\nBed Request Pre-assigned\n\n\nBed Request Bed Ready\n\n\nBed Request Requested Delay\n\n\nBed Request Ready to Plan Delay\n\n\nBed Request Pre-assigned Delay\n\n\nBed Request Assigned Delay\n\n\nBed Request Approved Delay\n\n\nBed Request Rejected Delay\n\n\nBed Request Bed Ready Delay\n\n\nTransport Request Linked Appointment Updated\n\n\nTransfer Failure - Transport Generated\n\n\nDischarge Failure - Transport Generated\n\n\nProvider Added to Treatment Team\n\n\nProvider Added As Attending\n\n\nBed Request Ready to Move\n\n\nBed Request Not Ready to Move\n\n\nMidnight Census\n\n\nTransport Ready to Move\n\n\nTransport Not Ready to Move\n\n\nTransport Bed Ready\n\n\nTransport Bed Not Ready\n\n\nTransport Source Location Changed\n\n\nTransport Destination Location Changed\n\n\nDischarge Failure - Patient Location Update Generated\n\n\nTransfer Canceled\n\n\nDischarge Time Delayed\n\n\nDischarge Canceled\n\n\nPatient No Longer Ready\n\n\nOther Patient No Longer Ready\n\n\nBed Request Escalation\n\n\nAnother Bed is Ready\n\n\nDismiss Failure - Patient Location Update Generated\n\n\nED Room Failure - Patient Location Update Generated\n\n\nDischarge Delay Added\n\n\nTransfer Center Request Created\n\n\nTransfer Center Request Accepted\n\n\nTransfer Center Request Completed\n\n\nTransfer Center Request Canceled\n\n\nTransfer Center Request Patient Attached\n\n\nUndo Preadmission\n\n\nOrder Reverted Bed Request\n\n\nOrder Has Meaningful Bed Request Changes\n\n\nOrder Was Discontinued\n\n\nHold Bed Was Canceled\n\n\nHold Bed Was Restored\n\n\nBed Request Unassigned\n\n\nCase Tracking Event Transfer Failure - Patient Location Updated\n\n\nLogistics Request Planned\n\n\nLogistics Request Assigned\n\n\nLogistics Request At Start Location\n\n\nLogistics Request In Progress\n\n\nLogistics Request At End Location\n\n\nLogistics Request Completed \n\n\nLogistics Request Canceled\n\n\nLogistics Request Unassigned\n\n\nLogistics Request Delayed\n\n\nLogistics Technician Escalation\n\n\nLogistics Supervisor Escalation\n\n\nLogistics Manager Escalation\n\n\nLogistics Request Updated\n\n\nLogistics Request Postponed\n\n\nLogistics No Technician In The Sector\n\n\nLogistics Technician Not Returned From Break\n\n\nLogistics Technician Total Break Time Exceeded\n\n\nLogistics Update Patient Location Action Failed\n\n\nLogistics Request Bed Clean for Patient's Bed Action Failed \n\n\nLogistics Update Bed Status Action Failed\n\n\nLogistics Print Ticket To Ride Action Failed\n\n\nLogistics Complete Pending Discharge Action Failed\n\n\nLogistics Complete Pending Transfer Action Failed\n\n\nLogistics Break Start\n\n\nLogistics Update Bed Blocks Action Failed\n\n\nLogistics Break End\n\n\nLogistics Sign In\n\n\nLogistics Sign Out\n\n\nLogistics Transport Link Appointment Updated\n\n\nOrder Reverted Transfer Center Request\n\n\nOrder Has Meaningful Transfer Center Changes\n\n\nLogistics Request Interrupted\n\n\nLogistics Request Acknowledged\n\n\nLogistics Job Priority Upgraded to High\n\n\nLogistics Job Priority Upgraded to Stat\n\n\nLogistics Job Now Upcoming\n\n\nLogistics Automatic Transport Creation Failed\n\n\nADT Order Error\n\n\nPatient Verification\n\n\nEncounter Verification\n\n\nHAR Verification\n\n\nHAR 2 Verification\n\n\nPatient's PCP Notification Preference Changed\n\n\nSurgical Case Scheduled\n\n\nHospital Coding Complete\n\n\nAppointment Canceled (Same Day)\n\n\nAppointment Roomed\n\n\nClose Nurse Triage Encounter"
+    },
+    {
+      "index": 231,
+      "name": "PRED_LOS_ACCPTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item represents whether or not this prediction was accepted by an end user. If it was, then this prediction will be copied over into the expected length of stay and end users will no longer be prompted to use the prediction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes\n\n\nNot Shown"
+    }
+  ]
+}

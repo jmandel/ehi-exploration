@@ -1,0 +1,430 @@
+{
+  "table_name": "DOCS_RCVD_ENCOUNTERS",
+  "description": "Encounters received from external documents.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "EVENT_START_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Start instant (date and time) for the encounter."
+    },
+    {
+      "index": 27,
+      "name": "EVENT_END_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "End instant (date and time) for the encounter."
+    },
+    {
+      "index": 32,
+      "name": "EVENT_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique identifier for the encounter in which the document was edited on the remote system. This is either a contact serial number (CSN) or, if using IntraConnect, a Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 37,
+      "name": "EVENT_ENC_MOOD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Mood code of the remote encounter."
+    },
+    {
+      "index": 42,
+      "name": "EVENT_ENC_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text name of the remote encounter type."
+    },
+    {
+      "index": 47,
+      "name": "EVENT_ENC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Encounter type of the contact at the remote organization.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRegistration\n\n\nWalk-In\n\n\nHospital Encounter\n\n\nCanceled\n\n\nUnmerge\n\n\nContact Moved\n\n\nIntake\n\n\nEMPTY\n\n\nResearch Encounter\n\n\nRecurring Plan\n\n\nUpdate\n\n\nPCP/Clinic Change\n\n\nWait List\n\n\nEnrollment\n\n\nSocial Care Application\n\n\nService Decision Registration\n\n\nLeader Rounds\n\n\nClerical Orders\n\n\nMother Baby Link\n\n\nLactation Encounter\n\n\nAppointment\n\n\nSurgery\n\n\nAnesthesia\n\n\nAnesthesia Event\n\n\nGuardian Screening\n\n\nAncillary Procedure\n\n\nAnticoagulation Discharge Documentation\n\n\nHealth Maintenance Letter\n\n\nPatient Message\n\n\nE-Visit\n\n\nMobile Order Only\n\n\nQuestionnaire Series Submission\n\n\nTravel\n\n\nPatient Self-Triage\n\n\nCommunity Care Management\n\n\nPatient Outreach\n\n\nTelephone\n\n\nNurse Triage\n\n\nE-Consult\n\n\nE-Consult Community Order\n\n\nClinical Documentation Only\n\n\nTelemedicine\n\n\nPlan of Care Documentation\n\n\nExternal Communication\n\n\nReconciled Outside Data\n\n\nExternal Contact\n\n\nOphth Exam\n\n\nRecurring Billing Documentation\n\n\nPre-Admission Testing\n\n\nHospice Admission\n\n\nHome Infusion\n\n\nHome Infusion Billing\n\n\nHome Health Resumption of Care Planning\n\n\nHome Health Admission\n\n\nHome Care Visit\n\n\nHome Care Update\n\n\nKanta Service Event\n\n\nPatient Web Update\n\n\nCommunity Orders\n\n\nCommittee Review\n\n\nPost Mortem Documentation\n\n\nBilling Encounter\n\n\nLab Requisition\n\n\nOffice Visit\n\n\nConsent Form\n\n\nProcedure Pass\n\n\nExternal Hospital Admission\n\n\nLetter (Out)\n\n\nHospital\n\n\nRefill\n\n\nImmunization\n\n\nHistory\n\n\nReferral\n\n\nOrders Only\n\n\nRx Refill Authorize\n\n\nMeds Only (Web)\n\n\nMeds Void (Web)\n\n\nResolute Professional Billing Hospital Prof Fee\n\n\nEpisode Changes\n\n\nAncillary Orders\n\n\nPharmacy Visit\n\n\nBPA\n\n\nAbstract"
+    },
+    {
+      "index": 137,
+      "name": "EVENT_POS_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The place of service code category ID for the location where the patient's encounter on the remote system occurred. Category values can be found in ZC_POS_TYPE.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 195,
+      "name": "EVENT_KEY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Key for use by other related event groups."
+    },
+    {
+      "index": 200,
+      "name": "EVENT_SPECIALTY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text name for the department specialty associated with the event."
+    },
+    {
+      "index": 205,
+      "name": "EVENT_SPECIALTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Department specialty category ID associated with the event.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 211,
+      "name": "EVENT_DEPT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text department name for the encounter."
+    },
+    {
+      "index": 216,
+      "name": "EVENT_DEPT_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the department ID for the encounter."
+    },
+    {
+      "index": 221,
+      "name": "EVENT_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text description for this event."
+    },
+    {
+      "index": 226,
+      "name": "EVENT_DOC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID for the encounter document."
+    },
+    {
+      "index": 231,
+      "name": "EVENT_DOC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Document Type category ID linked to this event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClinical Summary\n\n\nDocument List\n\n\nOther Results\n\n\nEncounter Summary\n\n\nLab Results\n\n\nContinuity of Care Document\n\n\nReferral Summary\n\n\nDischarge Summary\n\n\nLPR3 Document\n\n\nLPR3 Event Document\n\n\nEmergency Department Summary\n\n\nExternal Document - PDF\n\n\nExternal Document - Text\n\n\nQuality Reporting Document Architecture\n\n\nContinuity of Care Record\n\n\nCare Plan\n\n\nOverall Plan of Care\n\n\nPatient Health Summary\n\n\nConstellation Update\n\n\nLabor and Delivery Summary\n\n\nLaboratory Reports\n\n\nImmunization Content\n\n\nConsultation Note\n\n\nDiagnostic Imaging Report\n\n\nHistory and Physical Note\n\n\nOperative Note\n\n\nProcedure Note\n\n\nProgress Note\n\n\nPhysician consulting Progress note\n\n\nLocation Summary\n\n\nIRIS Ophthalmology Report\n\n\nPayer Document\n\n\nEndoscopy Registry\n\n\nPatient Level Quality Reporting Document\n\n\nPopulation Level Quality Reporting Document\n\n\nCancer Registry\n\n\nInitial Public Health Case Report\n\n\nOutgoing Death Registry Reporting IHE VRDR Profile\n\n\nOutgoing NHCS Survey Documents\n\n\nPatient-Reported Information\n\n\nSpecialist Letter\n\n\nDecision Support Request\n\n\nCosmos Document Patient Level\n\n\nCosmos Document Encounter Level\n\n\nTreatment Document - eArchive\n\n\nForms - eArchive\n\n\nService Event - eArchive\n\n\nFinland eRx\n\n\nKanta Social Care\n\n\nTHL Registry Document\n\n\nTHL Calculation Document\n\n\nNavitas Patient Summary Document\n\n\nNavitas Encounter Document\n\n\nNavitas Imaging Document\n\n\nUSCDI CCD (Patient Level) \n\n\nUSCDI CCD (Encounter Level) \n\n\n2015 CCDS CCD\n\n\nBasisgegevensset Zorg (BgZ)\n\n\nBasisgegevensset Zorg (BgZ) - Encounter\n\n\nClinical Analytics\n\n\nOverall Clinical Analytics\n\n\nSupplemental Analytics\n\n\nOverall Supplemental Analytics\n\n\nTransplant Episode Summary\n\n\nComprehensive Care Coordination Summary\n\n\nDialysis Summary\n\n\nOncology Summary\n\n\nGenomics Summary\n\n\nHealth Plan Sourced Clinical Summary\n\n\nPatient Dialysis Summary\n\n\nPatient Oncology Summary"
+    },
+    {
+      "index": 309,
+      "name": "EVENT_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text of the location name associated with the patient's encounter on the remote system."
+    },
+    {
+      "index": 314,
+      "name": "EVENT_LOC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the location on the remote system where the patient's encounter occurred."
+    },
+    {
+      "index": 319,
+      "name": "EVENT_MED_REV_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the medication associated with the event was reviewed or not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 328,
+      "name": "EVENT_SRC_DXR_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the source external document CSN (Contact Serial Number) that contains the external event information."
+    },
+    {
+      "index": 333,
+      "name": "EVENT_HL7_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "HL7 encounter type of the contact at the remote organization.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAmbulatory\n\n\nInpatient Encounter\n\n\nEmergency\n\n\nOther"
+    },
+    {
+      "index": 344,
+      "name": "EVENT_CE_ENC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Care Everywhere encounter type of the contact at the remote organization.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRegistration\n\n\nWalk-In\n\n\nHospital Encounter\n\n\nCanceled\n\n\nUnmerge\n\n\nContact Moved\n\n\nEMPTY\n\n\nResearch Encounter\n\n\nRecurring Plan\n\n\nUpdate\n\n\nPCP/Clinic Change\n\n\nWait List\n\n\nEnrollment\n\n\nSocial Care Application\n\n\nService Decision Registration\n\n\nLeader Rounds\n\n\nClerical Orders\n\n\nMother Baby Link\n\n\nLactation Encounter\n\n\nAppointment\n\n\nSurgery\n\n\nAnesthesia�\n\n\nAnesthesia Event\n\n\nAncillary Procedure\n\n\nAnticoagulation Discharge Documentation\n\n\nHealth Maintenance Letter\n\n\nPatient Email\n\n\nE-Visit\n\n\nMobile Order Only\n\n\nQuestionnaire Series Submission\n\n\nPatient Self-Triage\n\n\nCommunity Care Management\n\n\nPatient Outreach\n\n\nTelephone\n\n\nNurse Triage\n\n\nE-Consult\n\n\nE-Consult Community Order\n\n\nClinical Documentation Only\n\n\nTelemedicine\n\n\nUPOC Documentation\n\n\nExternal Communication\n\n\nReconciled Outside Data\n\n\nExternal Contact\n\n\nOphth Exam\n\n\nRecurring Billing Documentation\n\n\nPre-Admission Testing\n\n\nHospice Admission\n\n\nHome Infusion\n\n\nHome Infusion BIlling\n\n\nHome Health Resumption\n\n\nHome Health Admission\n\n\nHome Care Visit\n\n\nHome Care Update\n\n\nKanta Service Event\n\n\nPatient Web Update\n\n\nCommunity Orders\n\n\nCommittee Review\n\n\nPost Mortem Documentation\n\n\nBilling Encounter\n\n\nLab Requisition\n\n\nOffice Visit\n\n\nConsent Form\n\n\nProcedure Pass\n\n\nExternal Hospital Admission\n\n\nLetter (Out)\n\n\nHospital\n\n\nRefill\n\n\nImmunization\n\n\nHistory\n\n\nReferral\n\n\nOrders Only\n\n\nRx Refill Authorize\n\n\nMeds Only (Web)\n\n\nMeds Void (Web)\n\n\nResolute Professional Billing Hospital Prof Fee\n\n\nEpisode Changes\n\n\nAncillary Orders\n\n\nPharmacy Visit\n\n\nBPA\n\n\nConfidential\n\n\nRadiology Appointment\n\n\nAbstract\n\n\nAllied Health\n\n\nNurse Only\n\n\nSocial Work\n\n\nNutrition\n\n\nCase Management\n\n\nEducation\n\n\nTreatment\n\n\nNST\n\n\nE-Prescribe\n\n\nInduction\n\n\nMultidisciplinary Visit\n\n\nConversion Encounter\n\n\nConsult\n\n\nAnticoagulation Visit\n\n\nSpecialty Pharmacy\n\n\nProcedure visit\n\n\nLactation Consult\n\n\nMedication Management\n\n\nRoutine Prenatal\n\n\nInitial Prenatal\n\n\nPostpartum Visit\n\n\nLab\n\n\nEpicOnHand Encounter\n\n\nClinical Support\n\n\nEvaluation\n\n\nFollow-Up\n\n\nRelease of Information\n\n\nDeleted\n\n\nErroneous Encounter\n\n\nErroneous Telephone Encounter\n\n\nScanned Document\n\n\nInfusion\n\n\nAdmission Orders\n\n\nPre-op/Pre-procedure Orders\n\n\nPatient Care Review\n\n\nDocumentation\n\n\nTranscribe Orders\n\n\nPrep for Case\n\n\nHospice F2F Visit\n\n\nTumor Board Conference\n\n\nAudiology\n\n\nAssisted Living/Skilled Nursing \n\n\nDiagnostic Services\n\n\nEmployee Health\n\n\nGenetics\n\n\nGroup Visit \n\n\nInjection\n\n\nImmunotherapy\n\n\nLong Term Care\n\n\nMyChart\n\n\nNursing Home\n\n\nOT/PT\n\n\nPrep for Surgery\n\n\nREI\n\n\nSleep Study\n\n\nSpeech Therapy\n\n\nTransplant Evaluation\n\n\nTransplant Follow Up\n\n\nUrgent Care\n\n\nWell Child \n\n\nWork Comp\n\n\nEmergency\n\n\nIntake\n\n\nTravel\n\n\nOncology Survivorship\n\n\nLegacy Encounter\n\n\nMedication Management Visit - Comprehensive\n\n\nFetal Procedure\n\n\nSurgical Consult\n\n\nProcedural Consult\n\n\nPre-evaluation\n\n\nPrep for Procedure\n\n\nFetal Care Consult\n\n\nHospice Physician Oversight\n\n\nCardiology Conference"
+    },
+    {
+      "index": 508,
+      "name": "EVENT_ED_TO_INP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this encounter was upgraded from ED to Inpatient.  Y indicates that the encounter was upgraded from ED to Inpatient.  N indicates an inpatient encounter that was not upgraded from ED.  Null indicates either a non-inpatient encounter or an encounter for which this information is not available.\n\n\n The category values for this column were already listed for column: EVENT_MED_REV_YN"
+    },
+    {
+      "index": 514,
+      "name": "EVENT_LOS_CPT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the level of service CPT (Current Procedure Terminology) code for where the encounter took place."
+    },
+    {
+      "index": 519,
+      "name": "EVENT_RCVD_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the last received instant."
+    },
+    {
+      "index": 524,
+      "name": "EVENT_SET_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Document set ID that represents a common identifier across all document revisions."
+    },
+    {
+      "index": 529,
+      "name": "EVENT_DUP_EPT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The internal patient contact serial number (CSN) that is a duplicate of this external encounter."
+    },
+    {
+      "index": 534,
+      "name": "EVENT_LST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the last update instant of the event in UTC."
+    },
+    {
+      "index": 539,
+      "name": "EVENT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The note (HNO) ID related to this encounter."
+    },
+    {
+      "index": 544,
+      "name": "EVENT_ADDR_STREET",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Street address of the place where the event occurred."
+    },
+    {
+      "index": 549,
+      "name": "EVENT_ADDR_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The city where the event occurred."
+    },
+    {
+      "index": 554,
+      "name": "EVENT_ADDR_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The state where the event occurred.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 560,
+      "name": "EVENT_ADDR_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The county where the event occurred.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 566,
+      "name": "EVENT_TZ_OFFSET",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the time zone offset of this encounter in hours"
+    },
+    {
+      "index": 571,
+      "name": "EVENT_REL_DOC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores ID of the document that contains a given encounter (event) in its encounter section."
+    },
+    {
+      "index": 576,
+      "name": "RCVD_EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the encounter reference ID received in an external document when reference IDs are not trusted."
+    },
+    {
+      "index": 581,
+      "name": "EVENT_DATA_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the data comes from the encompassingEncounter section or an encounter section of a CDA document, or from the event list. By default (i.e. when this value is blank) the data is assumed to come from the encounter section. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEncompassing Encounter\n\n\nEvent List"
+    },
+    {
+      "index": 590,
+      "name": "REL_DOC_RCVD_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the last received instant of the related document."
+    },
+    {
+      "index": 595,
+      "name": "EVENT_ENC_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the status of the encounter, if cancelled\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOther\n\n\nNormal\n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+    },
+    {
+      "index": 613,
+      "name": "EVENT_HOSP_ADMSN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the encounter is a hospital admission.  Y indicates that the encounter is a hospital admission. N indicates that the encounter is not a hospital admission. NULL indicates an encounter for which this information is not available.\n\n\n The category values for this column were already listed for column: EVENT_MED_REV_YN"
+    },
+    {
+      "index": 619,
+      "name": "EVENT_HOV_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the encounter is a hospital outpatient visit.  Y indicates that the encounter is a hospital outpatient visit. N indicates that the encounter is not a hospital outpatient visit. NULL indicates an encounter for which this information is not available.\n\n\n The category values for this column were already listed for column: EVENT_MED_REV_YN"
+    },
+    {
+      "index": 625,
+      "name": "EVENT_OUTPAT_F2F_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the encounter is an outpatient face-to-face visit.  Y indicates that the encounter is an outpatient face-to-face visit. N indicates that the encounter is not an outpatient face-to-face visit. NULL indicates an encounter for which this information is not available.\n\n\n The category values for this column were already listed for column: EVENT_MED_REV_YN"
+    },
+    {
+      "index": 631,
+      "name": "EVENT_ACUITY_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the received acuity level for an encounter.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 637,
+      "name": "EVENT_FILTER_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason why an external encounter should be filtered from the composite record\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim Derivation: Procedure Code Inclusion/Exclusion List\n\n\nClaim Derivation: Missing Provider\n\n\nClaim Derivation: Sensitive Diagnosis\n\n\nClaim Derivation: Missing Procedure Start Date\n\n\nClaim Derivation: Excluded Procedure Modifier\n\n\nSource Organization Unknown\n\n\nSource Organization Mismatch\n\n\nSource Organization Is Self\n\n\nClinical Note Type Exclusion List\n\n\nClinical Note Missing Service Instant\n\n\nClinical Note Missing Last Filed Instant\n\n\nClinical Note Missing Author Name\n\n\nDispense Cancellation\n\n\nSame Day as Internal Encounter\n\n\nMissing or Invalid Binary URL\n\n\nFiltered or Missing Source Note\n\n\nDocumentReference Status not Current\n\n\nClaim Derivation: Excluded Linked Diagnoses\n\n\nClaim Derivation: Missing Encounter Start Date"
+    },
+    {
+      "index": 663,
+      "name": "EVENT_ADMISSION_RSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason for the admission based on HL7v2 tables"
+    },
+    {
+      "index": 668,
+      "name": "EVENT_FAC_NPI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the facility NPI where the event occurred."
+    },
+    {
+      "index": 673,
+      "name": "EVENT_FAC_TIN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the facility TIN where the event occurred."
+    },
+    {
+      "index": 678,
+      "name": "DOC_CREATE_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Holds the creation instant of the document as returned by the query response header. This is distinct from I DXR 172, which is the creation instant as returned by metadata within the received document."
+    },
+    {
+      "index": 683,
+      "name": "EVENT_ENC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for this encounter as received on the remote system. This is only populated for documents received from non-Epic organizations."
+    },
+    {
+      "index": 688,
+      "name": "EVENT_ADMSN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Admission type of the encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccident\n\n\nElective\n\n\nEmergency\n\n\nLabor and Delivery\n\n\nNewborn (Birth in healthcare facility)\n\n\nRoutine\n\n\nUrgent"
+    },
+    {
+      "index": 702,
+      "name": "EVENT_ADMIT_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Admit source of the encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician referral\n\n\nClinic referral\n\n\nHMO referral\n\n\nTransfer from a hospital\n\n\nTransfer from a skilled nursing facility\n\n\nTransfer from another health care facility\n\n\nEmergency room\n\n\nCourt/law enforcement\n\n\nInformation not available"
+    },
+    {
+      "index": 718,
+      "name": "EVENT_TITLE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Title of a document associated with an event."
+    },
+    {
+      "index": 723,
+      "name": "EXPECT_LEN_OF_STAY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The expected length of the stay in days."
+    },
+    {
+      "index": 728,
+      "name": "EXPECT_DISCH_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Expected discharge date for the encounter"
+    },
+    {
+      "index": 733,
+      "name": "EXPECT_DISCH_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Expected discharge time for the encounter"
+    },
+    {
+      "index": 738,
+      "name": "EVENT_AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Authorization Number of the encounter"
+    },
+    {
+      "index": 743,
+      "name": "EVENT_PRE_CERT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Pre-admit Certification Number of the encounter"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "table_name": "STG_INFO",
+  "description": "This table stores general information about the stage of a patient's cancer, including clinical and pathologic staging attributes that were determined using methods defined by the American Joint Committee on Cancer (AJCC).",
+  "primary_key": {
+    "column_name": "STAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "STAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The cancer stage ID."
+    },
+    {
+      "index": 7,
+      "name": "STAGE_TITLE_NM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The title of this cancer stage row, usually indicative of the body site or cancer type being staged."
+    },
+    {
+      "index": 12,
+      "name": "STAGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of stage in this record:  Free Text, AJCC, SEER, or Pediatric.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFree Text\n\n\nAJCC\n\n\nSEER\n\n\nPediatrics"
+    },
+    {
+      "index": 23,
+      "name": "STAGE_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The classification of the stage in this row, for example Clinical or Pathologic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified\n\n\nClinical\n\n\nSurgical\n\n\nPathologic\n\n\nBoth Clinical and Pathologic\n\n\nRetreatment\n\n\nAutopsy"
+    },
+    {
+      "index": 37,
+      "name": "STAGE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text stage in this row."
+    },
+    {
+      "index": 42,
+      "name": "STG_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the patient to which the stage in this row applies."
+    },
+    {
+      "index": 47,
+      "name": "STG_BODY_SITE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The body site to which the stage in this row applies.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 53,
+      "name": "AJCC_LV_INV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lymphatic vessel invasion of the AJCC stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nL0 - No lymphatic vessel invasion\n\n\nL1 - Lymphatic vessel invasion\n\n\nNot applicable\n\n\nLX - Cannot be assessed\n\n\nLymph-Vascular Invasion Not Present (absent)/Not Identified\n\n\nLymph-Vascular Invasion Present/Identified\n\n\nUnknown/Indeterminate"
+    },
+    {
+      "index": 67,
+      "name": "AJCC_VENOUS_INV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The venous invasion of the AJCC stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nV0 - No venous invasion\n\n\nV1 - Microscopic venous invasion\n\n\nV2 - Macroscopic venous invasion\n\n\nVX - Cannot be assessed"
+    },
+    {
+      "index": 78,
+      "name": "AJCC_RESIDUAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The residual tumor of the AJCC stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nR0 - None\n\n\nR1 - Microscopic\n\n\nR2 - Macroscopic\n\n\nRX - Cannot be assessed"
+    },
+    {
+      "index": 89,
+      "name": "AJCC_HIST_GRADE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The histologic grade of the AJCC stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nG0\n\n\nG1\n\n\nG2\n\n\nG3\n\n\nG4\n\n\nT-cell\n\n\nB-cell\n\n\nNull Cell\n\n\nNK (natural killer) cell\n\n\nG1-G2\n\n\nG2-G3\n\n\nG3a\n\n\nG3b\n\n\nG3-G4\n\n\nGleason <= 6\n\n\nGleason 7\n\n\nGleason 8-10\n\n\nGleason X\n\n\nLow grade\n\n\nHigh grade\n\n\nGB\n\n\nGX\n\n\nNo grade assigned\n\n\nNot applicable"
+    },
+    {
+      "index": 120,
+      "name": "AJCC_STAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AJCC stage for the diagnosis.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStage I\n\n\nStage I NOS\n\n\nStage IA\n\n\nStage IA1\n\n\nStage IA2\n\n\nStage IB\n\n\nStage IB1\n\n\nStage IB2\n\n\nStage IC\n\n\nStage IS\n\n\nStage IEA\n\n\nStage IEB\n\n\nStage IE\n\n\nStage ISA\n\n\nStage ISB\n\n\nStage IC1\n\n\nStage IC2\n\n\nStage IC3\n\n\nStage II\n\n\nStage II NOS\n\n\nStage IIA\n\n\nStage IIB\n\n\nStage IIC\n\n\nStage IIEA\n\n\nStage IIEB\n\n\nStage IIE\n\n\nStage IISA\n\n\nStage IISB\n\n\nStage IIS\n\n\nStage IIESA\n\n\nStage IIESB\n\n\nStage IIES\n\n\nStage IIA1\n\n\nStage IIA2\n\n\nStage II bulky\n\n\nStage III\n\n\nStage III NOS\n\n\nStage IIIA\n\n\nStage IIIB\n\n\nStage IIIC\n\n\nStage IIIEA\n\n\nStage IIIEB\n\n\nStage IIIE\n\n\nStage IIISA\n\n\nStage IIISB\n\n\nStage IIIS\n\n\nStage IIIESA\n\n\nStage IIIESB\n\n\nStage IIIES\n\n\nStage IIIC1\n\n\nStage IIIC2\n\n\nStage IIID\n\n\nStage IV\n\n\nStage IV NOS\n\n\nStage IVA\n\n\nStage IVB\n\n\nStage IVC\n\n\nStage IVA1\n\n\nStage IVA2\n\n\nStage IVS\n\n\nNot Applicable\n\n\nNo Stage Recommended\n\n\nStage Occult\n\n\nStage Unknown\n\n\nStage IA3\n\n\nStage IB3\n\n\nStage IIIA(i)\n\n\nStage IIIA(ii)\n\n\nStage IIIA1\n\n\nStage IIIA1(i)\n\n\nStage IIIA1(ii)\n\n\nStage IIIA2\n\n\nStage IIIB(i)\n\n\nStage IIIB(ii)\n\n\nStage IIICr\n\n\nStage IIICp\n\n\nStage IIIC1r\n\n\nStage IIIC1p\n\n\nStage IIIC2r\n\n\nStage IIIC2p\n\n\nStage IVA(i)\n\n\nStage IVA(ii)\n\n\nStage V\n\n\nStage A\n\n\nStage B\n\n\nStage C\n\n\nRecurrent - Initial Stage Unknown\n\n\nStage 0\n\n\nStage 0a\n\n\nStage 0is"
+    },
+    {
+      "index": 217,
+      "name": "AJCC_PATH_STAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AJCC pathologic stage.\n\n\n The category values for this column were already listed for column: AJCC_STAGE_C_NAME"
+    },
+    {
+      "index": 223,
+      "name": "AJCC_CLIN_STAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AJCC clinical stage.\n\n\n The category values for this column were already listed for column: AJCC_STAGE_C_NAME"
+    },
+    {
+      "index": 229,
+      "name": "AJCC_T_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary tumor component of the summary stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nT1\n\n\nT1mic\n\n\nT1a\n\n\nT1a1\n\n\nT1a2\n\n\nT1b\n\n\nT1b1\n\n\nT1b2\n\n\nT1c\n\n\nT1 NOS\n\n\nT2\n\n\nT2a\n\n\nT2b\n\n\nT2c\n\n\nT2d\n\n\nT2a1\n\n\nT2a2\n\n\nT2 NOS\n\n\nT3\n\n\nT3a\n\n\nT3b\n\n\nT3c\n\n\nT3d\n\n\nT3 NOS\n\n\nT4\n\n\nT4a\n\n\nT4b\n\n\nT4c\n\n\nT4d\n\n\nT4e\n\n\nT4 NOS\n\n\nT1d\n\n\nNot applicable\n\n\nTX\n\n\nT1c1\n\n\nT1c2\n\n\nT1c3\n\n\nT3a1\n\n\nT3a2\n\n\ncT\n\n\npT\n\n\npT0\n\n\npTis\n\n\npT1\n\n\npT1a\n\n\npT1b\n\n\npT1c\n\n\npT2\n\n\npT2a\n\n\npT2b\n\n\npT2c\n\n\npT3\n\n\npT3a\n\n\npT3b\n\n\npT4\n\n\npT4a\n\n\npT4b\n\n\npTX\n\n\ncT0\n\n\ncTa\n\n\ncTis\n\n\ncTis (DCIS)\n\n\ncTis (LCIS)\n\n\ncTis (Paget)\n\n\ncTis (LAMN)\n\n\ncTispu\n\n\ncTispd\n\n\ncT1\n\n\ncT1mi\n\n\ncT1a\n\n\ncT1a1\n\n\ncT1a2\n\n\ncT1b\n\n\ncT1b1\n\n\ncT1b2\n\n\ncT1b3\n\n\ncT1c\n\n\ncT1c1\n\n\ncT1c2\n\n\ncT1c3\n\n\ncT1d\n\n\ncT1 NOS\n\n\ncT2\n\n\ncT2a\n\n\ncT2a1\n\n\ncT2a2\n\n\ncT2b\n\n\ncT2c\n\n\ncT2d\n\n\ncT2 NOS\n\n\ncT3\n\n\ncT3a\n\n\ncT3a1\n\n\ncT3a2\n\n\ncT3b\n\n\ncT3c\n\n\ncT3d\n\n\ncT3e\n\n\ncT3 NOS\n\n\ncT4\n\n\ncT4a\n\n\ncT4b\n\n\ncT4c\n\n\ncT4d\n\n\ncT4e\n\n\ncT4 NOS\n\n\ncTX\n\n\npT0\n\n\npTa\n\n\npTis\n\n\npTis (DCIS)\n\n\npTis (LCIS)\n\n\npTis (Paget)\n\n\npTis (LAMN)\n\n\npTispu\n\n\npTispd\n\n\npT1\n\n\npT1mi\n\n\npT1a\n\n\npT1a1\n\n\npT1a2\n\n\npT1b\n\n\npT1b1\n\n\npT1b2\n\n\npT1b3\n\n\npT1c\n\n\npT1c1\n\n\npT1c2\n\n\npT1c3\n\n\npT1d\n\n\npT1 NOS\n\n\npT2\n\n\npT2a\n\n\npT2a1\n\n\npT2a2\n\n\npT2b\n\n\npT2c\n\n\npT2d\n\n\npT2 NOS\n\n\npT3\n\n\npT3a\n\n\npT3a1\n\n\npT3a2\n\n\npT3b\n\n\npT3c\n\n\npT3d\n\n\npT3e\n\n\npT3 NOS\n\n\npT4\n\n\npT4a\n\n\npT4b\n\n\npT4c\n\n\npT4d\n\n\npT4e\n\n\npT4 NOS\n\n\npTX\n\n\nT0\n\n\nTa\n\n\nTis (DCIS)\n\n\nTis (LCIS)\n\n\nTis (Paget's)\n\n\nTis\n\n\nTispu\n\n\nTispd"
+    },
+    {
+      "index": 400,
+      "name": "AJCC_PATH_T_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary tumor component of the pathologic stage.\n\n\n The category values for this column were already listed for column: AJCC_T_C_NAME"
+    },
+    {
+      "index": 406,
+      "name": "AJCC_CLIN_T_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary tumor component of the clinical stage.\n\n\n The category values for this column were already listed for column: AJCC_T_C_NAME"
+    },
+    {
+      "index": 412,
+      "name": "AJCC_N_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The regional lymph nodes component of the summary stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nN1\n\n\nN1a\n\n\nN1b\n\n\nN1c\n\n\nN1mi\n\n\nN1 NOS\n\n\nN2\n\n\nN2a\n\n\nN2b\n\n\nN2c\n\n\nN2 NOS\n\n\nN3\n\n\nN3a\n\n\nN3b\n\n\nN3c\n\n\nN3 NOS\n\n\nN4\n\n\nNot applicable\n\n\nNX\n\n\ncN\n\n\npN\n\n\ncN0\n\n\ncN1\n\n\ncN2\n\n\ncN3\n\n\ncNX\n\n\npN0\n\n\npN0(i-)\n\n\npN0(i+)\n\n\npN0(mol-)\n\n\npN0(mol+)\n\n\npN1\n\n\npN1a\n\n\npN1b\n\n\npN1c\n\n\npN1mi\n\n\npN2\n\n\npN2a\n\n\npN2b\n\n\npN2c\n\n\npN3\n\n\npN3a\n\n\npN3b\n\n\npN3c\n\n\npNX\n\n\ncN0\n\n\ncN0(i-)\n\n\ncN0(i+)\n\n\ncN0(mol-)\n\n\ncN0(mol+)\n\n\ncN0a\n\n\ncN0a (biopsy)\n\n\ncN0b (no biopsy)\n\n\ncN0b\n\n\ncN0 NOS\n\n\ncN1\n\n\ncN1mi\n\n\ncN1a\n\n\ncN1a(sn)\n\n\ncN1b\n\n\ncN1c\n\n\ncN1 NOS\n\n\ncN2\n\n\ncN2mi\n\n\ncN2a\n\n\ncN2b\n\n\ncN2c\n\n\ncN2 NOS\n\n\ncN3\n\n\ncN3a\n\n\ncN3b\n\n\ncN3c\n\n\ncN3 NOS\n\n\ncN4\n\n\ncNX\n\n\npN0\n\n\npN0(i-)\n\n\npN0(i+)\n\n\npN0(mol-)\n\n\npN0(mol+)\n\n\npN0a\n\n\npN0a (biopsy)\n\n\npN0b (no biopsy)\n\n\npN0b\n\n\npN0 NOS\n\n\npN1\n\n\npN1mi\n\n\npN1a\n\n\npN1a(sn)\n\n\npN1b\n\n\npN1c\n\n\npN1 NOS\n\n\npN2\n\n\npN2mi\n\n\npN2a\n\n\npN2b\n\n\npN2c\n\n\npN2 NOS\n\n\npN3\n\n\npN3a\n\n\npN3b\n\n\npN3c\n\n\npN3 NOS\n\n\npN4\n\n\npNX\n\n\nN0\n\n\nN0(i-)\n\n\nN0(i+)\n\n\nN0(mol-)\n\n\nN0(mol+)\n\n\nN0a (biopsy)\n\n\nN0b (no biopsy)\n\n\nN0 NOS"
+    },
+    {
+      "index": 532,
+      "name": "AJCC_PATH_N_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The regional lymph nodes component of the pathologic stage.\n\n\n The category values for this column were already listed for column: AJCC_N_C_NAME"
+    },
+    {
+      "index": 538,
+      "name": "AJCC_CLIN_N_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The regional lymph nodes component of the clinical stage.\n\n\n The category values for this column were already listed for column: AJCC_N_C_NAME"
+    },
+    {
+      "index": 544,
+      "name": "AJCC_M_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The distant metastasis component of the summary stage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nM1\n\n\nM1a\n\n\nM1b\n\n\nM1c\n\n\nM1d\n\n\nM1e\n\n\nM1 NOS\n\n\nM2\n\n\nM3\n\n\nM3a\n\n\nM3b\n\n\nM4\n\n\nNot applicable\n\n\nMX\n\n\ncM0\n\n\ncM0(i+)\n\n\ncM1\n\n\ncM1a\n\n\ncM1a(0)\n\n\ncM1a(1)\n\n\ncM1b\n\n\ncM1b(0)\n\n\ncM1b(1)\n\n\ncM1c\n\n\ncM1c(0)\n\n\ncM1c(1)\n\n\ncM1d\n\n\ncM1d(0)\n\n\ncM1d(1)\n\n\ncM1e\n\n\ncM1 NOS\n\n\npM1\n\n\npM1a\n\n\npM1a(0)\n\n\npM1a(1)\n\n\npM1b\n\n\npM1b(0)\n\n\npM1b(1)\n\n\npM1c\n\n\npM1c(0)\n\n\npM1c(1)\n\n\npM1d\n\n\npM1d(0)\n\n\npM1d(1)\n\n\npM1e\n\n\npM1 NOS\n\n\nM0"
+    },
+    {
+      "index": 598,
+      "name": "AJCC_PATH_M_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The distant metastasis component of the pathologic stage.\n\n\n The category values for this column were already listed for column: AJCC_M_C_NAME"
+    },
+    {
+      "index": 604,
+      "name": "AJCC_CLIN_M_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The distant metastasis component of the clinical stage.\n\n\n The category values for this column were already listed for column: AJCC_M_C_NAME"
+    },
+    {
+      "index": 610,
+      "name": "CLIN_STAGE_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The clinical stage status, such as New, Assigned, or Started.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nAssigned\n\n\nStarted\n\n\nComplete\n\n\nReopened\n\n\nRedone"
+    },
+    {
+      "index": 623,
+      "name": "CLIN_SIGN_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the last person to sign the clinical stage in this row."
+    },
+    {
+      "index": 628,
+      "name": "CLIN_SIGN_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date/time in external format of the last time the clinical stage in this row was signed."
+    },
+    {
+      "index": 633,
+      "name": "PATH_STAGE_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pathologic stage status.\n\n\n The category values for this column were already listed for column: CLIN_STAGE_STS_C_NAME"
+    },
+    {
+      "index": 639,
+      "name": "PATH_SIGN_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the last person to sign the pathologic stage in this row."
+    },
+    {
+      "index": 644,
+      "name": "PATH_SIGN_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date/time in external format of the last time the pathologic stage in this row was signed."
+    },
+    {
+      "index": 649,
+      "name": "UNK_PRIM_SITE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/no flag as to whether the primary tumor site or cancer type listed in the Body Site (I STG 65, STG_BODY_SITE_C) is merely suspected instead of being known for certain.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 658,
+      "name": "HAS_CS_INFO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/no flag as to whether this STG row contains any collaborative staging (CS) information.\n\n\n The category values for this column were already listed for column: UNK_PRIM_SITE_YN"
+    },
+    {
+      "index": 664,
+      "name": "STAGE_METHOD_VERS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the staging methodology (or version of that methodology) that is used to stage this cancer, from the Staging Method or Version (I FCS 60) of the corresponding Cancer Staging Definitions (FCS) record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAJCC 6th Edition\n\n\nAJCC 7th Edition\n\n\nAJCC 8th Edition\n\n\nAJCC Version 9\n\n\nPediatric"
+    },
+    {
+      "index": 676,
+      "name": "STAGE_CONV_SRC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For each new stage (STG) record created by the Epic 2014 cancer staging conversion, this item will store the ID of the stage record that it was created from."
+    },
+    {
+      "index": 681,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record status category number for the stage (e.g. soft-deleted).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 691,
+      "name": "LINKED_PROBLEM_LIST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Virtual item that holds the problem list record ID (LPL) the stage belongs to."
+    },
+    {
+      "index": 696,
+      "name": "IS_STAGE_DELETED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Virtual item that checks the latest contact of the Data Model Version (I STG 64) and Status (I STG 620) to determine if the stage record is deleted or not.\n\n\n The category values for this column were already listed for column: UNK_PRIM_SITE_YN"
+    }
+  ]
+}

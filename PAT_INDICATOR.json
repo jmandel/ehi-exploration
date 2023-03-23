@@ -1,0 +1,66 @@
+{
+  "table_name": "PAT_INDICATOR",
+  "description": "The PAT_INDICATOR table contains information about your patient genomic indicator records. These include disease-related and drug-related genomic indicators linked to patients.",
+  "primary_key": {
+    "column_name": "PAT_INDICATOR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_INDICATOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the unique identifier (.1 item) for the pt indicators record."
+    },
+    {
+      "index": 7,
+      "name": "GENOMIC_INDICATR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the Genomic Indicator linked to this record."
+    },
+    {
+      "index": 12,
+      "name": "GENOMIC_INDICATR_ID_RESOLVED_PAT_FRIENDLY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column provides an always populated name column that prioritizes the patient friendly name and if there is none specified, falls back to the clinical name."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column contains the unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 22,
+      "name": "OVERVIEW_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the overview note for the genomic indicator as linked to the patient. Patient-specific details about the genomic indicator are stored in the note networked to this item."
+    },
+    {
+      "index": 27,
+      "name": "RECORD_CREATION_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column contains the date the record was created."
+    },
+    {
+      "index": 32,
+      "name": "INSTANT_OF_UPD_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column contains the instant the record was last locked/unlocked."
+    },
+    {
+      "index": 37,
+      "name": "CREATION_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The creation source for this patient genomic indicator. Blank values are treated as manually created indicators by the translation engine.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual Entry\n\n\nTranslation Engine\n\n\nImport\n\n\nTranslation Utility\n\n\nProblem List Utility"
+    }
+  ]
+}

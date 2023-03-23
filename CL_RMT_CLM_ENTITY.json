@@ -1,0 +1,80 @@
+{
+  "table_name": "CL_RMT_CLM_ENTITY",
+  "description": "Contains identifying information for entities (persons or organizations) from an electronic remittance payment. This information is sent in the NM1 segment of an ANSI 835 Health Care Claim Payment/Advice file. This information is stored in the remittance image record.",
+  "primary_key": {
+    "column_name": "IMAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "IMAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID for the remittance image record containing the claim related entity information."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ID_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The entity identifier code for the claim related entity. This is a standard code that indicates what type of individual or organization is being identified.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient\n\n\nInsured or subscriber\n\n\nCorrected insured\n\n\nRendering provider\n\n\nTransfer to\n\n\nPayer\n\n\nOther Insured"
+    },
+    {
+      "index": 26,
+      "name": "ENT_QUAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Code indicating whether this information is for a person or a non-person entity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPerson\n\n\nNon-Person entity"
+    },
+    {
+      "index": 35,
+      "name": "LAST_NAME_ORG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the individual last name or organization name."
+    },
+    {
+      "index": 40,
+      "name": "FIRST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The individual first name."
+    },
+    {
+      "index": 45,
+      "name": "MIDDLE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The individual middle name or initial."
+    },
+    {
+      "index": 50,
+      "name": "NAME_SUFFIX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The suffix to individual name."
+    },
+    {
+      "index": 55,
+      "name": "IDEN_CODE_QUALF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The identification code qualifier. This is a standard code that indicates what type of ID is used to identify the specific individual or organization.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSocial security number\n\n\nHealth insurance claim number\n\n\nUnited states national individual identifer\n\n\nMember identification number\n\n\nMedicaid recipient identification number\n\n\nInsured's changed unique identification number\n\n\nBlue cross provider number\n\n\nBlue shield provider number\n\n\nFederal taxpayer's identification number\n\n\nMedicaid provider number\n\n\nProvider commercial number\n\n\nState license number\n\n\nUnique physician identification number\n\n\nHealth care financing administration national provider identifier\n\n\nBlue cross blue shield association plan code\n\n\nNational association of insurance commissioners (NAIC) identification\n\n\nPayor Identification\n\n\nPharmacy processor number\n\n\nHealth care financing administration national planID"
+    },
+    {
+      "index": 81,
+      "name": "IDEN_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID associated with the specific individual or organization."
+    }
+  ]
+}

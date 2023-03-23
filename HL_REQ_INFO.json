@@ -1,0 +1,332 @@
+{
+  "table_name": "HL_REQ_INFO",
+  "description": "Hospital Logistics Requests Information.",
+  "primary_key": {
+    "column_name": "HLR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HLR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the request record."
+    },
+    {
+      "index": 7,
+      "name": "HLR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Record name"
+    },
+    {
+      "index": 12,
+      "name": "HLR_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Hospital Logistics Request type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRequest\n\n\nGroup\n\n\nJob"
+    },
+    {
+      "index": 22,
+      "name": "REQ_TEMPLATE_TASK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Logistics Task Template this Request is linked to. This Task defines the meaning of this Request and provides configuration info for the Request."
+    },
+    {
+      "index": 27,
+      "name": "REQ_TEMPLATE_TASK_ID_TASK_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the task."
+    },
+    {
+      "index": 32,
+      "name": "REQ_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This Logistics Request's UTC start instant."
+    },
+    {
+      "index": 37,
+      "name": "REQ_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This Logistics Request's priority.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStat\n\n\nHigh\n\n\nNormal\n\n\nLow"
+    },
+    {
+      "index": 48,
+      "name": "REQ_START_PLF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This Logistics Request's start location. If only one location is defined in the linked Logistics Task, it will be stored here."
+    },
+    {
+      "index": 53,
+      "name": "REQ_DYNAMIC_START_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This Logistics Request's dynamic start location type. This indicates what changes (like updates to the patient's bed or current location) will update the Request's start location.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSpecified Location\n\n\nCurrent Location\n\n\nCurrent Bed"
+    },
+    {
+      "index": 63,
+      "name": "REQ_END_PLF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This Logistics Request's end location."
+    },
+    {
+      "index": 68,
+      "name": "REQ_DYNAMIC_END_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This Logistics Request's dynamic end location type. This indicates what changes (like updates to the patient's bed) will update the Request's end location.\n\n\n The category values for this column were already listed for column: REQ_DYNAMIC_START_TYPE_C_NAME"
+    },
+    {
+      "index": 74,
+      "name": "REQ_TECHS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of Logistics Technicians required to work on this Logistics Request."
+    },
+    {
+      "index": 79,
+      "name": "REQ_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This Logistics Request's mode. Technicians need to use this mode to complete this Request.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 85,
+      "name": "REQ_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current status of this Logistics Request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnplanned\n\n\nPlanned\n\n\nAssigned\n\n\nAcknowledged\n\n\nAt Start Location\n\n\nIn Progress\n\n\nAt End Location\n\n\nCompleted\n\n\nCanceled"
+    },
+    {
+      "index": 101,
+      "name": "REQ_CANCEL_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When this Logistics Request's status is Canceled, this item contains the Request's cancel reason.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAutomatically Canceled (Default) \n\n\nLinked Appointment Canceled\n\n\nLinked Admission PND Canceled\n\n\nLinked Discharge PND Canceled\n\n\nLinked Transfer PND Canceled\n\n\nLinked LOA Out PND Canceled\n\n\nLinked LOA Return PND Canceled\n\n\nPlanned Break Canceled\n\n\nReducing Required Technicians\n\n\nCanceled By Utility\n\n\nLinked Transport Request Canceled\n\n\nLinked ADT Event Canceled\n\n\nMaintenance Clean Replaced By Bed Clean\n\n\nLinked Bed Clean Canceled (Room Clean)\n\n\nLinked Appointment Time Changed\n\n\nCanceled by Contact Move\n\n\nLinked Appointment Department Changed\n\n\nLinking To Adjacent Appointment In Department\n\n\nLinked Appointment Patient No Show \n\n\nLinked Appointment Patient Left Without Being Seen"
+    },
+    {
+      "index": 128,
+      "name": "REQ_START_APPT_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the appointment that this Logistics Request is going to."
+    },
+    {
+      "index": 133,
+      "name": "REQ_END_APPT_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the appointment this Logistics Request is coming from."
+    },
+    {
+      "index": 138,
+      "name": "REQ_ADMISSION_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the admission this Logistics Request is associated with."
+    },
+    {
+      "index": 143,
+      "name": "REQ_PEND_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Pending Event linked to this Logistics Request."
+    },
+    {
+      "index": 148,
+      "name": "REQ_EVENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The event linked to this Logistics Request."
+    },
+    {
+      "index": 153,
+      "name": "REQ_FIRST_STAGE_HLR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Logistics Request that serves as the first stage of this Multi-Stage Request."
+    },
+    {
+      "index": 158,
+      "name": "REQ_NEXT_STAGE_HLR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Logistics Request that serves as the next stage of this Multi-Stage Request."
+    },
+    {
+      "index": 163,
+      "name": "REQ_STAGE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The stage number for this Logistics Request."
+    },
+    {
+      "index": 168,
+      "name": "REQ_IS_CONCURRENT_STAGE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if this Logistics Request can be worked on concurrently with the previous stage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 177,
+      "name": "REQ_REGION_SEC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Logistics Region that this Logistics Request belongs to."
+    },
+    {
+      "index": 182,
+      "name": "REQ_REGION_SEC_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this cleaning sector."
+    },
+    {
+      "index": 187,
+      "name": "REQ_SECTOR_SEC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Logistics Sector that this Logistics Request belongs to."
+    },
+    {
+      "index": 192,
+      "name": "REQ_SECTOR_SEC_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this cleaning sector."
+    },
+    {
+      "index": 197,
+      "name": "REQ_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Department that this Logistics Request belongs to."
+    },
+    {
+      "index": 202,
+      "name": "REQ_HOSP_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Hospital Location that this Logistics Request belongs to."
+    },
+    {
+      "index": 207,
+      "name": "REQ_SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Service Area that this Logistics Request belongs to."
+    },
+    {
+      "index": 212,
+      "name": "REQ_CREATION_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this Logistics Request was created manually or automatically, and if created automatically, which automatic process created the Request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual\n\n\nAutomatic - Appointment\n\n\nAutomatic - Ready To Move\n\n\nAutomatic - Scheduled TSK\n\n\nAutomatic - Action\n\n\nAutomatic - Maintenance Clean\n\n\nManual - Multiple Maintenance Clean\n\n\nAutomatic - Bed Type\n\n\nAutomatic - Room Clean\n\n\nAutomatic - ADT Event"
+    },
+    {
+      "index": 229,
+      "name": "REQ_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Patient (EPT) linked to this Logistics Request."
+    },
+    {
+      "index": 234,
+      "name": "REQ_BED_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This Logistics Request's associated bed type. This indicates that a bed of this type is being moved with this Request. When this Request is completed, the destination's bed type will be updated to this bed type. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEmpty\n\n\nStandard\n\n\nCrib\n\n\nTelemetry\n\n\nBariatric"
+    },
+    {
+      "index": 246,
+      "name": "REQ_FUNC_COMP_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant that a Logistics Request can be considered functionally complete in UTC."
+    },
+    {
+      "index": 251,
+      "name": "REQ_ACTIVATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant that a Logistics Request is eligible to be assigned."
+    },
+    {
+      "index": 256,
+      "name": "REQ_START_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This Logistics Request's local start instant."
+    },
+    {
+      "index": 261,
+      "name": "REQ_FUNC_COMP_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant that a Logistics Request can be considered functionally complete in local time."
+    },
+    {
+      "index": 266,
+      "name": "JOB_ACT_LINK_LOCATION_EVNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Patient Location Event record created by the Update Patient Location action on this Logistics Request."
+    },
+    {
+      "index": 271,
+      "name": "REQ_TASK_SUBTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Subtype of the request, used to broadly classify the type of request this is.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Transport\n\n\nBed Clean\n\n\nMaintenance Clean\n\n\nOther"
+    },
+    {
+      "index": 282,
+      "name": "REQ_BED_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For Bed Clean and Maintenance Clean requests, this is the ID of the bed being cleaned."
+    },
+    {
+      "index": 287,
+      "name": "REQ_BED_ID_BED_LABEL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the bed."
+    },
+    {
+      "index": 292,
+      "name": "PREVIOUS_OUTGOING_EVENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For Bed Clean requests, this is the ID of the outgoing event prior to the bed clean."
+    },
+    {
+      "index": 297,
+      "name": "NEXT_INCOMING_EVENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For Bed Clean requests, this is the ID of the incoming event immediately following the bed clean."
+    },
+    {
+      "index": 302,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record status category ID for the hospital logistics request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 312,
+      "name": "PRIMARY_LINKED_EVENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the primary event linked to this Logistics request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nStart Location Appointment\n\n\nEnd Location Appointment\n\n\nAdmission\n\n\nPending Admission\n\n\nPending Transfer\n\n\nPending Discharge\n\n\nPending LOA Out\n\n\nPending LOA Return\n\n\nTransfer\n\n\nDischarge\n\n\nLOA Out"
+    }
+  ]
+}

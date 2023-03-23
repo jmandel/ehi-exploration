@@ -1,0 +1,45 @@
+{
+  "table_name": "FAILED_ACCESS",
+  "description": "This table contains information on failed MyChart activation attempts.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "FAILED_DTTM_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the instant a correct MyChart activation code was used with incorrect validation data."
+    },
+    {
+      "index": 17,
+      "name": "FAILED_IP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the remote IP address from where a correct MyChart activation code was used with incorrect validation info."
+    },
+    {
+      "index": 22,
+      "name": "FAILED_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the validation field that failed when a correct MyChart activation code is used with incorrect validation info.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSocial Security Number\n\n\nLast 4 Digits of Social Security Number\n\n\nMedical Record Number\n\n\nDate of Birth\n\n\nZip Code\n\n\nEmail Address\n\n\nPhone Number"
+    }
+  ]
+}

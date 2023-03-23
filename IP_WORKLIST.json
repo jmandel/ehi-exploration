@@ -1,0 +1,388 @@
+{
+  "table_name": "IP_WORKLIST",
+  "description": "This table contains data associated with task (LTK) records.",
+  "primary_key": {
+    "column_name": "TASK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TASK_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID for the worklist activity."
+    },
+    {
+      "index": 7,
+      "name": "TASK",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The task to be performed."
+    },
+    {
+      "index": 12,
+      "name": "WL_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This notes the priority of the task.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 18,
+      "name": "WORK_UNITS",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is the number of work units required to perform a task."
+    },
+    {
+      "index": 23,
+      "name": "SKILLS_NEEDED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the skill set required to perform a task.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 29,
+      "name": "WORKLIST_CAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category associated with this task (i.e. meds, education, vitals).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 35,
+      "name": "LINK_SOURCE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The master file initials for the record that is the source of this task. This can be LPI, ORD, LGL, FLO, IGL, LDA, SSC, or DM_CSN.  If the Source is : Best Practice Alert then LOCATOR_ID has the Alert ID (LGL)"
+    },
+    {
+      "index": 40,
+      "name": "LINK_RECORD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the record that is the source of this task."
+    },
+    {
+      "index": 45,
+      "name": "LOCATOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If the task is linked to an alert (LGL masterfile) the ID of the Alert is stored here."
+    },
+    {
+      "index": 50,
+      "name": "INTERVENTION_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the task is linked to an intervention (LPI masterfile) the ID of the Care Plan Intervention is stored here."
+    },
+    {
+      "index": 55,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If the task is linked to an Order (ORD masterfile) the ID of the Order is stored here."
+    },
+    {
+      "index": 60,
+      "name": "MSTEP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the status of the given multistep order entry task\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nActive\n\n\nDiscontinued\n\n\nCompleted"
+    },
+    {
+      "index": 70,
+      "name": "TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type associated with this task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Specific\n\n\nUser Specific\n\n\nPatient Event\n\n\nEpisode Specific\n\n\nMyChart Patient Created"
+    },
+    {
+      "index": 82,
+      "name": "LINK_SOURCE_COMP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The master file initials for the record that is the source of this task. This can be LPI, ORD, LGL, FLO, IGL, LDA, SSC, or DM_CSN.  If the Source is : Best Practice Alert then LOCATOR_ID has the Alert ID (LGL)"
+    },
+    {
+      "index": 87,
+      "name": "COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the comments related to the given worklist activity."
+    },
+    {
+      "index": 92,
+      "name": "SOURCE_LTR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the unique ID of the task record associated with the worklist activity."
+    },
+    {
+      "index": 97,
+      "name": "SOURCE_LTR_ID_TASK_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the task record."
+    },
+    {
+      "index": 102,
+      "name": "AUTO_COMPLETE_COND",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the task auto complete condition, which is copied from the associated task (LTR) record."
+    },
+    {
+      "index": 107,
+      "name": "NUM_OCCURRENCES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the number of occurrences for the associated task."
+    },
+    {
+      "index": 112,
+      "name": "PRN_START_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the start instant for a PRN task."
+    },
+    {
+      "index": 117,
+      "name": "DISCONTINUE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the instant at which a task was discontinued."
+    },
+    {
+      "index": 122,
+      "name": "EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The episode ID with which the task is associated."
+    },
+    {
+      "index": 127,
+      "name": "RESPONSIBLE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user responsible to complete the task."
+    },
+    {
+      "index": 132,
+      "name": "RESPONSIBLE_POOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The In Basket Pool responsible for completing the task."
+    },
+    {
+      "index": 137,
+      "name": "RESPONSIBLE_POOL_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "index": 142,
+      "name": "BEDSIDE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Initiating Bedside User item holds the ID of the MyChart Bedside User who created an ad hoc task, typically a patient request."
+    },
+    {
+      "index": 147,
+      "name": "PAT_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the Patient entered comments/additional details for requests they place in MyChartBedside."
+    },
+    {
+      "index": 152,
+      "name": "STEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current step of a multi-step task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduled\n\n\nReviewed"
+    },
+    {
+      "index": 161,
+      "name": "OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The outcome of the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPositive\n\n\nNegative\n\n\nNot Done"
+    },
+    {
+      "index": 171,
+      "name": "AUTOCOMP_INSTANCE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The deficiency instance associated with this task. This column will be populate for episode-based tasks that are created from a task record (LTR) with an associated autocompletion template (DEF)."
+    },
+    {
+      "index": 176,
+      "name": "PARENT_TASK_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The parent task (LTK) that this child task was created from. This column will be populated for episode-based tasks that were created automatically based on the completion of another task on the episode."
+    },
+    {
+      "index": 181,
+      "name": "REQUIRED_DOC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of required documentation the task corresponds to.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmission\n\n\nTransfer\n\n\nShift\n\n\nBefore Discharge\n\n\nAdmission Quality Measures\n\n\nDischarge Quality Measures"
+    },
+    {
+      "index": 194,
+      "name": "REQUIRED_DOC_GROUP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Required documentation group the task corresponds to.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+    },
+    {
+      "index": 202,
+      "name": "CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The functional context of a task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral\n\n\nChecklist\n\n\nStaff Activity\n\n\nHomecare Patient Encounter"
+    },
+    {
+      "index": 213,
+      "name": "ASSIGN_TO_PAT_C",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item determines whether a task is assigned to the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 222,
+      "name": "PERS_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Defines the personalization status of the notification times for the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 231,
+      "name": "GOAL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The goal that the task is associated with."
+    },
+    {
+      "index": 236,
+      "name": "INTERVENTIONS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The intervention that the task is associated with."
+    },
+    {
+      "index": 241,
+      "name": "LINKED_TREATMENT_DAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the treatment day linked to the task."
+    },
+    {
+      "index": 246,
+      "name": "LINKED_TREATMENT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the treatment plan linked to this task."
+    },
+    {
+      "index": 251,
+      "name": "LINKED_DAY_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line in the source record that corresponds to a treatment or timeline day."
+    },
+    {
+      "index": 256,
+      "name": "EST_COMPLETION_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "An estimated start date that the task will be performed based on the lead days of the day in the treatment plan or timeline."
+    },
+    {
+      "index": 261,
+      "name": "EST_COMPLETION_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "An estimated end date that the task will be performed based on the lag days of the day in the treatment plan or timeline."
+    },
+    {
+      "index": 266,
+      "name": "ENROLL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The research study-patient association (LAR) record ID linked to this task. This is only populated by tasks created from a billing timeline."
+    },
+    {
+      "index": 271,
+      "name": "SOURCE_LTT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This contains a link to the source task template (LTT) record if this task was added by a task template."
+    },
+    {
+      "index": 276,
+      "name": "SOURCE_LTT_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the name of the task template record."
+    },
+    {
+      "index": 281,
+      "name": "IS_PAUSED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a task is assigned to the patient, this item determines whether it's is paused. When a task is paused, it will not have future instances and will not displayed to the patient until resumed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 290,
+      "name": "SCHEDULE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines the scheduling status of a patient-assigned task. When a task is created it may not be scheduled right away.  The category table is ZC_TASK_SCHEDULE_STATUS_C.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScheduled\n\n\nNot Scheduled\n\n\nWill Be Scheduled"
+    },
+    {
+      "index": 300,
+      "name": "RESUME_ON_DISCHARGE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item determines if a task paused on hospital admission will be resumed on discharge.\n\n\n The category values for this column were already listed for column: IS_PAUSED_YN"
+    },
+    {
+      "index": 306,
+      "name": "DAYS_AFTER_DISC_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Indicates the number of days after hospital discharge this reminder will start. Value must be larger than or equal to 0."
+    },
+    {
+      "index": 311,
+      "name": "ANCHOR_EVENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When an anchor event is linked to this task, this stores the type of the anchor event. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSurgery\n\n\nPregnancy\n\n\nProcedural Appointment\n\n\nHospital Discharge"
+    },
+    {
+      "index": 322,
+      "name": "SURGICAL_OR_CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Surgical case linked to this task."
+    },
+    {
+      "index": 327,
+      "name": "PREGNANCY_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Pregnancy Episode linked to this task."
+    },
+    {
+      "index": 332,
+      "name": "APPOINTMENT_SERIAL_NUMBER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Appointment serial number for the appointment linked to this task."
+    }
+  ]
+}

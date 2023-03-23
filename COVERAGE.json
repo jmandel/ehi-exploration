@@ -1,0 +1,472 @@
+{
+  "table_name": "COVERAGE",
+  "description": "The COVERAGE table contains high-level information on both managed care and indemnity coverage records in your system.",
+  "primary_key": {
+    "column_name": "COVERAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID assigned to the coverage record. This ID may be encrypted if you have elected to use enterprise reporting�s encryption utility."
+    },
+    {
+      "index": 7,
+      "name": "COVERAGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value that indicates whether a coverage is managed care or indemnity; 1 � Indemnity, 2 � Managed Care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIndemnity\n\n\nManaged Care"
+    },
+    {
+      "index": 16,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column is only populated for indemnity coverages (COVERAGE_TYPE_C equal to 1). This column stores the unique identifier of the payor associated with the coverage record.  To look up the payor for managed care coverages (COVERAGE_TYPE_C equal to 2), join COVERAGE.COVERAGE_ID on V_COVERAGE_PAYOR_PLAN.COVERAGE_ID and filter on V_COVERAGE_PAYOR_PLAN.EFF_DATE and V_COVERAGE_PAYOR_PLAN.TERM_DATE to find the relevant PAYOR_ID."
+    },
+    {
+      "index": 21,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 26,
+      "name": "PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column is only populated for indemnity coverages (COVERAGE_TYPE_C equal to 1). This column stores the unique identifier of the benefit plan associated with the coverage record.  To look up the benefit plan for managed care coverages (COVERAGE_TYPE_C equal to 2), join COVERAGE.COVERAGE_ID on V_COVERAGE_PAYOR_PLAN.COVERAGE_ID and filter on V_COVERAGE_PAYOR_PLAN.EFF_DATE and V_COVERAGE_PAYOR_PLAN.TERM_DATE to find the relevant BENEFIT_PLAN_ID."
+    },
+    {
+      "index": 31,
+      "name": "PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 36,
+      "name": "PLAN_GRP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the employer group that determines the benefits in a managed care coverage. This item is NULL for indemnity coverages."
+    },
+    {
+      "index": 41,
+      "name": "PLAN_GRP_ID_PLAN_GRP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer group record"
+    },
+    {
+      "index": 46,
+      "name": "COBRA_STATUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This yes/no flag is set to �Y� if the coverage has been extended beyond termination of the subscriber�s employment according to a COBRA arrangement. If the coverage has not been extended under such an arrangement, this value is �N� or null.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 55,
+      "name": "COBRA_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The termination date for any COBRA arrangement."
+    },
+    {
+      "index": 60,
+      "name": "LATE_ENROLL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Y if the subscriber applied for coverage outside of the open enrollment period. N or NULL if not specified as a late enrollment coverage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 69,
+      "name": "STUDENT_REVIEW_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which you should review the status of any members on this coverage who are students."
+    },
+    {
+      "index": 74,
+      "name": "EPIC_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage record. This column may be hidden if you have elected to use enterprise reporting�s security utility."
+    },
+    {
+      "index": 79,
+      "name": "PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of premium billing account associated with the coverage."
+    },
+    {
+      "index": 84,
+      "name": "CVG_EFF_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date of the coverage."
+    },
+    {
+      "index": 89,
+      "name": "CVG_TERM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The termination date of the coverage."
+    },
+    {
+      "index": 94,
+      "name": "CASEHEAD_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Medicaid ID number on the case head."
+    },
+    {
+      "index": 99,
+      "name": "CASEHEAD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Medicaid name on the case head."
+    },
+    {
+      "index": 104,
+      "name": "TNSFRD_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the coverage from which this coverage is transferred from."
+    },
+    {
+      "index": 109,
+      "name": "CVG_REG_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The verification status of the coverage, such as verified, changed, elapsed, etc.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 115,
+      "name": "VERIFY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the user who performed the verification."
+    },
+    {
+      "index": 120,
+      "name": "GROUP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the coverage group."
+    },
+    {
+      "index": 125,
+      "name": "CVG_ADDR1",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The first line of the address of the coverage (administrative offices)."
+    },
+    {
+      "index": 130,
+      "name": "CVG_ADDR2",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The second line of the address of the coverage (administrative offices)."
+    },
+    {
+      "index": 135,
+      "name": "CVG_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The city of the mailing address of the coverage (administrative offices)."
+    },
+    {
+      "index": 140,
+      "name": "CVG_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The zip code of the mailing address of the coverage (administrative offices)."
+    },
+    {
+      "index": 145,
+      "name": "CVG_PHONE1",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary phone number of the coverage (administrative offices)."
+    },
+    {
+      "index": 150,
+      "name": "GROUP_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The identification number assigned to this subscriber's employer/plan group by the payor.  This number will appear in box 11 of the HCFA claim form."
+    },
+    {
+      "index": 155,
+      "name": "CLAIM_MAIL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value associated with where to send the claim on a coverage (i.e. send claim to payor, send claim to account, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayer\n\n\nAccount\n\n\nPayer Plan\n\n\nCoverage Address"
+    },
+    {
+      "index": 166,
+      "name": "WC_EMPLOYER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' compensation employer at the time of injury."
+    },
+    {
+      "index": 171,
+      "name": "WC_EMPLOYER_ID_EMPLOYER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer."
+    },
+    {
+      "index": 176,
+      "name": "WC_DATE_OF_INJURY",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Workers Comp date of injury. This is the date the injury occurred on the job. This field is populated as the user sets up the WC account."
+    },
+    {
+      "index": 181,
+      "name": "IS_SIG_ON_FILE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Appears in Box 12 of HCFA claims. This is a Yes/No field that denotes whether authorization has been obtained to send bill or other documentation to payor for services relating to the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 190,
+      "name": "ENROLL_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This category value stores the enrollment reason of the coverage.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 196,
+      "name": "CVG_TERM_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This category value stores the termination reason of the coverage.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 202,
+      "name": "PAT_REC_OF_SUBS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the subscriber is the same person as a patient, this item contains the patient ID."
+    },
+    {
+      "index": 207,
+      "name": "ECD_TABLE_DEF_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Numeric default copay value."
+    },
+    {
+      "index": 212,
+      "name": "COINSURANCE_OVR",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Numeric Value for the coverage level coinsurance override."
+    },
+    {
+      "index": 217,
+      "name": "MEDC_COVERED_LEFT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the number of Medicare Covered Days Remaining"
+    },
+    {
+      "index": 222,
+      "name": "MEDC_COINS_LEFT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the number of Medicare Coinsurance Days Remaining"
+    },
+    {
+      "index": 227,
+      "name": "MEDC_RESERVE_LEFT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the number of Medicare Reserved Days Remaining"
+    },
+    {
+      "index": 232,
+      "name": "CCS_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's Comprehensive Community Services (CCS) ID."
+    },
+    {
+      "index": 237,
+      "name": "CCS_DX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the diagnosis that makes the patient eligible for Comprehensive Community Services (CCS) coverage."
+    },
+    {
+      "index": 242,
+      "name": "CCS_CC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the name of the Comprehensive Community Services (CCS) Case Coordinator."
+    },
+    {
+      "index": 247,
+      "name": "CCS_COOR_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phone number for the Comprehensive Community Services (CCS) Case Coordinator."
+    },
+    {
+      "index": 252,
+      "name": "CCS_COUNTY_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phone number for the Comprehensive Community Services (CCS) County Office."
+    },
+    {
+      "index": 257,
+      "name": "CVG_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The county of the mailing address of the coverage (administrative offices).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 263,
+      "name": "CVG_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The country of the mailing address of the coverage (administrative offices).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 269,
+      "name": "CVG_HOUSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The house number of the mailing address of the coverage (administrative offices)."
+    },
+    {
+      "index": 274,
+      "name": "CVG_DISTRICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The district of the mailing address of the coverage (administrative offices).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 280,
+      "name": "EFF_HOSP_CVG_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date of Medicare Part A."
+    },
+    {
+      "index": 285,
+      "name": "EFF_PROV_CVG_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date of Medicare Part B."
+    },
+    {
+      "index": 290,
+      "name": "MEDICARE_CVG_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the type of Medicare coverage the patient has.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPart A\n\n\nPart B\n\n\nParts A & B"
+    },
+    {
+      "index": 300,
+      "name": "Q4CO_BUCKETS_EXC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate if bucket limits exceeded during carryover\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 309,
+      "name": "MED_SEC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Medicare Secondary Insurance Type Code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWorking Aged Beneficiary or Spouse with EGHP\n\n\nESRD Beneficiary in the Mandated Coordination Period with an EGHP\n\n\nNo-fault Insurance Including Auto is Primary\n\n\nWorker's Compensation\n\n\nPublic Health Service (PHS) or Other Federal Agency\n\n\nBlack Lung\n\n\nVeteran's Administration\n\n\nDisabled Beneficiary Under Age 65 with Large Group Health Plan (LGHP)\n\n\nOther Liability Insurance is Primary"
+    },
+    {
+      "index": 325,
+      "name": "CHDP_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Child Health and Disability Prevention County Code.\n\n\n The category values for this column were already listed for column: CVG_COUNTY_C_NAME"
+    },
+    {
+      "index": 331,
+      "name": "CHDP_AID_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Child Health and Disability Prevention Aid Code."
+    },
+    {
+      "index": 336,
+      "name": "CVG_CARD_ISSUE_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the card issue date."
+    },
+    {
+      "index": 341,
+      "name": "CVG_DEDUCTIBLE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item will serve as a flag to let the end user know if the response has any deductible information\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 350,
+      "name": "FIRST_SPEC_AID_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "First special aid code for the Treatment Authorization Request (TAR) for Medi-Cal."
+    },
+    {
+      "index": 355,
+      "name": "SEC_SPEC_AID_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Second special aid code for the Treatment Authorization Request (TAR) for Medi-Cal."
+    },
+    {
+      "index": 360,
+      "name": "THRD_SPEC_AID_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Third special aid code for the Treatment Authorization Request (TAR) for Medi-Cal."
+    },
+    {
+      "index": 365,
+      "name": "EVC_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Eligibility Verification Confirmation (EVC) that is used on the Treatment Authorization Request (TAR) for Medi-Cal."
+    },
+    {
+      "index": 370,
+      "name": "COUNTY_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item will store the county code that is returned from the 271 message.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 377,
+      "name": "EXT_ROUTING_NUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external routing number for the coverage\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 384,
+      "name": "SUBSCR_OR_SELF_MEM_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the subscriber patient Id of a coverage and will be used to associate patients with linked premium billing accounts for EHI."
+    }
+  ]
+}

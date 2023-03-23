@@ -1,0 +1,52 @@
+{
+  "table_name": "HSP_ATND_PROV",
+  "description": "The HSP_ATND_PROV table contains information on inpatient or outpatient attending providers. This table is based on PAT_ENC_CSN_ID.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the attending provider for the patient."
+    },
+    {
+      "index": 7,
+      "name": "ATTEND_FROM_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the attending provider started for the patient. Can be assigned for both hospital encounters and outpatient visits.   Dates are not guaranteed to be filled in. If dates are empty, this range is assumed to be open-ended. Date/time range only applies to this encounter. Checking relevant encounter dates should be done in addition to these dates to get the whole picture for an encounter."
+    },
+    {
+      "index": 12,
+      "name": "ATTEND_TO_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the attending provider ended for the patient. Can be assigned for both hospital encounters and outpatient visits.   Dates are not guaranteed to be filled in. If dates are empty, this range is assumed to be open-ended. Date/time range only applies to this encounter. Checking relevant encounter dates should be done in addition to these dates to get the whole picture for an encounter."
+    },
+    {
+      "index": 17,
+      "name": "PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the attending provider for the patient. Can be assigned for both hospital encounters and outpatient visits. From and to dates are not guaranteed to be filled in."
+    },
+    {
+      "index": 22,
+      "name": "ED_ATTEND_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not this physician was an attending in the ED. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 31,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
+    }
+  ]
+}

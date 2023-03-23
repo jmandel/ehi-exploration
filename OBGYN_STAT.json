@@ -1,0 +1,45 @@
+{
+  "table_name": "OBGYN_STAT",
+  "description": "Table for the converted OB/Gyn status structure.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "OBGYN_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This value is the OB/Gyn status for a patient which indicates if a patient is pregnant or not, as well as other menstrual statuses like hysterectomy, or having periods.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPremenarcheal\n\n\nPostmenopausal\n\n\nHysterectomy\n\n\nPregnant\n\n\nHaving periods\n\n\nInjection\n\n\nImplant\n\n\nAblation\n\n\nNeeds review\n\n\nPremenopausal\n\n\nRecent pregnancy\n\n\nUnknown\n\n\nPerimenopausal\n\n\nBorn without uterus"
+    },
+    {
+      "index": 33,
+      "name": "APP_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This instant stores the date the OB/GYN status applies to. It is generated when the OB/GYN status is saved."
+    },
+    {
+      "index": 38,
+      "name": "UPDATE_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This stores the ID of the user who updated a patient's OB/GYN status."
+    }
+  ]
+}

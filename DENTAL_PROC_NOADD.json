@@ -1,0 +1,220 @@
+{
+  "table_name": "DENTAL_PROC_NOADD",
+  "description": "This table contains the items for dental procedure records.",
+  "primary_key": {
+    "column_name": "FINDING_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the finding record"
+    },
+    {
+      "index": 7,
+      "name": "DENTAL_EAP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Reference to the associated dental procedure record"
+    },
+    {
+      "index": 12,
+      "name": "DENTAL_COMP_INST_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Date and time dental procedure was completed"
+    },
+    {
+      "index": 17,
+      "name": "DENTAL_PROC_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Current status of the dental procedure\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlanned\n\n\nCompleted\n\n\nCanceled\n\n\nPlanning\n\n\nDiscontinued"
+    },
+    {
+      "index": 29,
+      "name": "DENTAL_PROC_ARCH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Identifies which arch the dental procedure is for.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUpper\n\n\nLower"
+    },
+    {
+      "index": 38,
+      "name": "DENTAL_QUADRANT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Identifies which quadrant the dental procedure is for.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUpper Right\n\n\nUpper Left\n\n\nLower Left\n\n\nLower Right"
+    },
+    {
+      "index": 49,
+      "name": "DENTAL_PROCEDURE_SEQUENCE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column tracks the sequence of dental procedures within a visit."
+    },
+    {
+      "index": 54,
+      "name": "DENTAL_PROC_VISIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Identifies the visit in which a dental procedure is planned to be completed."
+    },
+    {
+      "index": 59,
+      "name": "DENTAL_COMP_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the provider that completed the dental procedure based on the service provider of the charge."
+    },
+    {
+      "index": 64,
+      "name": "DEN_PROC_EX_FLAG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a procedure existed as part of the patient's presenting condition.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 73,
+      "name": "DENTAL_TOOTH_AREA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This determines the part of the tooth that a procedure or finding affects.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRoot\n\n\nSurface\n\n\nCrown\n\n\nFull Tooth"
+    },
+    {
+      "index": 84,
+      "name": "DENT_PLAN_VISIT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Identifies the visit number that a procedure is being planned for."
+    },
+    {
+      "index": 89,
+      "name": "DENTAL_BILL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the billing provider for a completed dental procedure which can be different from the service (completing) provider."
+    },
+    {
+      "index": 94,
+      "name": "DENT_PLAN_PRL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the treatment template that will be used when the user creates a treatment plan for the dental procedure"
+    },
+    {
+      "index": 99,
+      "name": "DENT_PLAN_PRL_ID_PROTOCOL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartSet/Protocol record name.  This is different from the display name, which is stored in CL_PRL_SS_OT.DISPLAY_NAME."
+    },
+    {
+      "index": 104,
+      "name": "DENT_PROC_BY_RULE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a procedure is added by auto-treatment planning rule.\n\n\n The category values for this column were already listed for column: DEN_PROC_EX_FLAG_YN"
+    },
+    {
+      "index": 110,
+      "name": "DENTAL_PROC_IMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores implant record ID linked to a dental procedure."
+    },
+    {
+      "index": 115,
+      "name": "DENTAL_PROSTH_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier for a multi-tooth prosthetic structure. This is only used in Finland."
+    },
+    {
+      "index": 120,
+      "name": "DENTAL_PROC_AREA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the area of the oral cavity that a dental procedure is performed on.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire oral cavity\n\n\nMaxillary arch\n\n\nMandibular arch\n\n\nUpper right quadrant\n\n\nUpper left quadrant\n\n\nLower left quadrant\n\n\nLower right quadrant"
+    },
+    {
+      "index": 134,
+      "name": "DENTAL_LNKED_ORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the linked order record for a dental procedure."
+    },
+    {
+      "index": 139,
+      "name": "DENTAL_PROC_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the note (HNO) record that serves as this dental procedure's Completion Details note"
+    },
+    {
+      "index": 144,
+      "name": "DENTAL_TRIG_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The original triggering procedure for alternatives"
+    },
+    {
+      "index": 149,
+      "name": "DENT_PROC_SUBSTATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Subcategorization of a dental procedure\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 155,
+      "name": "DENTAL_LINKED_BRIDGE_PROC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure (RES) ID that indicates which bridge this dental procedure forms a part of. All of the procedures that are in the same bridge have the same value for this column."
+    },
+    {
+      "index": 160,
+      "name": "DEN_SRC_PROTOCOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The SmartSet this result came from"
+    },
+    {
+      "index": 165,
+      "name": "DEN_SRC_PROTOCOL_ID_PROTOCOL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartSet/Protocol record name.  This is different from the display name, which is stored in CL_PRL_SS_OT.DISPLAY_NAME."
+    },
+    {
+      "index": 170,
+      "name": "D_SS_PRL_SRC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Result came from PRL OrderSet, PRL SmartSet, or PRL Template\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nORDER SET\n\n\nSMARTSET\n\n\nQUICK LIST\n\n\nDental Template"
+    },
+    {
+      "index": 181,
+      "name": "DENT_SRC_PRL_DAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The DAT of the SmartSet as applied to the patient"
+    },
+    {
+      "index": 186,
+      "name": "DENT_PROC_AREA_INACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines if a non-tooth level procedure should be considered active and displayed on tooth chart\n\n\n The category values for this column were already listed for column: DEN_PROC_EX_FLAG_YN"
+    },
+    {
+      "index": 192,
+      "name": "DENT_PRL_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The Instant the Procedure was created from a PRL template"
+    }
+  ]
+}

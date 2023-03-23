@@ -1,0 +1,213 @@
+{
+  "table_name": "ORTHO_PAYMENT_PLAN",
+  "description": "The ORTHO_PAYMENT_PLAN table contains information about orthodontics charging plans.",
+  "primary_key": {
+    "column_name": "TREATMENT_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the dental billing plan record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ORTHO_PMT_PLAN_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The orthodontic charging plan number."
+    },
+    {
+      "index": 17,
+      "name": "ORTHO_PAT_INS_LIAB",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient or insurance liability of the orthodontic charging plan."
+    },
+    {
+      "index": 22,
+      "name": "ORTHO_PATIENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether this charging plan line is for the self-pay portion of  this charging plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 31,
+      "name": "ORTHO_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the payor who is associated with the orthodontic charging plan. This column is frequently used to link to the CLARITY_EPM table."
+    },
+    {
+      "index": 36,
+      "name": "ORTHO_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 41,
+      "name": "ORTHO_LIABILITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The self-pay or insurance portion for this orthodontic charging plan line."
+    },
+    {
+      "index": 46,
+      "name": "ORTHO_DOWN_PAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the initial charge for this charging plan line."
+    },
+    {
+      "index": 51,
+      "name": "ORTHO_TERM_LENGTH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The frequency of payments for this orthodontic charging plan line measured in months."
+    },
+    {
+      "index": 56,
+      "name": "ORTHO_TOTAL_TERMS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of payments included in this orthodontic charging plan line."
+    },
+    {
+      "index": 61,
+      "name": "ORTHO_TERMS_LEFT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of payments left on this orthodontic charging plan line."
+    },
+    {
+      "index": 66,
+      "name": "ORTHO_TERM_PAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the payments for this orthodontic charging plan line."
+    },
+    {
+      "index": 71,
+      "name": "ORTHO_LAST_TERM_PAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the final payment for this orthodontic charging plan line."
+    },
+    {
+      "index": 76,
+      "name": "ORTHO_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date this charging plan line starts."
+    },
+    {
+      "index": 81,
+      "name": "ORTHO_DATE_ESTAB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when this orthodontic charging plan line was created."
+    },
+    {
+      "index": 86,
+      "name": "ORTHO_ACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this charging plan line is active or not. Y indicates that this line is active. N or a null value indicates that this line is not active.\n\n\n The category values for this column were already listed for column: ORTHO_PATIENT_YN"
+    },
+    {
+      "index": 92,
+      "name": "ORTHO_ENTRY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user record who entered the orthodontic charging plan line. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 97,
+      "name": "ORTHO_ENTRY_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time when orthodontic charging plan line was entered in the system."
+    },
+    {
+      "index": 102,
+      "name": "ORTHO_DEL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user record who removed the orthodontic charging plan line. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 107,
+      "name": "ORTHO_DEL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when orthodontic charging plan line was removed."
+    },
+    {
+      "index": 112,
+      "name": "ORTHO_DEL_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time when orthodontic charging plan was removed."
+    },
+    {
+      "index": 117,
+      "name": "ORTHO_CHARGING_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the charge was dropped for this payment plan."
+    },
+    {
+      "index": 122,
+      "name": "NUM_VISITS_LEFT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The required number of visits which are left for this payment plan term."
+    },
+    {
+      "index": 127,
+      "name": "LST_CHG_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The last charge dropping date. In order to meet the minimum number of visits, we need to count the number of visits from the last charge dropping date to the current charge dropping date."
+    },
+    {
+      "index": 132,
+      "name": "NUM_OF_VIS_REQ",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of visits required by payer for the charging plan period."
+    },
+    {
+      "index": 137,
+      "name": "ORTHO_INITIAL_CHG_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date to be used for the initial charge on this current charging plan line."
+    },
+    {
+      "index": 142,
+      "name": "ORTHO_INITIAL_CHG_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Procedure to be used for the initial charge on the current charging plan line."
+    },
+    {
+      "index": 147,
+      "name": "ORTHO_PERIODIC_CHG_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Procedure to be used for the periodic charge on the current charging plan line."
+    }
+  ]
+}

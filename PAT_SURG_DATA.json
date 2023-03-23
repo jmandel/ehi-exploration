@@ -1,0 +1,129 @@
+{
+  "table_name": "PAT_SURG_DATA",
+  "description": "This table contains information about items related to surgery, including: primary surgeon, procedure, location, and case and log status.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is populated only if you use IntraConnect."
+    },
+    {
+      "index": 22,
+      "name": "CS_SURG_SURGEON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the primary surgeon for the surgery, stored here so that it can be synched across deployments to be shown in the chart review."
+    },
+    {
+      "index": 27,
+      "name": "CS_SURG_PROC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the primary procedure for the surgery, stored here so that it can be synched across deployments to be shown in the chart review."
+    },
+    {
+      "index": 32,
+      "name": "CS_SURG_PROC_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 37,
+      "name": "CS_SURG_LOCATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the surgery location, stored here so that it can be synched across deployments to be shown in the chart review."
+    },
+    {
+      "index": 42,
+      "name": "CS_SURG_CASE_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The case status category number for the associated surgery, stored here so that it can be synched across deployments to be shown in the chart review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduled\n\n\nCanceled\n\n\nNot Scheduled\n\n\nMissing Information\n\n\nVoided\n\n\nPending\n\n\nArrived\n\n\nCompleted\n\n\nNo Show\n\n\nPending Unscheduled"
+    },
+    {
+      "index": 59,
+      "name": "CS_SURG_LOG_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The log status category number for the associated surgery, stored here so that it can be synched across deployments to be shown in the chart review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMissing Information\n\n\nPosted\n\n\nUnposted\n\n\nVoided\n\n\nCompleted\n\n\nCanceled"
+    },
+    {
+      "index": 72,
+      "name": "CS_SURG_EAP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the primary procedure for the surgery, stored here so that it can be synced across deployments to be shown in the chart review."
+    },
+    {
+      "index": 77,
+      "name": "CS_SURG_PROC_FRTXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure name as exactly ordered by the surgeon/provider, stored here so that it can be synced across deployments to be shown in the chart review."
+    },
+    {
+      "index": 82,
+      "name": "CS_SURG_PROC_LAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure laterality, stored here so that it can be synced across deployments to be shown in the chart review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLeft\n\n\nRight\n\n\nBilateral\n\n\nN/A\n\n\nDefault"
+    },
+    {
+      "index": 94,
+      "name": "CS_SURG_SCHED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The procedure scheduled time, stored here so that it can be synced across deployments to be shown in the chart review."
+    },
+    {
+      "index": 99,
+      "name": "CS_SURG_PROC_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure comments, stored here so that it can be synced across deployments to be shown in the chart review."
+    },
+    {
+      "index": 104,
+      "name": "CS_SURG_NOT_PERF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The flag determining if the surgery was marked as procedure not performed, stored here so that it can be synced across deployments.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 113,
+      "name": "CS_SURG_CASE_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the class of the case (either Inpatient or Outpatient), stored here so that the class of the case can be determined across deployments.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nCannot Be Determined"
+    }
+  ]
+}

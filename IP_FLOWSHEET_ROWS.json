@@ -1,0 +1,59 @@
+{
+  "table_name": "IP_FLOWSHEET_ROWS",
+  "description": "This table contains flowsheet row (FLO) data for an encounter. This table is a key table in tying LDA assessment row lines in flowsheet data records to the LDAs, and the necessary joins are:\n\n\n \n\n\nIP_FLOWSHEET_ROWS.IP_LDA_ID with IP_LDA_NOADDSINGLE.IP_LDA_ID\n\n\nIP_FLOWSHEET_ROWS.INPATIENT_DATA_ID with IP_FLWSHT_REC.INPATIENT_DATA_ID\n\n\nIP_FLOWSHEET_ROWS.LINE with IP_FLWSHT_MEAS.OCCURANCE\n\n\nIP_FLWSHT_REC.FSD_ID with IP_FLWSHT_MEAS.FSD_ID.",
+  "primary_key": {
+    "column_name": "INPATIENT_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the inpatient data store record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line count for the item."
+    },
+    {
+      "index": 12,
+      "name": "FLO_MEAS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the flowsheet group/row."
+    },
+    {
+      "index": 17,
+      "name": "FLO_MEAS_ID_DISP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name given to the flowsheet group/row."
+    },
+    {
+      "index": 22,
+      "name": "FLOWSHT_ROW_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The flowsheet row name. Especially comes into play when a custom name is given to a duplicable row/group, either by a user typing it upon manually adding a row/group or from the order that fired the task template which added the duplicable row/group."
+    },
+    {
+      "index": 27,
+      "name": "IP_LDA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the Lines/Drains/Airways (LDA) ID for the flowsheet group."
+    },
+    {
+      "index": 32,
+      "name": "ROW_VARIANCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The flowsheet row variance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdd\n\n\nRemove"
+    }
+  ]
+}

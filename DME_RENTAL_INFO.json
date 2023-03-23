@@ -1,0 +1,157 @@
+{
+  "table_name": "DME_RENTAL_INFO",
+  "description": "This table contains durable medical equipment (DME) member rental tracking record information, such as the member, service, and the amount or number of cycles on the rental so far.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the rental record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record status (hidden, soft-deleted, etc).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of the member attached to this rental record."
+    },
+    {
+      "index": 22,
+      "name": "VENDOR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The vendor attached to this rental record."
+    },
+    {
+      "index": 27,
+      "name": "VENDOR_ID_VENDOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the vendor."
+    },
+    {
+      "index": 32,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure code attached to this rental record."
+    },
+    {
+      "index": 37,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of this rental record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRental\n\n\nMaintenance\n\n\nCapped\n\n\nClosed"
+    },
+    {
+      "index": 48,
+      "name": "TOTAL_CYCLES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of cycles so far on this rental record."
+    },
+    {
+      "index": 53,
+      "name": "DME_PRICING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Durable Medical Equipment (DME) Pricing record attached to this rental record."
+    },
+    {
+      "index": 58,
+      "name": "DME_PRICING_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the pricing record."
+    },
+    {
+      "index": 63,
+      "name": "TOTAL_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total amount paid so far on this rental record."
+    },
+    {
+      "index": 68,
+      "name": "RECORD_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the record was created."
+    },
+    {
+      "index": 73,
+      "name": "MAINT_TOTAL_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Tracks the total of all maintenance payments made for the rental."
+    },
+    {
+      "index": 78,
+      "name": "MAINT_TOTAL_CYCLES",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Tracks the number of cycle payments made for the rental during the maintenance period."
+    },
+    {
+      "index": 83,
+      "name": "RENTAL_CLOSE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason for closing a rental manually.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 90,
+      "name": "INITIAL_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The initial amount specified for the rental on manual rental creation. Prevents this amount from being overwritten during adjudication."
+    },
+    {
+      "index": 95,
+      "name": "INITIAL_CYCLES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The initial number of cycles specified for the rental on manual rental creation. Prevents this number from being overwritten during adjudication."
+    },
+    {
+      "index": 100,
+      "name": "INITIAL_MAINT_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The initial maintenance amount specified for the rental on manual rental creation. Prevents this amount from being overwritten during adjudication."
+    },
+    {
+      "index": 105,
+      "name": "INITIAL_MAINT_CYCLES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The initial number of maintenance cycles specified for the rental on manual rental creation. Prevents this number from being overwritten during adjudication."
+    },
+    {
+      "index": 110,
+      "name": "RENTAL_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is the start date for the rental. Rental cycles will be calculated based off of this starting date."
+    },
+    {
+      "index": 115,
+      "name": "MAINT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date for maintenance on the rental. Maintenance cycles are calculated based on this starting date."
+    }
+  ]
+}

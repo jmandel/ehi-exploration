@@ -1,0 +1,31 @@
+{
+  "table_name": "GUAR_SYNC_CVGS_ADD",
+  "description": "The GUAR_SYNC_CVGS_ADD table contains coverage records that were added to guarantor account records as a result of guarantor syncing.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the guarantor account record for this row."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "GUAR_SYNC_ADDCVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "List of coverage records that have been added to this guarantor account at one time as a result of guarantor account syncing. Once a coverage record has been added to a guarantor account by guarantor account syncing and then a user manually removes that coverage from the guarantor account, this item keeps track of the coverage record so that the coverage record is not added to the guarantor account again by guarantor account syncing."
+    }
+  ]
+}

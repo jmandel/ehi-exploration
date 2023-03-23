@@ -1,0 +1,59 @@
+{
+  "table_name": "ORDER_MED_VITALS",
+  "description": "This table stores historical patient vitals information for each medication order at the time the order was released. It should only be used for reporting on whether or not vitals information had been entered at that point in time.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "WEIGHT_AT_RELEASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's recorded weight in kilograms at the time the order was released."
+    },
+    {
+      "index": 12,
+      "name": "WEIGHT_REL_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category ID for the patient's recorded weight at the time the order was released.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan weight\n\n\nPast measured weight\n\n\nMost current measured weight (actual)\n\n\nIdeal body weight\n\n\nAdjusted body weight\n\n\nUser entered weight\n\n\nLean body weight\n\n\nDosing weight\n\n\nOther"
+    },
+    {
+      "index": 28,
+      "name": "HEIGHT_AT_RELEASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's recorded height in centimeters at the time the order was released."
+    },
+    {
+      "index": 33,
+      "name": "HEIGHT_REL_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category ID for the patient's recorded height at the time the order was released.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan height\n\n\nPast measured height\n\n\nMost current measured height (Actual)\n\n\nUser Entry\n\n\nOther"
+    },
+    {
+      "index": 45,
+      "name": "BSA_AT_RELEASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's calculated body surface area (BSA) in meters squared at the time the order was released."
+    },
+    {
+      "index": 50,
+      "name": "BSA_REL_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category ID for the patient's recorded body surface area (BSA) at the time the order was released.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan BSA\n\n\nBased on weight and height measured in the past\n\n\nBased on most recent measured weight and height (actual)\n\n\nUser Entry\n\n\nBased on ideal body weight and current/past measured height\n\n\nBased on adjusted body weight and current/past measured height\n\n\nBased on dosing weight and current/past measured height\n\n\nBased on normalized BSA 1.7m2\n\n\nOther"
+    }
+  ]
+}

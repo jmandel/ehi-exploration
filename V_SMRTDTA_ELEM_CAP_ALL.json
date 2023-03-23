@@ -1,0 +1,73 @@
+{
+  "table_name": "V_SMRTDTA_ELEM_CAP_ALL",
+  "description": "This view combines historical and current captions for SmartData element values.",
+  "primary_key": {
+    "column_name": "HLV_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HLV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the SmartData element value."
+    },
+    {
+      "index": 7,
+      "name": "UPDATE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column groups together rows of data that were stored together. A higher UPDATE_NUM means a more recent update."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this update. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 17,
+      "name": "ELEMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartData identifier (SDI) for this row."
+    },
+    {
+      "index": 22,
+      "name": "SMRTDTA_ELEM_CAPTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the captions of the items as they were when the data was filed."
+    },
+    {
+      "index": 27,
+      "name": "LATEST_CAPTION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This columns returns 'Y' if this line is a current comment (i.e, if the data is coming from CONCEPT_CAPTION) and 'N' if it's a historical comment (i.e, if the data is coming from ELEM_VAL_PREV_CAPTION.)"
+    },
+    {
+      "index": 32,
+      "name": "CAPTION_UPDATE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the SmartData element caption was entered by a user through a SmartForm, SmartTool or other documentation tool that files discrete data to SmartData elements."
+    },
+    {
+      "index": 37,
+      "name": "CAPTION_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the SmartData element caption was entered by a user through a SmartForm, SmartTool or other documentation tool that files discrete data to SmartData elements in the UTC timezone."
+    },
+    {
+      "index": 42,
+      "name": "CAPTION_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who entered the SmartData element value for this row. This column is frequently used to link to the CLARITY_EMP table."
+    }
+  ]
+}

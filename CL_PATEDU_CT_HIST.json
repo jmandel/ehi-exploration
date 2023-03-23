@@ -1,0 +1,101 @@
+{
+  "table_name": "CL_PATEDU_CT_HIST",
+  "description": "Enterprise reporting table for contact specific education history items in Patient Education (PED) records.",
+  "primary_key": {
+    "column_name": "PED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Unique ID for the Patient Education Record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The Line Count for contact specific history detail."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date of contact for contact specific history detail."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_HX_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The education key for the contact-specific history record. The education key is a string in the form of Title^Topic^Point."
+    },
+    {
+      "index": 27,
+      "name": "CONTCT_HX_TOPIC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the education topic record which is used to retrieve the contact-specific history for the education point in this record. If the education point is directly beneath the title then this value is null."
+    },
+    {
+      "index": 32,
+      "name": "CONTCT_HX_POINT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the education point for which the status was changed. The rest of the columns in each record contain the information related to this status change."
+    },
+    {
+      "index": 37,
+      "name": "CONTACT_HX_STATUS_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This category value is the status of the education point. The possible status entries are as follows: 1. Active 2. N/A 3. Done 4. Deleted  This column is a foreign key reference to ZC_PED_CT_STATUS__PED_CT_STATUS_C.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nN/A\n\n\nDone\n\n\nDeleted\n\n\nNot Started\n\n\nIn Progress"
+    },
+    {
+      "index": 50,
+      "name": "CONTACT_HX_EDIT_IN",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the education point was documented on."
+    },
+    {
+      "index": 55,
+      "name": "CONTACT_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who performed the documentation associated with each record in the contact-specific history."
+    },
+    {
+      "index": 60,
+      "name": "CONT_HX_TITLE_DAT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The contact date (DAT) of the contact where the patient education history title was documented."
+    },
+    {
+      "index": 65,
+      "name": "CONT_HX_TOPIC_DAT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The contact date (DAT) of the contact where the patient education history topic was documented."
+    },
+    {
+      "index": 70,
+      "name": "CONT_HX_POINT_DAT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The contact date (DAT) of the contact where the patient education history point was documented."
+    }
+  ]
+}

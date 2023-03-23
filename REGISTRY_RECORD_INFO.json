@@ -1,0 +1,45 @@
+{
+  "table_name": "REGISTRY_RECORD_INFO",
+  "description": "This table contains registry record information that might be considered electronic health information (EHI).",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the registry data record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "REGISTRY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The associated registry settings record (HFR) that this registry record (RDI) is used for."
+    },
+    {
+      "index": 22,
+      "name": "REGISTRY_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the registry record."
+    },
+    {
+      "index": 27,
+      "name": "REG_OVERRIDE_CONTEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the override context string to identify the correct override record for the registry settings record (HFR)"
+    }
+  ]
+}

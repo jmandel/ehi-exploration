@@ -1,0 +1,640 @@
+{
+  "table_name": "UNOS_INFO",
+  "description": "This table contains the core information reported to the United Network for Organ Sharing (UNOS) for each registry record. This table also contains information that can be used to monitor the UNOS reporting process and obtain related statistics.",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the registry data record."
+    },
+    {
+      "index": 7,
+      "name": "UNOS_REC_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique record key given to the form by UNOS."
+    },
+    {
+      "index": 12,
+      "name": "UNOS_ORGAN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of organ transplanted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLung\n\n\nPancreas\n\n\nLiver\n\n\nKidney\n\n\nKidney/Pancreas\n\n\nIntestine\n\n\nHeart\n\n\nHeart/Lung\n\n\nPancreas Islets"
+    },
+    {
+      "index": 28,
+      "name": "UNOS_PAT_FIRST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's first name."
+    },
+    {
+      "index": 33,
+      "name": "UNOS_PAT_LAST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's last name."
+    },
+    {
+      "index": 38,
+      "name": "UNOS_PAT_MIDDLE_INI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's middle initial."
+    },
+    {
+      "index": 43,
+      "name": "UNOS_HIC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's Health Insurance Commission Number."
+    },
+    {
+      "index": 48,
+      "name": "UNOS_DOB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The patient's date of birth."
+    },
+    {
+      "index": 53,
+      "name": "UNOS_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the UNOS-imported sex. This is the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMale\n\n\nFemale"
+    },
+    {
+      "index": 62,
+      "name": "UNOS_PAT_KEY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The transplant center ID issued to the patient by UNOS."
+    },
+    {
+      "index": 67,
+      "name": "UNOS_TXP_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the patient's transplant operation."
+    },
+    {
+      "index": 72,
+      "name": "UNOS_RCPT_CTR_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code used by UNOS to identify the facility at which the transplant operation took place."
+    },
+    {
+      "index": 77,
+      "name": "UNOS_RCPT_CTR_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of facility at which the transplant operation took place."
+    },
+    {
+      "index": 82,
+      "name": "UNOS_FOL_CTR_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code used by UNOS to identify the facility responsible for the patient's follow-up care."
+    },
+    {
+      "index": 87,
+      "name": "UNOS_FOL_CTR_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of facility responsible for the patient's follow-up care."
+    },
+    {
+      "index": 92,
+      "name": "UNOS_DONORID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transplant center ID issued to the donor by UNOS."
+    },
+    {
+      "index": 97,
+      "name": "UNOS_DONOR_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of donor: living or deceased.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDeceased\n\n\nLiving"
+    },
+    {
+      "index": 106,
+      "name": "UNOS_TRR_KEY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The patient's Transplant Recipient Registration ID."
+    },
+    {
+      "index": 111,
+      "name": "UNOS_FORM_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The form status of the follow-up form sent to UNOS. It  should be one of these values: ID                 Value 1\tAmnesty 2\tExpected 3\tReturned 4\tReceived 5\tSuspended 6\tValidated\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAmnesty\n\n\nExpected\n\n\nReturned\n\n\nReceived\n\n\nSuspended\n\n\nValidated"
+    },
+    {
+      "index": 124,
+      "name": "UNOS_ADD_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the UNOS follow-up form was created."
+    },
+    {
+      "index": 129,
+      "name": "UNOS_CHANGE_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the UNOS follow-up form was changed."
+    },
+    {
+      "index": 134,
+      "name": "UNOS_FOL_PROV_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The NPI of the provider responsible for the patient's follow-up care."
+    },
+    {
+      "index": 139,
+      "name": "UNOS_GRAFT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The graft's status: functioning or failed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFunctioning\n\n\nFailed"
+    },
+    {
+      "index": 148,
+      "name": "UNOS_GRAFT_FAIL_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the graft's failure."
+    },
+    {
+      "index": 153,
+      "name": "UNOS_FOL_UP_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The follow-up code assigned to the encounter.  Follow-up code indicates the period of time on which a form is reporting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n3 month\n\n\n6 month\n\n\n1 year\n\n\n2 year\n\n\n3 year\n\n\n4 year\n\n\n5 year\n\n\n6 year\n\n\n7 year\n\n\n8 year\n\n\n9 year\n\n\n10 year\n\n\n11 year\n\n\n12 year\n\n\n13 year\n\n\n14 year\n\n\n15 year\n\n\n16 year\n\n\n17 year\n\n\n18 year\n\n\n19 year\n\n\n20 year\n\n\n21 year\n\n\n22 year\n\n\n23 year\n\n\n24 year\n\n\n25 year\n\n\n26 year\n\n\n27 year\n\n\n28 year\n\n\n29 year\n\n\n30 year\n\n\n31 year\n\n\n32 year\n\n\n33 year\n\n\n34 year\n\n\n35 year\n\n\n36 year\n\n\n37 year\n\n\n38 year\n\n\n39 year\n\n\n40 year\n\n\n41 year\n\n\n42 year\n\n\n43 year\n\n\n44 year\n\n\n45 year\n\n\n46 year\n\n\n47 year\n\n\n48 year\n\n\n49 year\n\n\n50 year\n\n\n51 year\n\n\n52 year\n\n\n53 year\n\n\n54 year\n\n\n55 year\n\n\n56 year\n\n\n57 year\n\n\n58 year\n\n\n59 year\n\n\n60 year\n\n\n61 year\n\n\n62 year\n\n\n63 year\n\n\n64 year\n\n\n65 year\n\n\n66 year\n\n\n67 year\n\n\n68 year\n\n\n69 year\n\n\n70 year\n\n\n71 year\n\n\n72 year\n\n\n73 year\n\n\n74 year\n\n\n75 year\n\n\n76 year\n\n\n77 year\n\n\n78 year\n\n\n79 year\n\n\nGraft failure\n\n\n1 year after graft failure\n\n\n2 year after graft failure\n\n\n3 year after graft failure\n\n\n4 year after graft failure\n\n\n5 year after graft failure\n\n\nLost to follow-up\n\n\nRecipient death"
+    },
+    {
+      "index": 249,
+      "name": "UNOS_TXP_DSCH_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the patient was discharged after the transplant operation."
+    },
+    {
+      "index": 254,
+      "name": "PHYS_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the physician who last saw the patient."
+    },
+    {
+      "index": 259,
+      "name": "NPI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The NPI of the physician who last saw the patient."
+    },
+    {
+      "index": 264,
+      "name": "UNOS_HEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's height in centimeters."
+    },
+    {
+      "index": 269,
+      "name": "UNOS_HEIGHT_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code specifying why the patient's height is empty.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nN/A\n\n\nNot Done\n\n\nMissing\n\n\nUnknown"
+    },
+    {
+      "index": 280,
+      "name": "UNOS_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's weight in kilograms."
+    },
+    {
+      "index": 285,
+      "name": "UNOS_WEIGHT_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The code specifying why the patient's weight is empty.\n\n\n The category values for this column were already listed for column: UNOS_HEIGHT_STAT_C_NAME"
+    },
+    {
+      "index": 291,
+      "name": "PAT_STATUS_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date for the most recent of the following events: patient last seen, organ retransplanted, or patient's death."
+    },
+    {
+      "index": 296,
+      "name": "PAT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's status: living, dead, or retransplanted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLiving\n\n\nDead\n\n\nNot Seen\n\n\nRetransplanted\n\n\nLost\n\n\nNatural Disaster"
+    },
+    {
+      "index": 309,
+      "name": "UNOS_FUNC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's functional status as reported to UNOS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPerforms activities of daily living with NO assistance\n\n\nPerforms activities of daily living with SOME assistance\n\n\nPerforms activities of daily living with TOTAL assistance\n\n\nNot Applicable (Patient Less Than 1 Year Old)\n\n\nUnknown\n\n\n10% - Moribund, Fatal Processes Progressing Rapidly\n\n\n20% - Very Sick, Hospitalization Necessary: Active Treatment Necessary\n\n\n30% - Severely Disabled: Hospitalization is Indicated, Death Not Imminent\n\n\n40% - Disabled: Requires Special Care and Assistance\n\n\n50% - Requires Considerable Assistance and Frequent Medical Care\n\n\n60% - Requires Occasional Assistance but is Able to Care for Needs\n\n\n70% - Cares for Self: Unable to Carry on Normal Activity or Active Work\n\n\n80% - Normal Activity with Effort: Some Symptoms of Disease\n\n\n90% - Able to Carry on Normal Activity: Minor Symptoms of Disease\n\n\n100% - Normal, No Complaints, No Evidence of Disease\n\n\n10% - No Play; Does Not Get out of Bed\n\n\n20% - Often Sleeping; Play Entirely Limited to Very Passive Activities\n\n\n30% - In Bed; Needs Assistance Even for Quiet Play\n\n\n40% - Mostly in Bed, Participates in Quiet Activities\n\n\n50% - Can Dress but Lies Around Much of Day; No Active Play; Quiet Play/Activities\n\n\n60% - Up and Around, but Minimal Active Play; Keeps Busy with Quieter Activities\n\n\n70% - Both Greater Restriction of and Less Time Spent in Play Activity\n\n\n80% - Active, but Tires More Quickly\n\n\n90% - Minor Restrictions in Physically Strenuous Activity\n\n\n100% - Fully Active, Normal"
+    },
+    {
+      "index": 341,
+      "name": "UNOS_PHYSICAL_CAP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's physical capacity as reported to UNOS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Limitations\n\n\nLimited Mobility\n\n\nWheelchair Bound or More Limited\n\n\nNot Applicable (<1 Year Old or Hospitalized)\n\n\nUnknown"
+    },
+    {
+      "index": 353,
+      "name": "UNOS_WORK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient is working for income.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+    },
+    {
+      "index": 363,
+      "name": "UNOS_WORK_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason why the patient is not working.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDisability\n\n\nDemands of Treatment\n\n\nInsurance Conflict\n\n\nInability to Find Work\n\n\nPatient Choice - Homemaker\n\n\nPatient Choice - Student Full Time/Part Time\n\n\nPatient Choice - Retired\n\n\nPatient Choice - Other\n\n\nNot Applicable - Hospitalized\n\n\nUnknown"
+    },
+    {
+      "index": 380,
+      "name": "UNOS_WORK_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The level at which the patient is working, full time or part time, and why.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWorking Full Time\n\n\nWorking Part Time Due to Demands of Treatment\n\n\nWorking Part Time Due to Disability\n\n\nWorking Part Time Due to Insurance Conflict\n\n\nWorking Part Time Due to Inability to Find Full Time Work\n\n\nWorking Part Time Due to Patient Choice\n\n\nWorking Part Time Reason Unknown\n\n\nWorking, Part Time vs. Full Time Unknown"
+    },
+    {
+      "index": 395,
+      "name": "UNOS_ACAD_PROG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's academic progress.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWithin One Grade Level of Peers\n\n\nDelayed Grade Level\n\n\nSpecial Education\n\n\nNot Applicable, too young for school/ High School graduate or GED\n\n\nUnknown"
+    },
+    {
+      "index": 407,
+      "name": "UNOS_ACAD_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's academic activity level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFull Academic Load\n\n\nReduced Academic Load\n\n\nUnable to Participate in Academics Due to Disease or Condition\n\n\nUnable to Participate Regularly in Academics Due to Dialysis\n\n\nNot Applicable, too young for school/ High School graduate or GED\n\n\nUnknown"
+    },
+    {
+      "index": 420,
+      "name": "UNOS_INSUR_PRI_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's primary type of insurance during the follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrivate Insurance\n\n\nPublic Insurance - Medicaid\n\n\nPublic Insurance - Medicare FFS (Fee for Service)\n\n\nPublic Insurance - Medicare & Choice\n\n\nPublic Insurance - CHIP (Children's Health Insurance Program)\n\n\nPublic Insurance - Department of VA\n\n\nPublic Insurance - Other Government\n\n\nSelf\n\n\nDonation\n\n\nFree Care\n\n\nPending\n\n\nForeign Government, Specify\n\n\nPublic insurance - Medicare Unspecified\n\n\nUS/State Govt Agency\n\n\nUnknown"
+    },
+    {
+      "index": 442,
+      "name": "UNOS_INSUR_FRGN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The foreign government responsible for the patient's primary insurance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAndorra\n\n\nAfghanistan\n\n\nAntigua and Barbuda\n\n\nAnguilla\n\n\nAlbania\n\n\nAlgeria\n\n\nArmenia\n\n\nAngola\n\n\nArgentina\n\n\nAruba\n\n\nAmerican Samoa\n\n\nAustria\n\n\nAustralia\n\n\nAzerbaijan\n\n\nAzores\n\n\nBarbados\n\n\nBrunei Darussalam\n\n\nBelgium\n\n\nBenin\n\n\nBermuda\n\n\nBangladesh\n\n\nBosnia-Herzegovina\n\n\nBahrain\n\n\nBahamas\n\n\nBhutan\n\n\nBritish Indian Ocean Territory\n\n\nBulgaria\n\n\nBolivia\n\n\nBrazil\n\n\nBurundi\n\n\nBurkina\n\n\nBurma (Myanmar)\n\n\nBritish Virgin Islands\n\n\nBotswana\n\n\nBelarus\n\n\nBelize\n\n\nCanary Islands\n\n\nCambodia\n\n\nCanada\n\n\nCentral African Republic\n\n\nCocos (Keeling) Island\n\n\nCanton and Enderbury Islands\n\n\nCongo\n\n\nChad\n\n\nChina\n\n\nChile\n\n\nCook Islands\n\n\nCameroon\n\n\nComoros\n\n\nCongo, Democratic Republic of\n\n\nColombia\n\n\nCroatia\n\n\nCosta Rica\n\n\nCuba\n\n\nCape Verde\n\n\nChristmas Islands\n\n\nCayman Island\n\n\nCyprus\n\n\nCzech Republic, The\n\n\nDjibouti\n\n\nDenmark\n\n\nDominica\n\n\nDominican Republic\n\n\nEcuador\n\n\nEstonia\n\n\nEquatorial Guinea\n\n\nEgypt\n\n\nEngland\n\n\nEl Salvador\n\n\nEthiopia\n\n\nFrench Guiana\n\n\nFinland\n\n\nFiji\n\n\nFalkland Islands (Malvinas)\n\n\nFaroe Islands\n\n\nFrench Polynesia\n\n\nFrance\n\n\nFrench Southern and Antarctic\n\n\nGabon\n\n\nGrenada\n\n\nGuadeloupe\n\n\nGeorgia\n\n\nGermany, Federal Republic of\n\n\nGhana\n\n\nGibraltar\n\n\nGreenland\n\n\nGambia, The\n\n\nGreece\n\n\nGuatemala\n\n\nGuinea-Bissau\n\n\nGuam\n\n\nGuinea\n\n\nGuyana\n\n\nGaza Strip\n\n\nHong Kong\n\n\nHeard Island and McDonald Islands\n\n\nHonduras\n\n\nHaiti\n\n\nHungary\n\n\nIvory Coast\n\n\nIceland\n\n\nIndonesia\n\n\nIndia\n\n\nIreland\n\n\nIran\n\n\nIraq\n\n\nIsrael\n\n\nItaly\n\n\nJamaica\n\n\nJordan\n\n\nJapan\n\n\nJohnston Atoll\n\n\nKenya\n\n\nKyrgyzstan\n\n\nKiribati\n\n\nKorea\n\n\nKampuchea, Democratic\n\n\nKuwait\n\n\nKazakhstan\n\n\nLao Peoples' Democratic Republic\n\n\nLatin America\n\n\nLibya\n\n\nLiechtenstein\n\n\nLebanon\n\n\nLiberia\n\n\nLesotho\n\n\nLithuania\n\n\nLatvia\n\n\nLuxembourg\n\n\nMacau\n\n\nMacedonia (Skopje)\n\n\nMadagascar\n\n\nMadeira Island\n\n\nMoldova\n\n\nMexico\n\n\nMicronesia, Federated States of\n\n\nMarshall Islands\n\n\nMaldives\n\n\nMali\n\n\nMonaco\n\n\nMongolia\n\n\nMorocco\n\n\nMauritania\n\n\nMontserrat\n\n\nMalta\n\n\nMartinique\n\n\nMauritius\n\n\nMalawi\n\n\nMidway Islands\n\n\nMalaysia\n\n\nMozambique\n\n\nNamibia\n\n\nNetherlands Antilles\n\n\nNew Caledonia\n\n\nNetherlands\n\n\nNorfolk Island\n\n\nNigeria\n\n\nNicaragua\n\n\nNiger\n\n\nNorth Korea\n\n\nNorway\n\n\nNorthern Mariana Islands\n\n\nNepal\n\n\nNauru\n\n\nNiue\n\n\nNew Zealand\n\n\nOman\n\n\nPalau\n\n\nPanama\n\n\nPeru\n\n\nPitcairn Island\n\n\nPhilippines\n\n\nPakistan\n\n\nPoland\n\n\nPapua New Guinea\n\n\nPuerto Rico\n\n\nParaguay\n\n\nPortugal\n\n\nQatar\n\n\nReunion\n\n\nRomania\n\n\nRussia\n\n\nRwanda\n\n\nSouth Africa\n\n\nSamoa\n\n\nSaudi Arabia\n\n\nSeychelles\n\n\nSudan\n\n\nSweden\n\n\nSingapore\n\n\nSvalbard and Jan Mayen Islands\n\n\nSlovakia\n\n\nSouth Korea\n\n\nSolomon Islands\n\n\nSri Lanka\n\n\nSlovenia\n\n\nSan Marino\n\n\nSenegal\n\n\nSomalia\n\n\nSpain\n\n\nSt. Pierre and Miquelon\n\n\nSerbia and Montenegro\n\n\nSierra Leone\n\n\nSuriname\n\n\nSpanish Africa\n\n\nSt. Christopher\n\n\nSt. Helena\n\n\nSt. Kitts and Nevis\n\n\nSaint Lucia\n\n\nSao Tome and Principe\n\n\nSaint Vincent and the Grenadines\n\n\nSwitzerland\n\n\nSyrian Arab Republic\n\n\nSwaziland\n\n\nTurks and Caicos Island\n\n\nTrinidad and Tobago\n\n\nTogo\n\n\nThailand\n\n\nTajikistan\n\n\nTokelau\n\n\nTurkmenistan\n\n\nTunisia\n\n\nTonga\n\n\nTurkey\n\n\nTuvalu\n\n\nTaiwan\n\n\nTanzania, United Republic of\n\n\nUnited Arab Emirates\n\n\nUganda\n\n\nUkraine\n\n\nUnited Kingdom\n\n\nUSA Minor Outlying Islands\n\n\nUruguay\n\n\nUnited States\n\n\nUzbekistan\n\n\nVatican City\n\n\nVenezuela\n\n\nVirgin Islands of the USA\n\n\nVietnam\n\n\nVanuata\n\n\nYemen, Republic of\n\n\nZambia\n\n\nZimbabwe\n\n\nUnknown"
+    },
+    {
+      "index": 693,
+      "name": "UNOS_COGNITIV_DEV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's cognitive development level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDefinite Cognitive Delay/Impairment\n\n\nProbable Cognitive Delay/Impairment\n\n\nQuestionable Cognitive Delay/Impairment\n\n\nNo Cognitive Delay/Impairment\n\n\nNot Assessed"
+    },
+    {
+      "index": 705,
+      "name": "UNOS_MOTOR_DEV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's motor development level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDefinite Motor Delay/Impairment\n\n\nProbable Motor Delay/Impairment\n\n\nQuestionable Motor Delay/Impairment\n\n\nNo Motor Delay/Impairment\n\n\nNot Assessed"
+    },
+    {
+      "index": 717,
+      "name": "UNOS_VITALS_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the patient's height and weight were measured. This field is specified for pediatric patients."
+    },
+    {
+      "index": 722,
+      "name": "UNOS_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's state of permanent residency.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlaska\n\n\nAlabama\n\n\nArkansas\n\n\nPago Pago\n\n\nArizona\n\n\nCalifornia\n\n\nColorado\n\n\nConnecticut\n\n\nDist. Of Columbia\n\n\nDelaware\n\n\nFlorida\n\n\nGeorgia\n\n\nGuam\n\n\nHawaii\n\n\nIowa\n\n\nIdaho\n\n\nIllinois\n\n\nIndiana\n\n\nKansas\n\n\nKentucky\n\n\nLouisiana\n\n\nMassachusetts\n\n\nMaryland\n\n\nMaine\n\n\nMichigan\n\n\nMinnesota\n\n\nMissouri\n\n\nSaipan Mariana Islands\n\n\nMississippi\n\n\nMontana\n\n\nForeign Country\n\n\nNorth Carolina\n\n\nNorth Dakota\n\n\nNebraska\n\n\nNew Hampshire\n\n\nNew Jersey\n\n\nNew Mexico\n\n\nNevada\n\n\nNew York\n\n\nOhio\n\n\nOklahoma\n\n\nOregon\n\n\nPennsylvania\n\n\nPuerto Rico\n\n\nRhode Island\n\n\nSouth Carolina\n\n\nSouth Dakota\n\n\nState\n\n\nTennessee\n\n\nTexas\n\n\nUtah\n\n\nVirginia\n\n\nVirgin Islands\n\n\nVermont\n\n\nWashington\n\n\nWisconsin\n\n\nWest Virginia\n\n\nWyoming\n\n\nUnknown"
+    },
+    {
+      "index": 788,
+      "name": "UNOS_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's ZIP Code."
+    },
+    {
+      "index": 793,
+      "name": "VOID_REASON",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason for voiding the record."
+    },
+    {
+      "index": 798,
+      "name": "UNOS_PREV_SURNAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Any surnames used by the patient, other than the surname recorded in the Name item."
+    },
+    {
+      "index": 803,
+      "name": "UNOS_PAT_IN_ZIP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient is waiting in their permanent ZIP code.\n\n\n The category values for this column were already listed for column: UNOS_WORK_C_NAME"
+    },
+    {
+      "index": 809,
+      "name": "UNOS_CITIZEN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The candidate's citizenship status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUS Citizen\n\n\nResident Alien\n\n\nNon-Resident Alien, Year Entered US\n\n\nNon-US Citizen/US Resident\n\n\nNon-US Citizen/Non-US Resident, Traveled to US for Reason Other Than Transplant\n\n\nNon-US Citizen/Non-US Resident, Traveled to US for Transplant"
+    },
+    {
+      "index": 822,
+      "name": "UNOS_ENTRY_USA_DT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If the candidate is a Non-Resident Alien, the year the candidate entered the United States."
+    },
+    {
+      "index": 827,
+      "name": "UNOS_EDU_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The candidate's highest level of education.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nGrade School (0-8)\n\n\nHigh School (9-12) or GED\n\n\nAttended College/Technical School\n\n\nAssociate/Bachelor Degree\n\n\nPost-College Graduate Degree\n\n\nN/A (Less Than 5 Years Old)\n\n\nUnknown"
+    },
+    {
+      "index": 842,
+      "name": "UNOS_SEC_PAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The candidate's secondary source of payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrivate Insurance\n\n\nPublic Insurance - Medicaid\n\n\nPublic Insurance - Medicare FFS (Fee For Service)\n\n\nPublic Insurance - Medicare & Choice\n\n\nPublic Insurance - Chip (Children's Health Insurance Program)\n\n\nPublic Insurance - Other Government\n\n\nSelf\n\n\nDonation\n\n\nFree Care\n\n\nNone\n\n\nPublic insurance - Medicare Unspecified\n\n\nUS/State Govt Agency"
+    },
+    {
+      "index": 861,
+      "name": "UNOS_OTIS_REGID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The candidate's registry ID in OTIS, as supplied by UNOS."
+    },
+    {
+      "index": 866,
+      "name": "UNOS_LIST_ADD_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the candidate was listed or added to the waitlist."
+    },
+    {
+      "index": 871,
+      "name": "UNOS_TXP_ADMIT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the recipient was admitted to the transplant center.  If the patient was admitted to the hospital before it was determined a transplant was needed, the date it was determined the patient needed a transplant."
+    },
+    {
+      "index": 876,
+      "name": "UNOS_TRSFR_PROV_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "UNOS transfer provider number. This information is downloaded from UNOS."
+    },
+    {
+      "index": 881,
+      "name": "UNOS_TRANSFER_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Transfer date. This information is downloaded from UNOS."
+    },
+    {
+      "index": 886,
+      "name": "HOME_ADDRESS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's street address."
+    },
+    {
+      "index": 891,
+      "name": "HOME_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's home city."
+    },
+    {
+      "index": 896,
+      "name": "HOME_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's home phone number."
+    },
+    {
+      "index": 901,
+      "name": "WORK_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's work phone number."
+    },
+    {
+      "index": 906,
+      "name": "EMAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's e-mail address."
+    },
+    {
+      "index": 911,
+      "name": "UNOS_MARITAL_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's marital status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSingle\n\n\nMarried\n\n\nDivorced\n\n\nSeparated\n\n\nLife Partner\n\n\nWidowed\n\n\nUnknown"
+    },
+    {
+      "index": 925,
+      "name": "UNOS_LIV_DNR_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The relationship between the living donor and the recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBiological, Blood Related Parent\n\n\nBiological, Blood Related Child\n\n\nBiological, Blood Related Identical Twin\n\n\nBiological, Blood Related Full Sibling\n\n\nBiological, Blood Related Half Sibling\n\n\nBiological, Blood Related Other Relative: Specify\n\n\nNon-Biological, Spouse\n\n\nNon-Biological, Life Partner\n\n\nNon-Biological, Unrelated: Paired Donation\n\n\nNon-Biological, Unrelated: Non-Directed Donation (Anonymous)\n\n\nNon-Biological, Living/Deceased Donation\n\n\nNon-Biological, Unrelated: Domino\n\n\nBiological, Blood Related: Domino\n\n\nBiological, Blood Related: Non-Domino Therapeutic Donor\n\n\nNon-Biological, Unrelated: Non-Domino Therapeutic Donor\n\n\nNon-Biological, Other Unrelated Directed Donation: Specify"
+    },
+    {
+      "index": 948,
+      "name": "UNOS_LIV_DNR_TYP_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text description of the relationship between the living donor and the recipient."
+    },
+    {
+      "index": 953,
+      "name": "DNR_INSURANCE_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the donor had health insurance at the time of donation.\n\n\n The category values for this column were already listed for column: UNOS_WORK_C_NAME"
+    },
+    {
+      "index": 959,
+      "name": "DNR_RECIPIENT_LNAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipient's last name in the living donor form."
+    },
+    {
+      "index": 964,
+      "name": "DNR_RECIPIENT_FNAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipient's first name in the living donor form."
+    },
+    {
+      "index": 969,
+      "name": "DNR_RECOV_CNTR_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The donor recovery facility center code."
+    },
+    {
+      "index": 974,
+      "name": "DNR_RECOV_CNTR_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The donor recovery facility center type."
+    },
+    {
+      "index": 979,
+      "name": "DNR_WRKUP_CNTR_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The donor workup facility center code."
+    },
+    {
+      "index": 984,
+      "name": "DNR_WRKUP_CNTR_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The donor workup facility center type."
+    },
+    {
+      "index": 989,
+      "name": "ORG_RCV_TXP_SAME_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the organ recovery and transplant occurred at the same center.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 998,
+      "name": "PRE_DONATN_HEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The living donor's height (in centimeters) prior to donation."
+    },
+    {
+      "index": 1003,
+      "name": "PRE_DONATN_HT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies why the height of the living donor prior to donation is not available.\n\n\n The category values for this column were already listed for column: UNOS_HEIGHT_STAT_C_NAME"
+    },
+    {
+      "index": 1009,
+      "name": "PRE_DONATN_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The living donor's weight (in kilograms) prior to donation."
+    },
+    {
+      "index": 1014,
+      "name": "PRE_DONATN_WT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies why the weight of the living donor prior to donation is not available.\n\n\n The category values for this column were already listed for column: UNOS_HEIGHT_STAT_C_NAME"
+    },
+    {
+      "index": 1020,
+      "name": "UNOS_DNR_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the donor.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLiving\n\n\nDead\n\n\nLost\n\n\nNot Seen"
+    },
+    {
+      "index": 1031,
+      "name": "UNOS_DNR_ST_COLL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The attempts to collect donor status if unable to contact donor."
+    },
+    {
+      "index": 1036,
+      "name": "UNOS_LIV_DNR_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The most recent donor status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLiving: Donor Seen at Transplant Center\n\n\nLiving: Donor Status Update by Verbal or Written Communication\n\n\nLiving: Donor Status Update by Other Health Care Facility\n\n\nLiving: Donor Status Update via Other Source (Example: recipient)\n\n\nLiving: Donor Contacted, Declined Follow-up with Transplant Center\n\n\nDead\n\n\nLost: No Attempt to Contact Donor\n\n\nLost: Unable to Contact Donor\n\n\nNot Seen"
+    },
+    {
+      "index": 1052,
+      "name": "UNOS_LF_SUPPORT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the candidate was on life support.\n\n\n The category values for this column were already listed for column: ORG_RCV_TXP_SAME_YN"
+    },
+    {
+      "index": 1058,
+      "name": "UNOS_LF_SPT_VENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the candidate was on continuous invasive ventilation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFalse\n\n\nTrue"
+    },
+    {
+      "index": 1067,
+      "name": "UNOS_LF_SPT_LVR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the candidate had an artificial liver.\n\n\n The category values for this column were already listed for column: UNOS_LF_SPT_VENT_YN"
+    },
+    {
+      "index": 1073,
+      "name": "UNOS_LF_SPT_OTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the candidate was on other types of life support.\n\n\n The category values for this column were already listed for column: UNOS_LF_SPT_VENT_YN"
+    },
+    {
+      "index": 1079,
+      "name": "UNOS_LF_SPT_OTH_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text description of the type of life support."
+    },
+    {
+      "index": 1084,
+      "name": "UNOS_PA_PRIM_INS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "UNOS pancreas primary source of payment\n\n\n The category values for this column were already listed for column: UNOS_INSUR_PRI_C_NAME"
+    },
+    {
+      "index": 1090,
+      "name": "UNOS_PA_FRN_GOV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "UNOS pancreas foreign government, specify\n\n\n The category values for this column were already listed for column: UNOS_INSUR_FRGN_C_NAME"
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "table_name": "RXA_ADJUD_MESSAG_2",
+  "description": "Contains various information relating to a single contact of an adjudication record. Adjudication records are used by Ambulatory Pharmacy during prescription copay adjudication.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the adjudication record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "BIN_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The BIN (Bank Identification Number) used during prescription adjudication. This number can be stored in the plan and payor, and a different number can be returned based on whether the adjudication is primary or not. (101-A1)"
+    },
+    {
+      "index": 22,
+      "name": "PROCESSOR_CTRL_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The processor control number used during prescription adjudication. This number can be stored in the plan and payor, and a different number can be returned based on whether the adjudication is primary or not.(104-A4)"
+    },
+    {
+      "index": 27,
+      "name": "ORG_PRESC_PROD_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code of the initially prescribed product or service.(445-EA)"
+    },
+    {
+      "index": 32,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 37,
+      "name": "I_TX_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code identifying the type of transaction."
+    },
+    {
+      "index": 42,
+      "name": "I_TX_CODE_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 47,
+      "name": "I_HEADER_RESP_ST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the status of the transmission."
+    },
+    {
+      "index": 52,
+      "name": "I_HEADER_RESP_ST_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 57,
+      "name": "I_SVC_PROV_QUAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code qualifying the 'Service Provider ID' (201-B1)."
+    },
+    {
+      "index": 62,
+      "name": "I_SVC_PROV_QUAL_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 67,
+      "name": "I_PYR_QUAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of payer ID."
+    },
+    {
+      "index": 72,
+      "name": "I_PYR_QUAL_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 77,
+      "name": "I_MCAID_MEM_ID_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A unique member identification number assigned by the Medicaid Agency."
+    },
+    {
+      "index": 82,
+      "name": "I_MEDICAID_AGNC_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Medicaid Agency Number sent to the payer (116-N6)"
+    },
+    {
+      "index": 87,
+      "name": "I_CARDHOLDER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Insurance ID assigned to the cardholder or identification number used by the plan."
+    },
+    {
+      "index": 92,
+      "name": "I_MCARE_D_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating whether a coverage is a Medicare Part D Coverage"
+    },
+    {
+      "index": 97,
+      "name": "I_MCARE_D_CVG_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 102,
+      "name": "I_CMS_LICS_LEVEL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID for the formulary list"
+    },
+    {
+      "index": 107,
+      "name": "I_CONTRACT_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Code indicating the status of the transmission."
+    },
+    {
+      "index": 112,
+      "name": "I_FORMULARY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the formular list."
+    },
+    {
+      "index": 117,
+      "name": "I_BENEFIT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Insurance ID assigned to the cardholder or identification number used by the plan."
+    },
+    {
+      "index": 122,
+      "name": "I_NXT_MDCR_D_EFF_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "A Medicare Part D coverage's effective starting date"
+    },
+    {
+      "index": 127,
+      "name": "I_NXT_MDCR_D_TR_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "A Medicare Part D coverage's effective ending date"
+    },
+    {
+      "index": 132,
+      "name": "I_PATIENT_FIRST_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's first name sent to the payer (310-CA)"
+    },
+    {
+      "index": 137,
+      "name": "I_PATIENT_LAST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's last name sent to the payer (311-CB)"
+    },
+    {
+      "index": 142,
+      "name": "I_BIRTH_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "ID for the formulary list"
+    },
+    {
+      "index": 147,
+      "name": "I_TX_RESP_STAT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the status of the transaction."
+    },
+    {
+      "index": 152,
+      "name": "I_TX_RESP_STAT_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 157,
+      "name": "I_HELP_DESK_QUAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code qualifying the phone number in the 'Help Desk Phone Number' (550-8F)."
+    },
+    {
+      "index": 162,
+      "name": "I_HELP_DESK_QUAL_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 167,
+      "name": "I_TX_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Code indicating the status of the transaction."
+    },
+    {
+      "index": 172,
+      "name": "I_INT_CTRL_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Number assigned by the processor to identify an adjudicated claim when supplied in payer-to-payer coordination of benefits only."
+    },
+    {
+      "index": 177,
+      "name": "I_URL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The web page address sent to the payer (987-MA)"
+    },
+    {
+      "index": 182,
+      "name": "I_RX_RF_NUM_QUAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of billing submitted."
+    },
+    {
+      "index": 187,
+      "name": "I_RX_RF_NUM_QUAL_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 192,
+      "name": "I_MCAID_CLAIM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Claim number assigned by the Medicaid Agency."
+    },
+    {
+      "index": 197,
+      "name": "I_TAX_EXEMPT_IND_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the payer and/or the patient is exempt from taxes."
+    },
+    {
+      "index": 202,
+      "name": "I_TAX_EXEMPT_IND_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 207,
+      "name": "I_BAS_REIM_DET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code identifying how the reimbursement amount was calculated for 'Ingredient Cost Paid' (506-F6)."
+    },
+    {
+      "index": 212,
+      "name": "I_BAS_REIM_DET_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 217,
+      "name": "I_BAS_DISP_FEE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for 'Dispensing Fee Paid' (507-F7)."
+    },
+    {
+      "index": 222,
+      "name": "I_BAS_DISP_FEE_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 227,
+      "name": "I_BAS_CALC_COPAY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the Copay reimbursement amount was calculated for 'Patient Pay Amount' (505-F5)."
+    },
+    {
+      "index": 232,
+      "name": "I_BAS_CALC_COPAY_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 237,
+      "name": "I_BAS_FLAT_TAX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPD code indicating how the reimbursement amount was calculated for 'Flat Sales Tax Amount Paid' (558-AW)."
+    },
+    {
+      "index": 242,
+      "name": "I_BAS_FLAT_TAX_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 247,
+      "name": "I_BAS_PCT_TAX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for 'Percentage Sales Tax Amount Paid' (559-AX)."
+    },
+    {
+      "index": 252,
+      "name": "I_BAS_PCT_TAX_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 257,
+      "name": "I_AMT_ATTR_PROC_FEE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This specifies the amount that is attributed to the processor fee."
+    },
+    {
+      "index": 262,
+      "name": "I_PAT_SAL_TAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sales tax that has been calculated."
+    },
+    {
+      "index": 267,
+      "name": "I_PLAN_SAL_TAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sales tax amount attributed to the plan."
+    },
+    {
+      "index": 272,
+      "name": "I_AMT_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of coinsurance that was calculated."
+    },
+    {
+      "index": 277,
+      "name": "I_BAS_CALC_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code specifying the basis on which the coinsure was calculated."
+    },
+    {
+      "index": 282,
+      "name": "I_BAS_CALC_COINS_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 287,
+      "name": "I_EST_GENERC_SAVING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The calculated estimated generic savings."
+    },
+    {
+      "index": 292,
+      "name": "I_SP_ACC_AMT_REM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount remaining on the spending amount. (128-UC)"
+    },
+    {
+      "index": 297,
+      "name": "I_HPFA_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Medicare Part D Coverage Code"
+    },
+    {
+      "index": 302,
+      "name": "I_AMT_PROV_NET_SEL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that has been attributed to the provider network selection"
+    },
+    {
+      "index": 307,
+      "name": "I_AMT_PROD_SEL_BRAN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is attributed to product selection for branded drugs."
+    },
+    {
+      "index": 312,
+      "name": "I_AMT_NPRF_FRM_SEL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is attributed to a product selection for non preferred formulary selections."
+    },
+    {
+      "index": 317,
+      "name": "I_AMT_BRND_NPRF_FRM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is attributed to product selection for Brand non preferred formulary selections."
+    },
+    {
+      "index": 322,
+      "name": "I_AMT_ATTR_CVG_GAP",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is attributed to the coverage gap."
+    },
+    {
+      "index": 327,
+      "name": "I_INGR_COST_CNTRCTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The cost of the ingredient contracted/reimbursable amount."
+    },
+    {
+      "index": 332,
+      "name": "I_DISP_FEE_CNTRCTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The dispensible free that was contracted/reimbursable amount"
+    },
+    {
+      "index": 337,
+      "name": "I_PCT_TAX_PD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NCPDP code indicating the percentage sales tax paid basis."
+    },
+    {
+      "index": 342,
+      "name": "I_PCT_TAX_PD_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 347,
+      "name": "I_COPAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Code qualifying the phone number in the 'Help Desk Phone Number' (550-8F)."
+    },
+    {
+      "index": 352,
+      "name": "REVERSE_OF_RXA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the original adjudication that this reversal or rebill is reversing."
+    },
+    {
+      "index": 357,
+      "name": "REVERSE_OF_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "Unique contact date in decimal format of the original adjudication that this reversal or rebill is reversing."
+    },
+    {
+      "index": 362,
+      "name": "IS_MANUALLY_APPROVED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the adjudication attempt was manually approved.  'N' or NULL indicate that the attempt was not manually approved.  'Y' indicates that the attempt as manually approved.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 371,
+      "name": "PREVIOUS_ADJ_RXA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Gets the adjudication attempt ID of the previous coverage in the filing order at the moment of this adjudication attempt. For primary coverage adjudications, this will always be null. For secondary coverages, this will point to the primary coverage. For tertiary coverages, this will point to the secondary coverage."
+    },
+    {
+      "index": 376,
+      "name": "PREVIOUS_ADJ_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "Gets the unique adjudication attempt date of the previous coverage in the filing order at the moment of this adjudication attempt. For primary coverage adjudications, this will always be null. For secondary coverages, this will point to the primary coverage. For tertiary coverages, this will point to the secondary coverage."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "table_name": "V_EHI_AUDIT_ORD_RXITEMS",
+  "description": "This table provides information on changes to specified no-add items in the order (ORD) master file formatted for the EHI export.",
+  "primary_key": {
+    "column_name": "ORDER_MED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication order (prescription) record. NOTE: This is an internal unique identifier for ORD master file records in this table and cannot be used to link to CLARITY_MEDICATION."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for each change."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "A value is needed. For multiple response item, it is the line number for each real data or 0 for total count line. For single response item, it is 1."
+    },
+    {
+      "index": 17,
+      "name": "AUDIT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant of change."
+    },
+    {
+      "index": 22,
+      "name": "OLD_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For audited items which store a networked record ID, this column will extract the CID of the linked record in OLD_VALUE. For other items this will extract the same value as OLD_VALUE."
+    },
+    {
+      "index": 27,
+      "name": "NEW_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For audited items which store a networked record ID, this column will extract the CID of the linked record in NEW_VALUE. For other items this will extract the same value as NEW_VALUE."
+    },
+    {
+      "index": 32,
+      "name": "OLD_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The old value of the item in external format. Dates, categories, and networked items will display meaningful information instead of the internal value."
+    },
+    {
+      "index": 37,
+      "name": "NEW_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The new value of the item in external format. Dates, categories, and networked items will display meaningful information instead of the internal value."
+    },
+    {
+      "index": 42,
+      "name": "CHANGED_DATA_ELEMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Clarity table and column which corresponds to the data which changed."
+    },
+    {
+      "index": 47,
+      "name": "CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user ID who made the change."
+    }
+  ]
+}

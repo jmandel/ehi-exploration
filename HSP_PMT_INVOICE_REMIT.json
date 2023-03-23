@@ -1,0 +1,66 @@
+{
+  "table_name": "HSP_PMT_INVOICE_REMIT",
+  "description": "Invoice level remittance information for a payment.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "INV_GRP_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the group code corresponding to the reason code at the invoice level.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Responsibility\n\n\nContractual Obligation\n\n\nPayor Initiated\n\n\nCorrection and Reversal\n\n\nOther Adjustment"
+    },
+    {
+      "index": 24,
+      "name": "INV_REMIT_CODE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the invoice level reason code or remark codes."
+    },
+    {
+      "index": 29,
+      "name": "INV_REMIT_CODE_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 34,
+      "name": "INV_RSN_CODE_EXTL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the invoice level external reason code or remark codes."
+    },
+    {
+      "index": 39,
+      "name": "INV_RMT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount associated with the reason code at the invoice level."
+    },
+    {
+      "index": 44,
+      "name": "INV_RMK_CODES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores information about the remark codes that are associated with specific reason codes. This is a comma delimited list of remark codes. The system will associate all remark codes present at the invoice level to every reason code at the invoice level."
+    }
+  ]
+}

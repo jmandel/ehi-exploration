@@ -1,0 +1,45 @@
+{
+  "table_name": "HEART_RANKING_STATUS_HX",
+  "description": "This table condenses heart status history to a start date and expiration date, and a pointer to the line in TXP_HEART_STATUS_HX where the details can be found.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "START_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the heart status in this row became active."
+    },
+    {
+      "index": 17,
+      "name": "END_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the heart status in this row expired."
+    },
+    {
+      "index": 22,
+      "name": "SOURCE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line in heart status history (HSB 30417) for this heart status. This corresponds to the LINE column in TXP_HEART_STATUS_HX."
+    }
+  ]
+}

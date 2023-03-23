@@ -1,0 +1,136 @@
+{
+  "table_name": "ABN_NOTES",
+  "description": "The ABN_NOTES table contains information about Advanced Beneficiary Notice note records.",
+  "primary_key": {
+    "column_name": "ABN_NOTE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ABN_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note (HNO) record that contains the Advance Beneficiary Notice (ABN) information."
+    },
+    {
+      "index": 7,
+      "name": "ABN_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the ABN record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNotice Triggered\n\n\nNotice Printed\n\n\nABN Signed, Service Accepted (Option 1 - Bill Medicare)\n\n\nABN Annotated (Patient Refused to Sign)\n\n\nABN Void (Order Canceled or Changed, ABN No Longer Applies)\n\n\nABN Signed, Service Declined\n\n\nABN Refused--Noted on form, Signed by Two Witnesses\n\n\nABN Refused--Service Not Performed\n\n\nABN Signed, Service Accepted (Option 2 - Do not bill Medicare)\n\n\nAuto Voided (Order canceled or removed)\n\n\nDiagnoses Reviewed\n\n\nE-Signed, Document Status Not Updated"
+    },
+    {
+      "index": 26,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who updated the ABN record."
+    },
+    {
+      "index": 31,
+      "name": "CREATE_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time the ABN record was created."
+    },
+    {
+      "index": 36,
+      "name": "INITIAL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who created the ABN record."
+    },
+    {
+      "index": 41,
+      "name": "ABN_TEMPLT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ABN template used for the ABN form.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEnglish, Provider ABN\n\n\nLab ABNs\n\n\nSpanish, Provider ABN\n\n\nNon-Participating ABN\n\n\nDually Eligible Beneficiaries ABN\n\n\nE-Signature Template"
+    },
+    {
+      "index": 54,
+      "name": "ABN_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The payor record ID associated with the ABN form."
+    },
+    {
+      "index": 59,
+      "name": "ABN_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 64,
+      "name": "ABN_PR_EST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The estimated price for all procedures listed on the ABN."
+    },
+    {
+      "index": 69,
+      "name": "ABN_COMM_BARRIER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The communication barrier encountered with the patient involving the ABN.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 75,
+      "name": "ABN_UPDATE_INS_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the ABN was updated."
+    },
+    {
+      "index": 80,
+      "name": "ABN_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comment for an ABN."
+    },
+    {
+      "index": 85,
+      "name": "ABN_CHECK_FROM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the starting date of service for which the ABN checks are performed."
+    },
+    {
+      "index": 90,
+      "name": "ABN_CHECK_TO_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date till which the ABN checks are performed."
+    },
+    {
+      "index": 95,
+      "name": "ABN_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique ID of the linked treatment or therapy plan."
+    },
+    {
+      "index": 100,
+      "name": "PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the contact serial number (CSN) for the telephone encounter used for follow up."
+    },
+    {
+      "index": 105,
+      "name": "REPLACED_ABN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this ABN was regenerated from another ABN, this column contains the ID of the original"
+    },
+    {
+      "index": 110,
+      "name": "REPLACE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason that the ABN was regenerated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrice Increase\n\n\nPrice Decrease\n\n\nDepartment Change (same revenue location)\n\n\nDepartment Change (different revenue location)\n\n\nProcedure or Diagnosis or Order Mismatch (Px or Dx or Ord is now resolved)\n\n\nOrder Released\n\n\nOrder Resolved\n\n\nProcedure or Order Mismatch (Px or Dx or Ord is now resolved)\n\n\nABN Restore Utility"
+    }
+  ]
+}

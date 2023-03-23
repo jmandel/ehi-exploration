@@ -1,0 +1,73 @@
+{
+  "table_name": "PT_REPORT_LRN_STATUS",
+  "description": "This table tracks the patient-reported extent to which the patient understood the educational material in question.",
+  "primary_key": {
+    "column_name": "EDUCATION_RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EDUCATION_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the education record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "USER_STATUS_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Caret-delimited list of title/topic/point whose user-entered status was updated."
+    },
+    {
+      "index": 27,
+      "name": "USER_STATUS_DAT_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Caret-delimited contact date (DAT) key related to the title/topic/point whose user-entered status was updated (item 96011)"
+    },
+    {
+      "index": 32,
+      "name": "USER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status entered by the patient or patient representative relating to their viewing of this patient education. If not set, the education is assumed to be unread.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnread\n\n\nRead\n\n\nI understand\n\n\nHidden\n\n\nI have questions"
+    },
+    {
+      "index": 44,
+      "name": "USER_ENTER_AT_DTTM_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant at which the status was specified by the patient or patient representative relating to their viewing of this patient education."
+    },
+    {
+      "index": 49,
+      "name": "STATUS_WEB_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the ID of the MyChart user who updated the status of this education"
+    }
+  ]
+}

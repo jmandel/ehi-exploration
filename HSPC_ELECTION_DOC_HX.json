@@ -1,0 +1,66 @@
+{
+  "table_name": "HSPC_ELECTION_DOC_HX",
+  "description": "Table to store the audit trail of changes made to Election Addendum discussion that someone at the agency is supposed to have with a patient when they are electing for Hospice care.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CHANGED_BY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who is changing the documentation for election addendum discussion."
+    },
+    {
+      "index": 17,
+      "name": "CHANGE_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant when change to election addendum discussion was recorded in the system (UTC)."
+    },
+    {
+      "index": 22,
+      "name": "DISCUS_WITH_PAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to determine if the user changed the response to whether or not hospice coverage was discussed during hospice election.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 31,
+      "name": "PAT_REQUESTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to determine if the user changed the response to whether or not patient requested coverage information during hospice election.\n\n\n The category values for this column were already listed for column: DISCUS_WITH_PAT_YN"
+    },
+    {
+      "index": 37,
+      "name": "DISCUS_WITH_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to determine if the user changed who it was that discussed the Election Addendum with the patient during Hospice Election."
+    },
+    {
+      "index": 42,
+      "name": "DISCUSSION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Used to determine if the user changed the response to when the Election Addendum was discussed with the patient."
+    }
+  ]
+}

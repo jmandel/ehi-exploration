@@ -1,0 +1,122 @@
+{
+  "table_name": "SURGICAL_HX",
+  "description": "The SURGICAL_HX table contains data from medical history contacts entered in clinical system patient encounters. Since one patient encounter may contain multiple medical history contacts, each contact is uniquely identified by a combination of the patient encounter serial number and a line number.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the surgical history contact within the encounter."
+    },
+    {
+      "index": 12,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the procedure record associated with the surgical history contact. Note: This is NOT the CPT(R) code. It is an internal identifier that is typically not visible to a user."
+    },
+    {
+      "index": 17,
+      "name": "SURGICAL_HX_DATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text date entered in a patient's Surgical History for the procedure."
+    },
+    {
+      "index": 22,
+      "name": "COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free-text comments entered for the procedure in the surgical history contact."
+    },
+    {
+      "index": 27,
+      "name": "PROC_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free-text comments entered for the \"other\" procedure in the patient's surgical history."
+    },
+    {
+      "index": 32,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The contact date of the encounter associated with this surgical history contact. Note: There may be multiple encounters on the same calendar date."
+    },
+    {
+      "index": 37,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the deployment owner for this contact."
+    },
+    {
+      "index": 42,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
+    },
+    {
+      "index": 47,
+      "name": "SURGICAL_HX_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This category number represents the source of entry, the person providing the information, for the surgical history data.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProvider\n\n\nPatient\n\n\nParent\n\n\nLegal Guardian\n\n\nProxy User"
+    },
+    {
+      "index": 59,
+      "name": "HX_LNK_ENC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Contact Serial Number of the encounter in which the history was created/edited. If the history was created/edited outside of the context of an encounter, then this column will be blank."
+    },
+    {
+      "index": 64,
+      "name": "SURGICAL_HX_SRG_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the contact serial number of the surgery contact related to the current procedure."
+    },
+    {
+      "index": 69,
+      "name": "SURG_LATERALITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This category is used to store the laterality for each past surgical record in surgical history. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLeft\n\n\nRight\n\n\nBilateral\n\n\nN/A\n\n\nDefault"
+    },
+    {
+      "index": 81,
+      "name": "SURG_HX_START_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The starting date for the range of possible dates extracted from the free text date entered in column SURGICAL_HX_DATE. It is filled in automatically when the patient's history is saved. The ending date is in column SURG_HX_END_DT."
+    },
+    {
+      "index": 86,
+      "name": "SURG_HX_END_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The ending date for the range of possible dates extracted from the free text date entered in column SURGICAL_HX_DATE. It is filled in automatically when the patient's history is saved. The starting date is in SURG_HX_END_DT."
+    },
+    {
+      "index": 91,
+      "name": "SURG_HX_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order related to the current surgical history procedure"
+    }
+  ]
+}

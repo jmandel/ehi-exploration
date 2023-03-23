@@ -1,0 +1,94 @@
+{
+  "table_name": "ORDER_SMARTSET",
+  "description": "This table contains data on smartsets and smartgroups that orders originated from.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Unique ID of the order record being retrieved"
+    },
+    {
+      "index": 7,
+      "name": "SS_PRL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the SmartSet or Order Set the order came from."
+    },
+    {
+      "index": 12,
+      "name": "SS_PRL_ID_PROTOCOL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartSet/Protocol record name.  This is different from the display name, which is stored in CL_PRL_SS_OT.DISPLAY_NAME."
+    },
+    {
+      "index": 17,
+      "name": "SS_DAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact date of the contact in the SmartSet that the order came from."
+    },
+    {
+      "index": 22,
+      "name": "SS_SG_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique key assigned to the merged SmartGroup that contained this order.  This is an arbitrary string value."
+    },
+    {
+      "index": 27,
+      "name": "MERGE_TMPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the merge template used when merging this SmartSet during ordering, if any."
+    },
+    {
+      "index": 32,
+      "name": "MERGE_TMPL_ID_PROTOCOL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartSet/Protocol record name.  This is different from the display name, which is stored in CL_PRL_SS_OT.DISPLAY_NAME."
+    },
+    {
+      "index": 37,
+      "name": "SS_MERGE_DAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact date of the contact from the merge template record that was used in this order�s ordering session."
+    },
+    {
+      "index": 42,
+      "name": "SS_PRL_SRC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Category item that specifies what type of protocol record-based SmartSet the order came from (SmartSet or Order Set).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nORDER SET\n\n\nSMARTSET\n\n\nQUICK LIST\n\n\nDental Template"
+    },
+    {
+      "index": 53,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient contact associated with this order. This number is unique across patients and encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 58,
+      "name": "ORDERSET_START_DATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Order set start date."
+    },
+    {
+      "index": 63,
+      "name": "KEYSTONE_ORDER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines whether this order was signed as a Keystone order within an Order Set.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    }
+  ]
+}

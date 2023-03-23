@@ -1,0 +1,80 @@
+{
+  "table_name": "V_EHI_AUDIT_ETR",
+  "description": "This view contains one row for each audited item changed on a transaction record that corresponds to a column that is configured for EHI export.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user ID of the person who performed edit operations."
+    },
+    {
+      "index": 17,
+      "name": "CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant of change for the transaction history."
+    },
+    {
+      "index": 22,
+      "name": "ITEM_CHANGE_LINE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The transaction line that was changed from transaction edit."
+    },
+    {
+      "index": 27,
+      "name": "OLD_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edited items previous value."
+    },
+    {
+      "index": 32,
+      "name": "OLD_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edited items previous value, in an external format. This column shows the translated external value as of when the column was last extracted."
+    },
+    {
+      "index": 37,
+      "name": "NEW_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edited items new value."
+    },
+    {
+      "index": 42,
+      "name": "NEW_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edited items new value, in an external format. This column shows the translated external value as of when the column was last extracted."
+    },
+    {
+      "index": 47,
+      "name": "CHANGED_DATA_ELEMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column descriptor that contains the metadata to be associated with data stored in columns OLD_VALUE_INTERNAL and NEW_VALUE_INTERNAL."
+    }
+  ]
+}

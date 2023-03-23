@@ -1,0 +1,157 @@
+{
+  "table_name": "ACCOUNT_CONTACT",
+  "description": "This table contains the information recorded in billing system account contact for each account. Each row in this table contains information about one contact and is uniquely identified by the Account ID and line number combination.",
+  "primary_key": {
+    "column_name": "ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID for the account record. This ID number could be encrypted if you have elected to implement enterprise reporting�s encryption security function."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Line number to identify the account contact information within the account."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the contact was recorded."
+    },
+    {
+      "index": 17,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the system user who recorded the contact. This ID may be encrypted if you have elected to use enterprise reporting�s security utility."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value associated with the activity performed by collections staff on the account, such as No Contact, Check Mailed, Promised Payment, etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo Contact\n\n\nCheck Mailed\n\n\nPromised Payment\n\n\nPhone Disconnected\n\n\nLetter\n\n\nBilling Note\n\n\nContacted\n\n\nInquiry\n\n\nAccount Put on Hold\n\n\nReminder Set\n\n\nCollections Write-Off Applied\n\n\nAccount Reassigned\n\n\nAccount Status Changed\n\n\nAccount Note Made\n\n\nAccount Completed\n\n\nAccount Transferred In\n\n\nAccount Transferred Out\n\n\nExternal Agency Bad Debt Written Off\n\n\nAccount Sent to External Agency\n\n\nAccount Recalled from External Agency\n\n\nUpdate Sent to External Agency\n\n\nPayment Plan\n\n\nBilling Status\n\n\nPatient Flag Made\n\n\nCredit WQ Info\n\n\nRefund\n\n\nCredit WQ Transfer\n\n\nDefer in Credit WQ\n\n\nAppointment Desk\n\n\nRegistration\n\n\nCredit WQ Manual Complete\n\n\nDemand Bill\n\n\nCustomer Relationship Management\n\n\nBalance Transfer\n\n\nDismiss Tickler\n\n\nEnable Paperless Billing\n\n\nDisable Paperless Billing\n\n\nSend Transactions to Agency\n\n\nRecall Transactions from Agency\n\n\nManually Assigned\n\n\nRemove Payment Plan\n\n\nEdit Payment Plan\n\n\nUnlock Pay as Guest\n\n\nSkip in Account WQ\n\n\nDefer in Account WQ\n\n\nActivate in Account WQ"
+    },
+    {
+      "index": 75,
+      "name": "TICKLER_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the account should be contacted again."
+    },
+    {
+      "index": 80,
+      "name": "LETTER_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The letter number of the letter associated with this guarantor."
+    },
+    {
+      "index": 85,
+      "name": "REFUND_REQ_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores payment transaction numbers of a refund request for the Account Contact activity."
+    },
+    {
+      "index": 90,
+      "name": "REFUND_REQ_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the refund request status associated with the Account Contact activity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRequested\n\n\nReviewed\n\n\nApproved\n\n\nDeclined\n\n\nPosted"
+    },
+    {
+      "index": 102,
+      "name": "REFUND_REQ_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount of the refund request associated with the activity."
+    },
+    {
+      "index": 107,
+      "name": "PAYMENT_TXS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comma-delimited list of follow-up transactions."
+    },
+    {
+      "index": 112,
+      "name": "FOL_UP_CUR_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Follow-up current insurance balance."
+    },
+    {
+      "index": 117,
+      "name": "FOL_UP_CUR_PAT_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Follow-up current patient balance."
+    },
+    {
+      "index": 122,
+      "name": "FOL_UP_ACT_INFO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the activity info to be displayed in account contact."
+    },
+    {
+      "index": 127,
+      "name": "LETTER_SUMMARY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A short summary of the letter that was sent to the patient. This can be customized by your organization, and may include information like the patient's name, address and balance."
+    },
+    {
+      "index": 132,
+      "name": "LETTER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The letter status category ID for the guarantor, for example \"queued\" or \"sent\".\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot yet printed\n\n\nQueued\n\n\nPrinted\n\n\nSent\n\n\nRejected\n\n\nPurged\n\n\nHidden"
+    },
+    {
+      "index": 146,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the note associated with this contact."
+    },
+    {
+      "index": 151,
+      "name": "FOL_UP_HX_CRM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ID for an customer service record that is related to the guarantor."
+    },
+    {
+      "index": 156,
+      "name": "FOL_UP_NOTE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Each guarantor account may have a follow-up note posted to it per contact. This column holds either a system generated or custom note that further describes the contact, if a note was produced."
+    },
+    {
+      "index": 161,
+      "name": "LETTER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the letter."
+    },
+    {
+      "index": 166,
+      "name": "PAPERLESS_UPD_WHY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason for updating the guarantor's MyChart paperless billing status.\n\n\nMay contain organization-specific values: Yes"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "table_name": "REFERRAL_DX",
+  "description": "The REFERRAL_DX table contains diagnosis information stored with referrals.",
+  "primary_key": {
+    "column_name": "REFERRAL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The referral ID for the referral record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the diagnosis associated with the referral. For example, if a referral has two associated diagnoses, the first diagnosis will have a line value of 1, while the second diagnosis will have a line value of 2."
+    },
+    {
+      "index": 12,
+      "name": "DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID number of the diagnosis associated with the referral. This is not the diagnosis code.  NOTE: Link to CLARITY_EDG to get the diagnosis code."
+    },
+    {
+      "index": 17,
+      "name": "DX_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text associated with each additional diagnosis (I RFL 1000)."
+    },
+    {
+      "index": 22,
+      "name": "DX_CODE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the code type of the additional diagnosis\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUnspecified diagnosis\n\n\nReferral diagnosis\n\n\nSecondary diagnosis\n\n\nAdditional diagnosis\n\n\nAction diagnosis\n\n\nTemporary diagnosis\n\n\nCourse diagnosis\n\n\nProcedure\n\n\nX-ray examination"
+    }
+  ]
+}

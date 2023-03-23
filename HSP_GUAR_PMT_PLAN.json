@@ -1,0 +1,122 @@
+{
+  "table_name": "HSP_GUAR_PMT_PLAN",
+  "description": "This table contains hospital guarantor payment plan information.",
+  "primary_key": {
+    "column_name": "GUAR_ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "GUAR_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PP_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The Hospital Billing payment plan start date."
+    },
+    {
+      "index": 17,
+      "name": "PP_INIT_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital Billing Payment plan initial balance"
+    },
+    {
+      "index": 22,
+      "name": "PP_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital Billing Payment plan monthly payment amount"
+    },
+    {
+      "index": 27,
+      "name": "PP_NUM_PMTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Hospital Billing Payment plan number of payments"
+    },
+    {
+      "index": 32,
+      "name": "PP_EFF_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the payment plan was set up (UTC)."
+    },
+    {
+      "index": 37,
+      "name": "PP_TERMS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The term type (monthly amount or number of payments) the payment plan was created with.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMonthly Amount\n\n\nNumber of Payments"
+    },
+    {
+      "index": 46,
+      "name": "PP_ORIG_PLAN_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Holds the original plan line in the related group if the current line is an update. If the current line is a new plan, the item is null."
+    },
+    {
+      "index": 51,
+      "name": "PP_STMT_DAY_OF_MO",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the day of month to process statements for a payment plan with Auto Pay."
+    },
+    {
+      "index": 56,
+      "name": "CARD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payment method ID for Hospital Billing payment plans on Auto Pay"
+    },
+    {
+      "index": 61,
+      "name": "PP_APAY_DAY_OF_MO",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the day of month to charge the payment method on file and post a payment on the guarantor. This item forces statement cycle for monthly drop cycle."
+    },
+    {
+      "index": 66,
+      "name": "PP_CREATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the user in Epic who set up this payment plan. If this item is populated, then the system knows this plan was set up by a user via Hyperspace."
+    },
+    {
+      "index": 71,
+      "name": "PP_CREATE_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the MyChart user who set up this payment plan. If this item is populated, then the system knows this plan was set up by a guarantor via MyChart rather than through customer service in Hyperspace."
+    },
+    {
+      "index": 76,
+      "name": "PP_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the source workflow that set up this payment plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHyperspace\n\n\nMyChart Web\n\n\nMyChart Mobile\n\n\nSBO Conversion\n\n\nImport Utility\n\n\nWelcome\n\n\nSystem Action\n\n\nAdvance Bill"
+    },
+    {
+      "index": 91,
+      "name": "PP_INIT_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payment plan due amount for the guarantor after the plan is setup."
+    }
+  ]
+}

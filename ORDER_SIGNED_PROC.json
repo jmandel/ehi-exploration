@@ -1,0 +1,157 @@
+{
+  "table_name": "ORDER_SIGNED_PROC",
+  "description": "This table contains the users, providers, and messages related to procedure verbal orders and cosign orders.",
+  "primary_key": {
+    "column_name": "ORDER_PROC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID for the procedure order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line count for the table."
+    },
+    {
+      "index": 12,
+      "name": "SIGNED_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the type of order signing the row represents. Note: Any type can have cosigner data.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOrdering\n\n\nCosign\n\n\nDiscontinuing\n\n\nPending Discontinue\n\n\nEdit\n\n\nDelete\n\n\nContinue on Transfer\n\n\nDiscontinue on Transfer\n\n\nNew on Transfer\n\n\nUnreview on Transfer\n\n\nHolding\n\n\nUnholding\n\n\nOrder and Hold\n\n\nAssigning Administration Responsibility"
+    },
+    {
+      "index": 33,
+      "name": "VERB_COMM_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique provider record ID for the provider communicating the verbal order."
+    },
+    {
+      "index": 38,
+      "name": "VERB_SGNER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user record ID for the user signing the verbal order."
+    },
+    {
+      "index": 43,
+      "name": "VERB_MSGRC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user record ID for the recipient of the In Basket message for the verbal order."
+    },
+    {
+      "index": 48,
+      "name": "VERB_MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique In Basket message record ID of the In Basket message created by the verbal order."
+    },
+    {
+      "index": 53,
+      "name": "VERB_SIGNED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the verbal order was signed."
+    },
+    {
+      "index": 58,
+      "name": "VERBAL_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mode associated with the verbal order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVerbal\n\n\nStandard"
+    },
+    {
+      "index": 67,
+      "name": "ORDER_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique provider record ID for the ordering provider."
+    },
+    {
+      "index": 72,
+      "name": "AUTH_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique provider record ID for the authorizing provider."
+    },
+    {
+      "index": 77,
+      "name": "CSGN_MSGRC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user record ID for the recipient of the cosigned In Basket message."
+    },
+    {
+      "index": 82,
+      "name": "CSGN_MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique In Basket message record ID of the cosigned In Basket message."
+    },
+    {
+      "index": 87,
+      "name": "CSGN_SIGNED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the order was cosigned."
+    },
+    {
+      "index": 92,
+      "name": "COSIGNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user record ID for the order cosigner."
+    },
+    {
+      "index": 97,
+      "name": "IS_HOSPITALIST_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the order was by a hospitalist.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 106,
+      "name": "VERB_ORD_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Verbal order comment."
+    },
+    {
+      "index": 111,
+      "name": "CSGN_CREATE_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "When the cosign requirement was created (UTC Time)."
+    },
+    {
+      "index": 116,
+      "name": "CSGN_RQRD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores whether or not an order requires a cosign based on when a new line is added to the verbal order category type (I ORD 34800).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nAdministratively Closed"
+    },
+    {
+      "index": 126,
+      "name": "SIG_REQ_CRT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the order signature requirement was manually created, this item stores the ID of the user who created the requirement."
+    },
+    {
+      "index": 131,
+      "name": "SIG_REQ_CRT_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is the creation source for order signature requirements.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAutomatically Created\n\n\nHIM\n\n\nCreate Signature Requirement Utility\n\n\nPatient Creator Utility\n\n\nBulk Orders Utility\n\n\nBeacon\n\n\nInactive User Attached to Ordering Provider\n\n\nInstant Orders\n\n\nCosign Checkbox\n\n\nCosign Rule\n\n\nLQL\n\n\nProfile Setting 8535 - Admission Orders\n\n\nProfile Setting 8536 - Code Status Orders\n\n\nProfile Setting 38800 - RW Bulk Orders\n\n\nHome Health Code Status Order\n\n\nAnesthesia Sedation Order\n\n\nRadiant Change Order LPP\n\n\nCadence Decision Tree\n\n\nSecurity EC36 - Rx Non-controlled\n\n\nSecurity EC37 - Rx Controlled w/o C-II\n\n\nSecurity EC90 - OP Procedures\n\n\nSecurity EC104 - Rx Schedule II\n\n\nSecurity EC235 - IP Non-controlled\n\n\nSecurity EC236 - IP Controlled w/o C-II\n\n\nSecurity EC237 - IP Schedule II\n\n\nSecurity EC238 - IP Procedure\n\n\nSecurity EC282 - DC Med"
+    }
+  ]
+}

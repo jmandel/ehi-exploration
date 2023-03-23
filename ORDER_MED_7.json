@@ -1,0 +1,108 @@
+{
+  "table_name": "ORDER_MED_7",
+  "description": "This table enables you to report on medications ordered. This table should be used with ORDER_MED.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "index": 7,
+      "name": "MED_DOSAGE_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the calculated end date of the order when using the wide end date feature"
+    },
+    {
+      "index": 12,
+      "name": "FIRST_DOSE_EDU_PATIENT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the patient encounter associated with first-dose education."
+    },
+    {
+      "index": 17,
+      "name": "PENDED_PREV_SIG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For a pended medication order, this holds the contents (if any) of the \"Sig (Previous)\" display item from the order composer.  If populated, this is the sig (ORD 7055) of the source order at the time the reorder was created."
+    },
+    {
+      "index": 22,
+      "name": "DOSE_ADJ_ACCEPTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the dose adjustment is accepted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 31,
+      "name": "MED_DOSE_CALCULATION_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores medication dose override dose programming point calculation."
+    },
+    {
+      "index": 36,
+      "name": "NUM_DOSES_TO_SCHED",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of doses that should actually be scheduled after reconciling a pre-existing OP order into an encounter which schedules OP meds"
+    },
+    {
+      "index": 41,
+      "name": "DO_NOT_SCHED_PAST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the last date on which it is OK to schedule an OP order that has been reconciled into an encounter that schedules OP meds"
+    },
+    {
+      "index": 46,
+      "name": "SCHED_FROM_PERIOD",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the period to start scheduling from for an OP order that has been reconciled into an encounter that schedules OP meds"
+    },
+    {
+      "index": 51,
+      "name": "SCHED_FROM_PERIOD_DURATION",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the remaning number of days in the period to start scheduling from for an OP order that has been reconciled into an encounter that schedules OP meds"
+    },
+    {
+      "index": 56,
+      "name": "SEND_TO_PHARM_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reasons for sending a prescription directly to a pharmacy. For Australia e-prescribing.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGiven to Patient\n\n\nDosing Point\n\n\nStaged Supply\n\n\nRepeats Kept on File"
+    },
+    {
+      "index": 67,
+      "name": "RX_MOBILE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's mobile phone number. For Australia e-prescribing."
+    },
+    {
+      "index": 72,
+      "name": "STARTED_TAKING_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the patient reports they started taking a medication"
+    },
+    {
+      "index": 77,
+      "name": "RX_REQ_SUBTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item specifies the subtype of the external change request this order represents. It is only set on orders created by external pharmacies, and is used in conjunction with ORD 7499.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSite Verification Notification\n\n\nUnverified Site Reminder\n\n\nDeactivated User/Provider Notification\n\n\nInitiate Patient Outreach Encounter\n\n\nAnticoagulation Enrollment\n\n\nAnticoagulation Update\n\n\nCommunications\n\n\nChart Review\n\n\nCC'd Charts\n\n\nAd Hoc Bed Planning Page\n\n\nOrder not released, PA complete\n\n\nWaiting for PA, no recent updates\n\n\nGeneric Diagnosis\n\n\nE-Prescribing Cancel Response\n\n\nCall Pharmacy\n\n\nNew INR\n\n\nEdited INR\n\n\nSubsequent INR\n\n\nCoverage PCP Change Review\n\n\nFMK Refill Request\n\n\nFMK Message Notice\n\n\nCare Team Message\n\n\nInfection Notification\n\n\nCase Audit Message\n\n\nReturn to OR\n\n\nEncounter After Schedule\n\n\nEncounter After Check-In\n\n\nEncounter After Check-Out\n\n\nEncounter After Cancel\n\n\nEncounter After Cancel Check-In/Out\n\n\nAdmission\n\n\nDischarge\n\n\nHOV Confirm\n\n\nPreadmission\n\n\nED Arrival\n\n\nED Dismiss\n\n\nLD Assessment\n\n\nLD Newborn Admission\n\n\nUndo Admission\n\n\nUndo Discharge\n\n\nHOV Cancel\n\n\nUndo Preadmission\n\n\nNew Managed Access Patient\n\n\nLab Result - Abnormal\n\n\nLab Result - Normal\n\n\nClose Encounter\n\n\nED Discharge\n\n\nUndo ED Dismiss\n\n\nUndo ED Discharge\n\n\nUndo ED Arrival\n\n\nEncounter Addendum Signed\n\n\nNote Signed\n\n\nNote Addendum Signed\n\n\nNote Deleted\n\n\nStudy Signed\n\n\nStudy Edited\n\n\nStudy Canceled\n\n\nImaging Result\n\n\nOther Result\n\n\nEncounter After No-Show\n\n\nTransfer to Inpatient\n\n\nUndo Transfer to Inpatient\n\n\nReferral Authorized\n\n\nReferral Denied\n\n\nRemittance Advice Received\n\n\nReferral Appointment Scheduled\n\n\nReferral Appointment Canceled\n\n\nReferral Appointment No-Show\n\n\nPremium Billing Invoice Received\n\n\nPatient Deceased\n\n\nPatient Not Deceased\n\n\nReferral Triage Info Request\n\n\nUnsigned Plan Orders\n\n\nDeviation Request\n\n\nHome Care - Close Visit Validation\n\n\nKanta Renewal Request\n\n\nTherapy Plan Scheduling Failure\n\n\nReferral Created\n\n\nReferral Note Added\n\n\nProcedure-Allergy Interaction message\n\n\nDeferred Medication Warning\n\n\nTherapy Plan Expiration\n\n\nTherapy Plan Order Expiration\n\n\nTherapy Plan Inactive Orders\n\n\nRxRenewalRequest - Patient Error\n\n\nRxRenewalRequest - Med Error\n\n\nRxRenewalRequest - Other Error\n\n\nRxChange-Equivalent Medication Requested\n\n\nRxChange-No Medication Requested\n\n\nRxChange - DEA License Status in Prescribing State\n\n\nRxChange - DEA Class\n\n\nRxChange - DEA License Status/Class\n\n\nNewRxRequest - Other Error\n\n\nNewRxRequest\n\n\nNewRxRequest - Patient Error\n\n\nNewRxRequest - Med Error\n\n\nRetracted incoming referral message\n\n\nRetracted outgoing referral message\n\n\nRejected Direct Message\n\n\nCE Referrals Scheduling Errors\n\n\nCE Referrals Update Message\n\n\nCE Incoming Reject Message\n\n\nCE Referral Conflict Message\n\n\nAnticoagulation Enroll Error\n\n\nCE Referral Disconnect Message\n\n\nOrder Sign Notification\n\n\nRelease Request\n\n\nUpcoming Unused OR Time\n\n\nRelease Notification\n\n\nBlock Request / Message\n\n\nE-Prescribing Cancel Response Follow Up Needed \n\n\nUtilization Notification - Error\n\n\nMultidose - Pharmacy Questions\n\n\nMultidose - Change\n\n\nMultidose - Registration\n\n\nMultidose - Failed PLL Update\n\n\nMultidose - New Responsible Provider\n\n\nCommunity Resource Broadcast Message\n\n\nTreatment Complete\n\n\nTreatment Resumed\n\n\nDeath Notification\n\n\nDischarge Report\n\n\nEpikrise\n\n\nMunicipal Care Report\n\n\nMunicipal Summary of Care Report\n\n\nSLV Application Refused\n\n\nOutpatient Visit from External Hospital\n\n\nMedication Management\n\n\nGenomic Indicator Added\n\n\nGenomic Variant BPA\n\n\nPatient Information Update Request\n\n\nPatient Preferences Update Request\n\n\nPatient History Questionnaire Submission\n\n\nPatient General Questionnaire Submission\n\n\nPatient Insurance Update Request\n\n\nPatient Questionnaire Series Submission\n\n\nPatient Questionnaire Submission CC\n\n\nAdministrator WPR Merge - UnMerge Status\n\n\nPatient Submitted Data Failed Validation Notification\n\n\nPatient Entered Flowsheet Notification\n\n\nPatient Clinical Update Notification\n\n\nProxy Access Level Transition Error\n\n\nPatient Admin Login Alert\n\n\nPatient Unviewed Labs Notification\n\n\nPatient Unread Message Notification\n\n\nPatient Screening With Questionnaire Submission\n\n\nPatient-Entered COVID-19 Vaccination\n\n\nCOVID-19 Vaccination Reconciliation Request"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "table_name": "FRM_SAFETY",
+  "description": "This tables stores the overall safety information for screening forms. This includes the proceed or do not proceed decision, accompanying comments, and the editing users and times.",
+  "primary_key": {
+    "column_name": "SCREENING_FORM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SCREENING_FORM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the screening form record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "FRM_PROCEED_DECISION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The screening form proceed with exam? category ID for the screening form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProceed\n\n\nDo not proceed"
+    },
+    {
+      "index": 21,
+      "name": "FRM_PROCEED_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user-entered comment of the screening form, indicating why they will or will not proceed with the exam."
+    },
+    {
+      "index": 26,
+      "name": "PROCEED_AUD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who edited the proceed flag for the exam."
+    },
+    {
+      "index": 31,
+      "name": "PROCEED_AUD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instants when the proceed flag or comment was edited."
+    }
+  ]
+}

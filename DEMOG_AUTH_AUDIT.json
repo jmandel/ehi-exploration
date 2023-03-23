@@ -1,0 +1,59 @@
+{
+  "table_name": "DEMOG_AUTH_AUDIT",
+  "description": "Audit trail for events related to demographic authentication tokens.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "EVENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant an action was taken on a token."
+    },
+    {
+      "index": 17,
+      "name": "TOKEN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The token this action happened in relation to."
+    },
+    {
+      "index": 22,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If applicable, this stores the Hyperspace user ID associated with this action."
+    },
+    {
+      "index": 27,
+      "name": "MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If applicable, this stores the MyChart user ID that performed an action taken on a token."
+    },
+    {
+      "index": 32,
+      "name": "MYC_DEMOG_AUTH_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the type of action taken on a token.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nToken Generated\n\n\nToken Manually Expired\n\n\nSuccessful Login \n\n\nFailed Login Invalid Credentials\n\n\nFailed Login Invalid Token\n\n\nToken Cleared\n\n\nToken Consumed By Web Service\n\n\nToken Redeemed for Login\n\n\nToken Consumed for Quick Pay Loading\n\n\nToken Consumed for Quick Pay Payment Posting"
+    }
+  ]
+}

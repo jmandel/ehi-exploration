@@ -1,0 +1,66 @@
+{
+  "table_name": "PAT_REVIEW_MEDICAT",
+  "description": "Table contains patient entered clinical medication data review from Welcome Kiosk and MyChart.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "PAT_REVIEW_ORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient medication reviewed by patient."
+    },
+    {
+      "index": 32,
+      "name": "PAT_REVIEW_ORD_R_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient medication reviewed by patient response.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 41,
+      "name": "PAT_REV_MED_EXTERN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient medications reviewed by the patient, entered in a free text format."
+    }
+  ]
+}

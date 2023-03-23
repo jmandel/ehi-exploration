@@ -1,0 +1,682 @@
+{
+  "table_name": "AP_CLAIM_PROC",
+  "description": "This table summarizes data for AP Claims service lines, with each service line given one row.\n\n\n\n\n\nTo link this table�s service line information back to a claim header, join this table to AP_CLAIM_PROC_IDS on the TX_ID column. If you need to report on claim service lines specific to Cost Sharing Reduction (CSR), join this table instead to AP_CLAIM_PROC_IDS_CSR on the TX_ID column. If you care about neither distinguishing CSR-related service lines nor the ordering of service lines on a claim, you can join back to the claim header on this table's CLAIM_ID column.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the AP Claim procedure transaction."
+    },
+    {
+      "index": 7,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the procedure associated with the accounts payable claim record."
+    },
+    {
+      "index": 12,
+      "name": "SVC_FROM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The beginning service date for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 17,
+      "name": "SVC_TO_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The ending service date for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 22,
+      "name": "MODIFIERS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A list of modifiers used with the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 27,
+      "name": "BILLED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount billed for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 32,
+      "name": "ALLOWED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The allowed amount calculated for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 37,
+      "name": "NET_PAYABLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The net payable amount for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 42,
+      "name": "POS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value associated with the place of service type of the procedure on the accounts payable claim record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 100,
+      "name": "OVERRIDE_ALLD_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override allowed amount for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 105,
+      "name": "OVERRIDE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value associated with the reason for the override.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 111,
+      "name": "TYPE_OF_SERVICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the type of service associated with the procedure on the accounts payable claim record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedical Care\n\n\nSurgery\n\n\nConsultation\n\n\nDiagnostic Radiology\n\n\nDiagnostic Laboratory\n\n\nTherapeutic Radiology\n\n\nAnesthesia\n\n\nAssistant at Surgery\n\n\nOther Medical Items or Services\n\n\nWhole Blood\n\n\nUsed Durable Medical Equipment (DME)\n\n\nAmbulatory Surgical Center (Facility usage for Surgical Services)\n\n\nHospice (Obsolete, Discontinued 1/95)\n\n\nESRD Supplies\n\n\nMonthly Capitation Payment for Dialysis\n\n\nKidney Donor\n\n\nPneumococcal/Flu Vaccine\n\n\nSecond Opinion on Elective Surgery (Obsolete)\n\n\nThird Opinion on Elective Surgery (Obsolete)\n\n\nDiagnostic Medical (Obsolete)\n\n\nAncillaries, Hospital and Nursing Home (Obsolete)\n\n\nDrug Services (Obsolete)\n\n\nAccommodations, Hospital and Nursing Home (Obsolete)\n\n\nDental (Obsolete)\n\n\nVision Care and Cataract Lens (Obsolete)\n\n\nNuclear Medicine (Obsolete)\n\n\nDiagnostic X-Ray (Professional) (Obsolete)\n\n\nRental of DME\n\n\nRadiation Therapy (Professional) (Obsolete)\n\n\nDiagnostic Lab (Professional) (Obsolete)\n\n\nDiagnostic Medical (Professional) (Obsolete)\n\n\nDME Purchase (Obsolete)\n\n\nCRD Equipment (Obsolete)\n\n\nPre-Admission Testing (Obsolete)\n\n\nEPSDT\n\n\nHigh Risk Screening Mammography\n\n\nLow Risk Screening Mammography\n\n\nAmbulance\n\n\nEnteral/Parenteral Nutrients/Supplies\n\n\nImmunosuppressive Drugs\n\n\nDiabetic Shoes\n\n\nHearing Items and Services\n\n\nLump Sum Purchase of DME, Prostethics, Orthotics\n\n\nVision Items or Services\n\n\nSurgical Dressings or Other Medical Supplies\n\n\nPsychological Therapy\n\n\nOccupational Therapy\n\n\nPhysical Therapy\n\n\nMedication (Obsolete)\n\n\nChiropractic Care\n\n\nDME Prescription"
+    },
+    {
+      "index": 169,
+      "name": "PRIM_INS_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For non-primary claims (e.g. secondary), the sum of the insurance amounts paid by previous payors."
+    },
+    {
+      "index": 174,
+      "name": "PRIM_PAT_PORTION",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For non-primary claims (e.g. secondary), the sum of all patient portion amounts specified by previous payors."
+    },
+    {
+      "index": 179,
+      "name": "PROC_INSURANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The calculated insurance amount for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 184,
+      "name": "NET_INSURANCE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The net insurance amount for this procedure on the accounts payable claim record."
+    },
+    {
+      "index": 189,
+      "name": "WITHHOLD_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value representing the method of withholding an amount for this procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPercentage of Net Insurance\n\n\nFixed Amount\n\n\nProgramming Point\n\n\nNone\n\n\nPercentage of Allowed Amount"
+    },
+    {
+      "index": 201,
+      "name": "WITHHOLD_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The rate to be withheld for this procedure."
+    },
+    {
+      "index": 206,
+      "name": "COMP_WITHHOLDING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The computed withholding amount for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 211,
+      "name": "COMP_ADJUSTMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The computed adjustment amount for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 216,
+      "name": "ACTUAL_ADJUSTMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The actual adjustment taken for this procedure on the accounts payable claim record."
+    },
+    {
+      "index": 221,
+      "name": "ADJUST_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value of the reason for the adjustment to this procedure on the accounts payable claim record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProcedure is capitated\n\n\nCoordination of Benefits\n\n\nMaintenance of Benefits\n\n\nAllowed exceeds amount patient paid\n\n\nPay by DRG"
+    },
+    {
+      "index": 233,
+      "name": "ADJ_BILLED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted billed amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 238,
+      "name": "ADJ_ALLOWED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted allowed amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 243,
+      "name": "ADJ_PAT_PORTION",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted patient portion after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 248,
+      "name": "ADJ_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted insurance amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 253,
+      "name": "ADJ_ADJUSTMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted adjustment amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 258,
+      "name": "ADJ_NET_INS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted net insurance amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 263,
+      "name": "ADJ_WITHHOLDING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted withholding amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 268,
+      "name": "ADJ_NET_PAYABLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjusted net payable amount after refund for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 273,
+      "name": "PAT_PORTION",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient portion for the procedure on the accounts payable claim record."
+    },
+    {
+      "index": 278,
+      "name": "REVENUE_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the revenue code/procedure associated with the accounts payable claim record."
+    },
+    {
+      "index": 283,
+      "name": "QUANTITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The quantity (number of units, procedures, etc.) billed on this service line."
+    },
+    {
+      "index": 288,
+      "name": "REFUND_REVERSAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the reversal procedure transaction for refund."
+    },
+    {
+      "index": 293,
+      "name": "REFUND_ADJT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the adjustment procedure transaction for refund."
+    },
+    {
+      "index": 298,
+      "name": "EOB_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim code (explanation of benefit code) comment on the procedure."
+    },
+    {
+      "index": 303,
+      "name": "UC_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The usual and customary amount for the procedure."
+    },
+    {
+      "index": 308,
+      "name": "CONTRACT_ALLOWED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contractual allowed amount for the procedure."
+    },
+    {
+      "index": 313,
+      "name": "OVRD_DISALW_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the reason for overriding the disallowed amount on the procedure.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 319,
+      "name": "OVRD_DISALW_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override disallowed amount for the procedure."
+    },
+    {
+      "index": 324,
+      "name": "DISALW_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The disallowed amount for the procedure."
+    },
+    {
+      "index": 329,
+      "name": "OVRD_NOT_CVD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override not covered amount for the procedure."
+    },
+    {
+      "index": 334,
+      "name": "OVRD_DEDUCTIBLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override deductible amount for the procedure."
+    },
+    {
+      "index": 339,
+      "name": "OVRD_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override coinsurance amount for the procedure."
+    },
+    {
+      "index": 344,
+      "name": "OVRD_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override copay amount for the procedure."
+    },
+    {
+      "index": 349,
+      "name": "NON_CVD_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The non-covered amount for the procedure."
+    },
+    {
+      "index": 354,
+      "name": "DEDUCTIBLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The deductible amount for the procedure."
+    },
+    {
+      "index": 359,
+      "name": "COPAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The copayment amount for the procedure."
+    },
+    {
+      "index": 364,
+      "name": "COINSURANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coinsurance amount for the procedure."
+    },
+    {
+      "index": 369,
+      "name": "PATIENT_TOT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total patient portion for the procedure."
+    },
+    {
+      "index": 374,
+      "name": "OVRD_PAT_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the reason for overriding the patient portion on the procedure.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 380,
+      "name": "OVRD_PAT_PORT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override patient portion amount for the procedure."
+    },
+    {
+      "index": 385,
+      "name": "PRICING_ATTR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the pricing attribute for the procedure (used in conjunction with the vendor contract).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPCP\n\n\nSPECIALIST"
+    },
+    {
+      "index": 394,
+      "name": "PENALTY_BEF_BEN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The before benefits provider penalty amount for the procedure."
+    },
+    {
+      "index": 399,
+      "name": "PENALTY_AFT_BEN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The after benefits provider penalty amount for the procedure."
+    },
+    {
+      "index": 404,
+      "name": "EXCEEDED_BEN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount on the procedure that exceeds benefits."
+    },
+    {
+      "index": 409,
+      "name": "COB_SAVING_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Coordination of Benefits (COB) savings amount for the procedure."
+    },
+    {
+      "index": 414,
+      "name": "PAT_OUT_OF_POCKET",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total patient out-of-pocket amount for the procedure."
+    },
+    {
+      "index": 419,
+      "name": "SUB_PEN_ADJ_STR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The submission penalty adjudication string for the procedure."
+    },
+    {
+      "index": 424,
+      "name": "ALLOWED_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The allowed code for the procedure (e.g., claim denied, procedure denied, contracted rate payment).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContracted Rate Payment\n\n\nPayment as per Appeals Review Committee\n\n\nPayment as per Duality Review Committee\n\n\nClaim Denied\n\n\nProcedure Denied\n\n\nSecondary Claim Rate"
+    },
+    {
+      "index": 437,
+      "name": "WITHHOLDING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The withholding amount for the procedure."
+    },
+    {
+      "index": 442,
+      "name": "TX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID that indicates the type of procedure. Only AP claim types should appear in this table (e.g. AP claim, AP claim refund, AP claim DRG).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nAdjustment\n\n\nAP Claim Tx\n\n\nAP Claim Refund Tx\n\n\nAP Claim DRG Tx\n\n\nPharmacy Claim Tx"
+    },
+    {
+      "index": 456,
+      "name": "DRG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of Diagnosis Related Group (DRG) code for the procedure."
+    },
+    {
+      "index": 461,
+      "name": "DRG_ID_DRG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Diagnoses Related Group name."
+    },
+    {
+      "index": 466,
+      "name": "PAT_PORT_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the type of patient payment for the procedure (e.g., coinsurance, copay, not covered).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCo-ins\n\n\nCopay\n\n\nNot Covered\n\n\nNo Patient Payment"
+    },
+    {
+      "index": 477,
+      "name": "DISCOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The discount amount for the procedure."
+    },
+    {
+      "index": 482,
+      "name": "SECONDARY_DISC_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of additional discount on a secondary claim."
+    },
+    {
+      "index": 487,
+      "name": "PRIMARY_FACTORS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount on a non-primary (e.g. secondary) claim that was paid/handled by the primary payor."
+    },
+    {
+      "index": 492,
+      "name": "SEC_PROV_RESP",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The secondary denied amount if the service is denied to provider responsibility."
+    },
+    {
+      "index": 497,
+      "name": "UNCVRD_EOB_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the denial EOB code if the claim is denied and the billed amount is routed to Patient Not Covered."
+    },
+    {
+      "index": 502,
+      "name": "DISC_EOB_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the denial claim code used when the claim is denied and the discount amount is adjudicated as the billed amount."
+    },
+    {
+      "index": 507,
+      "name": "PRICE_USING_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the method used to price the service (e.g. Revenue code, HCPCS code, DRG code). This is set only for UB claims.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHCPCS CODE\n\n\nREVENUE CODE\n\n\nDRG CODE"
+    },
+    {
+      "index": 517,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the procedure's status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDenied\n\n\nDeleted"
+    },
+    {
+      "index": 526,
+      "name": "CVG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the coverage used to pay the procedure on the claim."
+    },
+    {
+      "index": 531,
+      "name": "APC_CODE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Ambulatory Payment Classification (APC) code that mapped to the procedure."
+    },
+    {
+      "index": 536,
+      "name": "APC_PRICE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Ambulatory Payment Classification (APC) price for the procedure."
+    },
+    {
+      "index": 541,
+      "name": "OVRD_EXCD_BEN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The override exceeded benefit amount for the procedure."
+    },
+    {
+      "index": 546,
+      "name": "COB_SAVINGS_PAYOUT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Coordination of Benefits (COB) savings member payout."
+    },
+    {
+      "index": 551,
+      "name": "PAT_PAY_ADJ_STR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient payment adjudication string."
+    },
+    {
+      "index": 556,
+      "name": "ALWD_AMT_ADJ_STR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The allowed amount adjudication string."
+    },
+    {
+      "index": 561,
+      "name": "CMG_MATCHED_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the matched component group for referral bed days for this service."
+    },
+    {
+      "index": 566,
+      "name": "CMG_MATCHED_ID_COMPONENT_GRP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component group"
+    },
+    {
+      "index": 571,
+      "name": "NPR_BDTABLE_LINE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The line number of the bed days mapping table in the Tapestry Profile (I NPR 41040) on which the procedure matched."
+    },
+    {
+      "index": 576,
+      "name": "REL_WT_BED_DAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Relative weight of the bed day type mapped to this service."
+    },
+    {
+      "index": 581,
+      "name": "RFL_MATCHED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Referral matched for service."
+    },
+    {
+      "index": 586,
+      "name": "TOD_MATCHED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Bed day type matched for service."
+    },
+    {
+      "index": 591,
+      "name": "TOD_MATCHED_ID_BED_DAY_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the bed day type record (i.e. ICU or non-authorized.)"
+    },
+    {
+      "index": 596,
+      "name": "WEIGHT_BED_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Weight of bed days for service."
+    },
+    {
+      "index": 601,
+      "name": "UBC_REVENUE_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the revenue code/procedure associated with the accounts payable claim record."
+    },
+    {
+      "index": 606,
+      "name": "UBC_REVENUE_CODE_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 611,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim to which this service associated.  For most claim services, this column is equivalent to joining this table's TX_ID column to AP_CLAIM_PROC_IDS.TX_ID and retrieving AP_CLAIM_PROC_IDS.CLAIM_ID.  For services related to Cost Sharing Reduction (CSR), this column is equivalent to joining this table's TX_ID column to AP_CLAIM_PROC_IDS_CSR.TX_ID and retrieving AP_CLAIM_PROC_IDS_CSR.CLAIM_ID.  To retrieve the ordering of service lines on a claim, join to AP_CLAIM_PROC_IDS or AP_CLAIM_PROC_IDS_CSR as appropriate and retrieve the LINE column."
+    },
+    {
+      "index": 616,
+      "name": "PEN_AFT_BEN_COMPUTED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The after benefits provider penalty amount for the procedure, as computed by the system."
+    },
+    {
+      "index": 621,
+      "name": "PEN_AFT_BEN_OVRIDE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The after benefits provider penalty amount for the procedure, as overridden by the user."
+    },
+    {
+      "index": 626,
+      "name": "PEN_AFT_BEN_OVRIDE_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason given for setting the provider penalty after benefits override, if any. This should be translated using ZC_PEN_AFT_BEN_OVRIDE_RSN. \n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 632,
+      "name": "POS_TYPE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Source of the procedure's Place of Service type\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProfile\n\n\nUser\n\n\nBatch Type Definition"
+    },
+    {
+      "index": 642,
+      "name": "OVERRIDE_UC_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that overrides the usual and customary amount for the procedure."
+    }
+  ]
+}

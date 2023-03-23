@@ -1,0 +1,73 @@
+{
+  "table_name": "HSPC_HIS_INFO",
+  "description": "Contains information about Hospice Item Sets, such as the status, reason for record, and version.",
+  "primary_key": {
+    "column_name": "DATASET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DATASET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the data set record."
+    },
+    {
+      "index": 7,
+      "name": "DATASET_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the dataset, formatted as the patient's name and the reason for record."
+    },
+    {
+      "index": 12,
+      "name": "INSTANT_NOADD_EDIT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that data that is not specific to a contact was edited for a data set."
+    },
+    {
+      "index": 17,
+      "name": "NOADD_ITEMS_EDITED",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Data that is not specific to a contact that was edited for a data set."
+    },
+    {
+      "index": 22,
+      "name": "DATASET_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the current submission status of the Hospice Item Set.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nVisit Complete\n\n\nMarked for Submission\n\n\nSubmitted\n\n\nAccepted\n\n\nRejected\n\n\nVoided\n\n\nIn Progress\n\n\nReady for 3rd Party\n\n\nSent to 3rd Party"
+    },
+    {
+      "index": 39,
+      "name": "DATASET_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores what type of dataset the record is. Currently datasets can be OASIS or HIS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOASIS Dataset\n\n\nHIS Dataset"
+    },
+    {
+      "index": 48,
+      "name": "HIS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason for record (e.g. Admission or Discharge) of the HIS Dataset. This corresponds to item A0250 on the Hospice Item Set. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmission\n\n\nDischarge"
+    },
+    {
+      "index": 57,
+      "name": "HIS_VERSION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Version of Hospice Item Set to use.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n1.00\n\n\n2.00\n\n\n3.00"
+    },
+    {
+      "index": 67,
+      "name": "HIS_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the hospice episode of care record associated with an HIS data set record."
+    }
+  ]
+}

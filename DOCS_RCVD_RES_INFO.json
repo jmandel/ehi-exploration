@@ -1,0 +1,94 @@
+{
+  "table_name": "DOCS_RCVD_RES_INFO",
+  "description": "The DOCS_RCVD_RES_INFO table contains information about compiled received results such as result time, procedure, status and specimen type.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of received documents."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "RESULT_INST_CMP_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the result was collected or resulted."
+    },
+    {
+      "index": 17,
+      "name": "RES_PROC_NAME_CMP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text name of the procedure."
+    },
+    {
+      "index": 22,
+      "name": "RES_PROC_CMP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The internal ID of the procedure to which this result was mapped. This column links to the CLARITY_EAP table."
+    },
+    {
+      "index": 27,
+      "name": "RESULT_ENC_ID_CMP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the encounter during which the order took place."
+    },
+    {
+      "index": 32,
+      "name": "RESULT_KEY_CMP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique key that links other result information to this order."
+    },
+    {
+      "index": 37,
+      "name": "RES_STATUS_CMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The result status category ID for the received information.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+    },
+    {
+      "index": 53,
+      "name": "RES_ABN_CMP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value that indicates whether this result was flagged as abnormal or normal."
+    },
+    {
+      "index": 58,
+      "name": "RSLT_SPECIMEN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Information about the specimen source/type as sent by the outside organization."
+    },
+    {
+      "index": 63,
+      "name": "RSLT_UNSUCC_FLG_COMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a result was deemed an unsuccessful attempt\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnsuccessful Attempt\n\n\nDocumented on Wrong Patient"
+    },
+    {
+      "index": 72,
+      "name": "RSLT_UNSUCC_INST_COMP_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the result unsuccessful flag was set"
+    }
+  ]
+}

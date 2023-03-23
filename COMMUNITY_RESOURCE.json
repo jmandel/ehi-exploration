@@ -1,0 +1,87 @@
+{
+  "table_name": "COMMUNITY_RESOURCE",
+  "description": "This table stores details about the recommendation of a community resource for a patient. This table can be joined with the COMMUNITY_RESOURCE_CNCT table on COMMUNITY_RESOURCE__LAST_UPDATE_RECOM_CSN_ID and COMMUNITY_RESOURCE_CNCT__RECOMMENDATION_CSN_ID in order to form a resulting table that includes all current information about the community resource recommendation.",
+  "primary_key": {
+    "column_name": "RECOMMENDATION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECOMMENDATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the recommendation record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, or both)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "RECORD_TYPE_CRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of this community resource recommendation record, used to differentiate various implementations of the CRC masterfile.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRecommendation\n\n\nEncounter Level"
+    },
+    {
+      "index": 26,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient this community resource recommendation is for."
+    },
+    {
+      "index": 31,
+      "name": "CREATING_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient encounter in which this community resource recommendation was created."
+    },
+    {
+      "index": 36,
+      "name": "RESOURCE_FACILITY_POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The community based organization to which the patient was recommended or referred."
+    },
+    {
+      "index": 41,
+      "name": "RECORD_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the record was created"
+    },
+    {
+      "index": 46,
+      "name": "RESOURCE_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department to which the patient was recommended or referred."
+    },
+    {
+      "index": 51,
+      "name": "RESOURCE_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider to which the patient was recommended or referred."
+    },
+    {
+      "index": 56,
+      "name": "RESOURCE_PROV_ADDRESS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique address ID associated with the provider record to which the patient was recommended or referred."
+    },
+    {
+      "index": 61,
+      "name": "DP_COORD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The coordination type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDestination\n\n\nDurable Medical Equipment\n\n\nDialysis/Infusion\n\n\nHome Medical Care\n\n\nCommunity Resources"
+    }
+  ]
+}

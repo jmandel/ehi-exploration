@@ -1,0 +1,87 @@
+{
+  "table_name": "DOCS_RCVD_ASMT",
+  "description": "Table to maintain information related to assessments and risk scores. The information stored in this table was received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "ASMT_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the unique reference identifier associated with the assessment."
+    },
+    {
+      "index": 27,
+      "name": "ASMT_SRC_DXR",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Contact Serial Number (CSN) of the received document record from which the assessment for this row was sourced."
+    },
+    {
+      "index": 32,
+      "name": "ASMT_VAL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Value associated with this assessment."
+    },
+    {
+      "index": 37,
+      "name": "ASMT_UNIT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unit associated with this assessment."
+    },
+    {
+      "index": 42,
+      "name": "ASMT_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The clinically relevant date for this assessment. This could be the recorded date or the date of an update for a current assessment."
+    },
+    {
+      "index": 47,
+      "name": "ASMT_LAST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the last update instant of this assessment in UTC."
+    },
+    {
+      "index": 52,
+      "name": "ASMT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the assessment name sent by the external source."
+    }
+  ]
+}

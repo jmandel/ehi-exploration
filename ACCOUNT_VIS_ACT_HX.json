@@ -1,0 +1,66 @@
+{
+  "table_name": "ACCOUNT_VIS_ACT_HX",
+  "description": "The ACCOUNT_VIS_ACT_HX table contains information about visit-level actions performed on guarantor accounts. The LINE column gives the order in which the actions happened, so rows with a higher LINE happened after rows with a lower LINE. The VIS_ACT_NUM column gives the visit number on the account.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the guarantor record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "VIS_ACT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Visit number on the account."
+    },
+    {
+      "index": 17,
+      "name": "VIS_ACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the action happened."
+    },
+    {
+      "index": 22,
+      "name": "VIS_ACT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID that represents an action taken on a visit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Allowed Adjustment\n\n\nTransfer to Self-Pay\n\n\nNext Responsible Party\n\n\nResubmit Insurance\n\n\nWrite Off Self-Pay\n\n\nWrite Off Insurance\n\n\nTransfer to Insurance\n\n\nGramm Rudman Adjustment\n\n\nDenied\n\n\nTurn Off Automatic Self-Pay Write-Off\n\n\nTurn On Automatic Self-Pay Write-Off\n\n\nClose Claim\n\n\nDebit Adjustment\n\n\nResearch\n\n\nDo Not Bill Insurance\n\n\nBill Insurance\n\n\nSuspended NRP\n\n\nRecalculate Discount\n\n\nService Level Authorization Edit\n\n\nPost Dental Upgrade Adjustment"
+    },
+    {
+      "index": 49,
+      "name": "VIS_ACT_CVG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit coverage at the time the action happened."
+    },
+    {
+      "index": 54,
+      "name": "VIS_ACT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Action amount; what this amount represents is determined by the specific action taken (see VIS_ACT_ACTION_C column). Some actions (e.g. Research) may not have an amount."
+    },
+    {
+      "index": 59,
+      "name": "VIS_ACT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the user record of the user who performed the action."
+    }
+  ]
+}

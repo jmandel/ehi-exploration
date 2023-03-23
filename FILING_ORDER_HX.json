@@ -1,0 +1,115 @@
+{
+  "table_name": "FILING_ORDER_HX",
+  "description": "This table stores the filing order changes for a member.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the Filing Order History record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "FO_EFF_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date of the filing order for a coverage"
+    },
+    {
+      "index": 27,
+      "name": "CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the coverage ID."
+    },
+    {
+      "index": 32,
+      "name": "MANUAL_FILING_ORDER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The manual filing order of the coverage."
+    },
+    {
+      "index": 37,
+      "name": "AUTO_FILING_ORDER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The automatic filing order of the coverage."
+    },
+    {
+      "index": 42,
+      "name": "CVG_EFF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag indicating if the coverage is effective\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 51,
+      "name": "MANUAL_FO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the category of the manual filing order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSpecial\n\n\nN/A\n\n\nN/A and Special"
+    },
+    {
+      "index": 61,
+      "name": "AFO_ASSIGNED_TIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the tier assigned to a coverage by based on the logic on the configuration table."
+    },
+    {
+      "index": 66,
+      "name": "COVERED_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the covered status of the coverage. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCovered\n\n\nNot Covered\n\n\nPending\n\n\nIn Question\n\n\nInvalid"
+    },
+    {
+      "index": 78,
+      "name": "AFO_TIEBREAKER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The tier of the Automatic Filing Order (AFO) tiebreaker that a coverage matched on.\"-\" (category value 30) indicates that the tiebreaker was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSpecial coverage\n\n\nPayor or Plan set to always first\n\n\nNon-dependent, through current employment\n\n\nNon-dependent, through retirement\n\n\nNon-dependent, through continuation of benefits\n\n\nNon-dependent, unknown if it is through employment\n\n\nNon-dependent, not through employment\n\n\nAdult dependent, through current employment\n\n\nAdult dependent, through retirement\n\n\nAdult dependent, through continuation of benefits\n\n\nAdult dependent, unknown if it is through employment\n\n\nAdult dependent, not through employment\n\n\nChild dependent, court decree makes subscriber responsible for cost\n\n\nChild dependent, court decree makes subscriber's spouse responsible\n\n\nChild dependent, court decree makes subscriber jointly responsible \n\n\nChild dependent, court decree makes subscriber's spouse jointly responsible\n\n\nChild dependent, no court decree, custody N/A\n\n\nChild dependent, no court decree, subscriber has more than 50% custody\n\n\nChild dependent, no court decree, subscriber has equal custody\n\n\nChild dependent, no court decree, subscriber's spouse has more than 50% custody\n\n\nChild dependent, no court decree, subscriber's spouse has equal custody\n\n\nChild dependent, no court decree, subscriber has less than 50% custody\n\n\nChild dependent, no court decree, subscriber's spouse has less than 50% custody\n\n\nChild dependent, court decree makes subscriber not responsible\n\n\nChild dependent, court decree makes subscriber's spouse not responsible\n\n\nSpouse or child relationship to subscriber, if coverages with both of these relationships to subscriber are present\n\n\nNot listed as a member yet\n\n\nPayor or Plan set to always last\n\n\nMedicaid\n\n\nN/A\n\n\n-"
+    },
+    {
+      "index": 116,
+      "name": "AFO_TIEBREAKER_SORT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The sort order for coverages that match on the same tiebreaker line (AFO_TIEBREAKER_C). \"-\" (category value 30) represents that the tiebreaker sort order was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker sort order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCovered through status, effective date, then creation instant\n\n\nBirthday rule\n\n\nEffective date, then birthday rule\n\n\nBirthday rule, covered through status, then effective date\n\n\nBirthday rule, then effective date\n\n\nEffective date, then creation instant\n\n\n-\n\n\nCreation instant\n\n\nCovered through status, then creation instant\n\n\nBirthday rule, then covered through status"
+    },
+    {
+      "index": 133,
+      "name": "GROUP_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores what the group number was for this coverage during the filing order effective range. Group number is an identification number assigned to the employer or plan group."
+    }
+  ]
+}

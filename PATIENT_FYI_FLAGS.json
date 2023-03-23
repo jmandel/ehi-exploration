@@ -1,0 +1,73 @@
+{
+  "table_name": "PATIENT_FYI_FLAGS",
+  "description": "This table will extract Patient FYI flags from the Notes (HNO) database. These are notes with a Patient Flag Type (I HNO 560) that is not null.",
+  "primary_key": {
+    "column_name": "NOTE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of the note (HNO)"
+    },
+    {
+      "index": 7,
+      "name": "DELETED_CAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the Deleted Status of this Note record in Chronicles.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDELETED\n\n\nHidden\n\n\nDELETED and Hidden"
+    },
+    {
+      "index": 17,
+      "name": "ACTIVE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if this Patient FYI Flag will be shown as an Active or Inactive flag.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive"
+    },
+    {
+      "index": 26,
+      "name": "ENTRY_PERSON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of the user (EMP) who created this Patient FYI Flag."
+    },
+    {
+      "index": 31,
+      "name": "ACCT_NOTE_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant at which this FYI flag was created."
+    },
+    {
+      "index": 36,
+      "name": "ACCT_NOTE_SUMMARY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The brief free text summary statement about the Patient FYI."
+    },
+    {
+      "index": 41,
+      "name": "PAT_FLAG_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of Patient FYI Flag. This is a customer owned list.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral\n\n\nRelease Restrictions\n\n\nSedation\n\n\nLegal Review\n\n\nExternally-Entered Coverage\n\n\nTracked\n\n\nLocked\n\n\nRestricted Data\n\n\nTest Patient\n\n\nDeprecated - Drug Seeker\n\n\nDeprecated - Research Participant\n\n\nRadiation Therapy Patient\n\n\nOpt Out of Payer Record Exchange\n\n\nPCP Change\n\n\nCMS RO Model\n\n\nCP-IS: Child Protection Plan\n\n\nCP-IS: Looked After Child\n\n\nCP-IS: Unborn Child Protection Plan\n\n\nProtection Order\n\n\nCustody\n\n\nCompliance Packager Patient\n\n\nNEHR Patient Properties"
+    },
+    {
+      "index": 70,
+      "name": "PT_FG_PURGABLE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a batch can purge this patient flag. A Y indicates the flag can be purged. N indicates the flag cannot be purged.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 79,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Patient Encounter this Patient FYI is associated with.  This field may be null, if the FYI is at the patient level rather than contact specific."
+    }
+  ]
+}

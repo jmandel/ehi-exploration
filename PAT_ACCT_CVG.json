@@ -1,0 +1,80 @@
+{
+  "table_name": "PAT_ACCT_CVG",
+  "description": "The PAT_ACCT_CVG table contains information about a patient�s accounts and coverages. The table will contain one record for each account for a patient. The record will also contain the patient�s primary coverage for that account.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID assigned to the patient record. This ID may be encrypted if you have elected to use enterprise reporting�s security utility."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number. A patient id can be associated with multiple rows of accounts and coverages."
+    },
+    {
+      "index": 12,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique account record ID for an account associated with this patient. This ID number may be encrypted if you have elected to use enterprise reporting�s security utility."
+    },
+    {
+      "index": 17,
+      "name": "ACCOUNT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Category value associated with the type of account, such as Personal/Family, Worker�s Comp, etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nPersonal/Family\n\n\nNon-employed CRNA\n\n\nCase Rate\n\n\nClearing Account\n\n\nTrust Account\n\n\nROI Requester\n\n\nInvalid"
+    },
+    {
+      "index": 32,
+      "name": "ACCOUNT_ACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Is the account active at the time of the extract: Y or N.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 41,
+      "name": "FIN_CLASS_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The financial class category number for the patient's primary coverage on the account.  If there is no coverage, it is the account's financial class.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+    },
+    {
+      "index": 62,
+      "name": "GUAR_PAT_REL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Relation between the guarantor and patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAunt\n\n\nBrother\n\n\nDaughter\n\n\nFather\n\n\nFriend\n\n\nGranddaughter\n\n\nGrandfather\n\n\nGrandmother\n\n\nGrandson\n\n\nLegal Guardian\n\n\nMother\n\n\nOther\n\n\nStep Father\n\n\nSister\n\n\nSelf\n\n\nStep Mother\n\n\nSon\n\n\nSpouse\n\n\nUncle\n\n\nEmployer\n\n\nUnverified Proxy\n\n\nTransplant Recipient"
+    },
+    {
+      "index": 91,
+      "name": "ACCT_PRIM_EPSD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Episode associated with this account."
+    },
+    {
+      "index": 96,
+      "name": "ACCT_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text comment associated with this account."
+    },
+    {
+      "index": 101,
+      "name": "ACCT_PRIM_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique system Identifier of the patient's primary Claim."
+    }
+  ]
+}

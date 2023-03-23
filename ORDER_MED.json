@@ -1,0 +1,787 @@
+{
+  "table_name": "ORDER_MED",
+  "description": "The ORDER_MED table enables you to report on medications ordered in EpicCare (prescriptions). We have also included patient and contact identification information for each record.",
+  "primary_key": {
+    "column_name": "ORDER_MED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order record associated with this medication order. This is an internal unique identifier for ORD master file records in this table and cannot be used to link to CLARITY_MEDICATION."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number (CSN) for the patient contact associated with this medication order. This number is unique across patients and encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 17,
+      "name": "ORDERING_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the medication order was placed."
+    },
+    {
+      "index": 22,
+      "name": "ORDER_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the order class. This value is used to define how clinical systems process the order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal"
+    },
+    {
+      "index": 30,
+      "name": "PHARMACY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the pharmacy record that is associated with this medication order. This column is frequently used to link to the RX_PHR table. This field is only populated if the clinical system user selects a specific pharmacy from the  list, otherwise the field is null. This field is only populated by the ambulatory clinical system, not the pharmacy system."
+    },
+    {
+      "index": 35,
+      "name": "ORD_CREATR_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The EMP ID (.1) of the user who signed the order (for a non-signed and held order) or the last person who performed a sign and hold or release action for a signed and held order."
+    },
+    {
+      "index": 40,
+      "name": "MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication record that is associated with this order. In some circumstances, for example when Intelligent Medication Selection selects an IMS mixture, this column may contain template records that do not represent real medications. For this reason, it is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders."
+    },
+    {
+      "index": 45,
+      "name": "DESCRIPTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of the order. This information is found in the Order field of clinical system�s Order Detail window."
+    },
+    {
+      "index": 50,
+      "name": "DOSAGE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The dispensation amount for the prescription entered by the user in the orders activity. This amount is stored as a string in the orders database."
+    },
+    {
+      "index": 55,
+      "name": "QUANTITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The quantity of the prescription being dispensed as entered by the user."
+    },
+    {
+      "index": 60,
+      "name": "REFILLS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of refills allowed for this prescription as entered by the user."
+    },
+    {
+      "index": 65,
+      "name": "START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the medication order started. The date appears in calendar format."
+    },
+    {
+      "index": 70,
+      "name": "END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the medication order is to end."
+    },
+    {
+      "index": 75,
+      "name": "DISP_AS_WRITTEN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not the prescription should be dispensed as written for this medication.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 84,
+      "name": "RSN_FOR_DISCON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the reason a prescription has been discontinued.  This column contains data only in prescription orders that have been discontinued.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 90,
+      "name": "MED_PRESC_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider who has prescribed or authorized the medication order. The value in this column matches the value in the AUTHRZING_PROV_ID column."
+    },
+    {
+      "index": 95,
+      "name": "NONFRM_XCPT_CD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for medication's exception code.  This code explains the reason a non-formulary medication was ordered.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 101,
+      "name": "PANEL_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication panel that is associated with this medication order. This column is only populated if the medication order was originally placed as part of a panel."
+    },
+    {
+      "index": 106,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when this row was created or last updated in Clarity."
+    },
+    {
+      "index": 111,
+      "name": "ORDER_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the order was placed. The date appears in calendar format."
+    },
+    {
+      "index": 116,
+      "name": "DISPLAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the medication as it appears on the medication record itself."
+    },
+    {
+      "index": 121,
+      "name": "AS_MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the brand name medication originally chosen by the ordering user. This column is blank if the user did not chose a brand name record.  It is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders. Use AS_MEDICATION_ID if specifically searching for orders that were originally selected from a preference list as a brand name medication."
+    },
+    {
+      "index": 126,
+      "name": "HV_HOSPITALIST_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether  this is a hospitalist order. A Y indicates a hospitalist order.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 132,
+      "name": "ORDER_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the priority assigned to an order.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 138,
+      "name": "MED_ROUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the route of administration of a medication.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 144,
+      "name": "DISCON_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who discontinued the order."
+    },
+    {
+      "index": 149,
+      "name": "DISCON_TIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the medication order was discontinued. The date appears in calendar format."
+    },
+    {
+      "index": 154,
+      "name": "CHNG_ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the changed or reordered medication order that this order replaced. This column is frequently used to link back to the ORDER_MED table."
+    },
+    {
+      "index": 159,
+      "name": "PEND_APPR_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who approved a pended order."
+    },
+    {
+      "index": 164,
+      "name": "PEND_REF_REAS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the reason a pended medication was refused.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 170,
+      "name": "HV_DISCR_FREQ_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the discrete frequency record associated with this medication order. This column is frequently used to link to the IP_FREQUENCY table."
+    },
+    {
+      "index": 175,
+      "name": "HV_DISCR_FREQ_ID_FREQ_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the frequency record."
+    },
+    {
+      "index": 180,
+      "name": "HV_DISCRETE_DOSE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The discrete dose for a medication as entered by the user in the orders activity."
+    },
+    {
+      "index": 185,
+      "name": "HV_DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the dosage unit of a medication.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nmL\n\n\nL\n\n\nmg\n\n\ng\n\n\nUnits\n\n\nmmol\n\n\nmEq\n\n\nmcg\n\n\n%\n\n\nInt'l Units\n\n\nMillion Units\n\n\nkcal\n\n\nng\n\n\nmg PE\n\n\nmilli-units\n\n\npg\n\n\nKBq\n\n\nMBq\n\n\nGBq\n\n\nmcL\n\n\nmL/min\n\n\nL/min\n\n\nmg/min\n\n\ng/min\n\n\nUnits/min\n\n\nmmol/min\n\n\nmEq/min\n\n\nmcg/min\n\n\nkJ/min\n\n\nInt'l Units/min\n\n\nMillion Units/min\n\n\nkcal/min\n\n\nng/min\n\n\nmg PE/min\n\n\nmilli-units/min\n\n\npg/min\n\n\nKBq/min\n\n\nMBq/min\n\n\nGBq/min\n\n\nmcL/min\n\n\nmL/hr\n\n\nL/hr\n\n\nmg/hr\n\n\ng/hr\n\n\nUnits/hr\n\n\nmmol/hr\n\n\nmEq/hr\n\n\nmcg/hr\n\n\nkJ/hr\n\n\nInt'l Units/hr\n\n\nMillion Units/hr\n\n\nkcal/hr\n\n\nng/hr\n\n\nmg PE/hr\n\n\nmilli-units/hr\n\n\npg/hr\n\n\nKBq/hr\n\n\nMBq/hr\n\n\nGBq/hr\n\n\nmcL/hr\n\n\nmL/day\n\n\nL/day\n\n\nmg/day\n\n\ng/day\n\n\nUnits/day\n\n\nmmol/day\n\n\nmEq/day\n\n\nmcg/day\n\n\nkJ/day\n\n\nInt'l Units/day\n\n\nMillion Units/day\n\n\nkcal/day\n\n\nng/day\n\n\nmg PE/day\n\n\nmilli-units/day\n\n\npg/day\n\n\nInch/day\n\n\nKBq/day\n\n\nMBq/day\n\n\nGBq/day\n\n\nmcL/day\n\n\nIR/day\n\n\nBAU/day\n\n\nPFU/day\n\n\nMillion PFU/day\n\n\nMillion Int'l Units/day\n\n\nKilo Int'l Units/day\n\n\nmL/kg\n\n\nL/kg\n\n\nmg/kg\n\n\ng/kg\n\n\nUnits/kg\n\n\nmmol/kg\n\n\nmEq/kg\n\n\nmcg/kg\n\n\nkJ/kg\n\n\nInt'l Units/kg\n\n\nMillion Units/kg\n\n\nkcal/kg\n\n\nng/kg\n\n\nmg PE/kg\n\n\nmilli-units/kg\n\n\npg/kg\n\n\nmg/kg (Actual)\n\n\nEach/kg\n\n\nPuff/kg\n\n\nPackage/kg\n\n\nDrop/kg\n\n\nInch/kg\n\n\nKBq/kg\n\n\nMBq/kg\n\n\nGBq/kg\n\n\nmcL/kg\n\n\nIR/kg\n\n\nBAU/kg\n\n\nMillion Int'l Units/kg\n\n\nmcmol/kg\n\n\n1e12 Vector Genomes/kg\n\n\nVector Genomes/kg\n\n\nDose/kg\n\n\nmcg DFE/kg\n\n\nKilo Int'l Units/kg\n\n\n1e11 Vector Genomes/kg\n\n\n1e13 Vector Genomes/kg\n\n\n1e14 Vector Genomes/kg\n\n\n1e15 Vector Genomes/kg\n\n\nIR/min\n\n\nBAU/min\n\n\nMillion Int'l Units/min\n\n\nKilo Int'l Units/min\n\n\nIR/hr\n\n\nBAU/hr\n\n\nMillion Int'l Units/hr\n\n\nKilo Int'l Units/hr\n\n\nmL/mL\n\n\nL/mL\n\n\nmg/mL\n\n\ng/mL\n\n\nUnits/mL\n\n\nmmol/mL\n\n\nmEq/mL\n\n\nmcg/mL\n\n\nkJ/mL\n\n\nInt'l Units/mL\n\n\nMillion Units/mL\n\n\nkcal/mL\n\n\nng/mL\n\n\nmg PE/mL\n\n\nmilli-units/mL\n\n\npg/mL\n\n\nKBq/mL\n\n\nMBq/mL\n\n\nGBq/mL\n\n\nmcL/mL\n\n\nIR/mL\n\n\nBAU/mL\n\n\nPFU/mL\n\n\nMillion PFU/mL\n\n\nMillion Int'l Units/mL\n\n\nmcmol/mL\n\n\n1e12 Vector Genomes/mL\n\n\nVector Genomes/mL\n\n\nKilo Int'l Units/mL\n\n\n1e11 Vector Genomes/mL\n\n\n1e13 Vector Genomes/mL\n\n\n1e14 Vector Genomes/mL\n\n\n1e15 Vector Genomes/mL\n\n\nmillicurie/mL\n\n\nmL/L\n\n\nL/L\n\n\nmg/L\n\n\ng/L\n\n\nUnits/L\n\n\nmmol/L\n\n\nmEq/L\n\n\nmcg/L\n\n\nkJ/L\n\n\nInt'l Units/L\n\n\nMillion Units/L\n\n\nkcal/L\n\n\nng/L\n\n\nmg PE/L\n\n\nmilli-units/L\n\n\npg/L\n\n\nKBq/L\n\n\nMBq/L\n\n\nGBq/L\n\n\nmcL/L\n\n\nIR/L\n\n\nBAU/L\n\n\nMillion Int'l Units/L\n\n\nKilo Int'l Units/L\n\n\nmL/m2\n\n\nL/m2\n\n\nmg/m2\n\n\ng/m2\n\n\nUnits/m2\n\n\nmmol/m2\n\n\nmEq/m2\n\n\nmcg/m2\n\n\nkJ/m2\n\n\nInt'l Units/m2\n\n\nMillion Units/m2\n\n\nkcal/m2\n\n\nng/m2\n\n\nmg PE/m2\n\n\nmilli-units/m2\n\n\npg/m2\n\n\nmg/m2 (Actual)\n\n\nEach/m2\n\n\nPuff/m2\n\n\nPackage/m2\n\n\nDrop/m2\n\n\nKBq/m2\n\n\nMBq/m2\n\n\nGBq/m2\n\n\nmcL/m2\n\n\nIR/m2\n\n\nBAU/m2\n\n\nMillion Int'l Units/m2\n\n\nmcmol/m2\n\n\n1e12 Vector Genomes/m2\n\n\nVector Genomes/m2\n\n\nKilo Int'l Units/m2\n\n\n1e11 Vector Genomes/m2\n\n\n1e13 Vector Genomes/m2\n\n\n1e14 Vector Genomes/m2\n\n\n1e15 Vector Genomes/m2\n\n\nmL/1.7m2\n\n\nL/1.7m2\n\n\nmg/1.7m2\n\n\ng/1.7m2\n\n\nUnits/1.7m2\n\n\nmmol/1.7m2\n\n\nmEq/1.7m2\n\n\nmcg/1.7m2\n\n\nkJ/1.7m2\n\n\nInt'l Units/1.7m2\n\n\nMillion Units/1.7m2\n\n\nkcal/1.7m2\n\n\nng/1.7m2\n\n\nmg PE/1.7m2\n\n\nmilli-units/1.7m2\n\n\npg/1.7m2\n\n\nEach/1.7m2\n\n\nKBq/1.7m2\n\n\nMBq/1.7m2\n\n\nGBq/1.7m2\n\n\nmcL/1.7m2\n\n\nIR/1.7m2\n\n\nBAU/1.7m2\n\n\nMillion Int'l Units/1.7m2\n\n\nKilo Int'l Units/1.7m2\n\n\nmL/kg (IDL)\n\n\nL/kg (IDL)\n\n\nmg/kg (IDL)\n\n\ng/kg (IDL)\n\n\nUnits/kg (IDL)\n\n\nmmol/kg (IDL)\n\n\nmEq/kg (IDL)\n\n\nmcg/kg (IDL)\n\n\nInt'l Units/kg (IDL)\n\n\nMillion Units/kg (IDL)\n\n\nKcal/kg (IDL)\n\n\nng/kg (IDL)\n\n\nmg PE/kg (IDL)\n\n\nmilli-units/kg (IDL)\n\n\npg/kg (IDL)\n\n\nmg/m2 (IDL)\n\n\nmL/kg (ADJ)\n\n\nL/kg (ADJ)\n\n\nmg/kg (ADJ)\n\n\ng/kg (ADJ)\n\n\nUnits/kg (ADJ)\n\n\nmmol/kg (ADJ)\n\n\nmEq/kg (ADJ)\n\n\nmcg/kg (ADJ)\n\n\nInt'l Units/kg (ADJ)\n\n\nMillion Units/kg (ADJ)\n\n\nKcal/kg (ADJ)\n\n\nng/kg (ADJ)\n\n\nmg PE/kg (ADJ)\n\n\nmilli-units/kg (ADJ)\n\n\npg/kg (ADJ)\n\n\nmg/m2 (ADJ)\n\n\nmL/100 mL\n\n\nL/100 mL\n\n\nmg/100 mL\n\n\ng/100 mL\n\n\nUnits/100 mL\n\n\nmmol/100 mL\n\n\nmEq/100 mL\n\n\nmcg/100 mL\n\n\nkJ/100 mL\n\n\nInt'l Units/100 mL\n\n\nMillion Units/100 mL\n\n\nkcal/100 mL\n\n\nng/100 mL\n\n\nmg PE/100 mL\n\n\nmilli-units/100 mL\n\n\npg/100 mL\n\n\nKBq/100 mL\n\n\nMBq/100 mL\n\n\nGBq/100 mL\n\n\nmcL/100 mL\n\n\nIR/100 mL\n\n\nBAU/100 mL\n\n\nMillion Int'l Units/100 mL\n\n\nKilo Int'l Units/100 mL\n\n\nmL/oz\n\n\nL/oz\n\n\nmg/oz\n\n\ng/oz\n\n\nUnits/oz\n\n\nmmol/oz\n\n\nmEq/oz\n\n\nmcg/oz\n\n\nkJ/oz\n\n\nInt'l Units/oz\n\n\nMillion Units/oz\n\n\nkcal/oz\n\n\nng/oz\n\n\nmg PE/oz\n\n\nmilli-units/oz\n\n\npg/oz\n\n\nKBq/oz\n\n\nMBq/oz\n\n\nGBq/oz\n\n\nmcL/oz\n\n\nIR/oz\n\n\nBAU/oz\n\n\nMillion Int'l Units/oz\n\n\nKilo Int'l Units/oz\n\n\nmL/kg/min\n\n\nL/kg/min\n\n\nmg/kg/min\n\n\ng/kg/min\n\n\nUnits/kg/min\n\n\nmmol/kg/min\n\n\nmEq/kg/min\n\n\nmcg/kg/min\n\n\nkJ/kg/min\n\n\nInt'l Units/kg/min\n\n\nMillion Units/kg/min\n\n\nkcal/kg/min\n\n\nng/kg/min\n\n\nmg PE/kg/min\n\n\nmilli-units/kg/min\n\n\npg/kg/min\n\n\nKBq/kg/min\n\n\nMBq/kg/min\n\n\nGBq/kg/min\n\n\nmcL/kg/min\n\n\nmL/kg/min (IDL)\n\n\nL/kg/min (IDL)\n\n\nmg/kg/min (IDL)\n\n\ng/kg/min (IDL)\n\n\nUnits/kg/min (IDL)\n\n\nmmol/kg/min (IDL)\n\n\nmEq/kg/min (IDL)\n\n\nmcg/kg/min (IDL)\n\n\nInt'l Units/kg/min (IDL)\n\n\nMillion Units/kg/min (IDL)\n\n\nKcal/kg/min (IDL)\n\n\nng/kg/min (IDL)\n\n\nmg PE/kg/min (IDL)\n\n\nmilli-units/kg/min (IDL)\n\n\npg/kg/min (IDL)\n\n\nmL/kg/min (ADJ)\n\n\nL/kg/min (ADJ)\n\n\nmg/kg/min (ADJ)\n\n\ng/kg/min (ADJ)\n\n\nUnits/kg/min (ADJ)\n\n\nmmol/kg/min (ADJ)\n\n\nmEq/kg/min (ADJ)\n\n\nmcg/kg/min (ADJ)\n\n\nInt'l Units/kg/min (ADJ)\n\n\nMillion Units/kg/min (ADJ)\n\n\nKcal/kg/min (ADJ)\n\n\nng/kg/min (ADJ)\n\n\nmg PE/kg/min (ADJ)\n\n\nmilli-units/kg/min (ADJ)\n\n\npg/kg/min (ADJ)\n\n\nIR/kg/min\n\n\nBAU/kg/min\n\n\nMillion Int'l Units/kg/min\n\n\nKilo Int'l Units/kg/min\n\n\nmL/m2/min\n\n\nL/m2/min\n\n\nmg/m2/min\n\n\ng/m2/min\n\n\nUnits/m2/min\n\n\nmmol/m2/min\n\n\nmEq/m2/min\n\n\nmcg/m2/min\n\n\nkJ/m2/min\n\n\nInt'l Units/m2/min\n\n\nMillion Units/m2/min\n\n\nkcal/m2/min\n\n\nng/m2/min\n\n\nmg PE/m2/min\n\n\nmilli-units/m2/min\n\n\npg/m2/min\n\n\nKBq/m2/min\n\n\nMBq/m2/min\n\n\nGBq/m2/min\n\n\nmcL/m2/min\n\n\nmL/1.7m2/min\n\n\nL/1.7m2/min\n\n\nmg/1.7m2/min\n\n\ng/1.7m2/min\n\n\nUnits/1.7m2/min\n\n\nmmol/1.7m2/min\n\n\nmEq/1.7m2/min\n\n\nmcg/1.7m2/min\n\n\nkJ/1.7m2/min\n\n\nInt'l Units/1.7m2/min\n\n\nMillion Units/1.7m2/min\n\n\nkcal/1.7m2/min\n\n\nng/1.7m2/min\n\n\nmg PE/1.7m2/min\n\n\nmilli-units/1.7m2/min\n\n\npg/1.7m2/min\n\n\nKBq/1.7m2/min\n\n\nMBq/1.7m2/min\n\n\nGBq/1.7m2/min\n\n\nmSv\n\n\nmGy\n\n\nmcL/1.7m2/min\n\n\nIR/m2/min\n\n\nBAU/m2/min\n\n\nMillion Int'l Units/m2/min\n\n\nKilo Int'l Units/m2/min\n\n\nIR/1.7m2/min\n\n\nBAU/1.7m2/min\n\n\nMillion Int'l Units/1.7m2/min\n\n\nKilo Int'l Units/1.7m2/min\n\n\nmL/kg/hr\n\n\nL/kg/hr\n\n\nmg/kg/hr\n\n\ng/kg/hr\n\n\nUnits/kg/hr\n\n\nmmol/kg/hr\n\n\nmEq/kg/hr\n\n\nmcg/kg/hr\n\n\nkJ/kg/hr\n\n\nInt'l Units/kg/hr\n\n\nMillion Units/kg/hr\n\n\nkcal/kg/hr\n\n\nng/kg/hr\n\n\nmg PE/kg/hr\n\n\nmilli-units/kg/hr\n\n\npg/kg/hr\n\n\nKBq/kg/hr\n\n\nMBq/kg/hr\n\n\nGBq/kg/hr\n\n\nmcL/kg/hr\n\n\nmL/kg/hr (IDL)\n\n\nL/kg/hr (IDL)\n\n\nmg/kg/hr (IDL)\n\n\ng/kg/hr (IDL)\n\n\nUnits/kg/hr (IDL)\n\n\nmmol/kg/hr (IDL)\n\n\nmEq/kg/hr (IDL)\n\n\nmcg/kg/hr (IDL)\n\n\nInt'l Units/kg/hr (IDL)\n\n\nMillion Units/kg/hr (IDL)\n\n\nKcal/kg/hr (IDL)\n\n\nng/kg/hr (IDL)\n\n\nmg PE/kg/hr (IDL)\n\n\nmilli-units/kg/hr (IDL)\n\n\npg/kg/hr (IDL)\n\n\nmL/kg/hr (ADJ)\n\n\nL/kg/hr (ADJ)\n\n\nmg/kg/hr (ADJ)\n\n\ng/kg/hr (ADJ)\n\n\nUnits/kg/hr (ADJ)\n\n\nmmol/kg/hr (ADJ)\n\n\nmEq/kg/hr (ADJ)\n\n\nmcg/kg/hr (ADJ)\n\n\nInt'l Units/kg/hr (ADJ)\n\n\nMillion Units/kg/hr (ADJ)\n\n\nKcal/kg/hr (ADJ)\n\n\nng/kg/hr (ADJ)\n\n\nmg PE/kg/hr (ADJ)\n\n\nmilli-units/kg/hr (ADJ)\n\n\npg/kg/hr (ADJ)\n\n\nIR/kg/hr\n\n\nBAU/kg/hr\n\n\nMillion Int'l Units/kg/hr\n\n\nKilo Int'l Units/kg/hr\n\n\nmL/m2/hr\n\n\nL/m2/hr\n\n\nmg/m2/hr\n\n\ng/m2/hr\n\n\nUnits/m2/hr\n\n\nmmol/m2/hr\n\n\nmEq/m2/hr\n\n\nmcg/m2/hr\n\n\nkJ/m2/hr\n\n\nInt'l Units/m2/hr\n\n\nMillion Units/m2/hr\n\n\nkcal/m2/hr\n\n\nng/m2/hr\n\n\nmg PE/m2/hr\n\n\nmilli-units/m2/hr\n\n\npg/m2/hr\n\n\nKBq/m2/hr\n\n\nMBq/m2/hr\n\n\nGBq/m2/hr\n\n\nmcL/m2/hr\n\n\nmL/1.7m2/hr\n\n\nL/1.7m2/hr\n\n\nmg/1.7m2/hr\n\n\ng/1.7m2/hr\n\n\nUnits/1.7m2/hr\n\n\nmmol/1.7m2/hr\n\n\nmEq/1.7m2/hr\n\n\nmcg/1.7m2/hr\n\n\nkJ/1.7m2/hr\n\n\nInt'l Units/1.7m2/hr\n\n\nMillion Units/1.7m2/hr\n\n\nkcal/1.7m2/hr\n\n\nng/1.7m2/hr\n\n\nmg PE/1.7m2/hr\n\n\nmilli-units/1.7m2/hr\n\n\npg/1.7m2/hr\n\n\nKBq/1.7m2/hr\n\n\nMBq/1.7m2/hr\n\n\nGBq/1.7m2/hr\n\n\nmcL/1.7m2/hr\n\n\nIR/1.7m2/hr\n\n\nBAU/1.7m2/hr\n\n\nMillion Int'l Units/1.7m2/hr\n\n\nKilo Int'l Units/1.7m2/hr\n\n\nIR/m2/hr\n\n\nBAU/m2/hr\n\n\nMillion Int'l Units/m2/hr\n\n\nKilo Int'l Units/m2/hr\n\n\nmL/kg/day\n\n\nL/kg/day\n\n\nmg/kg/day\n\n\ng/kg/day\n\n\nUnits/kg/day\n\n\nmmol/kg/day\n\n\nmEq/kg/day\n\n\nmcg/kg/day\n\n\nkJ/kg/day\n\n\nInt'l Units/kg/day\n\n\nMillion Units/kg/day\n\n\nkcal/kg/day\n\n\nng/kg/day\n\n\nmg PE/kg/day\n\n\nmilli-units/kg/day\n\n\npg/kg/day\n\n\nInch/kg/day\n\n\nKBq/kg/day\n\n\nMBq/kg/day\n\n\nGBq/kg/day\n\n\nmL/kg/day (IDL)\n\n\nL/kg/day (IDL)\n\n\nmg/kg/day (IDL)\n\n\ng/kg/day (IDL)\n\n\nUnits/kg/day (IDL)\n\n\nmmol/kg/day (IDL)\n\n\nmEq/kg/day (IDL)\n\n\nmcg/kg/day (IDL)\n\n\nInt'l Units/kg/day (IDL)\n\n\nMillion Units/kg/day (IDL)\n\n\nKcal/kg/day (IDL)\n\n\nng/kg/day (IDL)\n\n\nmg PE/kg/day (IDL)\n\n\nmilli-units/kg/day (IDL)\n\n\npg/kg/day (IDL)\n\n\nmL/kg/day (ADJ)\n\n\nL/kg/day (ADJ)\n\n\nmg/kg/day (ADJ)\n\n\ng/kg/day (ADJ)\n\n\nUnits/kg/day (ADJ)\n\n\nmmol/kg/day (ADJ)\n\n\nmEq/kg/day (ADJ)\n\n\nmcg/kg/day (ADJ)\n\n\nInt'l Units/kg/day (ADJ)\n\n\nMillion Units/kg/day (ADJ)\n\n\nKcal/kg/day (ADJ)\n\n\nng/kg/day (ADJ)\n\n\nmg PE/kg/day (ADJ)\n\n\nmilli-units/kg/day (ADJ)\n\n\npg/kg/day (ADJ)\n\n\nmcL/kg/day\n\n\nIR/kg/day\n\n\nBAU/kg/day\n\n\nMillion Int'l Units/kg/day\n\n\nmL/m2/day\n\n\nL/m2/day\n\n\nmg/m2/day\n\n\ng/m2/day\n\n\nUnits/m2/day\n\n\nmmol/m2/day\n\n\nmEq/m2/day\n\n\nmcg/m2/day\n\n\nkJ/m2/day\n\n\nInt'l Units/m2/day\n\n\nMillion Units/m2/day\n\n\nkcal/m2/day\n\n\nng/m2/day\n\n\nmg PE/m2/day\n\n\nmilli-units/m2/day\n\n\npg/m2/day\n\n\nKBq/m2/day\n\n\nMBq/m2/day\n\n\nGBq/m2/day\n\n\nmcL/m2/day\n\n\nmL/1.7m2/day\n\n\nL/1.7m2/day\n\n\nmg/1.7m2/day\n\n\ng/1.7m2/day\n\n\nUnits/1.7m2/day\n\n\nmmol/1.7m2/day\n\n\nmEq/1.7m2/day\n\n\nmcg/1.7m2/day\n\n\nkJ/1.7m2/day\n\n\nInt'l Units/1.7m2/day\n\n\nMillion Units/1.7m2/day\n\n\nkcal/1.7m2/day\n\n\nng/1.7m2/day\n\n\nmg PE/1.7m2/day\n\n\nmilli-units/1.7m2/day\n\n\npg/1.7m2/day\n\n\nKBq/1.7m2/day\n\n\nMBq/1.7m2/day\n\n\nGBq/1.7m2/day\n\n\nmcL/1.7m2/day\n\n\nmL/oz/day\n\n\nL/oz/day\n\n\nmg/oz/day\n\n\ng/oz/day\n\n\nUnits/oz/day\n\n\nmmol/oz/day\n\n\nmEq/oz/day\n\n\nmcg/oz/day\n\n\nkJ/oz/day\n\n\nInt'l Units/oz/day\n\n\nMillion Units/oz/day\n\n\nkcal/oz/day\n\n\nng/oz/day\n\n\nmg PE/oz/day\n\n\nmilli-units/oz/day\n\n\npg/oz/day\n\n\nKBq/oz/day\n\n\nMBq/oz/day\n\n\nGBq/oz/day\n\n\nmcL/oz/day\n\n\nIR/m2/day\n\n\nBAU/m2/day\n\n\nMillion Int'l Units/m2/day\n\n\nKilo Int'l Units/m2/day\n\n\nIR/1.7m2/day\n\n\nBAU/1.7m2/day\n\n\nMillion Int'l Units/1.7m2/day\n\n\nKilo Int'l Units/1.7m2/day\n\n\nIR/oz/day\n\n\nBAU/oz/day\n\n\nMillion Int'l Units/oz/day\n\n\nKilo Int'l Units/oz/day\n\n\nkJ/30 mL\n\n\nkcal/30 mL\n\n\nGy-cm2\n\n\nmL/cm2\n\n\nmg/cm2\n\n\nmOsmol\n\n\neach\n\n\ntablet\n\n\ncapsule\n\n\ndrop\n\n\ntsp\n\n\npuff\n\n\nsuppository\n\n\nspray\n\n\nSquirt\n\n\ninch\n\n\npatch\n\n\nAct\n\n\nampule\n\n\nBar\n\n\nBottle\n\n\nCan\n\n\nDevice\n\n\nenema\n\n\nGallon\n\n\nInhaler\n\n\nkit\n\n\nlb\n\n\nlozenge\n\n\noz\n\n\npacket\n\n\nStick\n\n\nstrip\n\n\nTbsp\n\n\nTube\n\n\nvial\n\n\nWafer\n\n\nContainer\n\n\nSyringe\n\n\nPackage\n\n\napplicator\n\n\ncm\n\n\nApplicatorful\n\n\nTroche\n\n\nmillicurie\n\n\nIntra Uterine Device\n\n\nPart\n\n\nm\n\n\nFilm\n\n\nMillion Cells\n\n\nDose\n\n\nmm\n\n\nIR\n\n\nBAU\n\n\nkg\n\n\ncm2\n\n\nImperial Gallon\n\n\nkJ\n\n\nPFU\n\n\nPiece\n\n\nMillion PFU\n\n\nDoses/Fill\n\n\nCartridge\n\n\nThousand Units\n\n\nLipoprotein Lipase Releasing Unit\n\n\nScoop\n\n\nMillion Int'l Units\n\n\nmm2\n\n\nPump\n\n\nfluid ounce\n\n\nProduct\n\n\nBag\n\n\nmcmol\n\n\n1e12 Vector Genomes\n\n\nVector Genomes\n\n\nmillicurie/kg\n\n\nmillicurie/m2\n\n\nmillicurie/1.7m2\n\n\nmicrocurie\n\n\nmicrocurie/kg\n\n\nmicrocurie/m2\n\n\nmicrocurie/1.7m2\n\n\nCanister\n\n\nmcg DFE\n\n\nBillion Cells\n\n\nApplication\n\n\nBox\n\n\nCapful\n\n\nInhalation\n\n\nLancet\n\n\nNeedle\n\n\nPad\n\n\nPen\n\n\nPiece of gum\n\n\nRing\n\n\nSwab\n\n\nSachet\n\n\nImplant\n\n\nInsert\n\n\nPools\n\n\nKilo Int'l Units\n\n\nKilo Int'l Units/kg/day\n\n\n1e11 Vector Genomes\n\n\n1e13 Vector Genomes\n\n\n1e14 Vector Genomes\n\n\n1e15 Vector Genomes\n\n\nCells\n\n\nNone / Other"
+    },
+    {
+      "index": 965,
+      "name": "HV_IS_SELF_ADM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this medication was self-administered. A Y indicates that the order was self-administered.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 971,
+      "name": "ORDER_START_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the medication order is to start. The date appears in calendar format."
+    },
+    {
+      "index": 976,
+      "name": "ORDER_END_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the medication order is scheduled to end. The date appears in calendar format."
+    },
+    {
+      "index": 981,
+      "name": "NON_FORMULARY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this medication is not on the formulary. A Y indicates a non-formulary medication.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 987,
+      "name": "ORDER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the current status of an order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nSent\n\n\nResulted\n\n\nCanceled\n\n\nCompleted\n\n\nHolding for Referral\n\n\nDenied Approval\n\n\nSuspend\n\n\nDiscontinued\n\n\nVerified\n\n\nDispensed\n\n\nPending Verify"
+    },
+    {
+      "index": 1006,
+      "name": "AUTHRZING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider who has prescribed or authorized the medication order. The value in this column matches the value in the MED_PRESC_PROV_ID column."
+    },
+    {
+      "index": 1011,
+      "name": "ORD_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider listed as the ordering provider."
+    },
+    {
+      "index": 1016,
+      "name": "MIN_DISCRETE_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The minimum ordered dose amount for the medication as specified by the user in the orders activity."
+    },
+    {
+      "index": 1021,
+      "name": "MAX_DISCRETE_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum ordered dose amount for the medication as specified by the user in the orders activity."
+    },
+    {
+      "index": 1026,
+      "name": "DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the dose unit of a medication.\n\n\n The category values for this column were already listed for column: HV_DOSE_UNIT_C_NAME"
+    },
+    {
+      "index": 1032,
+      "name": "IS_PENDING_ORD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the order has a pending status. A Y indicates that the order does have a pending status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes"
+    },
+    {
+      "index": 1040,
+      "name": "BULK_DISP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this is a bulk dispense order. A Y indicates this is a bulk dispense order.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1046,
+      "name": "PROVIDER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The medication provider type category number for the order.  This item distinguishes between authorizing and documenting provider types for historical and non-historical medications.  If the medication was ordered as historical, the provider is considered the documenting provider and is reflected as such in this item.  If the medication was not ordered as historical, the provider is considered the authorizing provider is reflected in this item as such.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAuthorizing\n\n\nDocumenting"
+    },
+    {
+      "index": 1055,
+      "name": "MODIFY_TRACK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the flag that both indicates and distinguishes whether an order was reordered or modified.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nREORDERED\n\n\nMODIFIED"
+    },
+    {
+      "index": 1064,
+      "name": "SPECIFIED_FIRST_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If the order was placed with a Specified frequency (the frequency's Type (I EFQ 50) item has a value of 1) and the user specified a first occurrence time, the time specified is stored in this column."
+    },
+    {
+      "index": 1069,
+      "name": "SCHED_START_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time at which an order was scheduled to begin. The date appears in calendar format."
+    },
+    {
+      "index": 1074,
+      "name": "ACT_ORDER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number indicating additional information about an order's status--Active, Completed, Discontinued, or Cancelled. An active order is any order that has not been completed, discontinued, cancelled, pended, or signed and held.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive Medication\n\n\nActive Procedure\n\n\nDiscontinued Medication\n\n\nCanceled Procedure\n\n\nCompleted Medication\n\n\nCompleted Procedure"
+    },
+    {
+      "index": 1087,
+      "name": "EXP_AFT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The number of days after the start date that the medication order will expire based on the setting in the medication record. The date appears in calendar format."
+    },
+    {
+      "index": 1092,
+      "name": "EXP_BEF_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The number of days before the end date that the medication order will expire based on the setting in the medication record. The date appears in calendar format."
+    },
+    {
+      "index": 1097,
+      "name": "MED_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments for a medication order, as entered by the ordering user when entering the order."
+    },
+    {
+      "index": 1102,
+      "name": "USER_SEL_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the orderable medication that is evaluated for Intelligent Medication Selection (IMS). This item is blank if the order is not evaluated for IMS.  It is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders. Use USER_SEL_MED_ID if searching for medication orders that were evaluated by IMS."
+    },
+    {
+      "index": 1107,
+      "name": "USER_SEL_ERX_DAT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that the medication record was actually selected by the user.  This item is populated only if Intelligent Medication Selection (IMS) replaced the original user-selected medication with another medication record."
+    },
+    {
+      "index": 1112,
+      "name": "REQ_RNVERIFY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this medication order requires RN verification before it is administered. A Y indicates that it does require RN verification.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 1121,
+      "name": "MDL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication problem list record that is associated with this medication order. This column is frequently used to link to the MDL_MD_PRBLM_LIST table."
+    },
+    {
+      "index": 1126,
+      "name": "LASTDOSE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments for the last administered dose of a medication entered in the medication documentation navigator section."
+    },
+    {
+      "index": 1131,
+      "name": "INFORMANT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the informant of a prior to admission (PTA) medication.  The informant is the person who reports a PTA medication being taken by the patient.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 1137,
+      "name": "AMB_MED_DISP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the ambulatory medication."
+    },
+    {
+      "index": 1142,
+      "name": "WEIGHT_BASED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the dose for this medication order is based on the patient's weight.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1148,
+      "name": "WEIGHT_REVIEW_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not the patient's weight needs to be reviewed for this medication order due to the patient's weight change.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1154,
+      "name": "ORD_TM_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's last reviewed weight at the time the medication was ordered."
+    },
+    {
+      "index": 1159,
+      "name": "ORDER_TIME_WT_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when a new weight is recorded for a patient for a weight based medication review."
+    },
+    {
+      "index": 1164,
+      "name": "REVIEW_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's last non-reviewed weight at the time the medication was ordered."
+    },
+    {
+      "index": 1169,
+      "name": "REVIEW_WEIGHT_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the patient's last non-reviewed weight was entered prior to when the medication was ordered."
+    },
+    {
+      "index": 1174,
+      "name": "REFILLS_REMAINING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of refills remaining in the medication."
+    },
+    {
+      "index": 1179,
+      "name": "MED_REFILL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider who authorized the medication refill order."
+    },
+    {
+      "index": 1184,
+      "name": "OLD_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order record that points to the parent medication for refills."
+    },
+    {
+      "index": 1189,
+      "name": "OLD_ORDER_DAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal contact date of the parent medication in integer format.  Used to identify the parent medication and will only be populated for child orders.  This does not link to CONTACT_DATE_REAL."
+    },
+    {
+      "index": 1194,
+      "name": "RESUME_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number that indicates an outpatient medication order's status before it was suspended as a result on inpatient admission.\n\n\n The category values for this column were already listed for column: ORDER_STATUS_C_NAME"
+    },
+    {
+      "index": 1200,
+      "name": "USER_ID_OF_PROV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user record that is linked to the provider ID in the AUTHRZING_PROV_ID column."
+    },
+    {
+      "index": 1205,
+      "name": "ORDERING_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the ordering mode of the order (i.e. Outpatient, Inpatient).  Note that Outpatient orders can be placed from an Inpatient encounter as discharge orders / take-home prescriptions.  This column might be blank for Outpatient orders placed prior to the creation of the IP module.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOutpatient\n\n\nInpatient"
+    },
+    {
+      "index": 1214,
+      "name": "PEND_APPROVE_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pending medication approval status category number for the order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproved\n\n\nRefused"
+    },
+    {
+      "index": 1223,
+      "name": "NF_POST_VERIF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a medication order has been verified by the pharmacist as non-formulary. A Y indicates that the pharmacist verified the medication order as non-formulary. An administrator can use this column to report on how many orders that were placed as non-formulary were also verified as such. To find which orders were placed as non-formulary, use the NON_FORMULARY_YN column.\n\n\n The category values for this column were already listed for column: REQ_RNVERIFY_YN"
+    },
+    {
+      "index": 1229,
+      "name": "EXT_ELG_SOURCE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External eligibility source ID"
+    },
+    {
+      "index": 1234,
+      "name": "EXT_ELG_MEMBER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External eligibility member ID"
+    },
+    {
+      "index": 1239,
+      "name": "EXT_FORMULARY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External formulary ID"
+    },
+    {
+      "index": 1244,
+      "name": "EXT_COVERAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage ID"
+    },
+    {
+      "index": 1249,
+      "name": "EXT_COPAY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the external copay ID for an order."
+    },
+    {
+      "index": 1254,
+      "name": "EXT_PHARMACY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External pharmacy type\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRetail\n\n\nMail Order\n\n\nRetail+Mail"
+    },
+    {
+      "index": 1264,
+      "name": "EXT_FORMULARY_STAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External Formulary Status"
+    },
+    {
+      "index": 1269,
+      "name": "EXT_COV_AGE_LMT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage age limits\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1275,
+      "name": "EXT_COV_EXCLUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage product coverage exclusion\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1281,
+      "name": "EXT_COV_SEX_LMT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage gender limits\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1287,
+      "name": "EXT_COV_MED_NCST_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage medical necessity\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1293,
+      "name": "EXT_COV_PRI_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage prior authorization\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1299,
+      "name": "EXT_COV_QNTY_LMT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage quantity limits\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1305,
+      "name": "EXT_COV_LNK_DRUG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage resource link drug\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1311,
+      "name": "EXT_COV_LNK_SMRY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage resource link summary\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1317,
+      "name": "EXT_COV_STEP_MED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage step medication\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1323,
+      "name": "EXT_COV_STEP_THR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External coverage step therapy\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1329,
+      "name": "USR_SEL_IMS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores whether the product to use with IMS was selected by the user or chosen automatically.  Yes means the user chose the product, No means the product was selected automatically.\n\n\n The category values for this column were already listed for column: REQ_RNVERIFY_YN"
+    },
+    {
+      "index": 1335,
+      "name": "INDICATION_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment entered for the indications of use for this order."
+    },
+    {
+      "index": 1340,
+      "name": "DOSE_ADJ_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of dose adjustment that was triggered by the order (i.e. maximum or minimum dose).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMaximum Dose\n\n\nMinimum Dose\n\n\nMinimum and Maximum Adjustment"
+    },
+    {
+      "index": 1350,
+      "name": "DOSE_ADJ_OVERRID_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the dose adjustment (i.e. maximum or minimum dose) was overridden. \n\n\n The category values for this column were already listed for column: REQ_RNVERIFY_YN"
+    },
+    {
+      "index": 1356,
+      "name": "MAX_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum allowed dose for this medication order."
+    },
+    {
+      "index": 1361,
+      "name": "MAX_DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unit for the maximum allowed dose for this medication order.\n\n\n The category values for this column were already listed for column: HV_DOSE_UNIT_C_NAME"
+    },
+    {
+      "index": 1367,
+      "name": "PRN_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user-entered comments for why the as needed (PRN) medication should be administered."
+    },
+    {
+      "index": 1372,
+      "name": "INST_OF_UPDATE_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The day and time the order record was last updated."
+    },
+    {
+      "index": 1377,
+      "name": "PEND_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The manner in which the medication was reordered, such as reorder from order review or reorder from the medications activity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nChange\n\n\nReorder\n\n\nRequest From Existing\n\n\nRequest From Preference List\n\n\nReorder from Medication Activity\n\n\nReorder from Order Review\n\n\nReorder from Reports"
+    },
+    {
+      "index": 1391,
+      "name": "MED_DIS_DISP_QTY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the discrete dispense quantity when discrete dispense is enabled."
+    },
+    {
+      "index": 1396,
+      "name": "MED_DIS_DISP_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the discrete dispense unit when discrete dispense is enabled.\n\n\n The category values for this column were already listed for column: HV_DOSE_UNIT_C_NAME"
+    },
+    {
+      "index": 1402,
+      "name": "END_BEFORE_CMP_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The default end date and time of a completed order.  When an order is completed, we will store the system calculated end date and time (which may differ from the actual completion time) in this column in the event the completion is reversed and the defaults need to be restored."
+    },
+    {
+      "index": 1407,
+      "name": "BSA_BASED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the dose for this medication order is based on the patient's body surface area (BSA).\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1413,
+      "name": "BSA_REVIEW_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flags orders that need to be reviewed because of a BSA change.\n\n\n The category values for this column were already listed for column: DISP_AS_WRITTEN_YN"
+    },
+    {
+      "index": 1419,
+      "name": "ORD_TM_BSA",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's last reviewed BSA at the time this order was placed."
+    },
+    {
+      "index": 1424,
+      "name": "REVIEW_BSA",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's last non-reviewed body surface areas (BSA) at the time the medication was ordered."
+    },
+    {
+      "index": 1429,
+      "name": "LAST_DOSE_TIME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Store the time that a PTA med was last taken."
+    }
+  ]
+}

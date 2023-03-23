@@ -1,0 +1,122 @@
+{
+  "table_name": "PR_EST_ADDL_INFO",
+  "description": "Contains additional information related to a price estimate, such as tax and discount amounts.",
+  "primary_key": {
+    "column_name": "ESTIMATE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the patient estimate record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "SURCHARGE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The estimated surcharge amount."
+    },
+    {
+      "index": 17,
+      "name": "SYS_SURCHARGE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated surcharge amount."
+    },
+    {
+      "index": 22,
+      "name": "SP_DISCOUNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The estimated self-pay discount amount."
+    },
+    {
+      "index": 27,
+      "name": "SYS_SP_DISCOUNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated self-pay discount amount."
+    },
+    {
+      "index": 32,
+      "name": "FA_DISCOUNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The estimated financial assistance discount amount."
+    },
+    {
+      "index": 37,
+      "name": "SYS_FA_DISCOUNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated financial assistance discount amount."
+    },
+    {
+      "index": 42,
+      "name": "SOURCE_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the order this line of the estimate was created from."
+    },
+    {
+      "index": 47,
+      "name": "APPLIED_DISCR_DISCOUNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The applied discretionary discount amount on the estimate."
+    },
+    {
+      "index": 52,
+      "name": "DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The diagnosis used to calculate benefits for the procedure. Unless the value was manually specified by a user, this will be equivalent to the value in SYS_DX_ID."
+    },
+    {
+      "index": 57,
+      "name": "SYS_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The diagnosis that the system originally calculated to be used for benefits. DX_ID contains the value that was actually used to calculate the estimate."
+    },
+    {
+      "index": 62,
+      "name": "PX_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a category describing where procedure lines on an estimate originated from. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual Entry\n\n\nOPC\n\n\nSurgery History\n\n\nTemplate\n\n\nRelated Procedure History\n\n\nAdvance Billing Daily Charge"
+    },
+    {
+      "index": 75,
+      "name": "CHG_AMOUNT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Source of the estimated charge amount. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHistory\n\n\nHistorical Reprice\n\n\nManually Specified"
+    },
+    {
+      "index": 85,
+      "name": "ALLOW_AMOUNT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Source of the estimated allowed amount. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHistory\n\n\nHistorical Reevaluation\n\n\nTotal Charges\n\n\nTotal Charges (Due to Zero Allowed)\n\n\nContract\n\n\nManually Specified"
+    },
+    {
+      "index": 98,
+      "name": "PX_SOURCE_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the CSN this line of the estimate was generated from by the system."
+    }
+  ]
+}

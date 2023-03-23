@@ -1,0 +1,31 @@
+{
+  "table_name": "HSP_ACCT_HRV_DT_TM",
+  "description": "This table holds the abstracted organ harvest date(s) for the organ(s) donated by the patient. \n\n\nNote: The information in this table cannot be guaranteed to be accurate and complete unless the programming point 41273 - Organ Harvest Info Missing is set as an abstract validation check.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the hospital account associated with the abstracted organ harvest date(s)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the line number in the results of a query. Because multiple organs may be donated by a patient, there may be multiple organ harvest dates stored on one hospital account. Therefore, each abstracted organ harvest date will have a unique line number."
+    },
+    {
+      "index": 12,
+      "name": "HARVEST_DATE_TIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This abstracting item indicates the organ harvest date(s) and time(s) associated with the organ(s) donated by the patient."
+    }
+  ]
+}

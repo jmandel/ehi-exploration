@@ -1,0 +1,101 @@
+{
+  "table_name": "REFERRAL_CVG",
+  "description": "The REFERRAL_CVG table contains coverage information for referrals.",
+  "primary_key": {
+    "column_name": "REFERRAL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the referral in database."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "A line number that is used to identify a group of coverage-related information. For example, if a referral has 2 valid coverages, line 1 of the coverage items contains the information about the first coverage, line 2 contains the information about the second coverage."
+    },
+    {
+      "index": 12,
+      "name": "CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of a coverage that is valid for the referral."
+    },
+    {
+      "index": 17,
+      "name": "CVG_USED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A yes/no flag that indicates whether or not the coverage should be considered available for the referral use in non-UM (utilization management) workflows. For UM workflows, consider using SUBMITTED_UM_AUTHS_YN.  The coverage may be valid on the dates, but still inappropriate to use. Setting the flag to Yes means that the coverage is all right to use.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 26,
+      "name": "AUTH_REQUIRED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag to indicate whether the coverage requires external authorization to be received (as from an insurance carrier) for the services."
+    },
+    {
+      "index": 31,
+      "name": "CARRIER_AUTH_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The carrier authorization number or comment, indicating that authorization was received."
+    },
+    {
+      "index": 36,
+      "name": "EFF_CVG_PRECERT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Precertification number associated with a coverage on a referral."
+    },
+    {
+      "index": 41,
+      "name": "EFF_CVG_AUTH_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments regarding authorization specific to a coverage used on a referral."
+    },
+    {
+      "index": 46,
+      "name": "CVG_INVALID_FLAG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag for invalid coverage for non-UM (utilization management) workflows."
+    },
+    {
+      "index": 51,
+      "name": "CHARGE_COUNT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of charges that this service level authorization record counts for professional, technical or all charges.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOnly Professional Charges\n\n\nOnly Technical Charges\n\n\nAll Charges"
+    },
+    {
+      "index": 61,
+      "name": "USE_CHARGE_COUNT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to specify if the referral & coverage are using charge counting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 70,
+      "name": "CHARGE_COUNT_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Charge counting method for this service level authorization.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge Quantity\n\n\nEach Charge"
+    },
+    {
+      "index": 79,
+      "name": "CVG_SVC_TYPE_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the service type at the coverage level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMedical Care\n\n\nSurgical\n\n\nConsultation\n\n\nDiagnostic X-Ray\n\n\nDiagnostic Lab\n\n\nRadiation Therapy\n\n\nAnesthesia\n\n\nSurgical Assistance\n\n\nOther Medical\n\n\nBlood Charges\n\n\nUsed Durable Medical Equipment\n\n\nDurable Medical Equipment Purchase\n\n\nAmbulatory Service Center Facility\n\n\nRenal Supplies in the Home\n\n\nAlternate Method Dialysis\n\n\nChronic Renal Disease (CRD) Equipment\n\n\nPre-Admission Testing\n\n\nDurable Medical Equipment Rental\n\n\nPneumonia Vaccine\n\n\nSecond Surgical Opinion\n\n\nThird Surgical Opinion\n\n\nSocial Work\n\n\nDiagnostic Dental\n\n\nPeriodontics\n\n\nRestorative\n\n\nEndodontics\n\n\nMaxillofacial Prosthetics\n\n\nAdjunctive Dental Services\n\n\nHealth Benefit Plan Coverage\n\n\nPlan Waiting Period\n\n\nChiropractic\n\n\nChiropractic Office Visits\n\n\nDental Care\n\n\nDental Crowns\n\n\nDental Accident\n\n\nOrthodontics\n\n\nProsthodontics\n\n\nOral Surgery\n\n\nRoutine (Preventive) Dental\n\n\nHome Health Care\n\n\nHome Health Prescriptions\n\n\nHome Health Visits\n\n\nHospice\n\n\nRespite Care\n\n\nHospital\n\n\nHospital - Inpatient\n\n\nHospital - Room and Board\n\n\nHospital - Outpatient\n\n\nHospital - Emergency Accident\n\n\nHospital - Emergency Medical\n\n\nHospital - Ambulatory Surgical\n\n\nLong Term Care\n\n\nMajor Medical\n\n\nMedically Related Transportation\n\n\nAir Transportation\n\n\nCabulance\n\n\nLicensed Ambulance\n\n\nGeneral Benefits\n\n\nIn-vitro Fertilization\n\n\nMRI/CAT Scan\n\n\nDonor Procedures\n\n\nAcupuncture\n\n\nNewborn Care\n\n\nPathology\n\n\nSmoking Cessation\n\n\nWell Baby Care\n\n\nMaternity\n\n\nTransplants\n\n\nAudiology Exam\n\n\nInhalation Therapy\n\n\nDiagnostic Medical\n\n\nPrivate Duty Nursing\n\n\nProsthetic Device\n\n\nDialysis\n\n\nOtological Exam\n\n\nChemotherapy\n\n\nAllergy Testing\n\n\nImmunizations\n\n\nRoutine Physical\n\n\nFamily Planning\n\n\nInfertility\n\n\nAbortion\n\n\nAIDS\n\n\nEmergency Services\n\n\nCancer\n\n\nPharmacy\n\n\nFree Standing Prescription Drug\n\n\nMail Order Prescription Drug\n\n\nBrand Name Prescription Drug\n\n\nGeneric Prescription Drug\n\n\nPodiatry\n\n\nPodiatry - Office Visits\n\n\nPodiatry - Nursing Home Visits\n\n\nProfessional (Physician)\n\n\nAnesthesiologist\n\n\nProfessional (Physician) Visit - Office\n\n\nProfessional (Physician) Visit - Inpatient\n\n\nProfessional (Physician) Visit - Outpatient\n\n\nProfessional (Physician) Visit - Nursing Home\n\n\nProfessional (Physician) Visit - Skilled Nursing Facility\n\n\nProfessional (Physician) Visit - Home\n\n\nPsychiatric\n\n\nPsychiatric - Room and Board\n\n\nPsychotherapy\n\n\nPsychiatric - Inpatient\n\n\nPsychiatric - Outpatient\n\n\nRehabilitation\n\n\nRehabilitation - Room and Board\n\n\nRehabilitation - Inpatient\n\n\nRehabilitation - Outpatient\n\n\nOccupational Therapy\n\n\nPhysical Medicine\n\n\nSpeech Therapy\n\n\nSkilled Nursing Care\n\n\nSkilled Nursing Care - Room and Board\n\n\nSubstance Abuse\n\n\nAlcoholism\n\n\nDrug Addiction\n\n\nVision (Optometry)\n\n\nFrames\n\n\nRoutine Exam\n\n\nLenses\n\n\nNonmedically Necessary Physical\n\n\nExperimental Drug Therapy\n\n\nBurn Care\n\n\nBrand Name Prescription Drug - Formulary\n\n\nBrand Name Prescription Drug - Non-Formulary\n\n\nIndependent Medical Evaluation\n\n\nPartial Hospitalization (Psychiatric)\n\n\nDay Care (Psychiatric)\n\n\nCognitive Therapy\n\n\nMassage Therapy\n\n\nPulmonary Rehabilitation\n\n\nCardiac Rehabilitation\n\n\nPediatric\n\n\nNursery\n\n\nSkin\n\n\nOrthopedic\n\n\nCardiac\n\n\nLymphatic\n\n\nGastrointestinal\n\n\nEndocrine\n\n\nNeurology\n\n\nEye\n\n\nInvasive Procedures\n\n\nGynecological\n\n\nObstetrical\n\n\nObstetrical/Gynecological\n\n\nMail Order Prescription Drug: Brand Name\n\n\nMail Order Prescription Drug: Generic\n\n\nPhysician Visit - Office: Sick\n\n\nPhysician Visit - Office: Well\n\n\nCoronary Care\n\n\nPrivate Duty Nursing - Inpatient\n\n\nPrivate Duty Nursing - Home\n\n\nSurgical Benefits - Professional (Physician)\n\n\nSurgical Benefits - Facility\n\n\nMental Health Provider - Inpatient\n\n\nMental Health Provider - Outpatient\n\n\nMental Health Facility - Inpatient\n\n\nMental Health Facility - Outpatient\n\n\nSubstance Abuse Facility - Inpatient\n\n\nSubstance Abuse Facility - Outpatient\n\n\nScreening X-ray\n\n\nScreening laboratory\n\n\nMammogram, High Risk Patient\n\n\nMammogram, Low Risk Patient\n\n\nFlu Vaccination\n\n\nEyewear and Eyewear Accessories\n\n\nCase Management\n\n\nDermatology\n\n\nDurable Medical Equipment\n\n\nDiabetic Supplies\n\n\nGeneric Prescription Drug - Formulary\n\n\nGeneric Prescription Drug - Non-Formulary\n\n\nAllergy\n\n\nIntensive Care\n\n\nMental Health\n\n\nNeonatal Intensive Care\n\n\nOncology\n\n\nPhysical Therapy\n\n\nPulmonary\n\n\nRenal\n\n\nResidential Psychiatric Treatment\n\n\nTransitional Care\n\n\nTransitional Nursery Care\n\n\nUrgent Care"
+    }
+  ]
+}

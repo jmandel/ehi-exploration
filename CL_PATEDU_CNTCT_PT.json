@@ -1,0 +1,129 @@
+{
+  "table_name": "CL_PATEDU_CNTCT_PT",
+  "description": "Enterprise reporting table for Contact specific point items in Patient education record.",
+  "primary_key": {
+    "column_name": "PED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Unique ID for the Patient Education Record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Line count for the Patient education point. This is contact specific."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The contact date in external format."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_POINT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for education point for the patient education contact."
+    },
+    {
+      "index": 27,
+      "name": "CNT_POINT_TOPIC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for education point's topic for the patient education contact."
+    },
+    {
+      "index": 32,
+      "name": "CNT_POINT_TITLE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for education point's title for the patient education contact."
+    },
+    {
+      "index": 37,
+      "name": "CNT_POINT_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The education point key for contact-specific history. This is a string in the form of Title^Topic^Point."
+    },
+    {
+      "index": 42,
+      "name": "CNT_POINT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status of the patient education point. A category item.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nN/A\n\n\nDone\n\n\nDeleted\n\n\nNot Started\n\n\nIn Progress"
+    },
+    {
+      "index": 55,
+      "name": "CNT_POINT_IED_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The identifier for the Education point (IED) record. This ID is in internal format and can be used to link to the point (IED) record."
+    },
+    {
+      "index": 60,
+      "name": "CNT_MYPOINT_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique identifier for the note associated with the My Point. My Point is created on the fly and this ID, together with the contact date (DAT), can be used to link to the associated note."
+    },
+    {
+      "index": 65,
+      "name": "CNT_MYPOINT_HNO_DA",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contact date for the note associated with the My Point. My Point is created on the fly and this contact date (DAT), together with the note (HNO) ID, can be used to link to the associated note."
+    },
+    {
+      "index": 70,
+      "name": "CNT_POINT_EDU_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the education detail record that contains additional details about this point for this encounter."
+    },
+    {
+      "index": 75,
+      "name": "POINT_WAS_SUG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this point was suggested by the EMR. Y indicates that this point was suggested by the EMR. N or null indicates that this point was not suggested by the EMR.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 84,
+      "name": "POINT_ADDED_FROM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for how this point was added to the patient's chart. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Education\n\n\nCare Plan\n\n\nDoc Flowsheet\n\n\nOrder\n\n\nOrder Set\n\n\nPathway\n\n\nTask Template\n\n\nInterface\n\n\nPatient Assigned Task\n\n\nUtility"
+    },
+    {
+      "index": 101,
+      "name": "POINT_ALT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If this point was added to the patient's chart based on a BestPractice Advisory, then this is the unique contact serial number of the alert (ALT) contact that is used to track the firing of that BestPractice Advisory. If this point was not added based on a BestPractice Advisory, then this is null."
+    },
+    {
+      "index": 106,
+      "name": "CNCT_FIRST_DOSE_MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication record associated with a first-dose education point. This is blank for points that are not associated with first-dose education for a medication."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "table_name": "DOCS_RCVD_FAM_HX_ME_RM",
+  "description": "This table stores the other IDs for a family member from the DOCS_RCVD_FAM_HX_MEM table.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated family member in this record. Together with the FAMILY_MEMBER_REFRID column, this forms the foreign key to the DOCS_RCVD_FAM_HX_MEM table."
+    },
+    {
+      "index": 17,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple family member IDs associated with the received document and the family member from the DOCS_RCVD_FAM_HX_MEM table."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "FAMILY_MMB_OTHERIDS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Other IDs of the family member for this row."
+    }
+  ]
+}

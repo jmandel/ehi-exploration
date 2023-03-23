@@ -1,0 +1,59 @@
+{
+  "table_name": "ARPB_ADJ_APPROVAL_HX",
+  "description": "This table extracts information about adjustments in PB Adjustment Review workqueues that have been approved or denied.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ADJ_APRV_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the adjustment record was approved or declined."
+    },
+    {
+      "index": 17,
+      "name": "ADJ_APRV_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value indicating the adjustment record's approval status.  The matching category title can be found in the table ZC_ADJ_APRV_STATUS.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApproved\n\n\nDeclined\n\n\nRequested"
+    },
+    {
+      "index": 27,
+      "name": "ADJ_APRV_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who approved the adjustment record."
+    },
+    {
+      "index": 32,
+      "name": "ADJ_APRV_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment left by the user who approved or declined the adjustment record."
+    },
+    {
+      "index": 37,
+      "name": "ADJ_DECLINE_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value indicating the reason the adjustment record was declined.  The matching category title can be found in the table ZC_ADJ_DECLINE_RSN.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nCharge Voided\n\n\nCharge has No Outstanding Balance\n\n\nPayment Recouped"
+    }
+  ]
+}

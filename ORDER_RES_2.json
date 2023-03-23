@@ -1,0 +1,647 @@
+{
+  "table_name": "ORDER_RES_2",
+  "description": "The ORDER_RES_2 table contains result finding information for an order. Result findings include mammography pathology results, cardiovascular palette findings, and other result findings.",
+  "primary_key": {
+    "column_name": "FINDING_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the finding record."
+    },
+    {
+      "index": 7,
+      "name": "EXTERNAL_RESULT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the biopsy or surgery for a pathology result was performed outside of the organization. 'Y' indicates it was performed externally. Typically used to exclude these result findings from measures that evaluate the quality of an organization's pathology resulting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 16,
+      "name": "EXTERNAL_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The location definitions (EAF) record of the external location where the pathology was resulted."
+    },
+    {
+      "index": 21,
+      "name": "EXTERNAL_LOC_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text name of the external location that resulted the pathology. Used in cases where the location does not have a location definitions (EAF) record."
+    },
+    {
+      "index": 26,
+      "name": "PATH_SPECIMEN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Links to the specimen that this pathology finding is documenting."
+    },
+    {
+      "index": 31,
+      "name": "FIRST_DOCUMENTED_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which a mammography lesion was first documented."
+    },
+    {
+      "index": 36,
+      "name": "FINDING_INCLUDED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this finding has been marked as included on an imaging study.  Y indicates that the finding is included.  N indicates that the finding is not included on the study.  A null value indicates data from before the 2014 release and should be considered the same as Y.\n\n\n The category values for this column were already listed for column: EXTERNAL_RESULT_YN"
+    },
+    {
+      "index": 42,
+      "name": "LESION_NAME",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "A unique identifier for a lesion on a patient to track its changes."
+    },
+    {
+      "index": 47,
+      "name": "LESION_ASSESSMENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mammography assessment category ID for the lesion.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNeed Additional Imaging Evaluation\n\n\nNegative\n\n\nBenign\n\n\nProbably Benign\n\n\nSuspicious\n\n\nHighly Suggestive of Malignancy\n\n\nKnown Biopsy-Proven Malignancy\n\n\nLow Suspicion for Malignancy\n\n\nModerate Suspicion for Malignancy\n\n\nHigh Suspicion for Malignancy"
+    },
+    {
+      "index": 64,
+      "name": "REM_LET_SUPPRESS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if an automated process for reminder letters should suppress the creation of a reminder letters for this record. 'Y' indicates that automatic reminder letters should be suppressed for this recommendation.\n\n\n The category values for this column were already listed for column: EXTERNAL_RESULT_YN"
+    },
+    {
+      "index": 70,
+      "name": "REM_LET_SUPP_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for the reason why reminder letters were suppressed for a particular recommendation record. For example, letters may be suppressed due to an import of recommendations from a legacy system, or they may be suppressed due to logic in the reminder letter batch.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUtility\n\n\nBatch"
+    },
+    {
+      "index": 79,
+      "name": "PRIMARY_TUMOR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary tumor category ID, as defined in NMD 3.0., for a result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTX\n\n\nT0\n\n\nTis\n\n\nTis (DCIS)\n\n\nTis (LCIS)\n\n\nTis (Paget's)\n\n\nT1\n\n\nT1mi\n\n\nT1a\n\n\nT1b\n\n\nT1c\n\n\nT2\n\n\nT3\n\n\nT4\n\n\nT4a\n\n\nT4b\n\n\nT4c\n\n\nT4d"
+    },
+    {
+      "index": 104,
+      "name": "REGIONAL_LYMPH_ND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The regional lymph nodes category ID, as defined in NMD 3.0, for a result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNX\n\n\nN0\n\n\nN1\n\n\nN2\n\n\nN2a\n\n\nN2b\n\n\nN3\n\n\nN3a\n\n\nN3b\n\n\nN3c"
+    },
+    {
+      "index": 121,
+      "name": "DIST_METASTASES_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The distant metastases category ID of a result, as defined for NMD 3.0\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nM0\n\n\ncM0(i+)\n\n\nM1"
+    },
+    {
+      "index": 131,
+      "name": "VESSEL_PROC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure type category ID for a vessel result finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCath\n\n\nCT Angiography"
+    },
+    {
+      "index": 140,
+      "name": "CLOSEST_MRGN_NAME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The closest margin category ID for a breast legion.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAnterior\n\n\nPosterior\n\n\nSuperior\n\n\nInferior\n\n\nMedial\n\n\nLateral"
+    },
+    {
+      "index": 153,
+      "name": "CLOSEST_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The closest margin measurement for a breast lesion"
+    },
+    {
+      "index": 158,
+      "name": "LESION_PRE_ST_GRD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pre-stenosis value category ID for the lesion, when the value is saved as a grade.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal\n\n\nMinimal (1-24%)\n\n\nMild (25-49%)\n\n\nModerate (50-69%)\n\n\nSevere (70-99%)\n\n\nOccluded"
+    },
+    {
+      "index": 171,
+      "name": "LESION_POS_ST_GRD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The post-stenosis value category ID for the lesion, when the value is saved as a grade.\n\n\n The category values for this column were already listed for column: LESION_PRE_ST_GRD_C_NAME"
+    },
+    {
+      "index": 177,
+      "name": "LAST_SX_PROG_REC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recommendation category ID for the most recent type of this follow-up recommendation, which should be associated with a study for a screening program.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFollow Up LDCT in 1 Year\n\n\nFollow Up LDCT in 6 Months\n\n\nFollow Up LDCT in 3 Months\n\n\nBiopsy\n\n\nObtain Prior Studies for Comparison\n\n\nAdditional Imaging\n\n\nAwait pathology results\n\n\nNo further screening colonoscopies necessary\n\n\nRepeat screening colonoscopy in 10 years\n\n\nRepeat colonoscopy in 7 years\n\n\nRepeat colonoscopy in 5 years\n\n\nRepeat colonoscopy in 3 years\n\n\nRepeat colonoscopy in 1 year\n\n\nSchedule repeat colonoscopy\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nAwait pathology results\n\n\nRepeat sigmoidoscopy in 10 years\n\n\nRepeat sigmoidoscopy in 5 years\n\n\nSchedule repeat sigmoidoscopy\n\n\nSchedule full colonoscopy\n\n\nNo further screening sigmoidoscopies necessary\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat EGD\n\n\nSchedule follow-up procedure for continued treatment\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat upper EUS\n\n\nSchedule follow-up procedure for continued treatment\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat ERCP\n\n\nSchedule follow-up procedure for continued treatment\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat LEUS\n\n\nSchedule follow-up procedure for continued treatment\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat enteroscopy\n\n\nSchedule follow-up procedure for continued treatment\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nFollow up with referring physician\n\n\nFollow up EBUS\n\n\nSchedule repeat bronchoscopy\n\n\nFollow up bronchoscopy\n\n\nFollow up PFT\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat retrograde enteroscopy\n\n\nSchedule follow-up procedure for continued treatment\n\n\nFollow up LDCT in 1 Month\n\n\nDiagnostic CT Chest\n\n\nAwait pathology results\n\n\nRepeat pouchoscopy in 10 years\n\n\nRepeat pouchoscopy in 5 years\n\n\nSchedule repeat pouchoscopy\n\n\nNo further recurring pouchoscopies necessary\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nAwait pathology results\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP\n\n\nSchedule repeat ileoscopy\n\n\nSchedule follow-up procedure for continued treatment\n\n\nFollow up with me in clinic\n\n\nFollow up with PCP"
+    },
+    {
+      "index": 262,
+      "name": "LST_SX_PG_REC_LOC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The location of the body category ID for the most recent location associated with this follow-up recommendation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRight\n\n\nLeft\n\n\nBilateral\n\n\nRight Upper Lobe\n\n\nRight Middle Lobe\n\n\nRight Lower Lobe\n\n\nLeft Upper Lobe\n\n\nLingula\n\n\nLeft Lower Lobe\n\n\nLeft Hilum\n\n\nRight Hilum\n\n\nRight Middle and Right Lower Lobes\n\n\nRight Upper and Right Middle Lobes\n\n\nLingula\n\n\nOther\n\n\nUnknown"
+    },
+    {
+      "index": 285,
+      "name": "SX_PROGRAM_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The screening program type category ID associated with this finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLung Screening\n\n\nBreast Screening\n\n\nColorectal Follow-up\n\n\nEGD Follow-up\n\n\nUpper EUS Follow-up\n\n\nERCP Follow-up\n\n\nDiabetic Retinopathy Screening\n\n\nSigmoidoscopy Follow-up\n\n\nLower EUS Follow-up\n\n\nAntegrade Enteroscopy Follow-up\n\n\nBronchoscopy Follow-up\n\n\nRetrograde Enteroscopy Follow-up\n\n\nPouchoscopy Follow-Up\n\n\nIleoscopy Follow-Up\n\n\nActionable Finding"
+    },
+    {
+      "index": 307,
+      "name": "PATH_LOCATION_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Lung cancer location comment for a pathology finding."
+    },
+    {
+      "index": 312,
+      "name": "PATH_LOCATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The location of the body category ID for a pathology result finding.\n\n\n The category values for this column were already listed for column: LST_SX_PG_REC_LOC_C_NAME"
+    },
+    {
+      "index": 318,
+      "name": "LUNG_STAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer staging category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStage 1A\n\n\nStage 1B\n\n\nStage 2A\n\n\nStage 2B\n\n\nStage 3A\n\n\nStage 3B\n\n\nStage 4\n\n\nStage 4A\n\n\nStage 4B\n\n\nStage 0\n\n\nStage IA1\n\n\nStage IA2\n\n\nStage IA3\n\n\nStage IIIC\n\n\nUnknown"
+    },
+    {
+      "index": 340,
+      "name": "LUNG_HISTOLOGY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer histology category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNon-small cell cancer\n\n\nSmall cell lung cancer\n\n\nCarcinoid\n\n\nAtypical carcinoid\n\n\nUnknown"
+    },
+    {
+      "index": 352,
+      "name": "LUNG_NON_SMALL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer histology category ID for a non small cell cancer pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInvasive adenocarcinoma\n\n\nSquamous cell carcinoma\n\n\nAdenosquamous cell carcinoma\n\n\nLarge cell carcinoma\n\n\nUndifferentiated carcinoma\n\n\nOther"
+    },
+    {
+      "index": 365,
+      "name": "LUNG_NON_SMALL_COMM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Lung cancer histology comment for a non small cell cancer pathology finding."
+    },
+    {
+      "index": 370,
+      "name": "LUNG_MALIG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung malignancy type category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdenocarcinoma in situ\n\n\nMinimally invasive\n\n\nInvasive\n\n\nCarcinoid\n\n\nNon-invasive\n\n\nInvasive status unknown"
+    },
+    {
+      "index": 383,
+      "name": "LUNG_PERIOD_FU_MON",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Lung cancer period of follow-up for a pathology finding."
+    },
+    {
+      "index": 388,
+      "name": "LUNG_DX_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer tissue diagnosis method category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPercutaneous\n\n\nBronchoscopic\n\n\nSurgical\n\n\nUnknown"
+    },
+    {
+      "index": 399,
+      "name": "LUNG_T_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer histology T status category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nT1a\n\n\nT1b\n\n\nT2a\n\n\nT2b\n\n\nT3\n\n\nT4\n\n\nTis\n\n\nT1c\n\n\nT1mi\n\n\nTX\n\n\nTX"
+    },
+    {
+      "index": 417,
+      "name": "LUNG_N_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer histology N status category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nN0\n\n\nN1\n\n\nN2\n\n\nN3\n\n\nNX"
+    },
+    {
+      "index": 429,
+      "name": "LUNG_M_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer histology M status category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nM0\n\n\nM1a\n\n\nM1b\n\n\nM1c\n\n\nMX"
+    },
+    {
+      "index": 441,
+      "name": "LUNG_STAGE_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lung cancer staging method category ID for a pathology finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClinical\n\n\nPathologic\n\n\nUnknown"
+    },
+    {
+      "index": 451,
+      "name": "LESION_INCOMP_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The incomplete reason category ID for the breast imaging finding. Only radiologist findings that have an assessment of incomplete (0) have a value populated for this column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncomplete\n\n\nNegative\n\n\nBenign appearance or behavior\n\n\nProbably benign\n\n\nSuspicious - 4A\n\n\nSuspicious - 4B\n\n\nSuspicious - 4X\n\n\nClinically significant findings\n\n\nPrior lung cancer\n\n\nIncomplete coverage\n\n\nNoise\n\n\nRespiratory motion\n\n\nExpiration\n\n\nObscured by acute abnormality\n\n\nUnknown\n\n\nUnable to complete\n\n\nAdditional images for evaluation\n\n\nPriors for comparison\n\n\nTechnical repeat\n\n\nVersion 1.0\n\n\nVersion 1.1"
+    },
+    {
+      "index": 479,
+      "name": "SEGMENT_LOCATION_ID",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The location of an annotation within the vessel segment if there are multiple annotations in the same segment."
+    },
+    {
+      "index": 484,
+      "name": "ORIGIN_GRAFT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specific branch and sequence of the current graft that this branch comes off of."
+    },
+    {
+      "index": 489,
+      "name": "GRAFT_BRANCH_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The branch identifier of the graft."
+    },
+    {
+      "index": 494,
+      "name": "INST_EXAM_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant (in UTC) when the Audiology exam was administered."
+    },
+    {
+      "index": 499,
+      "name": "AUDIO_RELIABILITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reliability category ID for the audiogram results. The possible responses are Good, Fair, or Poor.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGood\n\n\nFair\n\n\nPoor"
+    },
+    {
+      "index": 509,
+      "name": "PROBE_TONE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The probe tone frequency in Hz."
+    },
+    {
+      "index": 514,
+      "name": "RES_LINK_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order with which the result finding is associated."
+    },
+    {
+      "index": 519,
+      "name": "FINDING_SUBTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The finding subtype category ID for the procedural finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAsymmetry\n\n\nGlobal Asymmetry\n\n\nFocal Asymmetry\n\n\nDeveloping Asymmetry"
+    },
+    {
+      "index": 530,
+      "name": "OB_US_EDD_ASOF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The patient's working estimated date of delivery at the time the ultrasound exam started."
+    },
+    {
+      "index": 535,
+      "name": "OB_US_EDD_BASIS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for the basis for the patient's estimated date of delivery (EDD), at the time when the ultrasound started.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther Basis\n\n\nLast Menstrual Period\n\n\nEst. Date of Conception\n\n\nEmbryo Transfer\n\n\nUltrasound\n\n\nUterus Size\n\n\nQuickening\n\n\nFundal Ht. at Umbil.\n\n\nFHR with Doppler\n\n\nFHR with Fetoscope\n\n\nPatient Reported\n\n\nAlternate EDD Entry"
+    },
+    {
+      "index": 554,
+      "name": "REPORTING_CAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for the reporting category to use for a finding.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMole\n\n\nLump\n\n\nPain\n\n\nTenderness\n\n\nRedness\n\n\nMass\n\n\nCalcifications\n\n\nArchitectural Distortion\n\n\nSpecial Cases\n\n\nNipple Discharge\n\n\nSkin Changes\n\n\nImplants\n\n\nScar\n\n\nTattoo\n\n\nAsymmetric Density\n\n\nClip\n\n\nPost-Surgical Finding\n\n\nWall Score\n\n\nMyocardial Finding\n\n\nNuclear Perfusion\n\n\nCongenital Heart Disease\n\n\nVasculature Record\n\n\nVessel Finding\n\n\nVessel Annotation\n\n\nIntervention\n\n\nComplication\n\n\nLesion Complication\n\n\nRight Atrium\n\n\nTricuspid Valve\n\n\nRight Heart Pressures\n\n\nLeft Ventricle\n\n\nLeft Atrium\n\n\nMitral Valve\n\n\nAortic Valve\n\n\nLeft Heart Pressures\n\n\nAorta\n\n\nRight Ventricle\n\n\nPericardium\n\n\nPulmonic Valve\n\n\nErgonovine\n\n\nEndomyocardial Biopsy\n\n\nPercutaneous Procedure\n\n\nPeripheral Angiography\n\n\nTemporary Pacemaker\n\n\nFluoroscopy of Chest\n\n\nPulmonary Angiography\n\n\nECG\n\n\nStress Findings\n\n\nResponse to Stress\n\n\nNuclear Measurements\n\n\nNuclear Ejection Fraction\n\n\nNuclear Study Quality\n\n\nStudy Impression\n\n\nPerfusion Defect\n\n\nPerfusion Defect 2\n\n\nPerfusion Defect 3\n\n\nPerfusion Defect 4\n\n\nPerfusion Defect 5\n\n\nLymph Node\n\n\nSolitary Dilated Duct\n\n\nFocus\n\n\nNon-mass Enhancement\n\n\nSkin Lesion\n\n\nAsymmetry\n\n\nInverted Nipple\n\n\nFat Containing\n\n\nNon-enhancing\n\n\nAssociated Features\n\n\nCyst\n\n\nThrombectomy\n\n\nImpella Insertion\n\n\nABI\n\n\nAbdominal Aorta\n\n\nAbdominal Aorta Graft\n\n\nAxillary Femoral Graft\n\n\nLeft Groin\n\n\nRight Groin\n\n\nLeft Lower Arterial\n\n\nRight Lower Arterial\n\n\nUpper Arterial\n\n\nRenal\n\n\nLower Venous\n\n\nUpper Venous\n\n\nLeft Carotid\n\n\nRight Carotid\n\n\nPrior Study\n\n\nCardiac Protocol\n\n\nStudy Details\n\n\nElectrophysiology Finding\n\n\nDrawing Template\n\n\nEndoscopy Finding\n\n\nRight Ablation Vein Mapping\n\n\nLeft Ablation Vein Mapping\n\n\nRight Venous Insufficiency Duplex\n\n\nLeft Venous Insufficiency Duplex\n\n\nRight Hemodialysis Access\n\n\nLeft Hemodialysis Access\n\n\nInferior Vena Cava\n\n\nRight Upper Vein Mapping\n\n\nLeft Upper Vein Mapping\n\n\nRight Lower Vein Mapping\n\n\nLeft Lower Vein Mapping\n\n\nRight Lower Bypass Graft\n\n\nLeft Lower Bypass Graft\n\n\nSuperior Mesenteric Artery\n\n\nTranscutaneous Oximetry\n\n\nRight Transcranial Doppler\n\n\nRight Upper Extremity Arterial Doppler\n\n\nLeft Upper Extremity Arterial Doppler\n\n\nRight Renal Transplant\n\n\nLeft Renal Transplant\n\n\nRight Penile\n\n\nLeft Penile\n\n\nPulse Volume Recordings\n\n\nLeft Transcranial Doppler\n\n\nAortic Root\n\n\nAscending Aorta\n\n\nAortic Arch\n\n\nDescending Aorta\n\n\nAdditional Aorta Findings\n\n\nPerfusion Comments\n\n\nPerfusion Defect Conclusion\n\n\nAbsolute Flow\n\n\nStress Function Comments\n\n\nStress Function Defect\n\n\nRest Function Comments\n\n\nRest Function Defect\n\n\nStress Combined Conclusion\n\n\nMetabolic Viability Defect\n\n\nMetabolic Viability Conclusion\n\n\nMetabolic Other Findings\n\n\nSarcoid Defect\n\n\nCT Findings\n\n\nStress Hemodynamics\n\n\nStress Symptoms\n\n\nStress Post Impression\n\n\nEcho Post Stress\n\n\nIsotope Administration\n\n\nViability Isotope Administration\n\n\nPerfusion Isotope Administration\n\n\nSarcoid Study Prep\n\n\nMetabolic Study Prep\n\n\nNuclear Prior Study\n\n\nSarcoid Isotope Administration\n\n\nSegmental Anatomy\n\n\nBubble Study\n\n\nRight Lower Venous\n\n\nLeft Lower Venous\n\n\nRight Upper Venous\n\n\nLeft Upper Venous\n\n\nRight Renal\n\n\nLeft Renal\n\n\nKidneys\n\n\nRight ABI\n\n\nLeft ABI\n\n\nABI Exercise\n\n\nLeft Upper Arterial\n\n\nRight Upper Arterial\n\n\nAbdominal Aorta Additional Findings\n\n\nGynecomastia\n\n\nDuct Ectasia\n\n\nUpper Pulse Volume Recording\n\n\nLower Pulse Volume Recording\n\n\nResting ECG\n\n\nStress ECG\n\n\nReason for Procedure\n\n\nProcedure Details\n\n\nPYP History\n\n\nPYP Technical Details\n\n\nPYP Findings\n\n\nPYP Conclusion\n\n\nPulmonary Function Test\n\n\nParent Wall Score\n\n\n2D Measurement\n\n\nM-Mode Measurement\n\n\nDoppler Measurement\n\n\nTissue Doppler Imaging Measurement\n\n\nEndoscopy Procedure Details\n\n\nAbscess\n\n\nPalpable Mass\n\n\nGeneric Finding\n\n\nTympanogram\n\n\nAudiogram\n\n\nSpeech Audiometry\n\n\nAcoustic Reflex\n\n\nCalcium Scoring\n\n\nNoncardiac\n\n\nLCSR Aortic Aneurysm Found\n\n\nLCSR Coronary Arterial Calcification Found\n\n\nLCSR Pulmonary Fibrosis Found\n\n\nLCSR Mass Found\n\n\nLCSR Other Interstitial Lung Disease Found\n\n\nLCSR Other Clinically Significant Abnormalities Found\n\n\nLCSR Emphysema Found\n\n\nLCSR No Clinically Significant Abnormalities Found\n\n\nLCSR Unknown Finding\n\n\nNormal Tissue\n\n\nTechnical Details\n\n\nTechnical Quality"
+    },
+    {
+      "index": 760,
+      "name": "LESION_FINDING_RSLT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rich text format result text for this lesion finding."
+    },
+    {
+      "index": 765,
+      "name": "ANTERIOR_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for anterior margin in millimeters (mm)."
+    },
+    {
+      "index": 770,
+      "name": "POSTERIOR_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for posterior margin in millimeters (mm)."
+    },
+    {
+      "index": 775,
+      "name": "SUPERIOR_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for superior margin in millimeters (mm)."
+    },
+    {
+      "index": 780,
+      "name": "INFERIOR_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for inferior margin in millimeters (mm)."
+    },
+    {
+      "index": 785,
+      "name": "MEDIAL_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for medial margin in millimeters (mm)."
+    },
+    {
+      "index": 790,
+      "name": "LATERAL_MARGIN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The distance for lateral margin in millimeters (mm)."
+    },
+    {
+      "index": 795,
+      "name": "REMAINING_MARGINS_GT_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The greater than distance for the remaining margins (mm)."
+    },
+    {
+      "index": 800,
+      "name": "LAST_STATUS_CHNG_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status change reason category ID for the recommendation.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Not Reachable\n\n\nPatient Refused\n\n\nUtility\n\n\nPatient Deceased\n\n\nPatient Unmarked Deceased\n\n\nPathology Entered\n\n\nClosed via BPA Acknowledgement\n\n\nInterim Order\n\n\nExternal Interim Order\n\n\nCreated\n\n\nDeleted\n\n\nSystem"
+    },
+    {
+      "index": 819,
+      "name": "RECORD_STATUS_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record status category ID for the result finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 829,
+      "name": "RADIOLOGIST_FINDING_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the associated order for the radiologist finding. Null means that the finding is not on the latest version of the order and has been replaced by another result finding record."
+    },
+    {
+      "index": 834,
+      "name": "LAST_INCLUDED_FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the last finding documented for a breast lesion that was included in a study. This column represents the finding where a radiologist last documented on the lesion. Null means that the lesion was created but all associated findings were deleted and all associated orders were cancelled. This item will also be null for technologist findings."
+    },
+    {
+      "index": 839,
+      "name": "FINDING_TEXT_HAS_EDITS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the finding text generated automatically (from a SmartForm) has been manually edited by users. 'Y' indicates there have been manual edits.\n\n\n The category values for this column were already listed for column: EXTERNAL_RESULT_YN"
+    },
+    {
+      "index": 845,
+      "name": "MAMMO_NEOADJUVANT_CHEMO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has had neoadjuvant chemotherapy. 'Y' indicates that neoadjuvant chemotherapy was administered.\n\n\n The category values for this column were already listed for column: EXTERNAL_RESULT_YN"
+    },
+    {
+      "index": 851,
+      "name": "OB_US_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The OB ultrasound classification category ID for the order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStandard\n\n\nLimited\n\n\nSpecialized\n\n\nFollow Up"
+    },
+    {
+      "index": 862,
+      "name": "LUNG_DX_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The diagnosis comment for the patient's pathology result."
+    },
+    {
+      "index": 867,
+      "name": "LUNG_OTHER_ILD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The interstitial lung disease type category ID for the finding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUIP/IPF\n\n\nILD, Other\n\n\nILD, Unknown"
+    },
+    {
+      "index": 877,
+      "name": "LUNG_LCSR_SPECIFICATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specified details entered by the user for the finding."
+    },
+    {
+      "index": 882,
+      "name": "OB_UTZ_USERDEF_GA",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User defined GA for an ultrasound."
+    },
+    {
+      "index": 887,
+      "name": "OB_UTZ_EDD_ON_SAVE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The working estimated date of delivery that was used to calculate the ultrasound study's gestational age. This item is not set if a Fetus GA was selected as the Study GA."
+    },
+    {
+      "index": 892,
+      "name": "RES_ORDER_RADIOLOGY_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The imaging study status category ID for the order associated with the RES record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOrdered\n\n\nNo Show\n\n\nScheduled\n\n\nArrived\n\n\nExam Begun\n\n\nProcedure Started\n\n\nDiscontinued\n\n\nProcedure Finished\n\n\nExam Ended\n\n\n----- BEGIN READING PALETTE STATUSES -----\n\n\nTech Complete\n\n\nTech Revise\n\n\nResident Revise\n\n\nSaved\n\n\nQueued In Trans\n\n\nIn Transcription\n\n\nIncomplete Transcription\n\n\nTranscribed\n\n\nWet Read\n\n\nQueued Prelim\n\n\nPreliminary\n\n\nQueued Needs Review\n\n\nNeeds Review\n\n\nRevised\n\n\nQueued Final\n\n\nFinal\n\n\nCadence Non-Imaging Order"
+    },
+    {
+      "index": 926,
+      "name": "SIDE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The documented side of the mark.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRight\n\n\nLeft"
+    },
+    {
+      "index": 935,
+      "name": "MARK_SIZE",
+      "type": "NUMERIC",
+      "discontinued": true,
+      "description": "The size of the mark."
+    },
+    {
+      "index": 940,
+      "name": "MARK1_POSX",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The X coordinate for mark 1."
+    },
+    {
+      "index": 945,
+      "name": "MARK1_POSY",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The Y coordinate for mark 1."
+    },
+    {
+      "index": 950,
+      "name": "MARK2_POSX",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The X coordinate for mark 2."
+    },
+    {
+      "index": 955,
+      "name": "MARK2_POSY",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The Y coordinate for mark 2."
+    },
+    {
+      "index": 960,
+      "name": "DRAW1_COORDS",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The coordinates of the drawing in view 1 of the breast image."
+    },
+    {
+      "index": 965,
+      "name": "DRAW2_COORDS",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The coordinates of the drawing in view 2 of the breast image."
+    },
+    {
+      "index": 970,
+      "name": "OLD_LOCATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The location of a mark.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n1 O'Clock\n\n\n2 O'Clock\n\n\n3 O'Clock\n\n\n4 O'Clock\n\n\n5 O'Clock\n\n\n6 O'Clock\n\n\n7 O'Clock\n\n\n8 O'Clock\n\n\n9 O'Clock\n\n\n10 O'Clock\n\n\n11 O'Clock\n\n\n12 O'Clock"
+    },
+    {
+      "index": 989,
+      "name": "OLD_DEPTH",
+      "type": "NUMERIC",
+      "discontinued": true,
+      "description": "The depth of a mark."
+    },
+    {
+      "index": 994,
+      "name": "MARK1_X_POS",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The X position of the mark in view 1 of the breast image."
+    },
+    {
+      "index": 999,
+      "name": "MARK1_Y_POS",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The Y position of the mark in view 1 of the breast image."
+    },
+    {
+      "index": 1004,
+      "name": "MARK2_X_POS",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The X position of the mark in view 2 of the breast image."
+    },
+    {
+      "index": 1009,
+      "name": "MARK2_Y_POS",
+      "type": "INTEGER",
+      "discontinued": true,
+      "description": "The Y position of the mark in view 2 of the breast image."
+    },
+    {
+      "index": 1014,
+      "name": "VIEW1_COORDS",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The coordinates of the drawing in view 1 of the breast image."
+    },
+    {
+      "index": 1019,
+      "name": "VIEW2_COORDS",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "The coordinates of the drawing in view 2 of the breast image."
+    },
+    {
+      "index": 1024,
+      "name": "BI_LESION_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether there is currently review needed on this finding, which can be used to drive notifications in Study Review and before-signing warnings. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Review Needed\n\n\nReview Recommended\n\n\nReview Required"
+    },
+    {
+      "index": 1034,
+      "name": "RES_NOTE_TAG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to uniquely identify the sentence that corresponds to the findings from a note."
+    },
+    {
+      "index": 1039,
+      "name": "STDY_LVL_FINDING_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores a unique identifier for a breast imaging finding on an individual study."
+    },
+    {
+      "index": 1044,
+      "name": "MAMMO_PATH_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the order ID that the mammo pathology result is attached to."
+    },
+    {
+      "index": 1049,
+      "name": "AUTOLINK_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Earliest date for general recommendations where auto-linking is allowed."
+    },
+    {
+      "index": 1054,
+      "name": "AUTOLINK_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Latest date for general recommendations where auto-linking is allowed."
+    },
+    {
+      "index": 1059,
+      "name": "AJCC_VERSION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AJCC Version category ID for the pathology result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n7th Edition\n\n\n8th Edition\n\n\nUnknown"
+    }
+  ]
+}

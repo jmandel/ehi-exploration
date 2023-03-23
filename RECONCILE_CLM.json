@@ -1,0 +1,178 @@
+{
+  "table_name": "RECONCILE_CLM",
+  "description": "This table contains basic information for claim reconciliation records.",
+  "primary_key": {
+    "column_name": "CLAIM_REC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_REC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the claim reconciliation record."
+    },
+    {
+      "index": 7,
+      "name": "CLAIM_INVOICE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The invoice number of the claim."
+    },
+    {
+      "index": 12,
+      "name": "CUR_EPIC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the system status of the claim: opened or closed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOpen\n\n\nClosed"
+    },
+    {
+      "index": 21,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the payer ID for the payer on the claim."
+    },
+    {
+      "index": 26,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 31,
+      "name": "BENEFIT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the benefit plan ID for the benefit plan on the claim."
+    },
+    {
+      "index": 36,
+      "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 41,
+      "name": "LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the location ID for the location of the claim."
+    },
+    {
+      "index": 46,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the department ID for the department of the claim."
+    },
+    {
+      "index": 51,
+      "name": "BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hospital liability bucket ID for the claim. This column is populated only for Hospital Billing claims."
+    },
+    {
+      "index": 56,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hospital account ID for the claim. This column is populated only for Hospital Billing claims."
+    },
+    {
+      "index": 61,
+      "name": "SERVICE_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the service area ID from the claim that created the reconciliation record."
+    },
+    {
+      "index": 66,
+      "name": "EPIC_CLM_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the status of the claim that created the reconciliation record. This column will indicate whether the claim has been accepted, processed, or rejected in Epic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProcessed\n\n\nErrored\n\n\nAccepted from Run\n\n\nRejected\n\n\nWQ Resubmit\n\n\nAccept from WQ"
+    },
+    {
+      "index": 79,
+      "name": "CLAIM_RUN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the claim run ID for the reconciliation record. This column will be populated for records created in the 2010 version and beyond."
+    },
+    {
+      "index": 84,
+      "name": "TOTAL_BILLED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the billed amount for the reconciliation record."
+    },
+    {
+      "index": 89,
+      "name": "EXT_STS_RCV_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether at least one external status update has been received for the reconciliation record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 98,
+      "name": "CROSSOVER_CLAIM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the associated claim is a crossover claim.\n\n\n The category values for this column were already listed for column: EXT_STS_RCV_YN"
+    },
+    {
+      "index": 104,
+      "name": "RECORD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the record is Interchange Control Header (ISA), Transaction Set Header (ST), or Claim data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInterchange\n\n\nTransaction Set\n\n\nClaim"
+    },
+    {
+      "index": 114,
+      "name": "ISA_CONTROL_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds a unique value used for tracking an interchange for records of type Interchange."
+    },
+    {
+      "index": 119,
+      "name": "GS_CONTROL_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds a unique value used for tracking a transaction set for records of type Transaction Set."
+    },
+    {
+      "index": 124,
+      "name": "NUM_OF_CLAIMS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the number of claims submitted. It is set for records of type Interchange and Transaction Set."
+    },
+    {
+      "index": 129,
+      "name": "PRINT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the user associated with the print event. Set only for records of type Interchange."
+    },
+    {
+      "index": 134,
+      "name": "BHT_REF_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The reference identifier (BHT-03) value from the electronic claim file generated out of Epic. This acts as a link to the receiver level reference identifier (TRN-02) in the claim reconciliation (277CA) response file."
+    },
+    {
+      "index": 139,
+      "name": "POST_ACK_STATUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether at least one external status update has been received on or after either four days post claim acceptance or the predicted payment response date if earlier. Claim acknowledgements are generally posted before then.\n\n\n The category values for this column were already listed for column: EXT_STS_RCV_YN"
+    }
+  ]
+}

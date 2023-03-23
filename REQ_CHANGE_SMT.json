@@ -1,0 +1,59 @@
+{
+  "table_name": "REQ_CHANGE_SMT",
+  "description": "Contains the auditing information for when a requisition's submitter is updated.",
+  "primary_key": {
+    "column_name": "REQUISITION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REQUISITION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the requisition record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CHANGE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The change reason category ID for the requisition submitter change.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSubmitter Merge Utility\n\n\nMobile Patient Association\n\n\nOther"
+    },
+    {
+      "index": 22,
+      "name": "CHANGING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for this requisition submitter change. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 27,
+      "name": "CHANGE_INSTANT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant when the requisition's submitter was changed."
+    },
+    {
+      "index": 32,
+      "name": "PREV_SUBMITTER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the submitter that was associated with the requisition prior to the submitter being updated."
+    },
+    {
+      "index": 37,
+      "name": "PREV_SUBMITTER_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the submitter record."
+    }
+  ]
+}

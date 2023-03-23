@@ -1,0 +1,150 @@
+{
+  "table_name": "DOCS_RCVD_ACTN_AUD",
+  "description": "This table stores the action audit performed on the discrete data.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACT_AUD_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the reference identifier associated with the discrete data."
+    },
+    {
+      "index": 17,
+      "name": "ACT_AUD_ACT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of action performed on the discrete data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFiled\n\n\nIgnored\n\n\nRestored\n\n\nPartially Filed\n\n\nReconciled\n\n\nDiscontinued\n\n\nUpdated\n\n\nCreated\n\n\nNot Current\n\n\nCanceled\n\n\nLink Prescription\n\n\nPaused\n\n\nUnpaused\n\n\nDiscarded Permanently By Cleanup Utility\n\n\nDiscarded Once By Cleanup Utility\n\n\nHistorical\n\n\nMarked Historical By Cleanup Utility\n\n\nRemoved By Claims Datalink\n\n\nUpdated By Claims Datalink\n\n\nRemoved By Claims Cleanup Utility\n\n\nUpdated By Remap Utility\n\n\nMarked Historical by DXO setting 85513\n\n\nAuto Discarded\n\n\nUpdated By Code Replacement Utility\n\n\nExcluded From Composite\n\n\nRemoved at Source Organization\n\n\nUpdated By Cosmos Update Mapping Batch Job\n\n\nFiltered For Demographics By Claims Datalink\n\n\nFiltered For Transplant By Claims Datalink\n\n\nRemoved By Cosmos Result Component Purge Utility\n\n\nHidden\n\n\nAuto Restored\n\n\nDiscarded By Negative Allergy Names Filter\n\n\nDiscarded Due To Similarity With A Prior Discard\n\n\nMarked Historical By User\n\n\nDiscarded For History Reconciliation\n\n\nDiscarded By Medication Grouper\n\n\nDiscarded By Medication Name Filter\n\n\nDiscarded by Problems Grouper\n\n\nMarked Historical by Acute Problems Grouper\n\n\nIgnored as History Conflict or Duplicate\n\n\nIgnored as Internal Duplicate\n\n\nAuto Reconciled\n\n\nError Sending Discontinue\n\n\nFiled by Patient\n\n\nIgnored by Patient\n\n\nDispense Cancelled By Outside Pharmacy\n\n\nAuto-Reconciliation Reverted By Cleanup Utility\n\n\nAuto Merged\n\n\nAccepted\n\n\nDeferred\n\n\nReturned\n\n\nReplaced\n\n\nCompleted\n\n\nExpired\n\n\nAudit Action Reverted"
+    },
+    {
+      "index": 80,
+      "name": "ACT_AUD_ACT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the ID of the user performing the action on discrete data."
+    },
+    {
+      "index": 85,
+      "name": "ACT_AUD_ACT_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the instant of the audit action on the discrete data."
+    },
+    {
+      "index": 90,
+      "name": "ACT_AUD_ASSC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the associated contact where the discrete data resides."
+    },
+    {
+      "index": 95,
+      "name": "ACT_AUD_LPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the ID of the Problem List record if the discrete data was filed into the Problem List."
+    },
+    {
+      "index": 100,
+      "name": "ACT_AUD_ORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the ID of the Orders record if the discrete data was filed into an Order record."
+    },
+    {
+      "index": 105,
+      "name": "ACT_AUD_ACT_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores additional description about the action being taken."
+    },
+    {
+      "index": 110,
+      "name": "ACT_AUD_DATA_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the data type associated with the audit action.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAllergy\n\n\nProblem\n\n\nMedication\n\n\nIngredient\n\n\nDispense\n\n\nImmunization\n\n\nVital\n\n\nDiagnosis\n\n\nMedical History\n\n\nMedication Dispensed\n\n\nProcedure\n\n\nOB Hx Delivery\n\n\nEncounter\n\n\nGoal\n\n\nDepartment Specialty\n\n\nPCC Note\n\n\nHealth Maintenance\n\n\nCare Team Relationship\n\n\nProvider Specialty and Type\n\n\nResult Procedure\n\n\nResult Component\n\n\nResult Value\n\n\nResult Specimen Type\n\n\nResult Specimen Source\n\n\nSocial History Type\n\n\nSocial History Value\n\n\nSurgical History\n\n\nFamily History Relationship\n\n\nFamily History Problem\n\n\nAssessment Scale Type\n\n\nProcedure Target Site\n\n\nProcedure Laterality\n\n\nAllergy Reaction Type\n\n\nMedication Route\n\n\nMedication Form\n\n\nAllergy Reaction\n\n\nAllergy Reaction Severity\n\n\nAllergy Criticality\n\n\nAllergy Severity\n\n\nCause of Death\n\n\nGoal Type\n\n\nResult Type\n\n\nBilling Diagnoses\n\n\nBilling Procedure\n\n\nPediatric Vital\n\n\nPediatric Vital Delivery Method\n\n\nImmunization Route\n\n\nReason For Visit\n\n\nBody Location\n\n\nMedication Discontinue Reason\n\n\nMedication Indication of Use\n\n\nPayer\n\n\nKanta Social Care Customer Type\n\n\nMedication Dose Unit\n\n\nMode of Arrival\n\n\nDischarge Disposition\n\n\nAcuity Level\n\n\nED Disposition\n\n\nAntibiotic\n\n\nOrganism\n\n\nSusceptibility Interpretation\n\n\nAntibiotic Test Method\n\n\nPeer Group\n\n\nObstetric History Delivery Method\n\n\nObstetric History Anesthesia\n\n\nObstetric History Complication\n\n\nImmunization Deferral Duration\n\n\nImmunization Product\n\n\nImmunization External Admin\n\n\nSmartData Value\n\n\nSmartData\n\n\nSmartData Source Note Type\n\n\nSmartData Element\n\n\nInfection\n\n\nResult Component Abnormality Flag\n\n\nMedication Frequency\n\n\nCRQ Data\n\n\nFlowsheet Ventilator Episodes\n\n\nOxygen Delivery Method\n\n\nVentilator Mode\n\n\nVentilator Device Associations\n\n\nVentilator Class\n\n\nIntubations\n\n\nLDA Type\n\n\nICU Stay\n\n\nICU Stay Department Specialty\n\n\nQuestionnaire\n\n\nClinical Note\n\n\nClinical Note Status\n\n\nClinical Note Patient Awareness\n\n\nClinical Note Author Specialty\n\n\nTreatment\n\n\nCode Status\n\n\nTreatment Permitted\n\n\nTreatment Restriction Verified With\n\n\nGenomic Indicator\n\n\nRespiratory Support Flowsheet Values\n\n\nRespiratory Support Oxygen Delivery Method\n\n\nAssessment Question\n\n\nAssessment Answer\n\n\nSocial Determinant Domain\n\n\nSocial Determinant of Health\n\n\nCoding Status\n\n\nImmunization Dose Unit\n\n\nReportability\n\n\nReportability eICR Information\n\n\nQuality Measure Intervention\n\n\nMedication Order\n\n\nMedication Order Indication of Use\n\n\nGrowth Chart Codes\n\n\nClinical Note Sections\n\n\nTiming\n\n\nCancer Stage\n\n\nCancer Type\n\n\nHistopathologic Type\n\n\nQuestionnaire Answer\n\n\nQuestionnaire Question\n\n\nQuestionnaire SDE\n\n\nProblem Laterality\n\n\nTransplant Info\n\n\nTransplanted Organ Info\n\n\nIngredient Type\n\n\nObstetric History Augmentation\n\n\nObstetric History Augmentation Indication\n\n\nObstetric History Cervical Ripening\n\n\nObstetric History Rupture\n\n\nObstetric History Episiotomy\n\n\nObstetric History Induction\n\n\nObstetric History Induction Indication\n\n\nObstetric History Laceration\n\n\nObstetric History Adoption Type\n\n\nObstetric History Placenta Method\n\n\nObstetric History Presentation Type\n\n\nObstetric History Cesarean Indication\n\n\nObstetric History Living Status at Birth\n\n\nPregnancy Dating\n\n\nPregnancy Dating Event Basis"
+    },
+    {
+      "index": 254,
+      "name": "ACT_AUD_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the ID of the Procedure record if the discrete data was filed into surgical history."
+    },
+    {
+      "index": 259,
+      "name": "ACT_AUD_ERX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the networked medication record ID that was reconciled via NoteReader."
+    },
+    {
+      "index": 264,
+      "name": "ACT_AUD_DC_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the discontinue reason for the discontinue action made on an external medication.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 270,
+      "name": "ACT_AUD_DC_RSN_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the free-text discontinue reason for the discontinue action made on an external medication."
+    },
+    {
+      "index": 275,
+      "name": "ACT_AUD_LOC_UPD_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of action performed on local data using external data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdded as Inactive (Primary)\n\n\nAdded as Inactive (Secondary)\n\n\nLocal Updated With Active\n\n\nLocal Made Inactive (Primary)\n\n\nLocal Made Inactive (Secondary)\n\n\nLocal Kept Inactive (Generic)\n\n\nLocal Kept Inactive (Primary to Secondary)\n\n\nLocal Kept Inactive (Secondary to Primary)\n\n\nSimultaneously Added and Made Inactive (Primary)\n\n\nChecksum Version Updated\n\n\nSimultaneously Updated Local With Active And Made Inactive (Primary)"
+    },
+    {
+      "index": 293,
+      "name": "ACT_AUD_INF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the ID of the Infections record if the discrete data was filed into an Infections record."
+    },
+    {
+      "index": 298,
+      "name": "ACT_AUD_EDG_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the allergen ID if the discrete data was filed to diagnoses or medical history."
+    },
+    {
+      "index": 303,
+      "name": "ACT_AUD_ORD_CONTACT_DATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the DAT of the ORD record if the discrete data was filed into ORD."
+    },
+    {
+      "index": 308,
+      "name": "ACT_AUD_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the a note which was auto-reconciled from a C-CDA document and was later deleted by the Auto-Reconciled Notes Cleanup Utliity."
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "table_name": "SERVICE_BENEFITS",
+  "description": "The SERVICE_BENEFITS table contains service-level benefit information about the coverages for the encounter or estimate to which this benefit record is attached.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the benefit record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CVG_FOR_SVC_TYPE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This related group contains benefit information specific to a coverage and service type."
+    },
+    {
+      "index": 17,
+      "name": "CVG_SVC_TYPE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The service type for which the listed insurance benefits apply."
+    },
+    {
+      "index": 22,
+      "name": "CVG_SVC_TYPE_ID_SERVICE_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this benefit service type."
+    },
+    {
+      "index": 27,
+      "name": "EVALUATION_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current evaluated status of the coverage benefits for this service type (coverage, not covered, in progress, etc.).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCovered\n\n\nNot Covered"
+    },
+    {
+      "index": 36,
+      "name": "COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The copay for this coverage and service type."
+    },
+    {
+      "index": 41,
+      "name": "DEDUCTIBLE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Deductible for this coverage and service type."
+    },
+    {
+      "index": 46,
+      "name": "DEDUCTIBLE_MET_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the deductible for this coverage and service type that has already been paid."
+    },
+    {
+      "index": 51,
+      "name": "COINS_PERCENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The coinsurance percentage for this coverage and service type."
+    },
+    {
+      "index": 56,
+      "name": "COINS_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coinsurance amount for this coverage and service type."
+    },
+    {
+      "index": 61,
+      "name": "OUT_OF_POCKET_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum out-of-pocket payment for this coverage and service type."
+    },
+    {
+      "index": 66,
+      "name": "OUT_OF_PCKT_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The remaining out-of-pocket payment for this coverage and service type."
+    },
+    {
+      "index": 71,
+      "name": "OUT_OF_PCKET_MET_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Has the out-of-pocket cost been met for this coverage and service type?\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 80,
+      "name": "OOP_INCL_DEDUCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Does the out-of-pocket payment include the deductible cost?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 86,
+      "name": "COVERED_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track covered days -- this is normally used for Medicare."
+    },
+    {
+      "index": 91,
+      "name": "NON_COVERED_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The non-covered days  - this is normally used for Medicare"
+    },
+    {
+      "index": 96,
+      "name": "COINS_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track the coinsurance days -- this is normally used for Medicare"
+    },
+    {
+      "index": 101,
+      "name": "LTR_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track the lifetime reserve days -- this is usually used for Medicare."
+    },
+    {
+      "index": 106,
+      "name": "ANNUAL_BEN_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum annual benefits for this coverage and service type."
+    },
+    {
+      "index": 111,
+      "name": "ANNUAL_BEN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The annual benefits remaining for this coverage and service type."
+    },
+    {
+      "index": 116,
+      "name": "LIFETIME_BEN_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum lifetime benefits for this coverage and service type."
+    },
+    {
+      "index": 121,
+      "name": "LIFETIME_BEN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The lifetime benefits remaining for this coverage and service type."
+    },
+    {
+      "index": 126,
+      "name": "SPEND_DOWN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The spend down amount for this coverage and service type during the defined interval."
+    },
+    {
+      "index": 131,
+      "name": "SPEND_DOWN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The spend down amount remaining for this coverage and service type during the specified interval."
+    },
+    {
+      "index": 136,
+      "name": "SPEND_DOWN_INTRVL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The interval at which the spend down amount will reset.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOne Week\n\n\nOne Month\n\n\nThree Months\n\n\nSix Months\n\n\nOne Year"
+    },
+    {
+      "index": 148,
+      "name": "PREEXISTING_COND_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Do any pre-existing conditions apply for this coverage and service type?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 154,
+      "name": "PREEXIST_COND_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of any pre-existing conditions that apply for this coverage and service type."
+    },
+    {
+      "index": 159,
+      "name": "IN_NETWORK_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Is in-network care required for this coverage and service type?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 165,
+      "name": "PREFERRED_NETWORK",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The preferred network, if any, for this coverage and service type."
+    },
+    {
+      "index": 170,
+      "name": "TRACKING_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The tracking code for payor communication about this coverage and service type."
+    },
+    {
+      "index": 175,
+      "name": "DEDUCT_REMAIN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the deductible for this coverage and service type that has yet to be paid."
+    },
+    {
+      "index": 180,
+      "name": "DAILY_COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is multiplied by the length of stay to calculate the total inpatient copay for this coverage and service type. This is different from the visit copay amount."
+    },
+    {
+      "index": 185,
+      "name": "MAX_DAILY_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum total amount the patient may be charged in daily copays for this coverage and service type."
+    },
+    {
+      "index": 190,
+      "name": "FAMILY_TIER_SVC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Family tier for this line's coverage and service type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nN/A\n\n\nIndividual\n\n\nFamily"
+    },
+    {
+      "index": 200,
+      "name": "MAX_VISITS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The maximum number of visits for this coverage and service type."
+    },
+    {
+      "index": 205,
+      "name": "REMAINING_VISITS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The remaining number of visits for this coverage and service type."
+    },
+    {
+      "index": 210,
+      "name": "NET_LVL_SVC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Network level of this line's coverage and service type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIn\n\n\nOut\n\n\nOut of Area\n\n\nN/A"
+    },
+    {
+      "index": 221,
+      "name": "NON_COVERED_SVC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Notes when a service is not covered by the payor for this encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCovered\n\n\nNot Covered"
+    },
+    {
+      "index": 230,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the payor for these service-level benefits. This item is used when recording benefits before a coverage record has been created, such as for estimates for prospective patients."
+    },
+    {
+      "index": 235,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 240,
+      "name": "SVC_ANNUAL_BEN_USED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that has already been used for this coverage and service type for a given year."
+    },
+    {
+      "index": 245,
+      "name": "RTE_COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last copay value filed by RTE at the service level"
+    },
+    {
+      "index": 250,
+      "name": "RTE_DEDUCT_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible amount filed by RTE at the service level"
+    },
+    {
+      "index": 255,
+      "name": "RTE_DEDUCT_MET",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible met amount filed by RTE at the service level"
+    },
+    {
+      "index": 260,
+      "name": "RTE_DEDUCT_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible remaining amount filed by RTE at the service level"
+    },
+    {
+      "index": 265,
+      "name": "RTE_COINS_PERCENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the last coinsurance percent filed by RTE at the service level"
+    },
+    {
+      "index": 270,
+      "name": "RTE_OOP_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last OOP max amount filed by RTE at the service level"
+    },
+    {
+      "index": 275,
+      "name": "RTE_OOP_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last OOP remaining amount filed by RTE at the service level"
+    },
+    {
+      "index": 280,
+      "name": "PAYER_BEN_CAT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The benefit category identifier used by the payer. It will only be set for reference benefit records."
+    },
+    {
+      "index": 285,
+      "name": "VISIT_BEN_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum visit benefits for this coverage and service type."
+    },
+    {
+      "index": 290,
+      "name": "VISIT_OUT_OF_POCKET_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum visit out-of-pocket payment for this coverage and service type."
+    }
+  ]
+}

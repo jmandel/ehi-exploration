@@ -1,0 +1,94 @@
+{
+  "table_name": "ARPB_TX_RETRO_HX",
+  "description": "Lists the retroadjudication review history.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether retroadjudication was accepted or rejected for the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccepted\n\n\nRejected\n\n\nAutomatically Accepted\n\n\nAutomatically Rejected\n\n\nInstant Retro"
+    },
+    {
+      "index": 24,
+      "name": "ACTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date the charge was accepted or rejected for retroadjudication"
+    },
+    {
+      "index": 29,
+      "name": "REJECT_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason retroadjudication was rejected for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot a Charge Transaction\n\n\nVoided Transaction\n\n\nOut Of Max Days Range\n\n\nAlready Retroadjudicated\n\n\nRetroadjudication Not Needed\n\n\nNo Open System Batch\n\n\nIn Accepted Queue\n\n\nIn Rejected Queue\n\n\nOrig Cvg Eff On Svc Dt\n\n\nSame Cvg, Same Pln/Pln Grp\n\n\nSame Payor\n\n\nSupplemental Charge\n\n\nCRNA Charge\n\n\nAttached Insurance Payment/Adjustment\n\n\nPatient Due and Paid Off\n\n\nSame Payor, Same Plan\n\n\nRetro Extension Error\n\n\nCharge Bundled\n\n\nSmall Balance Due\n\n\nService Date Too Old\n\n\nSmall Insurance Due\n\n\nInsufficient Security for Retro\n\n\nZero Dollar Charge\n\n\nMatched Credit > $0\n\n\nInvalid Acct Type\n\n\nReject All Chg Extension\n\n\nClaim Submitted For Orig Payor\n\n\nDo Not Bill Insurance Charge\n\n\nSame Payor, Subscriber ID\n\n\nInvalid Account Status\n\n\nDental Payment Plan Charge\n\n\nAmbulatory Pharmacy Charge\n\n\nDental Predetermination Charge\n\n\nNo Effective Date\n\n\nBad Debt Transaction\n\n\nAlready Self-Pay\n\n\nCharge Paid Off\n\n\nAuto Profile Reject\n\n\nTax Charge\n\n\nAuto Reject due to VFO Conversion\n\n\nHome Infusion Adjudicated Charge"
+    },
+    {
+      "index": 77,
+      "name": "ACCEPT_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason retroadjudication was automatically accepted for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nCharges Not Triggered\n\n\nPrimary Coverage Unchanged\n\n\nSelf-Pay to Coverage\n\n\nNo Claims Sent to Original Payor"
+    },
+    {
+      "index": 89,
+      "name": "RETRO_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text comment to further describe the retroadjudication event."
+    },
+    {
+      "index": 94,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User responsible for accepting or rejecting retroadjudication"
+    },
+    {
+      "index": 99,
+      "name": "TRIGGER_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the charge was identified as candidate for retroadjudication."
+    },
+    {
+      "index": 104,
+      "name": "TRIGGER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a reference to the last user to make changes that caused the charge to be a candidate for retroadjudication."
+    },
+    {
+      "index": 109,
+      "name": "ACTION_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Time the charge was accepted or rejected for retroadjudication."
+    },
+    {
+      "index": 114,
+      "name": "MANUAL_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The retroadjudication reason category ID�selected in account maintenance for the transactions.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nAddition/Deletion/Change in Patients\n\n\nChange Patient Covered Flag\n\n\nChange Patient Effective Date\n\n\nChange Coverage Effective Date\n\n\nNew Coverages\n\n\nAdd Member\n\n\nChange Member Effective Date\n\n\nRemove Member\n\n\nAdd Account\n\n\nChange Benefit Plan on Employer Group\n\n\nChange Coverage Term Date\n\n\nChange Member Term Date\n\n\nChange Covered Status\n\n\nChange Riders on Employer Group\n\n\nRemove Benefit Plan from Employer Group\n\n\nChange Activation Date on Employer Group\n\n\nChange Termination Date on Employer Group\n\n\nChange Effective Date due to Group Term Date\n\n\nChange Term Date due to Group Effective Date\n\n\nChange Coverages\n\n\nChange Visit Coverage"
+    }
+  ]
+}

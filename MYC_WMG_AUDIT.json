@@ -1,0 +1,52 @@
+{
+  "table_name": "MYC_WMG_AUDIT",
+  "description": "This table contains audit trail items that store information about a message related to the message viewers functionality.",
+  "primary_key": {
+    "column_name": "MESSAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "MESSAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID used to identify a web-based chart system message record. A new record is created each time a patient sends a message from a web-based chart system to a system user and each time a system user sends a message to a web-based chart system patient."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "WMG_AUD_EVENT_INST",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Contains the instant of the audit trail entry in local time."
+    },
+    {
+      "index": 17,
+      "name": "WMG_AUD_VIEWER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "MyChart ID of the person associated with this audit item"
+    },
+    {
+      "index": 22,
+      "name": "WMG_AUD_LOCATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the new location of the message\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInbox\n\n\nSent Messages\n\n\nTrash Can\n\n\nBedside Conversation"
+    },
+    {
+      "index": 33,
+      "name": "WMG_AUD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the status (ie: read, unread) of the message\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRead\n\n\nUnread"
+    }
+  ]
+}

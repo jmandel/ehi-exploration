@@ -1,0 +1,59 @@
+{
+  "table_name": "FRM_IMP_SAFETY",
+  "description": "This table stores implant safety-related information for screening forms, including the implants' IDs, MRI safety status, safety comments, last editing user, and last editing time.",
+  "primary_key": {
+    "column_name": "SCREENING_FORM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SCREENING_FORM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the screening form record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "IMPLANT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient's implant."
+    },
+    {
+      "index": 17,
+      "name": "IMPLANT_SAFETY_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The implant safety status category ID for the timeout record associated with the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMRI Safe\n\n\nMRI Unsafe\n\n\nMRI Conditional"
+    },
+    {
+      "index": 27,
+      "name": "IMPLANT_SAFETY_CMT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the implant safety status comments (HNO)."
+    },
+    {
+      "index": 32,
+      "name": "IMPLANT_SAFETY_AUD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tracks the user who last edited the implant safety status."
+    },
+    {
+      "index": 37,
+      "name": "IMPLANT_SAFETY_AUD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Tracks the last time a user updated the implant safety status."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "table_name": "VAR_PGX_MED_USE_NARR",
+  "description": "This table stores the medication usage narrative for a pharmacogenomic variant.",
+  "primary_key": {
+    "column_name": "VARIANT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "VARIANT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the variant record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the medication usage narrative for a pharmacogenomic variant. Together with VARIANT_ID, this forms the foreign key to the VAR_PGX_MED_USE_NARR table."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of a portion of the medication usage narrative associated with the pharmacogenomic variant and medication from the VAR_PGX_MED_USE table"
+    },
+    {
+      "index": 17,
+      "name": "MED_USE_NARRATIVE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text field denoting alteration to medication based on drug-gene interactions"
+    }
+  ]
+}

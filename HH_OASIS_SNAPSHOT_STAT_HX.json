@@ -1,0 +1,59 @@
+{
+  "table_name": "HH_OASIS_SNAPSHOT_STAT_HX",
+  "description": "This table stores the history of the status of a data set.",
+  "primary_key": {
+    "column_name": "OASIS_SET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "OASIS_SET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the data set record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PREV_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the initial value of LHO 105 in a status change action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nVisit Complete\n\n\nMarked for Submission\n\n\nSubmitted\n\n\nAccepted\n\n\nRejected\n\n\nVoided\n\n\nIn Progress\n\n\nReady for 3rd Party\n\n\nSent to 3rd Party"
+    },
+    {
+      "index": 29,
+      "name": "NEW_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the value of LHO 105 after a status change action.\n\n\n The category values for this column were already listed for column: PREV_STAT_C_NAME"
+    },
+    {
+      "index": 35,
+      "name": "STAT_CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains a link to the EMP record of the user associated with the status change action."
+    },
+    {
+      "index": 40,
+      "name": "CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item houses the instant associated with the status change action."
+    },
+    {
+      "index": 45,
+      "name": "STAT_CHANGE_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the HNO of the comment added and relevant audit information."
+    }
+  ]
+}

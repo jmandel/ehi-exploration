@@ -1,0 +1,66 @@
+{
+  "table_name": "RESULT_AUDIT",
+  "description": "This table is part of a group of tables that extracts audit information related to a finding. Each row specifies an action performed on the finding, along with the new values recorded for the items being audited. This table is very similar in structure to ORDER_RAD_AUDIT, which stores the audit trail of imaging orders.\n\n\n\n\n\nThe tables RESULT_AUDIT_ITEMS, RESULT_AUD_PATH_CODES, and RESULT_AUD_MALIG_TYPE contain the rest of the finding audit information not found in this table. Join to these three tables from RESULT_AUDIT using the two primary keys FINDING_ID and LINE.",
+  "primary_key": {
+    "column_name": "FINDING_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the finding record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_PERFORMED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action category ID for the action being audited.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPathology Result Created\n\n\nPathology Result Edited\n\n\nPathology Result Deleted"
+    },
+    {
+      "index": 22,
+      "name": "ACTION_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant at which the audited action was performed."
+    },
+    {
+      "index": 27,
+      "name": "PERFORMING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who performed the audited action."
+    },
+    {
+      "index": 32,
+      "name": "LESION_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lesion classification category ID, if any, for the action being audited.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBenign\n\n\nHigh Risk\n\n\nMalignant\n\n\nPremalignancy - Hyperplasia\n\n\nMalignant - Non-lung\n\n\nClinical - without histology\n\n\nNon-diagnostic\n\n\nOther (please specify)\n\n\nUnknown"
+    },
+    {
+      "index": 48,
+      "name": "LESION_SIDE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pathology finding side category ID, if any, for the action being audited.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRight\n\n\nLeft\n\n\nBoth"
+    },
+    {
+      "index": 58,
+      "name": "PATH_RESULT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The new value for the pathology finding biopsy date (RES-52340), if any, for the action being audited."
+    }
+  ]
+}

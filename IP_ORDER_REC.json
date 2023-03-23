@@ -1,0 +1,73 @@
+{
+  "table_name": "IP_ORDER_REC",
+  "description": "This table contains Inpatient order reconciliation information.",
+  "primary_key": {
+    "column_name": "EVENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the event record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "TAKING_BEF_ADM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a medication was taken within 24 hours of admission.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+    },
+    {
+      "index": 22,
+      "name": "ORDREC_SORT_POC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the Phase of Care that indicates when this action should take place.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 28,
+      "name": "IP_ORDREC_REV_HRS",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The number of hours after a completed transfer event that the review not needed status for One Step Order Reconciliation orders is valid."
+    },
+    {
+      "index": 33,
+      "name": "IP_ORDREC_REV_EXP_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The time at which the review not needed status for One Step Order Reconciliation orders expires."
+    },
+    {
+      "index": 38,
+      "name": "DISCONTINUE_NOTE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the reconciliation action (I IEV 1020) indicates a discontinue, this item indicates the note for discontinuation (if one was specified by the user)."
+    },
+    {
+      "index": 43,
+      "name": "ORDER_REC_HOLD_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider hold action (hold or unhold) for this action line, if applicable.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHold\n\n\nUnhold"
+    },
+    {
+      "index": 52,
+      "name": "HOLD_INFO_LINE_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number in the order record that contains additional hold information for this order reconciliation action, if applicable. The values in this column can be linked to the LINE column in the ORDER_HOLD_INFO table."
+    }
+  ]
+}

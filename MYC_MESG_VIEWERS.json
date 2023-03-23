@@ -1,0 +1,45 @@
+{
+  "table_name": "MYC_MESG_VIEWERS",
+  "description": "This table contains the viewers that may see a message, as well as information about the message as it pertains to each viewer, such as the location, like Inbox or Sent, and status, like read or unread. Viewers are defined by Patient Access Accounts (WPR) records.",
+  "primary_key": {
+    "column_name": "MESSAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "MESSAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID used to identify a web-based chart system message record. A new record is created each time a patient sends a message from a web-based chart system to a system user and each time a system user sends a message to a web-based chart system patient."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "VIEWER_WPR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the ID of the MyChart user who may view the message"
+    },
+    {
+      "index": 17,
+      "name": "MSG_LOCATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This indicates the location of the message for the particular viewer\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInbox\n\n\nSent Messages\n\n\nTrash Can\n\n\nBedside Conversation"
+    },
+    {
+      "index": 28,
+      "name": "MSG_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This indicates the status of the message for a particular viewer.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRead\n\n\nUnread"
+    }
+  ]
+}

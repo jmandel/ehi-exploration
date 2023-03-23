@@ -1,0 +1,73 @@
+{
+  "table_name": "OUTCOME_MED_ADHERE_INFO",
+  "description": "This table will hold med adherence information around the medications associated with an outcome.",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the registry data record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "OUTCOME_KEY_MED_ADH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item stores the outcome's key. This key is unique for an outcome on a particular RDI record. This item is used to link the current outcomes group (I RDI 42010) with the med adherence data stored here."
+    },
+    {
+      "index": 17,
+      "name": "OUTCOME_MED_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The medication name relevant to an adherence measure."
+    },
+    {
+      "index": 22,
+      "name": "OUTCOME_MED_NDC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The NDC record ID for the medication listed."
+    },
+    {
+      "index": 27,
+      "name": "OUTCOME_MED_NDC_ID_NDC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
+    },
+    {
+      "index": 32,
+      "name": "OUTCOME_MED_FIRST_FILL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date this medication was first filled."
+    },
+    {
+      "index": 37,
+      "name": "OUTCOME_MED_LAST_FILL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The most recent fill date for the medication."
+    },
+    {
+      "index": 42,
+      "name": "OUTCOME_MED_NEXT_FILL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The expected next fill date for the medication. This is based on last fill date + days supplied."
+    }
+  ]
+}

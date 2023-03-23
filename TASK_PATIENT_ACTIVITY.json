@@ -1,0 +1,304 @@
+{
+  "table_name": "TASK_PATIENT_ACTIVITY",
+  "description": "This table contains data about patient tasks assigned by MyChart Care Companion.",
+  "primary_key": {
+    "column_name": "ACTIVITY_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACTIVITY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the task record."
+    },
+    {
+      "index": 7,
+      "name": "TASK_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The task type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Specific\n\n\nUser Specific\n\n\nPatient Event\n\n\nEpisode Specific\n\n\nMyChart Patient Created"
+    },
+    {
+      "index": 19,
+      "name": "TASK_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The functional context of a task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral\n\n\nChecklist\n\n\nStaff Activity\n\n\nHomecare Patient Encounter"
+    },
+    {
+      "index": 30,
+      "name": "DOCMNT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The documentation type for this task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMAR\n\n\nNotes\n\n\nCOLLECTION\n\n\nI/O\n\n\nFlowsheet\n\n\nEducation\n\n\nCare Plan\n\n\nOrder Review\n\n\nOrder Entry\n\n\nPatient Summary\n\n\nProcedure Result\n\n\nMultistep\n\n\nMultistep Collection\n\n\nAcknowledge\n\n\nDocumentation Review\n\n\nScreening Form\n\n\nDischarge Transport Request\n\n\nDischarge Placement\n\n\nApproval\n\n\nRequired Documentation\n\n\nQuestionnaire\n\n\nAppointment\n\n\nReview Dialog Message\n\n\nManual Denominator Entry\n\n\nLink\n\n\nGeneral"
+    },
+    {
+      "index": 63,
+      "name": "TASK_SCHEDULE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The scheduling status of a patient-assigned task. When a task is created it may not be scheduled right away.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScheduled\n\n\nNot Scheduled\n\n\nWill Be Scheduled"
+    },
+    {
+      "index": 73,
+      "name": "IS_PAUSED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether a task is assigned to the patient is paused. When a task is paused, it will not have future instances and will not displayed to the patient until resumed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 82,
+      "name": "GOAL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The goal that the task is associated with."
+    },
+    {
+      "index": 87,
+      "name": "FREQ_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If you would like this activity to be performed at a different frequency than the ordering frequency, enter it here."
+    },
+    {
+      "index": 92,
+      "name": "FREQ_ID_FREQ_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the frequency record."
+    },
+    {
+      "index": 97,
+      "name": "CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Surgical case linked to this task."
+    },
+    {
+      "index": 102,
+      "name": "CARE_INTG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's care plan associated with the task"
+    },
+    {
+      "index": 107,
+      "name": "PROBLEM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The problem associated with the task."
+    },
+    {
+      "index": 112,
+      "name": "PREGNANCY_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Pregnancy Episode linked to this task."
+    },
+    {
+      "index": 117,
+      "name": "ESCALATE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not the task should be escalated if not completed.\n\n\n The category values for this column were already listed for column: IS_PAUSED_YN"
+    },
+    {
+      "index": 123,
+      "name": "ESCL_ELAPSE_TIME_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of time before the task will be escalated, if escalation is enabled."
+    },
+    {
+      "index": 128,
+      "name": "START_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Start instant for a PRN task"
+    },
+    {
+      "index": 133,
+      "name": "END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The end date from the scheduler."
+    },
+    {
+      "index": 138,
+      "name": "DISCONTINUE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant a task was discontinued"
+    },
+    {
+      "index": 143,
+      "name": "TASK_START_TIME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The start time of the task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSource\n\n\nNow\n\n\nOn a Specific Date\n\n\nPend For Later"
+    },
+    {
+      "index": 154,
+      "name": "AUTO_COMPLETE_COND",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Task Auto Complete Condition copied from LTR"
+    },
+    {
+      "index": 159,
+      "name": "NUM_OCCURRENCES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of times this task will occur."
+    },
+    {
+      "index": 164,
+      "name": "PERSONALIZABLE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Defines the personalization status of the notification times for the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 173,
+      "name": "ANCHOR_EVENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When an anchor event is linked to this task, this stores the type of the anchor event.  \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSurgery\n\n\nPregnancy\n\n\nProcedural Appointment\n\n\nHospital Discharge"
+    },
+    {
+      "index": 184,
+      "name": "ANCHOR_EVENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of the anchor event to display to the provider in Patient To Do List activity."
+    },
+    {
+      "index": 189,
+      "name": "RESUME_ON_DISCHARGE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether a task paused on hospital admission or added during hospital admission will start after discharge.\n\n\n The category values for this column were already listed for column: IS_PAUSED_YN"
+    },
+    {
+      "index": 195,
+      "name": "DAYS_AFTER_DISCHARGE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Indicates the number of days after hospital discharge this reminder will start. Value must be larger than or equal to 0."
+    },
+    {
+      "index": 200,
+      "name": "ENSURE_DELIVERY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines whether task will be delivered if scheduled start date has passed. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlways\n\n\nIgnore Past Instances\n\n\nNever"
+    },
+    {
+      "index": 210,
+      "name": "APPT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Appointment serial number for the appointment linked to this task."
+    },
+    {
+      "index": 215,
+      "name": "ADMISSION_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Admission contact serial number for the admission linked to this task."
+    },
+    {
+      "index": 220,
+      "name": "PERSISTENT_QUESR_SERIE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates that the questionnaire series associated with this task is persistent and what type of persistent questionnaire series it is.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral\n\n\nSymptom Check-in"
+    },
+    {
+      "index": 229,
+      "name": "LINK_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the display text for the associated hyperlink of this task."
+    },
+    {
+      "index": 234,
+      "name": "LINK_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of content found at the associated link of this task. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nText\n\n\nWebpage\n\n\nVideo File\n\n\nVideo Stream\n\n\nAudio File\n\n\nAudio Stream\n\n\nPDF Document\n\n\nGoogle Play Link\n\n\nFDI Audio\n\n\nFDI Video\n\n\nFDI Read"
+    },
+    {
+      "index": 252,
+      "name": "APPOINTMENT_MODALITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The modality of the appointment the patient will schedule for this task. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVideo Visit"
+    },
+    {
+      "index": 260,
+      "name": "TELEHEALTH_REASON_FOR_VISIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The telehealth reason for visit that will be used when the patient schedules the video visit.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral Video Visit\n\n\nCough\n\n\nSinus\n\n\nRash\n\n\nBack Pain\n\n\nHeadache\n\n\nEar Infection\n\n\nMuscular Skeletal Injury\n\n\nUrinary Tract Infection\n\n\nAsthma \n\n\nBirth Control Evaluation\n\n\nInsect Bite\n\n\nNausea\n\n\nDiarrhea\n\n\nLactation Consultation \n\n\nNutrition Consultation\n\n\nChronic Obstructive Pulmonary Disease\n\n\nSore Throat \n\n\nGout\n\n\nPink Eye\n\n\nGeneral E-Visit\n\n\nVaginal Discharge / Irritation\n\n\nHeartburn\n\n\nFatigue\n\n\nAcne\n\n\nConstipation\n\n\nSunburn\n\n\nHead Lice\n\n\nEmergency Contraception\n\n\nPoison Ivy\n\n\nCold and Flu\n\n\nAnxiety\n\n\nAthlete's Foot\n\n\nAllergies\n\n\nCOVID Concern\n\n\nFever\n\n\nTooth Pain\n\n\nQuitting Smoking\n\n\nSleep Concerns\n\n\nEar Pain\n\n\nUrgent Care Visit\n\n\nUrgent Care Visit (Covered)"
+    },
+    {
+      "index": 309,
+      "name": "DEF_DISCHRG_BEHAV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item defines the default behavior for this task when the patient is discharged. By default, the task will remain paused.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nKeep Task Paused\n\n\nResume Task"
+    },
+    {
+      "index": 318,
+      "name": "SERIES_ANS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The questionnaire series answer associated with the task."
+    },
+    {
+      "index": 323,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The medication order associated with the task."
+    },
+    {
+      "index": 328,
+      "name": "POINT_TEACHING_TTP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The education point associated with the task."
+    },
+    {
+      "index": 333,
+      "name": "TOPIC_TEACHING_TTP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The education topic associated with the task."
+    },
+    {
+      "index": 338,
+      "name": "TITLE_TEACHING_TTP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The education title associated with the task."
+    },
+    {
+      "index": 343,
+      "name": "TOTAL_INST_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of patient-assigned task instances which are no longer actionable or have been acted upon."
+    },
+    {
+      "index": 348,
+      "name": "COMPLETED_INST_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of completed patient-assigned task instances."
+    }
+  ]
+}

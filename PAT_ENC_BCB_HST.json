@@ -1,0 +1,115 @@
+{
+  "table_name": "PAT_ENC_BCB_HST",
+  "description": "Extracts information regarding the bed charge billing history for a patient's encounter.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "BED_CHARGE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The dates that bed charges have been generated for this patient."
+    },
+    {
+      "index": 27,
+      "name": "HTR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Link to the transaction that represents the bed charge on the hospital account record (HAR)."
+    },
+    {
+      "index": 32,
+      "name": "BED_CHARGE_BCC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the cost center record associated with the bed charge."
+    },
+    {
+      "index": 37,
+      "name": "BED_CHARGE_BCC_ID_COST_CENTER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the cost center."
+    },
+    {
+      "index": 42,
+      "name": "BED_CHARGE_UNIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department record where the bed charge was triggered."
+    },
+    {
+      "index": 47,
+      "name": "BED_CHARGE_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the bed charge procedure record."
+    },
+    {
+      "index": 52,
+      "name": "BED_CHARGE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Contains the instant for which the bed charge was dropped."
+    },
+    {
+      "index": 57,
+      "name": "BED_CHARGE_ROOM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the room where the patient is charged for."
+    },
+    {
+      "index": 62,
+      "name": "BED_CHARGE_BED_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the bed where the patient is charged for."
+    },
+    {
+      "index": 67,
+      "name": "BED_CHARGE_BED_ID_BED_LABEL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the bed."
+    },
+    {
+      "index": 72,
+      "name": "BED_CHARGE_ACCOMMODATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The accommodation code category ID the patient is charged for.\n\n\nMay contain organization-specific values: Yes"
+    }
+  ]
+}

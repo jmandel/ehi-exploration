@@ -1,0 +1,52 @@
+{
+  "table_name": "REG_EVENT_LOGGING",
+  "description": "This table holds information related to event logging in Registration.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "REG_EVENT_LOG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reg Event. This holds the type of Reg event, like Patient Creation, HAR Creation etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Creation\n\n\nReg Contact Creation\n\n\nHAR Creation\n\n\nGuarantor Added\n\n\nCoverage Added\n\n\nADT Contact Creation"
+    },
+    {
+      "index": 25,
+      "name": "REG_EVENT_TIME_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Date/time when the Reg Event occurred."
+    },
+    {
+      "index": 30,
+      "name": "REG_EVNT_JUMP_FRM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user's activity before the Reg Event occurred.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduling\n\n\nProfessional Billing\n\n\nRegistration\n\n\nOpTime Case Check In\n\n\nCharge Entry (PB)\n\n\nPayment Posting (PB)\n\n\nAccount Maintenance (PB)\n\n\nClaim Edit (PB)\n\n\nRetro Review Workqueue (PB)\n\n\nNewborn Admission\n\n\nRegistration New Patient Wizard\n\n\nCase Edit/Creation (PB)\n\n\nRegistration Copy Patient Wizard\n\n\nRegistration MSP Wizard\n\n\nScheduling Account Selection\n\n\nAdmission\n\n\nPreadmission\n\n\nED Arrival\n\n\nL&D Assessment\n\n\nHospital Outpatient Visit\n\n\nTransfer\n\n\nUpdate Admission\n\n\nDischarge\n\n\nED Roomed\n\n\nED Update Admission\n\n\nL&D Update Admission\n\n\nL&D Newborn Update Admission\n\n\nRequisition Entry\n\n\nRegistration Family Lookup Utility\n\n\nCharge Router Charge Editor\n\n\nCombined Reg Report\n\n\nUpdate Discharge\n\n\nCOMMENTED REGISTRATION REPORT\n\n\nDemographics Change Report\n\n\nIncomplete Registration Report\n\n\nInactive Coverages Report\n\n\nNew Patient Report\n\n\nUnassociated Visits Report\n\n\nRegistration Status Report\n\n\nUCL Charge Capture\n\n\nED Module Admit\n\n\nED Module Discharge\n\n\nPatient Identity Change Report\n\n\nClaims\n\n\nADT Contract Registration\n\n\nADT ED Dismiss\n\n\nPre-Check In\n\n\nAccount Edit (PB)\n\n\nGuarantor Identity Change Report\n\n\nTask-based Registration\n\n\nEMPI Reports\n\n\nRegistration Check In\n\n\nScheduling Before Appointment Entry\n\n\nRegistration Sign In\n\n\nRegistration Check Out\n\n\nOB Module Discharge\n\n\nHospital Outpatient Discharge\n\n\nED Temp Pt Update\n\n\nScheduling After Appointment Entry\n\n\nHome Health Intake\n\n\nHospice Intake\n\n\nHospice Discharge\n\n\nHospice Update\n\n\nLeave of Absence Out\n\n\nLeave of Absence Return\n\n\nRegistration Detailed View\n\n\nRegistration Walk In\n\n\nRegistration Benefits Collection\n\n\nBilling Encounter\n\n\nOutpatient Appointment Waiting List\n\n\nSurgical Admit Waiting List\n\n\nDay Admit Waiting List\n\n\nNon-Surgical Admit Waiting List\n\n\nAccount Maintenance (HB)\n\n\nRegistration - Visit (PB)\n\n\nReferral Entry\n\n\nAppointment Request Registration\n\n\nPre-Sign In\n\n\nPre-Check Out\n\n\nPatient Contact Registration\n\n\nHome Infusion\n\n\nLeave of Absence Update\n\n\nOpTime Registration\n\n\nOpTime ABN\n\n\nUpdate HOV Discharge\n\n\nADT Update ED Dismiss"
+    },
+    {
+      "index": 123,
+      "name": "REG_EVNT_CNCT_DAT",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    }
+  ]
+}

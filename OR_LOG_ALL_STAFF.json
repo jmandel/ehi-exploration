@@ -1,0 +1,87 @@
+{
+  "table_name": "OR_LOG_ALL_STAFF",
+  "description": "The OR_LOG_ALL_STAFF table contains information about all staff members associated with a procedural case that has been performed. This includes physicians, procedural staff, anesthesia staff, pre-op nurses, and recovery nurses.",
+  "primary_key": {
+    "column_name": "LOG_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the procedural log record for this row."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "STAFF_TYPE_MAP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The staff type mapping category ID for the staff member.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician\n\n\nAnesthesia Provider\n\n\nOther Anesthesia Staff\n\n\nPreprocedure Nurse\n\n\nRecovery Nurse\n\n\nPhase II Nurse\n\n\nGeneral Staff\n\n\nCirculator\n\n\nScrub Nurse\n\n\nSurgical Tech"
+    },
+    {
+      "index": 29,
+      "name": "STAFF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider record that represents the staff member."
+    },
+    {
+      "index": 34,
+      "name": "ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The role category ID for the staff member. This will only have a value for physicians.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPrimary"
+    },
+    {
+      "index": 42,
+      "name": "SERVICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The service category ID for the staff member. This will only have a value for physicians.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 48,
+      "name": "PANEL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The panel number for the staff member. This will only have a value for physicians."
+    },
+    {
+      "index": 53,
+      "name": "STAFF_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The staff type category ID for the staff member. This will only have a value for procedural staff.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 59,
+      "name": "ANES_STAFF_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia staff type category ID for the staff member. This will only have a value for anesthesia staff.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 65,
+      "name": "ACCOUNTBLE_STAFF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the staff member is considered primary or responsible for the log record represented by this row. Y indicates that the staff member is considered primary for procedural staff or responsible for anesthesia providers. N indicates that the staff member is not considered primary or responsible. For physicians, it is only the primary physician on the first panel.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 74,
+      "name": "TIME_DURATION_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The length of time the staff member is documented as either in room or responsible in minutes for the log represented by this row."
+    }
+  ]
+}

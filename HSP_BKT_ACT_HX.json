@@ -1,0 +1,157 @@
+{
+  "table_name": "HSP_BKT_ACT_HX",
+  "description": "This table contains hospital liability bucket action history information from the Hospital Liability Buckets (HLB) master file.",
+  "primary_key": {
+    "column_name": "BUCKET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the bucket record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the line number in the results of a query. Because multiple actions can be performed on a liability bucket, each action will have a unique line number."
+    },
+    {
+      "index": 12,
+      "name": "ACTIVITY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date an action was recorded on a liability bucket."
+    },
+    {
+      "index": 17,
+      "name": "ACTIVITY_TYP_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of action that was recorded on a liability bucket. Examples are Claim Accepted, Transfer In, Claim Denied.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nDemand Claim Accepted\n\n\nClaim Accepted\n\n\nTransfer In\n\n\nClaim Denied\n\n\nResubmit Claim\n\n\nRejected\n\n\nTransfer Out\n\n\nBill Charges\n\n\nClaim Status Request\n\n\nClaim Status Update\n\n\nRemark\n\n\nAllowance Discrepancy\n\n\nCancel Claim\n\n\nInvoice Number Edit\n\n\nRemoved from Claim Queue\n\n\nClaim ICN Edit\n\n\nReplaced\n\n\nQueue for Credit Statement\n\n\nDebit Statement Accepted - Transfer to GL\n\n\nCredit Statement Accepted - Transfer to GL\n\n\nTransfer Denied Amount to Self-Pay\n\n\nTransfer Denied Amount from Claim\n\n\nNRP In\n\n\nNRP Out\n\n\nTransfer Liability In\n\n\nTransfer Liability Out\n\n\nAdvance Bill Transfer In\n\n\nAdvance Bill Transfer Out\n\n\nAdvance Bill Transfer Update\n\n\nAdvance Bill Transfer Canceled\n\n\nUndo NRP In\n\n\nUndo NRP Out"
+    },
+    {
+      "index": 57,
+      "name": "TRANSFER_TYP_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transfer type associated with an activity on a liability bucket. Transfer types are Charge, Payment, Adjustment, and Balance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nAdjustment\n\n\nBalance"
+    },
+    {
+      "index": 68,
+      "name": "DENIAL_CODE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A claim denial code associated with a claim denied action that was recorded on a liability bucket."
+    },
+    {
+      "index": 73,
+      "name": "DENIAL_CODE_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 78,
+      "name": "ACTIVITY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The monetary amount associated with an action that was recorded on a liability bucket."
+    },
+    {
+      "index": 83,
+      "name": "ACTIVITY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the user who performed an action that was recorded on a liability bucket."
+    },
+    {
+      "index": 88,
+      "name": "SOURCE_BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The liability bucket that is considered the source for this liability bucket. A source liability bucket is a bucket out of which transactions are transferred into another bucket."
+    },
+    {
+      "index": 93,
+      "name": "TARGET_BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The liability bucket that is considered the target for this liability bucket. A target liability bucket is a bucket into which transactions are transferred from another bucket."
+    },
+    {
+      "index": 98,
+      "name": "BALANCE_AFTER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The balance on a liability bucket after an action was performed on it."
+    },
+    {
+      "index": 103,
+      "name": "NEW_BKT_STS_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of a liability bucket after an action was performed on it.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nQueued\n\n\nProcessed\n\n\nPrinted\n\n\nOutstanding\n\n\nError\n\n\nClosed\n\n\nRejected\n\n\nReplaced"
+    },
+    {
+      "index": 119,
+      "name": "ACTIVITY_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the payer associated with an action that was recorded on a liability bucket."
+    },
+    {
+      "index": 124,
+      "name": "ACTIVITY_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 129,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital account with which the liability bucket is associated."
+    },
+    {
+      "index": 134,
+      "name": "EXT_DENIAL_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External claim denial code associated with a claim denied action that was recorded on the liability bucket."
+    },
+    {
+      "index": 139,
+      "name": "GRP_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason group code associated with the denial code that was recorded on a liability bucket.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Responsibility\n\n\nContractual Obligation\n\n\nPayor Initiated\n\n\nCorrection and Reversal\n\n\nOther Adjustment"
+    },
+    {
+      "index": 151,
+      "name": "ACTIVITY_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The column returns the instant an action was recorded on a liability bucket."
+    },
+    {
+      "index": 156,
+      "name": "ACTIVITY_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column stores the context for the action on a given liability bucket.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInitiate billing\n\n\nLate claim\n\n\nLate replacement claim\n\n\nLate charge write-off\n\n\nLate addition\n\n\nUndo billing\n\n\nNext responsible party\n\n\nAccount reached full self-pay\n\n\nAccount financial reclassification\n\n\nCharge filed\n\n\nPayment posted\n\n\nAdjustment posted\n\n\nAdvance bill estimate finalized\n\n\nAdvance bill estimate detached\n\n\nAdvance bill estimate replaced\n\n\nPatient admission\n\n\nAdmission canceled"
+    },
+    {
+      "index": 180,
+      "name": "ACTIVITY_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column stores the source of an activity for a given liability bucket.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSystem\n\n\nUser"
+    }
+  ]
+}

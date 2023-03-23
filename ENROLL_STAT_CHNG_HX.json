@@ -1,0 +1,38 @@
+{
+  "table_name": "ENROLL_STAT_CHNG_HX",
+  "description": "This table contains the enrollment status change history of a participant in a research study.",
+  "primary_key": {
+    "column_name": "ENROLL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ENROLL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the enrollment record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the enrollment status change history in the enrollment record.Together with ENROLL_ID, this forms the foreign key to the ENROLL_STAT_CHNG_HX table."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple enrollment status changes associated with the enrollment record and the ENROLL_STAT_CHNG_DT_HX_DATE from the ENROLL_STAT_CHNG_DT_HX table"
+    },
+    {
+      "index": 17,
+      "name": "HX_CHNG_ENROLL_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The enrollment status category ID of a status change in the enrollment history.\n\n\nMay contain organization-specific values: Yes"
+    }
+  ]
+}

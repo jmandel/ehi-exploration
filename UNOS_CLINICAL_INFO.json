@@ -1,0 +1,1809 @@
+{
+  "table_name": "UNOS_CLINICAL_INFO",
+  "description": "Additional information reported to the United Network for Organ Sharing (UNOS) for each of the registry records or forms.",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the registry record."
+    },
+    {
+      "index": 7,
+      "name": "UNOS_ORGAN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of organ transplanted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLung\n\n\nPancreas\n\n\nLiver\n\n\nKidney\n\n\nKidney/Pancreas\n\n\nIntestine\n\n\nHeart\n\n\nHeart/Lung\n\n\nPancreas Islets"
+    },
+    {
+      "index": 23,
+      "name": "UNOS_CARE_PROV_BY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The place or type of provider responsible for the patient's follow-up care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTransplant Center\n\n\nNon-Transplant Center Specialty Physician\n\n\nPrimary Care Physician\n\n\nOther, Specify"
+    },
+    {
+      "index": 34,
+      "name": "UNOS_CARE_PROV_OTH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If different from common answers, the specified place or type of provider responsible for the patient's follow-up care.  This clarifies the answer in the UNOS_CARE_PROV_BY_C column."
+    },
+    {
+      "index": 39,
+      "name": "UNOS_WAS_HOSP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies whether the patient was hospitalized during the follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+    },
+    {
+      "index": 49,
+      "name": "UNOS_NBR_HOSP_ADMIT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Specifies the number of hospitalizations during the follow-up period."
+    },
+    {
+      "index": 54,
+      "name": "UNOS_HOSP_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the number of hospitalizations is unspecified, this field indicates why.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nN/A\n\n\nNot Done\n\n\nMissing\n\n\nUnknown"
+    },
+    {
+      "index": 65,
+      "name": "UNOS_CLIN_RSCH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies whether the patient participated in any clinical research protocols for immunosuppressive medications.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 74,
+      "name": "UNOS_CLIN_RSCH_SPEC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient participated in any protocols for immunosuppressive medications, this specifies which ones."
+    },
+    {
+      "index": 79,
+      "name": "UNOS_DISEASE_RCR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the presence or absense of disease recurrence.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Recurrence\n\n\nSuspected Recurrence\n\n\nBiopsy Confirmed Recurrence\n\n\nUnknown"
+    },
+    {
+      "index": 90,
+      "name": "UNOS_IMM_NONCOMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether there was evidence of patient non-compliance with immunosuppressive medications that could have compromised the patient's recovery.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 96,
+      "name": "UNOS_MAINT_MEDS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies whether maintenance immunosuppressive medications were given during the follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes, same as previous validated report\n\n\nYes, but different than previous validated report\n\n\nNone given\n\n\nYes, same as validated TRR form\n\n\nYes, but different than validated TRR form"
+    },
+    {
+      "index": 108,
+      "name": "UNOS_IMM_DISC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the physician discontinued all immunosuppressive medications.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 114,
+      "name": "UNOS_CREATININE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's most recent serum creatinine."
+    },
+    {
+      "index": 119,
+      "name": "UNOS_CREAT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason why the most recent serum creatinine is unspecified.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 125,
+      "name": "UNOS_ACUTE_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether there were any acute rejections during the last follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes, at least one episode treated with anti-rejection agent\n\n\nYes, none treated with additional anti-rejection agent\n\n\nNo\n\n\nUnknown"
+    },
+    {
+      "index": 136,
+      "name": "UNOS_BX_CONFIRM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a biopsy was done to confirm acute rejection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBiopsy not done\n\n\nYes, rejection confirmed\n\n\nYes, rejection not confirmed\n\n\nUnknown"
+    },
+    {
+      "index": 147,
+      "name": "UNOS_MALG_POSTTXP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether any post-transplant malignancies were found during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 153,
+      "name": "UNOS_MALG_DNR_REL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether discovered post-transplant malignancies were related to the donor.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 159,
+      "name": "UNOS_MALG_PRETXP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether discovered post-transplant malignancies were recurrences of a pre-transplant tumor.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 165,
+      "name": "UNOS_MALG_NOVO_T_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether discovered post-transplant malignancies were new solid tumors.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 171,
+      "name": "UNOS_MALG_LYMPH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether discovered post-transplant malignancies were new Lymphoproliferative disease and Lymphoma.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 177,
+      "name": "UNOS_DIABETES_FP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies whether the patient had an onset of diabetes during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 183,
+      "name": "UNOS_INSULIN_DEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient is insulin dependent.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 189,
+      "name": "UNOS_CAD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient was diagnosed with coronary artery disease during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 195,
+      "name": "UNOS_FRAC_PASTYR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any bone fractures either in the past year or since the last follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 201,
+      "name": "UNOS_FRAC_SPINE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any spine compression fractures either in the past year or since the last follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 207,
+      "name": "UNOS_FRAC_SPINE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The patient's number of spine compression fractures either in the past year or since the last follow-up period."
+    },
+    {
+      "index": 212,
+      "name": "UNOS_FRAC_EXTRM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any extremity fractures either in the past year or since the last follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 218,
+      "name": "UNOS_FRAC_EXTRM_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The patient's number of extremity fractures either in the past year or since the last follow-up period."
+    },
+    {
+      "index": 223,
+      "name": "UNOS_FRAC_OTHER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any other fractures either in the past year or since the last follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 229,
+      "name": "UNOS_FRAC_OTHER_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The patient's number of other fractures either in the past year or since the last follow-up period."
+    },
+    {
+      "index": 234,
+      "name": "UNOS_AVN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient was diagnosed with Avascular Necrosis (AVN) during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 240,
+      "name": "UNOS_PRI_DEATH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's primary cause of death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nOther, Specify\n\n\nKidney Graft Failure: Primary Failure\n\n\nKidney Graft Failure: Rejection\n\n\nKidney Graft Failure: Technical\n\n\nKidney Graft Failure: Graft Infection\n\n\nKidney Graft Failure: Recurrent Disease\n\n\nKidney Graft Failure: Other, Specify\n\n\nInfection: Bacterial Peritonitis\n\n\nInfection: Bacterial Pneumonia\n\n\nInfection: Bacterial Septicemia\n\n\nInfection: Fungal\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Opportunistic Other, Specify\n\n\nInfection: Urinary Tract\n\n\nInfection: Viral\n\n\nAIDS\n\n\nInfection: Other, Specify\n\n\nCardiovascular: Myocardial Infarction\n\n\nCardiovascular: Arterial Embolism\n\n\nCardiovascular: Pulmonary Embolism\n\n\nCardiovascular: Other, Specify\n\n\nCerebrovascular: Stroke\n\n\nCerebrovascular: Other, Specify\n\n\nHemorrhage: Gastrointestinal\n\n\nHemorrhage: Intraoperative\n\n\nHemorrhage: Other, Specify\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Post-Txp Lymphoproliferative\n\n\nMalignancy: Other, Specify\n\n\nTrauma: Motor Vehicle\n\n\nTrauma: Other, Specify\n\n\nDiabetes Mellitus\n\n\nIntraoperative: Not Hemorrhage Other, Specify\n\n\nPancreatitis\n\n\nRenal Failure\n\n\nRespiratory Failure\n\n\nSuicide\n\n\nNon-Compliance\n\n\nLiver Failure\n\n\nMultiple Organ System Failure\n\n\nFluid/Electrolyte Disorder\n\n\nAcid/Base Disorder\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nKidney Graft Failure: Primary Non-Function (Graft Never Functioned Post-Transplant)\n\n\nInfection: Viral COVID-19\n\n\nInfection: Viral Other, Specify"
+    },
+    {
+      "index": 298,
+      "name": "UNOS_PRI_DEATH_OTH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the kidney graft recipient if that cause of death was not picked from a list."
+    },
+    {
+      "index": 303,
+      "name": "UNOS_SEC_DEATH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's contributory cause of death.\n\n\n The category values for this column were already listed for column: UNOS_PRI_DEATH_C_NAME"
+    },
+    {
+      "index": 309,
+      "name": "UNOS_SEC_DEATH_OTH1",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the patient's contributory cause of death."
+    },
+    {
+      "index": 314,
+      "name": "UNOS_SEC_DEATH2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's second contributory cause of death.\n\n\n The category values for this column were already listed for column: UNOS_PRI_DEATH_C_NAME"
+    },
+    {
+      "index": 320,
+      "name": "UNOS_SEC_DEATH_OTH2",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the patient's second contributory cause of death."
+    },
+    {
+      "index": 325,
+      "name": "UNOS_DIALYSIS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has had dialysis since the last follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes, Resumed maintenance dialysis\n\n\nYes, No maintenance resumption\n\n\nYes, Maintenance resumption unknown\n\n\nYes, returned to chronic maintenance dialysis (ESRD)\n\n\nYes, returned to (or continued on) temporary dialysis\n\n\nUnknown"
+    },
+    {
+      "index": 339,
+      "name": "UNOS_DLYS_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the patient resumed maintenance dialysis."
+    },
+    {
+      "index": 344,
+      "name": "UNOS_DLYS_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider number for the center at which the patient receives dialysis."
+    },
+    {
+      "index": 349,
+      "name": "UNOS_DLYS_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the center at which the patient receives dialysis."
+    },
+    {
+      "index": 354,
+      "name": "UNOS_BIO_ANTIV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has had biological or anti-viral therapy in the last follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 360,
+      "name": "UNOS_BIO_ANTIV_OTH1",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's first other biological or anti-viral therapy during the last follow-up period."
+    },
+    {
+      "index": 365,
+      "name": "UNOS_BIO_ANTIV_OTH2",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's second other biological or anti-viral therapy during the last follow-up period."
+    },
+    {
+      "index": 370,
+      "name": "UNOS_OTHER_THERP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any other therapies during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 376,
+      "name": "UNOS_GRWTH_THERP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had growth hormone therapy.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 382,
+      "name": "UNOS_BKV_TREAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient was treated for BK (Polyoma) Virus.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 388,
+      "name": "UNOS_BKV_TREAT_OTH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The other specified treatments the patient had for BK (polyoma) viral infections."
+    },
+    {
+      "index": 393,
+      "name": "UNOS_URINE_PROT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether urine protein was found by any method.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 399,
+      "name": "UNOS_CMV_IGG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The last CMV IgG result for the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPositive\n\n\nNegative\n\n\nNot Done\n\n\nUnknown/Cannot Disclose"
+    },
+    {
+      "index": 410,
+      "name": "UNOS_CMV_IGM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The last CMV IgM result for the patient.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 416,
+      "name": "UNOS_KI_FL_PRI_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason for kidney failure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHyperacute Rejection\n\n\nAcute Rejection\n\n\nPrimary Failure\n\n\nGraft Thrombosis\n\n\nInfection\n\n\nSurgical Complications\n\n\nUrological Complications\n\n\nRecurrent Disease\n\n\nChronic Rejection\n\n\nBK (Polyoma) Virus\n\n\nPrimary Non-Function (Graft Never Functioned Post-Transplant)\n\n\nOther, Specify"
+    },
+    {
+      "index": 435,
+      "name": "UNOS_KI_FL_OTH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text reason for primary graft failure."
+    },
+    {
+      "index": 440,
+      "name": "UNOS_KI_FL_ACUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether acute rejection was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 446,
+      "name": "UNOS_KI_FL_CHRON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether chronic rejection was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 452,
+      "name": "UNOS_KI_FL_INFECT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether infection was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 458,
+      "name": "UNOS_KI_FL_PT_NON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether patient non-compliance was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 464,
+      "name": "UNOS_KI_FL_RECUR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether recurrent disease was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 470,
+      "name": "UNOS_KI_FL_CNTB_OTH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free-text contributory cause of graft failure."
+    },
+    {
+      "index": 475,
+      "name": "UNOS_KI_FL_THROMB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether graft thrombosis was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 481,
+      "name": "UNOS_KI_FL_BKV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether BK (polyoma) virus was a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 487,
+      "name": "UNOS_KI_FL_UROLOG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether urological complications were a contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 493,
+      "name": "UNOS_LVR_FAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether primary graft failure was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 499,
+      "name": "UNOS_BILIARY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether biliary tract complication was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 505,
+      "name": "UNOS_HEP_DENOVO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether DeNovo hepatitis was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 511,
+      "name": "UNOS_VASC_THROMB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether vascular thrombosis was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 517,
+      "name": "UNOS_HEP_RECUR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether recurrent hepatitis was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 523,
+      "name": "UNOS_HEP_ARTTHRM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether hepatic arterial thrombosis was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 529,
+      "name": "UNOS_HEP_OBSTRUCT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether hepatic outflow obstruction was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 535,
+      "name": "UNOS_PORT_VNTHRM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether portal vein thrombosis was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 541,
+      "name": "UNOS_DIS_LAB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the patient's discharge lab date."
+    },
+    {
+      "index": 546,
+      "name": "UNOS_DIS_BILI",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's total bilirubin at discharge."
+    },
+    {
+      "index": 551,
+      "name": "UNOS_DIS_BILI_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's discharge bilirubin status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 557,
+      "name": "UNOS_DIS_SGPT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's SGPT ALT at discharge."
+    },
+    {
+      "index": 562,
+      "name": "UNOS_DIS_SGPT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's discharge SGPT ALT status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 568,
+      "name": "UNOS_DIS_ALBUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's serum albumin at discharge."
+    },
+    {
+      "index": 573,
+      "name": "UNOS_DIS_ALBUM_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's discharge serum albumin status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 579,
+      "name": "UNOS_DIS_CREAT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's serum creatinine at discharge."
+    },
+    {
+      "index": 584,
+      "name": "UNOS_DIS_CREAT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's discharge serum creatinine status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 590,
+      "name": "UNOS_DIS_INR",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's INR at discharge."
+    },
+    {
+      "index": 595,
+      "name": "UNOS_DIS_INR_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indications the patient's discharge INR status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 601,
+      "name": "UNOS_LVR_REC_DIS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether recurrent disease was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 607,
+      "name": "UNOS_LVR_ACT_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether acute rejection was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 613,
+      "name": "UNOS_LVR_CHN_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether chronic rejection was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 619,
+      "name": "UNOS_LVR_INFECT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether infection was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 625,
+      "name": "UNOS_LVR_PAT_NCM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether patient noncompliance was a contributory cause for liver graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 631,
+      "name": "UNOS_LVR_OTHR_SPEC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text description of other specified contributory reasons for the patient's liver graft failure."
+    },
+    {
+      "index": 636,
+      "name": "UNOS_PAN_INS_RSM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the date the patient resumed insulin/medication."
+    },
+    {
+      "index": 641,
+      "name": "UNOS_PAN_FAIL_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the patient's pancreas graft failure date."
+    },
+    {
+      "index": 646,
+      "name": "UNOS_PAN_GRF_RMV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient's pancreas graft was removed.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 652,
+      "name": "UNOS_PAN_GRF_RMV_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the patient's pancreas graft removal date."
+    },
+    {
+      "index": 657,
+      "name": "UNOS_PAN_PRM_FAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's primary cause of pancreas graft failure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGraft/Vascular Thrombosis\n\n\nInfection\n\n\nBleeding\n\n\nAnastomotic Leak\n\n\nPrimary Non-Function (Graft Never Functioned Post-Transplant)\n\n\nAcute Rejection\n\n\nChronic Rejection\n\n\nHyperacute Rejection\n\n\nBiopsy Proven Isletitis\n\n\nPancreatitis\n\n\nOther Specify"
+    },
+    {
+      "index": 675,
+      "name": "UNOS_PAN_OTHR_FAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text description of other specified primary reasons for the patient's pancreas graft failure."
+    },
+    {
+      "index": 680,
+      "name": "UNOS_PAN_GV_THRMB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether graft/vascular thrombosis was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 686,
+      "name": "UNOS_PAN_INFECT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether infection was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 692,
+      "name": "UNOS_PAN_BLEED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether bleeding was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 698,
+      "name": "UNOS_PAN_ANM_LK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether anastomotic leak was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 704,
+      "name": "UNOS_PAN_ACT_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether acute rejection was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 710,
+      "name": "UNOS_PAN_CHN_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether chronic rejection was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 716,
+      "name": "UNOS_PAN_BPSY_ISL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether biopsy proven isletitis was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 722,
+      "name": "UNOS_PAN_PAT_NCM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether patient noncompliance was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 728,
+      "name": "UNOS_PAN_N_PNCRTS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether pancreatitis was a complication that did not lead to pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 734,
+      "name": "UNOS_PAN_NON_LK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether anastomotic leak was a complication that did not lead to pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 740,
+      "name": "UNOS_PAN_NON_INF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether abcess or local infection was a complication that did not lead to pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 746,
+      "name": "UNOS_PAN_NON_OTHR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text description of other specified complications not leading to the patient's pancreas graft failure."
+    },
+    {
+      "index": 751,
+      "name": "UNOS_REC_LAB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the patient's most recent lab date."
+    },
+    {
+      "index": 756,
+      "name": "UNOS_BILIRUBIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's most recent total bilirubin."
+    },
+    {
+      "index": 761,
+      "name": "UNOS_BILIRUBIN_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's total bilirubin status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 767,
+      "name": "UNOS_SGPT_ALT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's most recent SGPT ALT."
+    },
+    {
+      "index": 772,
+      "name": "UNOS_SGPT_ALT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's SGPT ALT status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 778,
+      "name": "UNOS_SERUM_ALBUMIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's most recent serum albumin."
+    },
+    {
+      "index": 783,
+      "name": "UNOS_SERUM_ALB_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's serum albumin status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 789,
+      "name": "UNOS_INR",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's most recent INR."
+    },
+    {
+      "index": 794,
+      "name": "UNOS_INR_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's recent INR status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 800,
+      "name": "UNOS_PAN_OTHR_SPEC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text description of other specified contributory reasons for the patient's pancreas graft failure."
+    },
+    {
+      "index": 805,
+      "name": "UNOS_SERUM_AMYLASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the patient's serum amylase value."
+    },
+    {
+      "index": 810,
+      "name": "UNOS_SERUM_AMY_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's serum amylase status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 816,
+      "name": "UNOS_PAN_PANCRTS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether pancreatitis was a contributory cause of pancreas graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 822,
+      "name": "UNOS_BLDR_ENTDRN_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Indicates the patient's enteric drainage date."
+    },
+    {
+      "index": 827,
+      "name": "UNOS_PAN_GRF_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's current pancreas graft status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFunctioning\n\n\nFailed\n\n\nPartial Function"
+    },
+    {
+      "index": 837,
+      "name": "UNOS_BLDR_ENTDRN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether conversion from bladder to enteric drain was performed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A\n\n\nUnknown"
+    },
+    {
+      "index": 848,
+      "name": "UNOS_SEC_ACT_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient had any acute rejections during the last follow-up for the second organ in a multi-organ form.\n\n\n The category values for this column were already listed for column: UNOS_ACUTE_REJ_C_NAME"
+    },
+    {
+      "index": 854,
+      "name": "UNOS_SEC_ACT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "In a multi-organ form, indicates whether a biopsy was done to confirm acute rejection of the second organ.\n\n\n The category values for this column were already listed for column: UNOS_BX_CONFIRM_C_NAME"
+    },
+    {
+      "index": 860,
+      "name": "UNOS_RE_TXP_ORG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If a patient was retransplanted, inicates which organs were involved.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nKidney\n\n\nPancreas\n\n\nKidney/Pancreas"
+    },
+    {
+      "index": 870,
+      "name": "UNOS_LVR_SC_DTH1_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the first contributory cause of death for the liver graft recipient."
+    },
+    {
+      "index": 875,
+      "name": "UNOS_LVR_SC_DTH1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the first contributory cause of death for the liver graft recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nOther, Specify\n\n\nCardiovascular: Arterial Embolism\n\n\nCardiovascular: Pulmonary Embolism\n\n\nLiver Graft Failure: Primary Failure\n\n\nLiver Graft Failure: Vascular Thrombosis\n\n\nLiver Graft Failure: Biliary Tract Complication\n\n\nLiver Graft Failure: Hepatitis\n\n\nLiver Graft Failure: Recurrent Disease (Non-Hepatitis)\n\n\nLiver Graft Failure: Rejection\n\n\nLiver Graft Failure: Infection (Non-Hepatitis)\n\n\nLiver Graft Failure: Other, Specify\n\n\nGraft vs. Host Disease\n\n\nCardiovascular: Arrhythmia\n\n\nCardiovascular: Arterial or Pulmonary Embolism\n\n\nCardiovascular: Hyperkalemic Arrest\n\n\nCardiovascular: Congestive Failure (CHF)\n\n\nCardiovascular: Myocardial Infarction\n\n\nCardiovascular: Other, Specify\n\n\nCardiovascular: Cardiac Arrest\n\n\nCerebrovascular: Embolic Stroke\n\n\nCerebrovascular: Hemorrhagic Stroke\n\n\nCerebrovascular: Other, Specify\n\n\nPulmonary Insuff or Edema (Exc Pneumonia)\n\n\nRespiratory Failure: Other, Specify\n\n\nRenal Failure\n\n\nMultiple Organ System Failure\n\n\nHemorrhage: Lower Gastrointestinal\n\n\nHemorrhage: Neurological (Brain)\n\n\nHemorrhage: Variceal\n\n\nHemorrhage: Disseminated Intravascular Coagulation (DIC)\n\n\nHemorrhage: Other, Specify\n\n\nHemorrhage\n\n\nInfection: Bacterial Peritonitis\n\n\nInfection: Pneumonia Legionella Pneumocystosis\n\n\nInfection: Generalized Sepsis\n\n\nInfection: Fungal Aspergillus Cryptococcal\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Opportunistic\n\n\nInfection: Viral\n\n\nInfection: Other, Specify\n\n\nInfection\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Other, Specify\n\n\nMalignancy\n\n\nPost-Txp Lymphoproliferative Disorder\n\n\nOperative: Other, Specify\n\n\nBrain Dead: Never Recovered From Surgery\n\n\nSuicide: Attempted Suicide Died Later\n\n\nTrauma: Motor Vehicle\n\n\nTrauma: Other, Specify\n\n\nDiabetes Mellitus\n\n\nFluid/Electrolyte Disorder\n\n\nAcid/Base Disorder\n\n\nAcute Pancreatitis\n\n\nAIDS\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nLiver Graft Failure: Primary Non-Function\n\n\nLiver Graft Failure: Hepatic Artery Thrombosis\n\n\nLiver Graft Failure: Other Vascular Thrombosis\n\n\nLiver Graft Failure: Diffuse Cholangiopathy\n\n\nInfection: Viral COVID-19\n\n\nInfection: Viral Other, Specify"
+    },
+    {
+      "index": 949,
+      "name": "UNOS_LVR_SC_DTH2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the second contributory cause of death for the liver graft recipient.\n\n\n The category values for this column were already listed for column: UNOS_LVR_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 955,
+      "name": "UNOS_LVR_SC_DTH2_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the second contributory cause of death for the liver graft recipient."
+    },
+    {
+      "index": 960,
+      "name": "UNOS_KPF_SC_DTH1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the first contributory cause of death for the kidney and pancreas graft recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nOther, Specify\n\n\nInfection: Bacterial Peritonitis\n\n\nInfection: Bacterial Pneumonia\n\n\nInfection: Bacterial Septicemia\n\n\nInfection: Fungal Peritonitis\n\n\nInfection: Fungal Pneumonia\n\n\nInfection: Fungal Septicemia\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Opportunistic Other, Specify\n\n\nInfection: Urinary Tract\n\n\nInfection: Viral Cytomegalovirus (CMV)\n\n\nInfection: Viral Non-CMV\n\n\nAIDS\n\n\nInfection: Other, Specify\n\n\nCardiovascular: Myocardial Infarction\n\n\nCardiovascular: Arterial Embolism\n\n\nCardiovascular: Vascular Embolism\n\n\nCardiovascular: Other, Specify\n\n\nCerebrovascular: Stroke\n\n\nCerebrovascular: Other, Specify\n\n\nHemorrhage: Gastrointestinal\n\n\nHemorrhage: Intraoperative\n\n\nHemorrhage: Other, Specify\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Post-Txp Lymphoproliferative\n\n\nMalignancy: Other, Specify\n\n\nTrauma: Motor Vehicle\n\n\nTrauma: Other, Specify\n\n\nDiabetes Mellitus\n\n\nIntraoperative: Not Hemorrhage Other, Specify\n\n\nPancreatitis (Graft)\n\n\nPancreatitis (Native)\n\n\nLiver Failure\n\n\nARDS\n\n\nIntraoperative: Other, Specify\n\n\nRenal Failure\n\n\nRespiratory Failure\n\n\nSuicide\n\n\nMultiple Organ System Failure\n\n\nNon-Compliance\n\n\nCardiovascular: Pulmonary Embolism\n\n\nFluid/Electrolyte Disorder\n\n\nAcid/Base Disorder\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nInfection: Viral COVID-19\n\n\nInfection: Viral Other, Specify"
+    },
+    {
+      "index": 1018,
+      "name": "UNOS_KPF_SC_DTH1_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the first contributory cause of death for the kidney and pancreas graft recipient."
+    },
+    {
+      "index": 1023,
+      "name": "UNOS_KPF_SC_DTH2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the second contributory cause of death for the kidney and pancreas graft recipient.\n\n\n The category values for this column were already listed for column: UNOS_KPF_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 1029,
+      "name": "UNOS_KPF_SC_DTH2_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the second contributory cause of death for the kidney and pancreas graft recipient."
+    },
+    {
+      "index": 1034,
+      "name": "UNOS_PAN_SC_DTH1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the first contributory cause of death for the pancreas graft recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nOther, Specify\n\n\nInfection: Bacterial Peritonitis\n\n\nInfection: Bacterial Pneumonia\n\n\nInfection: Bacterial Septicemia\n\n\nInfection: Fungal Peritonitis\n\n\nInfection: Fungal Pneumonia\n\n\nInfection: Fungal Septicemia\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Opportunistic Other, Specify\n\n\nInfection: Urinary Tract\n\n\nInfection: Viral Cytomegalovirus (CMV)\n\n\nInfection: Viral Non-CMV\n\n\nAIDS\n\n\nInfection: Other, Specify\n\n\nCardiovascular: MF/CHF\n\n\nCardiovascular: Vascular Embolism\n\n\nCardiovascular: Pulmonary Embolism\n\n\nCardiovascular: Other, Specify\n\n\nCerebrovascular: Stroke\n\n\nCerebrovascular: Other, Specify\n\n\nHemorrhage: Gastrointestinal\n\n\nHemorrhage: Intraoperative\n\n\nHemorrhage: Other, Specify\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Post-Txp Lymphoproliferative\n\n\nMalignancy: Other, Specify\n\n\nTrauma: Motor Vehicle\n\n\nTrauma: Other, Specify\n\n\nDiabetes Mellitus Complications\n\n\nIntraoperative: Not Hemorrhage Other, Specify\n\n\nPancreatitis (Graft)\n\n\nPancreatitis (Native)\n\n\nLiver Failure\n\n\nRenal Failure\n\n\nRespiratory Failure (Non-Pneumonia)\n\n\nARDS\n\n\nSuicide\n\n\nMultiple Organ System Failure\n\n\nFluid/Electrolyte Disorder\n\n\nAcid/Base Disorder\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nInfection: Viral COVID-19\n\n\nInfection: Viral Other, Specify"
+    },
+    {
+      "index": 1089,
+      "name": "UNOS_PAN_SC_DTH1_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the first contributory cause of death for the pancreas graft recipient."
+    },
+    {
+      "index": 1094,
+      "name": "UNOS_DIS_LVR_DX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the pathology confirmed liver diagnosis at hospital discharge.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAllergic Bronchopulmonary Aspergillosis\n\n\nBronchopulmonary Dysplasia\n\n\nCiliary Dyskinesis Syndrome\n\n\nConstrictive Bronchiolitis\n\n\nDysmotile Cilia Syndrome\n\n\nGranulomatous Lung Disease\n\n\nKartagener's Syndrome\n\n\nObstructive Lung Disease\n\n\nPrimary Ciliary Dyskinesia\n\n\nTuberous Sclerosis\n\n\nCongenital Malformation\n\n\nPeripheral Pulm Artery Stenosis and Second Degree Pulm Htn\n\n\nPortopulmonary Hypertension\n\n\nPulmonary AV Malformation Congenital Heart Disease\n\n\nPulmonary Thromboembolic Disease\n\n\nPulmonary Veno-Occlusive Disease\n\n\nPulmonic Stenosis\n\n\nRight Hypoplastic Lung\n\n\nThromboembolic Pulmonary Hypertension\n\n\nWegener's Granuloma - Restrictive\n\n\nWegener's Granuloma - Bronchiectasis\n\n\nCrest - Restrictive\n\n\nCrest - Pulmonary Hypertension\n\n\nPulmonary Telangiectasia - Restrictive\n\n\nPulmonary Telangiectasia - Pulmonary Hypertension\n\n\nScleroderma - Restrictive\n\n\nScleroderma - Pulmonary Hypertension\n\n\nCommon Variable Immune Deficiency\n\n\nFibrocavitary Lung Disease\n\n\nHypogammaglobulinemia\n\n\nShwachman-Diamond Syndrome\n\n\nAlveolar Proteinosis\n\n\nAmyloidosis\n\n\nARDS/Pneumonia\n\n\nIIP: BOOP/COP\n\n\nBronchoalveolar Carcinoma (BAC)\n\n\nCarcinoid Tumorlets\n\n\nChronic Pneumonitis of Infancy\n\n\nCollagen Vascular Diseases\n\n\nConnective Tissue Disease\n\n\nCrest\n\n\nCutis Laxa\n\n\nDesquamative Interstitial Pneumonitis (DIP)\n\n\nEhlers-Danlos Syndrome\n\n\nEosinophilic Granuloma\n\n\nEosinophilic Granulomatosis\n\n\nEosinophilic Pneumonial Chronic Granulomatosis\n\n\nFibrosing Mediastinitis\n\n\nGraft-Vs-Host Disease (GVHD)\n\n\nHermansky Pudlak Syndrome\n\n\nHistiocytosis X\n\n\nHypersensitivity Pneumonitis\n\n\nIdiopathic Pulmonary Hemosiderosis\n\n\nInterstitial Pneumonitis\n\n\nIIP: Lymphocytic Interstitial Pneumonia\n\n\nLupus\n\n\nMacleod Syndrome\n\n\nMixed Connective Tissue Disease\n\n\nParaneoplastic Pemphigus Associated Castleman's Disease\n\n\nPolymyositis\n\n\nPulmonary Hyalinizing Granuloma\n\n\nPulmonary Langerhans Cell Granulomatosis\n\n\nPulmonary Telangiectasia\n\n\nRestrictive Lung Disease\n\n\nScleroderma\n\n\nSjogren's Syndrome\n\n\nSilicosis\n\n\nSurfactant Protein B Deficiency\n\n\nSwyer James Syndrome\n\n\nTeratoma\n\n\nTracheopathia Osteoplastica\n\n\nUsual Interstitial Pneumonitis\n\n\nWegener's Granuloma\n\n\nOther, Specify\n\n\nDilated Myopathy: Idiopathic\n\n\nDilated Myopathy: Adriamycin\n\n\nDilated Myopathy: Post Partum\n\n\nDilated Myopathy: Familial\n\n\nDilated Myopathy: Myocarditis\n\n\nDilated Myopathy: Alcoholic\n\n\nDilated Myopathy: Viral\n\n\nDilated Myopathy: Ischemic\n\n\nDilated Myopathy: Viral (Not COVID-19)\n\n\nCOVID-19: Dilated Myopathy: Active Myocarditis\n\n\nCOVID-19: Dilated Myopathy: History of Myocarditis\n\n\nDilated Myopathy: Other, Specify\n\n\nRestrictive Myopathy: Idiopathic\n\n\nRestrictive Myopathy: Amyloidosis\n\n\nRestrictive Myopathy: Endocardial Fibros\n\n\nRestrictive Myopathy: Sarcoidosis\n\n\nRestrictive Myopathy: Sec to Radiat/Chem\n\n\nRestrictive Myopathy: Other, Specify\n\n\nHeart Re-Tx/Gf: Hyperacute Rejection\n\n\nHeart Re-Tx/Gf: Acute Rejection\n\n\nHeart Re-Tx/Gf: Coronary Artery Disease\n\n\nHeart Re-Tx/Gf: Non-Specific\n\n\nHeart Re-Tx/Gf: Restrictive/Constrictive\n\n\nHeart Re-Tx/Gf: Chronic Rejection\n\n\nHeart Re-Tx/Gf: Primary Failure\n\n\nHeart Re-Tx/Gf: Other Specify\n\n\nCoronary Artery Disease\n\n\nHypertrophic Cardiomyopathy\n\n\nValvular Heart Disease\n\n\nCongenital Heart Defect - Prior Surgery Unknown\n\n\nCancer\n\n\nCongenital Heart Defect - Hypoplastic Left Heart Syndrome - Unoperated\n\n\nCongenital Heart Defect - Without Surgery\n\n\nCongenital Heart Defect - With Surgery\n\n\nArrhythmogenic Right Ventricular Dysplasia/Cardiomyopathy\n\n\nMuscular Dystrophy: Other, Specify\n\n\nCardiac Disease: Other Specify\n\n\nHeart: Other Specify\n\n\nEisenmenger's Syn: Atrial Septal Defect\n\n\nEisenmenger's Syn: VSD\n\n\nEisenmenger's Syn: PDA\n\n\nPulmonary Capillary Hemangiomatosis\n\n\nABCA3 Transporter Mutation\n\n\nSecondary Pulmonary Fibrosis: Specify Cause\n\n\nSurfactant Protein C Deficiency\n\n\nIIP: Nonspecific Interstitial Pneumonia\n\n\nIIP: Respiratory Bronchiolitis\n\n\nIIP: Desquamative Interstitial Pneumonia\n\n\nIIP: Acute Interstitial Pneumonia\n\n\nPulmonary Lymphangiectasia\n\n\nEisenmenger's Syn: Multi Congenital Anomalies\n\n\nEisenmenger's Syn: Other, Specify\n\n\nLung Re-Tx/Gf: Non-Specific\n\n\nLung Re-Tx/Gf: Obliterative Bronchiolitis\n\n\nLung Re-Tx/Gf: Restrictive\n\n\nLung Re-Tx/Gf: Acute Rejection\n\n\nLung Re-Tx/Gf: Obstructive\n\n\nLung Re-Tx/Gf: Primary Graft Failure\n\n\nLung Re-Tx/Gf: Obliterative Bronchiolitis-Restrictive\n\n\nLung Re-Tx/Gf: Obliterative Bronchiolitis-Obstructive\n\n\nLung Re-Tx/Gf: Other Specify\n\n\nCongenital: Other Specify\n\n\nPulmonary Hypertension/Pulmonary Arterial Hypertension\n\n\nCystic Fibrosis\n\n\nInhalation Burns/Trauma\n\n\nIIP: Idiopathic Pulmonary Fibrosis (IPF)\n\n\nSarcoidosis\n\n\nAlpha - 1 - Antitrypsin Deficiency\n\n\nCOPD/Emphysema\n\n\nBronchiectasis\n\n\nRheumatoid Disease\n\n\nOccupational Lung Disease Other, Specify\n\n\nLymphangioleiomyomatosis\n\n\nObliterative Bronchiolitis (Non-retransplant)\n\n\nPulmonary Fibrosis Other, Specify Cause\n\n\nPulmonary Vascular Disease\n\n\nSecondary Pulmonary Hypertension\n\n\nCOVID-19: ARDS\n\n\nCOVID-19: Pulmonary Fibrosis\n\n\nHeart/Lung Re-Tx/Gf: Primary Failure\n\n\nLung Disease: Other Specify\n\n\nIdiopathic and Post-infectious Crescentic Glomerulonephritis\n\n\nMembranous Glomerulonephritis\n\n\nMesangio-capillary Glomerulonephritis - Type I\n\n\nMesangio-capillary Glomerulonephritis Type II\n\n\nIgA Nephropathy\n\n\nAnti-GBM\n\n\nFocal Glomerular Sclerosis (Focal Segmental - FSG)\n\n\nChronic Pyelonephritis (Reflux Nephropathy)\n\n\nPolycystic Kidneys\n\n\nNephritis\n\n\nNephronophthisis\n\n\nDiabetes - Type I Insulin Dep/Juvenile Onset\n\n\nDiabetes - Type II Non-Insulin Dep/ Adult Onset\n\n\nOxalate Nephropathy (Includes Hereditary Oxalosis)\n\n\nCystinosis\n\n\nFabry's Disease\n\n\nAmyloidosis - Kidney\n\n\nGout\n\n\nSystemic Lupus Erythematosus\n\n\nProgressive Systemic Sclerosis\n\n\nWilms' Tumor\n\n\nRenal Cell Carcinoma\n\n\nIncidental Carcinoma\n\n\nMyeloma\n\n\nHemolytic Uremic Syndrome\n\n\nHypoplasia/Dysplasia/Dysgenesis/Agenesis\n\n\nCortical Necrosis\n\n\nAcute Tubular Necrosis\n\n\nMedullary Cystic Disease\n\n\nSickle Cell Anemia\n\n\nAcquired Obstructive Nephropathy\n\n\nAlport's Syndrome\n\n\nFamilial Nephropathy\n\n\nGoodpasture's Syndrome\n\n\nMalignant Hypertension\n\n\nHenoch-Schonlein Purpura\n\n\nPrune Belly Syndrome\n\n\nRetransplant/Graft Failure Kidney\n\n\nDiabetes - Type I Non-Insulin Dep/ Juvenile Onset\n\n\nDiabetes - Type II Insulin Dep/Adult Onset\n\n\nHypertensive Nephrosclerosis\n\n\nChronic Glomerulonephritis - Unspecified\n\n\nMembranous Nephropathy\n\n\nChronic Glomerulosclerosis - Unspecified\n\n\nAnalgesic Nephropathy\n\n\nRadiation Nephritis\n\n\nAntibiotic-Induced Nephritis\n\n\nCancer Chemotherapy Induced Nephritis\n\n\nCalcineurin Inhibitor Nephrotoxicity\n\n\nHeroin Nephrotoxicity\n\n\nRenal Artery Thrombosis\n\n\nChronic Nephrosclerosis - Unspecified\n\n\nCongenital Obstructive Uropathy\n\n\nScleroderma - Kidney\n\n\nWegener's Granulomatosis\n\n\nPolyarteritis\n\n\nRheumatoid Arthritis\n\n\nSarcoidosis - Kidney\n\n\nLymphoma\n\n\nNephrolithiasis\n\n\nUrolithiasis\n\n\nDysplasia\n\n\nPre-BMTransplantation Total Body Irradiation\n\n\nDrug Related Interstitial Nephritis\n\n\nThin Basement Membrane Disease\n\n\nHereditary Oxalosis\n\n\nCholesterol Embolization\n\n\nFocal Segmental Glomerulosclerosis\n\n\nRapid Progressive Glomerulonephritis (RPGN)\n\n\nDiabetes Mellitus - Type I\n\n\nDiabetes Mellitus - Type II\n\n\nDiabetes Mellitus - Type Other / Unknown\n\n\nHepatorenal Syndrome\n\n\nLithium Toxicity\n\n\nHIV Nephropathy\n\n\nAcute Hepatic Necrosis (AHN): Drug, Specify\n\n\nAHN: Type A\n\n\nAHN: Type B, HBsAG+\n\n\nAHN: Non A, Non B\n\n\nAHN: Type C\n\n\nAHN: Type D\n\n\nAHN: Type B and C\n\n\nAHN: Type B and D\n\n\nAHN: Etiology Unknown\n\n\nAHN: Other, Specify\n\n\nCirrhosis: Drug or Industrial Exposure, Specify\n\n\nCirrhosis: Type A\n\n\nCirrhosis: Type B-, HBsAG+\n\n\nCirrhosis: Non A, Non B\n\n\nCirrhosis: Type C\n\n\nCirrhosis: Type D\n\n\nCirrhosis: Type B and C\n\n\nCirrhosis: Type B and D\n\n\nCirrhosis: Cryptogenic-Idiopathic\n\n\nCirrhosis: Chronic Active Hepatitis: Etiology Unknown\n\n\nCirrhosis: Other, Specify\n\n\nCirrhosis: Autoimmune\n\n\nCirrhosis: Cryptogenic (Idiopathic)\n\n\nCirrhosis: Fatty Liver (NASH)\n\n\nAlcoholic Cirrhosis\n\n\nAlcoholic Cirrhosis with Hepatitis C\n\n\nAcute Alcoholic Hepatitis\n\n\nAcute Alcohol-Associated Hepatitis With or Without Cirrhosis\n\n\nAlcohol-Associated Cirrhosis Without Acute Alcohol-Associated Hepatitis\n\n\nPrimary Biliary Cirrhosis (PBC)\n\n\nSecondary Biliary Cirrhosis: Caroli's Disease\n\n\nSecondary Biliary Cirrhosis: Choledochal Cyst\n\n\nSecondary Biliary Cirrhosis: Other, Specify\n\n\nPrimary Sclerosing Cholangitis (PSC): Crohn's Disease\n\n\nPrimary Sclerosing Cholangitis: Ulcerative Colitis\n\n\nPrimary Sclerosing Cholangitis: No Bowel Disease\n\n\nPrimary Sclerosing Cholangitis: Other, Specify\n\n\nFamilial Cholestasis: Byler's Disease\n\n\nFamilial Cholestasis: Other, Specify\n\n\nCholestatic Liver Disease: Other, Specify\n\n\nNeonatal Cholestatic Liver Disease\n\n\nNeonatal Hepatitis, Specify\n\n\nBiliary Atresia: Extrahepatic\n\n\nBiliary Hypoplasia: Nonsyndromic Paucity of Intrahepatic Bile Duct\n\n\nBiliary Hypoplasia: Alagille Syndrome (Paucity of Intrahepatic Bile Duct)\n\n\nBiliary Atresia or Hypoplasia: Other, Specify\n\n\nCongenital Hepatic Fibrosis\n\n\nCystic Fibrosis - Liver\n\n\nBudd-Chiari Syndrome\n\n\nMetabolic Disease (METDIS): Alpha-1-Antitrypsin Deficiency (A-1-A)\n\n\nMETDIS: Wilson's Disease, Other Copper Metabolism Disorder\n\n\nMETDIS: Hemochromatosis - Hemosiderosis\n\n\nMETDIS: Glycogen Storage Disease Type I (GSD-I)\n\n\nMETDIS: Glycogen Storage Disease Type IV (GSD-IV)\n\n\nMETDIS: Hyperlipidemia-II, Homozygous Hypercholesterolemia\n\n\nMETDIS: Tyrosinemia\n\n\nMETDIS: Primary Oxalosis/Oxaluria, Hyperoxaluria\n\n\nMETDIS: Maple Syrup Urine Disease\n\n\nMETDIS: Other, Specify\n\n\nPrimary Liver Malignancy: Hepatoma, Hepatocellular Carcinoma (HCC)\n\n\nPrimary Liver Malignancy: Hepatoma (HCC) and Cirrhosis\n\n\nPrimary Liver Malignancy: Fibrolamellar (FL-HC)\n\n\nPrimary Liver Malignancy: Cholangiocarcinoma (CH-CA)\n\n\nPrimary Liver Malignancy: Hepatoblastoma (HBL)\n\n\nPrimary Liver Malignancy: Hemangioendothelioma, Hemangiosarcoma, Angiosarcoma\n\n\nPrimary Liver Malignancy: Other, Specify\n\n\nBile Duct Cancer (Cholangioma, Biliary Tract Carcinoma)\n\n\nSecondary Hepatic Malignancy: Specify\n\n\nBenign Tumor: Hepatic Adenoma\n\n\nBenign Tumor: Polycystic Liver Disease\n\n\nBenign Tumor: Other, Specify\n\n\nTotal Parenteral Nutrition (TPN)/Hyperalimentation Induced Liver Disease\n\n\nGraft vs. Host Disease Secondary to Non-Liver Transplant\n\n\nTrauma, Specify\n\n\nHepatitis B: Chronic or Acute\n\n\nHepatitis C: Chronic or Acute\n\n\nNA: Non-hd Followups Only\n\n\nGraft Failure\n\n\nRetransplant/Graft Failure Pancreas\n\n\nDiabetes Mellitus - Type I (Pancreas)\n\n\nDiabetes Mellitus - Type II (Pancreas)\n\n\nDiabetes Secondary to Chronic Pancreatitis without Pancreatectomy\n\n\nDiabetes Secondary to Cystic Fibrosis without Pancreatectomy\n\n\nPancreatic Cancer\n\n\nBile Duct Cancer\n\n\nOther Cancers\n\n\nPancreatectomy Prior to Pancreas Transplant\n\n\nDiabetes Mellitus - Type Other/Unknown (Pancreas)\n\n\nSGS: Intestinal Atresia\n\n\nSGS: Necrotizing Enterocolitis\n\n\nSGS: Intestinal Volvulus Secondary to Malrotation\n\n\nSGS: Intestinal Volvulus Secondary to Adhesions\n\n\nSGS: Intestinal Volvulus Secondary to Persistent Omphalomesenteric Duct\n\n\nSGS: Gastroschisis\n\n\nSGS: Mass Resect Sec to Inflammatory Bowel Disease-Crohns\n\n\nSGS: Mass Resect Sec to Tumor\n\n\nSGS: Mass Resect Sec to Mesenteric Arterial Thrombosis or Embolus\n\n\nSGS: Mass Resect Sec to Mesenteric Venous Thrombosis\n\n\nSGS: Other Specify\n\n\nSGS: Unspecified\n\n\nFBP: Hirschsprung's Disease\n\n\nFBP: Neuronal Intestinal Dysplasia\n\n\nFBP: Pseudo-obstruction-Neuropathic\n\n\nFBP: Pseudo-obstruction-Myopathic\n\n\nFBP: Protein-losing Enteropathy\n\n\nFBP: Microvillous Inclusion Disease\n\n\nFBP: Other Specify\n\n\nFBP: Unspecified\n\n\nGraft Failure\n\n\nRetransplant\n\n\nOther Intestinal Disease, Specify\n\n\nTrauma\n\n\nInfection\n\n\nBurn/explosion\n\n\nIschemia\n\n\nCongenital\n\n\nMalignancy\n\n\nMetabolic"
+    },
+    {
+      "index": 1449,
+      "name": "UNOS_DIS_LVR_DX_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specified pathology confirmed liver diagnosis at hospital discharge."
+    },
+    {
+      "index": 1454,
+      "name": "UNOS_LVR_PM_DTH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the liver graft recipient if that cause of death was not picked from a list.\n\n\n The category values for this column were already listed for column: UNOS_LVR_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 1460,
+      "name": "UNOS_LVR_PM_DTH_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the liver graft recipient."
+    },
+    {
+      "index": 1465,
+      "name": "UNOS_KPF_PM_DTH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the primary cause of death for the kidney and pancreas graft recipient.\n\n\n The category values for this column were already listed for column: UNOS_KPF_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 1471,
+      "name": "UNOS_KPF_PM_DTH_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the kidney and pancreas graft recipient if that cause of death was not picked from a list."
+    },
+    {
+      "index": 1476,
+      "name": "UNOS_PAN_PM_DTH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the primary cause of death for the pancreas graft recipient.\n\n\n The category values for this column were already listed for column: UNOS_PAN_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 1482,
+      "name": "UNOS_PAN_PM_DTH_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the pancreas graft recipient if that cause of death was not picked from a list."
+    },
+    {
+      "index": 1487,
+      "name": "UNOS_PAN_SC_DTH2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the second contributory cause of death for the pancreas graft recipient.\n\n\n The category values for this column were already listed for column: UNOS_PAN_SC_DTH1_C_NAME"
+    },
+    {
+      "index": 1493,
+      "name": "UNOS_PAN_SC_DTH2_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the second contributory cause of death for the pancreas graft recipient."
+    },
+    {
+      "index": 1498,
+      "name": "UNOS_PREV_ORG1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The organ transplanted at the most recent transplant.\n\n\n The category values for this column were already listed for column: UNOS_ORGAN_C_NAME"
+    },
+    {
+      "index": 1504,
+      "name": "UNOS_PREV_TXP1_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the most recent transplant."
+    },
+    {
+      "index": 1509,
+      "name": "UNOS_PREV_FAIL1_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The graft failure date of the most recent transplant."
+    },
+    {
+      "index": 1514,
+      "name": "UNOS_PREV_ORG2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The organ transplanted at the second most recent transplant.\n\n\n The category values for this column were already listed for column: UNOS_ORGAN_C_NAME"
+    },
+    {
+      "index": 1520,
+      "name": "UNOS_PREV_TXP2_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the second most recent transplant."
+    },
+    {
+      "index": 1525,
+      "name": "UNOS_PREV_FAIL2_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The graft failure date of the second most recent transplant."
+    },
+    {
+      "index": 1530,
+      "name": "UNOS_PREV_ORG3_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The organ transplanted at the third most recent transplant.\n\n\n The category values for this column were already listed for column: UNOS_ORGAN_C_NAME"
+    },
+    {
+      "index": 1536,
+      "name": "UNOS_PREV_TXP3_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the third most recent transplant."
+    },
+    {
+      "index": 1541,
+      "name": "UNOS_PREV_FAIL3_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The graft failure date of the third most recent transplant."
+    },
+    {
+      "index": 1546,
+      "name": "UNOS_PREV_PAN_IST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient previously received a pancreas islet infusion.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1552,
+      "name": "UNOS_ABO_BLD_GRP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's blood type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nA\n\n\nA1\n\n\nA1B\n\n\nA2\n\n\nA2B\n\n\nAB\n\n\nB\n\n\nO\n\n\nZ (In Utero Only)"
+    },
+    {
+      "index": 1568,
+      "name": "UNOS_PRIM_DX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's primary diagnosis.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAllergic Bronchopulmonary Aspergillosis\n\n\nBronchopulmonary Dysplasia\n\n\nCiliary Dyskinesis Syndrome\n\n\nConstrictive Bronchiolitis\n\n\nDysmotile Cilia Syndrome\n\n\nGranulomatous Lung Disease\n\n\nKartagener's Syndrome\n\n\nObstructive Lung Disease\n\n\nPrimary Ciliary Dyskinesia\n\n\nTuberous Sclerosis\n\n\nCongenital Malformation\n\n\nPeripheral Pulm Artery Stenosis\n\n\nPortopulmonary Hypertension\n\n\nPulmonary AV Malformation Congenital Heart Disease\n\n\nPulmonary Thromboembolic Disease\n\n\nPulmonary Veno-Occlusive Disease\n\n\nPulmonic Stenosis\n\n\nRight Hypoplastic Lung\n\n\nThromboembolic Pulmonary Hypertension\n\n\nWegener's Granuloma - Restrictive\n\n\nWegener's Granuloma - Bronchiectasis\n\n\nCrest - Restrictive\n\n\nCrest - Pulmonary Hypertension\n\n\nPulmonary Telengectasia - Restrictive\n\n\nPulmonary Telengectasia - Pulmonary Hypertension\n\n\nScleroderma - Restrictive\n\n\nScleroderma - Pulmonary Hypertension\n\n\nCommon Variable Immune Deficiency\n\n\nFibrocavitary Lung Disease\n\n\nHypogammaglobulinemia\n\n\nShwachman-Diamond Syndrome\n\n\nAlveolar Proteinosis\n\n\nAmyloidosis\n\n\nARDS/Pnuemonia\n\n\nIIP: BOOP/COP\n\n\nBronchoalveolar Carcinoma (BAC)\n\n\nCarcinoid Tumorlets\n\n\nChronic Pneumonitis of Infancy\n\n\nCollagen Vascular Diseases\n\n\nConnective Tissue Disease\n\n\nCrest\n\n\nCutis Laxa\n\n\nDesquamative Interstitial Pneumonitis (DIP)\n\n\nEhlers-Danlos Syndrome\n\n\nEosinophilic Granuloma\n\n\nEosinophilic Granulomatosis\n\n\nEosinophilic Pneumonial Chronic Granulomatosis\n\n\nFibrosing Mediastinitis\n\n\nGraft-vs-Host Disease (GVHD)\n\n\nHermansky Pudlak Syndrome\n\n\nHistiocytosis X\n\n\nHypersensitivity Pneumonitis\n\n\nIdiopathic Pulmonary Hemosiderosis\n\n\nInterstitial Pneumonitis\n\n\nIIP: Lymphocytic Interstitial Pneumonia\n\n\nLupus\n\n\nMacleod Syndrome\n\n\nMixed Connective Tissue Disease\n\n\nParaneoplastic Pemphigus Associated Castleman's Disease\n\n\nPolymyositis\n\n\nPulmonary Hyalinizing Granuloma\n\n\nPulmonary Langerhans Cell Granulomatosis\n\n\nPulmonary Telengectasia\n\n\nRestrictive Lung Disease\n\n\nSjogren's Syndrome\n\n\nSilicosis\n\n\nSurfactant Protein B Deficiency\n\n\nSwyer James Syndrome\n\n\nTeratoma\n\n\nTracheopathia Osteoplastica\n\n\nUsual Interstitial Pneumonitis\n\n\nWegener's Granuloma\n\n\nOther, Specify\n\n\nDilated Myopathy: Idiopathic\n\n\nDilated Myopathy: Adriamycin\n\n\nDilated Myopathy: Post Partum\n\n\nDilated Myopathy: Familial\n\n\nDilated Myopathy: Myocarditis\n\n\nDilated Myopathy: Alcoholic\n\n\nDilated Myopathy: Viral\n\n\nDilated Myopathy: Ischemic\n\n\nDilated Myopathy: Viral (Not COVID-19)\n\n\nCOVID-19: Dilated Myopathy: Active Myocarditis\n\n\nCOVID-19: Dilated Myopathy: History of Myocarditis\n\n\nDilated Myopathy: Other, Specify\n\n\nRestrictive Myopathy: Idiopathic\n\n\nRestrictive Myopathy: Amyloidosis\n\n\nRestrictive Myopathy: Endocardial Fibros\n\n\nRestrictive Myopathy: Sarcoidosis\n\n\nRestrictive Myopathy: Sec to Radiat/Chem\n\n\nRestrictive Myopathy: Other, Specify\n\n\nHeart Re-TX/GF: Hyperacute Rejection\n\n\nHeart Re-TX/GF: Acute Rejection\n\n\nHeart Re-TX/GF: Coronary Artery Disease\n\n\nHeart Re-TX/GF: Non-Specific\n\n\nHeart Re-TX/GF: Restrictive/Constrictive\n\n\nHeart Re-TX/GF: Chronic Rejection\n\n\nHeart Re-TX/GF: Primary Failure\n\n\nHeart Re-TX/GF: Other, Specify\n\n\nCoronary Artery Disease\n\n\nHypertrophic Cardiomyopathy\n\n\nValvular Heart Disease\n\n\nCongenital Heart Defect - Prior Surgery Unknown\n\n\nCancer\n\n\nCongenital Heart Defect - Hypoplastic Left Heart Syndrome - Unoperated\n\n\nCongenital Heart Defect - Without Surgery\n\n\nCongenital Heart Defect - With Surgery\n\n\nArrhythmogenic Right Ventricular Dysplasia/Cardiomyopathy\n\n\nMuscular Dystrophy: Other Specify\n\n\nEisenmenger's Syn: Atrial Septal Defec\n\n\nEisenmenger's Syn: VSD\n\n\nEisenmenger's Syn: PDA\n\n\nPulmonary Capillary Hemangiomatosis\n\n\nABCA3 Transporter Mutation\n\n\nSecondary Pulmonary Fibrosis: Specify Cause\n\n\nSurfactant Protein C Deficiency\n\n\nIIP: Nonspecific Interstitial Pneumonia\n\n\nIIP: Respiratory Bronchiolitis\n\n\nIIP: Desquamative Interstitial Pneumonia\n\n\nIIP: Acute Interstitial Pneumonia\n\n\nPulmonary Lymphangiectasia\n\n\nEisenmenger's Syn: Multi Congenital Anomalies\n\n\nEisenmenger's Syn: Other Specify\n\n\nLung Re-TX/GF: Non-Specific\n\n\nLung Re-TX/GF: Obliterative Bronchioliti\n\n\nLung Re-TX/GF: Restrictive\n\n\nLung Re-TX/GF: Acute Rejection\n\n\nLung Re-TX/GF: Obstructive\n\n\nLung Re-TX/GF: Primary Graft Failure\n\n\nLung Re-Tx/GF: Obliterative Bronchiolitis-Restrictive\n\n\nLung Re-Tx/GF: Obliterative Bronchiolits-Obstructive\n\n\nLung Re-TX/GF: Other Specify\n\n\nPulmonary Hypertension/Pulmonary Arterial Hypertension\n\n\nCystic Fibrosis\n\n\nInhalation Burns/Trauma\n\n\nIIP: Idiopathic Pulmonary Fibrosis\n\n\nSarcoidosis\n\n\nAlpha - 1 - Antitrypsin Deficiency\n\n\nCOPD/Emphysema\n\n\nBronchiectasis\n\n\nRheumatoid Disease\n\n\nOccupational Lung Disease: Other, Specify\n\n\nLymphangioleiomyomatosis\n\n\nObliterative Bronchiolitis (Non-Retransplant)\n\n\nPulmonary Fibrosis: Other Specify Cause\n\n\nPulmonary Vascular Disease\n\n\nSecondary Pulmonary Hypertension\n\n\nCOVID-19: ARDS\n\n\nCOVID-19: Pulmonary Fibrosis\n\n\nHeart/Lung Re-TX/GF: Primary Failure\n\n\nIdio/Post-Infection Crescentic Glomerulonephri\n\n\nMembranous Glomerulonephritis\n\n\nMesangio-Capillary 1 Glomerulonephritis\n\n\nMesangio-Capillary 2 Glomerulonephritis\n\n\nIGA Nephropathy\n\n\nAnti-GBM\n\n\nFocal Glomerular Sclerosis (Focal Segmental - FGS)\n\n\nChronic Pyelonephritis/Reflux Nephropath\n\n\nPolycystic Kidneys\n\n\nNephritis\n\n\nNephronophthisis\n\n\nDiabetes - Type I Insulin Dep/Juv Onset\n\n\nDiabetes - Type II Non-Insulin Dep/Adult\n\n\nOxalate Nephropathy (Includes Hereditary Oxalosis)\n\n\nCystinosis\n\n\nFabry's Disease\n\n\nAmyloidosis\n\n\nGout\n\n\nSystemic Lupus Erythematosus\n\n\nProgressive Systemic Sclerosis\n\n\nWilms' Tumor\n\n\nRenal Cell Carcinoma\n\n\nIncidental Carcinoma\n\n\nMyeloma\n\n\nHemolytic Uremic Syndrome\n\n\nHypoplasia/Dysplasia/Dysgensis/Agenesis\n\n\nCortical Necrosis\n\n\nAcute Tubular Necrosis\n\n\nMedullary Cystic Disease\n\n\nSickle Cell Anemia\n\n\nAcquired Obstructive Nephropathy\n\n\nAlport's Syndrome\n\n\nFamilial Nephropathy\n\n\nGoodpasture's Syndrome\n\n\nMalignant Hypertension\n\n\nHenoch-Schoenlein Purpura\n\n\nPrune Belly Syndrome\n\n\nRetransplant/Graft Failure\n\n\nDiabetes - Type I Non-Insulin Dep/Juv On\n\n\nDiabetes - Type II Insulin Dep/Adult Ons\n\n\nHypertensive Nephrosclerosis\n\n\nChronic Glomerulonephritis Unspecified\n\n\nMembranous Nephropathy\n\n\nChronic Glomerulosclerosis Unspecified\n\n\nAnalgesic Nephropathy\n\n\nRadiation Nephritis\n\n\nAntibiotic-Induced Nephritis\n\n\nCancer Chemotherapy Induced Nephritis\n\n\nCalcineurin Inhibitor Nephrotoxicity\n\n\nHeroin Nephrotoxicity\n\n\nRenal Artery Thrombosis\n\n\nChronic Nephrosclerosis-Unspecified\n\n\nCongenital Obstructive Uropathy\n\n\nScleroderma\n\n\nWegeners Granulomatosis\n\n\nPolyarteritis\n\n\nRheumatoid Arthritis\n\n\nSarcoidosis\n\n\nLymphoma\n\n\nNephrolithiasis\n\n\nUrolithiasis\n\n\nPre-BMT Total Body Irradiation\n\n\nDrug Related Interstitial Nephritis\n\n\nThin Basement Membrane Disease\n\n\nCholesterol Embolization\n\n\nRapid Progressive Glomerulonephritis (Rpgn)\n\n\nDiabetes Mellitus - Type I\n\n\nDiabetes Mellitus - Type II\n\n\nDiabetes Mellitus - Type Other / Unknown\n\n\nHepatorenal Syndrome\n\n\nLithium Toxicity\n\n\nHIV Nephropathy\n\n\nAHN: Drug Other, Specify\n\n\nAHN: Type A\n\n\nAHN: Type B- Hbsag+\n\n\nAHN: Type C\n\n\nAHN: Type D\n\n\nAHN: Type B and C\n\n\nAHN: Type B and D\n\n\nAHN: Etiology Unknown\n\n\nAHN: Other, Specify (e.g., Acute Viral Infection, Autoimmune Hepatitis - Fulminant)\n\n\nCirrhosis: Drug/Indust Exposure Other, Specify\n\n\nCirrhosis: Type A\n\n\nCirrhosis: Type B- Hbsag+\n\n\nCirrhosis: Type C\n\n\nCirrhosis: Type D\n\n\nCirrhosis: Type B and C\n\n\nCirrhosis: Type B and D\n\n\nCirrhosis: Cryptogenic- Idiopathic\n\n\nCirrhosis: Chronic Active Hepatitis: Etiology Unknown\n\n\nCirrhosis: Other, Specify (e.g., Histiocytosis, Sarcoidosis, Granulomatous)\n\n\nCirrhosis: Autoimmune\n\n\nCirrhosis: Cryptogenic (Idiopathic)\n\n\nCirrhosis: Fatty Liver (NASH)\n\n\nAlcoholic Cirrhosis\n\n\nAlcoholic Cirrhosis w/ Hepatitis C\n\n\nAcute Alcoholic Hepatitis\n\n\nAcute Alcohol-Associated Hepatitis With or Without Cirrhosis\n\n\nAlcohol-Associated Cirrhosis Without Acute Alcohol-Associated Hepatitis\n\n\nPrimary Biliary Cirrhosis (PBC)\n\n\nSec Biliary Cirrhosis: Caroli's Disease\n\n\nSec Biliary Cirrhosis: Choledochol Cyst\n\n\nSec Biliary Cirrhosis: Other, Specify\n\n\nPSC: Crohn's Disease\n\n\nPSC: Ulcerative Colitis\n\n\nPSC: No Bowel Disease\n\n\nPSC: Other, Specify\n\n\nFamilial Cholestasis: Byler's Disease\n\n\nFamilial Cholestasis: Other, Specify\n\n\nCholes Liver Disease: Other, Specify\n\n\nNeonatal Cholestatic Liver Disease\n\n\nNeonatal Hepatitis Other, Specify\n\n\nBiliary Atresia: Extrahepatic\n\n\nBiliary Hypoplasia: Nonsyndromic Paucity of Intrahepatic Bile Duct\n\n\nBiliary Hypoplasia: Alagille's Syndrome (Paucity of Intrahepatic Bile Duct)\n\n\nBiliary Atresia or Hypoplasia: Other, Specify\n\n\nCongenital Hepatic Fibrosis\n\n\nCystic Fibrosis\n\n\nBudd-Chiari Syndrome\n\n\nMetdis: Alpha-1-Antitrypsin Defic A-1-A\n\n\nMetdis: Wilson's Disease, Other Copper Metabolism Disorder\n\n\nMetdis: Hemochromatosis - Hemosiderosis\n\n\nMetdis: Glyc Stor Dis Type I (GSD-I)\n\n\nMetdis: Glyc Stor Dis Type IV (GSD-IV)\n\n\nMetdis: Hyperlipidemia-II, Homozygous Hypercholesterolemia\n\n\nMetdis: Tyrosinemia\n\n\nMetdis: Primary Oxalosis/Oxaluria, Hyperoxaluria\n\n\nMetdis: Maple Syrup Urine Disease\n\n\nMetdis: Other, Specify\n\n\nPLM: Hepatoma - Hepatocellular Carcinoma\n\n\nPLM: Hepatoma (HCC) and Cirrhosis\n\n\nPLM: Fibrolamellar (FL-HC)\n\n\nPLM: Cholangiocarcinoma (CH-CA)\n\n\nPLM: Hepatoblastoma (HBL)\n\n\nPLM: Hemangioendothelioma, Hemangiosarcoma, Angiosarcoma\n\n\nPLM: Other, Specify (i.e., Klatzkin Tumor, Leiomysarcoma)\n\n\nBile Duct Cancer: (Cholangioma, Biliary Tract Carcinoma)\n\n\nSecondary Hepatic Malignancy Other, Specify\n\n\nBenign Tumor: Hepatic Adenoma\n\n\nBenign Tumor: Polycystic Liver Disease\n\n\nBenign Tumor: Other, Specify\n\n\nTPN/Hyperalimentation Ind Liver Disease\n\n\nGraft vs. Host Dis Sec to Non-Liver Txp\n\n\nTrauma Other, Specify\n\n\nGraft Failure\n\n\nRetransplant/Graft Failure Pancreas\n\n\nDiabetes Mellitus - Type I (Pancreas)\n\n\nDiabetes Mellitus - Type II (Pancreas)\n\n\nDiabetes Secondary to Chronic Pancreatitis without Pancreatectomy\n\n\nDiabetes Secondary to Cystic Fibrosis without Pancreatectomy\n\n\nPancreatic Cancer\n\n\nBile Duct Cancer\n\n\nOther Cancers\n\n\nPancreatectomy Prior to Pancreas Transplant\n\n\nDiabetes Mellitus - Type Other/Unknown (Pancreas)"
+    },
+    {
+      "index": 1880,
+      "name": "UNOS_PRIM_DX_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary diagnosis, if it is not one of the available options in column UNOS_PRI_DX_C."
+    },
+    {
+      "index": 1885,
+      "name": "UNOS_DIAB_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of diabetes and if so, the type of diabetes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nType I\n\n\nType II\n\n\nType Other\n\n\nType Unknown\n\n\nDiabetes Status Unknown"
+    },
+    {
+      "index": 1898,
+      "name": "UNOS_DIAL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of dialysis treatment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Dialysis\n\n\nHemodialysis\n\n\nPeritoneal Dialysis\n\n\nCAVH: Continuous Arteriovenous Hemofiltration\n\n\nCV VH: Continuous Venous/Venous Hemofiltration\n\n\nDialysis Status Unknown\n\n\nDialysis Unknown Type Was Performed"
+    },
+    {
+      "index": 1912,
+      "name": "UNOS_PEPT_ULCR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of peptic ulcers.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes, Active Within The Last Year\n\n\nYes, Not Active Within The Last Year\n\n\nYes, Activity Unknown\n\n\nUnknown"
+    },
+    {
+      "index": 1924,
+      "name": "UNOS_ANGINA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of angina and coronary artery disease.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes, And Documented Coronary Artery Disease\n\n\nYes, With No Documented Coronary Artery Disease\n\n\nYes, But Coronary Artery Disease Unknown\n\n\nStatus Unknown"
+    },
+    {
+      "index": 1936,
+      "name": "UNOS_DRG_TRT_HYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of high blood pressure or of being treated with medications to lower blood pressure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1942,
+      "name": "UNOS_SYM_CER_VASC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of transient ischemic attacks or stroke.  \n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1948,
+      "name": "UNOS_SYM_PER_VASC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of peripheral vascular disease, including intermittent claudication or diminished peripheral pulses.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1954,
+      "name": "UNOS_DRG_TRT_COPD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of Chronic Obstructive Pulmonary Disease (COPD) or of being treated with medications to control COPD.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1960,
+      "name": "UNOS_MALIG_HX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient has a history of malignant cancer.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1966,
+      "name": "UNOS_MALIG_HX_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient has a history of malignant cancer, free text indicating the specific type of tumor."
+    },
+    {
+      "index": 1971,
+      "name": "UNOS_EXH_VAS_ACC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the available sites to obtain vascular access for hemodialysis have been exhausted.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1977,
+      "name": "UNOS_EXH_PER_ACC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether all sites to obtain peritoneal access have been exhausted.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 1983,
+      "name": "UNOS_AGE_DIAB_ONST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's age at the time of diabetes onset."
+    },
+    {
+      "index": 1988,
+      "name": "UNOS_AGE_DIAB_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient's age at the time of diabetes onset is not available, the reason this information is not available.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 1994,
+      "name": "UNOS_PAT_IN_HOSP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was hospitalized during the 90 days prior to transplant admission.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2000,
+      "name": "UNOS_HBV_C_AB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's HBV core antibody serology results.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 2006,
+      "name": "UNOS_HBV_S_AG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's HBV surface antigen serology results.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 2012,
+      "name": "UNOS_KID_BIOPSY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a pre-implantation kidney biopsy was performed.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2018,
+      "name": "UNOS_BLD_TRNFSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether any pre-transplant blood infusions were performed.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2024,
+      "name": "UNOS_TOL_IND_TECH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether any tolerance induction techniques were used.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2030,
+      "name": "UNOS_PREV_PREG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of pregnancies the patient had prior to transplant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Previous Pregnancy\n\n\n1 Previous Pregnancy\n\n\n2 Previous Pregnancies\n\n\n3 Previous Pregnancies\n\n\n4 Previous Pregnancies\n\n\n5 Previous Pregnancies\n\n\nMore Than 5 Previous Pregnancies\n\n\nYes\n\n\nNo\n\n\nNot Applicable: < 10 Years Old\n\n\nUnknown"
+    },
+    {
+      "index": 2048,
+      "name": "UNOS_PROC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure used for the transplant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLeft Kidney\n\n\nRight Kidney\n\n\nEn-Bloc\n\n\nDual Kidney\n\n\nHemi-Renal\n\n\nPancreas Segment\n\n\nWhole Pancreas With Duodenum\n\n\nWhole Pancreas With Duodenal Patch\n\n\nWhole Pancreas\n\n\nPancreas Segment / Kidney Right\n\n\nPancreas Segment / Kidney Left\n\n\nPancreas Segment / En-Bloc Kidney\n\n\nPancreas Segment / Dual Kidney\n\n\nPancreas Segment / Hemi-Renal Kidney\n\n\nWhole Pancreas With Duodenum / Left Kidney\n\n\nWhole Pancreas With Duodenum / Right Kidney\n\n\nWhole Pancreas With Duodenum / En-Bloc Kidneys\n\n\nPancreas With Duodenum / Dual Kidney\n\n\nWhole Pancreas With Duodenum / Hemi-Renal Kidney\n\n\nWhole Pancreas With Duodenal Patch / Left Kidney\n\n\nWhole Pancreas With Duodenal Patch / Right Kidney\n\n\nWhole Pancreas With Duodenal Patch / En-Bloc Kidneys\n\n\nPancreas With Duodenal Patch / Dual Kidney\n\n\nWhole Pancreas With Duodenal Patch / Hemi-Renal Kidney\n\n\nWhole Pancreas / Left Kidney\n\n\nWhole Pancreas / Right Kidney\n\n\nWhole Pancreas / En-Bloc Kidneys\n\n\nWhole Pancreas / Dual Kidney\n\n\nWhole Pancreas / Hemi-Renal Kidney"
+    },
+    {
+      "index": 2084,
+      "name": "UNOS_TCI_R_KID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total cold ischemia time for the right kidney or both kidneys, in hours.  If a pump is used, this includes pump time."
+    },
+    {
+      "index": 2089,
+      "name": "UNOS_TCI_R_KID_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the total cold ischemia time is unavailable for the right kidney or both kidneys, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2095,
+      "name": "UNOS_TWI_R_KID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total warm ischemia time for the right kidney or both kidneys, in minutes."
+    },
+    {
+      "index": 2100,
+      "name": "UNOS_TWI_R_KID_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the total warm ischemia time is unavailable for the right kidney or both kidneys, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2106,
+      "name": "UNOS_TCI_L_KID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total cold ischemia time for the left kidney, in hours.  If a pump is used, this includes pump time."
+    },
+    {
+      "index": 2111,
+      "name": "UNOS_TCI_L_KID_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the total cold ischemia time is unavailable for the left kidney, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2117,
+      "name": "UNOS_TWI_L_KID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total warm ischemia time for the left kidney, in minutes."
+    },
+    {
+      "index": 2122,
+      "name": "UNOS_TWI_L_KID_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the total warm ischemia time is unavailable for the left kidney, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2128,
+      "name": "UNOS_KID_REC_ON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the transplanted organs were received on ice or on a pump.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIce\n\n\nPump\n\n\nNot Applicable"
+    },
+    {
+      "index": 2138,
+      "name": "UNOS_REC_ON_ICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the transplanted organs were received on ice, indicates whether the organs stayed on ice or were put on a pump.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStayed on Ice\n\n\nPut on Pump"
+    },
+    {
+      "index": 2147,
+      "name": "UNOS_REC_ON_PMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the transplanted organs were received on a pump, indicates whether the organs stayed on a pump or were put on ice.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStayed on Pump\n\n\nPut on Ice"
+    },
+    {
+      "index": 2156,
+      "name": "UNOS_FIN_TXP_RSTN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If a pump was used during eschemia time, indicates the final resistance."
+    },
+    {
+      "index": 2161,
+      "name": "UNOS_FIN_TXP_RSTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the final resistance level is unavailable, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2167,
+      "name": "UNOS_FIN_FLOW_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If a pump was used, the final flow rate."
+    },
+    {
+      "index": 2172,
+      "name": "UNOS_FIN_FLOW_RT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the final flow rate is unavailable, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2178,
+      "name": "UNOS_TXP_INC_TUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether an incidental tumor was found in an organ that was removed from the recipient at the time of transplant.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2184,
+      "name": "UNOS_TXP_TUM_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of incidental tumor found at the time of transplant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOncocytoma\n\n\nRenal Cell Carcinoma\n\n\nCarcinoid\n\n\nAdenoma\n\n\nTransitional Cell Carcinoma\n\n\nOther Primary Kidney Tumor, Specify"
+    },
+    {
+      "index": 2197,
+      "name": "UNOS_TXP_TUM_TYP_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text type of tumor found at the time of transplant."
+    },
+    {
+      "index": 2202,
+      "name": "UNOS_KID_URN_24H_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the kidney graft produced at least 40 ml of urine in the first 24 hours following the transplant.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2208,
+      "name": "UNOS_PAT_DIAL_1W_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient required any dialysis within the first 7 days following the transplant.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2214,
+      "name": "UNOS_CREAT_DECLN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient's creatinine value declined by 25% or more in the first 24 hours on two separate samples.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2220,
+      "name": "UNOS_HIV_SEROS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's HIV serology results.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 2226,
+      "name": "UNOS_HCV_SEROS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's HCV serology results.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 2232,
+      "name": "UNOS_EBV_SEROS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's EBV serology results.\n\n\n The category values for this column were already listed for column: UNOS_CMV_IGG_C_NAME"
+    },
+    {
+      "index": 2238,
+      "name": "UNOS_KID_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a kidney.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFalse\n\n\nTrue"
+    },
+    {
+      "index": 2247,
+      "name": "UNOS_PAN_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a pancreas.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2253,
+      "name": "UNOS_LVR_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a liver.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2259,
+      "name": "UNOS_INT_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received an intestine.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2265,
+      "name": "UNOS_HRT_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a heart.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2271,
+      "name": "UNOS_LNG_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a lung.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2277,
+      "name": "UNOS_PIT_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a pancreas islet.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2283,
+      "name": "UNOS_BMW_RECIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received bone marrow.\n\n\n The category values for this column were already listed for column: UNOS_KID_RECIP_YN"
+    },
+    {
+      "index": 2289,
+      "name": "UNOS_PRETXP_DIAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient was on dialysis prior to transplant.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2295,
+      "name": "UNOS_PRETXP_DIAL_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the recipient first began pre-transplant dialysis."
+    },
+    {
+      "index": 2300,
+      "name": "UNOS_PRETXP_DL_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipients's dialysis date status if the dialysis date field is not populated.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2306,
+      "name": "UNOS_SRM_CREAT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The recipient's serum creatinine in mg/dl at the time of transplant."
+    },
+    {
+      "index": 2311,
+      "name": "UNOS_SRM_CREAT_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the recipient's serum creatinine at the time of transplant is unavailable, this indicates why the information is unavailable.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2317,
+      "name": "UNOS_RESM_DIAL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient returned to maintenance dialysis.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2323,
+      "name": "UNOS_SURG_COMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether surgical complication is the contributory cause of graft failure.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2329,
+      "name": "UNOS_MALIG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient had any malignancies between listing and transplant.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2335,
+      "name": "UNOS_MALIG_TYPE_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text type of malignancy the recipient had between listing and transplant."
+    },
+    {
+      "index": 2340,
+      "name": "UNOS_MED_ANTI_RE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient is currently on any maintenance or anti-rejection medications.\n\n\n The category values for this column were already listed for column: UNOS_CLIN_RSCH_YN"
+    },
+    {
+      "index": 2346,
+      "name": "UNOS_MED_CND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's condition and location prior to the transplant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Intensive Care Unit\n\n\nHospitalized Not in ICU\n\n\nNot Hospitalized"
+    },
+    {
+      "index": 2356,
+      "name": "UNOS_THF_PM_DTH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the primary cause of death for the thoracic graft recipient. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nOther, Specify\n\n\nThoracic Graft Failure: Primary Failure\n\n\nThoracic Graft Failure: Rejection Hyperacute\n\n\nThoracic Graft Failure: Rejection Acute\n\n\nThoracic Graft Failure: Rejection Chronic\n\n\nThoracic Graft Failure: Technical\n\n\nThoracic Graft Failure: Graft Infection\n\n\nThoracic Graft Failure: Recurrent Disease\n\n\nThoracic Graft Failure: Non-Specific\n\n\nInfection: Bacterial Septicemia\n\n\nInfection: Bacterial Pneumonia\n\n\nInfection: Bacterial Other, Specify\n\n\nInfection: Viral Cytomegalovirus (CMV)\n\n\nInfection: Viral Hepatitis\n\n\nInfection: Viral Septicemia\n\n\nInfection: Viral Other, Specify\n\n\nInfection: Fungal Aspergillus\n\n\nInfection: Fungal Other, Specify\n\n\nInfection: Protozoal\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Other, Specify\n\n\nCardiovascular: Myocardial Infarction\n\n\nCardiovascular: Cardiac Arrest\n\n\nCardiovascular: Arterial Embolism\n\n\nCardiovascular: Ventricular Failure\n\n\nCardiovascular: Coronary Artery Disease\n\n\nCardiovascular: Atherosclerosis\n\n\nCardiovascular: Rhythm Disorder\n\n\nCardiovascular: Carditis\n\n\nCardiovascular: Aortic Aneurysm\n\n\nCardiovascular: Cardiogenic Shock\n\n\nCardiovascular: Other, Specify\n\n\nPulmonary: Dehiscence\n\n\nPulmonary: Bronchiolitis\n\n\nPrimary Pulmonary Hypertension\n\n\nPulmonary Embolism\n\n\nPulmonary: Respiratory Failure\n\n\nPulmonary: Acute Respiratory Distress Disease\n\n\nPulmonary: Other, Specify\n\n\nCerebrovascular: Stroke\n\n\nCerebrovascular: Hemorrhage (Non-Stroke)\n\n\nCerebrovascular: Brain Anoxia\n\n\nCerebrovascular: Degenerative Brain Disease\n\n\nCerebrovascular: Other, Specify\n\n\nHemorrhage: Gastrointestinal\n\n\nHemorrhage: Intraoperative\n\n\nHemorrhage: Disseminated Intravascular Coagulation (DIC)\n\n\nHemorrhage: Post-Operative\n\n\nHemorrhage: Respiratory\n\n\nHemorrhage: Other, Specify\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Post-Txp Lymphoproliferative\n\n\nMalignancy: Lymphoma\n\n\nMalignancy: Skin\n\n\nMalignancy: Other, Specify\n\n\nDiabetes Mellitus\n\n\nIntraoperative: Not Hemorrhage Other, Specify\n\n\nPancreatitis\n\n\nRenal Failure\n\n\nLiver Failure\n\n\nMultiple Organ System Failure\n\n\nFluid/Electrolyte Disorder\n\n\nAcid/Base Disorder\n\n\nAmyloidosis\n\n\nHematologic Other, Specify\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nTrauma: Motor Vehicle\n\n\nSuicide\n\n\nNon-Compliance\n\n\nTrauma: Other, Specify\n\n\nInfection: Viral COVID-19"
+    },
+    {
+      "index": 2439,
+      "name": "UNOS_THF_PM_DTH_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the primary cause of death for the thoracic graft recipient, if that cause of death was not selected from a list."
+    },
+    {
+      "index": 2444,
+      "name": "UNOS_THF_SC_DTH1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the first contributory cause of death for the thoracic graft recipient. \n\n\n The category values for this column were already listed for column: UNOS_THF_PM_DTH_C_NAME"
+    },
+    {
+      "index": 2450,
+      "name": "UNOS_THF_SC_DTH1_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the first contributory cause of death for the thoracic graft recipient."
+    },
+    {
+      "index": 2455,
+      "name": "UNOS_THF_SC_DTH2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the second contributory cause of death for the thoracic graft recipient. \n\n\n The category values for this column were already listed for column: UNOS_THF_PM_DTH_C_NAME"
+    },
+    {
+      "index": 2461,
+      "name": "UNOS_THF_SC_DTH2_SP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the second contributory cause of death for the thoracic graft recipient."
+    },
+    {
+      "index": 2466,
+      "name": "UNOS_HOSP_REJ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was hospitalized for rejection during this follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2472,
+      "name": "UNOS_HOSP_INF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was hospitalized for infection during this follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2478,
+      "name": "UNOS_THF_FAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the primary cause of graft failure for the thoracic graft recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary Non-Function\n\n\nAcute Rejection\n\n\nChronic Rejection/Atherosclerosis\n\n\nOther, Specify"
+    },
+    {
+      "index": 2489,
+      "name": "UNOS_EJ_FRAC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the most recent ejection fraction available for the thoracic graft recipient."
+    },
+    {
+      "index": 2494,
+      "name": "UNOS_EJ_FRAC_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The most recent ejection fraction status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2500,
+      "name": "UNOS_SH_FRAC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the most recent shortening fraction available for the thoracic graft recipient."
+    },
+    {
+      "index": 2505,
+      "name": "UNOS_SH_FRAC_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The most recent shortening fraction status.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2511,
+      "name": "UNOS_PACE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient has had a permanent pacemaker inserted during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2517,
+      "name": "UNOS_CLIN_EVENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient has exhibited clinically significant events related to coronary artery disease.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2523,
+      "name": "UNOS_FEV1",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Indicates the most recent value available for forced expiratory volume at one second."
+    },
+    {
+      "index": 2528,
+      "name": "UNOS_FEV1_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the most recent value available for forced expiratory volume at one second.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2534,
+      "name": "UNOS_O2_REQ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The recipient's oxygen requirement at rest at the time of follow-up."
+    },
+    {
+      "index": 2539,
+      "name": "UNOS_O2_REQ_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the recipient's oxygen requirement at rest at the time of follow-up.\n\n\n The category values for this column were already listed for column: UNOS_HOSP_STAT_C_NAME"
+    },
+    {
+      "index": 2545,
+      "name": "UNOS_BR_OBLIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient has been diagnosed with a bronchial obliterans syndrome during the follow-up period.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo BOS\n\n\nYes, Grade OP\n\n\nYes, Grade 1\n\n\nYes, Grade 2\n\n\nYes, Grade 3\n\n\nYes, Grade UNK\n\n\nUnknown"
+    },
+    {
+      "index": 2559,
+      "name": "UNOS_BR_STRIC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was diagnosed with a bronchial stricture during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2565,
+      "name": "UNOS_STENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient was diagnosed with a bronchial stricture, this indicates whether a stent was inserted.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2571,
+      "name": "UNOS_BONE_DISEAS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient has exhibited new signs and symptoms of bone disease during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2577,
+      "name": "UNOS_LVR_DISEASE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient has exhibited new signs and symptoms of chronic liver disease during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2583,
+      "name": "UNOS_CATARACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was newly diagnosed with cataracts during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2589,
+      "name": "UNOS_RENAL_DYS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient was newly diagnosed with or developed signs and symptoms of renal dysfunction during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2595,
+      "name": "UNOS_CREAT25_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient's creatinine level was greater than 2.5 mg/dl during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2601,
+      "name": "UNOS_CHRON_DIAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient had chronic peritoneal or hemodialysis during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2607,
+      "name": "UNOS_RENAL_TXP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient received a renal transplant during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2613,
+      "name": "UNOS_STROKE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient experienced a stroke (CVA) during the follow-up period.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2619,
+      "name": "UNOS_DRG_HYPLIP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient had any medication newly prescribed for the purpose of lowering serum lipid levels.\n\n\n The category values for this column were already listed for column: UNOS_WAS_HOSP_C_NAME"
+    },
+    {
+      "index": 2625,
+      "name": "UNOS_TITER_A_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The current A titer sample date."
+    },
+    {
+      "index": 2630,
+      "name": "UNOS_TITER_B_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The current B titer sample date."
+    }
+  ]
+}

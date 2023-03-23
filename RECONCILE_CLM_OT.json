@@ -1,0 +1,360 @@
+{
+  "table_name": "RECONCILE_CLM_OT",
+  "description": "This table contains over time single information for claim reconciliation records.",
+  "primary_key": {
+    "column_name": "CLAIM_REC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_REC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the claim reconciliation record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The contact date of the claim, in external format."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE_REAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact date of the claim, in internal format."
+    },
+    {
+      "index": 17,
+      "name": "CLM_STATUS_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status code of the claim being tracked over time.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUnmapped code received"
+    },
+    {
+      "index": 25,
+      "name": "PAYR_CLM_AMT_SUBMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount submitted by the payer on this claim."
+    },
+    {
+      "index": 30,
+      "name": "PAYOR_CLM_AMT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount paid by the payer on this claim."
+    },
+    {
+      "index": 35,
+      "name": "PAYOR_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim's payer reference number."
+    },
+    {
+      "index": 40,
+      "name": "PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payer name of the payer on the claim."
+    },
+    {
+      "index": 45,
+      "name": "CH_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the claim's clearinghouse reference number."
+    },
+    {
+      "index": 50,
+      "name": "CH_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the claim's clearinghouse name."
+    },
+    {
+      "index": 55,
+      "name": "CLAIM_STATUS_MSG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim's textual status message."
+    },
+    {
+      "index": 60,
+      "name": "STATUS_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The status date of the claim."
+    },
+    {
+      "index": 65,
+      "name": "FILE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the filename associated with this claim."
+    },
+    {
+      "index": 70,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the deployment owner for this contact."
+    },
+    {
+      "index": 75,
+      "name": "CLM_CLOSED_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value for the reason the claim was closed. This value can be used to link to the ZC_CLM_CLSD_REASON table to get more information on the category values.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayment\n\n\nPosting Action\n\n\nExternal Status Change\n\n\nBucket Closed\n\n\nBucket Rejected\n\n\nBucket Replaced\n\n\nBucket Reopened\n\n\nInvoice Split During Refresh"
+    },
+    {
+      "index": 90,
+      "name": "CLAIM_ST_CAT_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category code of the claim being tracked over time.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUnmapped code received"
+    },
+    {
+      "index": 98,
+      "name": "TRANSMIT_MEDIUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If claim has been transmitted, this item stores the medium.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPaper\n\n\nElectronic"
+    },
+    {
+      "index": 107,
+      "name": "ERR_FIELD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The field a claim error is reported in."
+    },
+    {
+      "index": 112,
+      "name": "ERR_ITEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The item for which the claim error was reported."
+    },
+    {
+      "index": 117,
+      "name": "ERR_VAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim value that caused the error."
+    },
+    {
+      "index": 122,
+      "name": "ERR_MSG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The error message received for a claim."
+    },
+    {
+      "index": 127,
+      "name": "CH_SENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date that the claim was sent out of the clearinghouse."
+    },
+    {
+      "index": 132,
+      "name": "PAYOR_RECV_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date that the payer received the claim."
+    },
+    {
+      "index": 137,
+      "name": "CLAIM_SEL_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the action that was selected to be performed on the invoice.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Action\n\n\nAccept Claim\n\n\nSend to WQ"
+    },
+    {
+      "index": 147,
+      "name": "CLAIM_ACT_INFO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Can store additional information on why a given action was selected.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFile payor does not match CLP payor\n\n\nBilling system mismatch\n\n\nClaim not on claim run\n\n\nClaim run not in status of processed\n\n\nUnable to lock CLP\n\n\nNo codes mapped to Send to WQ"
+    },
+    {
+      "index": 160,
+      "name": "TRANSMIT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the system transmission status for the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Transmitted\n\n\nTransmit Success\n\n\nTransmit Failed\n\n\nRetransmit Success\n\n\nRetransmit Failed\n\n\nQueued"
+    },
+    {
+      "index": 173,
+      "name": "EXTERNAL_REJECT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag indicating that the claim has been rejected by the payor or clearinghouse.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 182,
+      "name": "PERFORM_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Will store the action that was performed on the invoice.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Action\n\n\nAccept Claim from Run\n\n\nSend to WQ from Run\n\n\nAccept from WQ\n\n\nResubmit from WQ\n\n\nResend to WQ\n\n\nExternal Test Response No Action Mapped"
+    },
+    {
+      "index": 196,
+      "name": "PERFORM_ACT_RSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason for the action that was performed on the invoice."
+    },
+    {
+      "index": 201,
+      "name": "GROUP_CONTROL_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the group control number (GS-06) value for an American National Standards Institute (ANSI) electronic claim file."
+    },
+    {
+      "index": 206,
+      "name": "TRANSMIT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Records electronic claim transmission type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAutomatic Transmission\n\n\nCORE Transmission"
+    },
+    {
+      "index": 215,
+      "name": "PAYOR_CONTACT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of contact person or department associated with an information request."
+    },
+    {
+      "index": 220,
+      "name": "CLAIM_BILL_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the bill type received in the claim reconciliation file."
+    },
+    {
+      "index": 225,
+      "name": "MRN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the medical record number (MRN) received in the claim reconciliation file."
+    },
+    {
+      "index": 230,
+      "name": "INTERMEDIARY_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the transmission identifier received in the claim reconciliation file."
+    },
+    {
+      "index": 235,
+      "name": "AGENCY_CLAIM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the claim number received in the claim reconciliation file."
+    },
+    {
+      "index": 240,
+      "name": "CASE_REF_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the case reference identifier received in the claim reconciliation file."
+    },
+    {
+      "index": 245,
+      "name": "INFO_REQ_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the attachment request tracking number received in the claim reconciliation file."
+    },
+    {
+      "index": 250,
+      "name": "PRIOR_INFO_REQ_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the prior attachment request tracking number received in the claim reconciliation file."
+    },
+    {
+      "index": 255,
+      "name": "INFO_REQ_DUE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the requested information is to be returned."
+    },
+    {
+      "index": 260,
+      "name": "RESP_CONTACT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name used by the payer for routing the requested information within their system."
+    },
+    {
+      "index": 265,
+      "name": "RESP_CONTACT_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "City of the mailing location for the return of attachment data."
+    },
+    {
+      "index": 270,
+      "name": "RESP_CONTACT_STATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "State of the mailing location for the return of attachment data."
+    },
+    {
+      "index": 275,
+      "name": "RESP_CONTACT_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Postal Code of the mailing location for the return of attachment data."
+    },
+    {
+      "index": 280,
+      "name": "RESP_CONTACT_CNTRY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Country of the mailing location for the return of attachment data."
+    },
+    {
+      "index": 285,
+      "name": "RESP_CONTACT_SUBDIV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Subdivision of the mailing location for the return of attachment data."
+    },
+    {
+      "index": 290,
+      "name": "SUPPORTED_ACTIONS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim actions supported by the interface profile at the time a claim status update is received from an external entity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccept Claim\n\n\nSend to Workqueue\n\n\nAll Available Actions"
+    },
+    {
+      "index": 300,
+      "name": "TX_DEST_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The destination type when the claim is transmitted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayer\n\n\nClearinghouse\n\n\nOther Entity"
+    },
+    {
+      "index": 310,
+      "name": "PAYER_CHECK_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Holds the payer check date from claim reconciliation."
+    },
+    {
+      "index": 315,
+      "name": "PAYER_CHECK_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the payer check number from claim reconciliation."
+    }
+  ]
+}

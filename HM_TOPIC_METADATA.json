@@ -1,0 +1,73 @@
+{
+  "table_name": "HM_TOPIC_METADATA",
+  "description": "This table contains rows of Health Maintenance topics with metadata values that are calculated for a patient.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "TOPIC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores Health Maintenance topics that have calculated data that should persist even when the topic no longer applies to the patient."
+    },
+    {
+      "index": 17,
+      "name": "TOPIC_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the health maintenance topic."
+    },
+    {
+      "index": 22,
+      "name": "EXT_DATA_CHECKSUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column indicates whether external data was used to complete the related Health Maintenance topic."
+    },
+    {
+      "index": 27,
+      "name": "EXT_CLIN_DATA_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "If external clinical data (e.g. Care Everywhere or immunization registries) was used to complete the related Health Maintenance topic, this item will contain the date of the relevant completion."
+    },
+    {
+      "index": 32,
+      "name": "EXT_CLAIM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "If external claims data was used to complete the related Health Maintenance topic, this item will contain the date of the relevant completion."
+    },
+    {
+      "index": 37,
+      "name": "PT_REPORTED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "If a patient reported action was used to complete the related Health Maintenance topic, this item will contain the date of the relevant completion."
+    },
+    {
+      "index": 42,
+      "name": "EXT_HEALTH_PLAN_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "If the related HM topic is currently satisfied by external health plan data, this item will contain the date of the relevant completion."
+    }
+  ]
+}

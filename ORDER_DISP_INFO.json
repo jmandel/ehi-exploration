@@ -1,0 +1,248 @@
+{
+  "table_name": "ORDER_DISP_INFO",
+  "description": "This table contains dispense information for orders.",
+  "primary_key": {
+    "column_name": "ORDER_MED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order that these actions were taken on."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "FILL_PHR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The fill pharmacy for prescription being filled from Integrated pharmacy for each fill. A prescription could be filled multiple times and each fill will have a fill pharmacy saved.  A fill request is a contact on the order record recording information about the specific dispense of the order."
+    },
+    {
+      "index": 17,
+      "name": "FILL_AUTHPHRMCST_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item saves the pharmacist who will take responsibility of the fill when sending an adjudication message."
+    },
+    {
+      "index": 22,
+      "name": "FILL_SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of service for a prescription fill.   The date of service can be entered by a user during the filling process. If no service date was entered by the user, then the date of service is the date of the first successful adjudication. If the prescription fill was not adjudicated, then the date of service is the date the fill was dispensed."
+    },
+    {
+      "index": 27,
+      "name": "FILL_NUMBER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  The value is used in adjudication to indicate what fill we are adjudicating. The fill numbers are sequential with the first fill set to 0 and all refills numbered 1-99."
+    },
+    {
+      "index": 32,
+      "name": "FILL_SUPPLY_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the number of days this fill will supply. For example, this fill dispensed enough to cover a 30-day supply."
+    },
+    {
+      "index": 37,
+      "name": "FILL_DISP_QTY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the actual amount the pharmacy is dispensing. This may be different from the intended quantity, which is what the prescriber intended the patient to receive. The two numbers may be different if the patient can only pay for a smaller days supply, or the pharmacy may only have a small amount of the medication left to dispense."
+    },
+    {
+      "index": 42,
+      "name": "FILL_INT_SUP_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  If the fill is a partial fill, this is the number of days the supply that is dispensed will cover. For example, I have a partial fill of 15 tabs for a Daily medication. The intended days supply would be 15."
+    },
+    {
+      "index": 47,
+      "name": "FILL_IS_PARTIAL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item indicates if the fill is a partial one. If the patient can only pay for a smaller supply or the pharmacy may only have a small amount of the medication left to dispense, then the actual amount dispensed will be different from the intended amount, which is what the prescriber intended the patient to receive. For example, if the patient has a fill of 30 tabs for a Daily medication for 30 days of supply, a partial fill of 15 tabs will cover 15 days of supply; and the patient can receive the rest of the fill later when the patient can pay or the pharmacy has more to dispense. This flag is also used in adjudication to let the insurer know that a fill is a partial one and the insurance company will adjust the payment amount accordingly.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 56,
+      "name": "FILL_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item saves the information about where/how the fill was initiated. For example, if the patient walks in the pharmacy and hands a paper script to the pharmacist, then the source will be Walk-in; if the prescription is routed from EpicCare order entry, then the source will be EpicCare; and if the patient requests a refill through MyChart, then the source will be MyChart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIVR\n\n\nWeb\n\n\nPharmacy\n\n\nAmbulatory\n\n\nDischarge\n\n\nExternal E-Prescription\n\n\nOther\n\n\nTelephone\n\n\nHospital Outpatient\n\n\nSurgery\n\n\nEmergency\n\n\nSystem\n\n\nCall Center\n\n\nReporting Workbench\n\n\nAutomatic Refill\n\n\nPharmacy Front Counter\n\n\nDispense Activity\n\n\nExternal System\n\n\nWillow Home Infusion\n\n\nPrescription Document"
+    },
+    {
+      "index": 83,
+      "name": "FILL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item saves the type of the fill. The first fill on the new prescription will have the type of New; a refill will have the type of Refill; and refill requests will have the type of EpicCare Refill Request or Non-EpicCare Refill Request, depending on whether the authorizing provider is an EpicCare provider.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFirst Fill\n\n\nFill\n\n\nEpicCare Refill Request\n\n\nNon-EpicCare Refill Request\n\n\nFirst Fill from Transfer"
+    },
+    {
+      "index": 95,
+      "name": "FILL_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a order is placed in an integrated pharmacy, a contact is created in the order and all order information is saved to this order contact.   This item saves the current status of the order. An order could have different status. For example, when it's being reviewed, the status will be marked as Reviewed; when it's being filled, its status will be marked as Filled.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nPending Rx Entry\n\n\nScheduled Fill\n\n\nPending Fill\n\n\nFill Rejected\n\n\nWaiting For Approval\n\n\nReady to Fill\n\n\nFill Initiated\n\n\nFilled\n\n\nReady to Verify\n\n\nFill Rejected\n\n\nVerified\n\n\nReady to Package\n\n\nReady to Transport\n\n\nIn Transit\n\n\nReceived\n\n\nWaiting for Filling Pharmacies\n\n\nReady to Dispense\n\n\nForced Dispense Approved\n\n\nDispense Received from External System\n\n\nDispensed\n\n\nShipped\n\n\nDelivered\n\n\nConsult\n\n\nCompleted\n\n\nApproved Refill Request\n\n\nDenied Refill Request\n\n\nProfiled\n\n\nCanceled\n\n\nOrder Edited\n\n\nFlag Removed\n\n\nFill Returned\n\n\nFill Wasted\n\n\nClinically Reviewed\n\n\nClinical Changes Reviewed\n\n\nCharge\n\n\nPayment\n\n\nBagged\n\n\nToted\n\n\nTrucked\n\n\nBoxed\n\n\nPackaged\n\n\nSealed\n\n\nBarcode Scan\n\n\nPatient Notification\n\n\nAbandoned Rx Sale\n\n\nNeeds Tracking Number\n\n\nNo Sale Completed\n\n\nAuthentication\n\n\nPatient Pay Amount Changed\n\n\nInvalidated Billing Item\n\n\nPrescription Revision Needed\n\n\nPrescription Revised\n\n\nIP Dispense Prepared\n\n\nIP Dispense Prep Started\n\n\nIP Dispense Prep Saved Work\n\n\nIP Dispense Prep Pending Final Review\n\n\nIP Reused For Another Dose Dispense Prep\n\n\nIP Reused From Previous Dose Dispense Prep\n\n\nIP Dispense Prep Partial Complete\n\n\nIP Dispense Prep Resumed\n\n\nIP Dispense Prep Stopped\n\n\nIP Dispense Prep Saved on Admin\n\n\nIP Dispense Checked\n\n\nIP Dispense Prep Partial Check\n\n\nIP Dispense Prep Revise\n\n\nIP Dispense Rejected\n\n\nIP Dispense Check Removed\n\n\nIP Dispense Check Started\n\n\nIP Second Dispense Check\n\n\nIP Added to Dispense Queue\n\n\nIP Printed From Dispense Queue\n\n\nIP Removed From Dispense Queue\n\n\nRx Dispense Sent\n\n\nRx Dispense Received\n\n\nRx Cancel Tracking Action\n\n\nIP Dispense Prepared via Interface\n\n\nDownload Request Pending\n\n\nDownload Request Submitted\n\n\nDownload Successful\n\n\nDownload Request Rejected\n\n\nDownload Request Canceled\n\n\nDownload Error\n\n\nDownload Not Attempted\n\n\nSale Completed\n\n\nSale Updated\n\n\nSale Canceled\n\n\nSale Price Override Approved\n\n\nSale Pending\n\n\nFee Sold in POS\n\n\nTax Exemption Applied\n\n\nTax Exemption Removed\n\n\nTax Charge\n\n\nRx Inv Stock Location Overridden\n\n\nRx Inv Stock Location Override Removed\n\n\nNot Dispensed\n\n\nHI Shipment Started\n\n\nHI Shipment Audited \n\n\nHI Dispensed\n\n\nHI Worksheet Printed\n\n\nHI New Revision\n\n\nHI Meds Staged\n\n\nHI Supplies Staged\n\n\nHI Meds Stage Checked\n\n\nHI Supplies Stage Checked\n\n\nHI Staged\n\n\nHI Stage Checked\n\n\nHI Meds Packed\n\n\nHI Supplies Packed\n\n\nHI Packed\n\n\nHI Ready To Ship\n\n\nHI Post Shipment Change\n\n\nHI In Transit\n\n\nHI Delivered\n\n\nHI Complete\n\n\nHI Canceled"
+    },
+    {
+      "index": 218,
+      "name": "FILL_DISP_QTYUNT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the actual amount unit the pharmacy is dispensing. The actual amount dispensed from the pharmacy could be different from the intended quantity, which is what the prescriber intended the patient to receive. The two numbers may be different in the case the patient can only pay for a smaller supply, or the pharmacy may only have a small amount of the medication left to dispense.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nmL\n\n\nL\n\n\nmg\n\n\ng\n\n\nUnits\n\n\nmmol\n\n\nmEq\n\n\nmcg\n\n\n%\n\n\nInt'l Units\n\n\nMillion Units\n\n\nkcal\n\n\nng\n\n\nmg PE\n\n\nmilli-units\n\n\npg\n\n\nKBq\n\n\nMBq\n\n\nGBq\n\n\nmcL\n\n\nmL/min\n\n\nL/min\n\n\nmg/min\n\n\ng/min\n\n\nUnits/min\n\n\nmmol/min\n\n\nmEq/min\n\n\nmcg/min\n\n\nkJ/min\n\n\nInt'l Units/min\n\n\nMillion Units/min\n\n\nkcal/min\n\n\nng/min\n\n\nmg PE/min\n\n\nmilli-units/min\n\n\npg/min\n\n\nKBq/min\n\n\nMBq/min\n\n\nGBq/min\n\n\nmcL/min\n\n\nmL/hr\n\n\nL/hr\n\n\nmg/hr\n\n\ng/hr\n\n\nUnits/hr\n\n\nmmol/hr\n\n\nmEq/hr\n\n\nmcg/hr\n\n\nkJ/hr\n\n\nInt'l Units/hr\n\n\nMillion Units/hr\n\n\nkcal/hr\n\n\nng/hr\n\n\nmg PE/hr\n\n\nmilli-units/hr\n\n\npg/hr\n\n\nKBq/hr\n\n\nMBq/hr\n\n\nGBq/hr\n\n\nmcL/hr\n\n\nmL/day\n\n\nL/day\n\n\nmg/day\n\n\ng/day\n\n\nUnits/day\n\n\nmmol/day\n\n\nmEq/day\n\n\nmcg/day\n\n\nkJ/day\n\n\nInt'l Units/day\n\n\nMillion Units/day\n\n\nkcal/day\n\n\nng/day\n\n\nmg PE/day\n\n\nmilli-units/day\n\n\npg/day\n\n\nInch/day\n\n\nKBq/day\n\n\nMBq/day\n\n\nGBq/day\n\n\nmcL/day\n\n\nIR/day\n\n\nBAU/day\n\n\nPFU/day\n\n\nMillion PFU/day\n\n\nMillion Int'l Units/day\n\n\nKilo Int'l Units/day\n\n\nmL/kg\n\n\nL/kg\n\n\nmg/kg\n\n\ng/kg\n\n\nUnits/kg\n\n\nmmol/kg\n\n\nmEq/kg\n\n\nmcg/kg\n\n\nkJ/kg\n\n\nInt'l Units/kg\n\n\nMillion Units/kg\n\n\nkcal/kg\n\n\nng/kg\n\n\nmg PE/kg\n\n\nmilli-units/kg\n\n\npg/kg\n\n\nmg/kg (Actual)\n\n\nEach/kg\n\n\nPuff/kg\n\n\nPackage/kg\n\n\nDrop/kg\n\n\nInch/kg\n\n\nKBq/kg\n\n\nMBq/kg\n\n\nGBq/kg\n\n\nmcL/kg\n\n\nIR/kg\n\n\nBAU/kg\n\n\nMillion Int'l Units/kg\n\n\nmcmol/kg\n\n\n1e12 Vector Genomes/kg\n\n\nVector Genomes/kg\n\n\nDose/kg\n\n\nmcg DFE/kg\n\n\nKilo Int'l Units/kg\n\n\n1e11 Vector Genomes/kg\n\n\n1e13 Vector Genomes/kg\n\n\n1e14 Vector Genomes/kg\n\n\n1e15 Vector Genomes/kg\n\n\nIR/min\n\n\nBAU/min\n\n\nMillion Int'l Units/min\n\n\nKilo Int'l Units/min\n\n\nIR/hr\n\n\nBAU/hr\n\n\nMillion Int'l Units/hr\n\n\nKilo Int'l Units/hr\n\n\nmL/mL\n\n\nL/mL\n\n\nmg/mL\n\n\ng/mL\n\n\nUnits/mL\n\n\nmmol/mL\n\n\nmEq/mL\n\n\nmcg/mL\n\n\nkJ/mL\n\n\nInt'l Units/mL\n\n\nMillion Units/mL\n\n\nkcal/mL\n\n\nng/mL\n\n\nmg PE/mL\n\n\nmilli-units/mL\n\n\npg/mL\n\n\nKBq/mL\n\n\nMBq/mL\n\n\nGBq/mL\n\n\nmcL/mL\n\n\nIR/mL\n\n\nBAU/mL\n\n\nPFU/mL\n\n\nMillion PFU/mL\n\n\nMillion Int'l Units/mL\n\n\nmcmol/mL\n\n\n1e12 Vector Genomes/mL\n\n\nVector Genomes/mL\n\n\nKilo Int'l Units/mL\n\n\n1e11 Vector Genomes/mL\n\n\n1e13 Vector Genomes/mL\n\n\n1e14 Vector Genomes/mL\n\n\n1e15 Vector Genomes/mL\n\n\nmillicurie/mL\n\n\nmL/L\n\n\nL/L\n\n\nmg/L\n\n\ng/L\n\n\nUnits/L\n\n\nmmol/L\n\n\nmEq/L\n\n\nmcg/L\n\n\nkJ/L\n\n\nInt'l Units/L\n\n\nMillion Units/L\n\n\nkcal/L\n\n\nng/L\n\n\nmg PE/L\n\n\nmilli-units/L\n\n\npg/L\n\n\nKBq/L\n\n\nMBq/L\n\n\nGBq/L\n\n\nmcL/L\n\n\nIR/L\n\n\nBAU/L\n\n\nMillion Int'l Units/L\n\n\nKilo Int'l Units/L\n\n\nmL/m2\n\n\nL/m2\n\n\nmg/m2\n\n\ng/m2\n\n\nUnits/m2\n\n\nmmol/m2\n\n\nmEq/m2\n\n\nmcg/m2\n\n\nkJ/m2\n\n\nInt'l Units/m2\n\n\nMillion Units/m2\n\n\nkcal/m2\n\n\nng/m2\n\n\nmg PE/m2\n\n\nmilli-units/m2\n\n\npg/m2\n\n\nmg/m2 (Actual)\n\n\nEach/m2\n\n\nPuff/m2\n\n\nPackage/m2\n\n\nDrop/m2\n\n\nKBq/m2\n\n\nMBq/m2\n\n\nGBq/m2\n\n\nmcL/m2\n\n\nIR/m2\n\n\nBAU/m2\n\n\nMillion Int'l Units/m2\n\n\nmcmol/m2\n\n\n1e12 Vector Genomes/m2\n\n\nVector Genomes/m2\n\n\nKilo Int'l Units/m2\n\n\n1e11 Vector Genomes/m2\n\n\n1e13 Vector Genomes/m2\n\n\n1e14 Vector Genomes/m2\n\n\n1e15 Vector Genomes/m2\n\n\nmL/1.7m2\n\n\nL/1.7m2\n\n\nmg/1.7m2\n\n\ng/1.7m2\n\n\nUnits/1.7m2\n\n\nmmol/1.7m2\n\n\nmEq/1.7m2\n\n\nmcg/1.7m2\n\n\nkJ/1.7m2\n\n\nInt'l Units/1.7m2\n\n\nMillion Units/1.7m2\n\n\nkcal/1.7m2\n\n\nng/1.7m2\n\n\nmg PE/1.7m2\n\n\nmilli-units/1.7m2\n\n\npg/1.7m2\n\n\nEach/1.7m2\n\n\nKBq/1.7m2\n\n\nMBq/1.7m2\n\n\nGBq/1.7m2\n\n\nmcL/1.7m2\n\n\nIR/1.7m2\n\n\nBAU/1.7m2\n\n\nMillion Int'l Units/1.7m2\n\n\nKilo Int'l Units/1.7m2\n\n\nmL/kg (IDL)\n\n\nL/kg (IDL)\n\n\nmg/kg (IDL)\n\n\ng/kg (IDL)\n\n\nUnits/kg (IDL)\n\n\nmmol/kg (IDL)\n\n\nmEq/kg (IDL)\n\n\nmcg/kg (IDL)\n\n\nInt'l Units/kg (IDL)\n\n\nMillion Units/kg (IDL)\n\n\nKcal/kg (IDL)\n\n\nng/kg (IDL)\n\n\nmg PE/kg (IDL)\n\n\nmilli-units/kg (IDL)\n\n\npg/kg (IDL)\n\n\nmg/m2 (IDL)\n\n\nmL/kg (ADJ)\n\n\nL/kg (ADJ)\n\n\nmg/kg (ADJ)\n\n\ng/kg (ADJ)\n\n\nUnits/kg (ADJ)\n\n\nmmol/kg (ADJ)\n\n\nmEq/kg (ADJ)\n\n\nmcg/kg (ADJ)\n\n\nInt'l Units/kg (ADJ)\n\n\nMillion Units/kg (ADJ)\n\n\nKcal/kg (ADJ)\n\n\nng/kg (ADJ)\n\n\nmg PE/kg (ADJ)\n\n\nmilli-units/kg (ADJ)\n\n\npg/kg (ADJ)\n\n\nmg/m2 (ADJ)\n\n\nmL/100 mL\n\n\nL/100 mL\n\n\nmg/100 mL\n\n\ng/100 mL\n\n\nUnits/100 mL\n\n\nmmol/100 mL\n\n\nmEq/100 mL\n\n\nmcg/100 mL\n\n\nkJ/100 mL\n\n\nInt'l Units/100 mL\n\n\nMillion Units/100 mL\n\n\nkcal/100 mL\n\n\nng/100 mL\n\n\nmg PE/100 mL\n\n\nmilli-units/100 mL\n\n\npg/100 mL\n\n\nKBq/100 mL\n\n\nMBq/100 mL\n\n\nGBq/100 mL\n\n\nmcL/100 mL\n\n\nIR/100 mL\n\n\nBAU/100 mL\n\n\nMillion Int'l Units/100 mL\n\n\nKilo Int'l Units/100 mL\n\n\nmL/oz\n\n\nL/oz\n\n\nmg/oz\n\n\ng/oz\n\n\nUnits/oz\n\n\nmmol/oz\n\n\nmEq/oz\n\n\nmcg/oz\n\n\nkJ/oz\n\n\nInt'l Units/oz\n\n\nMillion Units/oz\n\n\nkcal/oz\n\n\nng/oz\n\n\nmg PE/oz\n\n\nmilli-units/oz\n\n\npg/oz\n\n\nKBq/oz\n\n\nMBq/oz\n\n\nGBq/oz\n\n\nmcL/oz\n\n\nIR/oz\n\n\nBAU/oz\n\n\nMillion Int'l Units/oz\n\n\nKilo Int'l Units/oz\n\n\nmL/kg/min\n\n\nL/kg/min\n\n\nmg/kg/min\n\n\ng/kg/min\n\n\nUnits/kg/min\n\n\nmmol/kg/min\n\n\nmEq/kg/min\n\n\nmcg/kg/min\n\n\nkJ/kg/min\n\n\nInt'l Units/kg/min\n\n\nMillion Units/kg/min\n\n\nkcal/kg/min\n\n\nng/kg/min\n\n\nmg PE/kg/min\n\n\nmilli-units/kg/min\n\n\npg/kg/min\n\n\nKBq/kg/min\n\n\nMBq/kg/min\n\n\nGBq/kg/min\n\n\nmcL/kg/min\n\n\nmL/kg/min (IDL)\n\n\nL/kg/min (IDL)\n\n\nmg/kg/min (IDL)\n\n\ng/kg/min (IDL)\n\n\nUnits/kg/min (IDL)\n\n\nmmol/kg/min (IDL)\n\n\nmEq/kg/min (IDL)\n\n\nmcg/kg/min (IDL)\n\n\nInt'l Units/kg/min (IDL)\n\n\nMillion Units/kg/min (IDL)\n\n\nKcal/kg/min (IDL)\n\n\nng/kg/min (IDL)\n\n\nmg PE/kg/min (IDL)\n\n\nmilli-units/kg/min (IDL)\n\n\npg/kg/min (IDL)\n\n\nmL/kg/min (ADJ)\n\n\nL/kg/min (ADJ)\n\n\nmg/kg/min (ADJ)\n\n\ng/kg/min (ADJ)\n\n\nUnits/kg/min (ADJ)\n\n\nmmol/kg/min (ADJ)\n\n\nmEq/kg/min (ADJ)\n\n\nmcg/kg/min (ADJ)\n\n\nInt'l Units/kg/min (ADJ)\n\n\nMillion Units/kg/min (ADJ)\n\n\nKcal/kg/min (ADJ)\n\n\nng/kg/min (ADJ)\n\n\nmg PE/kg/min (ADJ)\n\n\nmilli-units/kg/min (ADJ)\n\n\npg/kg/min (ADJ)\n\n\nIR/kg/min\n\n\nBAU/kg/min\n\n\nMillion Int'l Units/kg/min\n\n\nKilo Int'l Units/kg/min\n\n\nmL/m2/min\n\n\nL/m2/min\n\n\nmg/m2/min\n\n\ng/m2/min\n\n\nUnits/m2/min\n\n\nmmol/m2/min\n\n\nmEq/m2/min\n\n\nmcg/m2/min\n\n\nkJ/m2/min\n\n\nInt'l Units/m2/min\n\n\nMillion Units/m2/min\n\n\nkcal/m2/min\n\n\nng/m2/min\n\n\nmg PE/m2/min\n\n\nmilli-units/m2/min\n\n\npg/m2/min\n\n\nKBq/m2/min\n\n\nMBq/m2/min\n\n\nGBq/m2/min\n\n\nmcL/m2/min\n\n\nmL/1.7m2/min\n\n\nL/1.7m2/min\n\n\nmg/1.7m2/min\n\n\ng/1.7m2/min\n\n\nUnits/1.7m2/min\n\n\nmmol/1.7m2/min\n\n\nmEq/1.7m2/min\n\n\nmcg/1.7m2/min\n\n\nkJ/1.7m2/min\n\n\nInt'l Units/1.7m2/min\n\n\nMillion Units/1.7m2/min\n\n\nkcal/1.7m2/min\n\n\nng/1.7m2/min\n\n\nmg PE/1.7m2/min\n\n\nmilli-units/1.7m2/min\n\n\npg/1.7m2/min\n\n\nKBq/1.7m2/min\n\n\nMBq/1.7m2/min\n\n\nGBq/1.7m2/min\n\n\nmSv\n\n\nmGy\n\n\nmcL/1.7m2/min\n\n\nIR/m2/min\n\n\nBAU/m2/min\n\n\nMillion Int'l Units/m2/min\n\n\nKilo Int'l Units/m2/min\n\n\nIR/1.7m2/min\n\n\nBAU/1.7m2/min\n\n\nMillion Int'l Units/1.7m2/min\n\n\nKilo Int'l Units/1.7m2/min\n\n\nmL/kg/hr\n\n\nL/kg/hr\n\n\nmg/kg/hr\n\n\ng/kg/hr\n\n\nUnits/kg/hr\n\n\nmmol/kg/hr\n\n\nmEq/kg/hr\n\n\nmcg/kg/hr\n\n\nkJ/kg/hr\n\n\nInt'l Units/kg/hr\n\n\nMillion Units/kg/hr\n\n\nkcal/kg/hr\n\n\nng/kg/hr\n\n\nmg PE/kg/hr\n\n\nmilli-units/kg/hr\n\n\npg/kg/hr\n\n\nKBq/kg/hr\n\n\nMBq/kg/hr\n\n\nGBq/kg/hr\n\n\nmcL/kg/hr\n\n\nmL/kg/hr (IDL)\n\n\nL/kg/hr (IDL)\n\n\nmg/kg/hr (IDL)\n\n\ng/kg/hr (IDL)\n\n\nUnits/kg/hr (IDL)\n\n\nmmol/kg/hr (IDL)\n\n\nmEq/kg/hr (IDL)\n\n\nmcg/kg/hr (IDL)\n\n\nInt'l Units/kg/hr (IDL)\n\n\nMillion Units/kg/hr (IDL)\n\n\nKcal/kg/hr (IDL)\n\n\nng/kg/hr (IDL)\n\n\nmg PE/kg/hr (IDL)\n\n\nmilli-units/kg/hr (IDL)\n\n\npg/kg/hr (IDL)\n\n\nmL/kg/hr (ADJ)\n\n\nL/kg/hr (ADJ)\n\n\nmg/kg/hr (ADJ)\n\n\ng/kg/hr (ADJ)\n\n\nUnits/kg/hr (ADJ)\n\n\nmmol/kg/hr (ADJ)\n\n\nmEq/kg/hr (ADJ)\n\n\nmcg/kg/hr (ADJ)\n\n\nInt'l Units/kg/hr (ADJ)\n\n\nMillion Units/kg/hr (ADJ)\n\n\nKcal/kg/hr (ADJ)\n\n\nng/kg/hr (ADJ)\n\n\nmg PE/kg/hr (ADJ)\n\n\nmilli-units/kg/hr (ADJ)\n\n\npg/kg/hr (ADJ)\n\n\nIR/kg/hr\n\n\nBAU/kg/hr\n\n\nMillion Int'l Units/kg/hr\n\n\nKilo Int'l Units/kg/hr\n\n\nmL/m2/hr\n\n\nL/m2/hr\n\n\nmg/m2/hr\n\n\ng/m2/hr\n\n\nUnits/m2/hr\n\n\nmmol/m2/hr\n\n\nmEq/m2/hr\n\n\nmcg/m2/hr\n\n\nkJ/m2/hr\n\n\nInt'l Units/m2/hr\n\n\nMillion Units/m2/hr\n\n\nkcal/m2/hr\n\n\nng/m2/hr\n\n\nmg PE/m2/hr\n\n\nmilli-units/m2/hr\n\n\npg/m2/hr\n\n\nKBq/m2/hr\n\n\nMBq/m2/hr\n\n\nGBq/m2/hr\n\n\nmcL/m2/hr\n\n\nmL/1.7m2/hr\n\n\nL/1.7m2/hr\n\n\nmg/1.7m2/hr\n\n\ng/1.7m2/hr\n\n\nUnits/1.7m2/hr\n\n\nmmol/1.7m2/hr\n\n\nmEq/1.7m2/hr\n\n\nmcg/1.7m2/hr\n\n\nkJ/1.7m2/hr\n\n\nInt'l Units/1.7m2/hr\n\n\nMillion Units/1.7m2/hr\n\n\nkcal/1.7m2/hr\n\n\nng/1.7m2/hr\n\n\nmg PE/1.7m2/hr\n\n\nmilli-units/1.7m2/hr\n\n\npg/1.7m2/hr\n\n\nKBq/1.7m2/hr\n\n\nMBq/1.7m2/hr\n\n\nGBq/1.7m2/hr\n\n\nmcL/1.7m2/hr\n\n\nIR/1.7m2/hr\n\n\nBAU/1.7m2/hr\n\n\nMillion Int'l Units/1.7m2/hr\n\n\nKilo Int'l Units/1.7m2/hr\n\n\nIR/m2/hr\n\n\nBAU/m2/hr\n\n\nMillion Int'l Units/m2/hr\n\n\nKilo Int'l Units/m2/hr\n\n\nmL/kg/day\n\n\nL/kg/day\n\n\nmg/kg/day\n\n\ng/kg/day\n\n\nUnits/kg/day\n\n\nmmol/kg/day\n\n\nmEq/kg/day\n\n\nmcg/kg/day\n\n\nkJ/kg/day\n\n\nInt'l Units/kg/day\n\n\nMillion Units/kg/day\n\n\nkcal/kg/day\n\n\nng/kg/day\n\n\nmg PE/kg/day\n\n\nmilli-units/kg/day\n\n\npg/kg/day\n\n\nInch/kg/day\n\n\nKBq/kg/day\n\n\nMBq/kg/day\n\n\nGBq/kg/day\n\n\nmL/kg/day (IDL)\n\n\nL/kg/day (IDL)\n\n\nmg/kg/day (IDL)\n\n\ng/kg/day (IDL)\n\n\nUnits/kg/day (IDL)\n\n\nmmol/kg/day (IDL)\n\n\nmEq/kg/day (IDL)\n\n\nmcg/kg/day (IDL)\n\n\nInt'l Units/kg/day (IDL)\n\n\nMillion Units/kg/day (IDL)\n\n\nKcal/kg/day (IDL)\n\n\nng/kg/day (IDL)\n\n\nmg PE/kg/day (IDL)\n\n\nmilli-units/kg/day (IDL)\n\n\npg/kg/day (IDL)\n\n\nmL/kg/day (ADJ)\n\n\nL/kg/day (ADJ)\n\n\nmg/kg/day (ADJ)\n\n\ng/kg/day (ADJ)\n\n\nUnits/kg/day (ADJ)\n\n\nmmol/kg/day (ADJ)\n\n\nmEq/kg/day (ADJ)\n\n\nmcg/kg/day (ADJ)\n\n\nInt'l Units/kg/day (ADJ)\n\n\nMillion Units/kg/day (ADJ)\n\n\nKcal/kg/day (ADJ)\n\n\nng/kg/day (ADJ)\n\n\nmg PE/kg/day (ADJ)\n\n\nmilli-units/kg/day (ADJ)\n\n\npg/kg/day (ADJ)\n\n\nmcL/kg/day\n\n\nIR/kg/day\n\n\nBAU/kg/day\n\n\nMillion Int'l Units/kg/day\n\n\nmL/m2/day\n\n\nL/m2/day\n\n\nmg/m2/day\n\n\ng/m2/day\n\n\nUnits/m2/day\n\n\nmmol/m2/day\n\n\nmEq/m2/day\n\n\nmcg/m2/day\n\n\nkJ/m2/day\n\n\nInt'l Units/m2/day\n\n\nMillion Units/m2/day\n\n\nkcal/m2/day\n\n\nng/m2/day\n\n\nmg PE/m2/day\n\n\nmilli-units/m2/day\n\n\npg/m2/day\n\n\nKBq/m2/day\n\n\nMBq/m2/day\n\n\nGBq/m2/day\n\n\nmcL/m2/day\n\n\nmL/1.7m2/day\n\n\nL/1.7m2/day\n\n\nmg/1.7m2/day\n\n\ng/1.7m2/day\n\n\nUnits/1.7m2/day\n\n\nmmol/1.7m2/day\n\n\nmEq/1.7m2/day\n\n\nmcg/1.7m2/day\n\n\nkJ/1.7m2/day\n\n\nInt'l Units/1.7m2/day\n\n\nMillion Units/1.7m2/day\n\n\nkcal/1.7m2/day\n\n\nng/1.7m2/day\n\n\nmg PE/1.7m2/day\n\n\nmilli-units/1.7m2/day\n\n\npg/1.7m2/day\n\n\nKBq/1.7m2/day\n\n\nMBq/1.7m2/day\n\n\nGBq/1.7m2/day\n\n\nmcL/1.7m2/day\n\n\nmL/oz/day\n\n\nL/oz/day\n\n\nmg/oz/day\n\n\ng/oz/day\n\n\nUnits/oz/day\n\n\nmmol/oz/day\n\n\nmEq/oz/day\n\n\nmcg/oz/day\n\n\nkJ/oz/day\n\n\nInt'l Units/oz/day\n\n\nMillion Units/oz/day\n\n\nkcal/oz/day\n\n\nng/oz/day\n\n\nmg PE/oz/day\n\n\nmilli-units/oz/day\n\n\npg/oz/day\n\n\nKBq/oz/day\n\n\nMBq/oz/day\n\n\nGBq/oz/day\n\n\nmcL/oz/day\n\n\nIR/m2/day\n\n\nBAU/m2/day\n\n\nMillion Int'l Units/m2/day\n\n\nKilo Int'l Units/m2/day\n\n\nIR/1.7m2/day\n\n\nBAU/1.7m2/day\n\n\nMillion Int'l Units/1.7m2/day\n\n\nKilo Int'l Units/1.7m2/day\n\n\nIR/oz/day\n\n\nBAU/oz/day\n\n\nMillion Int'l Units/oz/day\n\n\nKilo Int'l Units/oz/day\n\n\nkJ/30 mL\n\n\nkcal/30 mL\n\n\nGy-cm2\n\n\nmL/cm2\n\n\nmg/cm2\n\n\nmOsmol\n\n\neach\n\n\ntablet\n\n\ncapsule\n\n\ndrop\n\n\ntsp\n\n\npuff\n\n\nsuppository\n\n\nspray\n\n\nSquirt\n\n\ninch\n\n\npatch\n\n\nAct\n\n\nampule\n\n\nBar\n\n\nBottle\n\n\nCan\n\n\nDevice\n\n\nenema\n\n\nGallon\n\n\nInhaler\n\n\nkit\n\n\nlb\n\n\nlozenge\n\n\noz\n\n\npacket\n\n\nStick\n\n\nstrip\n\n\nTbsp\n\n\nTube\n\n\nvial\n\n\nWafer\n\n\nContainer\n\n\nSyringe\n\n\nPackage\n\n\napplicator\n\n\ncm\n\n\nApplicatorful\n\n\nTroche\n\n\nmillicurie\n\n\nIntra Uterine Device\n\n\nPart\n\n\nm\n\n\nFilm\n\n\nMillion Cells\n\n\nDose\n\n\nmm\n\n\nIR\n\n\nBAU\n\n\nkg\n\n\ncm2\n\n\nImperial Gallon\n\n\nkJ\n\n\nPFU\n\n\nPiece\n\n\nMillion PFU\n\n\nDoses/Fill\n\n\nCartridge\n\n\nThousand Units\n\n\nLipoprotein Lipase Releasing Unit\n\n\nScoop\n\n\nMillion Int'l Units\n\n\nmm2\n\n\nPump\n\n\nfluid ounce\n\n\nProduct\n\n\nBag\n\n\nmcmol\n\n\n1e12 Vector Genomes\n\n\nVector Genomes\n\n\nmillicurie/kg\n\n\nmillicurie/m2\n\n\nmillicurie/1.7m2\n\n\nmicrocurie\n\n\nmicrocurie/kg\n\n\nmicrocurie/m2\n\n\nmicrocurie/1.7m2\n\n\nCanister\n\n\nmcg DFE\n\n\nBillion Cells\n\n\nApplication\n\n\nBox\n\n\nCapful\n\n\nInhalation\n\n\nLancet\n\n\nNeedle\n\n\nPad\n\n\nPen\n\n\nPiece of gum\n\n\nRing\n\n\nSwab\n\n\nSachet\n\n\nImplant\n\n\nInsert\n\n\nPools\n\n\nKilo Int'l Units\n\n\nKilo Int'l Units/kg/day\n\n\n1e11 Vector Genomes\n\n\n1e13 Vector Genomes\n\n\n1e14 Vector Genomes\n\n\n1e15 Vector Genomes\n\n\nCells\n\n\nNone / Other"
+    },
+    {
+      "index": 998,
+      "name": "FILL_INT_QTY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the amount the prescriber intended the patient to receive. In the case of a partial fill, the patient can only pay for a smaller supply or the pharmacy may only have a small amount of the medication left to dispense, and this actual dispense amount is saved in the dispense quantity."
+    },
+    {
+      "index": 1003,
+      "name": "FILL_INT_QTYUNT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the amount unit the prescriber intended the patient to receive. In the case of a partial fill, the patient can only pay for a smaller supply or the pharmacy may only have a small amount of the medication left to dispense, and this actual dispense amount is saved in the dispense quantity.\n\n\n The category values for this column were already listed for column: FILL_DISP_QTYUNT_C_NAME"
+    },
+    {
+      "index": 1009,
+      "name": "CHG_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item indicates the current charging status of the fill. It is used to track if the payor has agreed to pay the pharmacy for this fill.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Attempted\n\n\nPending\n\n\nSuccess\n\n\nFailure\n\n\nCash\n\n\nCharge Recalculation Needed\n\n\nIn Progress"
+    },
+    {
+      "index": 1023,
+      "name": "CASH_PRICE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The cash price for this order."
+    },
+    {
+      "index": 1028,
+      "name": "RX_TO_PHRM_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the user that authorized the incoming prescription transfer (typically a pharmacist) when the user exists in the User (EMP) master file."
+    },
+    {
+      "index": 1033,
+      "name": "RX_TO_PHRM_USERNAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the name of the user that authorized the incoming prescription transfer (typically a pharmacist) when the user does not exist in the User (EMP) master file."
+    },
+    {
+      "index": 1038,
+      "name": "RX_FRM_PHRM_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the user that authorized the outgoing prescription transfer (typically a pharmacist) when the user exists in the User (EMP) master file."
+    },
+    {
+      "index": 1043,
+      "name": "RX_FRM_PHRM_USERNAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the name of the user that authorized the outgoing prescription transfer (typically a pharmacist) when the user does not exist in the User (EMP) master file."
+    },
+    {
+      "index": 1048,
+      "name": "RX_FRM_PHRM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the pharmacy from which the prescription was transferred when the pharmacy exists in the Pharmacy (PHR) master file."
+    },
+    {
+      "index": 1053,
+      "name": "RX_FRM_PHRM_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the name of the pharmacy from which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
+    },
+    {
+      "index": 1058,
+      "name": "RX_FRM_PHRM_PHNUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the phone number of the pharmacy from which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
+    },
+    {
+      "index": 1063,
+      "name": "RX_TO_PHRM_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the name of the pharmacy to which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
+    },
+    {
+      "index": 1068,
+      "name": "RX_TO_PHRM_PHNUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the phone number of the pharmacy to which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
+    },
+    {
+      "index": 1073,
+      "name": "RX_TRANSFER_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "These are the comments that are entered along with the prescription transfer."
+    },
+    {
+      "index": 1078,
+      "name": "PAT_PAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the expected payment amount for this order. This can be calculated by the system and optionally overridden by the user. If the patient pay amount was overridden, then the override amount is stored here."
+    },
+    {
+      "index": 1083,
+      "name": "FILL_PKG_DISPQTY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of packages dispensed for this fill."
+    },
+    {
+      "index": 1088,
+      "name": "FILL_NDC_CSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the package (NDC) contact serial number (CSN) for the dispensed medication."
+    },
+    {
+      "index": 1093,
+      "name": "DISP_WHOLE_PKG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Is the medication order dispensed in whole packages or not. This item is set to Yes when the order is dispensed as a whole package and does not apply for the orders merely dispensed in multiple packages.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 1102,
+      "name": "HAS_RX_FLAGS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This indicates whether the fill request currently has any flags. Fill requests with flags appear in the flagged orders queue in Ambulatory Pharmacy.\n\n\n The category values for this column were already listed for column: FILL_IS_PARTIAL_YN"
+    },
+    {
+      "index": 1108,
+      "name": "DAW_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for dispense as written (DAW) reason. It can be specified when dispensing a brand package (NDC) for a prescription fill.  This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo Product Selection Indicated\n\n\nPrescriber Requested\n\n\nPatient Requested\n\n\nPharmacist Selected\n\n\nGeneric Not in Stock\n\n\nBrand Dispensed as Generic\n\n\nOverride\n\n\nBrand Mandated by Law\n\n\nGeneric Not Available in Marketplace\n\n\nSubstitution Allowed By Prescriber but Plan Requests Brand - Patient's Plan Requested"
+    }
+  ]
+}

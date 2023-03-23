@@ -1,0 +1,52 @@
+{
+  "table_name": "HSP_BDC_LINE_MODIFIERS",
+  "description": "This table extracts the comma-delimited list of modifiers that is stored in the Line Modifier (I BDC 291) item for line-level denials. This table will contain one row for each modifier that exists in the list.",
+  "primary_key": {
+    "column_name": "BDC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "BDC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the denial or correspondence record."
+    },
+    {
+      "index": 7,
+      "name": "LINE_COUNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Line number of denial data. There can be multiple lines of denial data and this is the number of the line that enterprise reporting is extracting."
+    },
+    {
+      "index": 12,
+      "name": "MOD_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Multiple modifiers can be associated with a specific line on a denial, and this calculated number acts as a unique identifier for an associated modifier."
+    },
+    {
+      "index": 17,
+      "name": "EXT_MODIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the external identifier for the associated modifier record."
+    },
+    {
+      "index": 22,
+      "name": "MODIFIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique internal identifier for the associated modifier."
+    },
+    {
+      "index": 27,
+      "name": "MODIFIER_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    }
+  ]
+}

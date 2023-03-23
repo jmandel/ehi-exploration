@@ -1,0 +1,66 @@
+{
+  "table_name": "HH_MEDS_ADDL_INFO",
+  "description": "The HH_MEDS_ADDL_INFO table contains information specific to Home Health/Hospice medications. This includes the hospice coverage status of a medication.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The item stores the patient (EPT) contact serial number (CSN) associated with the update to the order's additional info."
+    },
+    {
+      "index": 17,
+      "name": "ENTRY_EMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user that updated an order's additional info"
+    },
+    {
+      "index": 22,
+      "name": "ENTRY_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant that the additional information was synchronized from the Remote Client"
+    },
+    {
+      "index": 27,
+      "name": "HSPC_CVG_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the hospice coverage status of a medication which helps to determine if the Hospice is responsible for paying for a medication\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHospice Covered\n\n\nNot Hospice Covered"
+    },
+    {
+      "index": 36,
+      "name": "TAKING_DIFF_POC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether or not for this order (ORD) that the patient taking different sig should be pulled on to the Plan of Care (POC).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 45,
+      "name": "HSPC_NONCVRD_MED_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the reason why a medication is not covered by the hospice benefit.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+    }
+  ]
+}

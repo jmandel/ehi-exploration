@@ -1,0 +1,129 @@
+{
+  "table_name": "RX_DEFERRAL_HISTORY",
+  "description": "This table stores the deferrals that pharmacists have created when reviewing scoring system rules. Each row is a deferral.",
+  "primary_key": {
+    "column_name": "INTERVENTION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "INTERVENTION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the intervention record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "DEFERRAL_ISACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the current line is an active deferral for this deferral record. 'Y' indicates that the deferral is active. ('N' or NULL) indicates the deferral is not active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 21,
+      "name": "DEFERRAL_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order record that is being deferred. The rule isn't triggered for this order, but other orders still trigger the rule."
+    },
+    {
+      "index": 26,
+      "name": "DEFERRAL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for the user who created the deferral."
+    },
+    {
+      "index": 31,
+      "name": "DEFERRAL_START_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the deferral was created."
+    },
+    {
+      "index": 36,
+      "name": "DEFFERAL_END_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the deferral record will end or was scheduled to end if the deferral is no longer active."
+    },
+    {
+      "index": 41,
+      "name": "SCORE_DEFERRED_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The score of the rule at the time of deferral."
+    },
+    {
+      "index": 46,
+      "name": "DEFERRAL_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deferral reason category ID for the deferral record.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 52,
+      "name": "DEFERRAL_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comments associated with the deferral."
+    },
+    {
+      "index": 57,
+      "name": "MINUTES_SPENT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The amount of time a user spent on an individual deferral."
+    },
+    {
+      "index": 62,
+      "name": "FUTURE_WARNING_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the deferral will be cleared if an associated rule or order is updated.\n\n\n The category values for this column were already listed for column: DEFERRAL_ISACTIVE_YN"
+    },
+    {
+      "index": 68,
+      "name": "CLEARED_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deferral cleared reason category ID for the deferral record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScore Changed\n\n\nDeferral Updated\n\n\nCleared By User\n\n\nRule failed to run\n\n\nRule Changed\n\n\nOrder Modified\n\n\nTime Expired\n\n\nPatient Discharged"
+    },
+    {
+      "index": 83,
+      "name": "CLEARED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the deferral record was cleared."
+    },
+    {
+      "index": 88,
+      "name": "CLEARED_SCORE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The score of the rule when the deferral was cleared. This item is only populated if the deferral was cleared because the score changed."
+    },
+    {
+      "index": 93,
+      "name": "CLEARED_BY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for the user who cleared the deferral."
+    },
+    {
+      "index": 98,
+      "name": "CLEARED_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the reason that a deferral was cleared. This item gets automatically updated by code when a deferral is cleared."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "table_name": "TX_APPROVAL_HX",
+  "description": "This table will display the approval history for transactions.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital billing transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "APRV_HX_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant that the user worked the hospital temporary transaction before the adjustment was completed."
+    },
+    {
+      "index": 17,
+      "name": "APRV_HX_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status given to the approval.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproved\n\n\nDeclined\n\n\nHeld"
+    },
+    {
+      "index": 27,
+      "name": "APRV_HX_LVL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the status that was on the hospital temporary transaction when a user worked it.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLevel 1\n\n\nLevel 2\n\n\nLevel 3\n\n\nLevel 4\n\n\nLevel 5"
+    },
+    {
+      "index": 39,
+      "name": "APRV_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the user who worked the hospital temporary transaction."
+    },
+    {
+      "index": 44,
+      "name": "APRV_HX_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the comment entered when approving/rejecting/holding the hospital temporary transaction."
+    }
+  ]
+}

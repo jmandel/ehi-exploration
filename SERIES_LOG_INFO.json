@@ -1,0 +1,73 @@
+{
+  "table_name": "SERIES_LOG_INFO",
+  "description": "Table to store the audit log information for questionnaire series answer records. The audit log contains data such as the last update instant, date, action, questionnaire ID, User (EMP) ID, and Patient Access Account (WPR) ID.",
+  "primary_key": {
+    "column_name": "SERIES_ANS_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SERIES_ANS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the series answer record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "SRS_ACTION_INS_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column is used to store the instant when there is a update on this record."
+    },
+    {
+      "index": 17,
+      "name": "SRS_ACTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column is used to store the action date for this questionnaire series."
+    },
+    {
+      "index": 22,
+      "name": "SRS_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store the actions taken for this questionnaire series.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEnable Series - Provider\n\n\nEnable Series - Reporting Workbench\n\n\nEnable Series - BPA\n\n\nEnable Series - UnMerge\n\n\nEnable Series - Pending\n\n\nEnable Series - Procedure Pass\n\n\nEnable Series - Research Automatic Assignment\n\n\nEnable Series - Research Activity Assignment\n\n\nDisable Series - Provider\n\n\nDisable Series - Reporting Workbench\n\n\nDisable Series - Merge\n\n\nDisable Series - Contact Mover\n\n\nDisable Series - Batch Job\n\n\nDisable Series - Patient Opted Out\n\n\nDisable Series - Found New Treatment\n\n\nDisable Series - Procedure Pass\n\n\nDisable Series - Patient Expired\n\n\nDisable Series - Research Activity Retraction\n\n\nEnable Questionnaire\n\n\nDisable Questionnaire\n\n\nSend Questionnaire Reminder\n\n\nCompleted"
+    },
+    {
+      "index": 51,
+      "name": "SRS_ACT_QUESR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store the questionnaire ID for the audit action"
+    },
+    {
+      "index": 56,
+      "name": "SRS_ACT_QUESR_ID_FORM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the form associated with the questionnaire."
+    },
+    {
+      "index": 61,
+      "name": "SRS_ACT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store who made this action."
+    },
+    {
+      "index": 66,
+      "name": "SRS_ACT_WPR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the web portal ID of the user who answered the questionnaire."
+    }
+  ]
+}

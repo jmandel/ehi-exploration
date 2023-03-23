@@ -1,0 +1,66 @@
+{
+  "table_name": "CL_QANSWER_AUDIT",
+  "description": "This column stores audit items which detail how patient-entered questionnaire responses were submitted.",
+  "primary_key": {
+    "column_name": "ANSWER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ANSWER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the answer record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ANSWER_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the method/application by which patient-entered questionnaire responses were saved or updated (e.g. MyChart and/or Welcome).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMyChart\n\n\nWelcome\n\n\nEpicCare\n\n\nMyChart Bedside\n\n\nFHIR\n\n\nBedside in MyChart Mobile"
+    },
+    {
+      "index": 25,
+      "name": "ANSWER_DTTM_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the instant at which patient-entered questionnaire responses were saved or updated."
+    },
+    {
+      "index": 30,
+      "name": "ANSWER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When applicable, this column stores EpicCare users who saved or updated patient-entered questionnaire responses on behalf of patients."
+    },
+    {
+      "index": 35,
+      "name": "ANSWER_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the MyChart user ID who last updated the questionnaire answers."
+    },
+    {
+      "index": 40,
+      "name": "ANSWER_PAT_REL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the relationship to the patient of the user who last updated the questionnaire answers on behalf of the patient.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 46,
+      "name": "ANSWER_BY_KIOSK_PAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a questionnaire that was answered in Welcome was answered by the patient or a patient representative. 'Y' indicates that the questionnaire was answered by the patient. 'N' indicates that the questionnaire was answered by a patient representative. NULL indicates that the questionnaire was not answered in Welcome.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

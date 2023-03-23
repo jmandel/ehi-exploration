@@ -1,0 +1,45 @@
+{
+  "table_name": "PAT_ENC_BILLING_ENC",
+  "description": "This table contains encounter-specific data related to Billing Encounters.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 12,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 17,
+      "name": "POS_TYPE_OVRIDE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Place of service type override for Billing Encounters. If empty, the place of service type is determined by the type set in the facility record (EAF) contained in the Visit Place of Service (I EPT 5617).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 75,
+      "name": "BILL_ENC_IS_VOID_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a Billing Encounter has been marked as voided. For example, if a user creates a Billing Encounter for a patient in error, the user can correct that error by marking the Billing Encounter as voided.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

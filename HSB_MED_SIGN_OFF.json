@@ -1,0 +1,59 @@
+{
+  "table_name": "HSB_MED_SIGN_OFF",
+  "description": "Contains information about the users involved in medication sign off \n\n\nworkflows, the actions they took, and when it occurred.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the Episode."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AN_MED_REVIEWER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the ID of the user who was involved in the medication review process."
+    },
+    {
+      "index": 17,
+      "name": "MED_REVIEW_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the current status of the medication review.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMessage Sent\n\n\nSign Off Received\n\n\nReviewed - Updates Needed\n\n\nRetracted - Under Review\n\n\nSent Updates\n\n\nNo Signoff Needed"
+    },
+    {
+      "index": 30,
+      "name": "STATUS_UPDATED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant that the status was last updated."
+    },
+    {
+      "index": 35,
+      "name": "MED_RVW_MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the message ID for the message that was sent for medication sign off."
+    },
+    {
+      "index": 40,
+      "name": "MED_RVW_DEV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the device used when the user signed off on the medications.\n\n\nMay contain organization-specific values: Yes"
+    }
+  ]
+}

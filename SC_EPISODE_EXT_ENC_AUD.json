@@ -1,0 +1,59 @@
+{
+  "table_name": "SC_EPISODE_EXT_ENC_AUD",
+  "description": "Data about the audit history for external encounters linked to a Compass Rose episode.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AUDIT_REFERENCE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The audit history composite DXR reference ID for an external encounter linked to this episode."
+    },
+    {
+      "index": 17,
+      "name": "AUDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 22,
+      "name": "AUDIT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The audit history update date and time in UTC when the external encounter link to this episode was updated."
+    },
+    {
+      "index": 27,
+      "name": "AUDIT_BND_EPSD_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category ID for the audit history for an external encounter linked to this episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nVisit Association\n\n\nAuto Link\n\n\nAuto Creation\n\n\nAuto Link Via Transform\n\n\nAuto Link Via Association\n\n\nAuto Removal"
+    },
+    {
+      "index": 41,
+      "name": "AUDIT_EPISODE_LINK_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID for the audit history for an external encounter linked to this episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdded\n\n\nRemoved\n\n\nOther"
+    }
+  ]
+}

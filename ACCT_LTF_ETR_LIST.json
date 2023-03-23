@@ -1,0 +1,38 @@
+{
+  "table_name": "ACCT_LTF_ETR_LIST",
+  "description": "Late fee history list of Professional Billing transactions for guarantor accounts.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account for this row."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated late fee history in this guarantor account. Together with ACCT_ID, this forms the foreign key to the ACCT_EB_LTFEE_HIST table."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple Professional Billing transactions that are associated with the guarantor account and the late fee history from the ACCT_EB_LTFEE_HIST table."
+    },
+    {
+      "index": 17,
+      "name": "LTF_HX_ETR_LIST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This row contains the Professional Billing transactions upon which a late fee was applied for the guarantor."
+    }
+  ]
+}

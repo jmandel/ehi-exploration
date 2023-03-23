@@ -1,0 +1,45 @@
+{
+  "table_name": "PAT_EDU_STATUS_HX",
+  "description": "This table stores information to track the record status changes made to patient education records. Since a record's status may change multiple times, a record's status-change information may occupy multiple rows in the table.",
+  "primary_key": {
+    "column_name": "EDUCATION_RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EDUCATION_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the education record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "SDFL_EDIT_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The date and time when the record's status was changed."
+    },
+    {
+      "index": 17,
+      "name": "SDFL_EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who changed the record's status."
+    },
+    {
+      "index": 22,
+      "name": "SDFL_EDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edit action category number that indicates how the record's status was changed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nUndo Delete\n\n\nHide\n\n\nUnhide"
+    }
+  ]
+}

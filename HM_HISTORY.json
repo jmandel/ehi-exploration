@@ -1,0 +1,38 @@
+{
+  "table_name": "HM_HISTORY",
+  "description": "The HM_HISTORY table records information about completed and manually overridden clinical system health maintenance topics that apply to each patient. This information is found in your system by the following path: clinical system Supervisor Menu > Supervisor's menu > Patient Health Maint option, or by clicking the clinical system client Health Maintenance button.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID assigned to the patient record. This ID may be encrypted if you have elected to use enterprise reporting�s encryption utility."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Identifies the health maintenance topic within the patient�s record."
+    },
+    {
+      "index": 12,
+      "name": "HM_COMP_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the type of Health Maintenance completion\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProcedure or Medication Order\n\n\nResult Component\n\n\nImmunization\n\n\nProblem List\n\n\nHospital Diagnosis\n\n\nEncounter Diagnosis\n\n\nLOS Code\n\n\nE/M Code\n\n\nSurgical History\n\n\nPatient SDE\n\n\nNote SDE\n\n\nEncounter SDE\n\n\nOverride\n\n\nExternal Procedure\n\n\nExternal Immunization\n\n\nExternal LOS"
+    },
+    {
+      "index": 35,
+      "name": "HM_COMP_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant of Health Maintenance completion."
+    }
+  ]
+}

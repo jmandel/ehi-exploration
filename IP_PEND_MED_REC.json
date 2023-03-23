@@ -1,0 +1,73 @@
+{
+  "table_name": "IP_PEND_MED_REC",
+  "description": "This table contains Inpatient order reconciliation information for pending orders.",
+  "primary_key": {
+    "column_name": "EVENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the event record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PEND_LINK_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the link type of a pended order, for example \"AND\" if the order is meant to be connected to another specific order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFollowed by\n\n\nOr\n\n\nAnd"
+    },
+    {
+      "index": 22,
+      "name": "PEND_LINK_GROUP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of a group of pended orders. This does not link to anything."
+    },
+    {
+      "index": 27,
+      "name": "PEND_LINK_GROUP_POS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number assigned to an order as part of its group."
+    },
+    {
+      "index": 32,
+      "name": "PEND_RES_INDI_CMNTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the pended comment about indications when a medication is resumed at discharge."
+    },
+    {
+      "index": 37,
+      "name": "PEND_DC_NOTE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the pended note entered by an end user when they mark a medication to be discontinued."
+    },
+    {
+      "index": 42,
+      "name": "PEND_ORDER_REC_HOLD_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the pended hold or unhold action, if any, for the current line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHold\n\n\nUnhold"
+    },
+    {
+      "index": 51,
+      "name": "PEND_HOLD_INFO_LINE_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number in the order record that contains additional hold information for this pended order reconciliation action, if applicable. The values in this column can be linked to the LINE column in the ORDER_HOLD_INFO table."
+    }
+  ]
+}

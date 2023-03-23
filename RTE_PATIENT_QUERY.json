@@ -1,0 +1,80 @@
+{
+  "table_name": "RTE_PATIENT_QUERY",
+  "description": "This table will contain information about Patient Level Coverage Eligibility Queries.  Included in the data is the date and time the query was sent, along with the date and time the response was received.  Also included is the Note Record (HNO), the Payor the query was sent to, whether the response was eligible or not, and the action taken upon the response.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "RTE_SENT_INST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The instant the patient-level eligibility query was sent."
+    },
+    {
+      "index": 17,
+      "name": "RTE_RCVD_INST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The instant the patient-level eligibility query's response was received."
+    },
+    {
+      "index": 22,
+      "name": "RTE_HNO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note (HNO) record for this patient-level eligibility query."
+    },
+    {
+      "index": 27,
+      "name": "RTE_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the payor record for this patient-level eligibility query."
+    },
+    {
+      "index": 32,
+      "name": "RTE_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 37,
+      "name": "RTE_HGEN_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hSeq index number for this patient-level eligibility query, corresponding to the global ^HGEN(\"CVG\",hSeq) where query information is stored."
+    },
+    {
+      "index": 42,
+      "name": "RTE_RESP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The response status category ID for this patient-level eligibility query.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nELIGIBLE\n\n\nPENDING\n\n\nERROR\n\n\nNOT ELIGIBLE"
+    },
+    {
+      "index": 53,
+      "name": "RTE_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action taken category ID for this patient-level eligibility query.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage Created\n\n\nCoverage Updated\n\n\nResponse Ignored\n\n\nAuto-Created\n\n\nAuto-Updated\n\n\nResponse Resolved\n\n\nCoverage Matched\n\n\nMember Line Added\n\n\nAuto-Ignored"
+    }
+  ]
+}

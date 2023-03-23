@@ -1,0 +1,73 @@
+{
+  "table_name": "AUTO_TASK_AUDIT",
+  "description": "This table contains the audit history for tasks that have been created or updated by the task engine. This table stores the following audit history for a task: triggering event, event source, event contact serial number (CSN), event time, and action taken on the task.",
+  "primary_key": {
+    "column_name": "TASK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TASK_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the task instance record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ADT_EVENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Audit table for automatically created outpatient tasks - the event that created the task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmission\n\n\nUndo Admission\n\n\nDischarge\n\n\nUndo Discharge\n\n\nEmergency Department Arrival\n\n\nUndo Emergency Department Arrival\n\n\nEmergency Department Dismissal\n\n\nUndo Emergency Department Dismissal"
+    },
+    {
+      "index": 27,
+      "name": "EVENT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for the source of the event that triggered the automatic task change. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInternal\n\n\nInternal\n\n\nExternal"
+    },
+    {
+      "index": 37,
+      "name": "EVENT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the patient encounter that corresponds with the event that triggered the automatic task change."
+    },
+    {
+      "index": 42,
+      "name": "EVENT_TIME_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Audit table for automatically created outpatient tasks - the timestamp of the event that created the task."
+    },
+    {
+      "index": 47,
+      "name": "ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Audit table for automatically created outpatient tasks - the action the event took on the task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nCreated\n\n\nDeleted\n\n\nAdded Medication\n\n\nRemoved Medication"
+    },
+    {
+      "index": 59,
+      "name": "RX_FILL_ACTION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Audit table for automatically created outpatient tasks - the prescription fill status that created the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nPending Rx Entry\n\n\nScheduled Fill\n\n\nPending Fill\n\n\nFill Rejected\n\n\nWaiting For Approval\n\n\nReady to Fill\n\n\nFill Initiated\n\n\nFilled\n\n\nReady to Verify\n\n\nFill Rejected\n\n\nVerified\n\n\nReady to Package\n\n\nReady to Transport\n\n\nIn Transit\n\n\nReceived\n\n\nWaiting for Filling Pharmacies\n\n\nReady to Dispense\n\n\nForced Dispense Approved\n\n\nDispense Received from External System\n\n\nDispensed\n\n\nShipped\n\n\nDelivered\n\n\nConsult\n\n\nCompleted\n\n\nApproved Refill Request\n\n\nDenied Refill Request\n\n\nProfiled\n\n\nCanceled\n\n\nOrder Edited\n\n\nFlag Removed\n\n\nFill Returned\n\n\nFill Wasted\n\n\nClinically Reviewed\n\n\nClinical Changes Reviewed\n\n\nCharge\n\n\nPayment\n\n\nBagged\n\n\nToted\n\n\nTrucked\n\n\nBoxed\n\n\nPackaged\n\n\nSealed\n\n\nBarcode Scan\n\n\nPatient Notification\n\n\nAbandoned Rx Sale\n\n\nNeeds Tracking Number\n\n\nNo Sale Completed\n\n\nAuthentication\n\n\nPatient Pay Amount Changed\n\n\nInvalidated Billing Item\n\n\nPrescription Revision Needed\n\n\nPrescription Revised\n\n\nIP Dispense Prepared\n\n\nIP Dispense Prep Started\n\n\nIP Dispense Prep Saved Work\n\n\nIP Dispense Prep Pending Final Review\n\n\nIP Reused For Another Dose Dispense Prep\n\n\nIP Reused From Previous Dose Dispense Prep\n\n\nIP Dispense Prep Partial Complete\n\n\nIP Dispense Prep Resumed\n\n\nIP Dispense Prep Stopped\n\n\nIP Dispense Prep Saved on Admin\n\n\nIP Dispense Checked\n\n\nIP Dispense Prep Partial Check\n\n\nIP Dispense Prep Revise\n\n\nIP Dispense Rejected\n\n\nIP Dispense Check Removed\n\n\nIP Dispense Check Started\n\n\nIP Second Dispense Check\n\n\nIP Added to Dispense Queue\n\n\nIP Printed From Dispense Queue\n\n\nIP Removed From Dispense Queue\n\n\nRx Dispense Sent\n\n\nRx Dispense Received\n\n\nRx Cancel Tracking Action\n\n\nIP Dispense Prepared via Interface\n\n\nDownload Request Pending\n\n\nDownload Request Submitted\n\n\nDownload Successful\n\n\nDownload Request Rejected\n\n\nDownload Request Canceled\n\n\nDownload Error\n\n\nDownload Not Attempted\n\n\nSale Completed\n\n\nSale Updated\n\n\nSale Canceled\n\n\nSale Price Override Approved\n\n\nSale Pending\n\n\nFee Sold in POS\n\n\nTax Exemption Applied\n\n\nTax Exemption Removed\n\n\nTax Charge\n\n\nRx Inv Stock Location Overridden\n\n\nRx Inv Stock Location Override Removed\n\n\nNot Dispensed\n\n\nHI Shipment Started\n\n\nHI Shipment Audited \n\n\nHI Dispensed\n\n\nHI Worksheet Printed\n\n\nHI New Revision\n\n\nHI Meds Staged\n\n\nHI Supplies Staged\n\n\nHI Meds Stage Checked\n\n\nHI Supplies Stage Checked\n\n\nHI Staged\n\n\nHI Stage Checked\n\n\nHI Meds Packed\n\n\nHI Supplies Packed\n\n\nHI Packed\n\n\nHI Ready To Ship\n\n\nHI Post Shipment Change\n\n\nHI In Transit\n\n\nHI Delivered\n\n\nHI Complete\n\n\nHI Canceled"
+    },
+    {
+      "index": 182,
+      "name": "SRC_MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Audit table for automatically created outpatient tasks - the medication that triggered a prescription fill status event."
+    }
+  ]
+}

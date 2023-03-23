@@ -1,0 +1,45 @@
+{
+  "table_name": "REG_DEMOGRAPHIC_CHANGE",
+  "description": "Contains information about updates to patient demographic info.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "REG_DEM_CHNG_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the UTC instant that an audited demographic item was changed."
+    },
+    {
+      "index": 17,
+      "name": "REG_DEM_CHNG_ITEM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the source demographic item when that item's value changes. Used for auditing purposes."
+    },
+    {
+      "index": 22,
+      "name": "REG_DEM_CHNG_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique ID of the user who is responsible for changing the value of an audited demographic item."
+    }
+  ]
+}

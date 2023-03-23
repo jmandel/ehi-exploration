@@ -1,0 +1,262 @@
+{
+  "table_name": "ALT_HISTORY",
+  "description": "This table contains general history information for each type of medication warning or advisory. Since each warning could be triggered in different activities at different times, it contains general warning information for each time the warning was triggered. To get patient information, link this table to the ALERT table and then link the ALERT table to the PATIENT or PAT_ENC table. To get order related information for each medication warning or advisory, link this table to ALT_ORDINFO. To get specific medication or condition information for each medication warning type, link this table to specific medication warning related tables, such as the ALT_DRUG_ALLERGY table for drug-allergy warnings; the ALT_DRUG_DFALC table for drug-drug, drug-food, and drug-alcohol warnings; the ALT_DRUG_DUPTHERPY and ALT_DRUG_DUPTHYMED tables for duplicate therapy warnings; the ALT_DRUG_IV and ALT_DRUG_IVMED tables for IV warnings; and the ALT_DRUG_PREGNANCY and ALT_DRUG_PREGMED tables for pregnancy warnings.",
+  "primary_key": {
+    "column_name": "ALT_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ALT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique warning ID for each warning. You could link it to ALERT.ALT_ID to get patient and vendor information in table ALERT."
+    },
+    {
+      "index": 7,
+      "name": "ALT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of the contact. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple times on one day."
+    },
+    {
+      "index": 12,
+      "name": "ALT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this contact. This number is unique across all warnings in the system."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "ALT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the warning after it was viewed in Hyperspace. This describes any actions the user took on the warning. Link it to ZC_ALT_STATUS.ALT_STATUS_C to get the name, title, and abbreviation information for the warning status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOverridden\n\n\nRemoved\n\n\nFiltered\n\n\nCanceled\n\n\nDeferred\n\n\nViewed\n\n\nHeld"
+    },
+    {
+      "index": 36,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who triggered the warning. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 41,
+      "name": "SHOWN_PLACE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The place where you see the warning. You could link it to ZC_SHOWN_PLACE.SHOWN_PLACE_C to get name, title, and abbreviation for shown place.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnter Orders\n\n\nVerify Orders\n\n\nRetro-Allergen\n\n\nRate Change\n\n\nTreatment Plan\n\n\nResolve Fill Review Prescription Order Flag\n\n\nFill Prescription Order\n\n\nVerify Prescription Order\n\n\nPrior To Admission\n\n\nResume Orders\n\n\nMAR\n\n\nRefill Orders\n\n\nDoc Flowsheets\n\n\nHandheld MAR\n\n\nRetro-Diagnosis\n\n\nResolve Charging Prescription Order Flag\n\n\nPickup Prescription Order\n\n\nResolve Clinical Review Prescription Order Flag\n\n\nResolve Pending RAR Approval Prescription Order Flag\n\n\nTransfer Prescription Order\n\n\nMedication Profile\n\n\nHaiku Orders\n\n\nSpecimen Collection\n\n\nHandheld Specimen Collection\n\n\nResolve Custom Prescription Order Flag\n\n\nResolve Consult Prescription Order Flag\n\n\nImmunizations\n\n\nFlu Clinic\n\n\nEdit Prescription\n\n\nResolve Transfer Review Prescription Order Flag\n\n\nForce Prescription To Dispense\n\n\nResolve Insufficient Inventory Prescription Order Flag\n\n\nResolve Invalid Request Prescription Order Flag\n\n\nResolve APFS Prescription Order Flag\n\n\nResolve Invalid Data Prescription Order Flag\n\n\nResolve Partial Fill Completion Hold Prescription Order Flag\n\n\nResolve Discontinued Prescription Order Flag\n\n\nResolve Expired Prescription Order Flag\n\n\nReactivate Discontinued Orders\n\n\nRetro Pregnancy and Lactation\n\n\nDeferred Medication Warning\n\n\nResolve Needs Medication Transition Order Flag\n\n\nResolve Waiting for Prior Authorization Prescription Order Flag\n\n\nReview with Pharmacy/System Interaction Profile\n\n\nResolve Medication Warning Review Flag\n\n\nReconcile Outside Information\n\n\nAmbulatory Pharmacy Patient Counseling\n\n\nAmbulatory Pharmacy Dispensing\n\n\nContinue Orders\n\n\nHandheld Brain\n\n\nSign Visit\n\n\nMedications PRMs\n\n\nInstant Orders\n\n\nFMK Side by Side\n\n\nFMK Prescriptions Activity\n\n\nHandheld Tech Work List\n\n\nHandheld Order Inquiry\n\n\nLab Specimen Receiving\n\n\nLab Case Builder\n\n\nLab Case Prep Work List\n\n\nLab Grossing\n\n\nLab Container Storage\n\n\nNon-Task Desktop Specimen Collection\n\n\nOne-step Medications"
+    },
+    {
+      "index": 112,
+      "name": "OVERALL_OVR_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For medication interactions, when you override & accept them, if an overall override reason is given at the bottom of the warning pop-up form, it will be saved here. You could link it to ZC_ALRT_SP_OVR_RSN.ALRT_SP_OVR_RSN_C to get name, title, and abbreviation for the reason.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 118,
+      "name": "OVERALL_OVR_CMNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For medication interactions, when you override & accept the warning pop-up form, if an overall override comment is given at the bottom of the form, it will be saved here. We only extract the first 255 characters."
+    },
+    {
+      "index": 123,
+      "name": "SPEC_OVR_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specific override reason given for an overridden medication interaction. Link to ZC_ALRT_SP_OVR_RSN.ALRT_SP_OVR_RSN_C to get the name, title, and abbreviation for the override reason. \n\n\n The category values for this column were already listed for column: OVERALL_OVR_RSN_C_NAME"
+    },
+    {
+      "index": 129,
+      "name": "SPEC_OVR_CMNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For medication interactions, when you override & accept the warning pop-up form, if a specific override comment is given on the right of the form, it will be saved here. We only extract the first 1000 characters."
+    },
+    {
+      "index": 134,
+      "name": "IMMUNIZATION_LPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient�s immunization problem list ID for a specific immunization-allergy interaction."
+    },
+    {
+      "index": 139,
+      "name": "IMPORTANCE_LVL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the importance level of a warning, a value that is used to determine which warnings are displayed at the top of the interactions popup. Can be used to compare the importance of different warning types.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVery High\n\n\nHigh\n\n\nMedium\n\n\nLow\n\n\nVery Low"
+    },
+    {
+      "index": 151,
+      "name": "PROVIDER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a provider type for the user who triggered the warning.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nResource\n\n\nPhysician"
+    },
+    {
+      "index": 160,
+      "name": "SPECIFIC_DEFR_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For medication interactions, when you override & accept the warnings pop-up, if the warning is deferred and if a specific deferral reason is given in the defer window of the warning, it will be saved here. You could link it to ZC_SPECIFIC_DEFR_R.SPECIFIC_DEFR_R_C to get the name, title, and abbreviation for the deferral reason.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 167,
+      "name": "DOSING_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Weight used for dose checking. Always stored in kilograms."
+    },
+    {
+      "index": 172,
+      "name": "WT_RECORD_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant at which the weight was recorded."
+    },
+    {
+      "index": 177,
+      "name": "WT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The weight source.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan weight\n\n\nPast measured weight\n\n\nMost current measured weight (actual)\n\n\nIdeal body weight\n\n\nAdjusted body weight\n\n\nUser entered weight\n\n\nLean body weight\n\n\nDosing weight\n\n\nOther"
+    },
+    {
+      "index": 193,
+      "name": "WT_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Generated comment for weight."
+    },
+    {
+      "index": 198,
+      "name": "DOSING_HEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Height used for dosing warning. Always stored in inches."
+    },
+    {
+      "index": 203,
+      "name": "HT_RECORD_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant at which the height was recorded."
+    },
+    {
+      "index": 208,
+      "name": "HT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The height source.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan height\n\n\nPast measured height\n\n\nMost current measured height (Actual)\n\n\nUser Entry\n\n\nOther"
+    },
+    {
+      "index": 220,
+      "name": "DOSING_BSA",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The body surface area used for dosing checking. Always stored in m2."
+    },
+    {
+      "index": 225,
+      "name": "BSA_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The body surface area source.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTreatment plan BSA\n\n\nBased on weight and height measured in the past\n\n\nBased on most recent measured weight and height (actual)\n\n\nUser Entry\n\n\nBased on ideal body weight and current/past measured height\n\n\nBased on adjusted body weight and current/past measured height\n\n\nBased on dosing weight and current/past measured height\n\n\nBased on normalized BSA 1.7m2\n\n\nOther"
+    },
+    {
+      "index": 241,
+      "name": "BSA_CALC_DETAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The body surface area calculation details with weight, height and recorded instants."
+    },
+    {
+      "index": 246,
+      "name": "ALERT_ALLERGEN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The allergen ID of drug-allergy warning."
+    },
+    {
+      "index": 251,
+      "name": "ALERT_ALLERGEN_ID_ALLERGEN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the allergen record."
+    },
+    {
+      "index": 256,
+      "name": "INACT_INGRED_IND_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "It indicates whether the warning is fired because of inactive ingredient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 265,
+      "name": "ALERT_ROOT_ALLER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the allergen ID of the allergen that caused the warning to fire."
+    },
+    {
+      "index": 270,
+      "name": "ALERT_ROOT_ALLER_ID_ALLERGEN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the allergen record."
+    },
+    {
+      "index": 275,
+      "name": "ALERT_MED_CLASS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the allergen class of the medication for a cross-sensitive warning."
+    },
+    {
+      "index": 280,
+      "name": "ALERT_MED_CLASS_ID_ALLERGEN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the allergen record."
+    },
+    {
+      "index": 285,
+      "name": "PATIENT_DEP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the patient's department at the time when the warning was fired."
+    },
+    {
+      "index": 290,
+      "name": "ALERT_ALLERGY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The problem list record that contains the allergen for a drug-allergy warning."
+    },
+    {
+      "index": 295,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of the ALT contacts for the given ALT record."
+    },
+    {
+      "index": 300,
+      "name": "IS_NONFILTERED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether the warning is non-filtered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    }
+  ]
+}

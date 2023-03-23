@@ -1,0 +1,528 @@
+{
+  "table_name": "CASE_MGMT",
+  "description": "The CASE_MGMT table is the master table for reporting on case data. This table includes foreign keys to other tables containing information about the case, such as employer, coverage, and diagnosis information.",
+  "primary_key": {
+    "column_name": "CASE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CASE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID assigned to the case record."
+    },
+    {
+      "index": 7,
+      "name": "CASE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the case."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient linked to the case record."
+    },
+    {
+      "index": 17,
+      "name": "CASE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value assigned to classify the case record and determine default case priorities.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 23,
+      "name": "CASE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value associated with the status of the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nOpen\n\n\nRe-Opened\n\n\nClosed"
+    },
+    {
+      "index": 34,
+      "name": "PRIORITY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the priority record assigned to the case."
+    },
+    {
+      "index": 39,
+      "name": "PRIORITY_ID_PRIORITY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the priority record."
+    },
+    {
+      "index": 44,
+      "name": "MANAGER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who is assigned this case."
+    },
+    {
+      "index": 49,
+      "name": "ROSTER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the roster to which this case belongs."
+    },
+    {
+      "index": 54,
+      "name": "ROSTER_ID_ROSTER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the roster."
+    },
+    {
+      "index": 59,
+      "name": "RAW_BD_ADJST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The manual adjustment to the case�s total number of raw days."
+    },
+    {
+      "index": 64,
+      "name": "CONV_BD_ADJST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The manual adjustment to the case�s total number of converted days."
+    },
+    {
+      "index": 69,
+      "name": "RAW_RFL_BD_TOT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sum of raw bed days for all the referrals linked to the case."
+    },
+    {
+      "index": 74,
+      "name": "CONV_RFL_BD_TOT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sum of converted bed days for all the referrals linked to the case."
+    },
+    {
+      "index": 79,
+      "name": "CASE_RAW_TOTAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The sum of raw bed days for all the referrals linked to the case and any adjustments entered for raw days."
+    },
+    {
+      "index": 84,
+      "name": "TOTAL_COST_OF_CASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The dollar amount representing the sum of the claims, charges and adjustments linked to this case."
+    },
+    {
+      "index": 89,
+      "name": "DATE_REPORTED",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the accident was reported."
+    },
+    {
+      "index": 94,
+      "name": "DAYS_OF_TREATMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of days of treatment that the patient underwent as a result of the injury."
+    },
+    {
+      "index": 99,
+      "name": "HOURS_ON_CASE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hours spent by the cost tracking manager on the case."
+    },
+    {
+      "index": 104,
+      "name": "CARRIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the carrier record linked to this case record."
+    },
+    {
+      "index": 109,
+      "name": "CARRIER_ID_CARRIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the carrier record."
+    },
+    {
+      "index": 114,
+      "name": "EMPLOYER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the unique ID of the employer record linked to this case record if Patient Employer Linked Free Text or Linked to Employer(I EAF 6410) is set to 1. This is free text if I EAF 6410 is set to 2."
+    },
+    {
+      "index": 119,
+      "name": "EMPLOYER_ID_EMPLOYER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer."
+    },
+    {
+      "index": 124,
+      "name": "ACCIDENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value assigned to the case record to explain the type of accident that resulted in the creation of this case.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 130,
+      "name": "INJURY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value assigned to the case record to explain the type of injury arising out of the accident.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 136,
+      "name": "INJURY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the patient was injured."
+    },
+    {
+      "index": 141,
+      "name": "TREATMENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the patient started treatment for the injury."
+    },
+    {
+      "index": 146,
+      "name": "WORK_DAYS_MISSED",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The number of days of work missed by the patient."
+    },
+    {
+      "index": 151,
+      "name": "DISCHARGE_LOCATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text describing the location from which the patient is released after treatment."
+    },
+    {
+      "index": 156,
+      "name": "CLASSIFIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the classifier record that triggered the case creation message for this case."
+    },
+    {
+      "index": 161,
+      "name": "CLASSIFIER_ID_CLASSIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The title of the classifier record."
+    },
+    {
+      "index": 166,
+      "name": "TRG_DIAGNOSIS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the diagnosis record (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 171,
+      "name": "TRG_DIAG_COMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the diagnosis component record (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 176,
+      "name": "TRG_DIAG_COMP_ID_COMPONENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component"
+    },
+    {
+      "index": 181,
+      "name": "TRG_PROCEDURE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the procedure (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 186,
+      "name": "TRG_PROC_COMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the procedure component (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 191,
+      "name": "TRG_PROC_COMP_ID_COMPONENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component"
+    },
+    {
+      "index": 196,
+      "name": "TRG_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the payor (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 201,
+      "name": "TRG_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 206,
+      "name": "TRG_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the benefit plan (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 211,
+      "name": "TRG_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 216,
+      "name": "LOB_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The case line of business."
+    },
+    {
+      "index": 221,
+      "name": "LOB_ID_LOB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the line of business record."
+    },
+    {
+      "index": 226,
+      "name": "TRG_MIN_AGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The minimum age threshold set in the case classifier that generated the case create message for this case."
+    },
+    {
+      "index": 231,
+      "name": "TRG_MAX_AGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The maximum age threshold set in the case management classifier that generated the case create message for this case."
+    },
+    {
+      "index": 236,
+      "name": "TRG_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Referred To Provider or the Claim's Associated Physician's Provider (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 241,
+      "name": "TRG_SPEC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specialty of the provider (if any) that triggered the case creation message for this case.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 247,
+      "name": "TRG_POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the place of service or location  (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 252,
+      "name": "TRG_LOB_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Line of Business (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 257,
+      "name": "TRG_LOB_ID_LOB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the line of business record."
+    },
+    {
+      "index": 262,
+      "name": "TRG_PRIM_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the Patient's Primary Location (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 267,
+      "name": "ESCALATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The escalation date of the case."
+    },
+    {
+      "index": 272,
+      "name": "EOW_MESSAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The In Basket message ID for the case."
+    },
+    {
+      "index": 277,
+      "name": "EOW_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The In Basket message status for the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Message\n\n\nNormal Due Message\n\n\nEscalated Due Message"
+    },
+    {
+      "index": 287,
+      "name": "CASE_CONV_TOTAL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Case level converted bed days total."
+    },
+    {
+      "index": 292,
+      "name": "TRG_REVCODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Displays the revenue code matched in a case classifier, resulting in a case create In Basket message. The associated case was created from this In Basket message."
+    },
+    {
+      "index": 297,
+      "name": "TRG_REVCODE_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 302,
+      "name": "TRG_REV_COMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Displays the revenue code component matched in a case classifier, resulting in a case created In Basket message. The associated case was created from this In Basket message."
+    },
+    {
+      "index": 307,
+      "name": "TRG_REV_COMP_ID_COMPONENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component"
+    },
+    {
+      "index": 312,
+      "name": "TRG_COMPON_GRP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the trigger component group."
+    },
+    {
+      "index": 317,
+      "name": "TRG_COMPON_GRP_ID_COMPONENT_GRP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component group"
+    },
+    {
+      "index": 322,
+      "name": "TRG_ICD_PX_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the ICD Procedure Code (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 327,
+      "name": "TRG_ICD_PX_ID_ICD_PX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the ICD procedure record."
+    },
+    {
+      "index": 332,
+      "name": "TRG_APPLY_TO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specify whether this case should apply to referrals, AP claims or both. The default (blank value) is referrals.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReferrals\n\n\nAP Claims\n\n\nBoth Referrals and AP Claims"
+    },
+    {
+      "index": 342,
+      "name": "TRG_RFL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of referral (if any) that triggered the case creation message for this case.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 348,
+      "name": "TRG_DRG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Diagnosis Related Group (DRG) code (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 353,
+      "name": "TRG_DRG_ID_DRG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Diagnoses Related Group name."
+    },
+    {
+      "index": 358,
+      "name": "TRG_DRG_COMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Diagnosis Related Group (DRG) component (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 363,
+      "name": "TRG_DRG_COMP_ID_COMPONENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the component"
+    },
+    {
+      "index": 368,
+      "name": "TRG_CVG_PRIM_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage primary location (if any) that triggered the case creation message for this case."
+    },
+    {
+      "index": 373,
+      "name": "TIME_OF_TREATMENT_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Holds the time of treatment for accident information."
+    },
+    {
+      "index": 378,
+      "name": "WORK_COMP_CLAIM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' compensation claim number associated with the case."
+    },
+    {
+      "index": 383,
+      "name": "WORK_COMP_CARRIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' compensation carrier associated with the case."
+    },
+    {
+      "index": 388,
+      "name": "TPA_ADMINISTRATOR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of the third party administrator."
+    }
+  ]
+}

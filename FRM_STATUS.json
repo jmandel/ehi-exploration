@@ -1,0 +1,45 @@
+{
+  "table_name": "FRM_STATUS",
+  "description": "This table stores status and update information for screening forms, including form status and last editing user and time.",
+  "primary_key": {
+    "column_name": "SCREENING_FORM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SCREENING_FORM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the screening form record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "FRM_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The screening form status category ID for the screening form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nIn Progress\n\n\nPending Signatures\n\n\nCompleted\n\n\nNurse Doc Complete"
+    },
+    {
+      "index": 24,
+      "name": "STATUS_AUD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The users who updated or edited the screening form."
+    },
+    {
+      "index": 29,
+      "name": "STATUS_AUD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The times when the screening form was updated or edited."
+    }
+  ]
+}

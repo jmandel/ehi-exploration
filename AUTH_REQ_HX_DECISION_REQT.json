@@ -1,0 +1,80 @@
+{
+  "table_name": "AUTH_REQ_HX_DECISION_REQT",
+  "description": "This table contains the various decision-related timeliness requirements for a given review category for a contact.",
+  "primary_key": {
+    "column_name": "AUTH_REQUEST_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the authorization request record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "REVIEW_CATEGORY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the review category that the decision requirements apply to.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBehavioral Commercial Urgent Concurrent\n\n\nBehavioral Commercial Urgent Preservice\n\n\nBehavioral Commercial Nonurgent Preservice\n\n\nBehavioral Commercial Postservice\n\n\nBehavioral Marketplace Urgent Concurrent\n\n\nBehavioral Marketplace Urgent Preservice\n\n\nBehavioral Marketplace Nonurgent Preservice\n\n\nBehavioral Marketplace Postservice\n\n\nBehavioral Medicare Urgent Concurrent\n\n\nBehavioral Medicare Urgent Preservice\n\n\nBehavioral Medicare Nonurgent Preservice\n\n\nBehavioral Medicare Postservice\n\n\nBehavioral Medicaid Urgent Concurrent\n\n\nBehavioral Medicaid Urgent Preservice\n\n\nBehavioral Medicaid Nonurgent Preservice\n\n\nBehavioral Medicaid Postservice\n\n\nNonbehavioral Commercial Urgent Concurrent\n\n\nNonbehavioral Commercial Urgent Preservice\n\n\nNonbehavioral Commercial Nonurgent Preservice\n\n\nNonbehavioral Commercial Postservice\n\n\nNonbehavioral Marketplace Urgent Concurrent\n\n\nNonbehavioral Marketplace Urgent Preservice\n\n\nNonbehavioral Marketplace Nonurgent Preservice\n\n\nNonbehavioral Marketplace Postservice\n\n\nNonbehavioral Medicare Urgent Concurrent\n\n\nNonbehavioral Medicare Urgent Preservice\n\n\nNonbehavioral Medicare Nonurgent Preservice\n\n\nNonbehavioral Medicare Postservice\n\n\nNonbehavioral Medicaid Urgent Concurrent\n\n\nNonbehavioral Medicaid Urgent Preservice\n\n\nNonbehavioral Medicaid Nonurgent Preservice\n\n\nNonbehavioral Medicaid Postservice\n\n\nMedicare Advantage Standard\n\n\nMedicare Advantage Expedited\n\n\nMedicare Advantage Standard Part B Drugs\n\n\nMedicare Advantage Expedited Part B Drugs\n\n\nMinimum of Applicable Categories"
+    },
+    {
+      "index": 61,
+      "name": "CALCULATION_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the calculation method of the due date for this review category.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCalendar Time\n\n\nCalendar Days\n\n\nBusiness Days"
+    },
+    {
+      "index": 71,
+      "name": "DECISION_REQ_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) of the start instant for authorization request timeliness as determined for this review category."
+    },
+    {
+      "index": 76,
+      "name": "DECISION_STANDARD_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The calculated decision due date and time (UTC) of the authorization request without any extensions taken for this review category."
+    },
+    {
+      "index": 81,
+      "name": "DECISION_CURRENT_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The current decision due date and time (UTC) of the authorization request for this review category."
+    },
+    {
+      "index": 86,
+      "name": "ADDL_INFO_REQUEST_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) by which an additional information request extension can be taken for this review category."
+    },
+    {
+      "index": 91,
+      "name": "ADDL_INFO_RECEIPT_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) when the receipt of additional information is due. Only set if additional information was requested."
+    }
+  ]
+}

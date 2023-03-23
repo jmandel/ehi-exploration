@@ -1,0 +1,59 @@
+{
+  "table_name": "IP_RES_EPISODE",
+  "description": "The IP_RES_EPISODE table contains information about the restraint episode. An episode is defined as the length of an order. The information includes episode start/end dates, application start/end dates, episode length, clinical justification documentation, and less restrictive alternatives documentation.",
+  "primary_key": {
+    "column_name": "INPATIENT_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RES_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The restraint type can be a behavioral restraint (BH) or  nonbehavioral/medical-surgical restraint (MS)."
+    },
+    {
+      "index": 7,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the inpatient data store record."
+    },
+    {
+      "index": 12,
+      "name": "EPISODE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Refers to the episode number for the admission. The number assigned to an episode increases with each new episode and does not repeat until a new admission. An episode is the length of a restraint order. A value of '0' here represents that there were errors for the corresponding restraint type in the current inpatient data record."
+    },
+    {
+      "index": 17,
+      "name": "APPLICATION_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Displays the application number for the admission.  The number assigned to an application increases with each new application and does not repeat until a new admission.  Each application indicates the period of time from START to DISCONTINUED of all restraints.  There can be multiple episodes (orders) within an application."
+    },
+    {
+      "index": 22,
+      "name": "EPI_START_DT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The episode start date refers to the date when the flowsheet rows Order Obtained (for behavioral restraints) or Order Upon Application (for nonbehavioral restraints) were documented on in conjunction with the START status of a restraint type row(s)."
+    },
+    {
+      "index": 27,
+      "name": "EPI_END_DT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The episode end date refers to the date a new order was obtained (thereby ending the previous episode) or the date that all restraints were DISCONTINUED for the episode."
+    },
+    {
+      "index": 32,
+      "name": "EPI_LENGTH",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The length of time in hours that the restraint documentation indicates that the restraints have been \"on\" for."
+    }
+  ]
+}

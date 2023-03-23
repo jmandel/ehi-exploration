@@ -1,0 +1,122 @@
+{
+  "table_name": "QRY_CONTACT_INFO",
+  "description": "The QRY_CONTACT_INFO table contains information about the overtime single response data for query records (records in the QRY master file). Each row in the table represents an individual contact for a query record, and each query record itself represents a single query.",
+  "primary_key": {
+    "column_name": "QUERY_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "QUERY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the query record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 12,
+      "name": "QUERY_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Contact number to identify the contact in the sequence of contacts."
+    },
+    {
+      "index": 22,
+      "name": "PRIM_RECIPIENT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user primarily responsible for the query."
+    },
+    {
+      "index": 27,
+      "name": "SENDER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The sender of this query."
+    },
+    {
+      "index": 32,
+      "name": "RESPONDING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user that responded to the query."
+    },
+    {
+      "index": 37,
+      "name": "NLP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the user's response to the query.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Read\n\n\nRead\n\n\nAsk Later\n\n\nAgree\n\n\nDisagree\n\n\nDecline\n\n\nClinically Undetermined"
+    },
+    {
+      "index": 51,
+      "name": "NLP_STATUS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant when the Natural Language Processing (NLP) status changes in UTC."
+    },
+    {
+      "index": 56,
+      "name": "EXTERNAL_EVIDENCE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external evidence reference resource URL of the query."
+    },
+    {
+      "index": 61,
+      "name": "INSTANT_OF_ENTRY_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The instant a query record was edited."
+    },
+    {
+      "index": 66,
+      "name": "RESOLVE_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The note contact serial number (CSN) that resolves this query."
+    },
+    {
+      "index": 71,
+      "name": "RESOLVE_ATTEST_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The attestation line (if any) of the note that resolved the query."
+    },
+    {
+      "index": 76,
+      "name": "INSTANT_OF_ENTRY_LOC_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The instant a contact was created in the patient's local time."
+    },
+    {
+      "index": 81,
+      "name": "QUERY_SUBJECT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the subject line of a query."
+    },
+    {
+      "index": 86,
+      "name": "QRY_CONTACT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of update to the query. Not currently populated.\n\n\nMay contain organization-specific values: No\n\n\n No Entries Defined"
+    }
+  ]
+}

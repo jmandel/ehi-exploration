@@ -1,0 +1,73 @@
+{
+  "table_name": "AP_CLAIM_PROGRAM_HISTORY",
+  "description": "This table tracks the history of changes to the Value Based Programs associated with medical claims.",
+  "primary_key": {
+    "column_name": "CLAIM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the claim info record"
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "UPDATE_PROGRAM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Value Based Program that was modified."
+    },
+    {
+      "index": 17,
+      "name": "UPDATE_PROGRAM_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the program record."
+    },
+    {
+      "index": 22,
+      "name": "UPDATE_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The local instant when the Value Based Program was modified."
+    },
+    {
+      "index": 27,
+      "name": "CLAIM_PROG_HX_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action that modified the Value Based Program.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdded\n\n\nUpdated\n\n\nDeactivated\n\n\nRemoved\n\n\nSent"
+    },
+    {
+      "index": 39,
+      "name": "UPDATE_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The Coordinated Universal Time (UTC) instant when the Value Based Program was modified."
+    },
+    {
+      "index": 44,
+      "name": "VBP_HX_SENT_DXO_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The DXO ID to which this claim was sent."
+    },
+    {
+      "index": 49,
+      "name": "VBP_HX_SENT_DXO_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "table_name": "RECONCILE_SVC_CTCD",
+  "description": "This table contains line-level category codes received through claims reconciliation. This information is only populated if the line-level category code was mapped to an Epic category value.",
+  "primary_key": {
+    "column_name": "CLAIM_RECON_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_RECON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the claim reconciliation record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this contact in your system. The integer portion of the number specifies the date of the contact. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 17,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this contact."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The contact date of the record, in external format."
+    },
+    {
+      "index": 27,
+      "name": "LN_CATEGORY_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Line-level status category code. This value is only populated if the line-level status code matches a category abbreviation inside of the system.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUnmapped code received"
+    }
+  ]
+}

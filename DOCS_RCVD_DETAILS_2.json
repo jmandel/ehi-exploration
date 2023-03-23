@@ -1,0 +1,276 @@
+{
+  "table_name": "DOCS_RCVD_DETAILS_2",
+  "description": "This record provides details about received documents including audit request information.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) for the document received record"
+    },
+    {
+      "index": 17,
+      "name": "HISTORICAL_DOCUMENT_INFO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Historical document information (DCS) records for the object."
+    },
+    {
+      "index": 22,
+      "name": "PAT_GEN_IDN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient gender identity for the patient associated with the incoming document.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nTransgender Female\n\n\nTransgender Male\n\n\nOther\n\n\nChoose not to disclose"
+    },
+    {
+      "index": 35,
+      "name": "PAT_SAAB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient sex assigned at birth for the patient associated with the incoming document.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNot recorded on birth certificate\n\n\nChoose not to disclose\n\n\nUncertain"
+    },
+    {
+      "index": 48,
+      "name": "SOURCE_RFL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When receiving a referral complete message for an encounter in another organization, this item links the encounter document to the initiating referral record."
+    },
+    {
+      "index": 53,
+      "name": "HAS_INSURANCE_INFO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not this contact has insurance updates.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 62,
+      "name": "AUTHOR_NATL_PROV_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The National Provider ID of the author."
+    },
+    {
+      "index": 67,
+      "name": "ERX_PATIENT_LANGUAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item represents the patient's preferred language for the external prescription.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 73,
+      "name": "ERX_PREVENT_RENEWAL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item represents whether refill requests should not be sent to the authorizing provider for this external prescription.\n\n\n The category values for this column were already listed for column: HAS_INSURANCE_INFO_YN"
+    },
+    {
+      "index": 79,
+      "name": "AUDIT_SOURCE_RFL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores history of Source Referral ID."
+    },
+    {
+      "index": 84,
+      "name": "UPDATE_NOTIF_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the received message was an Update Notification, this column describes the event that triggered the Update Notification.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEncounter Close\n\n\nEncounter Addendum\n\n\nEncounter Moved From\n\n\nEncounter Moved To\n\n\nResult Added\n\n\nResult Removed\n\n\nCoverage Added\n\n\nCoverage Removed\n\n\nResult Edited\n\n\nImmediate Patient-Level Event\n\n\nDelayed Patient-Level Event\n\n\nInpatient Discharge\n\n\nCoding Completed\n\n\nCharges Filed\n\n\nClaim Accepted\n\n\nManual Review Complete\n\n\nUnknown"
+    },
+    {
+      "index": 108,
+      "name": "PEHX_SRC_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The MyChart user who answered the history question for the contact."
+    },
+    {
+      "index": 113,
+      "name": "PEHX_SRC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who answered the history question in non-captive mode for the contact."
+    },
+    {
+      "index": 118,
+      "name": "HAS_MED_HX_INFO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the contact stores discrete medical history information.\n\n\n The category values for this column were already listed for column: HAS_INSURANCE_INFO_YN"
+    },
+    {
+      "index": 124,
+      "name": "ERX_MIXTURE_FORM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the mixture form of a mixture-based medication.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 130,
+      "name": "EVENT_CE_NOTIFICATN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item describes the type of event which the message represents and is used for displaying the event type in In Basket messages. This item is only set for Event Notifications.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAmbulatory Encounter\n\n\nPatient Discharged\n\n\nPatient Arrived at ED\n\n\nHospital Outpatient Visit\n\n\nPatient Admission\n\n\nPatient Dismissed from ED\n\n\nPatient Discharged from ED\n\n\nEmergency\n\n\nGeneral\n\n\nOther"
+    },
+    {
+      "index": 147,
+      "name": "PUSH_MESSAGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The incoming message type category ID for the Received Direct messages.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContinuity of Care Document\n\n\nIncoming Message Reply\n\n\nContinuity of Care Record\n\n\nReferral Complete\n\n\nReferral\n\n\n360x Referral Request\n\n\n360x Referral Decline\n\n\n360x Referral Accept\n\n\n360x Referral Outcome\n\n\n360x Referral Cancel\n\n\n360x Referral Cancel Confirmation\n\n\n360x Interim Consultation Note\n\n\n360x New Appointment\n\n\n360x Reschedule Appointment\n\n\n360x Cancel Appointment\n\n\n360x No-show Notification\n\n\nReject\n\n\nEvent Notification\n\n\nInBasket\n\n\nADT Notification\n\n\nOn-Demand CCD\n\n\nSMTP\n\n\nXCA Deferred Response\n\n\nGWN Reject\n\n\nKill Referral\n\n\nUpdate Notification\n\n\nPayer Encounter Detail\n\n\nTelehealth\n\n\nUnknown"
+    },
+    {
+      "index": 183,
+      "name": "PEHX_SRC_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the contact serial number (CSN) of the encounter a history question submission is associated with."
+    },
+    {
+      "index": 188,
+      "name": "HAS_ICU_STAY_UPD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the external document record contact has updated ICU stay data.\n\n\n The category values for this column were already listed for column: HAS_INSURANCE_INFO_YN"
+    },
+    {
+      "index": 194,
+      "name": "FHIR_BINARY_URL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the URL at which the attachment content can be retrieved"
+    },
+    {
+      "index": 199,
+      "name": "IMR_REPLY_RCVD_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant the most recent reply was received from the remote organization"
+    },
+    {
+      "index": 204,
+      "name": "RELATES_TO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the content of the RelatesTo header from a direct message."
+    },
+    {
+      "index": 209,
+      "name": "REPLYTO_ADDRESS_EXT_ADDR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the External Address record to which replies to this message should go. This item is only populated for messages sent through Direct SMTP."
+    },
+    {
+      "index": 214,
+      "name": "REPLYTO_ADDRESS_EXT_ADDR_ID_MIXED_DIRECT_ADDR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Formatted like an email address, this is how Direct messaging knows where to send a message. This item is stored in mixed case to use in display in addressing."
+    },
+    {
+      "index": 219,
+      "name": "MATCH_UPDATE_ON_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the patient record match is updated for a Received Document."
+    },
+    {
+      "index": 224,
+      "name": "PAT_NAME_PREFIX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the title associated with the patient's name."
+    },
+    {
+      "index": 229,
+      "name": "EXT_MED_COVERAGE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the coverage ID of the patient under each PBM."
+    },
+    {
+      "index": 234,
+      "name": "PAT_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The county of the patient's address from the received document. NOTE: Not all DXR use cases discretely parse this item.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 240,
+      "name": "PAT_LIVING_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds status information about whether the patient is deceased. NOTE: Not all DXR use cases discretely parse this item.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlive\n\n\nDeceased\n\n\nNot A Patient"
+    },
+    {
+      "index": 250,
+      "name": "PAT_DEATH_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Holds information about when the patient died if known in the received document. NOTE: Not all DXR use cases discretely parse this item."
+    },
+    {
+      "index": 255,
+      "name": "PAT_MARITAL_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds discrete marital status information from the received document.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAnnulled\n\n\nDivorced\n\n\nInterlocutory\n\n\nLegally Separated\n\n\nMarried\n\n\nPolygamous\n\n\nNever Married\n\n\nDomestic partner\n\n\nWidowed\n\n\nUnknown\n\n\nCommon Law\n\n\nUnmarried"
+    },
+    {
+      "index": 274,
+      "name": "PAT_MARITAL_STAT_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the display name of the received document for remapping purposes."
+    },
+    {
+      "index": 279,
+      "name": "HAS_NOTE_SECTION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the contact stores note section data.\n\n\n The category values for this column were already listed for column: HAS_INSURANCE_INFO_YN"
+    },
+    {
+      "index": 285,
+      "name": "HAS_TREAT_RESTR_UPD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the contact stores treatment restrictions\n\n\n The category values for this column were already listed for column: HAS_INSURANCE_INFO_YN"
+    },
+    {
+      "index": 291,
+      "name": "CLINICAL_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the Clinical Note contact containing the text retrieved as a part of this received document's contact."
+    },
+    {
+      "index": 296,
+      "name": "DOCUMENT_TITLE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text title of a received document"
+    }
+  ]
+}

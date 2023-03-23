@@ -1,0 +1,31 @@
+{
+  "table_name": "ORDER_INSTANTIATED",
+  "description": "This table contains a list of orders that have been instantiated.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line count for this table as determined by the number of instantiated orders."
+    },
+    {
+      "index": 12,
+      "name": "INSTNTD_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID for the instantiated order, the child.  Note: For the case of the grandparent/parent/child scenario (Outpatient Standing order released into an Inpatient/HOV setting), this column will store the child (i.e. �grandchild�) order and the ORDER_ID column will store the parent order.  For the grandparent/parent order relationship, refer to STAND_HOV_INST_ORD.ORDER_ID (�grandparent�) and STAND_HOV_INST_ORD.STAND_INS_IP_ORD_ID (�parent�)."
+    }
+  ]
+}

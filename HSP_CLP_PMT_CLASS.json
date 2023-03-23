@@ -1,0 +1,192 @@
+{
+  "table_name": "HSP_CLP_PMT_CLASS",
+  "description": "This table contains the payment classification information for the claim print records associated with the hospital account/liability bucket.",
+  "primary_key": {
+    "column_name": "CLAIM_PRINT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the claim print record associated with a single hospital account/bucket."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated claim in the related payment classification group."
+    },
+    {
+      "index": 17,
+      "name": "PC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payment classification type of the associated claim in the related revenue code group (e.g. 1 - Ambulatory Payment Classification, 2 - Home Health, 3 - CPT).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAmbulatory Payment Classification\n\n\nHome Health\n\n\nCPT\n\n\nAmbulatory Patient Grouping\n\n\nMDS RUG Code\n\n\nInpatient Rehabilitation Facility"
+    },
+    {
+      "index": 30,
+      "name": "PC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payment classification code of the associated claim in the related revenue code group."
+    },
+    {
+      "index": 35,
+      "name": "PC_STATUS_IND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the payment classification status indicator of the associated claim in the related revenue code group (e.g. 1 - significant procedures, 2 - surgical services, 3 - medical visits, 4 - ancillary services, 5 - partial hospitalization, 6 - incidental services, etc.).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nS (Significant Procedures)\n\n\nT (Surgical Services)\n\n\nV (Medical Visits)\n\n\nX (Ancillary Services)\n\n\nP (Partial Hospitalization)\n\n\nN (Incidental Services)\n\n\nE (Not Allowed under APC or Not Covered)\n\n\nC (Inpatient Services Not Payable under APC)\n\n\nA (Miscellaneous Non-PPS)\n\n\nF (Acquisition of Corneal Tissue)\n\n\nG (Current Drug/Biological Pass-Through)\n\n\nH (Device Pass-Through)\n\n\nJ (New Drug/Biological Pass-Through)\n\n\nK (Non Pass-Through Drug/Biological)\n\n\nB (Not Recognized by OPPS for Part B)\n\n\nD (Discontinued Codes)\n\n\nL (Influenza/Pneumonia Vaccine)\n\n\nM (Not Billable to the FI)\n\n\nQ (Packaged Services Subject to Separate Payment)\n\n\nY (Non-Implantable Durable Medical Equipment)\n\n\nQ1 (STV-Packaged Codes)\n\n\nQ2 (T-Packaged Codes)\n\n\nQ3 (Codes paid through a composite APC)\n\n\nR (Blood and blood products)\n\n\nU (Brachytherapy Sources)\n\n\nJ1 (Services paid through a comprehensive APC)\n\n\nJ2 (Services that may be paid through a comprehensive APC)\n\n\nQ4 (Conditionally packaged laboratory tests)\n\n\nE1 (Items and services not covered by Medicare)\n\n\nE2 (Items and services without price or claim data)"
+    },
+    {
+      "index": 72,
+      "name": "PC_ORIG_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The original (dollar) amount of the claim."
+    },
+    {
+      "index": 77,
+      "name": "PC_EXP_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The expected (dollar) amount of the claim."
+    },
+    {
+      "index": 82,
+      "name": "PC_ASSOC_CLM_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The associated claim line for the payment classification."
+    },
+    {
+      "index": 87,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital account with which this claim is associated."
+    },
+    {
+      "index": 92,
+      "name": "CM_PHY_OWN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this Chronicles record. This is populated only if you use IntraConnect."
+    },
+    {
+      "index": 97,
+      "name": "PC_APG_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the payment classification ambulatory payment group (APG) type."
+    },
+    {
+      "index": 102,
+      "name": "PC_APG_CATEGORY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the payment classification APG category."
+    },
+    {
+      "index": 107,
+      "name": "PC_MUL_SIG_PRO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the multiple significant procedure discount flag\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 116,
+      "name": "PC_REP_ANCILL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the repeat ancillary discount flag\n\n\n The category values for this column were already listed for column: PC_MUL_SIG_PRO_YN"
+    },
+    {
+      "index": 122,
+      "name": "PC_BILAT_PRO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the bilateral procedure discount flag\n\n\n The category values for this column were already listed for column: PC_MUL_SIG_PRO_YN"
+    },
+    {
+      "index": 128,
+      "name": "PC_TERMIN_PR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the terminated procedure discount flag\n\n\n The category values for this column were already listed for column: PC_MUL_SIG_PRO_YN"
+    },
+    {
+      "index": 134,
+      "name": "PC_ADJUSTED_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the adjusted APG weight."
+    },
+    {
+      "index": 139,
+      "name": "PC_PAYMENT_ACTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the payment classification payment action"
+    },
+    {
+      "index": 144,
+      "name": "PC_ADDON_PAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payment classification capital add-on payment"
+    },
+    {
+      "index": 149,
+      "name": "PC_APG_PAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the payment classification APG payment."
+    },
+    {
+      "index": 154,
+      "name": "PC_BLENDED_PAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payment classification blended payment"
+    },
+    {
+      "index": 159,
+      "name": "PC_EXISTING_PAYMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payment classification payment calculated using existing system during transition to APG based reimbursement system"
+    },
+    {
+      "index": 164,
+      "name": "PC_PMT_CLASS_WT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores payment classification weight"
+    },
+    {
+      "index": 169,
+      "name": "PC_COMPOSITE_LINES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores extra information to identify special characteristics of this line of Ambulatory Payment Classification (APC) data. This item will be populated only if the claim has its APC grouping source configured to use the APC grouping framework. This item may be populated with one or more of the following separated by a pipe delimiter (|)."
+    },
+    {
+      "index": 174,
+      "name": "PC_GRP_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the grouping method that this line was created from.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedicare PPS\n\n\nTricare PPS\n\n\nNY Medicaid EPS\n\n\nMedicare SNF PPS PDPM\n\n\nExternal System"
+    }
+  ]
+}

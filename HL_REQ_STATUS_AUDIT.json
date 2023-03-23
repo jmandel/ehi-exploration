@@ -1,0 +1,52 @@
+{
+  "table_name": "HL_REQ_STATUS_AUDIT",
+  "description": "Hospital Logistics Request Status Audit.",
+  "primary_key": {
+    "column_name": "HLR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HLR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the request record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "EVENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC instant when a status change event occurred for this Logistics Request."
+    },
+    {
+      "index": 17,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status audit trail for this Logistics Request's status (I HLR 160).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnplanned\n\n\nPlanned\n\n\nAssigned\n\n\nAcknowledged\n\n\nAt Start Location\n\n\nIn Progress\n\n\nAt End Location\n\n\nCompleted\n\n\nCanceled"
+    },
+    {
+      "index": 33,
+      "name": "CANCEL_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status audit trail for this Logistics Request's cancel reason (I HLR 175).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAutomatically Canceled (Default) \n\n\nLinked Appointment Canceled\n\n\nLinked Admission PND Canceled\n\n\nLinked Discharge PND Canceled\n\n\nLinked Transfer PND Canceled\n\n\nLinked LOA Out PND Canceled\n\n\nLinked LOA Return PND Canceled\n\n\nPlanned Break Canceled\n\n\nReducing Required Technicians\n\n\nCanceled By Utility\n\n\nLinked Transport Request Canceled\n\n\nLinked ADT Event Canceled\n\n\nMaintenance Clean Replaced By Bed Clean\n\n\nLinked Bed Clean Canceled (Room Clean)\n\n\nLinked Appointment Time Changed\n\n\nCanceled by Contact Move\n\n\nLinked Appointment Department Changed\n\n\nLinking To Adjacent Appointment In Department\n\n\nLinked Appointment Patient No Show \n\n\nLinked Appointment Patient Left Without Being Seen"
+    },
+    {
+      "index": 60,
+      "name": "EVENT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The local instant when a status change event occurred for this Logistics request. For UTC, use HL_REQ_STATUS_AUDIT.EVENT_UTC_DTTM."
+    }
+  ]
+}

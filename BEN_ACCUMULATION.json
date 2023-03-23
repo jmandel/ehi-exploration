@@ -1,0 +1,108 @@
+{
+  "table_name": "BEN_ACCUMULATION",
+  "description": "This table is used to track accumulations to benefit buckets. \n\n\n\n\n\nTo calculate the current benefit bucket amount, join this table to BEN_ACCUMULATION_SYS_ADJ using all three primary key columns and subtracting BEN_ACCUMULATION_SYS_ADJ.SYS_ADJ_BEN_AMOUNT from BEN_ACCUMULATION.BEN_AMOUNT.",
+  "primary_key": {
+    "column_name": "COVERAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the ID of the coverage record."
+    },
+    {
+      "index": 7,
+      "name": "PAT_BUCKET_COMBO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is only used as part of the primary key and is not useful for reporting purposes. Its purpose is to make PAT_ID part of the primary key, but still allow PAT_ID to be null. PAT_ID is null for account level buckets.  The format of this column is \"PAT_ID;CMB_ID\""
+    },
+    {
+      "index": 12,
+      "name": "ROLL_PRD_START",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains a numeric representation of the roll period start date for the bucket.   A bucket's roll period start value is dependent on the roll period type.  For buckets with a roll type of Calendar Year, this column contains the 4-digit year of the roll period. For buckets with a roll type of Number of Days, this column contains a numeric representation (a DAT value) of the date of the first service. For buckets with a roll type of No Roll, this column contains 99999. For buckets with a roll type of Contract Year, this column contains the 4-digit year of the contract. For buckets with a roll type of Admission, this column contains a numeric representation (a DTE value) of the admission date. For buckets with a roll type of Calendar Week, this column contains a numeric representation (a DAT value) of the first day of the weekly roll period. For buckets with a roll type of Calendar Month, this column contains a numeric representation (a DAT value) of the first day of the monthly roll period."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the member this row corresponds to, or null if this is an account bucket."
+    },
+    {
+      "index": 22,
+      "name": "BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the bucket ID this row corresponds to."
+    },
+    {
+      "index": 27,
+      "name": "BUCKET_ID_BUCKET_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the bucket."
+    },
+    {
+      "index": 32,
+      "name": "BEN_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the total amount currently in the bucket for this row (i.e. this coverage, patient, bucket, and roll period combination)."
+    },
+    {
+      "index": 37,
+      "name": "ROLL_PRD_END",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the roll period end date for the bucket. It is only populated for admission roll period buckets."
+    },
+    {
+      "index": 42,
+      "name": "BEN_ACCUM_UNIQ_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores a unique key that is used to identify the data row."
+    },
+    {
+      "index": 47,
+      "name": "BUCKET_ROLL_PERIOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of roll period the bucket uses.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCalendar Year\n\n\nNumber of Days\n\n\nNo Roll\n\n\nContract Year\n\n\nAdmission\n\n\nCalendar Week\n\n\nCalendar Month"
+    },
+    {
+      "index": 61,
+      "name": "CALC_ROLL_PRD_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Except for the cases described next, this column stores the roll period start date of the bucket.  For no roll buckets (BUCKET_ROLL_PERIOD_C = 3), 12/31/1840 is stored since there is technically no roll period. For contract year buckets (BUCKET_ROLL_PERIOD_C = 4), NULL is stored since the roll period depends on employer group build that can change overtime."
+    },
+    {
+      "index": 66,
+      "name": "CALC_ROLL_PRD_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Except for the cases described next, this column stores the roll period end date of the bucket.  For no roll buckets (BUCKET_ROLL_PERIOD_C = 3), 09/27/2173 is stored since there is technically no roll period. For contract year buckets (BUCKET_ROLL_PERIOD_C = 4), NULL is stored since the roll period depends on employer group build that can change overtime."
+    },
+    {
+      "index": 71,
+      "name": "ROLL_PRD_START_YEAR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "For all bucket types, stores the start year of the roll period. For no roll buckets, 1840 is stored since there is technically no roll period. This column is most useful for calculating the roll period of contract year buckets."
+    },
+    {
+      "index": 76,
+      "name": "PAT_BKT_TX_TOTAL_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a string that uniquely identifies the coverage, patient, bucket, and roll period this transaction applies to. It is only populated for patient-level buckets and simplifies joins to BEN_ACCUMULATION_HX_PAT. COVERAGE_ID must still be included in the join."
+    }
+  ]
+}

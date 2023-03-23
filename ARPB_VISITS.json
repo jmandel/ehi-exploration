@@ -1,0 +1,185 @@
+{
+  "table_name": "ARPB_VISITS",
+  "description": "This table contains Professional Billing visit information stored in the Hospital Accounts Receivable (HAR) master file. It doesn�t include HAR records created for Hospital Billing and Single Billing Office.",
+  "primary_key": {
+    "column_name": "PB_VISIT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PB_VISIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the Professional Billing visit."
+    },
+    {
+      "index": 7,
+      "name": "PB_BILLING_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the Professional Billing status category ID for the visit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOpen\n\n\nBilled\n\n\nVoided\n\n\nClosed"
+    },
+    {
+      "index": 18,
+      "name": "PB_FO_OVRRD_ST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the Professional Billing filing order has been overridden by a user.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMatches the default\n\n\nOverridden by user\n\n\nNot matching default after rejection"
+    },
+    {
+      "index": 28,
+      "name": "PB_FO_MSPQ_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the filing order for the Professional Billing visit has been verified by Medicare Secondary Payer Questionnaire logic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMSPQ does not apply\n\n\nValidated by MSPQ responses\n\n\nOverridden by user"
+    },
+    {
+      "index": 38,
+      "name": "PB_VISIT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the PB visit number."
+    },
+    {
+      "index": 43,
+      "name": "PRIM_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number associated with the primary patient contact on the Professional Billing visit."
+    },
+    {
+      "index": 48,
+      "name": "GUARANTOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the guarantor ID associated with the Professional Billing visit."
+    },
+    {
+      "index": 53,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The primary coverage on the Professional Billing visit."
+    },
+    {
+      "index": 58,
+      "name": "SELF_PAY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the Professional Billing visit is self-pay.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 67,
+      "name": "DO_NOT_BILL_INS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates�whether the Professional Billing visit has the Do Not Bill Insurance flag set.\n\n\n The category values for this column were already listed for column: SELF_PAY_YN"
+    },
+    {
+      "index": 73,
+      "name": "ACCT_FIN_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The financial class category ID�for the Professional Billing visit.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+    },
+    {
+      "index": 94,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The service area of the Professional Billing visit."
+    },
+    {
+      "index": 99,
+      "name": "REVENUE_LOCATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The revenue location of the Professional Billing visit."
+    },
+    {
+      "index": 104,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department of the Professional Billing visit."
+    },
+    {
+      "index": 109,
+      "name": "PB_TOTAL_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the combined total balance of transactions on the PB visit."
+    },
+    {
+      "index": 114,
+      "name": "PB_TOTAL_CHARGES",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total charges on the PB visit."
+    },
+    {
+      "index": 119,
+      "name": "PB_TOTAL_PAYMENTS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total payments on the PB visit."
+    },
+    {
+      "index": 124,
+      "name": "PB_TOTAL_ADJ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains total adjustments on the PB visit."
+    },
+    {
+      "index": 129,
+      "name": "PB_INS_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains insurance balance on the PB visit."
+    },
+    {
+      "index": 134,
+      "name": "PB_UND_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains undistributed balances on the PB visit."
+    },
+    {
+      "index": 139,
+      "name": "PB_SELFPAY_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the self-pay balance on the Professional Billing visit."
+    },
+    {
+      "index": 144,
+      "name": "PB_BAD_DEBT_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the bad debt balance on the Professional Billing visit."
+    },
+    {
+      "index": 149,
+      "name": "REC_CREATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who created the Professional Billing visit record."
+    },
+    {
+      "index": 154,
+      "name": "FIRST_PB_CHG_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the first valid Professional Billing charge on the Professional Billing visit."
+    },
+    {
+      "index": 159,
+      "name": "BAL_FULL_SELF_PAY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item shows whether the balances for this hospital account are in full self-pay.\n\n\n The category values for this column were already listed for column: SELF_PAY_YN"
+    }
+  ]
+}

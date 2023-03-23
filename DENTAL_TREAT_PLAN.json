@@ -1,0 +1,150 @@
+{
+  "table_name": "DENTAL_TREAT_PLAN",
+  "description": "This table contains information about a dental billing plan.",
+  "primary_key": {
+    "column_name": "TREATMENT_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the treatment plan record."
+    },
+    {
+      "index": 7,
+      "name": "PLAN_DESCRIPTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of the dental treatment plan."
+    },
+    {
+      "index": 12,
+      "name": "PLAN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number of the plan type. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPredetermination\n\n\nOrthodontic"
+    },
+    {
+      "index": 21,
+      "name": "PLAN_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the plan status. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nPending\n\n\nSubmitted\n\n\nAuthorized\n\n\nVoided\n\n\nTerminated\n\n\nUNUSED\n\n\nInvalid Coverage\n\n\nReplaced"
+    },
+    {
+      "index": 37,
+      "name": "PLAN_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the dental treatment plan was created."
+    },
+    {
+      "index": 42,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account. This column is frequently used to link to the ACCOUNT table."
+    },
+    {
+      "index": 47,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage associated with the dental treatment plan. This column is frequently used to link to the COVERAGE table."
+    },
+    {
+      "index": 52,
+      "name": "PRICING_CONTRACT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the pricing contract associated with the dental treatment plan. This column is frequently used to link to the CLARITY_ECP table."
+    },
+    {
+      "index": 57,
+      "name": "PROVIDER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the provider record for this row. This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 62,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the department record for this row. This column is frequently used to link to the CLARITY_DEP table."
+    },
+    {
+      "index": 67,
+      "name": "SERVICE_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the service area record for this row. This column is frequently used to link to the CLARITY_SA table."
+    },
+    {
+      "index": 72,
+      "name": "TOTAL_CHARGE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total charge amount for the dental treatment plan."
+    },
+    {
+      "index": 77,
+      "name": "PATIENT_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient amount of the dental treatment plan. This is self-pay portion of the total charge amount."
+    },
+    {
+      "index": 82,
+      "name": "BANDING_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Banding date for orthodontic treatment. It is used on claim and identifies the date the braces were applied."
+    },
+    {
+      "index": 87,
+      "name": "PATIENT_CHG_PX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique ID of the procedure which is associated with the patient of the dental treatment plan. This column is frequently used to link to the CLARITY_EAP table."
+    },
+    {
+      "index": 92,
+      "name": "INSURANCE_CHG_PX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique ID of the procedure which is associated with the insurance of the dental treatment plan. This column is frequently used to link to the CLARITY_EAP table."
+    },
+    {
+      "index": 97,
+      "name": "SKIP_PREDETERMINATION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate that no predetermination claim needs to be sent.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 106,
+      "name": "SOURCE_ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Represents the Estimate record used to create this dental billing plan, if applicable."
+    },
+    {
+      "index": 111,
+      "name": "DTP_USER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status of a Dental Billing Plan as shown on DTP activity. This may be overridden by end users and can be different from PLAN_STATUS_C, which is the system status of this billing plan.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nPending\n\n\nSubmitted\n\n\nAuthorized\n\n\nVoided\n\n\nTerminated\n\n\nCompleted\n\n\nInvalid Coverage\n\n\nReplaced"
+    },
+    {
+      "index": 127,
+      "name": "REPL_BY_TREATMENT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a dental billing plan record is replaced, the record that replaced this one will be populated here."
+    }
+  ]
+}

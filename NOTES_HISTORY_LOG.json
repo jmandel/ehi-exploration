@@ -1,0 +1,66 @@
+{
+  "table_name": "NOTES_HISTORY_LOG",
+  "description": "This table contains the Edit History Information for all Notes (HNO records). Shows information about the type of edit, when the note was edited, and the user who made the edit.",
+  "primary_key": {
+    "column_name": "NOTE_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number identifier for this note contact."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of data, within the note contact."
+    },
+    {
+      "index": 12,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Note ID, or General Use Notes (HNO) record number."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date (calendar format) on which the encounter took place."
+    },
+    {
+      "index": 27,
+      "name": "EDIT_HX_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant at which the History Edit Action was performed."
+    },
+    {
+      "index": 32,
+      "name": "EDIT_HX_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edit action that was performed on the note.  Examples include Activate, Inactivate, and Edit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActivate\n\n\nInactivate\n\n\nEdit\n\n\nCreate"
+    },
+    {
+      "index": 43,
+      "name": "EDIT_HX_INFO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item can contain additional general edit information about the edit."
+    }
+  ]
+}

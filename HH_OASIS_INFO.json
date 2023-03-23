@@ -1,0 +1,87 @@
+{
+  "table_name": "HH_OASIS_INFO",
+  "description": "Contains Home Health Outcome and Assessment Information Set (OASIS) noadd single items.",
+  "primary_key": {
+    "column_name": "OASIS_SET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "OASIS_SET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Unique identifier for the OASIS data set."
+    },
+    {
+      "index": 7,
+      "name": "OASIS_DATA_SET_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of OASIS data set.  Links to category list ZC_OASIS_DATA_SET.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSOC/ROC\n\n\nFollow-up\n\n\nTransfer\n\n\nDischarge"
+    },
+    {
+      "index": 18,
+      "name": "OASIS_SET_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "OASIS data set status.  Links to category list ZC_OASIS_SET_STATUS.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nVisit Complete\n\n\nMarked for Submission\n\n\nSubmitted\n\n\nAccepted\n\n\nRejected\n\n\nVoided\n\n\nIn Progress\n\n\nReady for 3rd Party\n\n\nSent to 3rd Party"
+    },
+    {
+      "index": 35,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system.  Links to table PAT_ENC."
+    },
+    {
+      "index": 40,
+      "name": "OASIS_VERSION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "OASIS version.  Links to category list ZC_OASIS_VERSION. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n01.30\n\n\n01.40\n\n\n01.50\n\n\n01.60\n\n\n02.00\n\n\n02.11\n\n\n02.12\n\n\n02.20\n\n\n02.21\n\n\n2.30.0\n\n\n2.31.0\n\n\n3.00.0"
+    },
+    {
+      "index": 59,
+      "name": "ADDENDUM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a flag that indicates whether an addendum has been created for an OASIS assessment contact since the last time the dataset was submitted to the state. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 68,
+      "name": "CUR_OASIS_LOCK_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current lock status of the OASIS assessment data set. Links to category list ZC_OASIS_LOCK_STAT. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnlocked\n\n\nLocked"
+    },
+    {
+      "index": 77,
+      "name": "DATASET_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores what type of dataset the record is. Currently datasets can be OASIS or HIS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOASIS Dataset\n\n\nHIS Dataset"
+    },
+    {
+      "index": 86,
+      "name": "ADND_3RD_EXPORT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a flag that indicates whether an OASIS assessment contact has had an addendum created since the last time the dataset was submitted to a 3rd party. \n\n\n The category values for this column were already listed for column: ADDENDUM_YN"
+    },
+    {
+      "index": 92,
+      "name": "LAST_ADDENDUM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is the date of the last addendum created for an OASIS assessment contact."
+    },
+    {
+      "index": 97,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the patient associated with the data set."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "table_name": "WMG_REC_STATUS_HX",
+  "description": "Stores changes to the status of patient messages.",
+  "primary_key": {
+    "column_name": "MESSAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "MESSAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the message record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "SDFL_EDIT_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The instant when the message status was changed."
+    },
+    {
+      "index": 17,
+      "name": "SDFL_EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 22,
+      "name": "SDFL_EDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The edit action category number for the message status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nUndo Delete\n\n\nHide\n\n\nUnhide"
+    }
+  ]
+}

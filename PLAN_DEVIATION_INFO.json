@@ -1,0 +1,45 @@
+{
+  "table_name": "PLAN_DEVIATION_INFO",
+  "description": "This table holds plan-level deviation info for oncology treatment plans, including deviation instant, deviation user, and deviation change type.",
+  "primary_key": {
+    "column_name": "TREATMENT_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the oncology treatment plan record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "DEVIATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This stores the instants the plan deviated from the protocol."
+    },
+    {
+      "index": 17,
+      "name": "DEVIATION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the users who made the treatment plan deviations"
+    },
+    {
+      "index": 22,
+      "name": "DEVIATION_ACTION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the change action type of the plan deviation, for example, creating a blank plan, or creating a plan that is not from a suggested protocol, etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCopy Cycle\n\n\nCopy Day\n\n\nAdd/Copy Order\n\n\nDelete Order\n\n\nCreate Blank Plan\n\n\nNon-Suggested Protocol\n\n\nDose Increase\n\n\nDose Decrease\n\n\nRate Increase\n\n\nRate Decrease\n\n\nFrequency Change\n\n\nRoute Change\n\n\nIncrease Target AUC\n\n\nDecrease Target AUC\n\n\nChange CrCl Formula\n\n\nEnter Order-Specific CrCl Value\n\n\nEnter Order-Specific sCr Value\n\n\nIncrease Frequency Per Day\n\n\nDecrease Frequency Per Day\n\n\nAUC to Flat Dose\n\n\nMultiple Dosage Sig Change"
+    }
+  ]
+}

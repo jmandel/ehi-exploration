@@ -1,0 +1,87 @@
+{
+  "table_name": "PAT_ENC_CC_LIST",
+  "description": "This table extracts CC'd chart routing history information of the encounter.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the CC'ed Charts associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 17,
+      "name": "CC_LIST_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The routing priority for the CC'd chart message.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHigh\n\n\nRoutine\n\n\nLow"
+    },
+    {
+      "index": 27,
+      "name": "CC_LIST_SENTBY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user ID of the message sender."
+    },
+    {
+      "index": 32,
+      "name": "CC_LIST_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the recipient user ID if appropriate."
+    },
+    {
+      "index": 37,
+      "name": "CC_LIST_POOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column displays the pool record ID for the recipient if appropriate."
+    },
+    {
+      "index": 42,
+      "name": "CC_LIST_POOL_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "index": 47,
+      "name": "CC_LIST_CLASS_C",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the class recipient if appropriate."
+    },
+    {
+      "index": 52,
+      "name": "CC_LIST_ADHOC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the ad-hoc recipient if appropriate."
+    },
+    {
+      "index": 57,
+      "name": "CC_LIST_EX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the excluded user ID for the recipient if appropriate."
+    }
+  ]
+}

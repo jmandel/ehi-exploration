@@ -1,0 +1,80 @@
+{
+  "table_name": "TXP_CURRENT_MELD_PELD_HX",
+  "description": "This table contains the liver score history for a transplant episode.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CURRENT_SCORE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The most advantageous active liver score. After 6/28/2022 exceptions will not be included due to changes in the OPTN liver allocation policy."
+    },
+    {
+      "index": 17,
+      "name": "CURRENT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status, when it is the most advantageous active liver score. After 6/28/2022 exceptions will not be included due to changes in the OPTN liver allocation policy.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOne A\n\n\nOne B"
+    },
+    {
+      "index": 26,
+      "name": "CURRENT_SCORE_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of liver score that this line represents. That is, \"MELD\", \"PELD\" or \"STATUS\""
+    },
+    {
+      "index": 31,
+      "name": "CURRENT_EXCEPTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exception for this line.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 37,
+      "name": "CURRENT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Start date of the associated score."
+    },
+    {
+      "index": 42,
+      "name": "CURRENT_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Expiration date of the associated score."
+    },
+    {
+      "index": 47,
+      "name": "CUR_EXCEPTION_OTHER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The other exception for the meld score."
+    },
+    {
+      "index": 52,
+      "name": "SCORE_HISTORY_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Line in the HSB 30400 related group corresponding to this line in score history"
+    }
+  ]
+}

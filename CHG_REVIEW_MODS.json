@@ -1,0 +1,52 @@
+{
+  "table_name": "CHG_REVIEW_MODS",
+  "description": "This table contains multiple response information for modifiers associated with temporary accounts receivable (TAR) transaction procedure lines. This table contains one row for each modifier entered on a TAR line for each TAR that has been in a charge review workqueue. Note: TAR records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table might be lost if you truncate the table.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the temporary transaction record.  This represents an individual charge session."
+    },
+    {
+      "index": 7,
+      "name": "LINE_COUNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the charge in the charge session.  Multiple charges can be associated with this charge session."
+    },
+    {
+      "index": 12,
+      "name": "MOD_LINE_COUNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the modifier on the charge.  Multiple modifiers can be associated with each charge in the charge session."
+    },
+    {
+      "index": 17,
+      "name": "EXT_MODIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external ID of the modifier record."
+    },
+    {
+      "index": 22,
+      "name": "INT_MODIFIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the modifier of the charge.  This column is frequently used to link to the CLARITY_MOD table."
+    },
+    {
+      "index": 27,
+      "name": "INT_MODIFIER_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    }
+  ]
+}

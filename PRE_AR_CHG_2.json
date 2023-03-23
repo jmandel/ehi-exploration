@@ -1,0 +1,465 @@
+{
+  "table_name": "PRE_AR_CHG_2",
+  "description": "This table is a continuation of the PRE_AR_CHG table. This table contains one row for each line of each temporary accounts receivable (TAR) record (think of a TAR record as one charge entry screen and each line as an individual procedure). Deleting charge lines will delete rows from this table. This table contains additional information about the procedure.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "CHARGE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this transaction record.  This represents a single charge procedure in the transaction."
+    },
+    {
+      "index": 12,
+      "name": "PENDING_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pending status of this transaction: 1 means Pending and 2 means Waiting to Pend. If blank, the transaction is not pending.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nWaiting to Pend"
+    },
+    {
+      "index": 21,
+      "name": "TX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "What this transaction record is used for (e.g. charge, payment, adjustment, etc...).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment/Adjustment\n\n\nSingle Adjustment\n\n\nVisit\n\n\nExpress Payment"
+    },
+    {
+      "index": 33,
+      "name": "PENDING_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pending reason category ID for the temporary�transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nError in Charge Entry Validation Check\n\n\nWarning in Charge Entry Validation Check\n\n\nImport: Transaction Imported to holding Tank\n\n\nInpatient: Charge needs to be reviewed"
+    },
+    {
+      "index": 45,
+      "name": "PENDING_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free-text comment to further explain why this transaction is pending."
+    },
+    {
+      "index": 50,
+      "name": "LAST_EDITED_DATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The last date the check payment was edited."
+    },
+    {
+      "index": 55,
+      "name": "HOSP_ACCOUNT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the hospital account record ID for the transaction."
+    },
+    {
+      "index": 60,
+      "name": "EXT_BILLING_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A billing number from an external billing system."
+    },
+    {
+      "index": 65,
+      "name": "EXT_REFERENCE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A reference number from an external billing system."
+    },
+    {
+      "index": 70,
+      "name": "ENC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The kind of encounter which is associated with this transaction (e.g. Walk-In, Appointment, Anesthesia, etc...).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRegistration\n\n\nWalk-In\n\n\nHospital Encounter\n\n\nCanceled\n\n\nUnmerge\n\n\nContact Moved\n\n\nIntake\n\n\nEMPTY\n\n\nResearch Encounter\n\n\nRecurring Plan\n\n\nUpdate\n\n\nPCP/Clinic Change\n\n\nWait List\n\n\nEnrollment\n\n\nSocial Care Application\n\n\nService Decision Registration\n\n\nLeader Rounds\n\n\nClerical Orders\n\n\nMother Baby Link\n\n\nLactation Encounter\n\n\nAppointment\n\n\nSurgery\n\n\nAnesthesia\n\n\nAnesthesia Event\n\n\nGuardian Screening\n\n\nAncillary Procedure\n\n\nAnticoagulation Discharge Documentation\n\n\nHealth Maintenance Letter\n\n\nPatient Message\n\n\nE-Visit\n\n\nMobile Order Only\n\n\nQuestionnaire Series Submission\n\n\nTravel\n\n\nPatient Self-Triage\n\n\nCommunity Care Management\n\n\nPatient Outreach\n\n\nTelephone\n\n\nNurse Triage\n\n\nE-Consult\n\n\nE-Consult Community Order\n\n\nClinical Documentation Only\n\n\nTelemedicine\n\n\nPlan of Care Documentation\n\n\nExternal Communication\n\n\nReconciled Outside Data\n\n\nExternal Contact\n\n\nOphth Exam\n\n\nRecurring Billing Documentation\n\n\nPre-Admission Testing\n\n\nHospice Admission\n\n\nHome Infusion\n\n\nHome Infusion Billing\n\n\nHome Health Resumption of Care Planning\n\n\nHome Health Admission\n\n\nHome Care Visit\n\n\nHome Care Update\n\n\nKanta Service Event\n\n\nPatient Web Update\n\n\nCommunity Orders\n\n\nCommittee Review\n\n\nPost Mortem Documentation\n\n\nBilling Encounter\n\n\nLab Requisition\n\n\nOffice Visit\n\n\nConsent Form\n\n\nProcedure Pass\n\n\nExternal Hospital Admission\n\n\nLetter (Out)\n\n\nHospital\n\n\nRefill\n\n\nImmunization\n\n\nHistory\n\n\nReferral\n\n\nOrders Only\n\n\nRx Refill Authorize\n\n\nMeds Only (Web)\n\n\nMeds Void (Web)\n\n\nResolute Professional Billing Hospital Prof Fee\n\n\nEpisode Changes\n\n\nAncillary Orders\n\n\nPharmacy Visit\n\n\nBPA\n\n\nAbstract"
+    },
+    {
+      "index": 160,
+      "name": "PROV_SPECIALTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider's area of expert knowledge which applies for this transaction.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 166,
+      "name": "DEFAULT_SVC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The service date when this transaction took place."
+    },
+    {
+      "index": 171,
+      "name": "DO_NOT_BILL_INS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Do Not Bill Insurance for the charge session (taken from visit if encounter form # is used). Possible values will be \"Y\" and \"N\".\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 180,
+      "name": "CHARGE_DESC_OVRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the charge description if it has been changed from the default."
+    },
+    {
+      "index": 185,
+      "name": "PROC_MED_NEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this particular charge line is a medical necessity or not.  Possible values will be \"Y\" and \"N\".\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 194,
+      "name": "COPAY_INDICATOR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payment type for this copay.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCo-ins\n\n\nCopay\n\n\nNot Covered\n\n\nNo Patient Payment"
+    },
+    {
+      "index": 205,
+      "name": "TAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The tax related to this charge."
+    },
+    {
+      "index": 210,
+      "name": "TAX_PROC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure line is a tax procedure"
+    },
+    {
+      "index": 215,
+      "name": "DX_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The diagnoses which apply to this charge line. This will be in the form of comma-separated integers, where each integer corresponds with a line in the CHG_REVIEW_DX table for this transaction."
+    },
+    {
+      "index": 220,
+      "name": "MANUAL_PRICE_OVRIDE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Indicates if this price override is a manual override or was due to a pricing contract."
+    },
+    {
+      "index": 225,
+      "name": "ADJ_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Adjustment amount for one charge line."
+    },
+    {
+      "index": 230,
+      "name": "PRICE_OVRIDE_FLAG",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds the price override for this line, if one has been set."
+    },
+    {
+      "index": 235,
+      "name": "PANEL_PROC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure number for this charge line. Corresponds to the Procedure Master # (EAP-100)."
+    },
+    {
+      "index": 240,
+      "name": "HEMATOCRIT_READING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hematocrit reading for this procedure, if one has been taken."
+    },
+    {
+      "index": 245,
+      "name": "HEMOGLOBIN_READING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hemoglobin reading for this procedure, if one has been taken."
+    },
+    {
+      "index": 250,
+      "name": "CHG_NOT_BILL_INS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Do Not Bill Insurance for charge line. Possible values will be \"Y\" and \"N\".\n\n\n The category values for this column were already listed for column: DO_NOT_BILL_INS_YN"
+    },
+    {
+      "index": 256,
+      "name": "CHARGE_LENGTH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The length of time in minutes that this procedure took."
+    },
+    {
+      "index": 261,
+      "name": "START_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time when this procedure was started."
+    },
+    {
+      "index": 266,
+      "name": "STOP_TIME",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The time when this procedure was finished."
+    },
+    {
+      "index": 271,
+      "name": "START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when this procedure was started."
+    },
+    {
+      "index": 276,
+      "name": "STOP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when this procedure was finished."
+    },
+    {
+      "index": 281,
+      "name": "SERVICE_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time of service for a charge line."
+    },
+    {
+      "index": 286,
+      "name": "SELF_PAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The self-pay amount associated with this charge line as determined by the Benefits Engine."
+    },
+    {
+      "index": 291,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the claim information record associated with this charge line."
+    },
+    {
+      "index": 296,
+      "name": "CHG_CVG_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The coverage status category ID for the temporary transaction. This is�determined by the Benefits Engine.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCovered, write-off\n\n\nNot covered\n\n\nCovered, no write-off\n\n\nNot covered but assigned to payer"
+    },
+    {
+      "index": 307,
+      "name": "OLD_ETR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique Accounts Receivable (AR) transaction ID which is associated with this charge record. This column is frequently used to link to the ARPB_TRANSACTIONS table."
+    },
+    {
+      "index": 312,
+      "name": "ANESTHESIA_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Anesthesia procedure type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral\n\n\nIV\n\n\nLocal\n\n\nMonitored Anesthesia Care\n\n\nRegional"
+    },
+    {
+      "index": 324,
+      "name": "EMERG_STATUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates where this charge is associated with an admitted�patient with an emergency status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 333,
+      "name": "PHYSICAL_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Physical status of the patient who had the anesthesia procedure.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal Healthy\n\n\nMild Systemic Disease\n\n\nSevere Systemic Disease\n\n\nSevere/Threat\n\n\nMoribund\n\n\nBrain Dead"
+    },
+    {
+      "index": 346,
+      "name": "ANES_BASE_UNITS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Anesthesia base units for the charge procedure."
+    },
+    {
+      "index": 351,
+      "name": "EMERG_UNITS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Emergency units for the charge procedure."
+    },
+    {
+      "index": 356,
+      "name": "PHYSICAL_STAT_UNITS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Physical status units for the charge procedure."
+    },
+    {
+      "index": 361,
+      "name": "AGE_UNITS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Age units for the anesthesia procedure."
+    },
+    {
+      "index": 366,
+      "name": "ANES_AGE_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Anesthesia age unit procedure."
+    },
+    {
+      "index": 371,
+      "name": "ANES_EMERG_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Anesthesia emergency unit procedure."
+    },
+    {
+      "index": 376,
+      "name": "CHARGE_BILL_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia billing status category ID for the temporary transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nSupplemental\n\n\nSupplemental Unit"
+    },
+    {
+      "index": 387,
+      "name": "ANES_SUPP_UNITS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Anesthesia supplemental units."
+    },
+    {
+      "index": 392,
+      "name": "ANES_AGE_PROC_UNIT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Anesthesia age unit procedure unit."
+    },
+    {
+      "index": 397,
+      "name": "ANES_EMERG_PROC_UNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Anesthesia emergency unit procedure unit."
+    },
+    {
+      "index": 402,
+      "name": "ORIG_ANES_TX_SS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Original anesthesia transaction for special supplemental."
+    },
+    {
+      "index": 407,
+      "name": "RAD_THER_END",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Indicates end of radiation treatment."
+    },
+    {
+      "index": 412,
+      "name": "RAD_THER_LINK",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Radiation therapy link for transfer/retro."
+    },
+    {
+      "index": 417,
+      "name": "CHANGED_DX_PX_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if charge review changed the diagnosis or procedure.\n\n\n The category values for this column were already listed for column: DO_NOT_BILL_INS_YN"
+    },
+    {
+      "index": 423,
+      "name": "ORIG_PAT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Original self-pay amount before discount."
+    },
+    {
+      "index": 428,
+      "name": "SST_DISCNT_OVRD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate that the self-pay discount amount was manually overridden by the user.\n\n\n The category values for this column were already listed for column: DO_NOT_BILL_INS_YN"
+    },
+    {
+      "index": 434,
+      "name": "SST_SP_AMT_OVRD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate that the self-pay amount was overridden in the self-pay discount workflow.\n\n\n The category values for this column were already listed for column: DO_NOT_BILL_INS_YN"
+    },
+    {
+      "index": 440,
+      "name": "SST_DISCNT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The self-pay discount amount."
+    },
+    {
+      "index": 445,
+      "name": "POS_TYPE_OVRRID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Place of service type override for a single charge line\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 503,
+      "name": "BFD_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the coverage used to compute reimbursement and pricing contract for charge lines that qualify for bill for denial workflows."
+    },
+    {
+      "index": 508,
+      "name": "MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The medication ID of the medication associated with this charge."
+    },
+    {
+      "index": 513,
+      "name": "WRITE_OFF_EXCEPTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The write-off exception for this charge. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nYes, No NCC either"
+    },
+    {
+      "index": 522,
+      "name": "INSURANCE_ONLY_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag to indicate if insurance only billing applies to this charge.  \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nyes and new SST"
+    },
+    {
+      "index": 531,
+      "name": "AUTO_PAT_WRITEOFF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is set when the user flags the charge line for an automatic patient writeoff, and it is unset if the user unflags the charge line. This allows the system to distinguish when the user was the source of the insurance only flag value, rather than the system having set it automatically.\n\n\n The category values for this column were already listed for column: INSURANCE_ONLY_FLAG_C_NAME"
+    },
+    {
+      "index": 537,
+      "name": "DENTAL_PREAUTH_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount that will be sent to insurance for preauthorization for the associated charge line."
+    }
+  ]
+}

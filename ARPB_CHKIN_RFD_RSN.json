@@ -1,0 +1,38 @@
+{
+  "table_name": "ARPB_CHKIN_RFD_RSN",
+  "description": "The ARPB_CHKIN_RFD_RSN table contains information concerning the refund reason and comment for a refund performed at check-in/out.\n\n\nThis table will only have data if your site has both Professional Billing and Scheduling applications.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique key or identification number for a given refund transaction from check-in."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number used to identify a specific row of information in this table. It is used to associate various pieces of information from other sources of data to each row of this table."
+    },
+    {
+      "index": 12,
+      "name": "AR_REFUND_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AR refund reason code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nDuplicate\n\n\nPosted in Error\n\n\nOverpayment\n\n\nFinancial Assistance\n\n\nLeft Without Being Seen\n\n\nPatient Requested\n\n\nVisit Canceled"
+    },
+    {
+      "index": 27,
+      "name": "AR_REFUND_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The accounts receivable (AR) check-in refund comment."
+    }
+  ]
+}

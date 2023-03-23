@@ -1,0 +1,80 @@
+{
+  "table_name": "PAT_ENC_ELIG_HISTORY",
+  "description": "This table holds information about actions taken on a patient's pharmacy benefit eligibility information.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 32,
+      "name": "ELIG_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the action performed on the patient's eligibility.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAuto Verified\n\n\nPlan Selected\n\n\nNothing Selected\n\n\nPlan Removed\n\n\nPlan Selected After Copy\n\n\nCopied Previous Selection"
+    },
+    {
+      "index": 45,
+      "name": "ELIG_PLAN_INDEX",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item indicates which eligibility plan the action was taken on. It is an index into the patient (EPT) 42010 group."
+    },
+    {
+      "index": 50,
+      "name": "ELIG_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the user who performed the action on the patient's eligibility information."
+    },
+    {
+      "index": 55,
+      "name": "ELIG_HX_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item holds the instant that the eligibility action was performed."
+    }
+  ]
+}

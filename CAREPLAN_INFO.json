@@ -1,0 +1,73 @@
+{
+  "table_name": "CAREPLAN_INFO",
+  "description": "Contains information about care plan template records.",
+  "primary_key": {
+    "column_name": "CARE_INTG_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CARE_INTG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the care plan record."
+    },
+    {
+      "index": 7,
+      "name": "CAREPLAN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the type of the care plan record (Collaborative or Home Health).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHome Health/Hospice\n\n\nCollaborative\n\n\nOutpatient\n\n\nCare Plan Reading"
+    },
+    {
+      "index": 18,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The linked unique contact serial number for the patient. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI). This column is frequently used to link to the PAT_ENC_HSP table."
+    },
+    {
+      "index": 23,
+      "name": "PATIENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Links OP care plan (patient-level and episodic) to the associated patient"
+    },
+    {
+      "index": 28,
+      "name": "LINKED_PAT_CAREPLAN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the outpatient care plan is linked at the patient level or the episode level. Yes means it is patient level, No means it is episode level."
+    },
+    {
+      "index": 33,
+      "name": "RFL_INSTR_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the HNO record that contains the referral instructions"
+    },
+    {
+      "index": 38,
+      "name": "READING_CAREPLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The link to the care plan reading Care Plan record."
+    },
+    {
+      "index": 43,
+      "name": "LAST_EDITED_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the care plan was last edited. This does not include documentation-only changes."
+    },
+    {
+      "index": 48,
+      "name": "RECORD_STATUS_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Record status flag. Used in conjunction with record archived flag for encounter archiving.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    }
+  ]
+}

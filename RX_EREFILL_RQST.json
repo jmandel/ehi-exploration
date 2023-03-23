@@ -1,0 +1,206 @@
+{
+  "table_name": "RX_EREFILL_RQST",
+  "description": "This table contains information about  e-refill requests.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID for the order with which the electronic refill is associated."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is populated only if you use IntraConnect."
+    },
+    {
+      "index": 22,
+      "name": "EREFILL_APP_RX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the prescription name."
+    },
+    {
+      "index": 27,
+      "name": "EREFILL_APP_ERX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the medication NDC (National Drug Code) which is associated with a medication record."
+    },
+    {
+      "index": 32,
+      "name": "EREFILL_APP_RX_QTY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The prescription quantity approved."
+    },
+    {
+      "index": 37,
+      "name": "EREFILL_APP_RX_UNIT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The units associated with the quantity of the refill when the request was approved."
+    },
+    {
+      "index": 42,
+      "name": "EREFILL_APP_RX_SIG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The signature on the e-refill approval."
+    },
+    {
+      "index": 47,
+      "name": "EREFILL_APP_RFL_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is the number of e-refills approved."
+    },
+    {
+      "index": 52,
+      "name": "EREFILL_APP_END_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The end date for the e-refill prescription."
+    },
+    {
+      "index": 57,
+      "name": "EREFILL_APP_PROVIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the provider associated with the e-refill approval."
+    },
+    {
+      "index": 62,
+      "name": "EREFILL_APP_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the provider record for this row."
+    },
+    {
+      "index": 67,
+      "name": "EREFILL_ENT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for this row."
+    },
+    {
+      "index": 72,
+      "name": "EREFILL_PR_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the prescribing provider"
+    },
+    {
+      "index": 77,
+      "name": "EREFILL_APP_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This is the date and time the e-refill was acted  on (approved or refused)."
+    },
+    {
+      "index": 82,
+      "name": "EREFILL_APP_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant that e-refill was approved or refused."
+    },
+    {
+      "index": 87,
+      "name": "EREFILL_APP_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of an General Use Notes record that stores the comments to the support staff."
+    },
+    {
+      "index": 92,
+      "name": "EREFILL_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The e-refill action; examples include \"refuse\",\"approve\", etc. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDeny\n\n\nApprove (with Edits) (Old)\n\n\nApprove\n\n\nRefuse\n\n\nEdit\n\n\nRefill Retracted\n\n\nAdd refills"
+    },
+    {
+      "index": 106,
+      "name": "EREFILL_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column tells whether the e-refill has been completed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUNKNOWN\n\n\nYES\n\n\nNO"
+    },
+    {
+      "index": 116,
+      "name": "ERFLL_FOL_UP_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The e-refill authorization request follow-up status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo follow-up\n\n\nFollow-up pending\n\n\nFollow-up received\n\n\nSending FU Resp"
+    },
+    {
+      "index": 127,
+      "name": "ERFLL_FOL_UP_MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of an In Basket message record, which is a message sent to the provider to follow up on an electronic refill request."
+    },
+    {
+      "index": 132,
+      "name": "EREFILL_DENY_REAS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the refill is refused, the reason will be stored here.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 138,
+      "name": "ERFLL_APP_RFL_PRN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the PRN value (for example PRN-2Yr or PRN-1Yr, referring to the length of time the 'as needed' medication can be refilled) approved in the e-refill.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPRN-2Yr\n\n\nPRN-1Yr\n\n\nPRN-Other"
+    },
+    {
+      "index": 148,
+      "name": "EREFILL_MSG_PHM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of a note record that stores the comments entered in the message to pharmacy field."
+    },
+    {
+      "index": 153,
+      "name": "EREFILL_COS_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the provider record for this row."
+    },
+    {
+      "index": 158,
+      "name": "ERFLL_PREPRV_INST_X",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The prescribing provider's ID and the instant at which he acted on the order, separated by a caret. This item is used for indexing."
+    },
+    {
+      "index": 163,
+      "name": "ERFLL_ACTPRV_INST_X",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The acting provider's ID and the instant at which he acted on the order, separated by a caret. This item is used for indexing."
+    }
+  ]
+}

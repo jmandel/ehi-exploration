@@ -1,0 +1,101 @@
+{
+  "table_name": "V_EHI_AUDIT_PAYOR_AND_DP_COMM",
+  "description": "This view contains audit data for the Continued Care and Services Coordination (CCSC) and Payer Communication workflows. Each row corresponds to a single audited event from those workflows.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "AUDIT_EVENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the event type (adding recipient, changing status, changing override fax, or changing override phone) of the item being changed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdding Recipient\n\n\nRemoving Recipient\n\n\nChanging Status\n\n\nChanging Override Fax\n\n\nChanging Override Phone\n\n\nChanging Selected Caregiver Flag\n\n\nChanging Override Contact Name\n\n\nChanging Address\n\n\nChanging Selected Service Flag\n\n\nSelecting Specialty\n\n\nDeselecting Specialty\n\n\nChanging Completion\n\n\nSelecting Service\n\n\nDeselecting Service\n\n\nArchiving Service Provider\n\n\nMarking Service Provider Patient Preferred\n\n\nRemoving Patient Preference for Service Provider\n\n\nAdding No Patient Preference Flag\n\n\nRemoving No Patient Preference Flag\n\n\nAdding Follow-ups\n\n\nRemoving Follow-ups\n\n\nChange Encounter-Specific Fax"
+    },
+    {
+      "index": 46,
+      "name": "AUDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the ID of the user who is making the item change."
+    },
+    {
+      "index": 51,
+      "name": "AUDIT_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This is the time instant of the item change."
+    },
+    {
+      "index": 56,
+      "name": "RECIPIENT_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the name of the recipient for this audit event in external format. For CCSC audit events this is the name of the service provider. For Payer Communication audit events this is the name of the payer recipient."
+    },
+    {
+      "index": 61,
+      "name": "DP_COORD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The coordination type of an item being changed as part of the Continued Care and Services Coordination (post-discharge services or placement for the patient) workflow.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDestination\n\n\nDurable Medical Equipment\n\n\nDialysis/Infusion\n\n\nHome Medical Care\n\n\nCommunity Resources"
+    },
+    {
+      "index": 73,
+      "name": "OLD_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the old value of the item being changed."
+    },
+    {
+      "index": 78,
+      "name": "NEW_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the new value of the item being changed."
+    },
+    {
+      "index": 83,
+      "name": "OLD_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the externally formatted old value of the item being changed. The internally formatted value is stored in the AUDIT_OLD_VALUE column.  For example, if the AUDIT_OLD_VALUE includes a category value, then this column will store the category title that describes the category value. This column shows the translated external value as of when the column was last extracted."
+    },
+    {
+      "index": 88,
+      "name": "NEW_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the externally formatted new value of the item being changed. The internally formatted value is stored in the AUDIT_NEW_VALUE column.  For example, if the AUDIT_NEW_VALUE includes a category value, then this column will store the category title that describes the category value. This column shows the translated external value as of when the column was last extracted."
+    },
+    {
+      "index": 93,
+      "name": "CHANGED_DATA_ELEMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The column descriptor that contains the metadata to be associated with data stored in columns OLD_VALUE_INTERNAL and NEW_VALUE_INTERNAL."
+    }
+  ]
+}

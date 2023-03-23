@@ -1,0 +1,290 @@
+{
+  "table_name": "DOCS_RCVD_RSLTS",
+  "description": "This table stores discrete results received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "RESULT_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Local instant for the result"
+    },
+    {
+      "index": 27,
+      "name": "RESULT_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text name of the procedure"
+    },
+    {
+      "index": 32,
+      "name": "RESULT_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the mapped procedure in the internal system."
+    },
+    {
+      "index": 37,
+      "name": "PROC_LOINC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The LOINC code associated with this procedure."
+    },
+    {
+      "index": 42,
+      "name": "RESULT_ENC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Link to the ordering encounter"
+    },
+    {
+      "index": 47,
+      "name": "RESULT_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Key to link the other result information to this order"
+    },
+    {
+      "index": 52,
+      "name": "RESULT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status for this result\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+    },
+    {
+      "index": 68,
+      "name": "RESULT_ABNORMAL_C",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this result was flagged as abnormal"
+    },
+    {
+      "index": 73,
+      "name": "SPECIMEN_DISP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The displayable specimen name(s) for this result."
+    },
+    {
+      "index": 78,
+      "name": "RESULT_SOURCE_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the Document Received record contact originally storing this result."
+    },
+    {
+      "index": 83,
+      "name": "RSLT_LST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the last update instant of the result in UTC."
+    },
+    {
+      "index": 88,
+      "name": "RESULT_RESULTING_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This items stores the resulting status of the result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn process\n\n\nPreliminary result\n\n\nFinal result\n\n\nEdited\n\n\nEdited Result - FINAL"
+    },
+    {
+      "index": 100,
+      "name": "RSLT_ABNORMAL_ID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the mapped result abnormality.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAbnormal\n\n\nNormal"
+    },
+    {
+      "index": 109,
+      "name": "RESULT_LOINC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the mapped LOINC ID for a result LOINC code."
+    },
+    {
+      "index": 114,
+      "name": "EXTERNAL_RESULT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of the result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nMedication\n\n\nCode Status\n\n\nConsult\n\n\nCulture\n\n\nDiet\n\n\nECG\n\n\nImage\n\n\nImmunization\n\n\nIsolation\n\n\nMicrobiology\n\n\nNursing\n\n\nProcedure\n\n\nRadiology\n\n\nReferral\n\n\nE-Consult\n\n\nLab\n\n\nGenomic Result\n\n\nMicrobiology - Non culture based"
+    },
+    {
+      "index": 140,
+      "name": "RESULT_INVALID_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether or not this line of result data is invalid.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 149,
+      "name": "RESULT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the UTC instant of the moment this order was resulted."
+    },
+    {
+      "index": 154,
+      "name": "SPECIMEN_COLLECTION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "UTC Instant of collection for this order's specimen(s)"
+    },
+    {
+      "index": 159,
+      "name": "RSLT_UNSUCCESSFUL_FLG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a result was an unsuccessful attempt\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnsuccessful Attempt\n\n\nDocumented on Wrong Patient"
+    },
+    {
+      "index": 168,
+      "name": "RSLT_UNSUCCESS_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant the result unsuccessful flag was set"
+    },
+    {
+      "index": 173,
+      "name": "RSLT_PT_SRC_APP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this result is a patient-entered result, this item stores the application which was used to submit it for the contact (e.g. MyChart).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyChart\n\n\nWelcome"
+    },
+    {
+      "index": 182,
+      "name": "RSLT_SRC_WPR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the MyChart user who edited the result for the contact."
+    },
+    {
+      "index": 187,
+      "name": "RSLT_SRC_ORG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Data Exchange Organization record ID of the source organization for this order."
+    },
+    {
+      "index": 192,
+      "name": "RSLT_SRC_ORG_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "index": 197,
+      "name": "RSLT_AUTH_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The full name of the provider responsible for authorizing this result."
+    },
+    {
+      "index": 202,
+      "name": "RESULT_CONTACT_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the source of the result from the sending system. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nEnter/Edit Results\n\n\nResult Orders Visit Navigator\n\n\nResults Console Visit Navigator\n\n\nAnticoag Tracker Visit Navigator\n\n\nLab Auto Verification\n\n\nLab Manual Verification\n\n\nStudy Review\n\n\nProcedure Notes\n\n\nBegin/End Exam\n\n\nMedia Manager\n\n\nPrior Status\n\n\nUpdate Assessment and Recommendation\n\n\nValidation Queue\n\n\nChange Procedure\n\n\nChange Imaging Study Status\n\n\nTrack Result\n\n\nIn Basket\n\n\nED Narrator\n\n\nWet Read\n\n\nExternal Results Entry\n\n\nHH Remote Client Lab Result\n\n\nDonor Organ Editor\n\n\nUNOS Import\n\n\nHistorical Cervical Cytology\n\n\nAutomatically Reconciled Lab Result\n\n\nLink Health Maintenance\n\n\nDermatology Exam\n\n\nAutomatically Reconciled Image Result\n\n\nInterfaces\n\n\nTranscription Utility\n\n\n3rd Party Result Entry\n\n\nBulk Ordering Utility\n\n\nUtilities"
+    },
+    {
+      "index": 243,
+      "name": "RSLT_IMAGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of the imaging result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCupid\n\n\nLumens\n\n\nStork\n\n\nRadiant"
+    },
+    {
+      "index": 254,
+      "name": "RSLT_EXAM_BEGIN_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the exam begin instant of the result."
+    },
+    {
+      "index": 259,
+      "name": "RSLT_EXAM_END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the exam end instant of the result."
+    },
+    {
+      "index": 264,
+      "name": "RSLT_RPT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the report type for the result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTrendable Exception\n\n\nCulture\n\n\nBlood Bank Unit\n\n\nNon-Trendable\n\n\nColonoscopy\n\n\nEGD\n\n\nEUS (Upper)\n\n\nERCP\n\n\nAntegrade Enteroscopy\n\n\nSigmoidoscopy\n\n\nLower EUS\n\n\nRetrograde Enteroscopy\n\n\nPouchoscopy\n\n\nIleoscopy\n\n\nBronchoscopy\n\n\nGeneric Lumens Procedure\n\n\nMolecular\n\n\nCardiac Catheterization\n\n\nCardiac Ventriculography\n\n\nAortography Catheterization\n\n\nCoronary Angiography\n\n\nCoronary Catheterization\n\n\nLeft Heart Catheterization\n\n\nRight Heart Catheterization\n\n\nTranscatheter Mitral Valve Repair\n\n\nTranscatheter Aortic Valve Replacement\n\n\nPercutaneous Coronary Intervention \n\n\nPericardiocentesis\n\n\nCardiac Catheterization Intervention\n\n\nCardiac Catheterization Intervention with Implant \n\n\nStructural Heart Procedure\n\n\nCongenital Catheterization\n\n\nInvasive Vascular\n\n\nInvasive Vascular - Lower Extremity Arteries\n\n\nComputed Tomography Angiography - Lower Extremity Arteries\n\n\nInvasive Vascular - Abdominal Arteries\n\n\nComputed Tomography Angiography - Abdominal Arteries\n\n\nInvasive Vascular - Carotid Arteries\n\n\nComputed Tomography Angiography - Carotid Arteries\n\n\nInvasive Vascular - Whole Body Arteries\n\n\nComputed Tomography Angiography - Whole Body Arteries\n\n\nExtremity Invasive Vascular Diagnostic\n\n\nExtremity Invasive Vascular Intervention\n\n\nExtremity Invasive Vascular Intervention with Implant\n\n\nAbdominal Invasive Vascular Diagnostic\n\n\nAbdominal Invasive Vascular Intervention\n\n\nAbdominal Invasive Vascular Intervention with Implant\n\n\nCarotid Invasive Vascular Diagnostic\n\n\nCarotid Invasive Vascular Intervention\n\n\nCarotid Invasive Vascular Intervention with Implant\n\n\nWhole Body Invasive Vascular Diagnostic\n\n\nWhole Body Invasive Vascular Intervention\n\n\nWhole Body Invasive Vascular Intervention with Implant\n\n\nElectrophysiology\n\n\nElectrophysiology Study\n\n\nImplantable Cardiac Device\n\n\nAblation\n\n\nImplantable Loop Recorder \n\n\nICD Implant/Upgrade\n\n\nICD Generator Change/Removal\n\n\nLead Implant/Replacement \n\n\nLead Revision/Removal\n\n\nPPM Implant/Upgrade\n\n\nPPM Generator Change/Removal\n\n\nOcclusion Device Implant/Upgrade\n\n\nOther Cardiac Device Implant/Replacement\n\n\nOther Cardiac Device Revision/Removal\n\n\nArm Invasive Vascular Diagnostic\n\n\nArm Invasive Vascular Intervention\n\n\nArm Invasive Vascular Intervention with Implant\n\n\nEchocardiography\n\n\nStress Echocardiography\n\n\nDoppler Echocardiography\n\n\n2D Echocardiography\n\n\nCongenital Echocardiography\n\n\nFetal Echocardiography\n\n\nFetal Doppler Echocardiography\n\n\nFetal 2D Echocardiography\n\n\nVascular Ultrasound\n\n\nNon-Invasive Peripheral Vascular\n\n\nCardiac Nuclear Medicine\n\n\nStress Nuclear Medicine\n\n\nCardiac Computed Tomography\n\n\nComputed Tomography Angiography\n\n\nCardiac Magnetic Resonance Imaging \n\n\nMagnetic Resonance Angiography \n\n\nMultigated Acquisition Scan \n\n\nCardiac Positron Emission Tomography\n\n\nCardiac Single-Photon Emission Computed Tomography \n\n\nElectrocardiogram\n\n\nCardiac X-Ray\n\n\nCardiac Event Monitoring\n\n\nHolter\n\n\nTilt Table\n\n\nCardioversion\n\n\nCardiac Device Check\n\n\nCardiac Stress Test\n\n\nPhonocardiogram\n\n\nGeneric Cardiovascular Procedure\n\n\nGenomic\n\n\nTumor Profiling with Companion Biomarkers\n\n\nCardiology Non-Invasive Grouper\n\n\nCardiology Invasive Grouper\n\n\nGeneric Imaging Grouper"
+    },
+    {
+      "index": 375,
+      "name": "RSLT_LATERALITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the laterality for the result."
+    },
+    {
+      "index": 380,
+      "name": "RSLT_READING_ACTIVITY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the reading activity for the result."
+    },
+    {
+      "index": 385,
+      "name": "RSLT_READING_ACTIVITY_ID_ADV_ACTIVITY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Internal name of the Advantage Activity record"
+    },
+    {
+      "index": 390,
+      "name": "LAB_RSLT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of lab result\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStandard\n\n\nComponent\n\n\nFree Text\n\n\nHematology - CBC\n\n\nHematology - Diff\n\n\nMicrobiology - Identification\n\n\nMicrobiology - General Workcard\n\n\nMicrobiology - Susceptibility\n\n\nMicrobiology - Stain\n\n\nMicrobiology - Organism Workcard\n\n\nHematology Differential\n\n\nHematology Auto\n\n\nMicrobiology - Culture and Workup\n\n\nAnatomic Pathology - General\n\n\nAnatomic Pathology - Cytology\n\n\nBlood Bank\n\n\nMolecular Diagnostics\n\n\nEmbryology"
+    },
+    {
+      "index": 415,
+      "name": "RSLT_HAS_VAR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is set to Yes if the result has any associated Genomic Variants\n\n\n The category values for this column were already listed for column: RESULT_INVALID_YN"
+    },
+    {
+      "index": 421,
+      "name": "RSLT_STUDY_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The DICOM Study Instance Unique Identifier (UID) as recorded by the image archive."
+    }
+  ]
+}

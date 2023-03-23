@@ -1,0 +1,45 @@
+{
+  "table_name": "MCARE_MCAID_DUAL_ELIGIB",
+  "description": "This table contains the Medicare-Medicaid dual eligibility statuses for patients.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "MCARE_MCAID_DUAL_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Medicare and Medicaid dual eligibility status category ID for the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Medicaid status\n\n\nEligible - QMB only (partial dual)\n\n\nEligible - QMB and Medicaid (full dual)\n\n\nEligible - SLMB only (partial dual)\n\n\nEligible - SLMB and Medicaid (full dual)\n\n\nEligible - QDWI (partial dual)\n\n\nEligible - Qualifying individuals (partial dual)\n\n\nEligible - Other dual eligibles with Medicaid (full dual)\n\n\nEligible - Other dual eligibles without Medicaid (non-dual)\n\n\nOther full dual\n\n\nUnknown"
+    },
+    {
+      "index": 30,
+      "name": "MCARE_MCAID_DUAL_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the patient's Medicare and Medicaid dual eligibility status starts."
+    },
+    {
+      "index": 35,
+      "name": "MCARE_MCAID_DUAL_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the patient's Medicare and Medicaid dual eligibility status ends."
+    }
+  ]
+}

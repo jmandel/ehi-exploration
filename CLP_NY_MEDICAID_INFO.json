@@ -1,0 +1,38 @@
+{
+  "table_name": "CLP_NY_MEDICAID_INFO",
+  "description": "This table contains information about data that will be used when processing claims on the eMedNY 150003 paper claim form for New York Medicaid.",
+  "primary_key": {
+    "column_name": "CLAIM_PRINT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the claim record."
+    },
+    {
+      "index": 7,
+      "name": "EMEDNY_PAYMENT_SOURCE_MCARE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the single-digit source code indicator that indicates Medicare's involvement in paying for these charges on the eMedNY 150003 claim form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Medicare Involvement\n\n\nMember Has Medicare Part B; Medicare Approved the Service\n\n\nMember Has Medicare Part B; Medicare Denied Payment"
+    },
+    {
+      "index": 17,
+      "name": "EMEDNY_PAYMENT_SOURCE_OTHER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a single-digit code indicating whether the patient has a coverage besides Medicare and Medicaid on the eMedNY 150003 claim form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Other Insurance Involvement\n\n\nMember Has Other Insurance Coverage\n\n\nMember Participation"
+    },
+    {
+      "index": 27,
+      "name": "EMEDNY_PAYMENT_SOURCE_INS_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the two-digit insurance code for the commercial coverage, if any, on the eMedNY 150003 claim form."
+    }
+  ]
+}

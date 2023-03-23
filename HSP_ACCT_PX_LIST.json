@@ -1,0 +1,94 @@
+{
+  "table_name": "HSP_ACCT_PX_LIST",
+  "description": "This table contains hospital account final procedure list information from the Hospital Accounts Receivable (HAR) master file.",
+  "primary_key": {
+    "column_name": "HSP_ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID number of a hospital account."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number in the results of a query. Since multiple coded procedures can be stored in one hospital account, each procedure will have a unique line number."
+    },
+    {
+      "index": 12,
+      "name": "FINAL_ICD_PX_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A coded procedure stored in the hospital account."
+    },
+    {
+      "index": 17,
+      "name": "FINAL_ICD_PX_ID_ICD_PX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the ICD procedure record."
+    },
+    {
+      "index": 22,
+      "name": "PROC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date associated with a coded procedure stored in the hospital account."
+    },
+    {
+      "index": 27,
+      "name": "PROC_PERF_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the performing provider associated with a coded procedure stored in the hospital account."
+    },
+    {
+      "index": 32,
+      "name": "PROC_EVENT_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The event number associated with a coded procedure stored in the hospital account. Event numbers are used to associate coded procedures with CPT� codes."
+    },
+    {
+      "index": 37,
+      "name": "PX_AFCT_ROM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure has an impact on the DRG's Risk of Mortality.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 46,
+      "name": "PX_EXCLD_RPT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure was marked to be excluded from clinical reporting.\n\n\n The category values for this column were already listed for column: PX_AFCT_ROM_YN"
+    },
+    {
+      "index": 52,
+      "name": "PX_AFCT_SOI_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure has an impact on the DRG's Serverity of Illness.\n\n\n The category values for this column were already listed for column: PX_AFCT_ROM_YN"
+    },
+    {
+      "index": 58,
+      "name": "AFFECTS_DRG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure has an impact on the DRG.\n\n\n The category values for this column were already listed for column: PX_AFCT_ROM_YN"
+    },
+    {
+      "index": 64,
+      "name": "INTERVENTION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The intervention type for the ICD procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral Intervention\n\n\nSpecific Intervention"
+    }
+  ]
+}

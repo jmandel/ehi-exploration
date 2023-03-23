@@ -1,0 +1,941 @@
+{
+  "table_name": "HSP_TRANSACTIONS",
+  "description": "This table contains hospital account transaction detail from the Hospital Permanent Transactions (HTR) master file.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital billing transaction."
+    },
+    {
+      "index": 7,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital account associated with the hospital billing transaction."
+    },
+    {
+      "index": 12,
+      "name": "ACCT_CLASS_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the account class of the account when the transaction filed. This is set for all transaction types.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 18,
+      "name": "ACTION_STRING",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comma-delimited list of one or more numbers stored in a payment transaction that correspond to actions entered in payment posting. Actions are 1 -- Not Allowed Adjustment, 2 -- Next Responsible Party, 3 -- Claim Denied."
+    },
+    {
+      "index": 23,
+      "name": "ALLOWED_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "An allowed amount stored in a payment transaction."
+    },
+    {
+      "index": 28,
+      "name": "BILLED_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A billed amount stored in a payment transaction."
+    },
+    {
+      "index": 33,
+      "name": "BILLING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the billing provider stored in the hospital billing transaction."
+    },
+    {
+      "index": 38,
+      "name": "BUCKET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the liability bucket on which the transaction is currently active. This field is only populated for payment and adjustment transactions, not charges."
+    },
+    {
+      "index": 43,
+      "name": "COINSURANCE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A coinsurance amount stored in a payment transaction. Coinsurance amounts are informational only."
+    },
+    {
+      "index": 48,
+      "name": "COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A copay amount stored in a payment transaction. Coinsurance amounts are informational only."
+    },
+    {
+      "index": 53,
+      "name": "DEDUCTIBLE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A deductible amount stored in a payment transaction. Coinsurance amounts are informational only."
+    },
+    {
+      "index": 58,
+      "name": "DEPARTMENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the department associated with the hospital billing transaction."
+    },
+    {
+      "index": 63,
+      "name": "DFLT_FEE_SCHED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the default fee schedule for the service area with which a charge transaction is associated."
+    },
+    {
+      "index": 68,
+      "name": "DFLT_FEE_SCHED_ID_FEE_SCHEDULE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each fee schedule."
+    },
+    {
+      "index": 73,
+      "name": "DFLT_PROC_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the original description of the procedure stored in the procedure record's Name History (I EAP 6), which appears in Procedure Editor as Name. This item is only populated if the description for the procedure was overridden in charge entry."
+    },
+    {
+      "index": 78,
+      "name": "DFLT_UB_REV_CD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The default revenue code from the procedure master file for a charge transaction."
+    },
+    {
+      "index": 83,
+      "name": "DFLT_UB_REV_CD_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 88,
+      "name": "FACILITY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the facility associated with the hospital billing transaction."
+    },
+    {
+      "index": 93,
+      "name": "FIN_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the category ID of the financial class stored in a hospital billing transaction. For charges, the financial class comes from the hospital account that the charge is associated with. For payments, the financial class comes from the payer specified during payment posting. If no payer is specified during payment posting, the financial class is self-pay. If the adjustment is entered in adjustment posting, the financial class is from the payer specified in adjustment posting. If the adjustment is created from a bucket action, the financial class comes from the financial class on the bucket. If no payer is specified during adjustment posting or the adjustment bucket action is made on an undistributed bucket, the financial class is self-pay. Adjustment refund bucket actions can specify the payer, in which case the specified payer's financial class is used.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+    },
+    {
+      "index": 114,
+      "name": "INST_BILL_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comment stored in a charge transaction. If a hospital account's guarantor is of a type that is considered institutional, then certain pieces of institutional billing-related information can be stored in charges filed on that hospital account."
+    },
+    {
+      "index": 119,
+      "name": "INST_BILL_DOB",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "A date of birth stored in a charge transaction. If a hospital account's guarantor is of a type that is considered institutional, then certain pieces of institutional billing-related information can be stored in charges filed on that hospital account. A date of birth is one such piece of information."
+    },
+    {
+      "index": 124,
+      "name": "INST_BILL_EMP_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "An employee number stored in a charge transaction. If a hospital account's guarantor is of a type that is considered institutional, then certain pieces of institutional billing-related information can be stored in charges filed on that hospital account. An employee number is one such piece of information."
+    },
+    {
+      "index": 129,
+      "name": "INST_BILL_PAT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A patient name stored in a charge transaction. If a hospital account's guarantor is of a type that is considered institutional, then certain pieces of institutional billing-related information can be stored in charges filed on that hospital account. A patient name is one such piece of information."
+    },
+    {
+      "index": 134,
+      "name": "INST_BILL_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A patient sex stored in a charge transaction. If a hospital account's guarantor is of a type that is considered institutional, then certain pieces of institutional billing-related information can be stored in charges filed on that hospital account. A patient sex is one such piece of information.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 147,
+      "name": "INT_CONTROL_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal control number stored in a payment transaction."
+    },
+    {
+      "index": 152,
+      "name": "IS_SYSTEM_ADJ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether an adjustment was posted by the system, as opposed to by a user.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 161,
+      "name": "IS_HOSPITALIST_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether a charge has a billing provider who is designated in ADT as a hospitalist.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 170,
+      "name": "IS_LATE_CHARGE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether a charge is a late charge.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 176,
+      "name": "IS_RECOUPMENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether a payment is a recoupment.\n\n\n The category values for this column were already listed for column: IS_HOSPITALIST_YN"
+    },
+    {
+      "index": 182,
+      "name": "MODIFIERS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comma-delimited list of one or more modifiers associated with a charge transaction."
+    },
+    {
+      "index": 187,
+      "name": "OLD_HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital account associated with the old hospital billing transaction that was transferred to a different hospital account, causing this new transaction to be created."
+    },
+    {
+      "index": 192,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the clinical system order that triggered a hospital billing transaction."
+    },
+    {
+      "index": 197,
+      "name": "ORIG_PRICE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Denotes the price that was determined for a charge based on fee schedules."
+    },
+    {
+      "index": 202,
+      "name": "ORIG_REPOST_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the original transaction of a hospital billing transaction automatically reposted due to a change in financial class, account class, or primary payer."
+    },
+    {
+      "index": 207,
+      "name": "ORIG_REV_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "In a reversal transaction, this column denotes the ID number of the original transaction that was reversed."
+    },
+    {
+      "index": 212,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For a charge dropped via ADT's bed charge billing function or a payment collected at the point-of-service, the contact serial number of the patient contact that triggered the bed charge or led to the collection of the payment."
+    },
+    {
+      "index": 217,
+      "name": "PAYMENT_FROM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For self pay payments, a text string indicating from whom the payment was received."
+    },
+    {
+      "index": 222,
+      "name": "PAYMENT_SRC_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payment source stored in a payment transaction, i.e. cash, check, or credit card.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCash\n\n\nCheck\n\n\nCredit Card\n\n\nEOB\n\n\nVoucher\n\n\nBank Account\n\n\nTrust Account"
+    },
+    {
+      "index": 236,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the payer associated with each payment or adjustment. This is not populated for charge transactions or when the payment or adjustment is posted to the self-pay bucket. Payments are assigned to the payer specified in payment posting. Adjustments made using adjustment posting are assigned to the payer specified in adjustment posting. Adjustments made using bucket actions are assigned to the payer on the liability bucket to which the adjustment was posted. Refund bucket actions can override the bucket payer with a user entered payer. Users can override any adjustment's payer in adjustment workqueues. Adjustments posted to the undistributed bucket have no payer unless overridden."
+    },
+    {
+      "index": 241,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 246,
+      "name": "PERFORMING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the performing provider associated with a charge transaction."
+    },
+    {
+      "index": 251,
+      "name": "PREV_CREDITS_ACT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For adjustment transactions that move liability from one bucket to another, the total monetary amount of previous credits on the former bucket."
+    },
+    {
+      "index": 256,
+      "name": "PRIM_FEE_SCHED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the primary fee schedule used to price a charge transaction."
+    },
+    {
+      "index": 261,
+      "name": "PRIM_FEE_SCHED_ID_FEE_SCHEDULE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each fee schedule."
+    },
+    {
+      "index": 266,
+      "name": "PROCEDURE_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the value manually entered for the procedure description at the time of charge entry. If no value was manually entered, then the procedure record's Name History (I EAP 6) is populated here."
+    },
+    {
+      "index": 271,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the procedure associated with the hospital billing transaction."
+    },
+    {
+      "index": 276,
+      "name": "QUANTITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For charge transactions, the quantity."
+    },
+    {
+      "index": 281,
+      "name": "REFERENCE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payment posting reference number associated with a transaction."
+    },
+    {
+      "index": 286,
+      "name": "UB_REV_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The revenue code associated with a charge transaction. This could come from the procedure master file or from a user-entered override."
+    },
+    {
+      "index": 291,
+      "name": "UB_REV_CODE_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 296,
+      "name": "REVENUE_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the revenue location stored in the hospital billing transaction. It is only set when hospital account identifiers are assigned by location instead of service area."
+    },
+    {
+      "index": 301,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the service area associated with the hospital billing transaction."
+    },
+    {
+      "index": 306,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The service date of a charge, the deposit date of a payment, or the creation date of an adjustment."
+    },
+    {
+      "index": 311,
+      "name": "START_DATE_TIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "For charge transactions that result from timed procedures, the start date and time stored in the transaction."
+    },
+    {
+      "index": 316,
+      "name": "STOP_DATE_TIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "For charge transactions that result from timed procedures, the end date and time stored in the transaction."
+    },
+    {
+      "index": 321,
+      "name": "TEMP_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID number of the temporary transaction (HTT record) associated with the transaction in question."
+    },
+    {
+      "index": 326,
+      "name": "TOTAL_CHARGES_ACT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For adjustment transactions that move liability from one bucket to another, the total monetary amount of charges on the latter bucket."
+    },
+    {
+      "index": 331,
+      "name": "TX_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The monetary amount of a transaction."
+    },
+    {
+      "index": 336,
+      "name": "TX_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comment associated with a transaction."
+    },
+    {
+      "index": 341,
+      "name": "TX_FILED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when a transaction was filed on a hospital account."
+    },
+    {
+      "index": 346,
+      "name": "TX_NUM_IN_HOSPACCT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "A number denoting in what order the transaction filed on the hospital account. For example, if the transaction in question was the third transaction to file on the account, this column would contain the number 3."
+    },
+    {
+      "index": 351,
+      "name": "TX_POST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the transaction was posted."
+    },
+    {
+      "index": 356,
+      "name": "TX_SOURCE_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source of the transaction, i.e. unit charge entry, payment posting, electronic remittance,\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTransaction Import\n\n\nInterface\n\n\nEpicCare\n\n\nDaily Charge\n\n\nBed Charge\n\n\nBatch Charge Entry\n\n\nUnit Charge Entry\n\n\nPayment Posting\n\n\nAdjustment Posting\n\n\nPost Adjustment - Account Maintenance\n\n\nReverse Transaction - Account Maintenance\n\n\nReversal and Repost\n\n\nCharge Correction\n\n\nOrder Trigger\n\n\nTransfer Transaction\n\n\nCombine Accounts\n\n\nElectronic Remittance\n\n\nHB Only Quick Payment Posting\n\n\nAccount Maintenance - Actions\n\n\nRevenue Reclassification - Account Class Change\n\n\nRevenue Reclassification - Financial Class Change\n\n\nClaims Accept - Bucket Split\n\n\nSmall Balance Write-Off\n\n\nSystem Auto Action\n\n\nHourly Charge\n\n\nExpected Not-Allwd-Auto Write-Off\n\n\nClaim Denial Payment\n\n\nWillow Inpatient\n\n\nRefund - Account Maintenance\n\n\nOpTime\n\n\nRadiant\n\n\nMyChart Web\n\n\nInpatient\n\n\nResolute Professional Billing\n\n\nEmergency Dept\n\n\nHome Health\n\n\nLab\n\n\nCohort\n\n\nEnterprise Payment Posting\n\n\nCharge Router Charge Entry\n\n\nSelf-Pay Discount\n\n\nPayment Collection\n\n\nLate Fee\n\n\nTx Report - Add Corresponding Charge\n\n\nPatient Refund\n\n\nWelcome\n\n\nCardiology\n\n\nObstetrics\n\n\nHandheld\n\n\nLate Charge Write-Off\n\n\nHospice Per Diem\n\n\nHospice\n\n\nSurcharge\n\n\nAdjustment Import\n\n\nDBC Product\n\n\nDBC Accepted Invoice\n\n\nWillow Ambulatory\n\n\nAnesthesia\n\n\nReverse Transaction - Tx Report\n\n\nBilling Activity\n\n\nWeb Service\n\n\nHB Coding\n\n\nAuto Pay Payment Plan\n\n\nDistribution\n\n\nDuplicated Charge\n\n\nBilling Charge Write-Off\n\n\nTransaction Classification Balancing\n\n\nFinancial Assistance\n\n\nCumulative Billing\n\n\nMyChart Mobile\n\n\nPay as Guest\n\n\nUnbilled Expected Write-Off\n\n\nDBC Denied Invoice\n\n\nBundle Payment Distribution\n\n\nDBC Denied Invoice - Ignored\n\n\nBalance Transfer In\n\n\nBalance Transfer Out\n\n\nBalance Correct In\n\n\nBalance Correct Out\n\n\nVisit Auto Pay\n\n\nTrust Transfer\n\n\nTrust Recurring Payment\n\n\nNotification Billing\n\n\nAdvance Billing\n\n\nTwo-Way SMS"
+    },
+    {
+      "index": 448,
+      "name": "TX_TYPE_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transaction type, i.e. charge, payment, debit adjustment, or credit adjustment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nDebit Adjustment\n\n\nCredit Adjustment"
+    },
+    {
+      "index": 459,
+      "name": "TYPE_OF_SVC_HA_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of service associated with a transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedical Care\n\n\nSurgery\n\n\nConsultation\n\n\nDiagnostic X-Ray\n\n\nDiagnostic Laboratory\n\n\nRadiation Therapy\n\n\nAnesthesia\n\n\nAssistance at Surgery\n\n\nOther Medical Service\n\n\nBlood or Packed Red Cells\n\n\nUsed DME\n\n\nAmbulatory Surgical Center\n\n\nHospice\n\n\nRenal Supplies in the Home\n\n\nAlternate Payment for Maintenance Dialysis\n\n\nKidney Donor\n\n\nPneumococcal Vaccine\n\n\nSecond Opinion on Elective Surgery\n\n\nThird Opinion on Elective Surgery\n\n\nDiagnostic Medical\n\n\nAncillaries, Hospital and Nursing Home\n\n\nDrug Services\n\n\nAccommodations, Hospital and Nursing Home\n\n\nDental\n\n\nVision Care and Cataract Lens\n\n\nNuclear Medicine\n\n\nDiagnostic X-ray (Professional)\n\n\nDME Rental\n\n\nRadiation Therapy (Professional)\n\n\nDiagnostic Lab (Professional)\n\n\nDiagnostic Medical (Professional)\n\n\nDME Purchase\n\n\nCRD Equipment\n\n\nPre-Admission Testing\n\n\nEPSDT\n\n\nMEDICATION"
+    },
+    {
+      "index": 502,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the user who posted the hospital billing transaction."
+    },
+    {
+      "index": 507,
+      "name": "XFER_LIAB_ADJ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Y/N flag denoting if the transaction transfers the liability adjustment.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 513,
+      "name": "CHG_CRED_ORIG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the transaction of a late charge credit."
+    },
+    {
+      "index": 518,
+      "name": "LATE_CRCTN_ORIG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the original charge for a late charge correction transaction."
+    },
+    {
+      "index": 523,
+      "name": "ALLOWANCE_ADJ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Y/N flag indicating if there is an allowance adjustment.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 529,
+      "name": "PLACE_OF_SVC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the place of service associated with the hospital billing transaction."
+    },
+    {
+      "index": 534,
+      "name": "NON_COVERED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the transaction is expected to be a non-covered charge.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 540,
+      "name": "BEN_BKT_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the benefit bucket associated with the hospital billing transaction."
+    },
+    {
+      "index": 545,
+      "name": "BEN_BKT_INC_STR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The increment string for the benefit bucket associated with the transaction."
+    },
+    {
+      "index": 550,
+      "name": "QUICK_PMT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The quick payment type category ID for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCopay\n\n\nPrepayment\n\n\nDeductible\n\n\nCoinsurance\n\n\nPrevious Balance"
+    },
+    {
+      "index": 562,
+      "name": "NON_COVERED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The non-covered amount associated with the transaction."
+    },
+    {
+      "index": 567,
+      "name": "IS_REFUND_ADJ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes whether this is a Refund Adjustment.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 573,
+      "name": "INVOICE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The invoice number for the transaction."
+    },
+    {
+      "index": 578,
+      "name": "COLLECTION_AGENCY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the collection agency that the hospital billing transaction has been sent to for collections."
+    },
+    {
+      "index": 583,
+      "name": "COLLECTION_AGENCY_COLL_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the collection agency."
+    },
+    {
+      "index": 588,
+      "name": "PRIMARY_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds the primary plan of the account when the transaction filed. This is set for all transaction types."
+    },
+    {
+      "index": 593,
+      "name": "PRIMARY_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 598,
+      "name": "HCPCS_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The override CPT� or HCPCS code either entered manually during charge entry or coming from the clinical application.  Often, pharmacy and supply charges will have a code sent from the clinical system to override the code stored on the procedure. When reporting, you will often want to display this column if it is populated, otherwise display CPT_CODE."
+    },
+    {
+      "index": 603,
+      "name": "NDC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the historical National Drug Code for the corresponding charge. This column will only be set for certain charges posted prior to being on the Epic Summer 2009 release. For current NDC code information, use NDC_CODE_RG_ID column in the HSP_TX_NDC_CODES table."
+    },
+    {
+      "index": 608,
+      "name": "NDC_ID_NDC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
+    },
+    {
+      "index": 613,
+      "name": "HIPPS_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "HIPPS Code for this transaction."
+    },
+    {
+      "index": 618,
+      "name": "HIPPS_CODE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "HIPPS Code type for this transaction. i.e. 1-Skilled Nursing Facility 2-Home Health PPS 99-other\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSkilled Nursing Facility PPS\n\n\nHome Health PPS\n\n\nNY Medicaid EPS\n\n\nOther"
+    },
+    {
+      "index": 629,
+      "name": "HIPPS_CODE_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "HIPPS Code description for this transaction."
+    },
+    {
+      "index": 634,
+      "name": "RFND_SND_TO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column specifies where to send the refund should there be a credit balance on the hospital billing transaction: 1-Coverage, 2-Guarantor, 3-Patient, 4-Custom Payee, 5-Address Override, 6-Payor, or 7-Plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage\n\n\nGuarantor\n\n\nPatient\n\n\nCustom Payee\n\n\nAddress Override\n\n\nPayer\n\n\nPlan\n\n\nDirect Return"
+    },
+    {
+      "index": 649,
+      "name": "RFND_GUAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the guarantor associated with the refund code on the hospital billing transaction."
+    },
+    {
+      "index": 654,
+      "name": "RFND_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the coverage associated with the refund code on the hospital billing transaction."
+    },
+    {
+      "index": 659,
+      "name": "REFUND_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the benefit plan associated with the refund code on the hospital billing transaction."
+    },
+    {
+      "index": 664,
+      "name": "REFUND_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 669,
+      "name": "RECONCILIATION_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reconciliation number from a remittance run."
+    },
+    {
+      "index": 674,
+      "name": "RFND_CUST_PAYEE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The custom payee for the refund (no system-released values).\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 681,
+      "name": "CE_SRC_DEP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the source deployment of the transaction. This identifies the location where the hospital billing transaction originated. This will have a value of null unless the transaction's deployment of origination and the home deployment are different."
+    },
+    {
+      "index": 686,
+      "name": "CE_POST_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The post date for the transaction.  This will have a value of null unless the transaction's deployment of origination and the home deployment are different."
+    },
+    {
+      "index": 691,
+      "name": "CE_FILED_TIME",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date and time that the transaction was filed.  This will have a value of null unless the transaction's deployment of origination and the home deployment are different."
+    },
+    {
+      "index": 696,
+      "name": "CE_HM_OFF_TXTYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of transaction that took place.  This will have a value of null unless the transaction's deployment of origination and the home deployment are different.  Some example values for this field are as follows: 1 - charge, 2 - payment, 3 - debit adjustment, 4 - credit adjustment.\n\n\n The category values for this column were already listed for column: TX_TYPE_HA_C_NAME"
+    },
+    {
+      "index": 702,
+      "name": "POS_SESSIONID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the Point of Sale session."
+    },
+    {
+      "index": 707,
+      "name": "POS_TXID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the Point of Sale transaction."
+    },
+    {
+      "index": 712,
+      "name": "POS_TX_LINE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Point of Sale transaction line number."
+    },
+    {
+      "index": 717,
+      "name": "ORIG_ETR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the Professional Billing transaction that was the transfer source for this Hospital Billing transaction."
+    },
+    {
+      "index": 722,
+      "name": "EXTERN_AR_FLAG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External A/R Flag. This flag determines if an transaction's A/R is to be counted as belonging to an external agency (i.e., as bad debt). This flag is copied from the hospital account level flag. This flag is only used if external agency A/R has been enabled.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive AR\n\n\nExternal Agency AR\n\n\nBad Debt\n\n\nOutsourced"
+    },
+    {
+      "index": 733,
+      "name": "ERX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the medication record on the hospital billing transaction. This column will have relevant data for any pharmacy charges. It can be used to link to CLARITY_MEDICATION and other pharmacy tables."
+    },
+    {
+      "index": 738,
+      "name": "SUP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital billing transaction."
+    },
+    {
+      "index": 743,
+      "name": "SUP_ID_SUPPLY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the inventory item."
+    },
+    {
+      "index": 748,
+      "name": "BAD_DEBT_FLAG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Bad Debt Flag. This flag determines if a transaction's amount is to be counted as belonging to a bad debt agency. This flag is copied from the hospital account level flag. This flag is only used if account-based bad debt is used. This flag will be set to 'Y' if the account is in bad debt, 'N' for external AR, or NULL otherwise.\n\n\n The category values for this column were already listed for column: EXTERN_AR_FLAG_YN"
+    },
+    {
+      "index": 754,
+      "name": "PMT_RECEIPT_NO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the receipt number for a receipt printed during payment posting."
+    },
+    {
+      "index": 759,
+      "name": "RFND_AP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date on which the A/P system approved and processed the transaction."
+    },
+    {
+      "index": 764,
+      "name": "RFND_AP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the action taken by the A/P system when it processed the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproved\n\n\nRejected"
+    },
+    {
+      "index": 773,
+      "name": "OPTIME_LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the OpTime log associated with the hospital billing transaction."
+    },
+    {
+      "index": 778,
+      "name": "INI_FILE_ATTEMPT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Item to represent the date when the first attempt to file the transaction was made."
+    },
+    {
+      "index": 783,
+      "name": "RELATED_HTR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier of the related hospital billing (HB) transaction for this HB transaction. This will map to a HB transaction that is associated with the related hospital account."
+    },
+    {
+      "index": 788,
+      "name": "IMD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the image associated with this hospital billing transaction."
+    },
+    {
+      "index": 793,
+      "name": "DURATION_MINUTES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column contains the duration of service in minutes."
+    },
+    {
+      "index": 798,
+      "name": "EB_PMT_HAR_RES_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether hospital account restrictions are used.\n\n\n The category values for this column were already listed for column: IS_SYSTEM_ADJ_YN"
+    },
+    {
+      "index": 804,
+      "name": "PMT_HAR_DIS_FROM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The hospital account restriction discharge from date."
+    },
+    {
+      "index": 809,
+      "name": "PMT_HAR_DIS_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The hospital account restriction discharge to date."
+    },
+    {
+      "index": 814,
+      "name": "OVERRIDE_XOVER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this payment contained override crossover information.\n\n\n The category values for this column were already listed for column: IS_HOSPITALIST_YN"
+    },
+    {
+      "index": 820,
+      "name": "RESEARCH_STUDY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the research study or client associated with this hospital billing transaction."
+    },
+    {
+      "index": 825,
+      "name": "RSH_CHG_ORIG_HAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the original hospital account for a research charge."
+    },
+    {
+      "index": 830,
+      "name": "PAYMENT_NOT_ALLOWED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the not-allowed amount on the payment transaction."
+    },
+    {
+      "index": 835,
+      "name": "EB_PMT_TOTAL_AMOUNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the original payment amount. Original payment amount is the amount of the payment prior to getting split in split cases and if the payment is not split, then the original payment amount is the full payment of the transaction."
+    },
+    {
+      "index": 840,
+      "name": "EB_PMT_POST_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type category number of the post type used to post the enterprise payment.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 846,
+      "name": "EB_PREPMT_POST_TP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type category number for the pre-payment post type associated with this transaction.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 852,
+      "name": "PANEL_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The contact date of the panel procedure that is associated with this transaction."
+    },
+    {
+      "index": 857,
+      "name": "MEA_ID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Measurement reference ID code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOriginal/Starting dosage\n\n\nTest Results"
+    },
+    {
+      "index": 866,
+      "name": "PANEL_DAT",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The contact date of the panel procedure that is associated with this transaction, in decimal format. Used to link with the CLARITY_EAP_OT table."
+    },
+    {
+      "index": 871,
+      "name": "ELEC_PMT_APRVL_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital billing transaction sent back by the merchant."
+    },
+    {
+      "index": 876,
+      "name": "ELEC_PMT_INST_TIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant of when the payment was approved"
+    },
+    {
+      "index": 881,
+      "name": "IMPLANT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the implant record associated with this procedure."
+    },
+    {
+      "index": 886,
+      "name": "LINKED_HTR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item links two hospital billing transactions in the system. These transactions will be reversed and transferred at the same time."
+    }
+  ]
+}

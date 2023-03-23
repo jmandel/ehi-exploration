@@ -1,0 +1,430 @@
+{
+  "table_name": "BILL_SCHED_PMT",
+  "description": "This table contains information about scheduled payments. This can include payment plan auto pay agreements and payments, Visit Auto Pay payment plans and payments, and trust transfers and payments.",
+  "primary_key": {
+    "column_name": "SCHED_PMT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the scheduled payment record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Record name"
+    },
+    {
+      "index": 12,
+      "name": "EXTERNAL_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the external identifier for the scheduled payment."
+    },
+    {
+      "index": 17,
+      "name": "SCHED_PMT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the scheduled payment record type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayment Plan Auto Pay Agreement\n\n\nTrust Recurring Payment\n\n\nVisit Auto Pay Agreement\n\n\nVisit Auto Pay One-Time Payment\n\n\nTrust Recurring Transfer\n\n\nPayment Plan Auto Pay Payment"
+    },
+    {
+      "index": 30,
+      "name": "SCHED_PMT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the status of the scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScheduled\n\n\nUnscheduled\n\n\nCompleted\n\n\nDeactivated\n\n\nReplaced\n\n\nSuspended\n\n\nIn Progress\n\n\nSkipped\n\n\nPending Consent\n\n\nPending Statement\n\n\nVoided\n\n\nCanceled\n\n\nTerminated\n\n\nSigned Up"
+    },
+    {
+      "index": 51,
+      "name": "IS_ACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the scheduled payment record is considered active. 'Y' indicates that the payment record is active. 'N' indicates that it is inactive.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes"
+    },
+    {
+      "index": 59,
+      "name": "ORIGINAL_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the original record that was replaced with the current scheduled payment record."
+    },
+    {
+      "index": 64,
+      "name": "PARENT_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the parent scheduled payment record associated with the current scheduled payment record."
+    },
+    {
+      "index": 69,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the service area associated with the scheduled payment."
+    },
+    {
+      "index": 74,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the guarantor account associated with the scheduled payment."
+    },
+    {
+      "index": 79,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the hospital account associated with the scheduled payment."
+    },
+    {
+      "index": 84,
+      "name": "CARD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the payment method record of the scheduled payment."
+    },
+    {
+      "index": 89,
+      "name": "PMT_PROCESS_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the processing mode of the scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFixed Amount\n\n\nUp To Amount\n\n\nPatient Responsibility \n\n\nOne-Time Payment"
+    },
+    {
+      "index": 100,
+      "name": "PMT_PROCESS_MODE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount associated with the payment processing mode for the scheduled payment."
+    },
+    {
+      "index": 105,
+      "name": "RECUR_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the recurrence type of the scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMonthly"
+    },
+    {
+      "index": 113,
+      "name": "RECUR_DAY_OF_MONTH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the recurrence day of month if it is a monthly scheduled payment."
+    },
+    {
+      "index": 118,
+      "name": "RECUR_DAY_OF_WEEK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the recurrence day of week if it is a bi-weekly or weekly scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSunday\n\n\nMonday\n\n\nTuesday\n\n\nWednesday\n\n\nThursday\n\n\nFriday\n\n\nSaturday"
+    },
+    {
+      "index": 132,
+      "name": "START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the start date of the scheduled payment."
+    },
+    {
+      "index": 137,
+      "name": "EXP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the expiration date of the scheduled payment."
+    },
+    {
+      "index": 142,
+      "name": "CREATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant at which the scheduled payment record is created."
+    },
+    {
+      "index": 147,
+      "name": "CREATION_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the source from which the payment schedule was created. For example, It will tell if the scheduled payment was setup through Hyperspace, or MyChart Web etc.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHyperspace\n\n\nMyChart Web\n\n\nMyChart Mobile\n\n\nWelcome\n\n\nSBO Conversion\n\n\nPayment Plan Import Utility\n\n\nSystem Action\n\n\nAdvance Bill"
+    },
+    {
+      "index": 162,
+      "name": "CREATION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user who set up the scheduled payment."
+    },
+    {
+      "index": 167,
+      "name": "CREATION_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the MyChart account that set up the scheduled payment."
+    },
+    {
+      "index": 172,
+      "name": "NEXT_PMT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the next date on which the payment will be processed."
+    },
+    {
+      "index": 177,
+      "name": "NEXT_PMT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount that will be processed on the next scheduled date."
+    },
+    {
+      "index": 182,
+      "name": "POSTED_PMT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the total amount processed and posted in the system by the scheduled payment."
+    },
+    {
+      "index": 187,
+      "name": "REMAINING_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the remaining amount that can be processed to the payment method if the payment processing mode is \"Up To Amount.\""
+    },
+    {
+      "index": 192,
+      "name": "LAST_PROCESS_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date when the payment method was last processed."
+    },
+    {
+      "index": 197,
+      "name": "LAST_PROCESS_PMT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the amount that was processed during the last attempt."
+    },
+    {
+      "index": 202,
+      "name": "LAST_PROCESS_CARD_TX_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the status of the last processing attempt.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nError\n\n\nAccepted\n\n\nDeclined"
+    },
+    {
+      "index": 212,
+      "name": "LAST_PROCESS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user who attempted the last processing of the payment method."
+    },
+    {
+      "index": 217,
+      "name": "LAST_STATUS_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Shows the date on which the payment schedule was set to the current status."
+    },
+    {
+      "index": 222,
+      "name": "EMAIL_ADDRESS_OVRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If set, this email will be used when sending notifications for this scheduled payment instead of the guarantor's email."
+    },
+    {
+      "index": 227,
+      "name": "MOBILE_PHONE_OVRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If set, this mobile phone number will be used when sending notifications for this scheduled payment instead of the guarantor's mobile phone number."
+    },
+    {
+      "index": 232,
+      "name": "TRANSFER_FROM_GUAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the source guarantor account associated with the scheduled trust transfer."
+    },
+    {
+      "index": 237,
+      "name": "LAST_BSP_CONSENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of the most current consent for the Visit Auto Pay agreement represented by this scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVerbal\n\n\nPaper - Not Yet Scanned\n\n\nPaper - Scanned\n\n\nE-Signature\n\n\nSelf Service"
+    },
+    {
+      "index": 249,
+      "name": "LAST_CONSENT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user that collected or updated the most current consent for the Visit Auto Pay agreement represented by this scheduled payment."
+    },
+    {
+      "index": 254,
+      "name": "LAST_CONSENT_DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The document representing the most current consent for the Visit Auto Pay agreement represented by this BSP."
+    },
+    {
+      "index": 259,
+      "name": "CONSENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the patient consented to the terms for this scheduled payment."
+    },
+    {
+      "index": 264,
+      "name": "CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date at which the scheduled payment record was created."
+    },
+    {
+      "index": 269,
+      "name": "RESOLUTION_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant (local, guarantor's time zone) in which the scheduled payment record was resolved, either by completing successfully or being cancelled."
+    },
+    {
+      "index": 274,
+      "name": "RESOLUTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date in which the scheduled payment record was resolved, either by completing successfully or being cancelled."
+    },
+    {
+      "index": 279,
+      "name": "RESOLUTION_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The resolution status category ID for this scheduled payment record. Use this to indicate the extent to which a the agreement was successful in collecting a payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayment Received\n\n\nPartial Payment\n\n\nNo Payment Needed\n\n\nNever Active"
+    },
+    {
+      "index": 290,
+      "name": "RESOLUTION_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The resolution reason category ID for this scheduled payment. Use this to indicate the specific path-to-arrival to a resolution status (RESOLUTION_STATUS_C).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelf-Pay Liability Covered\n\n\nNo Self-Pay Liability\n\n\nSelf-Pay Liability Exceeded Threshold\n\n\nConsent Not Received\n\n\nConsent Duration Exceeded\n\n\nCanceled by Patient\n\n\nCanceled by User\n\n\nVoided\n\n\nSent to Payment Plan\n\n\nSent to Bad Debt\n\n\nGuarantor Changed\n\n\nNotification Failed\n\n\nCanceled by System\n\n\nAutomatic Payment Declined\n\n\nAppointment Canceled\n\n\nSystem Error\n\n\nAccount Contested"
+    },
+    {
+      "index": 314,
+      "name": "CANCELLATION_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cancelation reason category ID for this scheduled payment. This column can be used to see the user-specified reason that a patient is canceling the agreement.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFinancial Status Changed\n\n\nChanged Mind\n\n\nDisputed Terms\n\n\nPatient Canceled\n\n\nLegal"
+    },
+    {
+      "index": 326,
+      "name": "TOTAL_SP_RESP_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the total self-pay responsibility on a Visit Auto Pay agreement, regardless of the agreement being cancelled."
+    },
+    {
+      "index": 331,
+      "name": "ALL_HAR_BAL_IN_FULL_SP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column contains the most recent date in which all balances were on self-pay for all associated hospital accounts."
+    },
+    {
+      "index": 336,
+      "name": "LAST_CONSENT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The consent date and time for the Visit Auto Pay agreement."
+    },
+    {
+      "index": 341,
+      "name": "CUR_ACTIVE_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the current active agreement (Visit Auto Pay or Payment Plans) in a replacement chain for any given agreement. If the agreement is not in a replacement chain, this column will match the agreement ID."
+    },
+    {
+      "index": 346,
+      "name": "CANCELLATION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the user who canceled the scheduled payment."
+    },
+    {
+      "index": 351,
+      "name": "CANCELLATION_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the MyChart account that canceled the scheduled payment."
+    },
+    {
+      "index": 356,
+      "name": "FINAL_RESOLUTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column contains the date when the agreement was resolved and all charges were in full self-pay for all accounts.  - If the agreement is not resolved, this column will be empty. - If the agreement has any visit where all charges are not in full self-pay, this column will be empty - If both the agreement is resolved and all charges on all visits are in full self-pay, this column will contain the last of these two dates (using RESOLUTION_DATE and ALL_HAR_BAL_IN_FULL_SP_DATE)"
+    },
+    {
+      "index": 361,
+      "name": "FINAL_VAP_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the final Visit Auto Pay agreement for a visit. This is determined by finding either the current active Visit Auto Pay agreement or finding the agreement that was most recently resolved. This uses the associated hospital account for Hospital Billing and the associated visit for Professional Billing."
+    },
+    {
+      "index": 366,
+      "name": "VISIT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores the visit date of the primary visit at the time of consent."
+    },
+    {
+      "index": 371,
+      "name": "VISIT_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the department of the primary visit at the time of consent."
+    },
+    {
+      "index": 376,
+      "name": "CREATION_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the department in which the user was logged into at the time of consent. This will be empty for agreements created via MyChart or Welcome."
+    },
+    {
+      "index": 381,
+      "name": "PAT_PMT_COLL_WKFL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the workflow category ID performed to collect a patient payment from the point of view of the user. For example, MyChart eCheck-in vs. MyChart One-Touch.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStaff Collected\n\n\nMyChart Billing\n\n\nMyChart One-Touch\n\n\nMyChart Pay as Guest\n\n\nMyChart Visit Payment\n\n\nMyChart eCheck-in\n\n\nWelcome Balance Payment\n\n\nWelcome Check-in\n\n\nTwo-Way SMS\n\n\nPayment Posting\n\n\nLockbox\n\n\nRelease of Information\n\n\nWillow Ambulatory\n\n\nWeb Service"
+    },
+    {
+      "index": 402,
+      "name": "MYC_SIGNIN_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column denotes how the patient or guarantor logged in to MyChart to create the agreement. Only populated for agreements made via MyChart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPassword Sign-in\n\n\nDemographics Sign-in\n\n\nNo Sign-in"
+    },
+    {
+      "index": 412,
+      "name": "GUAR_MYC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the MyChart account status for the guarantor at the time the agreement is created or updated.  An active MyChart account status is defined as whether a MyChart user could log into the account with a user name and password. Accounts that are not yet active, deactivated, or are proxy accounts are considered inactive.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nACTIVE\n\n\nINACTIVE"
+    },
+    {
+      "index": 421,
+      "name": "CREATION_MYC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the MyChart account status for the MyChart account who created or last updated the agreement.  An active MyChart account status is defined as whether a MyChart user could log into the account with a user name and password. Accounts that are not yet active, deactivated, or are proxy accounts are considered inactive.\n\n\n The category values for this column were already listed for column: GUAR_MYC_STATUS_C_NAME"
+    }
+  ]
+}

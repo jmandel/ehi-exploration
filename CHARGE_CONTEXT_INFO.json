@@ -1,0 +1,38 @@
+{
+  "table_name": "CHARGE_CONTEXT_INFO",
+  "description": "This table contains charge triggering timestamps. Each row contains the timestamp charges were triggered for a specified charge context for an order.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CHARGE_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The charging context category ID under which charges were triggered for the order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nImaging end exam\n\n\nImaging result study\n\n\nInvasive Procedure Log Complete\n\n\nImaging check in"
+    },
+    {
+      "index": 23,
+      "name": "CHARGE_CONTEXT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant a charge was triggered for a given context."
+    }
+  ]
+}

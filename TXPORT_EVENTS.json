@@ -1,0 +1,80 @@
+{
+  "table_name": "TXPORT_EVENTS",
+  "description": "Contains the sequence of events for the transport request.",
+  "primary_key": {
+    "column_name": "TXPORT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TXPORT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the transport request record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "EVENT_INSTANT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant at which the assignment status of the transport request was updated on the server, stored as UTC. For local time, use TXPORT_EVENTS.EVENT_INSTANT_LOCAL_DTTM."
+    },
+    {
+      "index": 17,
+      "name": "WORKER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the transporter assigned to this transport request at the time of the status update."
+    },
+    {
+      "index": 22,
+      "name": "TXPORT_DLY_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The delay reason category number if the transport request was marked as delayed.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 28,
+      "name": "TXPORT_CANC_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains cancel reasons specified by the user if the transport request was canceled.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 34,
+      "name": "HKR_TXPORT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the transporter who changes the status of the request."
+    },
+    {
+      "index": 39,
+      "name": "EMP_TXPORT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the user who changes the status of the request."
+    },
+    {
+      "index": 44,
+      "name": "EVENT_INSTANT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The local instant at which the assignment status of the transport request was updated. For UTC, use TXPORT_EVENTS.EVENT_INSTANT_DTTM."
+    },
+    {
+      "index": 49,
+      "name": "ENTRY_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant at which an update to the assignment status of the transport request was entered, stored as UTC."
+    }
+  ]
+}

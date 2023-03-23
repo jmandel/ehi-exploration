@@ -1,0 +1,52 @@
+{
+  "table_name": "ED_PAT_STATUS",
+  "description": "The ED_PAT_STATUS table contains information about ED patients' \"patient\" status. One row in this table corresponds to one ED \"patient\" status change. If a patient's ED \"patient\" status is changed five times in a single encounter, this table will contain five rows for that encounter.",
+  "primary_key": {
+    "column_name": "INPATIENT_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the Inpatient Data Store record for this row. This column is frequently used to link to PAT_ENC_HSP.INPATIENT_DATA_ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this patient status. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ED_PAT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number of the ED patient status for the ED encounter.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nExpected\n\n\nWaiting Room\n\n\nWaiting for Nurse\n\n\nWaiting for Physician\n\n\nTest Results\n\n\nReady for Discharge\n\n\nObservation\n\n\nPhysician In\n\n\nNurse In\n\n\nReady for Admit\n\n\nIn Process\n\n\nReady for Re-Eval\n\n\nWaiting for Triage\n\n\nReady for Transfer\n\n\nReady for Transport\n\n\nIn Transport\n\n\nWaiting for AVS\n\n\nBed Requested\n\n\nIn Triage\n\n\nWaiting\n\n\nWaiting for Provider\n\n\nWith Nurse\n\n\nWith Provider\n\n\nReady for Disposition\n\n\nWaiting for Transport\n\n\nWaiting for Room\n\n\nAt Kiosk\n\n\nKiosk Completed\n\n\nKiosk Timed Out\n\n\nKiosk Redirected\n\n\nChecked Out\n\n\nScheduled\n\n\nArrived\n\n\nRooming in Progress\n\n\nVisit in Progress\n\n\nVisit Complete\n\n\nSigned\n\n\nNot Seen\n\n\nPatient Left\n\n\nPresent\n\n\nOpen Addendum\n\n\nResident/Fellow In\n\n\nAt Diagnostic Testing\n\n\nDilating in Exam Room\n\n\nDilating in Waiting Room\n\n\nExam Complete\n\n\nOrthoptist In\n\n\nTechnician In\n\n\nTesting Complete\n\n\nWaiting for Orthoptist\n\n\nWaiting for Resident/Fellow"
+    },
+    {
+      "index": 70,
+      "name": "PAT_STATUS_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the ED patient status was set."
+    },
+    {
+      "index": 75,
+      "name": "PAT_STATUS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who is associated with this status change. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 80,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI). This column is frequently used to link to PAT_ENC_HSP.PAT_ENC_CSN_ID."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "table_name": "V_EHI_SDD_DATA_FILTER",
+  "description": "This view returns all defining information about a patient's SDOH data that is configured in the system. Each row in this table represents documentation for a single SDOH domain for a single patient.that can be used for EHI requests.",
+  "primary_key": {
+    "column_name": "SDOH_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SDOH_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the social determinant data record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status. SDD only supports soft deleted records.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "DOMAIN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the domain this record stores data for.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIntimate Partner Violence\n\n\nSocial Connections\n\n\nAlcohol Use\n\n\nTobacco Use\n\n\nFinancial Resource Strain\n\n\nDepression\n\n\nStress\n\n\nPhysical Activity\n\n\nFood Insecurity\n\n\nTransportation Needs\n\n\nHousing Stability\n\n\nHealth Literacy\n\n\nSubstance Use\n\n\nInternet Access\n\n\nDigital Skills\n\n\nInadequate Housing\n\n\nHomelessness\n\n\nEducational Attainment\n\n\nEmployment Status\n\n\nVeteran Status\n\n\nElder Abuse\n\n\nHealth Insurance Status\n\n\nMedical Cost Burden\n\n\nUtilities\n\n\nPersonal Safety\n\n\nAccess to Care\n\n\nPostpartum Depression\n\n\nCaregiver Education and Work\n\n\nSafety and Environment\n\n\nCaregiver Health\n\n\nChild Education\n\n\nAdolescent Education and Socialization\n\n\nAdolescent Substance Use\n\n\nAdolescent Education\n\n\nAdolescent Socialization"
+    },
+    {
+      "index": 59,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient this SDD record stores data for."
+    },
+    {
+      "index": 64,
+      "name": "CONCERNS_PRESENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tracks whether the patient has needs in any source for this domain. Checks the most recent entry across all sources to determine if there is a concern.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

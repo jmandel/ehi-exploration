@@ -1,0 +1,374 @@
+{
+  "table_name": "DOCS_RCVD_DETAILS",
+  "description": "Details about received documents, including request audit information.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number (CSN) of the Received Document contact. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 22,
+      "name": "DOCUMENT_EXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "UUID for this document"
+    },
+    {
+      "index": 27,
+      "name": "DOCUMENT_ORIGIN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "How the document was requested\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRequest Via Ticket\n\n\nAutomated Document Request\n\n\nUnsolicited Document"
+    },
+    {
+      "index": 37,
+      "name": "DOCUMENT_DEP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "ID of the login department where the user was logged in when the document request was initiated"
+    },
+    {
+      "index": 42,
+      "name": "DOCUMENT_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text description of the contents of the document"
+    },
+    {
+      "index": 47,
+      "name": "CEID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient Care Everywhere ID used for this request"
+    },
+    {
+      "index": 52,
+      "name": "STRUCT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Data type of the document being stored\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCDA"
+    },
+    {
+      "index": 60,
+      "name": "RECV_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant the document was received from the remote organization"
+    },
+    {
+      "index": 65,
+      "name": "DOC_KIND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The kind of document being stored here\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOutpatient Discharge Summarization Note\n\n\nInpatient Discharge Summarization Note\n\n\nTransfer Summarization Note\n\n\nSummarization of Episode Note\n\n\nReferral Note\n\n\nQuality Measure Report\n\n\nPlan of care note\n\n\nRisk Assessment Document\n\n\nLabor and Delivery Summary\n\n\nProvider unspecified Operation Note\n\n\nSubsequent evaluation note\n\n\nPhysician consulting Progress note\n\n\nDiagnostic Imaging Report\n\n\nOutgoing IRIS Ophthalmology Encounter Summary\n\n\nSupplemental Analytics\n\n\nEndoscopy study\n\n\nPhysician Reporting to a Public Health Repository - Cancer Registry\n\n\nInitial Public Health Case Report\n\n\nOutgoing Death Registry Reporting IHE VRDR Profile\n\n\nNational healthcare survey panel NAMCS\n\n\nSpecialist Letter\n\n\nPatient summary Document\n\n\nClinical Analytics\n\n\nTransplant Episode Summary\n\n\nComprehensive Care Coordination Summary\n\n\nDialysis Summary\n\n\nOncology Summary\n\n\nGenomics Summary\n\n\nHealth Plan Sourced Clinical Summary"
+    },
+    {
+      "index": 101,
+      "name": "REQUEST_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason for initiating the document request\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOther\n\n\nAutomatic System Request\n\n\nPCP Review\n\n\nEmergency Visit\n\n\nReferral\n\n\nScheduled Visit\n\n\nUrgent Care\n\n\nWalk In\n\n\nAdmission\n\n\nPhone / E-mail Encounter\n\n\nCare Coordination\n\n\nBackground Batch Request\n\n\nBackground Verification Query\n\n\nData Request\n\n\nChart Gateway Batch Query\n\n\nChart Gateway Targeted Query\n\n\nPatient Portal Initiated\n\n\nChart Correction\n\n\nChart Gateway Link Forwarded Query\n\n\nSwitch from Standalone to Gateway\n\n\nOrders Anywhere Query\n\n\nPrior Authorization\n\n\nPayer Platform ADT\n\n\nPayer Platform Update Notification\n\n\nPayer Platform Scheduled Appointment\n\n\nNetwork Affiliation\n\n\nPatient Newly Enabled\n\n\nBook Anywhere\n\n\nAutomatic Query to Payer Before Appointment\n\n\nTreatment\n\n\nPayment\n\n\nHealthcare Operations\n\n\nSystem Administration\n\n\nFraud Detection\n\n\nPsychotherapy\n\n\nTraining\n\n\nLegal Disclosure\n\n\nMarketing\n\n\nFacility Directory\n\n\nFamily Disclosure\n\n\nIndividual Present Disclosure\n\n\nEmergency\n\n\nDisaster Relief\n\n\nPublic Health\n\n\nAbuse Disclosure\n\n\nHealth Oversight Disclosure\n\n\nJudicial Disclosure\n\n\nLaw Enforcement Disclosure\n\n\nDeceased Disclosure\n\n\nOrgan Donation Disclosure\n\n\nResearch Disclosure\n\n\nHealth Safety Threat\n\n\nGovernment Disclosure\n\n\nWorkers Compensation\n\n\nInsurance or Disability Coverage Disclosure\n\n\nRequest of the Individual"
+    },
+    {
+      "index": 164,
+      "name": "REQUEST_EXPLNATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text explanation for requesting the document"
+    },
+    {
+      "index": 169,
+      "name": "REQUEST_VST_PRV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the provider record for the search if the contact has no provider. This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 174,
+      "name": "RECORD_CREATE_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant of creation"
+    },
+    {
+      "index": 179,
+      "name": "REC_CREATE_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User"
+    },
+    {
+      "index": 184,
+      "name": "CONSENT_DOC_REC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If authorization was required for this document request then the ID of the document information record (DCS) for the authorization will be stored here."
+    },
+    {
+      "index": 189,
+      "name": "LETTER_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Contact Serial Number (CSN) of the patient contact where additional information in this received document record is stored."
+    },
+    {
+      "index": 194,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the referral record identifier for the referral on the local organization associated with this received document record."
+    },
+    {
+      "index": 199,
+      "name": "LETTER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the note record identifier of the letter associated with this received document record."
+    },
+    {
+      "index": 204,
+      "name": "LETTER_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the letter number of the letter associated with this external document record. The letter number corresponds to a line number in EPT related group 20200 which stores patient letters."
+    },
+    {
+      "index": 209,
+      "name": "EOW_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The In Basket message (EOW) that triggered this request."
+    },
+    {
+      "index": 214,
+      "name": "PAT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient name column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient name that was received in the document's metadata."
+    },
+    {
+      "index": 219,
+      "name": "PAT_FAMILY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient family name column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient's family name that was received in the document's metadata."
+    },
+    {
+      "index": 224,
+      "name": "PAT_NAME_SUFFIX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient name suffix column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient's name's suffix that was received in the document's metadata."
+    },
+    {
+      "index": 229,
+      "name": "PAT_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient city received as a part of a document from an external system."
+    },
+    {
+      "index": 234,
+      "name": "PAT_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient state column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient's state that was received in the document's metadata.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 240,
+      "name": "PAT_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's postal code. When a document is received from an external system, it contains certain metadata supplied by the sending system regarding the document. This column contains the patient's postal code that was received in the document's metadata."
+    },
+    {
+      "index": 245,
+      "name": "PAT_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient country received as a part of a document from an external system.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 251,
+      "name": "PAT_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient sex column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient's sex that was received in the document's metadata.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 264,
+      "name": "PAT_DOB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Patient date of birth column. When a document is received from an external system, it will contain certain metadata supplied by the sending system regarding the document. This column contains the patient's date of birth that was received in the document's metadata."
+    },
+    {
+      "index": 269,
+      "name": "SUBSET_TITLE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the title of the submission set received in an incoming Provide and Register message. Its value is supplied by the sending system."
+    },
+    {
+      "index": 274,
+      "name": "SUBSET_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Submission set comments column. This column stores the comments associated with a submission set received in an incoming Provide and Register message. Its value is supplied by the sending system."
+    },
+    {
+      "index": 279,
+      "name": "AUTHOR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Author ID column. This column stores the author ID associated with a document or submission set received in an incoming Provide and Register message. Its value is supplied by the sending system. This may be an ID from any codeset, and the codeset is not included in the document submission."
+    },
+    {
+      "index": 284,
+      "name": "AUTHOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Author name column. This column stores the author name associated with a document or submission set received in an incoming Provide and Register message. Its value is supplied by the sending system."
+    },
+    {
+      "index": 289,
+      "name": "PAT_DEST_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient destination identifier for this external document received from the sending organization."
+    },
+    {
+      "index": 294,
+      "name": "DEST_LOC_DXO_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The destination location organization record (DXO) ID to which the message is sent (set only if it is different from local organization record ID)."
+    },
+    {
+      "index": 299,
+      "name": "DEST_LOC_DXO_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "index": 304,
+      "name": "CE_TOKEN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the patient Care Everywhere token from the source organization of the received document."
+    },
+    {
+      "index": 309,
+      "name": "CREAT_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant the received document was created in the sender organization"
+    },
+    {
+      "index": 314,
+      "name": "PAT_SSN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's Social Security Number (SSN) from an incoming message."
+    },
+    {
+      "index": 319,
+      "name": "PAT_HOME_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's home phone number."
+    },
+    {
+      "index": 324,
+      "name": "PAT_WORK_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's work phone number from an incoming message."
+    },
+    {
+      "index": 329,
+      "name": "PAT_CELL_PH",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's mobile phone number."
+    },
+    {
+      "index": 334,
+      "name": "SRC_LOC_DXO_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The document source location organization ID from which the message is sent. It is set only if it is different from the source organization ID (I DXR 70)."
+    },
+    {
+      "index": 339,
+      "name": "SRC_LOC_DXO_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "index": 344,
+      "name": "ERX_CONTROLLED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the external e-prescription accepted through the incoming e-prescribing interface is for a controlled substance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 353,
+      "name": "INC_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The context of the submission set that contains the documents for a received Provide and Register message. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReferral\n\n\nDischarge\n\n\nGeneral Communication\n\n\nPatient Initiated\n\n\nEmergency Discharge\n\n\nInpatient Discharge\n\n\nUnknown\n\n\nNot Specified\n\n\nMedication Adherence Message\n\n\nShare Everywhere Message\n\n\nHealthy Planet Link Upload\n\n\nUpdate Notification\n\n\nExternal Order Processing Request\n\n\nPublic Health Reporting\n\n\nAdmission Event Notification\n\n\nDischarge Event Notification\n\n\nReferral Outcome\n\n\nReferral Interim Note\n\n\nOutpatient Event Notification\n\n\nGeneral Event Notification"
+    },
+    {
+      "index": 380,
+      "name": "AUTHOR_ADDRESS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the address of the document author."
+    },
+    {
+      "index": 385,
+      "name": "AUTHOR_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the phone number of the document author."
+    },
+    {
+      "index": 390,
+      "name": "PAT_HOUSENUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's house number from an incoming message."
+    }
+  ]
+}

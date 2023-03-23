@@ -1,0 +1,66 @@
+{
+  "table_name": "OVERRIDE_TIME_HX",
+  "description": "The OVERRIDE_TIME_HX table contains information about order override time history.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "IP_OVRD_TM_BY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who adjusted the times or schedule. If the times or schedule are adjusted and then the order is verified, it will contain the ID of the user who verified the order."
+    },
+    {
+      "index": 17,
+      "name": "OVRD_UPD_AT_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This is the instant at which the times for the order were set.  If the times were adjusted and then the order was verified, the instant the order was verified will be stored."
+    },
+    {
+      "index": 22,
+      "name": "OVRD_TIMES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the override scheduled times for the order if the order has a specified frequency."
+    },
+    {
+      "index": 27,
+      "name": "OVRD_INST_NS_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the override schedule time for orders with a non-specified frequency."
+    },
+    {
+      "index": 32,
+      "name": "OVRD_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the override reason for adjusting the medication administration times.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 38,
+      "name": "IP_OVRDTM_SRCDEP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique department ID of the department used to calculate the override times stored in the row."
+    }
+  ]
+}

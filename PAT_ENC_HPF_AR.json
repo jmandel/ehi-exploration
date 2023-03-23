@@ -1,0 +1,52 @@
+{
+  "table_name": "PAT_ENC_HPF_AR",
+  "description": "This patient encounter table contains Professional Billing Hospital Professional Fee encounters. The primary key for the patient encounter table is PAT_ENC_CSN_ID.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. Digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "For Hospital Professional Fee encounters, this is the admit date in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "HPF_ENC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Hospital Professional Fee encounter status category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nPosted\n\n\nCompleted\n\n\nReleased\n\n\nPost/Billed\n\n\nComp/Billed\n\n\nDeleted"
+    },
+    {
+      "index": 31,
+      "name": "HPF_EM_CODE_REQ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the Hospital Professional Fee encounter for the patient�meets E&M code requirements.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 40,
+      "name": "AR_HPF_ENC_VST_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the contact serial number which links the hospital professional fee (HPF)�contact with the visit contact. This CSN is the unique contact serial number for the visit contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    }
+  ]
+}

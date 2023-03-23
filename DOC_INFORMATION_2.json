@@ -1,0 +1,255 @@
+{
+  "table_name": "DOC_INFORMATION_2",
+  "description": "The DOC_INFORMATION table contains information about documents, including scanned and electronically signed documents.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "index": 7,
+      "name": "DOC_RDI_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the linked form (RDI) that contains key-value pairs."
+    },
+    {
+      "index": 12,
+      "name": "COMM_ORIG_RDI_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the original form (RDI) ID when a form is converted to a PDF."
+    },
+    {
+      "index": 17,
+      "name": "RSH_LAST_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The last user who updated the research data capture form."
+    },
+    {
+      "index": 22,
+      "name": "RSH_LAST_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The last instant this data capture form was updated."
+    },
+    {
+      "index": 27,
+      "name": "RSH_FORM_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to indicate whether or not all of the required fields on an esignature document's smartform have been completed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nIn Progress\n\n\nVoid\n\n\nComplete\n\n\nError\n\n\nRejected"
+    },
+    {
+      "index": 40,
+      "name": "DOC_SPEC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The document specialty for a document (DCS) record.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 46,
+      "name": "DOC_SUBSPECIALTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the document subspecialty for a document (DCS) record\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 52,
+      "name": "TMPLT_SF_FORM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the SmartForm used to collect information for this document. Should be used in conjunction with DOC_INFORMATION.TMPLT_SF_CNTCT to identify the SmartForm Record."
+    },
+    {
+      "index": 57,
+      "name": "TMPLT_SF_FORM_ID_FORM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the form associated with the questionnaire."
+    },
+    {
+      "index": 62,
+      "name": "RSH_FORM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The instance name for the research data capture form."
+    },
+    {
+      "index": 67,
+      "name": "DOCUMENT_USAGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The document usage category ID for the document record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFinancial Assistance Patient\n\n\nFinancial Assistance Case"
+    },
+    {
+      "index": 76,
+      "name": "BLOB_CATEGORY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The blob category for the document.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSCAN\n\n\nVOICE\n\n\nANNOTATION\n\n\nVIDEO\n\n\nECG\n\n\nSPIRO\n\n\nHOLTER RESULT\n\n\nHOLTER ANALYSIS\n\n\nWAVEFORM STRIP\n\n\nESIG\n\n\nVirtual Authorization\n\n\nPHOTO\n\n\nLINK\n\n\nDOCUMENT\n\n\nREPORT VIEWER\n\n\nCHF\n\n\nDICOM Study\n\n\nDICOM Series\n\n\nDICOM Image\n\n\nTEMPORARY"
+    },
+    {
+      "index": 103,
+      "name": "RX_CUST_ID_OWNER_NAM_RECORD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains a pointer to the name record of the owner of the customer ID used to pick up the prescriptions for the patient from outpatient pharmacies."
+    },
+    {
+      "index": 108,
+      "name": "ESIG_ACCESSIBLE_PDF_FILE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the file name for the accessible PDF of this document on the BLOB."
+    },
+    {
+      "index": 113,
+      "name": "SERIES_SEQ_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The sequence number of the series in a DICOM study (attribute 0020,0011)."
+    },
+    {
+      "index": 118,
+      "name": "PS_SERIES_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The instance UID of the series that has the presentation state for the image."
+    },
+    {
+      "index": 123,
+      "name": "PS_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The presentation state instance UID for the image."
+    },
+    {
+      "index": 128,
+      "name": "IMAGE_SEQUENCE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The image sequence number within the series (attribute 0020,0013)."
+    },
+    {
+      "index": 133,
+      "name": "IMG_SLCT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID indicating how the DICOM image associated with the record was selected, including if it was computer selected or marked as a key image.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nComputer Selected\n\n\nKey Image"
+    },
+    {
+      "index": 143,
+      "name": "FILE_CREATION_TIME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the timestamp in HL7 format of when the file was created on the blob or DMS server."
+    },
+    {
+      "index": 148,
+      "name": "FILE_LAST_UPD_TIME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Timestamp in HL7 format of when the image was last updated."
+    },
+    {
+      "index": 153,
+      "name": "FILE_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Mime type of the image/document."
+    },
+    {
+      "index": 158,
+      "name": "CLN_DOC_SRC_APT_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The appointment that a Document Information (DCS) record was attached to before it was moved to a Clinical Documentation Only encounter."
+    },
+    {
+      "index": 163,
+      "name": "ENROLL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the research study association that has been linked to this document."
+    },
+    {
+      "index": 168,
+      "name": "FILE_CREATION_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the file creation time of the document on the Web Blob Server (WBS)"
+    },
+    {
+      "index": 173,
+      "name": "DEFERRED_GEN_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deferred generation status category ID for the document. This field is only used for deferred generation documents.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nComplete\n\n\nFailed"
+    },
+    {
+      "index": 184,
+      "name": "DOC_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores ETR ID for the service-line on a claim that the document is associated with, used by Tapestry"
+    },
+    {
+      "index": 189,
+      "name": "START_DOC_PERIOD_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Start date of document period."
+    },
+    {
+      "index": 194,
+      "name": "END_DOC_PERIOD_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "End date fo document period."
+    },
+    {
+      "index": 199,
+      "name": "CLM_ATTACH_CTL_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Attachment control number for electronic attachments. This is used to identify electronic attachments for a claim in an ANSI X12 275."
+    },
+    {
+      "index": 204,
+      "name": "CLM_PROV_ACCT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Provider submitted account number for electronic attachments. This is used to identify electronic attachments for a claim in an ANSI X12 275."
+    },
+    {
+      "index": 209,
+      "name": "CLAIM_VENDOR_NPI",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "NPI of the vendor sent in ANSI X12 275. This is used to identify electronic attachments for a claim in an ANSI X12 275."
+    },
+    {
+      "index": 214,
+      "name": "DOCUMENT_IDENT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the identifier for this document, which is stored in item 350, is a native Epic identifier, or an identifier assigned by external system. When this item is set to 1-Native, the identifier refers to binary data that was uploaded through the Blob service. If the identifier was generated by an external system, this item is set to 2-External. If this item is set to 0-Unknown or not set, then other items must be used to determine if item 350 is a Blob or external identifier.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nNative\n\n\nExternal"
+    },
+    {
+      "index": 224,
+      "name": "EOB_MEMBER_SHARE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total amount a member is responsible for, for all the claims included in an Explanation of Benefits document."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "table_name": "AP_CLAIM_EXPORT_HISTORY",
+  "description": "This table contains the history of a claim's outgoing 837 exports and encounter reporting data.",
+  "primary_key": {
+    "column_name": "CLAIM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the claim record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "EXPORT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The export type for this row of export history.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReprice and Export-only Claims\n\n\nSubrogation Claims\n\n\nAP Claims Ad Hoc\n\n\n3rd-Party Pricing\n\n\nSplit Risk\n\n\nCrossover\n\n\nPaid Claims Encounter Reporting\n\n\nExternal Pricing\n\n\nPre-Pay Audit\n\n\nPre-Pay Audit: Update"
+    },
+    {
+      "index": 29,
+      "name": "EXPORT_SUBTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The export subtype for this row of export history, if there is a subtype for the export.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreate or Update Crossover\n\n\nCancel Crossover"
+    },
+    {
+      "index": 38,
+      "name": "EXPORT_BATCH_PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the payer record that this claim used when batched for the export. This is typically the payer for the coverage used to pay the claim."
+    },
+    {
+      "index": 43,
+      "name": "EXPORT_BATCH_PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 48,
+      "name": "CLAIM_RUN_IDENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The claim run ID that processed this claim during claim export batching."
+    },
+    {
+      "index": 53,
+      "name": "CLAIM_RECON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Claim Reconciliation record that tracks the encounter and reconciliation data for this row."
+    },
+    {
+      "index": 58,
+      "name": "EXPORT_DEST_PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the payer record that this claim export was sent to. This is the payer used to drive the destination payer loop on the outgoing 837."
+    },
+    {
+      "index": 63,
+      "name": "EXPORT_DEST_PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 68,
+      "name": "EXPORT_CEV_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the most recent claim values record created for this row's outgoing claim export data."
+    }
+  ]
+}

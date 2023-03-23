@@ -1,0 +1,514 @@
+{
+  "table_name": "COVERAGE_BENEFITS",
+  "description": "The COVERAGE_BENEFITS table contains coverage-level benefit information for the encounter or estimate to which this benefit record is attached.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the benefit record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Each line in this related group contains benefit information for a coverage that is or was in use for this visit."
+    },
+    {
+      "index": 17,
+      "name": "CHECKED_BY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user by whom the coverage benefits were checked."
+    },
+    {
+      "index": 22,
+      "name": "CHECKED_ON_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the coverage benefits were checked."
+    },
+    {
+      "index": 27,
+      "name": "CHECKED_WITH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The organization or group with whom the benefits for this coverage were checked.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 34,
+      "name": "CHECKED_WITH_AGY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The agency with whom the benefits for this coverage were checked."
+    },
+    {
+      "index": 39,
+      "name": "CHECKED_WITH_AGY_ID_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the agency."
+    },
+    {
+      "index": 44,
+      "name": "CHECKD_WITH_CONTACT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact with whom the benefits for this coverage were checked."
+    },
+    {
+      "index": 49,
+      "name": "CHECKED_WITH_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The phone number with which the benefits for this coverage were checked."
+    },
+    {
+      "index": 54,
+      "name": "CHECKED_WITH_FAX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fax number with which the benefits for this coverage were checked."
+    },
+    {
+      "index": 59,
+      "name": "CVG_BEN_VERIF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The verification record for visit-specific coverage benefits."
+    },
+    {
+      "index": 64,
+      "name": "EVALUATION_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current evaluated status of the coverage benefits for this coverage (covered, not covered, in progress, etc.).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCovered\n\n\nNot Covered"
+    },
+    {
+      "index": 73,
+      "name": "EXPECTED_COLL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount expected to be collected from the patient for this coverage."
+    },
+    {
+      "index": 78,
+      "name": "COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The copay for this coverage."
+    },
+    {
+      "index": 83,
+      "name": "DEDUCTIBLE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Deductible for this coverage."
+    },
+    {
+      "index": 88,
+      "name": "DEDUCTIBLE_MET_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the deductible for this coverage that has already been paid."
+    },
+    {
+      "index": 93,
+      "name": "DEDUCT_REMAIN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of the deductible for this coverage that has yet to be paid."
+    },
+    {
+      "index": 98,
+      "name": "COINS_PERCENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The coinsurance percentage for this coverage."
+    },
+    {
+      "index": 103,
+      "name": "COINS_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coinsurance amount for this coverage."
+    },
+    {
+      "index": 108,
+      "name": "OUT_OF_POCKET_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum out-of-pocket payment for this coverage."
+    },
+    {
+      "index": 113,
+      "name": "OUT_OF_PCKT_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The remaining out-of-pocket payment for this coverage."
+    },
+    {
+      "index": 118,
+      "name": "OUT_OF_PCKET_MET_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Has the out-of-pocket cost been met for this coverage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 127,
+      "name": "OOP_INCL_DEDUCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Does the out-of-pocket payment include the deductible cost?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 133,
+      "name": "COVERED_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track covered days -- this is normally used for Medicare."
+    },
+    {
+      "index": 138,
+      "name": "NON_COVERED_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The non-covered days  - this is normally used for Medicare"
+    },
+    {
+      "index": 143,
+      "name": "COINS_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track the coinsurance days -- this is normally used for Medicare"
+    },
+    {
+      "index": 148,
+      "name": "LTR_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Track the lifetime reserve days -- this is usually used for Medicare."
+    },
+    {
+      "index": 153,
+      "name": "ANNUAL_BEN_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum annual benefits for this coverage."
+    },
+    {
+      "index": 158,
+      "name": "ANNUAL_BEN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The annual benefits remaining for this coverage."
+    },
+    {
+      "index": 163,
+      "name": "LIFETIME_BEN_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum lifetime benefits for this coverage."
+    },
+    {
+      "index": 168,
+      "name": "LIFETIME_BEN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The lifetime benefits remaining for this coverage."
+    },
+    {
+      "index": 173,
+      "name": "SPEND_DOWN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The spend down amount for this coverage during the defined interval."
+    },
+    {
+      "index": 178,
+      "name": "SPEND_DOWN_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The spend down amount remaining for this coverage during the specified interval."
+    },
+    {
+      "index": 183,
+      "name": "SPEND_DOWN_INTRVL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The interval at which the spend down amount will reset.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOne Week\n\n\nOne Month\n\n\nThree Months\n\n\nSix Months\n\n\nOne Year"
+    },
+    {
+      "index": 195,
+      "name": "PREEXISTING_COND_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Do any pre-existing conditions apply for this coverage?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 201,
+      "name": "PREEXIST_COND_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of any pre-existing conditions that apply for this coverage."
+    },
+    {
+      "index": 206,
+      "name": "IN_NETWORK_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Is in-network care required for this coverage and service type?\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 212,
+      "name": "PREFERRED_NETWORK",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The preferred network, if any, for this coverage."
+    },
+    {
+      "index": 217,
+      "name": "TRACKINC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The tracking code for payor communication about this coverage."
+    },
+    {
+      "index": 222,
+      "name": "ESTIMATE_NEEDED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether an estimate should be collected for this encounter/coverage.\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 228,
+      "name": "CVG_UPDATE_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item contains the last instant in which data for this line's coverage was updated."
+    },
+    {
+      "index": 233,
+      "name": "CVG_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the ID of the user who last updated the data for this line's coverage."
+    },
+    {
+      "index": 238,
+      "name": "CVG_UPDATE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the source that made the last update to this line's coverage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual Update\n\n\nEligibility Query\n\n\nAutomatic copy from canceled encounter\n\n\nAutomatic copy from related encounter\n\n\nAutomatic copy from current encounter\n\n\nPrevious Eligibility Query\n\n\nAutomatic population from benefits engine\n\n\nReference BEN for Estimates\n\n\nAutomatic copy from related estimate"
+    },
+    {
+      "index": 254,
+      "name": "COST_SHARE_ACCT_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the HRA account balance for the HRA account associated with the managed care coverage. It is a coverage specific item."
+    },
+    {
+      "index": 259,
+      "name": "ACTIVELY_ENROLLED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates if the patient is actively enrolled in HRA.\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 265,
+      "name": "DAILY_COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that is multiplied by the length of stay to calculate the total inpatient copay for this coverage. This is different from the visit copay amount."
+    },
+    {
+      "index": 270,
+      "name": "MAX_DAILY_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum total amount the patient may be charged in daily copays for this coverage."
+    },
+    {
+      "index": 275,
+      "name": "WAIVE_ON_ADMIT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the copay is waived on an ED admission for this coverage. \"YES\" indicates the copay will be waived. If null or \"NO\", the copay will not be waived on ED admittance.\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 281,
+      "name": "FAMILY_TIER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Family tier for this line's coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nN/A\n\n\nIndividual\n\n\nFamily"
+    },
+    {
+      "index": 291,
+      "name": "MAX_VISITS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The maximum number of visits for this coverage."
+    },
+    {
+      "index": 296,
+      "name": "REMAINING_VISITS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The remaining number of visits for this coverage."
+    },
+    {
+      "index": 301,
+      "name": "LAST_IP_SNF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is the last date on which the patient received inpatient care or skilled nursing care. This is used in determining when a Medicare benefit period ends."
+    },
+    {
+      "index": 306,
+      "name": "NET_LVL_CVG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Network level for this line's coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIn\n\n\nOut\n\n\nOut of Area\n\n\nN/A"
+    },
+    {
+      "index": 317,
+      "name": "CALC_NET_LVL_CVG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the most recently calculated network level for this coverage.\n\n\n The category values for this column were already listed for column: NET_LVL_CVG_C_NAME"
+    },
+    {
+      "index": 323,
+      "name": "CALC_NET_SRC_CVG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the source of the most recently calculated network level for this coverage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelected\n\n\nNET Definition\n\n\nPlan Default\n\n\nPayor Default\n\n\nBEN Settings\n\n\nSystem Default"
+    },
+    {
+      "index": 336,
+      "name": "SEL_NET_LVL_CVG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies which network level should be used for this encounter, at the coverage level.\n\n\n The category values for this column were already listed for column: NET_LVL_CVG_C_NAME"
+    },
+    {
+      "index": 342,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the payor for these coverage-level benefits. This item is used when recording benefits before a coverage record has been created, such as for estimates for prospective patients."
+    },
+    {
+      "index": 347,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 352,
+      "name": "CVG_ANNUAL_BEN_USED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount that has already been used for this coverage for a given year."
+    },
+    {
+      "index": 357,
+      "name": "RTE_COPAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last copay value filed by RTE at the coverage level"
+    },
+    {
+      "index": 362,
+      "name": "RTE_DEDUCT_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible amount filed by RTE at the coverage level"
+    },
+    {
+      "index": 367,
+      "name": "RTE_DEDUCT_MET",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible met amount filed by RTE at the coverage level"
+    },
+    {
+      "index": 372,
+      "name": "RTE_DEDUCT_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last deductible remaining amount filed by RTE at the coverage level"
+    },
+    {
+      "index": 377,
+      "name": "RTE_COINS_PERCENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the last coinsurance percent filed by RTE at the coverage level"
+    },
+    {
+      "index": 382,
+      "name": "RTE_OOP_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last OOP max amount filed by RTE at the coverage level"
+    },
+    {
+      "index": 387,
+      "name": "RTE_OOP_REMAIN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last OOP remaining amount filed by RTE at the coverage level"
+    },
+    {
+      "index": 392,
+      "name": "POSTERIOR_COMPOSITE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not posterior composite fillings are covered. 'Y' indicates that posterior composite fillings are covered. 'N' or NULL indicate that posterior composite fillings are not covered.\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 398,
+      "name": "POSTERIOR_PORCELAIN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether or not posterior porcelain crowns are covered. 'Y' indicates that posterior porcelain crowns are covered. 'N' or NULL indicate that posterior porcelain crowns are not covered.\n\n\n The category values for this column were already listed for column: OUT_OF_PCKET_MET_YN"
+    },
+    {
+      "index": 404,
+      "name": "CVG_BEN_BEGIN_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The coverage-level annual benefit period start date."
+    },
+    {
+      "index": 409,
+      "name": "VISIT_BEN_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum visit benefits for this coverage."
+    },
+    {
+      "index": 414,
+      "name": "VISIT_OUT_OF_POCKET_MAX_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coverage level maximum patient out-of-pocket for a visit."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "table_name": "ORDER_AUTH_INFO",
+  "description": "This table holds information about prior authorization for medications in certain workflows. It is currently only used when communicating with eClaimLink for authorizations.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "MED_AUTH_RESULT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the medication authorization result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproved\n\n\nDenied"
+    },
+    {
+      "index": 16,
+      "name": "MED_AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the authorization ID returned by the payer."
+    },
+    {
+      "index": 21,
+      "name": "AUTH_DENY_RSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds the authorization denial reason."
+    },
+    {
+      "index": 26,
+      "name": "AUTH_DENY_RSN_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 31,
+      "name": "AUTH_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item holds the instant the authorization is valid from."
+    },
+    {
+      "index": 36,
+      "name": "AUTH_END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item holds the instant the authorization is valid to."
+    },
+    {
+      "index": 41,
+      "name": "AUTH_LIMIT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds the medication authorization limit."
+    }
+  ]
+}

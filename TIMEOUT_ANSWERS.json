@@ -1,0 +1,703 @@
+{
+  "table_name": "TIMEOUT_ANSWERS",
+  "description": "This table stores the answers to the timeout questions.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the timeout record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "index": 27,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This stores the contact number for the contact."
+    },
+    {
+      "index": 32,
+      "name": "CNCT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact type category number for the timeout record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInitial Entry\n\n\nUpdate"
+    },
+    {
+      "index": 41,
+      "name": "CORRECT_PAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct patient category number for the timeout question. This stores the result of the \"Is this the correct patient?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nWristband\n\n\nBarcode\n\n\nPatient Confirmed\n\n\nFamily Confirmed\n\n\nLegal Guardian\n\n\nInterpreter"
+    },
+    {
+      "index": 56,
+      "name": "CORRECT_SITE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct site category number for the timeout question. This stores the result of the \"Is this the correct site?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 65,
+      "name": "CORRECT_SIDE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct side category number for the timeout question. This stores the result of the \"Is this the correct side?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 75,
+      "name": "CORRECT_POSITION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct position category number for the timeout question. This stores the result of the \"Is this the correct position?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 84,
+      "name": "CORRECT_EQUIPMENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct equipment category number for the timeout question. This stores the result of the \"Is this the correct equipment?\" question for a the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 94,
+      "name": "CORRECT_PROC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct procedure category number for the timeout question. This stores the result of the \"Is this the correct procedure?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 103,
+      "name": "SITE_MARKED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The site marked status category number for the timeout question. This stores the result of the \"Is the site marked?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 113,
+      "name": "IMPLANTS_PRESENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The implants present category number for the timeout question. This item stores the result of the \"Are the implants present?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 123,
+      "name": "ANTIBIOTICS_ORDER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The antibiotics ordered and given status category number for the timeout question. This stores the result of the \"Have the antibiotics been ordered and given?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 133,
+      "name": "HP_NOTE_COMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The H&P note complete status category number for the timeout question. This stores the result of the \"H&P note complete?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 142,
+      "name": "CONSENTS_VERIFIED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The consent verified category number for the timeout question. This stores the result of the \"Are consents verified?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 152,
+      "name": "RAD_STUDIES_AVAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The radiology studies available status category number for the timeout question. This stores the result of the \"Are the radiology studies available?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 162,
+      "name": "REL_LAB_AVAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The relevant lab result available status category number for the timeout question. This stores the result of the \"Are the relevant lab results available?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 172,
+      "name": "SAFETY_PREC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The safety precautions reviewed status category number for the timeout question. This stores the result of the \"Are safety precautions reviewed?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 181,
+      "name": "ALLERGIES_REVW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The allergy reviewed status category number for the timeout question. This stores the result of the \"Are allergies reviewed?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 190,
+      "name": "SURGEON_READY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The surgeon/physician ready status category number for the timeout question. This stores the result of the \"Is the surgeon/physician ready?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 199,
+      "name": "PULSE_OXIMETER_ON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pulse oximeter is on patient status category number for the timeout question. This stores the result of the \"Is a pulse oximeter on the patient?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 208,
+      "name": "DIFFICULT_AIRWAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient has a difficult airway for intubation status category number for the timeout question. This stores the result of the \"Does the patient have a difficult airway for intubation?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 217,
+      "name": "AIR_ASSIST_AVAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The assistance available for a difficult patient airway status category number for the timeout question. This stores the result of the \"Is there assistance available for a difficult patient airway?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 227,
+      "name": "HIGH_BLOOD_RISK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The risk of high blood loss status category number for the timeout question. This stores the result of the \"Is there risk of high blood loss?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 236,
+      "name": "FLUIDS_AVAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fluids available for blood status category number for the timeout question. This stores the result of the \"Are there adequate fluids available to replenish high blood loss?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 246,
+      "name": "ANES_SAFETY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia safety check complete status category number for the timeout question. This stores the result of the \"Is the anesthesia safety checklist complete?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 255,
+      "name": "REQ_PRODUCTS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The required products category number for the timeout question. This stores the result of the \"Are any blood products & devices required for the procedure available?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 265,
+      "name": "OTHER_DOC_VERIFY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The other documentation verified status category number for the timeout question. This stores the result of the \"Is documentation verified?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 275,
+      "name": "TEAM_INTRODUCED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The all team members introduced status category number for the timeout question. This stores the result of the \"Have all team members been introduced?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 284,
+      "name": "SURGEON_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The surgeon/physician reviewed critical steps status category number for the timeout question. This stores the result of the \"Has the surgeon/physician reviewed the critical steps?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 293,
+      "name": "ANES_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesiologist has reviewed patient status category number for the timeout question. This stores the result of the \"Has the anesthesiologist reviewed the patient?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 302,
+      "name": "STERILE_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reviewed sterility status category number for the timeout question. This stores the result of the \"Has the nursing team reviewed the sterility?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 311,
+      "name": "EQUIP_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reviewed equipment problems status category number for the timeout question. This stores the result of the \"Has the nursing staff reviewed the equipment for potential problems?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 321,
+      "name": "FLUID_AVAIL_IRRIG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fluids available for irrigation status category number for the timeout question. This stores the result of the \"Are adequate antibiotics and irrigation fluids available?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 331,
+      "name": "COUNTS_CORRECT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The counts are correct status category number for the timeout question. This stores the result of the \"Are counts correct?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 341,
+      "name": "SPECIMEN_LABELED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specimen labeled status category number for the timeout question. This stores the result of the \"Have specimens been labeled?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 351,
+      "name": "EQUIP_PROB_ADDR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The equipment problems addressed status category number for the timeout question. This stores the result of the \"Have all new equipment problems been addressed?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 361,
+      "name": "RECOVERY_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recovery issue reviewed status category number for the timeout question. This stores the result of the \"Have all recovery issues been reviewed?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 371,
+      "name": "INSTANT_OF_ENT_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Stores the instant of entry when a record is edited"
+    },
+    {
+      "index": 376,
+      "name": "UNOS_ID_VERIFIED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The United Network for Organ Sharing (UNOS) ID verified status category number for the timeout question. This stores the result of the \"Is the UNOS ID verified?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 386,
+      "name": "BLOOD_TYPE_VER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The blood type verified status category number for the timeout question. This stores the result of the \"Is the blood type verified?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 396,
+      "name": "ORGAN_TYPE_VER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The blood type verified status category number for the timeout question. This stores the result of the \"Is the organ type verified?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 406,
+      "name": "ANS_FLT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the flowsheet template ID used for the timeout. Flowsheets can be used in place of SmartForms to answer questions pertaining to the timeout being performed."
+    },
+    {
+      "index": 411,
+      "name": "ANS_FLT_ID_DISPLAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name associated with this template."
+    },
+    {
+      "index": 416,
+      "name": "FLOWSHEET_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the instant that the flowsheet responses used for the timeout were saved. Flowsheets can be used in place of SmartForms to answer questions pertaining to the timeout being performed."
+    },
+    {
+      "index": 421,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The timeout status category number for the timeout.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 428,
+      "name": "PAT_ID_BAND_ON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient ID band on status category number for the timeout question.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo (Old)\n\n\nYes (Old)\n\n\nN/A (Old)\n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 441,
+      "name": "RAD_IMGS_AVAIL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The radiology images and result available status category number for the timeout question.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 447,
+      "name": "BRIEFING_OCCURRED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The briefing has occurred status category number for the timeout question.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 453,
+      "name": "TEAM_PRESENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The all team members present during timeout status category number for the timeout question.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 459,
+      "name": "HANDOFF_TO_STAFF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider ID of the staff member who the handoff was to. This stores the answer to the \"Handoff to (staff member)?\" question for a timeout."
+    },
+    {
+      "index": 464,
+      "name": "HANDOFF_TO_STAFF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedural staff type category number for the handoff to staff type question in the timeout. This stores the result of \"Handoff to (staff type)?\" question for the timeout.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 470,
+      "name": "HNDOFF_FRM_STAFF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider ID of the staff member who the handoff was from. This stores the answer to the \"Handoff from (staff member)?\" question for a timeout."
+    },
+    {
+      "index": 475,
+      "name": "SITE_MARK_VISIBLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The site marks visible after prep status category number for the timeout question.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 481,
+      "name": "FIRE_RISK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fire risk level category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 488,
+      "name": "TEAM_AGREE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The all team members agreed to proceed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 498,
+      "name": "ANES_PREOP_NOTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia pre-op note complete status category number for the timeout question.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 504,
+      "name": "MEDS_LABELED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The medication labeled status category number for the timeout question. This item is used during the timeout workflow.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 510,
+      "name": "PT_MED_HX_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient medical history reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 520,
+      "name": "ASA_CLASS_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The American Society of Anesthesiologists (ASA) classification reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 530,
+      "name": "ANES_TYPE_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia type reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 540,
+      "name": "PT_USE_ANTICOAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient use of anticoagulants reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 550,
+      "name": "PRE_SURG_MEDS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pre-procedure medications reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 560,
+      "name": "CORRECT_PROC_DOC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct procedure documented status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 570,
+      "name": "SURG_INSTR_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedural instructions reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 580,
+      "name": "ANES_INSTR_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia instructions reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 590,
+      "name": "LDA_REVIEW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Lines, Drains, and Airways (LDAs) reviewed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 600,
+      "name": "PT_READY_TRANSFER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient ready to transfer status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 610,
+      "name": "NEXT_DEPT_CONTACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The receiving department contact category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 620,
+      "name": "PERI_PRO_COD_DISC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The peri-procedural code discussed status category number for the timeout question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 630,
+      "name": "MEDS_VERB_CONF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The available meds verbally confirmed status category number for the timeout question. This stores the response category number for whether the meds are available on the procedural field. The goal is to do a quick verification prior to incision and state what meds are on the field for physician use.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 640,
+      "name": "VTE_PROPH_START_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The VTE prophylaxis started status category number for the timeout question. This stores the response category number for whether the patient had a Venous Thromboembolism (VTE) prophylaxis started prior to the start of the procedure.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 650,
+      "name": "AUTH_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the provider who is considered as the authorizing user for the timeout or the authorizing user to skip the timeout."
+    },
+    {
+      "index": 655,
+      "name": "MEDS_SECURED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Medications Secured category number which indicates whether medications not administered have been secured.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 665,
+      "name": "PAT_USE_BETABLOCK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient use of beta blockers category number for the timeout which indicates whether a beta blocker plan was reviewed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 675,
+      "name": "PREFCARD_CHNG_REV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The preference card changes reviewed category number for the timeout which indicates whether preference card changes were reviewed.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 681,
+      "name": "ANES_PROC_COMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia procedure complete category number for the timeout which indicates whether necessary anesthesia procedures are complete.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 691,
+      "name": "PROC_LEN_REV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anticipated procedure length category number for the timeout which indicates whether the anticipated length of procedure has been confirmed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 701,
+      "name": "NORMOTHRM_ASSURED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The normothermia assured category number for the timeout which indicates whether normothermia has been assured for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 711,
+      "name": "SITE_PREP_READY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The site prep completed category number for the timeout which indicates whether the skin prep (Betadine, Alcohol, etc.) is complete.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 721,
+      "name": "ANESTH_SITE_MARK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anesthesia site marked category number for the timeout which indicates whether the anesthesia site has been marked.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 727,
+      "name": "CORRECT_LAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The correct laterality category number for the timeout which indicates whether the laterality of the procedure has been verified.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 737,
+      "name": "PAT_REP_EDU_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient or legal representative educated on policies category number for the timeout which indicates whether the patient and family have been educated on organizational policies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 747,
+      "name": "PREP_SOL_DRIED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates if the solution used for surgical skin prep was dry or not before draping.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 753,
+      "name": "PREPSOL_POOL_PREV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates if the surgical site prep solution was prevented from pooling.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 759,
+      "name": "PREPSOL_INSTR_FOL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates if the pre-op site prep solution instructions were followed.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 765,
+      "name": "COMP_AT_APPROP_TM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates whether or not a timeout was completed at the appropriate time according to organizational policies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 774,
+      "name": "BLOOD_PRODUCT_ORD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates whether or not blood products were ordered.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    },
+    {
+      "index": 780,
+      "name": "PREG_TEST_COMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates whether a pregnancy test was completed prior to surgery.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 790,
+      "name": "EBL_CONFIRMED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the procedural timeout question that indicates if all surgical staff and surgeons present agree on the patient's estimated blood loss during surgery.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+    },
+    {
+      "index": 800,
+      "name": "FIRE_SURG_SITE_HT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the Fire Risk Surgical Site Height item. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 807,
+      "name": "FIRE_OXYGEN_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the Fire Risk Open Oxygen Source item. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 814,
+      "name": "FIRE_IGNITION_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the Fire Risk Ignition Source item. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 821,
+      "name": "HIGH_RISK_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that the fire risk was upgraded to a high fire risk."
+    },
+    {
+      "index": 826,
+      "name": "HIGH_RISK_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A comment associated with the fire risk upgrade to a high fire risk."
+    },
+    {
+      "index": 831,
+      "name": "SHARPS_SAFETY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The sharps safety category number for the timeout question that indicates if sharp safety was followed.\n\n\n The category values for this column were already listed for column: PAT_ID_BAND_ON_C_NAME"
+    }
+  ]
+}

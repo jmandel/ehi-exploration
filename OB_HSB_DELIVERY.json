@@ -1,0 +1,570 @@
+{
+  "table_name": "OB_HSB_DELIVERY",
+  "description": "This table contains information about the delivery for this pregnancy, as entered in Stork's Delivery Summary activity.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID assigned to the episode record (HSB .1)."
+    },
+    {
+      "index": 7,
+      "name": "OB_DEL_2ND_STAGE_HR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the second stage of labor in number of hours."
+    },
+    {
+      "index": 12,
+      "name": "OB_DEL_1ST_STAGE_HR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the first stage of labor in number of hours."
+    },
+    {
+      "index": 17,
+      "name": "OB_DEL_1ST_STAGE_M",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the first stage of labor in the number of minutes, and is added to OB_DEL_1ST_STAGE_HR to produce the total time."
+    },
+    {
+      "index": 22,
+      "name": "OB_DEL_2ND_STAGE_M",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the second stage of labor in the number of minutes, and is added to OB_DEL_2ND_STAGE_HR to produce the total time."
+    },
+    {
+      "index": 27,
+      "name": "OB_DEL_3RD_STAGE_M",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the third stage of labor in the number of minutes, and is added to OB_DEL_3RD_STAGE_HR to produce the total time."
+    },
+    {
+      "index": 32,
+      "name": "OB_DEL_BLOOD_LOSS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the amount of blood lost in the delivery, in milliliters."
+    },
+    {
+      "index": 37,
+      "name": "OB_DEL_COMPL_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the comments for any complications associated with this delivery."
+    },
+    {
+      "index": 42,
+      "name": "OB_DEL_REP_PACKETS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of suture packets used on a patient during laceration/episiotomy repair from delivery."
+    },
+    {
+      "index": 47,
+      "name": "OB_DELIVERY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item holds the date when this pregnancy was completed. This is the latest date of delivery of all the newborns associated with the pregnancy.  This column should not be used to determine the birth date of the baby."
+    },
+    {
+      "index": 52,
+      "name": "OB_DEL_3RD_STAGE_HR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the length of the third stage of labor in number of hours."
+    },
+    {
+      "index": 57,
+      "name": "OB_DEL_CRV_RPE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the date and time when cervical ripening occurred."
+    },
+    {
+      "index": 62,
+      "name": "OB_DEL_DIL_CMP_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the date and time that dilation was complete and/or the mother entered the second stage of labor for this pregnancy."
+    },
+    {
+      "index": 67,
+      "name": "OB_DEL_ONSET_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the date and time that labor began for this pregnancy."
+    },
+    {
+      "index": 72,
+      "name": "OB_DEL_PRES_REF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the presentation reference point category number for the delivery. The data for this column are entered in the Delivery Summary activity and stored in the delivery records.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 78,
+      "name": "OB_DEL_PRES_LR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the laterality of presentation (left-right) category number for the delivery. Data for this column are entered in the Delivery Summary activity and stored in the delivery records.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 84,
+      "name": "OB_DEL_PRES_AP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the anterior or posterior position of presentation category number. The data for this column are entered in the Delivery Summary activity and stored in the delivery records.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 90,
+      "name": "OB_DEL_CHEST_CIRC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the baby's chest circumference measurement at birth, in inches."
+    },
+    {
+      "index": 95,
+      "name": "OB_DEL_ANALGES_CMNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the analgesia comments recorded in the Delivery Summary. This information is stored in the delivery records."
+    },
+    {
+      "index": 100,
+      "name": "OB_DEL_PLCENTA_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the date and time the placenta was delivered. This data is stored in UTC time rather than local time. You may need to convert this data for display in reports. For deliveries documented in the Delivery Summary, the local time can be found in OB_HSB_DELIVERY_2.OB_DEL_PLCENTA_LOC_DTTM."
+    },
+    {
+      "index": 105,
+      "name": "OB_DEL_DELIV_MD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique ID of the provider (SER) who was responsible for delivering this infant. The data in this column are entered in the Delivery Summary activity and stored in the delivery record."
+    },
+    {
+      "index": 110,
+      "name": "OB_DEL_APGAR_SK_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's skin color Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n0 \n\n\n1 \n\n\n2"
+    },
+    {
+      "index": 120,
+      "name": "OB_DEL_APGAR_SK_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's skin color Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 126,
+      "name": "OB_DEL_APGAR_SK10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's skin color Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 132,
+      "name": "OB_DEL_APGAR_HR_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's heart rate Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 138,
+      "name": "OB_DEL_APGAR_HR_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's heart rate Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 144,
+      "name": "OB_DEL_APGAR_HR10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's heart rate Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 150,
+      "name": "OB_DEL_APGAR_GR_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's grimace Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 156,
+      "name": "OB_DEL_APGAR_GR_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's grimace Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 162,
+      "name": "OB_DEL_APGAR_GR10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's grimace Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 168,
+      "name": "OB_DEL_APGAR_MU_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's muscle tone Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 174,
+      "name": "OB_DEL_APGAR_MU_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's muscle tone Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 180,
+      "name": "OB_DEL_APGAR_MU10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's muscle tone Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 186,
+      "name": "OB_DEL_APGAR_BR_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's breathing Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 192,
+      "name": "OB_DEL_APGAR_BR_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's breathing Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 198,
+      "name": "OB_DEL_APGAR_BR10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's breathing Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 204,
+      "name": "OB_DEL_BIRTH_LENGTH",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the infant's length at birth, in inches."
+    },
+    {
+      "index": 209,
+      "name": "OB_DEL_BIRTH_WT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the infant's weight at birth in ounces."
+    },
+    {
+      "index": 214,
+      "name": "OB_DEL_HEAD_CIRCUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the infant's head circumference at birth, in inches. This information is entered in the Delivery Summary activity and is stored in the delivery records."
+    },
+    {
+      "index": 219,
+      "name": "OB_DEL_APGAR_1_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's total Apgar score at one minute after birth. This information is stored in the delivery records.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n0 \n\n\n1 \n\n\n2 \n\n\n3 \n\n\n4 \n\n\n5 \n\n\n6 \n\n\n7 \n\n\n8 \n\n\n9 \n\n\n10"
+    },
+    {
+      "index": 237,
+      "name": "OB_DEL_APGAR_5_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's total Apgar score at five minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_1_C_NAME"
+    },
+    {
+      "index": 243,
+      "name": "OB_DEL_APGAR_10_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's total Apgar score at ten minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_1_C_NAME"
+    },
+    {
+      "index": 249,
+      "name": "OB_DEL_DELIV_METH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the delivery method at birth. The data for this column are entered in the Delivery Summary activity and stored in the delivery records.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVaginal, Spontaneous\n\n\nC-Section, Low Transverse\n\n\nVertical C-Section\n\n\nC-Section, Unspecified\n\n\nVaginal, Vacuum (Extractor)\n\n\nVaginal, Forceps\n\n\nVaginal, Breech\n\n\nNon-Spontaneous Vaginal Delivery\n\n\nVBAC, Spontaneous\n\n\nC-Section, Low Vertical\n\n\nC-Section, Classical\n\n\nBiochemical"
+    },
+    {
+      "index": 268,
+      "name": "OB_DEL_ANOMALIES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the observed fetal anomalies. This information is stored in the delivery records."
+    },
+    {
+      "index": 273,
+      "name": "OB_DEL_BIRTH_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the date and time of delivery for a delivery record. For values that are not fully confident (for example, if just the year was documented), the confidence is stored in the OB_HX_OUTC_FUZZY_C column. For those values, this column contains the UTC representation of midnight on the earliest date that the value could represent, relative to the time zone where the delivery was documented. This data is stored in UTC time rather than local time. You may need to convert this data for display in reports. For deliveries documented in the Delivery Summary, the local time can be found in PATIENT.BIRTH_DATE."
+    },
+    {
+      "index": 278,
+      "name": "OB_DEL_DEPT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column displays the department where the delivery was performed."
+    },
+    {
+      "index": 283,
+      "name": "PUSHING_START_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant when the mother starts to push for the first time.  This data is stored in UTC time rather than local time. You may need to convert this data for display in reports. For deliveries documented in the Delivery Summary, the local time can be found in OB_HSB_DELIVERY_2.PUSHING_START_LOC_DTTM."
+    },
+    {
+      "index": 288,
+      "name": "ROM_TO_DELIVER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item displays the amount of time (in seconds) from rupture of membranes until the patient delivers. For pregnancy episodes, if there are multiples, it will calculate the length of time from the earliest rupture instant documented on a delivery record through to the latest delivery instant."
+    },
+    {
+      "index": 293,
+      "name": "OB_DEL_STEROIDS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays whether the mother received steroids for fetal lung maturation prior to delivery. This column links to the category table ZC_OB_DEL_STEROIDS. The column is looking for documentation in the Delivery Summary.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFull Course\n\n\nPartial Course\n\n\nNone\n\n\nUnknown"
+    },
+    {
+      "index": 304,
+      "name": "MOTHER_ANTIBIO_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays 'Y' or 'N' depending on whether or not the mother received antibiotics during labor. The column is looking for documentation in the Delivery Summary.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 313,
+      "name": "FORCEPS_DEL_ATT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays 'Y' or 'N' depending on whether or not a forceps delivery was attempted during this labor. The column is looking for documentation in the Delivery Summary.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 322,
+      "name": "VACUUM_DEL_ATT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays 'Y' or 'N' depending on whether or not a vacuum delivery was attempted during this labor. The column is looking for documentation in the Delivery Summary.\n\n\n The category values for this column were already listed for column: FORCEPS_DEL_ATT_YN"
+    },
+    {
+      "index": 328,
+      "name": "LABOR_ATTEMPT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays 'Y' or 'N' depending on whether or not a trial of labor was attempted. This can apply to both vaginal and c-section deliveries. The column is looking for documentation in the Delivery Summary.\n\n\n The category values for this column were already listed for column: FORCEPS_DEL_ATT_YN"
+    },
+    {
+      "index": 334,
+      "name": "OB_DEL_APGAR_15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's total Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_1_C_NAME"
+    },
+    {
+      "index": 340,
+      "name": "OB_DEL_APGAR_20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's total Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_1_C_NAME"
+    },
+    {
+      "index": 346,
+      "name": "OB_DEL_APGAR_SK15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's skin color Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 352,
+      "name": "OB_DEL_APGAR_HR15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's heart rate Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 358,
+      "name": "OB_DEL_APGAR_GR15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's grimace Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 364,
+      "name": "OB_DEL_APGAR_MU15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's muscle tone Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 370,
+      "name": "OB_DEL_APGAR_BR15_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's breathing Apgar score at fifteen minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 376,
+      "name": "OB_DEL_APGAR_SK20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's skin color Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 382,
+      "name": "OB_DEL_APGAR_HR20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's heart rate Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 388,
+      "name": "OB_DEL_APGAR_GR20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's grimace Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 394,
+      "name": "OB_DEL_APGAR_MU20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's muscle tone Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 400,
+      "name": "OB_DEL_APGAR_BR20_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the baby's breathing Apgar score at twenty minutes after birth. This information is stored in the delivery records.\n\n\n The category values for this column were already listed for column: OB_DEL_APGAR_SK_1_C_NAME"
+    },
+    {
+      "index": 406,
+      "name": "OB_HX_GEST_AGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the pregnancy gestational age (GA) in days for an outcome in OB history."
+    },
+    {
+      "index": 411,
+      "name": "OB_HX_DEL_SITE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the delivery site for an outcome in OB history.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+    },
+    {
+      "index": 419,
+      "name": "OB_HX_CLINICIAN_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the delivering clinician for an outcome in OB history. This is free text."
+    },
+    {
+      "index": 424,
+      "name": "OB_HX_INFANT_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the sex of the baby.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 437,
+      "name": "OB_HX_OUTC_FUZZY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence of the outcome date in OB_DEL_BIRTH_DTTM. If anything less than a full date and time was documented for the outcome date (for example, if just the year was documented), this column indicates how granular the documented value was.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYear\n\n\nMonth\n\n\nDate"
+    },
+    {
+      "index": 447,
+      "name": "OB_HX_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the outcome type for an outcome documented in OB history for a patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCurrent\n\n\nTerm\n\n\nPreterm\n\n\nAbortion\n\n\nGravida\n\n\nPara\n\n\nInduced Abortion\n\n\nSpontaneous Abortion\n\n\nEctopic\n\n\nMolar"
+    },
+    {
+      "index": 464,
+      "name": "CONT_START_PAT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the date and time the contractions started according to the patient."
+    },
+    {
+      "index": 469,
+      "name": "DILATION_START_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the date and time that active dilation started for the patient."
+    },
+    {
+      "index": 474,
+      "name": "SKIN_TO_SKIN_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the date and time that skin to skin with the baby was initiated."
+    },
+    {
+      "index": 479,
+      "name": "CORD_CLAMP_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant the umbilical cord was clamped.  For deliveries documented in the Delivery Summary, the local time can be found in OB_HSB_DELIVERY_2.CORD_CLAMP_LOC_DTTM."
+    },
+    {
+      "index": 484,
+      "name": "INDUCTION_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores date and time of induction for delivery."
+    },
+    {
+      "index": 489,
+      "name": "DECISION_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant the decision was made for an emergent c-section.  For deliveries documented in the Delivery Summary, the local time can be found in OB_HSB_DELIVERY_2.DECISION_LOC_DTTM."
+    },
+    {
+      "index": 494,
+      "name": "BREAST_FEED_ST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the instant that breastfeeding was initiated.  For deliveries documented in the Delivery Summary, the local time can be found in OB_HSB_DELIVERY_2.BREAST_FEED_ST_LOC_DTTM."
+    },
+    {
+      "index": 499,
+      "name": "SKIN_TO_SKIN_END_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the date that skin to skin was completed."
+    },
+    {
+      "index": 504,
+      "name": "ABDOMINAL_GIRTH",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The measurement of the baby's abdominal girth."
+    }
+  ]
+}

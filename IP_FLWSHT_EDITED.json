@@ -1,0 +1,255 @@
+{
+  "table_name": "IP_FLWSHT_EDITED",
+  "description": "This table contains the previous values from edited flowsheet records.",
+  "primary_key": {
+    "column_name": "FSD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FSD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID for the flowsheet data record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line count for the item."
+    },
+    {
+      "index": 12,
+      "name": "OCCURANCE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If the flowsheet group/row appears multiple times, this will distinguish the occurrence."
+    },
+    {
+      "index": 17,
+      "name": "LINE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the reading that replaced this flowsheet reading."
+    },
+    {
+      "index": 22,
+      "name": "RECORDED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the reading was taken."
+    },
+    {
+      "index": 27,
+      "name": "ENTRY_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the reading was entered."
+    },
+    {
+      "index": 32,
+      "name": "TAKEN_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user taking the flowsheet readings."
+    },
+    {
+      "index": 37,
+      "name": "ENTRY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user entering the readings."
+    },
+    {
+      "index": 42,
+      "name": "EDIT_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text comments associated with the reading."
+    },
+    {
+      "index": 47,
+      "name": "EDITED_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Determines if this flowsheet record has been edited."
+    },
+    {
+      "index": 52,
+      "name": "ACCEPTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines if this flowsheet record has been accepted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 61,
+      "name": "IP_SIGNIFCNT_EDI_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores edited information on whether the user marked the data value as being significant.\n\n\n The category values for this column were already listed for column: ACCEPTED_YN"
+    },
+    {
+      "index": 67,
+      "name": "EDITED_DEV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores information of the Device ID for the device from which data is captured from when the data is edited."
+    },
+    {
+      "index": 72,
+      "name": "EDITED_DEV_ID_DEVICE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name for this device."
+    },
+    {
+      "index": 77,
+      "name": "EDITED_RECEIVE_INST",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the Instant at which value was received at the interface  when the data is edited."
+    },
+    {
+      "index": 82,
+      "name": "AUDIT_NEED_COSIG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a value needing a co-sign is stored for the audit record for the flowsheet data record. Yes indicates that a value needing a co-sign gets over-written with a value not needing a co-sign.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nRequired Yes\n\n\nChosen Yes\n\n\nRequired Yes Can File"
+    },
+    {
+      "index": 93,
+      "name": "EDITED_FLT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the flowsheet template (FLT) which was used to enter this data into the cell."
+    },
+    {
+      "index": 98,
+      "name": "EDITED_FLT_ID_DISPLAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name associated with this template."
+    },
+    {
+      "index": 103,
+      "name": "EDT_FLO_DAT_USED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If the contact date (DAT) used to define data for a flowsheet group or row (see column FLO_DAT_USED) is changed, this column stores the prior value."
+    },
+    {
+      "index": 108,
+      "name": "EDITED_PENDED_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "History of the user ID of the user who pended a flowsheet value."
+    },
+    {
+      "index": 113,
+      "name": "EDITED_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "History of date/time at which a flowsheet value was pended."
+    },
+    {
+      "index": 118,
+      "name": "AUDIT_ABNORMAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether or not the edited value is abnormal\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes"
+    },
+    {
+      "index": 126,
+      "name": "FLO_CNCT_DATE_REAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column converts the contact date (DAT) of the flowsheet group or row to DTE, based on the value in column FLO_DAT_USED."
+    },
+    {
+      "index": 131,
+      "name": "EDITD_3P_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "History of identification of the third-party framework that a Flowsheets value originally came from, if applicable. Intended to be used to track values that are sourced from health/fitness frameworks (e.g. Apple's HealthKit) to provide additional context when examining attached metadata.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApple HealthKit\n\n\nWithings\n\n\nFitbit\n\n\nGoogle Fit\n\n\nFHIR"
+    },
+    {
+      "index": 143,
+      "name": "PAT_REPORTED_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the edited data was directly entered by the patient or a patient proxy and whether the data has been validated by a clinician\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Patient Reported\n\n\nPatient reported, not clinician validated\n\n\nPatient reported, clinician validated"
+    },
+    {
+      "index": 153,
+      "name": "MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The MyChart account from which the edited data was entered."
+    },
+    {
+      "index": 158,
+      "name": "EDIT_IS_FROM_SPEECH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether an edited flowsheet value was entered using speech entry.\n\n\n The category values for this column were already listed for column: ACCEPTED_YN"
+    },
+    {
+      "index": 164,
+      "name": "EDITED_ABNORMAL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores metadata for abnormal flowsheet values. Edited Abnormal Type is only populated for data where AUDIT_ABNORMAL_C is set to 1-Yes. It is set to 1-Low for data that is below the minimum warning level and it is set to 2-High for data that is above the maximum warning level for flowsheet data of types: numeric, blood pressure, temperature, height, patient height, weight and patient weight. It is set to 0-Unspecified for data that is abnormal for other reasons. This is the only value that can be set for flowsheet data of type:  custom list.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified\n\n\nLow\n\n\nHigh\n\n\nPatient-Entered Flowsheet Rule Abnormal"
+    },
+    {
+      "index": 175,
+      "name": "EDIT_FLO_NET_INI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The INI to which the value for this row is associated."
+    },
+    {
+      "index": 180,
+      "name": "EDIT_FLO_CAT_INI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The INI of an edited category flowsheet value"
+    },
+    {
+      "index": 185,
+      "name": "EDIT_FLO_CAT_ITEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The item number of a category flowsheet value"
+    },
+    {
+      "index": 190,
+      "name": "EDIT_FLO_CAT_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value of an edited flowsheet row"
+    },
+    {
+      "index": 195,
+      "name": "EDIT_DOC_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the method the user used to enter the line of flowsheet data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nValue From Macro"
+    },
+    {
+      "index": 203,
+      "name": "EDITED_MACRO_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When the documentation method in FSD-2360 is 1-Value From Macro this is the macro HGM record ID."
+    },
+    {
+      "index": 208,
+      "name": "EDITED_MACRO_RECORD_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Scripting Template."
+    }
+  ]
+}

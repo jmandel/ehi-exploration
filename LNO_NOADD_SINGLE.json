@@ -1,0 +1,115 @@
+{
+  "table_name": "LNO_NOADD_SINGLE",
+  "description": "The LNO_NOADD_SINGLE table contains information about your patient note records. This includes patient summary extracts, lab result reports, and other generated patient documents. All LNO records are included in this table.",
+  "primary_key": {
+    "column_name": "EXTRACT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EXTRACT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the patient summary extract record."
+    },
+    {
+      "index": 7,
+      "name": "EXTRACT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal name of the patient summary extract."
+    },
+    {
+      "index": 12,
+      "name": "REPORT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the report that was used as the extract type."
+    },
+    {
+      "index": 17,
+      "name": "REPORT_ID_REPORT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the report"
+    },
+    {
+      "index": 22,
+      "name": "DOC_MGMT_SYSTEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the document management system if the extract not stored in Epic."
+    },
+    {
+      "index": 27,
+      "name": "TRANSFER_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that the extract was transferred to the external document management system."
+    },
+    {
+      "index": 32,
+      "name": "EXT_DOC_LINK",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The link to the document stored in an external document management system."
+    },
+    {
+      "index": 37,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 42,
+      "name": "EXTRACT_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant in which the patient summary extract was created."
+    },
+    {
+      "index": 47,
+      "name": "TRIGGER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who triggered the extract. Contains the internal ID of that user."
+    },
+    {
+      "index": 52,
+      "name": "DELETED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deletion type category ID for the patient summary extract. If this value is null, the record is active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 62,
+      "name": "DELETION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal ID of the user that deleted the patient summary extract."
+    },
+    {
+      "index": 67,
+      "name": "DELETION_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the patient summary extract was deleted."
+    },
+    {
+      "index": 72,
+      "name": "DELETION_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The deletion reason category ID for the patient summary extract.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRECORD OLDER THAN CONFIGURED NUMBER OF YEARS\n\n\nPURGE\n\n\nERROR"
+    },
+    {
+      "index": 82,
+      "name": "DELETION_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason, given by the user, for deletion of the patient summary extract."
+    }
+  ]
+}

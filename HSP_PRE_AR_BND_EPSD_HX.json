@@ -1,0 +1,66 @@
+{
+  "table_name": "HSP_PRE_AR_BND_EPSD_HX",
+  "description": "This table contains bundled episode history for Hospital Billing temporary transactions.",
+  "primary_key": {
+    "column_name": "HTT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HTT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "HTT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Holds the line number in the charge data related group that this line corresponds to."
+    },
+    {
+      "index": 17,
+      "name": "ACTION_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that this transaction was linked/unlinked to the bundled episode."
+    },
+    {
+      "index": 22,
+      "name": "EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds bundled episode records linked to this transaction."
+    },
+    {
+      "index": 27,
+      "name": "ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current state of this transaction and episode, whether it is linked or unlinked.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLink\n\n\nUnlink"
+    },
+    {
+      "index": 36,
+      "name": "SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source of the link or unlink of this bundled episode to this transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nVisit Association\n\n\nAuto Link\n\n\nAuto Creation\n\n\nAuto Link Via Transform\n\n\nAuto Link Via Association\n\n\nAuto Removal"
+    },
+    {
+      "index": 50,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who performed the link or unlink of this episode to the transaction line."
+    }
+  ]
+}

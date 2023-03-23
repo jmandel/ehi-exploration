@@ -1,0 +1,143 @@
+{
+  "table_name": "HSP_ACCT_CPT_CODES",
+  "description": "This table contains hospital account CPT(R) codes from the Hospital Accounts Receivable (HAR) master file.",
+  "primary_key": {
+    "column_name": "HSP_ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID number of a hospital account."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number in the results of a query. Since multiple CPT� codes can be stored in one hospital account, each CPT� code will have a unique line number."
+    },
+    {
+      "index": 12,
+      "name": "CPT_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A CPT� code stored in the hospital account."
+    },
+    {
+      "index": 17,
+      "name": "CPT_CODE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "A date associated with a CPT� code stored in the hospital account."
+    },
+    {
+      "index": 22,
+      "name": "CPT_PERF_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID number of a performing provider associated with a CPT� code stored in the hospital account."
+    },
+    {
+      "index": 27,
+      "name": "CPT_EVENT_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The event number associated with a CPT� code stored in the hospital account. Event number are used to associate CPT� codes with procedure codes."
+    },
+    {
+      "index": 32,
+      "name": "CPT_MODIFIERS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A modifier or modifiers associated with a CPT� code stored in the hospital account."
+    },
+    {
+      "index": 37,
+      "name": "LMRP_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A Local Medical Review Policy (LMRP) code associated with a CPT� code stored in the hospital account."
+    },
+    {
+      "index": 42,
+      "name": "CPT_CODE_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of a CPT� code stored in the hospital account."
+    },
+    {
+      "index": 47,
+      "name": "PX_APC_FAC_RMB_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The monetary reimbursement amount for the procedure Ambulatory Payment Classification (APC) FAC on the hospital account."
+    },
+    {
+      "index": 52,
+      "name": "PX_OCE_EDIT_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure Outpatient Code Editor (OCE) edit code for the hospital account."
+    },
+    {
+      "index": 57,
+      "name": "PX_APC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure Ambulatory Payment Classification (APC) code for the hospital account."
+    },
+    {
+      "index": 62,
+      "name": "PX_HCFA_PAYMT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure Health Care Payment and Remittance Advice (HCFA) monetary payment amount for the hospital account."
+    },
+    {
+      "index": 67,
+      "name": "PX_COPAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The monetary copay amount for the procedure on the hospital account."
+    },
+    {
+      "index": 72,
+      "name": "PX_REV_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the revenue code."
+    },
+    {
+      "index": 77,
+      "name": "PX_REV_CODE_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 82,
+      "name": "CPT_EXCLD_RPT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether to exclude CPT codes from clinical reporting. This is frequently used to filter out procedures copied over during an account merge to prevent double counting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 91,
+      "name": "CPT_QUANTITY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Quantity of the CPT(R)/HCPCS code. Hospital accounts created prior to Epic 2014 have a null value in this column which implies a quantity of 1."
+    },
+    {
+      "index": 96,
+      "name": "CPT_POS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the Place of Service (POS) Type value for a coded CPT on an account..\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "table_name": "DOCS_RCVD_ACT_AUD",
+  "description": "This table contains data on actions that a user took on a direct message. For example, information about linking messages to patients, routing and creating referrals are all discretely audited in this table.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "MSG_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains granular actions that were performed on a Provide and Register message (or incoming group of external documents). Such actions may include how the patient was linked to the message, routing, and referral creation that occurred. These actions are shown to the user on an audit trail on the Incoming Messages Report or the International Review Report.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReceived\n\n\nPended\n\n\nManually linked to patient\n\n\nAutomatically linked to matching patient\n\n\nCreated patient\n\n\nAutomatically routed to In Basket\n\n\nManually routed to In Basket\n\n\nManually created a referral\n\n\nAutomatically created a referral\n\n\nRejected\n\n\nProcessed\n\n\nRouting to In Basket\n\n\nReleased Documents\n\n\nNo patient match\n\n\nNo routing needed\n\n\nNo referral needed\n\n\nIn Basket routing failure\n\n\nReply sent\n\n\nReply received\n\n\nExternal encounter linked to originating referral\n\n\nAutomatically created patient\n\n\nAutomatically linked due to known referral\n\n\nConversation reviewed\n\n\nEncounter invalidated\n\n\nLinked patient does not match source referral patient\n\n\nMessage comment added\n\n\nMessage received to place external order\n\n\nMessage received to update external order\n\n\nMessage received to cancel external order\n\n\nExternal order message timed out\n\n\nExternal order message resubmitted\n\n\nResolved associated external chart correction notice\n\n\nRouting decision reset\n\n\nReferral decision reset\n\n\nSource Patient Id discarded\n\n\nAutomatically linked due to matching external patient ID"
+    },
+    {
+      "index": 65,
+      "name": "MSG_ACT_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains comments for actions that were performed on a Provide and Register message (or incoming group of external documents). Such actions may include how the patient was linked to the message, routing, and referral creation that occurred. These actions are shown to the user on an audit trail on the Incoming Messages Report or the International Review Report. Comments can be user entered or hard coded."
+    },
+    {
+      "index": 70,
+      "name": "MSG_ACT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Contains the time of actions that were performed on a Provide and Register message (or incoming group of external documents). Such actions may include how the patient was linked to the message, routing, and referral creation that occurred. These actions are shown to the user on an audit trail on the Incoming Messages Report or the International Review Report."
+    },
+    {
+      "index": 75,
+      "name": "MSG_ACT_EXTERNAL_ORDER_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the identifier of an external order associated with an event such as receiving an interface message to place an order, to update an order, or to cancel an order."
+    }
+  ]
+}

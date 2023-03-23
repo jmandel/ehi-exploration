@@ -1,0 +1,234 @@
+{
+  "table_name": "INFERTILITY_CYCLE",
+  "description": "The INFERTILITY_CYCLE table contains information about fertility treatment cycles.",
+  "primary_key": {
+    "column_name": "CYCLE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CYCLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the fertility treatment cycle record."
+    },
+    {
+      "index": 7,
+      "name": "CYCLE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fertility treatment cycle name."
+    },
+    {
+      "index": 12,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record status (hidden, soft-deleted, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 22,
+      "name": "TREATMENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fertility treatment cycle planned treatment of assisted reproductive technology (ART) or non-ART. ART treatments are those where oocytes are removed from the body and/or later returned as part of the attempt to get pregnant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAssisted Reproductive Technologies\n\n\nNon-Assisted Reproductive Technologies"
+    },
+    {
+      "index": 31,
+      "name": "TREATMENT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date of the fertility treatment cycle is when the medication to stimulate follicular development is given, the first day of natural menses for unstimulated cycles, or when a patient receives steroids to prepare the endometrium for frozen cycles."
+    },
+    {
+      "index": 36,
+      "name": "CYCLE_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The outcome of the fertility treatment cycle.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPregnancy\n\n\nNo Pregnancy\n\n\nNo Transfer\n\n\nCanceled\n\n\nCompleted\n\n\nCycle Created in Error"
+    },
+    {
+      "index": 49,
+      "name": "CYCLE_RESOLUTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The outcome date of the fertility treatment cycle."
+    },
+    {
+      "index": 54,
+      "name": "CYCLE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the fertility treatment cycle.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nFinished\n\n\nDeleted"
+    },
+    {
+      "index": 64,
+      "name": "RECORD_CREATION_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the record was created."
+    },
+    {
+      "index": 69,
+      "name": "CREATED_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the login department of the user where the fertility cycle was created."
+    },
+    {
+      "index": 74,
+      "name": "CANCEL_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason the fertility treatment was canceled.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLow Response\n\n\nHigh Response\n\n\nInadequate Endometrial Response\n\n\nConcurrent Illness\n\n\nPsychological\n\n\nFinancial\n\n\nFamily Emergency\n\n\nOther"
+    },
+    {
+      "index": 89,
+      "name": "CANCEL_REASON_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the cycle cancellation reason."
+    },
+    {
+      "index": 94,
+      "name": "COMPLICATIONS_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the cycle complications field."
+    },
+    {
+      "index": 99,
+      "name": "EGGS_RETRIEVED_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of eggs retrieved on the fertility cycle."
+    },
+    {
+      "index": 104,
+      "name": "EGG_RETRIEVAL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the eggs were retrieved."
+    },
+    {
+      "index": 109,
+      "name": "EMBRYO_NO_TRANSFER_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason for why an embryo wasn't transferred for the fertility treatment cycle.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInability to Obtain Sperm\n\n\nRisk of Hyperstimulation\n\n\nPreimplantation Genetic Testing\n\n\nNo Normal Oocytes/Embryos (after PGT results) Available for Future Use\n\n\nNo Normal Oocytes/Embryos (did not utilize PGT) Available for Future Use\n\n\nEndometrial Receptivity Concerns\n\n\nFailure to Survive Thaw\n\n\nPlanned Multiple Cycles (Egg/Embryo accumulation) with PGT\n\n\nPlanned Multiple Cycles (Egg/Embryo accumulation) without PGT\n\n\nLow Ovarian Response\n\n\nHigh Ovarian Response\n\n\nInadequate Endometrial Response\n\n\nConcurrent Illness\n\n\nWithdrawal Only for Personal Reasons\n\n\nInsufficient Embryos\n\n\nIntent for Freeze-All, Unspecific\n\n\nNo Embryos of Desired Sex\n\n\nThaw for Refreeze, No Intent to Transfer\n\n\nOther"
+    },
+    {
+      "index": 135,
+      "name": "EMBRYO_NO_TRANSFER_RSN_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the no transfer reason field."
+    },
+    {
+      "index": 140,
+      "name": "ESET_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the patient chose to do a single embryo transfer for this cycle.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 149,
+      "name": "INSEMINATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of insemination by intrauterine insemination or therapeutic donor insemination."
+    },
+    {
+      "index": 154,
+      "name": "SPERM_COLLECT_METHOD_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the sperm collection methods field."
+    },
+    {
+      "index": 159,
+      "name": "TREATMENT_REASONS_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the reasons for treatment field."
+    },
+    {
+      "index": 164,
+      "name": "PREV_CYCLE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flags if a cycle was documented retroactively. This should not be used to filter cycles for Society for Assisted Reproductive Technology (SART) reporting. This flag does not necessarily imply the department the cycle was created in is not responsible for the cycle's SART reporting.\n\n\n The category values for this column were already listed for column: ESET_YN"
+    },
+    {
+      "index": 170,
+      "name": "CYCLE_LOC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Location that owns the outcome of the cycle. This location would also be responsible for reporting this cycle to registries.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 176,
+      "name": "CYCLE_LOC_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for the cycle location field."
+    },
+    {
+      "index": 181,
+      "name": "TREATMENT_PLAN_PAST_DAYS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of days to look prior to the cycle start date to find medications that are relevant to this cycle's treatment."
+    },
+    {
+      "index": 186,
+      "name": "TREATMENT_PLAN_FUTURE_DAYS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of days to look into the future to find medications that are relevant to this cycle's treatment."
+    },
+    {
+      "index": 191,
+      "name": "EMBRYO_TRANSFER_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of embryos transferred during a cycle."
+    },
+    {
+      "index": 196,
+      "name": "EMBRYO_TRANSFER_PROC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date of an embryo transfer for during a cycle."
+    },
+    {
+      "index": 201,
+      "name": "REI_CYCLE_VERSION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This keeps track of what features were available when the cycle was created, which allows cycles created prior to the feature to exclude that feature. For example, cycles that were created before the embryo transfer documentation was introduced should not show that documentation.  This item is only set when the cycle is created, is never updated, and is not directly displayed to end users as it has no clinical significance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInitial (Before May 21)\n\n\nEmbryo Transfer, Cryopreservation, More Procedures (August 21)\n\n\nPGT and Assisted Hatching in Lab Procedures"
+    },
+    {
+      "index": 211,
+      "name": "EMBRYO_CRYO_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of embryos cryopreserved for a fertility cycle"
+    },
+    {
+      "index": 216,
+      "name": "EGG_CRYO_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of eggs cryopreserved for a fertility cycle"
+    },
+    {
+      "index": 221,
+      "name": "SPERM_CRYO_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of sperm samples cryopreserved for a fertility cycle."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "table_name": "PR_EST_AP_CLAIM_PROC",
+  "description": "This table stores service line information for managed care estimates.",
+  "primary_key": {
+    "column_name": "ESTIMATE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the patient estimate record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CONTEXT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The LINE in the PR_EST_AP_CLAIM table that stores the claim information that this service line is associated with."
+    },
+    {
+      "index": 17,
+      "name": "PROC_MODS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The modifiers associated with the service line."
+    },
+    {
+      "index": 22,
+      "name": "PROC_QTY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The procedure quantity associated with the service line."
+    },
+    {
+      "index": 27,
+      "name": "CHG_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The billed amount associated with the service line."
+    },
+    {
+      "index": 32,
+      "name": "SYS_CHG_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated billed amount associated with the service line detail."
+    },
+    {
+      "index": 37,
+      "name": "ALLOW_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The allowed amount associated with the service line."
+    },
+    {
+      "index": 42,
+      "name": "SYS_ALLOW_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated allowed amount associated with the service line detail."
+    },
+    {
+      "index": 47,
+      "name": "SELF_PAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The self-pay amount associated with the service line."
+    },
+    {
+      "index": 52,
+      "name": "SYS_SELF_PAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The system-calculated self-pay amount associated with the service line detail."
+    },
+    {
+      "index": 57,
+      "name": "MC_ADDL_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The LINE in the PR_EST_ADDL_INFO table that stores additional information about the service line."
+    },
+    {
+      "index": 62,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The AP Claims transaction (ETR) ID associated with this estimate procedure line."
+    },
+    {
+      "index": 67,
+      "name": "AUTH_REQUIRED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Identifies if an authorization is required for the procedure line to be covered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 76,
+      "name": "DRG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Diagnosis Related Group (DRG) associated with the service line detail."
+    },
+    {
+      "index": 81,
+      "name": "DRG_ID_DRG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Diagnoses Related Group name."
+    }
+  ]
+}

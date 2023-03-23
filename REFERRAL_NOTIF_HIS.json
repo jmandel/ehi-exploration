@@ -1,0 +1,94 @@
+{
+  "table_name": "REFERRAL_NOTIF_HIS",
+  "description": "The REFERRAL_NOTIF_HIS table holds the notification history information associated with the referral records stored in the REFERRAL table.",
+  "primary_key": {
+    "column_name": "REFERRAL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the referral in database, to which this notification history information is linked."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the notification history for the referral. For example, if the referral has two notification events, the first will have a line value of 1, while the second will have a line value of 2."
+    },
+    {
+      "index": 12,
+      "name": "LTR_HX_DOC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the document type generated from this notification event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nKanta - Standard Referral\n\n\nKanta - Referral Feedback\n\n\nKanta - Outsource Service Authorization\n\n\nKanta - Outsource Service Authorization Annulment\n\n\nKanta - Standard Referral Annulment\n\n\nKanta - Referral Feedback Annulment\n\n\nKanta - Standard Referral Annulment and Deletion\n\n\nKanta - Referral Feedback Annulment and Deletion"
+    },
+    {
+      "index": 27,
+      "name": "LTR_HX_ROI_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the release of information record that the document sent is stored on."
+    },
+    {
+      "index": 32,
+      "name": "LTR_HX_PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the payer we are sending this notification to."
+    },
+    {
+      "index": 37,
+      "name": "LTR_HX_PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 42,
+      "name": "LTR_HX_FAX_OVERRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the fax number we sent this notification to."
+    },
+    {
+      "index": 47,
+      "name": "NOTIF_HX_GRP_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A grouper ID shared between multiple rows in the notification history table that relate to the same event."
+    },
+    {
+      "index": 52,
+      "name": "EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the notification event ID triggered"
+    },
+    {
+      "index": 57,
+      "name": "EVENT_ID_EVENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the event."
+    },
+    {
+      "index": 62,
+      "name": "NOTIF_HX_ROUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the Routing Method of the notification event record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIn Basket\n\n\nFax\n\n\nMail\n\n\nPhone Call\n\n\nMyChart\n\n\nNetwork Printer\n\n\nCourier Service\n\n\nOutside Provider Messaging\n\n\nPrint Locally\n\n\nEDI\n\n\nOpt Out\n\n\nE-mail\n\n\nFHIR\n\n\nSave to File"
+    },
+    {
+      "index": 83,
+      "name": "OWNING_INSTANCE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the owning deployment of this notification history line."
+    }
+  ]
+}

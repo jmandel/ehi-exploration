@@ -1,0 +1,535 @@
+{
+  "table_name": "HSC_SPEC_INFO",
+  "description": "This table holds the specimen details.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column holds the specimen record ID."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column holds the system generated name for the specimen record."
+    },
+    {
+      "index": 12,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 22,
+      "name": "SPECIMEN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store type of specimen.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 28,
+      "name": "SPECIMEN_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores a short description about the specimen that is being collected."
+    },
+    {
+      "index": 33,
+      "name": "SPECIMEN_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store source from where specimen is collected.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 39,
+      "name": "SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store unique ID for the specimen."
+    },
+    {
+      "index": 44,
+      "name": "COLL_BY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store the provider who collected the specimen."
+    },
+    {
+      "index": 49,
+      "name": "COLL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column is used to store collection date for specimen."
+    },
+    {
+      "index": 54,
+      "name": "COLL_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column is used to store collection time for specimen."
+    },
+    {
+      "index": 59,
+      "name": "DEST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column is used to store destination where specimen was sent.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPathology\n\n\nMicrobiology\n\n\nCytology\n\n\nHistology\n\n\nRadiology\n\n\nChemistry"
+    },
+    {
+      "index": 72,
+      "name": "TRANSPORTED_BY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free-text description of the method that transported the specimen."
+    },
+    {
+      "index": 77,
+      "name": "PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the priority of the specimen when it is sent to the lab.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 83,
+      "name": "SENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores the date when the requisition was printed using the Specimens section and its copies."
+    },
+    {
+      "index": 88,
+      "name": "SENT_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This column stores the time when the requisition was printed using the Specimens section and its copies."
+    },
+    {
+      "index": 93,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 98,
+      "name": "PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the patient's contact serial number."
+    },
+    {
+      "index": 103,
+      "name": "DELETE_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column will hold the reason for deleting the specimen record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDocumentation Error\n\n\nOther"
+    },
+    {
+      "index": 112,
+      "name": "RECORD_CREATION_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the record was created."
+    },
+    {
+      "index": 117,
+      "name": "INSTANT_OF_UPD_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant the record was last locked/unlocked."
+    },
+    {
+      "index": 122,
+      "name": "FROZEN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the specimen is frozen.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 131,
+      "name": "SPEC_LABEL_PRT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The most recent instant that a label was printed for the specimen.  It is updated every time a label is printed for the specimen."
+    },
+    {
+      "index": 136,
+      "name": "EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores Diagnose Behandel Combinatie (DBC) Episode linked to a specimen in DBC enabled environments."
+    },
+    {
+      "index": 141,
+      "name": "MARKED_AS_SENT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This is the instant that the specimen is marked as sent to Lab."
+    },
+    {
+      "index": 146,
+      "name": "IN_FIXATIVE_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Enter time when specimen was fixed in fixative (example:formalin). This is applicable only if specimen is indicated as fixed in fixative or fixed in formalin."
+    },
+    {
+      "index": 151,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the surgical log where this specimen is collected and documented."
+    },
+    {
+      "index": 156,
+      "name": "AUTHRZING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The authorizing provider for orders created for the specimen."
+    },
+    {
+      "index": 161,
+      "name": "CLINICAL_IMPRESSION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text clinical impressions for the specimen."
+    },
+    {
+      "index": 166,
+      "name": "LATERALITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for the laterality of the specimen.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRight\n\n\nLeft\n\n\nBilateral\n\n\nMidline\n\n\nIndeterminate\n\n\nBoth\n\n\nNot applicable\n\n\nNot Specified\n\n\nOther"
+    },
+    {
+      "index": 182,
+      "name": "SPECIMEN_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the specimen weight."
+    },
+    {
+      "index": 187,
+      "name": "SPECIMEN_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is used to indicate the unit corresponding to the specimen weight documented.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGram\n\n\nKilogram\n\n\nOunce\n\n\nPound"
+    },
+    {
+      "index": 198,
+      "name": "OTHER_REC_CREATE_WF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Store workflows other than specimen navigator which created this record\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIntegrated Laboratory System"
+    },
+    {
+      "index": 206,
+      "name": "SPECIMEN_SIZE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item is used to document the size of the specimen collected."
+    },
+    {
+      "index": 211,
+      "name": "SPECIMEN_SIZE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is used to indicate the unit corresponding to the specimen size documented.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 218,
+      "name": "SOURCE_MODIFIER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item documents an additional modifier to the specimen's source.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 224,
+      "name": "CALCIFICATION_SPREADING",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the spread of calcification in mm."
+    },
+    {
+      "index": 229,
+      "name": "NUMBER_OF_TUMORS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the number of tumors."
+    },
+    {
+      "index": 234,
+      "name": "TUMOR_1_DISTANCE_FROM_PAP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance of tumor 1 from the papilla in mm."
+    },
+    {
+      "index": 239,
+      "name": "TUMOR_1_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the size of tumor 1 in mm."
+    },
+    {
+      "index": 244,
+      "name": "TUMOR_2_DISTANCE_FROM_PAP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance of tumor 2 from the papilla in mm."
+    },
+    {
+      "index": 249,
+      "name": "TUMOR_2_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the size of tumor 2 in mm."
+    },
+    {
+      "index": 254,
+      "name": "TUMOR_3_DISTANCE_FROM_PAP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance of tumor 3 from the papilla in mm."
+    },
+    {
+      "index": 259,
+      "name": "TUMOR_3_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the size of tumor 3 in mm."
+    },
+    {
+      "index": 264,
+      "name": "TUMOR_4_DISTANCE_FROM_PAP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance of tumor 4 from the papilla in mm."
+    },
+    {
+      "index": 269,
+      "name": "TUMOR_4_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the size of tumor 4 in mm."
+    },
+    {
+      "index": 274,
+      "name": "TUMOR_5_DISTANCE_FROM_PAP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance of tumor 5 from the papilla in mm."
+    },
+    {
+      "index": 279,
+      "name": "TUMOR_5_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the size of tumor 5 in mm."
+    },
+    {
+      "index": 284,
+      "name": "SPECIMEN_VOLUME",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores specimen volume."
+    },
+    {
+      "index": 289,
+      "name": "SPECIFY_MATERIAL_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the material that was removed."
+    },
+    {
+      "index": 294,
+      "name": "ENDOSCOPIC_FINDINGS_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the endoscopic findings of a specimen."
+    },
+    {
+      "index": 299,
+      "name": "DISTANCE_TO_BORDER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the distance to the border, in mm."
+    },
+    {
+      "index": 304,
+      "name": "MEDICAL_TREATMENT_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the medical treatment needed if necessary."
+    },
+    {
+      "index": 309,
+      "name": "SIZE_OF_TUM_ULTRASOUND",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The size of the tumor in mm, discovered via ultrasound."
+    },
+    {
+      "index": 314,
+      "name": "SIZE_OF_TUMOR_MAMMOGRAPHY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The size of the tumor in mm, discovered via mammography."
+    },
+    {
+      "index": 319,
+      "name": "SPECIMEN_READING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the radiologic reading for a specimen."
+    },
+    {
+      "index": 324,
+      "name": "PRIORITY_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the due date and time for a specimen priority."
+    },
+    {
+      "index": 329,
+      "name": "TOTAL_NUMBER_OF_CORES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "For needle biopsy procedures, stores the total number of cores taken."
+    },
+    {
+      "index": 334,
+      "name": "NUM_OF_CORES_W_CALCIFICATION",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "For needle biopsy procedures, stores the number of cores taken with calcification."
+    },
+    {
+      "index": 339,
+      "name": "PROTOCOL_ID_STRING",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a free text ID for research protocols."
+    },
+    {
+      "index": 344,
+      "name": "ID_PREFIX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Short name of the group that the specimen falls under (e.g. clinical, pathology, etc.)."
+    },
+    {
+      "index": 349,
+      "name": "USER_MOD_SPEC_ID_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag that stores whether or not a user manually modified the specimen ID.\n\n\n The category values for this column were already listed for column: FROZEN_YN"
+    },
+    {
+      "index": 355,
+      "name": "SPECIMEN_ORIENTATION_FREE_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the orientation of the specimen."
+    },
+    {
+      "index": 360,
+      "name": "SPECIMEN_TISSUE_EXCISION_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores when a specimen was excised."
+    },
+    {
+      "index": 365,
+      "name": "SPECIMEN_NUMBER_OF_CONTAINERS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of containers used for storing the specimen."
+    },
+    {
+      "index": 370,
+      "name": "NEEDLE_GAUGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the gauge of the needle used when retrieving a specimen."
+    },
+    {
+      "index": 375,
+      "name": "NUMBER_OF_PASSES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of passes performed when retrieving a specimen."
+    },
+    {
+      "index": 380,
+      "name": "NUMBER_OF_SLIDES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of slides used when collecting a specimen."
+    },
+    {
+      "index": 385,
+      "name": "REASON_FOR_VISIT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason for the patient visit as documented on a surgical specimen. This documentation is for reference only and does not update any diagnosis or problem list documentation."
+    },
+    {
+      "index": 390,
+      "name": "DISTANCE_FROM_NIPPLE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the distance from the nipple to the specimen collection site."
+    },
+    {
+      "index": 395,
+      "name": "MAN_REL_TO_MYCHRT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the order result of the specimen should be manually released to MyChart.\n\n\n The category values for this column were already listed for column: FROZEN_YN"
+    },
+    {
+      "index": 401,
+      "name": "MATERIAL_SUPPLEMENTARY_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The supplementary description of the material."
+    },
+    {
+      "index": 406,
+      "name": "PLACENTA_WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The weight of the placenta."
+    },
+    {
+      "index": 411,
+      "name": "MEMBRANE_CONDITION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The condition of the membrane."
+    },
+    {
+      "index": 416,
+      "name": "MARKING_OF_UMBILICAL_CORD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The marking of the umbilical cord."
+    },
+    {
+      "index": 421,
+      "name": "GESTATIONAL_AGE_IN_WEEKS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The gestational age in weeks."
+    }
+  ]
+}

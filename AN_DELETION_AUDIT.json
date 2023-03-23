@@ -1,0 +1,45 @@
+{
+  "table_name": "AN_DELETION_AUDIT",
+  "description": "This table contains the audit trail data for deleted anesthesia records.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "DELETION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Audit item that stores the ID of the user who deleted the anesthesia record."
+    },
+    {
+      "index": 17,
+      "name": "DELETION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Audit item that stores the instant that the anesthesia record was deleted."
+    },
+    {
+      "index": 22,
+      "name": "AN_DEL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Audit item for whether the anesthesia record was hard- or soft-deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nHard Delete\n\n\nUndelete"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "table_name": "CODE_INT_COMB_LN",
+  "description": "This table holds the combined service lines created by code integration.",
+  "primary_key": {
+    "column_name": "HSP_ACCOUNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the hosp acct record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CODE_INT_REV_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the revenue code for the combined service line."
+    },
+    {
+      "index": 17,
+      "name": "CODE_INT_REV_CODE_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 22,
+      "name": "CODE_INT_CPT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the CPT(R)/HCPCS code for the combined service line."
+    },
+    {
+      "index": 27,
+      "name": "CODE_INT_MOD_1_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the first modifier for the combined service line."
+    },
+    {
+      "index": 32,
+      "name": "CODE_INT_MOD_1_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    },
+    {
+      "index": 37,
+      "name": "CODE_INT_MOD_2_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the second modifier for the combined service line."
+    },
+    {
+      "index": 42,
+      "name": "CODE_INT_MOD_2_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    },
+    {
+      "index": 47,
+      "name": "CODE_INT_MOD_3_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the third modifier for the combined service line."
+    },
+    {
+      "index": 52,
+      "name": "CODE_INT_MOD_3_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    },
+    {
+      "index": 57,
+      "name": "CODE_INT_MOD_4_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the fourth modifier for the combined service line."
+    },
+    {
+      "index": 62,
+      "name": "CODE_INT_MOD_4_ID_MODIFIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the modifier record."
+    },
+    {
+      "index": 67,
+      "name": "CODE_INT_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item holds the daily rate for the combined service line. The rate is only set for accommodation (room charge) revenue codes."
+    },
+    {
+      "index": 72,
+      "name": "CODE_INT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item holds the service date for the combined service line."
+    },
+    {
+      "index": 77,
+      "name": "CODE_INT_QTY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the quantity (number of units) for the combined service line."
+    },
+    {
+      "index": 82,
+      "name": "CODE_INT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item holds the full charge amount for the combined service line. The value includes any non-covered amount for the line."
+    },
+    {
+      "index": 87,
+      "name": "CODE_INT_NONCVRD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item holds the non-covered amount for the combined service line."
+    },
+    {
+      "index": 92,
+      "name": "CODE_INT_LN_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the source for the CPT(R)/HCPCS code and modifiers for the combined service line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nCoding\n\n\nCombined\n\n\nSNF HIPPS\n\n\nIRF HIPPS\n\n\nExtension\n\n\nEdited"
+    },
+    {
+      "index": 106,
+      "name": "CODE_INT_UNUSED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item identifies lines that are not true service lines but represent coded CPT(R)/HCPCS codes that cannot be used to create actual service lines.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 115,
+      "name": "CODE_INT_CHRG_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the number of charges associated with the combined service line."
+    },
+    {
+      "index": 120,
+      "name": "CODE_INT_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item identifies the reason the coded CPT(R)/HCPCS code could not be used in an actual service line.  This item is only set when the unused coded CPT(R)/HCPCS flag (CODE_INT_UNUSED_YN) is Yes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo revenue code assigned\n\n\nUser skipped\n\n\nNo charge with same revenue code\n\n\nInpatient claim\n\n\nCMG code on non-inpatient claim\n\n\nHCPCS/CPT� code suppressed by claim definitions\n\n\nAccommodation revenue code\n\n\nGrouped revenue code\n\n\nUnspecified"
+    }
+  ]
+}

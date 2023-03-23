@@ -1,0 +1,157 @@
+{
+  "table_name": "VISIT_SET_VERSION",
+  "description": "The VISIT_SET_VERSION table contains overtime information about a single visit set, which are templates for recurring visits to address the care required for a patient.",
+  "primary_key": {
+    "column_name": "VISIT_SET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "VISIT_SET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the visit set record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact."
+    },
+    {
+      "index": 17,
+      "name": "VISIT_SET_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The contact number"
+    },
+    {
+      "index": 27,
+      "name": "VISIT_TYPE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit type of appointments scheduled from this visit set."
+    },
+    {
+      "index": 32,
+      "name": "START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date of the visit set."
+    },
+    {
+      "index": 37,
+      "name": "END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The end date of the visit set."
+    },
+    {
+      "index": 42,
+      "name": "DURATION_MINUTES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The duration, in minutes, of the visit defined by this version of the visit set."
+    },
+    {
+      "index": 47,
+      "name": "ORDER_COMMENT_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The CSN of the version of the note record that contains the order comment for this version of the visit set. The order comment is reviewed and approved by a physician."
+    },
+    {
+      "index": 52,
+      "name": "SCHED_INSTRUCTIONS_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The CSN of the version of the note record that contains the scheduling instructions for this version of the visit set. Scheduling instructions serve to provide additional context to schedulers and are neither reviewed nor approved by a physician."
+    },
+    {
+      "index": 57,
+      "name": "FREQUENCY_FREQ_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The frequency record (EFQ) that defines the recurrence of visits for this version of the visit set. Only specified frequencies of type 'same time days of week' and 'relative' are supported."
+    },
+    {
+      "index": 62,
+      "name": "FREQUENCY_FREQ_ID_FREQ_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the frequency record."
+    },
+    {
+      "index": 67,
+      "name": "VISIT_RECUR_PATTERN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of the visit pattern.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDaily\n\n\nWeekly"
+    },
+    {
+      "index": 76,
+      "name": "VISIT_PATTERN_RECURRENCE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "How often visits defined by this version of the visit set should recur."
+    },
+    {
+      "index": 81,
+      "name": "TIME_WINDOW_BEGIN_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The beginning of the time window during which it is acceptable to schedule visits defined by this version of the visit set. If both start and end times are specified, visits must begin within those times. If only a start time is specified, visits must begin at that time. At least a start time is required."
+    },
+    {
+      "index": 86,
+      "name": "TIME_WINDOW_END_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The end of the time window during which it is acceptable to schedule visits defined by this version of the visit set. If both start and end times are specified, visits must begin within those times. If only a start time is specified, visits must begin at that time. At least a start time is required."
+    },
+    {
+      "index": 91,
+      "name": "TOLERANCE_BEFORE_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of days before the specified date that it is acceptable to schedule visits defined by this version of the visit set."
+    },
+    {
+      "index": 96,
+      "name": "TOLERANCE_AFTER_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of days after the specified date that it is acceptable to schedule visits defined by this version of the visit set."
+    },
+    {
+      "index": 101,
+      "name": "AUTO_GENERATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not this version of the visit set was automatically generated. This is always populated with either Yes or No.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 110,
+      "name": "INSTANT_OF_ENTRY_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant of entry when a record is edited"
+    }
+  ]
+}

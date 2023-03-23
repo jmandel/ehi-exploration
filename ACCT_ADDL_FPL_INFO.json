@@ -1,0 +1,45 @@
+{
+  "table_name": "ACCT_ADDL_FPL_INFO",
+  "description": "Stores additional income types and values that correspond with entries from the ACCOUNT_FPL_INFO table.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the account record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. It is used to differentiate records in this table, but is not meaningful."
+    },
+    {
+      "index": 12,
+      "name": "ADDL_INCOME_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional income type for the federal poverty level (FPL) table.  This is a translated version of FPL Additional Income Type Combined (I EAR 144) storing the information as a discrete line instead of a delimited string.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 18,
+      "name": "ADDL_INCOME_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Additional income amount for the federal poverty level (FPL) table.  This is a translated version of FPL Additional Income Value Calculated (I EAR 145) storing the information as a discrete line instead of a delimited string."
+    },
+    {
+      "index": 23,
+      "name": "FPL_INFO_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Points to the line number ACCOUNT_FPL_INFO that this line is related to."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "table_name": "CODING_CLA_ACTION_HX",
+  "description": "The table contains information about actions taken by users on a query (coding, Clinical Documentation Improvement, or missing doc).",
+  "primary_key": {
+    "column_name": "NOTE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the note record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Displays the IDs of all users who have taken action on the query."
+    },
+    {
+      "index": 17,
+      "name": "ACTION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the corresponding time when users take action on the query."
+    },
+    {
+      "index": 22,
+      "name": "ACTION_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the corresponding local time when users take action on the query."
+    },
+    {
+      "index": 27,
+      "name": "CCR_STATUS_AUDIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Displays the action taken on the query.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nQuery Pending\n\n\nQuery Sent\n\n\nResponse Received\n\n\nCompleted\n\n\nDeleted\n\n\nReassigned\n\n\nDeactivated"
+    },
+    {
+      "index": 41,
+      "name": "ACTION_ACCT_LOC_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The date and time of the user action in the local time zone of the location of the hospital account associated with the query.   This is similar to item HNO 41082, which stores the local time zone of the location of the encounter associated with the query. Both items will store identical data except where the time zone of the encounter's location differs from the time zone of the hospital account's location. If the hospital account is combined with an account in another location, this item will be updated to the time zone of the location of the target hospital account."
+    }
+  ]
+}

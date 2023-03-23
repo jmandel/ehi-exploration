@@ -1,0 +1,178 @@
+{
+  "table_name": "FIN_ASST_CASE",
+  "description": "This table contains basic information about a financial assistance case record.",
+  "primary_key": {
+    "column_name": "FIN_ASST_CASE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FIN_ASST_CASE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the financial assistance case record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "EXTERNAL_ID",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the external unique identifier for a financial assistance case record."
+    },
+    {
+      "index": 22,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the service area in which this financial assistance case record was created."
+    },
+    {
+      "index": 27,
+      "name": "APPL_PROVIDED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date a financial assistance application was provided to the patient."
+    },
+    {
+      "index": 32,
+      "name": "APPL_SIGNED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date a completed and signed financial assistance application was submitted by the patient."
+    },
+    {
+      "index": 37,
+      "name": "FAMILY_SIZE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The size of the patient's family when this case was created."
+    },
+    {
+      "index": 42,
+      "name": "PERCENT_FPL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The percentage of federal poverty level of the patient calculated using income details (stored in FIN_ASST_CASE_INCOME table)."
+    },
+    {
+      "index": 47,
+      "name": "PERCENT_FPL_AFTER_EXPENSES",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The percentage of federal poverty level of the patient calculated after subtracting expenses (stored in FIN_ASST_CASE_EXPENSE table) from income details (stored in FIN_ASST_CASE_INCOME table)."
+    },
+    {
+      "index": 52,
+      "name": "TOTAL_ANNUAL_INCOME_AFTER_EXP",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total income after expenses for the patient's household."
+    },
+    {
+      "index": 57,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Progress\n\n\nCompleted\n\n\nPatient Started"
+    },
+    {
+      "index": 67,
+      "name": "TOTAL_ANNUAL_INCOME",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total annual income of the patient's household."
+    },
+    {
+      "index": 72,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor record associated with the financial assistance case record."
+    },
+    {
+      "index": 77,
+      "name": "PROPENSITY_TO_PAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The guarantor propensity to pay category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 83,
+      "name": "CREDIT_SCORE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The guarantor's credit score associated with the financial assistance case record."
+    },
+    {
+      "index": 88,
+      "name": "FIN_ASST_CASE_CRT_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The way this case record was created.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser created\n\n\nMyChart\n\n\nSocial Care\n\n\nBatch\n\n\nBackground Process"
+    },
+    {
+      "index": 100,
+      "name": "MYCHART_USER_ENTERED_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the free-text additional information provided with the financial assistance application by patient/requestor through MyChart."
+    },
+    {
+      "index": 105,
+      "name": "CREATED_BY_WPR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the user ID of the MyChart user who created this case. Only populated when the case is created through MyChart."
+    },
+    {
+      "index": 110,
+      "name": "CASE_CONTACT_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account who is the primary contact for this financial assistance case record."
+    },
+    {
+      "index": 115,
+      "name": "TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The case type category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nParent\n\n\nChild"
+    },
+    {
+      "index": 124,
+      "name": "CASE_WORKFLOW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the workflow the financial assistance case record is created in.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFinancial Assistance\n\n\nSocial Care\n\n\nReconciliation"
+    },
+    {
+      "index": 134,
+      "name": "FISCAL_YEAR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The fiscal year the financial information in the case record belongs to."
+    },
+    {
+      "index": 139,
+      "name": "NUMBER_OF_DEPENDENTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of dependents the patient for whom this financial assistance case record is for has."
+    },
+    {
+      "index": 144,
+      "name": "FPL_CALCULATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the federal poverty level stored in PERCENT_FPL and PERCENT_FPL_AFTER_EXPENSES columns was last calculated."
+    }
+  ]
+}

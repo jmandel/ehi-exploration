@@ -1,0 +1,108 @@
+{
+  "table_name": "DOCS_RCVD_FAM_HX_PROB",
+  "description": "This table stores discrete family history problem information received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "FAMILY_PROB_REFID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the family member's problem for this row."
+    },
+    {
+      "index": 27,
+      "name": "FAMILY_PROB_ID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the family member's problem for this row. \n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 33,
+      "name": "FAM_MMB_PROB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name of the family member's problem for this row."
+    },
+    {
+      "index": 38,
+      "name": "FAM_MMB_PROB_ONSAGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The age of onset for the family member's problem for this row."
+    },
+    {
+      "index": 43,
+      "name": "FAM_PROB_EFF_TIME_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The date and time at which the family member's problem for this row was observed."
+    },
+    {
+      "index": 48,
+      "name": "FAMILY_MEMBER_REFID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the family member for this row. This column is frequently used to link to the DOCS_RCVD_FAM_HX_MEM table."
+    },
+    {
+      "index": 53,
+      "name": "FAM_PRB_PERT_NEG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value that determines whether the problem for this row is a pertinent negative for the family member.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 62,
+      "name": "FAM_MEMPROB_COD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value that determines whether the problem for this row was a cause of death for the family member.\n\n\n The category values for this column were already listed for column: FAM_PRB_PERT_NEG_YN"
+    },
+    {
+      "index": 68,
+      "name": "FAM_PROB_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments left for the problem in this row."
+    },
+    {
+      "index": 73,
+      "name": "FAM_PROB_PAT_HX_RESP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value that indicates the response the patient gave for a given family history problem.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNo Response\n\n\nNo (Not Pertinent)"
+    }
+  ]
+}

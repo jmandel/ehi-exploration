@@ -1,0 +1,73 @@
+{
+  "table_name": "V_SMRTDTA_ELEM_CMT_ALL",
+  "description": "This view combines historical and current comments for SmartData element values.",
+  "primary_key": {
+    "column_name": "HLV_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "HLV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the SmartData element value."
+    },
+    {
+      "index": 7,
+      "name": "UPDATE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column groups together rows of data that were stored together. A higher UPDATE_NUM means a more recent update."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this update. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 17,
+      "name": "ELEMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartData identifier (SDI) for this row."
+    },
+    {
+      "index": 22,
+      "name": "SMRTDTA_ELEM_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment for the SmartData element value."
+    },
+    {
+      "index": 27,
+      "name": "LATEST_COMMENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This columns returns 'Y' if this line is a current comment (i.e, if the data is coming from CONCEPT_COMMENT) and 'N' if it's a historical comment (i.e, if the data is coming from ELEM_VAL_PREV_CMT.)"
+    },
+    {
+      "index": 32,
+      "name": "COMMENT_UPDATE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the SmartData element comment was entered by a user through a SmartForm, SmartTool or other documentation tool that files discrete data to SmartData elements."
+    },
+    {
+      "index": 37,
+      "name": "COMMENT_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the SmartData element comment was entered by a user through a SmartForm, SmartTool or other documentation tool that files discrete data to SmartData elements in the UTC timezone."
+    },
+    {
+      "index": 42,
+      "name": "COMMENT_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who entered the SmartData element comment for this row. This column is frequently used to link to the CLARITY_EMP table."
+    }
+  ]
+}

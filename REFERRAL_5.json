@@ -1,0 +1,339 @@
+{
+  "table_name": "REFERRAL_5",
+  "description": "The REFERRAL_5 table is a continuation of the REFERRAL_4 table. The REFERRAL_* tables are the primary tables for referral information stored in the system.",
+  "primary_key": {
+    "column_name": "REFERRAL_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the referral record."
+    },
+    {
+      "index": 7,
+      "name": "GEN_RFL_SEC_SINCE_MIDNIGHT_7",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This contains information from generic referral time item 7."
+    },
+    {
+      "index": 12,
+      "name": "GEN_RFL_SEC_SINCE_MIDNIGHT_8",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This contains information from generic referral time item 8."
+    },
+    {
+      "index": 17,
+      "name": "GEN_RFL_SEC_SINCE_MIDNIGHT_9",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This contains information from generic referral time item 9."
+    },
+    {
+      "index": 22,
+      "name": "GEN_RFL_SEC_SINCE_MIDNIGHT_10",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This contains information from generic referral time item 10."
+    },
+    {
+      "index": 27,
+      "name": "RPT_REF_TO_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores an override value that indicates the referred to provider/location/vendor/department should be considered contracted or not for Medicare Advantage ODAG reporting. If NULL, system defined logic will be used. If Y, a user marked the provider as contracted (CP in ODAG). If N, a user marked the provider as non-contracted (NCP in ODAG).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 36,
+      "name": "RPT_REF_BY_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores an override value that indicates the referred by provider/location/department should be considered contracted or not for Medicare Advantage ODAG reporting. If NULL, system defined logic will be used. If Y, a user marked the provider as contracted (CP in ODAG). If N, a user marked the provider as non-contracted (NCP in ODAG).\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 42,
+      "name": "LIVING_SITUATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Describes who the patient or child lives with.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 49,
+      "name": "FIRST_APPOINTMENT_BY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that the first appointment for the referral should occur by."
+    },
+    {
+      "index": 54,
+      "name": "SENIORITY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The Seniority Date for the referral which represents a 'start date' that might have been set before the referral was created."
+    },
+    {
+      "index": 59,
+      "name": "CASE_WORKER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The case manager of the child psychology case."
+    },
+    {
+      "index": 64,
+      "name": "CHILD_SERVICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the child welfare service role in connection with child psychology services.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 71,
+      "name": "PARENTAL_RESP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates which entity has parental responsibility for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 78,
+      "name": "CONSENT_TO_TREAT_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the status of obtaining the patient's consent in connection with the referral's transfer of medical record information.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 85,
+      "name": "FORWARDED_EVALUATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This date represents the date an external organization evaluated or triaged the referral before forwarding it to an Epic instance. This date represents the internal concept of Triage History Instant, for the forwarding decision done at the external organization."
+    },
+    {
+      "index": 90,
+      "name": "EMSG_COMM_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item is part of a link to a communication from which the referral was created. This item contains the CSN of the contact which contains the communication. EMSG_COMM_JOB_ID (I RFL 18961) contains the communication job ID."
+    },
+    {
+      "index": 95,
+      "name": "EMSG_COMM_JOB_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Part of a link to a communication from which the referral was created."
+    },
+    {
+      "index": 100,
+      "name": "AUTHORIZED_MEDICATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item holds the ID of the medication being authorized in this referral."
+    },
+    {
+      "index": 105,
+      "name": "INITIAL_REQUEST_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The initial request type for the referral.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPreservice\n\n\nRetro\n\n\nConcurrent"
+    },
+    {
+      "index": 115,
+      "name": "REF_BY_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by entities on the referral as of the last decision or the current contracted status if the referral is pending. \n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 121,
+      "name": "REF_TO_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to entities on the referral as of the last decision or the current contracted status if the referral is pending. \n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 127,
+      "name": "REF_BY_SER_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by provider on the referral as of the last decision or the current contracted status if the referral is pending. \n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 133,
+      "name": "REF_TO_SER_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to provider on the referral as of the last decision or the current contracted status if the referral is pending.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 139,
+      "name": "REF_BY_EAF_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by location on the referral as of the last decision or the current contracted status if the referral is pending.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 145,
+      "name": "REF_TO_EAF_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to location on the referral as of the last decision or the current contracted status if the referral is pending.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 151,
+      "name": "REF_TO_VEN_CNTRCT_AT_AUTH_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to vendor on the referral as of the last decision or the current contracted status if the referral is pending.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 157,
+      "name": "REF_BY_PROV_NET_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The network status of the referred-by provider on the referral. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIN NETWORK\n\n\nOUT OF NETWORK\n\n\nN/A"
+    },
+    {
+      "index": 167,
+      "name": "REF_TO_LOCATION_NET_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The network status of the referred-to location on the referral.\n\n\n The category values for this column were already listed for column: REF_BY_PROV_NET_LEVEL_C_NAME"
+    },
+    {
+      "index": 173,
+      "name": "REF_TO_VENDOR_NET_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The network status of the referred-to vendor on the referral.\n\n\n The category values for this column were already listed for column: REF_BY_PROV_NET_LEVEL_C_NAME"
+    },
+    {
+      "index": 179,
+      "name": "REF_TO_PROV_NET_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The network status of the referred-to provider on the referral.\n\n\n The category values for this column were already listed for column: REF_BY_PROV_NET_LEVEL_C_NAME"
+    },
+    {
+      "index": 185,
+      "name": "REF_BY_LOCATION_NET_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The network status of the referred-by location on the referral.\n\n\n The category values for this column were already listed for column: REF_BY_PROV_NET_LEVEL_C_NAME"
+    },
+    {
+      "index": 191,
+      "name": "RPT_REF_BY_SER_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user override for the contracted status of the referred-by provider on the referral.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 197,
+      "name": "RPT_REF_TO_SER_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user override for the contracted status of the referred-to provider on the referral.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 203,
+      "name": "RPT_REF_BY_EAF_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user override for the contracted status of the referred-by location on the referral.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 209,
+      "name": "RPT_REF_TO_EAF_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user override for the contracted status of the referred-to location on the referral.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 215,
+      "name": "RPT_REF_TO_VEN_CNTRCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user override for the contracted status of the referred-to vendor on the referral.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 221,
+      "name": "RFL_AUTH_PROG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Authorization Prognosis code associated with a referral\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 227,
+      "name": "PRINCIPAL_DX_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Specifies the diagnois date used for Prinicpal Diagnosis"
+    },
+    {
+      "index": 232,
+      "name": "ADMISSION_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source from which the paitent is being admitted or referred. Only available in UM referrals.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 239,
+      "name": "DISCHRG_DISP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This disposition (location) of the patient after discharge. Only available in UM referrals.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 246,
+      "name": "REF_BY_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by entities on the referral as of the last decision.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 252,
+      "name": "REF_TO_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to entities on the referral as of the last decision. \n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 258,
+      "name": "REF_BY_SER_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by provider on the referral as of the last decision.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 264,
+      "name": "REF_TO_SER_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to provider on the referral as of the last decision.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 270,
+      "name": "REF_BY_LOC_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-by location on the referral as of the last decision.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 276,
+      "name": "REF_TO_LOC_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to location on the referral as of the last decision. \n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    },
+    {
+      "index": 282,
+      "name": "REF_TO_VEN_CNTRCT_AT_DEC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contracted status of referred-to vendor on the referral as of the last decision.\n\n\n The category values for this column were already listed for column: RPT_REF_TO_CNTRCT_YN"
+    }
+  ]
+}

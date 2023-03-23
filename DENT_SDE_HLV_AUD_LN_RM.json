@@ -1,0 +1,38 @@
+{
+  "table_name": "DENT_SDE_HLV_AUD_LN_RM",
+  "description": "This table extracts the concept value audit line history for dental SmartData elements that link to a finding, procedure or tooth record.",
+  "primary_key": {
+    "column_name": "FINDING_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the finding record"
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the�historical instant�in the�finding, procedure, or tooth record. Together with�FINDING_ID, this forms the foreign key to the�DENT_SDE_HLV_AUDLN_HX�table."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple�concept value (HLV) audit lines�associated with the�finding, procedure, or tooth record�and the�historical instant�from the�DENT_SDE_HLV_AUDLN_HX�table."
+    },
+    {
+      "index": 17,
+      "name": "DENT_SDE_HLV_AUD_LN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column extracts the concept value audit line history for dental SmartData elements that link to this finding record."
+    }
+  ]
+}

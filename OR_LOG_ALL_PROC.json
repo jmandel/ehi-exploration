@@ -1,0 +1,150 @@
+{
+  "table_name": "OR_LOG_ALL_PROC",
+  "description": "The OR_LOG_ALL_PROC table contains OR management system log procedures.",
+  "primary_key": {
+    "column_name": "LOG_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the log referred to by this procedure."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of the line of procedure in the surgical log."
+    },
+    {
+      "index": 12,
+      "name": "OR_PROC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the procedure."
+    },
+    {
+      "index": 17,
+      "name": "OR_PROC_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 22,
+      "name": "COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text comments for this procedure."
+    },
+    {
+      "index": 27,
+      "name": "RESOURCE_PREF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the procedure/preference id which was used to default resources (staff, equipment, etc.) corresponding to this procedure."
+    },
+    {
+      "index": 32,
+      "name": "RESOURCE_PREF_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 37,
+      "name": "PICKLIST_PREF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the procedure/preference id whose pick list was copied to create the corresponding pick list for this procedure in the case."
+    },
+    {
+      "index": 42,
+      "name": "PICKLIST_PREF_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 47,
+      "name": "MATCHED_PREF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the preference card that has been selected to override the defaulted preference card.  NOTE: Starting in the Epic 2012 release, this column will display the ID of the selected preference card even though the column name says Matched Pref. The ID of the preference card that is matched or defaulted will be stored in I ORL 2018."
+    },
+    {
+      "index": 52,
+      "name": "MATCHED_PREF_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 57,
+      "name": "DBC_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Diagnosis Behandling Combinatie (DBC) episode associated with the current procedure. Used in billing."
+    },
+    {
+      "index": 62,
+      "name": "PROC_EAP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ordered procedure (EAP) associated with the preference card."
+    },
+    {
+      "index": 67,
+      "name": "ALL_PROC_AS_ORDERED",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Denotes the procedure name as exactly ordered by the surgeon/provider."
+    },
+    {
+      "index": 72,
+      "name": "ALL_DEF_OR_PROC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulted preference card."
+    },
+    {
+      "index": 77,
+      "name": "ALL_DEF_OR_PROC_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "index": 82,
+      "name": "ALL_PROC_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the procedure (EAP) linked to the procedure code. This column is only populated for older surgical logs which were created and last modified before upgrading to the Epic 2018 version. For newer surgical logs, codes are in OR_OPE_PROC_CODE.PROC_CODE_ID.  OR_LOG_ALL_PROC joins to OR_OPE_PROC_CODE on column ALL_PANEL_ADDL_ID."
+    },
+    {
+      "index": 87,
+      "name": "PROC_DISPLAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This stores the procedure display name for the performed procedure based on the settings on the Procedure/Preference Card form in System Definitions."
+    },
+    {
+      "index": 92,
+      "name": "ALL_PROCS_INCISION_CLOSURE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value of the incision closure associated with the procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDeep and Superficial Layers\n\n\nSuperficial Layers Only\n\n\nDeep Layers Only\n\n\nNo Layers Closed / Incision Left Open\n\n\nNo Incision / NA"
+    },
+    {
+      "index": 104,
+      "name": "ALL_PANEL_ADDL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the pointer to the procedure additional data record for all panels."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "table_name": "PROBLEM_STAGE_UPDATES",
+  "description": "Stores a history of changes made to the \"No Stage Required\" flag for problems on a patient's problem list.",
+  "primary_key": {
+    "column_name": "PROBLEM_LIST_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PROBLEM_LIST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the problem record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "HX_NO_STG_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of reasons that a problem was not staged.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 19,
+      "name": "HX_NO_STG_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of comments for a problem that was not staged."
+    },
+    {
+      "index": 24,
+      "name": "HX_NO_STG_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of users that marked a problem as not needing a stage."
+    },
+    {
+      "index": 29,
+      "name": "HX_NO_STG_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the history of instants that a problem was marked as not needing a stage."
+    }
+  ]
+}

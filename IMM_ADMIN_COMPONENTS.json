@@ -1,0 +1,122 @@
+{
+  "table_name": "IMM_ADMIN_COMPONENTS",
+  "description": "The IMM_ADMIN_COMPONENTS table contains information about the components of the immunization administered. The rows included in this table are items from DXR (Document) masterfile which include information on type of immunization, dose validity, immunization schedule, and a unique reference identifier to identify a specific instance of an immunization.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the document record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "IMM_COMP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the immunization component."
+    },
+    {
+      "index": 27,
+      "name": "IMM_REFERENCE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique reference identifier for the specific instance of an immunization that the component is part of."
+    },
+    {
+      "index": 32,
+      "name": "IMM_COMP_GROUP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the vaccine group for an immunization administration received from an external system. This can be either the component or the family of a vaccine."
+    },
+    {
+      "index": 37,
+      "name": "IMM_COMP_GROUP_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the immunization."
+    },
+    {
+      "index": 42,
+      "name": "IMM_COMP_GROUP_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text value for a vaccine group for an immunization administration received from an external system. This can be either the component or the family of a vaccine."
+    },
+    {
+      "index": 47,
+      "name": "IMM_COMP_SCHED_ID_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization schedule identifier used for the administered vaccination component."
+    },
+    {
+      "index": 52,
+      "name": "IMM_COMP_SCHED_NAME_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization schedule name used for the administered vaccination component."
+    },
+    {
+      "index": 57,
+      "name": "IMM_COMP_SCHED_CODING_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization schedule coding system used for the administered vaccination component."
+    },
+    {
+      "index": 62,
+      "name": "IMM_COMP_SCHED_VALID_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not the administered component dose was valid for the given schedule\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 71,
+      "name": "IMM_COMP_VALID_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of why the given administration component is valid or invalid based on its immunization schedule.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nToo Young"
+    },
+    {
+      "index": 79,
+      "name": "IMM_COMP_VALID_RSN_FT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text description of why the given administration component is valid or invalid based on its immunization schedule."
+    },
+    {
+      "index": 84,
+      "name": "IMM_COMP_SCHED_DOSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Dose number for this component in the immunization series."
+    }
+  ]
+}

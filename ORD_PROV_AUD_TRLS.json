@@ -1,0 +1,73 @@
+{
+  "table_name": "ORD_PROV_AUD_TRLS",
+  "description": "This table stores the authorizing provider audit trail for orders.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PROV_AUDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique user ID of the authorizing provider from the audit trail."
+    },
+    {
+      "index": 17,
+      "name": "PROV_AUDIT_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant that the associated authorizing provider was recorded in the order record."
+    },
+    {
+      "index": 22,
+      "name": "PROV_AUDIT_SER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider ID of the authorizing provider from the audit trail."
+    },
+    {
+      "index": 27,
+      "name": "PROV_AUDIT_POOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for registry record representing the group of users who are responsible for a cosignature requirement on the order record."
+    },
+    {
+      "index": 32,
+      "name": "PROV_AUDIT_POOL_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "index": 37,
+      "name": "PROV_AUDIT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of provider from the audit trail.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAuthorizing Provider\n\n\nOrdering Provider\n\n\nSupervising Provider"
+    },
+    {
+      "index": 47,
+      "name": "PROV_AUDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action from the audit trail.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDiscontinue\n\n\nAttending Assigned\n\n\nManual Correction\n\n\nOrder Signed\n\n\nOrder Pended\n\n\nUpdate On Transfer"
+    }
+  ]
+}

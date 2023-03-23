@@ -1,0 +1,136 @@
+{
+  "table_name": "DOCS_RCVD_GOALS",
+  "description": "This table stores goal information received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "GOAL_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the unique reference identifier associated with the goal."
+    },
+    {
+      "index": 27,
+      "name": "GOAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the name of the goal."
+    },
+    {
+      "index": 32,
+      "name": "GOAL_DESC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the identifier of the Notes (HNO) record that stores the goal description."
+    },
+    {
+      "index": 37,
+      "name": "GOAL_CREATION_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the instant when the goal was created by the external system."
+    },
+    {
+      "index": 42,
+      "name": "GOAL_RCNT_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the instant when the value of the patient's recent progress for the goal was changed by an external system."
+    },
+    {
+      "index": 47,
+      "name": "GOAL_CONTRIBUTOR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the contributor of the goal.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProvider goal\n\n\nPatient goal\n\n\nNegotiated goal"
+    },
+    {
+      "index": 57,
+      "name": "GOAL_SRC_DXR_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the contact serial number of the Received Documents record that owns the instance of this goal."
+    },
+    {
+      "index": 62,
+      "name": "GOAL_RECENT_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the value of the patient's recent progress for the goal."
+    },
+    {
+      "index": 67,
+      "name": "GOAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Discrete Goals Template (IGT) record IDs that maps to the goal."
+    },
+    {
+      "index": 72,
+      "name": "GOAL_ID_GOAL_TEMPLATE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The goal template name."
+    },
+    {
+      "index": 77,
+      "name": "GOAL_LST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the last update instant in UTC for the goal."
+    },
+    {
+      "index": 82,
+      "name": "GOAL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the goal type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDiet\n\n\nExercise\n\n\nWeight\n\n\nBlood Pressure\n\n\nResult Component\n\n\nPatient Stated\n\n\nContingency\n\n\nGeneral"
+    },
+    {
+      "index": 97,
+      "name": "GOAL_VAL_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the whether the goal recent value is compliant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 106,
+      "name": "GOAL_CATEGORY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the categorization of the goal. It will be null if the category cannot be determined.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral\n\n\nSocial Determinants of Health"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "table_name": "VERIFICATION",
+  "description": "The VERIFICATION table contains information about your verification records. These records include verification information for patients, guarantors, coverages, coverage members, hospital accounts, and encounters.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the verification record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 17,
+      "name": "VERIF_RECORD_INI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "INI of the verified record"
+    },
+    {
+      "index": 22,
+      "name": "VERIF_RECORD_IDNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the verified record. This item is not networked, because it can contain an EPT, EAR, CVG, or HAR ID, depending on the verification type."
+    },
+    {
+      "index": 27,
+      "name": "VERIFICATION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The verification type of the record. This can be patient, encounter, guarantor, hospital account, coverage, or member.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient\n\n\nPatient Encounter\n\n\nGuarantor\n\n\nHospital Account\n\n\nCoverage\n\n\nCoverage Member\n\n\nHospital Account 2\n\n\nPatient Encounter Benefits\n\n\nCoverage Encounter Benefits"
+    },
+    {
+      "index": 43,
+      "name": "VERIF_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current verification status\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 49,
+      "name": "LAST_VERIF_DATETIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Date and time of the last successful verification"
+    },
+    {
+      "index": 54,
+      "name": "LAST_VERIF_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who performed the most recent verification"
+    },
+    {
+      "index": 59,
+      "name": "NEXT_REVIEW_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the verification status needs review"
+    },
+    {
+      "index": 64,
+      "name": "LAST_STAT_CHNG_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date on which the status was last changed"
+    },
+    {
+      "index": 69,
+      "name": "LAST_CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who last changed the verification status"
+    },
+    {
+      "index": 74,
+      "name": "ENC_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID for the patient of this encounter"
+    },
+    {
+      "index": 79,
+      "name": "ENC_PAT_VERIF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Verification record for the encounter patient"
+    },
+    {
+      "index": 84,
+      "name": "ENC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contact Serial Number (CSN) for the patient encounter associated with the verification. Applies to encounter and hospital account verification."
+    },
+    {
+      "index": 89,
+      "name": "ENC_GUARANTOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Responsible guarantor for this encounter"
+    },
+    {
+      "index": 94,
+      "name": "ENC_GUAR_VERIF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Verificaition record for the guarantor of this encounter"
+    },
+    {
+      "index": 99,
+      "name": "ENC_GUAR_SNAPSHOT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the encounter guarantor at the time the encounter was verified\n\n\n The category values for this column were already listed for column: VERIF_STATUS_C_NAME"
+    },
+    {
+      "index": 105,
+      "name": "ENC_HOSP_ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Hospital account for this encounter"
+    },
+    {
+      "index": 110,
+      "name": "ENC_HAR_VERIF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Verification record of the hospital account for this encounter"
+    },
+    {
+      "index": 115,
+      "name": "ENC_PAT_SNAPSHOT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the patient at the time the encounter or hospital account was verified.\n\n\n The category values for this column were already listed for column: VERIF_STATUS_C_NAME"
+    },
+    {
+      "index": 121,
+      "name": "VERIF_SUBTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The verification subtype of the record. Subtypes can include things like address or BSN. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAddress\n\n\nBSN\n\n\nContact Information"
+    },
+    {
+      "index": 131,
+      "name": "SUB_PARENT_VRX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The parent verification record of the subtype verification record."
+    },
+    {
+      "index": 136,
+      "name": "SUB_ORIGIN_EAF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The origin EAF ID of the subtype verification record. This could be the location, service area, or facility where the subtypes are defined."
+    },
+    {
+      "index": 141,
+      "name": "LAST_SELF_VERIF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the verification status was changed the last time by patient (using the Welcome kiosk)."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "table_name": "RES_VLD_AUDIT",
+  "description": "Result audit information for verification and unverification (result correction).",
+  "primary_key": {
+    "column_name": "RESULT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RESULT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the result record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "RES_SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Internal specimen identifier associated with result"
+    },
+    {
+      "index": 17,
+      "name": "RES_VLD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The result validation status category number for the audit trail validation status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPreliminary\n\n\nFinal\n\n\nPrelim Pend\n\n\nFinal Pend\n\n\nUnverified\n\n\nCosign\n\n\nPrelim Wait\n\n\nFinal Wait"
+    },
+    {
+      "index": 32,
+      "name": "RES_UNVLD_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The result correction reason category number for the result correction.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 38,
+      "name": "RES_VLD_USER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 43,
+      "name": "RES_VLD_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the result is validated."
+    },
+    {
+      "index": 48,
+      "name": "RES_UNVLD_RSN_COM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unvalidation reason comment\n\n\n The category values for this column were already listed for column: RES_UNVLD_RSN_C_NAME"
+    },
+    {
+      "index": 54,
+      "name": "RES_UNVLD_RESULT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of the validation audit result record that is associated with this result record."
+    }
+  ]
+}

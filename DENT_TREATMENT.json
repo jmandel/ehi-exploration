@@ -1,0 +1,115 @@
+{
+  "table_name": "DENT_TREATMENT",
+  "description": "This contains dental treatment plan information which is not expected to change over time.",
+  "primary_key": {
+    "column_name": "TREATMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TREATMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the treatment plan record"
+    },
+    {
+      "index": 7,
+      "name": "DENTAL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of dental treatment\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTreatment\n\n\nProcedure-Only\n\n\nSubtemplate"
+    },
+    {
+      "index": 17,
+      "name": "COMPLETED_DTTM_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Date and time the dental treatment was completed"
+    },
+    {
+      "index": 22,
+      "name": "TR_STATUS_NOADD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This keeps track of the latest status of a treatment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlanned\n\n\nCompleted\n\n\nCanceled\n\n\nDraft\n\n\nDiscontinued"
+    },
+    {
+      "index": 34,
+      "name": "DENTAL_DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department that a treatment is created for."
+    },
+    {
+      "index": 39,
+      "name": "TR_SUG_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The suggested start date for a treatment."
+    },
+    {
+      "index": 44,
+      "name": "TR_SEQUENCE_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Keep track of relative orders for a treatment within a treatment plan"
+    },
+    {
+      "index": 49,
+      "name": "DENTAL_TREAT_SER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the provider that is considered the owner of the dental treatment. This is used for reporting and scheduling."
+    },
+    {
+      "index": 54,
+      "name": "DENT_PARENT_TRMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This points to the parent treatment of which this treatment is part."
+    },
+    {
+      "index": 59,
+      "name": "DENT_OPTION_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of an option for treatment within a dental treatment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelected\n\n\nUnselected\n\n\nRemoved"
+    },
+    {
+      "index": 69,
+      "name": "DENTAL_ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The linked patient estimate record detailing cost information for the procedures in this treatment."
+    },
+    {
+      "index": 74,
+      "name": "TR_APRV_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The date and time when the dental treatment was last approved."
+    },
+    {
+      "index": 79,
+      "name": "TR_APRV_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who last approved the treatment."
+    },
+    {
+      "index": 84,
+      "name": "TR_APRV_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The approval status category ID for the treatment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnapproved\n\n\nSubmitted\n\n\nApproved\n\n\nRescinded"
+    },
+    {
+      "index": 95,
+      "name": "TR_RESCIND_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rescind reason category ID for the treatment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApproved in Error\n\n\nChange in Patient Condition"
+    }
+  ]
+}

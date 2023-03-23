@@ -1,0 +1,80 @@
+{
+  "table_name": "SPEC_CHG_TRGR_TRACE",
+  "description": "This table contains trace information about a specimen's billing actions related to triggering a charge.",
+  "primary_key": {
+    "column_name": "SPECIMEN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the specimen record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 17,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the order associated with the charge trace on the specimen."
+    },
+    {
+      "index": 22,
+      "name": "TRACE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the charge on the specimen was triggered."
+    },
+    {
+      "index": 27,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user whose action triggered the charge on the specimen."
+    },
+    {
+      "index": 32,
+      "name": "CHG_TRG_TRC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The charge trigger trace action category ID for the specimen.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTrigger Charge\n\n\nSend Void Message (All Charges)\n\n\nSend Void Message (Addl Billing)\n\n\nUpdate Order\n\n\nUpdate Specimen\n\n\nCreate Charge\n\n\nDrop Charge Into Router\n\n\nRetrieve Primary PX\n\n\nEvaluate Trigger Context\n\n\nEvaluate Trigger Rule\n\n\nEvaluate Triggered Charges\n\n\nRetrieve Additional Charge Px\n\n\nVoid Charge\n\n\nUpdate Charge\n\n\nRequest Charge Trigger\n\n\nProcess Charge Trigger"
+    },
+    {
+      "index": 55,
+      "name": "TRACE_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The charge trigger trace comment entered by the system about the trigger action."
+    },
+    {
+      "index": 60,
+      "name": "TEST_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The test line that the charge on the specimen is associated with."
+    },
+    {
+      "index": 65,
+      "name": "RECORD_INFO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The trace information for a charge triggered on the specimen."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "table_name": "TRG_UPDATE_INFO",
+  "description": "Table for overtime single items.",
+  "primary_key": {
+    "column_name": "REGIMEN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGIMEN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the patient order group record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of the contact"
+    },
+    {
+      "index": 27,
+      "name": "LINKED_ORDER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the link type for the patient order group's (TLG) source order group (OSQ) that represents a linked group.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFollowed by\n\n\nOr\n\n\nAnd"
+    },
+    {
+      "index": 37,
+      "name": "INST_OF_ENTRY_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant at which the contact was created."
+    },
+    {
+      "index": 42,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "index": 47,
+      "name": "PROD_ACQ_TARGET_CELL_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the target product acquisition cell dose."
+    },
+    {
+      "index": 52,
+      "name": "PROD_ACQ_MIN_CELL_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the minimum product acquisition cell dose."
+    },
+    {
+      "index": 57,
+      "name": "PROD_ACQ_CELL_DOSE_UNITS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the units of the target and minimum cell doses for the product acquisition.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n10e5 CD34 cells/kg\n\n\n10e6 CD34 cells/kg\n\n\n10e7 nucleated cells/kg\n\n\n10e8 nucleated cells/kg\n\n\n10e6 CD3 cells/kg\n\n\n10e5 CD3 cells/kg"
+    },
+    {
+      "index": 70,
+      "name": "PROD_ACQ_CELL_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source of the cells of the product acquisition.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMarrow\n\n\nPeripheral blood stem cells\n\n\nUmbilical cord blood\n\n\nMultiple umbilical cord blood\n\n\nAmniotic fluid\n\n\nNatural killer (NK cells)\n\n\nDonor lymphocyte infusions\n\n\nMesenchymal stem cells\n\n\nOther cells"
+    },
+    {
+      "index": 86,
+      "name": "COND_PALIFERMIN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not Palifermin is planned.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 95,
+      "name": "COND_PLANNED_TOTAL_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Planned Total Dose (cGy) for the conditioning regimen."
+    },
+    {
+      "index": 100,
+      "name": "COND_SETTING_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The setting of the conditioning regimen.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nSome inpatient/some outpatient"
+    },
+    {
+      "index": 110,
+      "name": "COND_INTENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The intent of the conditioning regimen.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyeloablative\n\n\nNon-myeloablative\n\n\nReduced intensity conditioning"
+    },
+    {
+      "index": 120,
+      "name": "COND_RAD_FRACT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not Radiation Fractionate is planned.\n\n\n The category values for this column were already listed for column: COND_PALIFERMIN_YN"
+    },
+    {
+      "index": 126,
+      "name": "GVHD_OTHER_DRUG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description for the other GVHD drug."
+    },
+    {
+      "index": 131,
+      "name": "COND_OTH_DRUG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description for the other conditioning drug."
+    },
+    {
+      "index": 136,
+      "name": "PROD_ACQ_OTH_PROC_METHOD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description for the other product process method."
+    },
+    {
+      "index": 141,
+      "name": "INSTANT_OF_EDIT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant data was edited."
+    }
+  ]
+}

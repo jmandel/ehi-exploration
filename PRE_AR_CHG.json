@@ -1,0 +1,549 @@
+{
+  "table_name": "PRE_AR_CHG",
+  "description": "This table contains one row for each line of each temporary accounts receivable (TAR) record (think of a TAR record as one charge entry screen and each line as an individual procedure). Deleting charge lines from Chronicles will delete rows from this table. This table contains basic information about the procedure and its charge review history. This table also contains the current status of the TAR record. This is found in the CHARGE_STATUS_C column.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the temporary transaction record."
+    },
+    {
+      "index": 7,
+      "name": "CHARGE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the charge on this temporary transaction record."
+    },
+    {
+      "index": 12,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The service date on which the charge procedure is performed."
+    },
+    {
+      "index": 17,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the service area the charge was entered into.  This column is frequently used to link to the CLARITY_SA table."
+    },
+    {
+      "index": 22,
+      "name": "LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the revenue location the charge was entered into.  This column is frequently used to link to the CLARITY_LOC table."
+    },
+    {
+      "index": 27,
+      "name": "PROC_DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department the charge was entered into.  This column is frequently used to link to the CLARITY_DEP table."
+    },
+    {
+      "index": 32,
+      "name": "PROC_POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the place of service the charge was entered into.  This column is frequently used to link to the CLARITY_POS table."
+    },
+    {
+      "index": 37,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage on the charge.  This column is frequently used to link to the V_COVERAGE_PAYOR_PLAN table."
+    },
+    {
+      "index": 42,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account  on the charge.  This column is frequently used to link to the ACCOUNT table."
+    },
+    {
+      "index": 47,
+      "name": "PERF_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the performing provider related to the charge.  This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 52,
+      "name": "BILL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the billing provider related to the charge.  This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 57,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of procedure entered on the charge.  This column is frequently used to link to the CLARITY_EAP table.  This is NOT the CPT � Code."
+    },
+    {
+      "index": 62,
+      "name": "QTY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The quantity on the charge."
+    },
+    {
+      "index": 67,
+      "name": "AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The dollar amount on the charge."
+    },
+    {
+      "index": 72,
+      "name": "ENTER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who entered the charge.    This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 77,
+      "name": "FILE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the temporary charge was posted into a transaction. If this field is blank the charge has not been posted into a transaction. It is either still in the workqueue�(both the file date and delete date are blank) or has been deleted (the delete date field is populated).  This date will match the post date in CLARITY_TDL."
+    },
+    {
+      "index": 82,
+      "name": "FILE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who corrected the error of the charges.  This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 87,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the transaction the charge is stored within a temporary transaction."
+    },
+    {
+      "index": 92,
+      "name": "DELETE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the charge was deleted.  If this field is blank the charge has not been deleted.  It is either still in the WQ (both the file date and delete date are blank) or has been filed into ETR (the file date field is populated)."
+    },
+    {
+      "index": 97,
+      "name": "DELETE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who deleted the charge.  This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 102,
+      "name": "REFERRING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the referral provider related to the charge.  This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 107,
+      "name": "REFERRING_PROV_ID_REFERRING_PROV_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the referral source."
+    },
+    {
+      "index": 112,
+      "name": "RECEIVE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The receive date for a charge. This date is entered by users in charge entry."
+    },
+    {
+      "index": 117,
+      "name": "CODER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the coder on the charge.  This column is frequently used to link to the CLARITY_EMP table.  This data is entered by users in charge entry."
+    },
+    {
+      "index": 122,
+      "name": "CODED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the charge was coded.  This date is entered by users in charge entry."
+    },
+    {
+      "index": 127,
+      "name": "BILL_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the bill area is associated with the charge.  This column is frequently used to link to the BILL_AREA table."
+    },
+    {
+      "index": 132,
+      "name": "BILL_AREA_ID_BILL_AREA_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record name of this bill area, financial subdivision, or financial division."
+    },
+    {
+      "index": 137,
+      "name": "SESS_BILL_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the bill area is associated with the charge session (TAR).  This column is frequently used to link to the BILL_AREA table."
+    },
+    {
+      "index": 142,
+      "name": "SESS_BILL_AREA_ID_BILL_AREA_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record name of this bill area, financial subdivision, or financial division."
+    },
+    {
+      "index": 147,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the surgical log record for this row. This column is frequently used to link to the OR_LOG table. This item is populated if charge is entered from OpTime (Epic's operating room management application)."
+    },
+    {
+      "index": 152,
+      "name": "SUPPLY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the supply record for this row. This column is frequently used to link to the OR_SPLY table."
+    },
+    {
+      "index": 157,
+      "name": "SUPPLY_ID_SUPPLY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the inventory item."
+    },
+    {
+      "index": 162,
+      "name": "IMPLANT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the implant record for this row. This column is frequently used to link to the OR_IMP table."
+    },
+    {
+      "index": 167,
+      "name": "SESS_DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department associated with the charge session (Temporary Accounts Receivable).  This column is frequently used to link to the CLARITY_DEP table."
+    },
+    {
+      "index": 172,
+      "name": "SESS_POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the place of service associated with the charge session (Temporary Accounts Receivable).  This column is frequently used to link to the CLARITY_POS table."
+    },
+    {
+      "index": 177,
+      "name": "CHARGE_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category number of the charge.  This column will only be populated if the charge is not posted through the normal professional billing charge entry workflow.  Charge source could be 1-Transaction Import, 2-Interface, 3-EpicCare, 4-Inpatient Charge Utility, 5-Hospital Professional Fee, 6-Inpatient Professional Charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTransaction Import\n\n\nInterface\n\n\nEpicCare\n\n\nInpatient Charge Utility\n\n\nHospital Professional Fee\n\n\nInpatient Professional Charge\n\n\nPayment Plan Auto-Pay"
+    },
+    {
+      "index": 191,
+      "name": "CHARGE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number of the charge.  1-Filed without Review, 2-Filed after Review, 3-In Review, 4-Deleted, 5-Created, 6-Deleted in Charge Review.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFiled without Review\n\n\nFiled after Review\n\n\nIn Review\n\n\nDeleted\n\n\nCreated\n\n\nDeleted in Charge Review"
+    },
+    {
+      "index": 204,
+      "name": "SESS_PERF_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The performing provider, also called the service provider, associated with the charge session."
+    },
+    {
+      "index": 209,
+      "name": "SESS_BILL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The billing provider associated with the charge session."
+    },
+    {
+      "index": 214,
+      "name": "DENTAL_ENTRY_FLG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the procedure is a dental procedure."
+    },
+    {
+      "index": 219,
+      "name": "DENTAL_TOOTH_NUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The tooth number for the dental procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTooth 1\n\n\nTooth 2\n\n\nTooth 3\n\n\nTooth 4\n\n\nTooth 5\n\n\nTooth 6\n\n\nTooth 7\n\n\nTooth 8\n\n\nTooth 9\n\n\nTooth 10\n\n\nTooth 11\n\n\nTooth 12\n\n\nTooth 13\n\n\nTooth 14\n\n\nTooth 15\n\n\nTooth 16\n\n\nTooth 17\n\n\nTooth 18\n\n\nTooth 19\n\n\nTooth 20\n\n\nTooth 21\n\n\nTooth 22\n\n\nTooth 23\n\n\nTooth 24\n\n\nTooth 25\n\n\nTooth 26\n\n\nTooth 27\n\n\nTooth 28\n\n\nTooth 29\n\n\nTooth 30\n\n\nTooth 31\n\n\nTooth 32\n\n\nTooth A\n\n\nTooth B\n\n\nTooth C\n\n\nTooth D\n\n\nTooth E\n\n\nTooth F\n\n\nTooth G\n\n\nTooth H\n\n\nTooth I\n\n\nTooth J\n\n\nTooth K\n\n\nTooth L\n\n\nTooth M\n\n\nTooth N\n\n\nTooth O\n\n\nTooth P\n\n\nTooth Q\n\n\nTooth R\n\n\nTooth S\n\n\nTooth T\n\n\nTooth 18 (FDI)\n\n\nTooth 17 (FDI)\n\n\nTooth 16 (FDI)\n\n\nTooth 15 (FDI)\n\n\nTooth 14 (FDI)\n\n\nTooth 13 (FDI)\n\n\nTooth 12 (FDI)\n\n\nTooth 11 (FDI)\n\n\nTooth 21 (FDI)\n\n\nTooth 22 (FDI)\n\n\nTooth 23 (FDI)\n\n\nTooth 24 (FDI)\n\n\nTooth 25 (FDI)\n\n\nTooth 26 (FDI)\n\n\nTooth 27 (FDI)\n\n\nTooth 28 (FDI)\n\n\nTooth 38 (FDI)\n\n\nTooth 37 (FDI)\n\n\nTooth 36 (FDI)\n\n\nTooth 35 (FDI)\n\n\nTooth 34 (FDI)\n\n\nTooth 33 (FDI)\n\n\nTooth 32 (FDI)\n\n\nTooth 31 (FDI)\n\n\nTooth 41 (FDI)\n\n\nTooth 42 (FDI)\n\n\nTooth 43 (FDI)\n\n\nTooth 44 (FDI)\n\n\nTooth 45 (FDI)\n\n\nTooth 46 (FDI)\n\n\nTooth 47 (FDI)\n\n\nTooth 48 (FDI)\n\n\nTooth 55 (FDI)\n\n\nTooth 54 (FDI)\n\n\nTooth 53 (FDI)\n\n\nTooth 52 (FDI)\n\n\nTooth 51 (FDI)\n\n\nTooth 61 (FDI)\n\n\nTooth 62 (FDI)\n\n\nTooth 63 (FDI)\n\n\nTooth 64 (FDI)\n\n\nTooth 65 (FDI)\n\n\nTooth 75 (FDI)\n\n\nTooth 74 (FDI)\n\n\nTooth 73 (FDI)\n\n\nTooth 72 (FDI)\n\n\nTooth 71 (FDI)\n\n\nTooth 81 (FDI)\n\n\nTooth 82 (FDI)\n\n\nTooth 83 (FDI)\n\n\nTooth 84 (FDI)\n\n\nTooth 85 (FDI)\n\n\nTooth UR8 (Palmer)\n\n\nTooth UR7 (Palmer)\n\n\nTooth UR6 (Palmer)\n\n\nTooth UR5 (Palmer)\n\n\nTooth UR4 (Palmer)\n\n\nTooth UR3 (Palmer)\n\n\nTooth UR2 (Palmer)\n\n\nTooth UR1 (Palmer)\n\n\nTooth UL1 (Palmer)\n\n\nTooth UL2 (Palmer)\n\n\nTooth UL3 (Palmer)\n\n\nTooth UL4 (Palmer)\n\n\nTooth UL5 (Palmer)\n\n\nTooth UL6 (Palmer)\n\n\nTooth UL7 (Palmer)\n\n\nTooth UL8 (Palmer)\n\n\nTooth LL8 (Palmer)\n\n\nTooth LL7 (Palmer)\n\n\nTooth LL6 (Palmer)\n\n\nTooth LL5 (Palmer)\n\n\nTooth LL4 (Palmer)\n\n\nTooth LL3 (Palmer)\n\n\nTooth LL2 (Palmer)\n\n\nTooth LL1 (Palmer)\n\n\nTooth LR1 (Palmer)\n\n\nTooth LR2 (Palmer)\n\n\nTooth LR3 (Palmer)\n\n\nTooth LR4 (Palmer)\n\n\nTooth LR5 (Palmer)\n\n\nTooth LR6 (Palmer)\n\n\nTooth LR7 (Palmer)\n\n\nTooth LR8 (Palmer)\n\n\nTooth URE (Palmer)\n\n\nTooth URD (Palmer)\n\n\nTooth URC (Palmer)\n\n\nTooth URB (Palmer)\n\n\nTooth URA (Palmer)\n\n\nTooth ULA (Palmer)\n\n\nTooth ULB (Palmer)\n\n\nTooth ULC (Palmer)\n\n\nTooth ULD (Palmer)\n\n\nTooth ULE (Palmer)\n\n\nTooth LLE (Palmer)\n\n\nTooth LLD (Palmer)\n\n\nTooth LLC (Palmer)\n\n\nTooth LLB (Palmer)\n\n\nTooth LLA (Palmer)\n\n\nTooth LRA (Palmer)\n\n\nTooth LRB (Palmer)\n\n\nTooth LRC (Palmer)\n\n\nTooth LRD (Palmer)\n\n\nTooth LRE (Palmer)"
+    },
+    {
+      "index": 382,
+      "name": "DENTAL_SURFACE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The tooth surface for the dental procedure. The value could be a semicolon-delimited string if there are multiple surfaces. For example, 2;3."
+    },
+    {
+      "index": 387,
+      "name": "DENTAL_ARCH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The arch info for the dental procedure. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLower\n\n\nUpper"
+    },
+    {
+      "index": 396,
+      "name": "DENTAL_QUADRANT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The quadrant info for the dental procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLower Left\n\n\nLower Right\n\n\nUpper Left\n\n\nUpper Right\n\n\nWhole Oral Cavity\n\n\nMaxillary Area\n\n\nMandibular Area\n\n\nUpper Right Sextant\n\n\nUpper Anterior Sextant\n\n\nUpper Left Sextant\n\n\nLower Left Sextant\n\n\nLower Anterior Sextant\n\n\nLower Right Sextant"
+    },
+    {
+      "index": 416,
+      "name": "DENTAL_AREA",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The area info for dental procedure. The value is a dash-delimited string of two tooth numbers. It indicates the area between the two teeth. For example, 2-3."
+    },
+    {
+      "index": 421,
+      "name": "DENTAL_SUPNUMARY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this�dental procedure is for a supernumerary.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 430,
+      "name": "DENTAL_MO_TO_RECALL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of months after which follow-up is needed for the dental procedure."
+    },
+    {
+      "index": 435,
+      "name": "DENTAL_HYGIENIST_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The hygienist for the dental procedure."
+    },
+    {
+      "index": 440,
+      "name": "ANES_SUPPLEMENTAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if the procedure is anesthesia or supplemental procedure. 1 means the procedure is an anesthesia procedure. 2 means the procedure is a supplemental procedure."
+    },
+    {
+      "index": 445,
+      "name": "TIMED",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if the procedure uses timed algorithm."
+    },
+    {
+      "index": 450,
+      "name": "ADJUD_SELF_PAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjudicated self-pay amount."
+    },
+    {
+      "index": 455,
+      "name": "ADJUD_COPAY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjudicated copay portion of the self-pay amount."
+    },
+    {
+      "index": 460,
+      "name": "ADJUD_COINS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjudicated coinsurance portion of the self-pay amount."
+    },
+    {
+      "index": 465,
+      "name": "ADJUD_DEDUCT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The adjudicated deductible portion of the self-pay amount."
+    },
+    {
+      "index": 470,
+      "name": "ADJUD_OVRIDE_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag to indicate if and how the adjudicated self-pay amount was overridden.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBenefit Package Adjudication Formula\n\n\nCoverage Level Override\n\n\nPlan Level Override\n\n\nCopay Suppressed\n\n\nPayor Level Override Programming Point\n\n\nService Area Level Override Programming Point\n\n\nWaived - Secondary Coverage Available\n\n\nCopay Computation Function Programming Point"
+    },
+    {
+      "index": 485,
+      "name": "OLD_RETRO_ETR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Unique ID of old�retroadjudication transactions."
+    },
+    {
+      "index": 490,
+      "name": "PRICE_PER_UNIT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The price for each unit for a procedure."
+    },
+    {
+      "index": 495,
+      "name": "NIA_NIDUS_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The National Imaging Association\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPositive\n\n\nNegative\n\n\nEquivocal\n\n\nSignificant Incidental"
+    },
+    {
+      "index": 506,
+      "name": "SPEC_SUP_PROC_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The special supplemental procedure type category ID for the temporary transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAge Unit\n\n\nEmergency Unit"
+    },
+    {
+      "index": 515,
+      "name": "ANES_PROCEDURE_LINK",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line in the charge session that created this charge line. This happens for anesthesia supplemental procedures, charge shadowing, and charge quantity splitting."
+    },
+    {
+      "index": 520,
+      "name": "ANES_ASA_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ASA (American Society of Anesthesiologists) code for a procedure."
+    },
+    {
+      "index": 525,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The order that is linked to this charge."
+    },
+    {
+      "index": 530,
+      "name": "RESEARCH_STUDY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record ID for the research study or client associated with the charge."
+    },
+    {
+      "index": 535,
+      "name": "PROTOCOL_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contact serial number of the charge's linked protocol version within linked research study or linked treatment plan."
+    },
+    {
+      "index": 540,
+      "name": "RSH_CHG_ROUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Category value to indicate how a charge related to a research study was routed, either to the research study guarantor account or to the patient's account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFile to Study\n\n\nFile to Patient"
+    },
+    {
+      "index": 549,
+      "name": "FIN_DIV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The financial division associated with the charge."
+    },
+    {
+      "index": 554,
+      "name": "FIN_DIV_ID_BILL_AREA_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record name of this bill area, financial subdivision, or financial division."
+    },
+    {
+      "index": 559,
+      "name": "FIN_SUBDIV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The financial subdivision associated with the charge."
+    },
+    {
+      "index": 564,
+      "name": "FIN_SUBDIV_ID_BILL_AREA_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record name of this bill area, financial subdivision, or financial division."
+    },
+    {
+      "index": 569,
+      "name": "CREATE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the charge was created."
+    },
+    {
+      "index": 574,
+      "name": "TREATMENT_PLAN_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number of the treatment plan that generated this charge and order."
+    },
+    {
+      "index": 579,
+      "name": "RESEARCH_ENROLL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the research study association linked to this charge."
+    },
+    {
+      "index": 584,
+      "name": "DENTAL_PREAUTH_QTY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the quantity that will be sent to insurance for preauthorization for the associated charge line"
+    },
+    {
+      "index": 589,
+      "name": "PROC_INSTRUCTIONS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text regarding the specific procedure."
+    },
+    {
+      "index": 594,
+      "name": "FAST_PAY_SP_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Self-pay balance for use with fast payment."
+    },
+    {
+      "index": 599,
+      "name": "REF_OVERRIDE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the user who overrode the referral associated with this charge line."
+    },
+    {
+      "index": 604,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This items stores the referral ID for a charge line."
+    }
+  ]
+}

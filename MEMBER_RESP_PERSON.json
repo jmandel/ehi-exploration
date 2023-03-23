@@ -1,0 +1,136 @@
+{
+  "table_name": "MEMBER_RESP_PERSON",
+  "description": "This table stores information about the responsible person (or people) for a member, as stored in the coverage. It includes information about name, SSN, relationship to members, and demographics.\n\n\n\n\n\nEach member on a coverage can have multiple responsible parties. The responsible parties for a specific member and coverage can be retrieved by joining to CVG_ID using a coverage ID and MEM_RESP_MEMBER_ID a patient ID. For example, MEMBER_RESP_PERSON.CVG_ID = COVERAGE_MEMBER_LIST.COVERAGE_ID AND MEMBER_RESP_PERSON.MEM_RESP_MEMBER_ID = COVERAGE_MEMBER_LIST.PAT_ID.",
+  "primary_key": {
+    "column_name": "CVG_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the coverage record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "MEM_RESP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the person responsible for the member."
+    },
+    {
+      "index": 17,
+      "name": "MEM_RESP_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The city of the person responsible for the member."
+    },
+    {
+      "index": 22,
+      "name": "MEM_RESP_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The state of the person responsible for the member.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 28,
+      "name": "MEM_RESP_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ZIP code of the person responsible for the member."
+    },
+    {
+      "index": 33,
+      "name": "MEM_RESP_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The county of the person responsible for the member.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 39,
+      "name": "MEM_RESP_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The country of the person responsible for the member.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 45,
+      "name": "MEM_RESP_EMAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The e-mail address of the person responsible for the member."
+    },
+    {
+      "index": 50,
+      "name": "MEM_RESP_REL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The relationship between the member and the responsible person.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCase Manager\n\n\nKey Person\n\n\nPerson or Other Entity Legally Responsible for a Child\n\n\nExecutor of Estate\n\n\nEx-spouse\n\n\nOther Insured\n\n\nGuardian\n\n\nPower of Attorney\n\n\nLegal Representative\n\n\nResponsible Party\n\n\nParent\n\n\nSignificant Other\n\n\nSpouse\n\n\nAuthorized Representative"
+    },
+    {
+      "index": 71,
+      "name": "MEM_RESP_MEMBER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal ID of the member for whom a responsible person is responsible."
+    },
+    {
+      "index": 76,
+      "name": "MEM_RESP_ADDR_LN_1",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains line one of the member's responsible person address. The purpose of this item is to provide the ability for reporting administrators to retrieve line one of the address without having to join the member responsible person address table."
+    },
+    {
+      "index": 81,
+      "name": "MEM_RESP_ADDR_LN_2",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains line two of the member's responsible person address. The purpose of this item is to provide the ability for reporting administrators to retrieve line two of the address without having to join the member responsible person address table."
+    },
+    {
+      "index": 86,
+      "name": "MEM_RESP_HOUSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The house number of the responsible person's address."
+    },
+    {
+      "index": 91,
+      "name": "MEM_RESP_DISTRICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The district category ID of the responsible person's address.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 97,
+      "name": "MEM_RESP_EFF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date on which person became responsible for the member."
+    },
+    {
+      "index": 102,
+      "name": "MEM_RESP_TERM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The termination date on which person's responsibility for the member ends."
+    },
+    {
+      "index": 107,
+      "name": "MEM_RESP_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The line ID of the person responsible for the member. Used to reference this line uniquely."
+    }
+  ]
+}

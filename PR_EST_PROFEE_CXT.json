@@ -1,0 +1,94 @@
+{
+  "table_name": "PR_EST_PROFEE_CXT",
+  "description": "Context information for the professional fees in the price estimate. Context information is used to define the expected circumstances of the charges such as provider and department. Professional fees are generated in Resolute Professional Billing.",
+  "primary_key": {
+    "column_name": "ESTIMATE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the price estimate record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider that is used to provide context for the price estimate's professional fees.  If no provider has been specified, a generic place-holder will be used (provider 1, provider 2, etc)."
+    },
+    {
+      "index": 17,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department that is used to provide context for the price estimate's professional fees."
+    },
+    {
+      "index": 22,
+      "name": "POS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The place of service (POS) type that is used to provide context for the price estimate's professional fees.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 80,
+      "name": "VISIT_TYPE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit type that is used to provide context for the price estimate's professional fees."
+    },
+    {
+      "index": 85,
+      "name": "SERVICE_TYPE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The benefit service type used to determine benefit information for the professional fees section.  This information comes from the benefit record attached to the estimate. Use the PR_EST_INFO table, BENEFITS_INFO_ID column to link this data."
+    },
+    {
+      "index": 90,
+      "name": "SERVICE_TYPE_ID_SERVICE_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this benefit service type."
+    },
+    {
+      "index": 95,
+      "name": "PB_DENT_PROC_SUBSTATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status explaining why a procedure is not scheduled. Also groups procedures in the estimates activity and on the letter.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 101,
+      "name": "PB_LOCATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Location for professional estimate."
+    },
+    {
+      "index": 106,
+      "name": "PRICING_CONTRACT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item holds the pricing contract used to calculate the price for all procedures in the estimate context."
+    },
+    {
+      "index": 111,
+      "name": "PRICING_CNTR_OVR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores whether a user has overridden the pricing contract that is stored in I PES 311. There are two values: 0) No - Contract has been selected by the system. 1) Yes - Contract has been chosen by the user. The default is No.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

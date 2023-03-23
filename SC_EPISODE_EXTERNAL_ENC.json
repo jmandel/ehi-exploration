@@ -1,0 +1,94 @@
+{
+  "table_name": "SC_EPISODE_EXTERNAL_ENC",
+  "description": "Data about external encounters linked to a Compass Rose episode.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "REFERENCE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The composite DXR reference ID for an external encounter linked to this episode."
+    },
+    {
+      "index": 17,
+      "name": "METRIC_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID for an external encounter linked to this episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive"
+    },
+    {
+      "index": 26,
+      "name": "BND_EPSD_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source category ID for an external encounter linked to this episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nVisit Association\n\n\nAuto Link\n\n\nAuto Creation\n\n\nAuto Link Via Transform\n\n\nAuto Link Via Association\n\n\nAuto Removal"
+    },
+    {
+      "index": 40,
+      "name": "INVALIDATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the link was found to be invalid for an external encounter linked to this episode."
+    },
+    {
+      "index": 45,
+      "name": "START_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The encounter start date and time for an external encounter linked to this episode. This will only be populated for non-Epic encounters and is used to match an encounter to an existing link even when the reference ID changes."
+    },
+    {
+      "index": 50,
+      "name": "END_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The encounter end date and time for an external encounter linked to this episode. This will only be populated for non-Epic encounters and is used to match an encounter to an existing link even when the reference ID changes."
+    },
+    {
+      "index": 55,
+      "name": "DISP_ENC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The encounter type category ID for an external encounter linked to this episode. This will only be populated for non-Epic encounters and is used to match an encounter to an existing link even when the reference ID changes.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRegistration\n\n\nWalk-In\n\n\nHospital Encounter\n\n\nCanceled\n\n\nUnmerge\n\n\nContact Moved\n\n\nIntake\n\n\nEMPTY\n\n\nResearch Encounter\n\n\nRecurring Plan\n\n\nUpdate\n\n\nPCP/Clinic Change\n\n\nWait List\n\n\nEnrollment\n\n\nSocial Care Application\n\n\nService Decision Registration\n\n\nLeader Rounds\n\n\nClerical Orders\n\n\nMother Baby Link\n\n\nLactation Encounter\n\n\nAppointment\n\n\nSurgery\n\n\nAnesthesia\n\n\nAnesthesia Event\n\n\nGuardian Screening\n\n\nAncillary Procedure\n\n\nAnticoagulation Discharge Documentation\n\n\nHealth Maintenance Letter\n\n\nPatient Message\n\n\nE-Visit\n\n\nMobile Order Only\n\n\nQuestionnaire Series Submission\n\n\nTravel\n\n\nPatient Self-Triage\n\n\nCommunity Care Management\n\n\nPatient Outreach\n\n\nTelephone\n\n\nNurse Triage\n\n\nE-Consult\n\n\nE-Consult Community Order\n\n\nClinical Documentation Only\n\n\nTelemedicine\n\n\nPlan of Care Documentation\n\n\nExternal Communication\n\n\nReconciled Outside Data\n\n\nExternal Contact\n\n\nOphth Exam\n\n\nRecurring Billing Documentation\n\n\nPre-Admission Testing\n\n\nHospice Admission\n\n\nHome Infusion\n\n\nHome Infusion Billing\n\n\nHome Health Resumption of Care Planning\n\n\nHome Health Admission\n\n\nHome Care Visit\n\n\nHome Care Update\n\n\nKanta Service Event\n\n\nPatient Web Update\n\n\nCommunity Orders\n\n\nCommittee Review\n\n\nPost Mortem Documentation\n\n\nBilling Encounter\n\n\nLab Requisition\n\n\nOffice Visit\n\n\nConsent Form\n\n\nProcedure Pass\n\n\nExternal Hospital Admission\n\n\nLetter (Out)\n\n\nHospital\n\n\nRefill\n\n\nImmunization\n\n\nHistory\n\n\nReferral\n\n\nOrders Only\n\n\nRx Refill Authorize\n\n\nMeds Only (Web)\n\n\nMeds Void (Web)\n\n\nResolute Professional Billing Hospital Prof Fee\n\n\nEpisode Changes\n\n\nAncillary Orders\n\n\nPharmacy Visit\n\n\nBPA\n\n\nAbstract"
+    },
+    {
+      "index": 145,
+      "name": "ENC_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The encounter type free text name for an external encounter linked to this episode. This will only be populated for non-Epic encounters and is used to match an encounter to an existing link even when the reference ID changes."
+    },
+    {
+      "index": 150,
+      "name": "ORG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "A unique organization identifier that consists of the name and the organization ID for the source organization of an external encounter linked to this episode. This column is often used for grouping, sorting, and display purposes in reports."
+    },
+    {
+      "index": 155,
+      "name": "ORG_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    }
+  ]
+}

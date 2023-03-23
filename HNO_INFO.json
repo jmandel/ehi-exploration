@@ -1,0 +1,262 @@
+{
+  "table_name": "HNO_INFO",
+  "description": "This table contains common information from General Use Notes items. This table focuses on time-insensitive, once-per-record data while other HNO tables (e.g., NOTES_ACCT, CODING_CLA_NOTES) contain the data for different note types.",
+  "primary_key": {
+    "column_name": "NOTE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record."
+    },
+    {
+      "index": 7,
+      "name": "NOTE_TYPE_NOADD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This virtual item is populated with a category value from Note - Type No-Add (I HNO 51) according to the following logic: * if Note - Type No-Add (I HNO 51) is populated, use the value directly * if Note - Type No-Add (I HNO 51) is null and the note is not ambulatory, return null * if Note - Type No-Add (I HNO 51) is null and the note has an ambulatory encounter context, obtain a category from the UCN note type (I HNO 34033) and map that value to an equivalent category from Note - Type No Add (I HNO 51), if possible\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral\n\n\nPhone Message\n\n\nLetter\n\n\nMessage\n\n\nTelephone Encounter\n\n\nProvider Comments\n\n\nRTF Letter\n\n\nRouting Comments\n\n\nSpecialty Comments\n\n\nCharting Text\n\n\nMyChart Message\n\n\nEligibility Message\n\n\nCriteria Review\n\n\nAP Claim Code Edit\n\n\nPatient Flag\n\n\nDental Soft Tissue Note\n\n\nABN INFORMATION\n\n\nProgress Note\n\n\nNursing Note\n\n\nConsult/Results - Findings\n\n\nConsult/Results - Impression\n\n\nConsult/Results - Recommendations/Plans\n\n\nChart Sync Patient Summary Report\n\n\nChart Sync Admission Summary Report\n\n\nH&P Note\n\n\nProcedure Note\n\n\nCommunication Body\n\n\nAnesthesia\n\n\nDepartment Message\n\n\nAssessment & Plan Note\n\n\nProblem Overview\n\n\nSubjective & Objective\n\n\nCare Coordination\n\n\nHome Care Admit\n\n\nHome Care Non-Admit\n\n\nCTI Order\n\n\nBookmark\n\n\nHospice Discharge Remarks\n\n\nCharge Homing Guarantor Inquiry\n\n\nPatient Genomic Indicator Overview Note\n\n\nHome Health Face to Face Attestation\n\n\nHospice Face to Face Attestation\n\n\nSticky Note\n\n\nCoding Query\n\n\nAddress Verification Message\n\n\nIntake Communication\n\n\nPharmacy Enrollment Note\n\n\nPatient Instructions\n\n\nDischarge Attachment\n\n\nPrevious Reports\n\n\nResult Order Report\n\n\nHome Care Intervention\n\n\nHome Health Plan of Care Header\n\n\nDermatology Finding Description\n\n\nSpecimen Tracking Comments\n\n\nRadiology Study Results\n\n\nAuth/Cert Update\n\n\nVECOZO Authorization Update\n\n\nOR Instructions\n\n\nIn Basket Conversation\n\n\nIncoming Message Pend Notes\n\n\nXtenity Patient Portal Message\n\n\nOutside Organization Note\n\n\nOutside Organization Update\n\n\nOutside Organization Message\n\n\nCosign with Attestation Text\n\n\nSimple Med Note\n\n\nMedication History\n\n\nANSI 278 Information\n\n\nHistory Overview\n\n\nED Disposition Edit Trail\n\n\nLab\n\n\nIntervention Data from External System\n\n\nEvent Note\n\n\nTreatment Summary\n\n\nRehabilitation Potential\n\n\nDischarge Plans\n\n\nHistory Event Details\n\n\nReferral Transaction Record\n\n\nHappy Together Result Transcription\n\n\nGroup Note\n\n\nCare Advice Text\n\n\nInfection Case\n\n\nClinical Note Summary\n\n\nTransplant\n\n\nOrgan\n\n\nReg History Event\n\n\nInterfaced Result\n\n\nOutside Organization Coverage Information"
+    },
+    {
+      "index": 103,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient encounter to which the note is attached. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 108,
+      "name": "ENTRY_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who created this note. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 113,
+      "name": "NOTE_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a free text description of the note."
+    },
+    {
+      "index": 118,
+      "name": "IP_NOTE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The note type associated with this note.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProgress Notes\n\n\nConsults\n\n\nProcedures\n\n\nH&P\n\n\nDischarge Summary\n\n\nED Notes\n\n\nInitial Assessments\n\n\nED Triage Notes\n\n\nCase Communication\n\n\nOR Nursing\n\n\nOR Surgeon\n\n\nOR PreOp\n\n\nOR PostOp\n\n\nOR Anesthesia\n\n\nAmbulatory Progress Notes\n\n\nAmbulatory H&P Notes\n\n\nAmbulatory Procedure Notes\n\n\nDischarge Instructions\n\n\nED Provider Notes\n\n\nDecision\n\n\nNote to Patient via Portal\n\n\nAnesthesia Preprocedure Evaluation\n\n\nAnesthesia Postprocedure Evaluation\n\n\nH&P (View-Only)\n\n\nInterval H&P Note\n\n\nAnesthesia Procedure Notes\n\n\nAddendum Note\n\n\nCare Plan\n\n\nHospital Course\n\n\nSubjective & Objective\n\n\nL&D Delivery Note\n\n\nTelephone Encounter\n\n\nPatient Instructions\n\n\nAssessment & Plan Note\n\n\nCommunication Body\n\n\nED AVS Snapshot\n\n\nLetter\n\n\nLactation Note\n\n\nCommittee Review\n\n\nIP AVS Snapshot\n\n\nMR AVS Snapshot\n\n\nPharmacy Enrollment Note\n\n\nPre-Procedure Assessment\n\n\nDischarge Instr - Supplementary Instructions\n\n\nDischarge Instr - AVS First Page\n\n\nDischarge Instr - Meds\n\n\nDischarge Instr - Pharmacy\n\n\nDischarge Instr - Activity\n\n\nDischarge Instr - Diet\n\n\nDischarge Instr - Appointments\n\n\nDischarge Instr - Lab\n\n\nDischarge Instr - Other Orders\n\n\nDischarge Instr - Other Info\n\n\nCAA (Care Area Assessment)\n\n\nNursing Note\n\n\nACP (Advance Care Planning)\n\n\nERAS\n\n\nResult Encounter Note\n\n\nRadiation Planning Notes\n\n\nRadiation Completion Notes\n\n\nForm\n\n\nBH Treatment Plan\n\n\nGroup Note\n\n\nVideo Visit Routing Comment\n\n\nE-Visit Routing Comment\n\n\nClaim Note\n\n\nDialysis Plan of Care Note\n\n\nHome Health Plan of Care Certification Statement\n\n\nHome Health Plan of Care\n\n\nSMD Notes\n\n\nUnmapped External Note\n\n\nFiltered External Note\n\n\nCode Documentation\n\n\nSedation Documentation\n\n\nJDT PCOD\n\n\nDental Procedure Details\n\n\nHome Health \n\n\nLTC Provider Review\n\n\nChart Abstraction\n\n\nInpatient Self-Administration Sheet\n\n\nOutpatient Self-Administration Sheet\n\n\nInpatient Medication Chart\n\n\nOutpatient Medication Chart\n\n\nHospice\n\n\nHospice Plan of Care\n\n\nHospice Non-Covered\n\n\nHard Deleted Note"
+    },
+    {
+      "index": 212,
+      "name": "ORIGINAL_HP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For View-Only H&P notes only - original note record identifier"
+    },
+    {
+      "index": 217,
+      "name": "ORIG_HP_DATE_REAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For View-Only H&P notes only - original note record contact"
+    },
+    {
+      "index": 222,
+      "name": "SOURCE_HP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "For Interval H&P only - ID of H&P Note being modified by interval note"
+    },
+    {
+      "index": 227,
+      "name": "SOURCE_HP_DATE_REAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "For Interval H&P only - contact of H&P Note being modified by interval note"
+    },
+    {
+      "index": 232,
+      "name": "ECG_TECHNICIAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Electrocardiogram/Spirometry Technician"
+    },
+    {
+      "index": 237,
+      "name": "ADDENDUM_PARENT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the contact serial number (CSN) of the parent document."
+    },
+    {
+      "index": 242,
+      "name": "LETTER_SUMMARY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The summary of the letter."
+    },
+    {
+      "index": 247,
+      "name": "TX_IB_FOLDER_C_NAME",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Type of Message (I EOW 30) In Basket folder to be used by the Transcription interface to generate In Basket messages\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStaff Message\n\n\nSchedule List\n\n\nSend a Letter\n\n\nPhone Calls\n\n\nTranscription\n\n\nPatient Calls\n\n\nResults\n\n\nCharts\n\n\nDictations\n\n\nOverdue Rslt\n\n\nOrders\n\n\nMed. Cosign\n\n\nReferral Verification\n\n\nOpen Orders\n\n\nStation Msg\n\n\nCredential\n\n\nOrder Cosign\n\n\nCRM\n\n\nClaims\n\n\nReferral Notice\n\n\nPatient Call Back\n\n\nPatient Reminder\n\n\nCanceled Orders\n\n\nChart Cosign\n\n\nOpen Encounters\n\n\nCharge Review\n\n\nCharge Update\n\n\nCase Creation\n\n\nCase Review\n\n\nCase Overdue\n\n\nRx Auth\n\n\nRx Response\n\n\nAddendum\n\n\nBreak-the-Glass\n\n\nOverdue Rx Auth\n\n\nCDS alert\n\n\nCharge Pending\n\n\nMerge Notification for Patients with Histories Contacts\n\n\nIncomplete Note\n\n\nPreadmission Schedule List\n\n\nClaim Letter\n\n\nReferral Letter\n\n\nResult Notes\n\n\nCollection Tickler\n\n\nAppointment Notification\n\n\nUnmerge Notification for Patients with Histories Contacts\n\n\nOrder Based Transcription\n\n\nCC'd Result Message\n\n\nOverdue Notice\n\n\nReceipt\n\n\nPatient Schedule Request\n\n\nPatient Refill Request\n\n\nPatient Medical Advice Request\n\n\nPatient CRM Request\n\n\nHospital ADT\n\n\nProgress Notes\n\n\nLength of Stay Alert\n\n\nClinical Letter\n\n\nLetter Dictation\n\n\nVoice Message\n\n\nPreadmission Form\n\n\nCovered Work\n\n\nVerbal Order Cosign\n\n\nOpen Letters\n\n\nFollow-up Reminder\n\n\nChart Deficiencies\n\n\nOverdue Releases\n\n\nTimeout Message\n\n\nCharge Review Information\n\n\nAdd-on Orders\n\n\nExpiring Orders\n\n\nProgress Note Cosign\n\n\nWork Queue Message\n\n\nNurse Triage Call Back\n\n\nPCP Change Review\n\n\nIncomplete Progress Note\n\n\nNurse Triage/Routing\n\n\nAdmission Notice\n\n\nDischarge Notice\n\n\nTransfer Notice\n\n\nInitiate Call Back\n\n\nReferral Status Change\n\n\nHelp Desk\n\n\nCase Message\n\n\nLog Message\n\n\nHH Order\n\n\nHH Order Alert\n\n\nHome Health Discharge\n\n\nCC Charts\n\n\nDeclined Deficiencies\n\n\nDeficiency Update Errors\n\n\nExpiring Referrals\n\n\nADT Orders Error\n\n\nIP Cosign Note\n\n\nInpatient Transcriptions\n\n\nCancer Staging\n\n\nERefill\n\n\nInpatient ND Consultation Alert\n\n\nSend Page\n\n\nOutstanding Page\n\n\nRejected Transcription\n\n\nClaim Refund Due\n\n\nOverdue Transcription\n\n\nMR Encounter form\n\n\nDevice data\n\n\nReferral Notification Letter\n\n\nLetter Review\n\n\nUnsigned Orders\n\n\nEncounter Report\n\n\nCompleted Orders\n\n\nADT Light\n\n\nCRM Reply Message\n\n\nFirst Access Notification\n\n\nWeb: New Patient\n\n\nReferral Message\n\n\nINR Reminder\n\n\nAnticoagulation Enrollment\n\n\nRestricted Messages\n\n\nMedication Messages\n\n\nUnverified Medication Messages\n\n\nOrder set notifications\n\n\nPreference Card Change Request\n\n\nHH Visit Set Auth\n\n\nReporting Workbench\n\n\nHH Visit Set Scheduling\n\n\nHome Care Schedule\n\n\nHH UNLOCKED ASSESSMENT WARNING\n\n\nHH THERAPY UPCODE MESSAGE\n\n\nBed Requested Notice\n\n\nBed Assigned Notice\n\n\nBed Request Completed Notice\n\n\nHome Care Admit\n\n\nHH Auth Cert\n\n\nADT Integrity Message\n\n\nUnviewed Test Results Message\n\n\nNew User Request\n\n\nCommunity File Upload\n\n\nOverdue Message\n\n\nERefill Follow-up\n\n\nRefill Errors\n\n\nUNOS Notification\n\n\nPost Mortem Notification\n\n\nERefill Cosign\n\n\nHome Care Referral\n\n\nHospice Plan of Care Review\n\n\nFile Chart\n\n\nFile Restricted\n\n\nReferral Triage\n\n\nMulti-step Order Entry Task\n\n\nE-Prescribing Errors\n\n\nE-Prescribing Sig Map\n\n\nAdmin Request\n\n\nRx Adjudication Error\n\n\nContinued Care and Services Request\n\n\neReferrals Errors\n\n\nHospice Complete Intake\n\n\nINR Encounters\n\n\nEpisode Notification\n\n\nLetter Queue\n\n\nComm Mgmt-New Provider Request\n\n\nDBC Alert\n\n\nBulk Actions\n\n\nDocumentation Validation Checks\n\n\nGroup Review\n\n\nOrders 2\n\n\nOrders 3\n\n\nREVIEW REPORTS\n\n\nMedication Cancellation\n\n\nNurse Triage Encounter\n\n\nClaims and Remittance Message\n\n\nRadiology Messages\n\n\nRule Compiler Error Report\n\n\nClaim 9999 Error\n\n\nOverlay Resolution Message\n\n\nChartSync Conflict Message\n\n\nStudies to Sign\n\n\nCRM Notification\n\n\nRx Billing Errors\n\n\nRx Build Errors\n\n\nRX Adjust Times Notification\n\n\nRx ADT Notification\n\n\nRx Patient Stored Medications\n\n\nRx Barcode Validation\n\n\nNotification\n\n\nHealth Maintenance\n\n\nOrder Releasing Failures\n\n\nTreatment Plan Verbal Order Cosign\n\n\nOrders Second Sign Required\n\n\nOrders Second Sign Rejected\n\n\nOrders Second Sign Modify\n\n\nOrders Second Sign Notify\n\n\nMyChart Administration Message\n\n\nMyChart IMH Questionnaire Message\n\n\nMyChart Patient Entered Flowsheet Messages\n\n\nMessage to Patient\n\n\nUnread Patient Message Notification\n\n\nPatient Questionnaire Submission (OLD)\n\n\nPatient Insurance Information Update\n\n\nPatient Information Update\n\n\nWPR merge unmerge summary message\n\n\nPatient Access Notification\n\n\nE-Visit Payment Received\n\n\nPatient History Questionnaire Submission\n\n\nPatient Access Login Admin Alert\n\n\nProxy Access Level Transition Locked Records Message\n\n\nE-Visit Message\n\n\nClinical Update Message\n\n\nPatient Preference Update\n\n\nPatient Activation Code Request\n\n\nABN Follow Up\n\n\nKiosk Demographics Verification\n\n\nKiosk Insurance Verification\n\n\nKiosk Emergency Contact Verification\n\n\nKiosk Patient Photo Verification\n\n\nPatient PCP Verification\n\n\nRx SAP Inventory Errors\n\n\nRx Test Adjudication\n\n\nEvent Mon - Outpatient\n\n\nEvent Mon - Inpatient\n\n\nEvent Mon - New Managed Access Patient\n\n\nEvent Mon - Lab Results\n\n\nEvent Mon - Emergency Department\n\n\nEvent Mon - Referrals\n\n\nEvent Mon - Financial\n\n\nEvent Mon - Patient Status\n\n\nEvent Mon - Enrollment\n\n\nHome Care Case Communication\n\n\nMedication Management\n\n\nE-Consult\n\n\nPrior Authorization\n\n\nInterfaced Call Center\n\n\nNurse Triage/Routing Follow-up\n\n\nFailed Fax\n\n\nChart Completion\n\n\nCosign - Clinic Orders\n\n\nTreatment Plan Order Removal Cosign\n\n\nLab Cancel Item\n\n\nLab TAT Warning\n\n\nLab Verification Message\n\n\nLab Redraw Test\n\n\nLab Hold Message\n\n\nLab Ship Message\n\n\nLab Auto Result Checking Message\n\n\nMedia Manager\n\n\nResearch Recruitment\n\n\nResearch Provider Approval\n\n\nQuality Improvement Message\n\n\nAdverse Event Review\n\n\nResearch ADT Event Notification\n\n\nPOC Update Notification\n\n\nVideo Visit\n\n\nProxy Upgrade Request\n\n\nAC SIGNIFICANT WEIGHT CHANGE\n\n\nED Charts\n\n\nED Charting Reminder\n\n\nED Note Accepted\n\n\nFollow-Up Charts\n\n\nIP ROUTING\n\n\nIP CONSULT ORDER ALERT\n\n\nMR ALLERGIES INTERACTION ALERT\n\n\nPatient Drug-Disease Interactions\n\n\nIP INCOMPLETE NOTE\n\n\nMR ALLERGEN LIST\n\n\nDual Sign Orders\n\n\nChart Correction Message\n\n\nID Chart Correction Message\n\n\nBestPractice\n\n\nFeedback\n\n\nProcedure Messages\n\n\nProcedure Prep\n\n\nBlock Notification\n\n\nCardiology Message\n\n\nImaging Peer Review Message\n\n\nActionable Findings Escalation\n\n\nLab-AP: Surgical Pathology\n\n\nLab-AP: Cytology\n\n\nLab-AP: Cytology Rescreen\n\n\nLab-AP: QA Review\n\n\nLab-AP: Pathology Review\n\n\nLab-AP: Gross\n\n\nLab-AP: Histology\n\n\nLab Add-ons\n\n\nOUT OF CONTACT NOTIFICATION\n\n\nRegistry Data Import\n\n\nCoding Query\n\n\nRoute Plan\n\n\nTreatment Summary\n\n\nMR Coding Query\n\n\nPatient Non-Clinical Update\n\n\nPatient Clinical Update\n\n\nMyChart Administration Notification\n\n\nMyChart Notifications\n\n\nPatient Questionnaire Submission\n\n\nPatient Escalation\n\n\nPatient Prescription Message Request\n\n\nTherapy Plan Notifications\n\n\nUpdate Diagnosis\n\n\nTreatment Approval\n\n\nPending Orders\n\n\nStudies to Read\n\n\nOverdue Results Errors\n\n\nResults Error Message\n\n\nInstant Orders Errors\n\n\nDictate Later\n\n\nCE Event Notification\n\n\nCE Request Notification\n\n\nCE Outgoing Patient Query Notification\n\n\nCE Incoming Patient Query Notification\n\n\nCE Outside Messages\n\n\nCE Outside Referral Updates\n\n\nCE International Messages\n\n\nCE Failed Direct Message Notification\n\n\nExternal Chart Correction Message Notification\n\n\nMultidose\n\n\nAdvance Care Plan Update\n\n\nBulk Letters\n\n\neMessaging Notifications\n\n\neMessaging Reports\n\n\neMessaging Dialog\n\n\nCompass Rose Failed Request\n\n\nPush Notification\n\n\nSite Maintenance\n\n\nCharge Router Message\n\n\nPending Mobile Charge Notification\n\n\nBroadcast Message\n\n\nORTHO MISSING VISITS\n\n\nLook-Alikes Saved Search\n\n\nAnesthesia Messages\n\n\nOpen Anesthesia Record\n\n\nMed Review\n\n\nAnesthesia Addendum Messages\n\n\nUnidentified Client Concern\n\n\nTreatment Team Message\n\n\nPatient Request\n\n\nSecondary UR Review"
+    },
+    {
+      "index": 589,
+      "name": "CREATE_INSTANT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The note's create instant."
+    },
+    {
+      "index": 594,
+      "name": "UNSIGNED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag for if the note record is considered an unsigned note.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 603,
+      "name": "DELETE_INSTANT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant when the note is deleted."
+    },
+    {
+      "index": 608,
+      "name": "DELETE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who deleted the note"
+    },
+    {
+      "index": 613,
+      "name": "COSIGNED_NOTE_LINK",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains a contact serial number (CSN) that points to the resident's note being cosigned. Cosigning Note Link (I HNO 34158) is a link for the opposite direction."
+    },
+    {
+      "index": 618,
+      "name": "DATE_OF_SERVIC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The note's date of service."
+    },
+    {
+      "index": 623,
+      "name": "SIGNED_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item points to the ID of the signed note that this note is addending/editing/cosigning."
+    },
+    {
+      "index": 628,
+      "name": "LST_FILED_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the note was last edited."
+    },
+    {
+      "index": 633,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when this row was created or last updated in Clarity."
+    },
+    {
+      "index": 638,
+      "name": "CURRENT_AUTHOR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the current author of the note for indexing purposes."
+    },
+    {
+      "index": 643,
+      "name": "LETTER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of professional billing letter.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAccount Letter\n\n\nFollow-up Letter\n\n\nCampaign Letter"
+    },
+    {
+      "index": 653,
+      "name": "VISIT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Professional billing visit number attached to this note."
+    },
+    {
+      "index": 658,
+      "name": "CRT_INST_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This is a virtual item that gets the create instant (I HNO 17105), in local time format."
+    },
+    {
+      "index": 663,
+      "name": "NOTE_PURPOSE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a virtual item that displays the note purpose. It was previously stored in Note - Purpose (INP-5045).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNORMAL\n\n\nCOSIGN\n\n\nADDENDUM\n\n\nNon Authorized Transcription\n\n\nResident Authorized Transcription\n\n\nAuthorized Transcription\n\n\nTranscriptions with No recepient id"
+    },
+    {
+      "index": 677,
+      "name": "PRIORITY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The priority of the note (Yes = High, No = Routine).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 686,
+      "name": "ACTIVE_FROM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the note becomes active."
+    },
+    {
+      "index": 691,
+      "name": "ACTIVE_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date after which the note becomes inactive."
+    },
+    {
+      "index": 696,
+      "name": "TREAT_SUM_RLS_TO_MYC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a Treatment Summary is released to MyChart.\n\n\n The category values for this column were already listed for column: UNSIGNED_YN"
+    },
+    {
+      "index": 702,
+      "name": "TREAT_SUM_RLS_TO_MYC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the CSN of the Treatment Summary (HNO) that is released to MyChart. If you use IntraConnect, this column stores the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 707,
+      "name": "COMMENT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the last user to edit the internal comment in either the Continued Care and Services Coordination or Payer Communication workflows."
+    },
+    {
+      "index": 712,
+      "name": "COMMENT_EDIT_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant the comment was last edited in either the Continued Care and Services Coordination or Payer Communication workflows. In UTC."
+    },
+    {
+      "index": 717,
+      "name": "CONVERSATION_MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record for the message that was also filed as a note. The text filed in the message and the quicknote will be the same and displaying one of these to the end user should be sufficient."
+    }
+  ]
+}

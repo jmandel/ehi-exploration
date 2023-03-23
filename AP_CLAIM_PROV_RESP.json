@@ -1,0 +1,52 @@
+{
+  "table_name": "AP_CLAIM_PROV_RESP",
+  "description": "This table contains the provider responsibility information for AP Claim procedures.\n\n\n\n\n\nTo link this table�s service line information back to a claim header, join this table to AP_CLAIM_PROC_IDS on the TX_ID column. If you need to report on claim service lines specific to Cost Sharing Reduction (CSR), join this table instead to AP_CLAIM_PROC_IDS_CSR on the TX_ID column.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the AP Claim procedure transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the provider responsibility for this transaction record."
+    },
+    {
+      "index": 12,
+      "name": "PROV_RESP_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The dollar amount for a specific provider responsibility."
+    },
+    {
+      "index": 17,
+      "name": "PRV_RESP_SRC_TP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of provider responsibility.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSubmission Policy\n\n\nBefore Benefit Penalty\n\n\nDenial Via EOB\n\n\nNot Covered By Plan\n\n\nEpisodic Payment Adjustment"
+    },
+    {
+      "index": 29,
+      "name": "EOB_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the EOB code used for denial so that the billed amount was routed to the provider responsibility amount."
+    },
+    {
+      "index": 34,
+      "name": "PROV_RESP_OVRD_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The user-entered override to the dollar amount a specific provider responsibility. If present, the value in this column overrides the value in PRV_RESP_AMT."
+    }
+  ]
+}

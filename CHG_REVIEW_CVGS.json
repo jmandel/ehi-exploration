@@ -1,0 +1,38 @@
+{
+  "table_name": "CHG_REVIEW_CVGS",
+  "description": "Stores all the coverages on the guarantor for this procedure. Note: temporary accounts receivable (TAR) records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table might be lost if you truncate the table.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the subject record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the charge in the charge session. Multiple charges can be associated with this charge session."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple coverages associated with the temporary transaction."
+    },
+    {
+      "index": 17,
+      "name": "OVRD_AUTH_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Lists the coverages on patient."
+    }
+  ]
+}

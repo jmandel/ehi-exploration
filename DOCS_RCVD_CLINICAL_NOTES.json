@@ -1,0 +1,220 @@
+{
+  "table_name": "DOCS_RCVD_CLINICAL_NOTES",
+  "description": "This table contains metadata about clinical notes retrieved from external sources. Each row represents a discrete clinical note received in this document.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "NOTE_REFERENCE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reference ID of the clinical note, which uniquely identifies the note."
+    },
+    {
+      "index": 27,
+      "name": "NOTE_EXTERNAL_UNIQUE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The externally-assigned globally unique identifier for the clinical note."
+    },
+    {
+      "index": 32,
+      "name": "NOTE_LOCAL_UNIQUE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The locally-assigned unique identifier for the clinical note."
+    },
+    {
+      "index": 37,
+      "name": "NOTE_FHIR_DOCREF_RESRC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The logical ID of the FHIR Document Reference resource for the clinical note."
+    },
+    {
+      "index": 42,
+      "name": "NOTE_FHIR_DOCREF_ATTACHT_URL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The URL containing the content of the clinical note."
+    },
+    {
+      "index": 47,
+      "name": "NOTE_SOURCE_ORG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the organization record that represents the original source of this clinical note."
+    },
+    {
+      "index": 52,
+      "name": "NOTE_SOURCE_ORG_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "index": 57,
+      "name": "NOTE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current status of the clinical note.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIncomplete\n\n\nSigned\n\n\nAddendum\n\n\nDeleted\n\n\nRevised\n\n\nCosigned\n\n\nFinalized\n\n\nUnsigned\n\n\nCosign Needed\n\n\nIncomplete Revision\n\n\nCosign Needed Addendum\n\n\nShared"
+    },
+    {
+      "index": 76,
+      "name": "NOTE_SHARED_WITH_PAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicator of whether the clinical note was allowed to be shared with the patient at the source organization for the note. A Yes value does not imply the patient has actually viewed the note.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 85,
+      "name": "NOTE_UCN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mapped type of the clinical note in the Unified Clinical Notes framework. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProgress Notes\n\n\nConsults\n\n\nProcedures\n\n\nH&P\n\n\nDischarge Summary\n\n\nED Notes\n\n\nInitial Assessments\n\n\nED Triage Notes\n\n\nCase Communication\n\n\nOR Nursing\n\n\nOR Surgeon\n\n\nOR PreOp\n\n\nOR PostOp\n\n\nOR Anesthesia\n\n\nAmbulatory Progress Notes\n\n\nAmbulatory H&P Notes\n\n\nAmbulatory Procedure Notes\n\n\nDischarge Instructions\n\n\nED Provider Notes\n\n\nDecision\n\n\nNote to Patient via Portal\n\n\nAnesthesia Preprocedure Evaluation\n\n\nAnesthesia Postprocedure Evaluation\n\n\nH&P (View-Only)\n\n\nInterval H&P Note\n\n\nAnesthesia Procedure Notes\n\n\nAddendum Note\n\n\nCare Plan\n\n\nHospital Course\n\n\nSubjective & Objective\n\n\nL&D Delivery Note\n\n\nTelephone Encounter\n\n\nPatient Instructions\n\n\nAssessment & Plan Note\n\n\nCommunication Body\n\n\nED AVS Snapshot\n\n\nLetter\n\n\nLactation Note\n\n\nCommittee Review\n\n\nIP AVS Snapshot\n\n\nMR AVS Snapshot\n\n\nPharmacy Enrollment Note\n\n\nPre-Procedure Assessment\n\n\nDischarge Instr - Supplementary Instructions\n\n\nDischarge Instr - AVS First Page\n\n\nDischarge Instr - Meds\n\n\nDischarge Instr - Pharmacy\n\n\nDischarge Instr - Activity\n\n\nDischarge Instr - Diet\n\n\nDischarge Instr - Appointments\n\n\nDischarge Instr - Lab\n\n\nDischarge Instr - Other Orders\n\n\nDischarge Instr - Other Info\n\n\nCAA (Care Area Assessment)\n\n\nNursing Note\n\n\nACP (Advance Care Planning)\n\n\nERAS\n\n\nResult Encounter Note\n\n\nRadiation Planning Notes\n\n\nRadiation Completion Notes\n\n\nForm\n\n\nBH Treatment Plan\n\n\nGroup Note\n\n\nVideo Visit Routing Comment\n\n\nE-Visit Routing Comment\n\n\nClaim Note\n\n\nDialysis Plan of Care Note\n\n\nHome Health Plan of Care Certification Statement\n\n\nHome Health Plan of Care\n\n\nSMD Notes\n\n\nUnmapped External Note\n\n\nFiltered External Note\n\n\nCode Documentation\n\n\nSedation Documentation\n\n\nJDT PCOD\n\n\nDental Procedure Details\n\n\nHome Health \n\n\nLTC Provider Review\n\n\nChart Abstraction\n\n\nInpatient Self-Administration Sheet\n\n\nOutpatient Self-Administration Sheet\n\n\nInpatient Medication Chart\n\n\nOutpatient Medication Chart\n\n\nHospice\n\n\nHospice Plan of Care\n\n\nHospice Non-Covered\n\n\nHard Deleted Note"
+    },
+    {
+      "index": 179,
+      "name": "NOTE_TYPE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the type of the clinical note."
+    },
+    {
+      "index": 184,
+      "name": "NOTE_LAST_FILED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the clinical note was last meaningfully modified at the note's source organization."
+    },
+    {
+      "index": 189,
+      "name": "NOTE_CREATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the clinical note was originally created at the note's source organization."
+    },
+    {
+      "index": 194,
+      "name": "NOTE_LAST_SIGNED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the clinical note was most recently signed or co-signed."
+    },
+    {
+      "index": 199,
+      "name": "NOTE_LAST_SIGNER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the individual that most recently signed or co-signed the clinical note."
+    },
+    {
+      "index": 204,
+      "name": "NOTE_AUTHOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the author of the clinical note."
+    },
+    {
+      "index": 209,
+      "name": "NOTE_AUTHOR_TYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the type of provider that authored the clinical note."
+    },
+    {
+      "index": 214,
+      "name": "NOTE_AUTHOR_SERVICE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the service associated with the authorship of the clinical note."
+    },
+    {
+      "index": 219,
+      "name": "NOTE_AUTHOR_SPECIALTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mapped provider specialty of the author of the clinical note.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 225,
+      "name": "NOTE_AUTHOR_SPECIALTY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text description of the provider specialty of the author of the clinical note."
+    },
+    {
+      "index": 230,
+      "name": "AUTORECONCILED_UCN_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record automatically created in the local chart from this received clinical note."
+    },
+    {
+      "index": 235,
+      "name": "NOTE_FILTER_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason this external clinical note should be filtered and thus not auto-reconciled into the local chart. Calculated at the time the note is received and saved.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim Derivation: Procedure Code Inclusion/Exclusion List\n\n\nClaim Derivation: Missing Provider\n\n\nClaim Derivation: Sensitive Diagnosis\n\n\nClaim Derivation: Missing Procedure Start Date\n\n\nClaim Derivation: Excluded Procedure Modifier\n\n\nSource Organization Unknown\n\n\nSource Organization Mismatch\n\n\nSource Organization Is Self\n\n\nClinical Note Type Exclusion List\n\n\nClinical Note Missing Service Instant\n\n\nClinical Note Missing Last Filed Instant\n\n\nClinical Note Missing Author Name\n\n\nDispense Cancellation\n\n\nSame Day as Internal Encounter\n\n\nMissing or Invalid Binary URL\n\n\nFiltered or Missing Source Note\n\n\nDocumentReference Status not Current\n\n\nClaim Derivation: Excluded Linked Diagnoses\n\n\nClaim Derivation: Missing Encounter Start Date"
+    },
+    {
+      "index": 261,
+      "name": "NOTE_ASSOC_EVENT_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reference ID of the encounter associated with the clinical note. Is associated with a value from I DXR 8010."
+    },
+    {
+      "index": 266,
+      "name": "NOTE_SERVICE_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of service associated with the clinical note."
+    },
+    {
+      "index": 271,
+      "name": "NOTE_SRC_DOCREF_RESRC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the FHIR Document Reference resource for the source note of the clinical note. Populated when the clinical note is an interval note."
+    },
+    {
+      "index": 276,
+      "name": "NOTE_REMOVED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the note is no longer in the received note list\n\n\n The category values for this column were already listed for column: NOTE_SHARED_WITH_PAT_YN"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "table_name": "AP_CLAIM_PX_AMT_LV",
+  "description": "This table contains the allowed amount adjudication levels for AP Claim procedures.\n\n\n\n\n\nTo link this table�s service line information back to a claim header, join this table to AP_CLAIM_PROC_IDS on the TX_ID column. If you need to report on claim service lines specific to Cost Sharing Reduction (CSR), join this table instead to AP_CLAIM_PROC_IDS_CSR on the TX_ID column.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the AP Claim procedure transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ALLOW_AMT_ADJ_LVLS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The allowed amount adjudication levels for the procedure. Information from this caret (^) delimited string is parsed out in subsequent columns."
+    },
+    {
+      "index": 17,
+      "name": "ALWD_AMT_LVL_PMT_LV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The level of payment for the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 22,
+      "name": "ALWD_AMT_LVL_CVD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The covered amount of the allowed amount for the service line of the AP Claim."
+    },
+    {
+      "index": 27,
+      "name": "ALWD_AMT_LVL_LM_TYP",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The limit type of the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 32,
+      "name": "ALWD_AMT_PMT_MECH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The payment mechanism for the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 37,
+      "name": "ALWD_AMT_LVL_PRICE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The price of the service line allowed amount on the AP Claim."
+    },
+    {
+      "index": 42,
+      "name": "ALWD_AMT_LVL_RATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rate used in determining the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 47,
+      "name": "ALWD_AMT_LVL_HMU",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The conversion factor table used to price a service line using RVU pricing."
+    },
+    {
+      "index": 52,
+      "name": "ALWD_AMT_LVL_HMU_TABLE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name for the conversion factor table."
+    },
+    {
+      "index": 57,
+      "name": "ALWD_AMT_LVL_TOS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The type of service used to get the conversion factor in Relative Value Unit (RVU) pricing."
+    },
+    {
+      "index": 62,
+      "name": "ALWD_AMT_LVL_UNITS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The total number of time units used to determine the price of an anesthesia procedure on an AP Claim."
+    },
+    {
+      "index": 67,
+      "name": "ALWD_AMT_LVL_DSCNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Discount percentage used in calculating the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 72,
+      "name": "ALWD_AMT_LVL_MULT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The multiplier or conversion factor value used in calculating the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 77,
+      "name": "ALWD_AMT_RVU_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Relative Value Unit (RVU) value of the procedure on the service line of the AP Claim. This is only stored in level 1."
+    },
+    {
+      "index": 82,
+      "name": "ALWD_AMT_LPP_CMMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment added by the pricing programming point, which was used to determine the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 87,
+      "name": "ALWD_AMT_LVL_FSM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the fee schedule map used to determine the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 92,
+      "name": "ALWD_AMT_LVL_FSM_FEE_SCHEDULE_MAP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name for the fee schedule map record."
+    },
+    {
+      "index": 97,
+      "name": "ALWD_AMT_LVL_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When a fee schedule map is used to determine the allowed amount of the service line on the AP claim, this column contains the ZIP Code where the service was performed."
+    },
+    {
+      "index": 102,
+      "name": "ALWD_AMT_LVL_UNSUPP_LPP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Set to \"Y\" if the pricing programming point is not supported, resulting in the execution of the pricing programming point being skipped. Set to \"N\" otherwise."
+    },
+    {
+      "index": 107,
+      "name": "ALWD_AMT_LVL_FEE_SCHED1_PRICE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The rate associated with the first fee schedule used to determine the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 112,
+      "name": "ALWD_AMT_LVL_FEE_SCHED2_PRICE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The rate associated with the second fee schedule used to determine the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 117,
+      "name": "ALWD_AMT_SVC_PAYMENT_MECH_C",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The payment mechanism used as a result of either minimum of options or maximum of options to determine the allowed amount of the service line on the AP Claim."
+    },
+    {
+      "index": 122,
+      "name": "ALWD_AMT_LVL_IS_STOP_LOSS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Set to \"Y\" if the level of payment for the allowed amount of the service line on the AP Claim is a stop loss level, \"N\" otherwise."
+    }
+  ]
+}

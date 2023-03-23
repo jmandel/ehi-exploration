@@ -1,0 +1,339 @@
+{
+  "table_name": "CAL_COMM_HX",
+  "description": "Stores the history of communications. Each column audits a value in CAL_COMM_TRACKING of the same name, unless otherwise specified in the column description.",
+  "primary_key": {
+    "column_name": "COMM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "COMM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the communication record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "COMM_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the communication type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Basket\n\n\nFax\n\n\nMail\n\n\nTelephone\n\n\nPager\n\n\nEmail\n\n\nWeb\n\n\nEvent\n\n\nInterface\n\n\nText Message\n\n\nEmail and Text Message\n\n\nExternal Vendor\n\n\nIn Person\n\n\nIn Basket Review\n\n\nBest Practice Advisory Acknowledgment\n\n\nPharmacy\n\n\nPatient Portal Message\n\n\nNemSMS\n\n\nOrder placed via recommendation BPA\n\n\nPrint Group Review\n\n\nTransfer Request Order\n\n\nNo communication enabled\n\n\nVideo\n\n\nChat\n\n\nPayor Communication"
+    },
+    {
+      "index": 44,
+      "name": "COMM_PURPOSE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the communication purpose.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNotification of Decision\n\n\nRequest for Additional Information\n\n\nNotification of Extension\n\n\nRequest to Expedite\n\n\nRequest for Authorization\n\n\nReceipt of Additional Information\n\n\nDenial of Request to Expedite\n\n\nP2P Review Offer\n\n\nP2P Review Completed\n\n\nNotification of Approval\n\n\nNotification of Denial"
+    },
+    {
+      "index": 62,
+      "name": "LOGIN_DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the user's login department. This corresponds to CAL_COMM_TRACKING.CONTACT_LOGIN_DEPARTMENT_ID."
+    },
+    {
+      "index": 67,
+      "name": "COMM_INSTANT_LOCAL_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Stores the instant of the communication in local time."
+    },
+    {
+      "index": 72,
+      "name": "COMM_END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant in UTC the communication ended."
+    },
+    {
+      "index": 77,
+      "name": "COMM_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the comment on the communication."
+    },
+    {
+      "index": 82,
+      "name": "COMM_CMT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the associated note."
+    },
+    {
+      "index": 87,
+      "name": "CALLER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the caller's name."
+    },
+    {
+      "index": 92,
+      "name": "PHONE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phone number used for the communication."
+    },
+    {
+      "index": 97,
+      "name": "PHONE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the type of phone communication.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMobile\n\n\nPager\n\n\nHome Fax\n\n\nOther Fax\n\n\nAssistant\n\n\nTTY\n\n\nHome Phone\n\n\nWork Phone\n\n\nVideo Phone"
+    },
+    {
+      "index": 113,
+      "name": "CALL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the call type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIncoming\n\n\nOutgoing"
+    },
+    {
+      "index": 122,
+      "name": "CALL_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the outcome.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo Answer/Busy\n\n\nLeft Message\n\n\nNot Available\n\n\nCanceled\n\n\nReminder rule failed\n\n\nDuplicate reminder\n\n\nDelivery type mismatch\n\n\nNo email address on file\n\n\nMissing or Invalid Number\n\n\nIncomplete setup to send messages\n\n\nPatient updates disabled\n\n\nDuplicate update\n\n\nPatient not accepting updates\n\n\nPatient is not signed up for updates\n\n\nPhone not allowed\n\n\nSent to Communication Vendor\n\n\nPatient received a text message, but not an email\n\n\nPatient received an email, but not a text message"
+    },
+    {
+      "index": 147,
+      "name": "LAB_CALL_TOPIC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the lab call topic.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nCritical Result\n\n\nMissing Items"
+    },
+    {
+      "index": 157,
+      "name": "COMM_CONTACT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the type of record being contacted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient\n\n\nProvider\n\n\nEmployer Group\n\n\nCarrier\n\n\nGuarantor Account\n\n\nNetwork\n\n\nVendor\n\n\nPayer\n\n\nPremium Billing Account\n\n\nEmployee\n\n\nPool\n\n\nAd Hoc\n\n\nPharmacy\n\n\nWorker\n\n\nDepartment\n\n\nProspective Patient\n\n\nSubmitter\n\n\nAuthorized Representative\n\n\nResponsible Party\n\n\nFacility"
+    },
+    {
+      "index": 184,
+      "name": "CONTACT_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the provider being contacted."
+    },
+    {
+      "index": 189,
+      "name": "CONTACT_PLAN_GRP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the employer group being contacted. This corresponds to CAL_COMM_TRACKING.CONTACT_EMPGROUP_ID."
+    },
+    {
+      "index": 194,
+      "name": "CONTACT_PLAN_GRP_ID_PLAN_GRP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer group record"
+    },
+    {
+      "index": 199,
+      "name": "CONTACT_CARRIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the carrier being contacted."
+    },
+    {
+      "index": 204,
+      "name": "CONTACT_CARRIER_ID_CARRIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the carrier record."
+    },
+    {
+      "index": 209,
+      "name": "CONTACT_ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the guarantor being contacted."
+    },
+    {
+      "index": 214,
+      "name": "CONTACT_NETWORK_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the network being contacted."
+    },
+    {
+      "index": 219,
+      "name": "CONTACT_NETWORK_ID_NETWORK_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the network."
+    },
+    {
+      "index": 224,
+      "name": "CONTACT_VENDOR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the vendor being contacted."
+    },
+    {
+      "index": 229,
+      "name": "CONTACT_VENDOR_ID_VENDOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the vendor."
+    },
+    {
+      "index": 234,
+      "name": "CONTACT_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the payer being contacted."
+    },
+    {
+      "index": 239,
+      "name": "CONTACT_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 244,
+      "name": "CONTACT_PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the premium billing account being contacted. This corresponds to CAL_COMM_TRACKING.CONTACT_PBA_ID."
+    },
+    {
+      "index": 249,
+      "name": "CONTACT_REGISTRY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the pool being contacted. This corresponds to CAL_COMM_TRACKING.CONTACT_HIP_ID."
+    },
+    {
+      "index": 254,
+      "name": "CONTACT_REGISTRY_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "index": 259,
+      "name": "CONTACT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the user being contacted."
+    },
+    {
+      "index": 264,
+      "name": "CONTACT_ADHOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the name of an ad hoc contact."
+    },
+    {
+      "index": 269,
+      "name": "CONTACT_ADHOC_FAX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the fax number of an ad hoc contact."
+    },
+    {
+      "index": 274,
+      "name": "CONTACT_ADHOC_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phone number of an ad hoc contact."
+    },
+    {
+      "index": 279,
+      "name": "CONTACT_ADHOC_ADDR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the address of an ad hoc contact."
+    },
+    {
+      "index": 284,
+      "name": "CONTACT_ADHOC_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the city of an ad hoc contact."
+    },
+    {
+      "index": 289,
+      "name": "CONTACT_ADHOC_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the state of an ad hoc contact. This corresponds to CAL_COMM_TRACKING.CONTACT_ADHOC_STT_C.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 295,
+      "name": "CONTACT_ADHOC_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the zip code of an ad hoc contact."
+    },
+    {
+      "index": 300,
+      "name": "CONTACT_ADHOC_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the country of an ad hoc contact. This corresponds to CAL_COMM_TRACKING.CONTACT_ADHOC_CTR_C and can be translated using ZC_COUNTRY_2.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 306,
+      "name": "CONTACT_PHARMACY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the pharmacy being contacted. This corresponds to CAL_COMM_TRACKING.CONTACT_PHR_ID."
+    },
+    {
+      "index": 311,
+      "name": "CONTACT_WORKER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the worker being contacted."
+    },
+    {
+      "index": 316,
+      "name": "CONTACT_WORKER_PAGER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the category identifier of the worker pager being contacted. This can be translated using ZC_DEFAULT_PAGER.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 322,
+      "name": "CONTACT_PROSPECT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the prospective party being contacted."
+    },
+    {
+      "index": 327,
+      "name": "CONTACT_SUBMITTER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique identifier of the submitter being contacted."
+    },
+    {
+      "index": 332,
+      "name": "CONTACT_SUBMITTER_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the submitter record."
+    },
+    {
+      "index": 337,
+      "name": "CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The history change user is the user who triggered the update to record this history line. This means that the user who recorded this line changed the state of the record from the values on this line and set the values on the following line or the current state of the record if this is the last line in the history. This differs from I CAL 8010 which tracks the entry user who is normally the user who made the actual communication."
+    }
+  ]
+}

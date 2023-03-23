@@ -1,0 +1,59 @@
+{
+  "table_name": "DC_VN_PRV_ACTN_ADT",
+  "description": "Table for discharge orders part of the ED navigator provider audit.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "DC_VN_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier of the provider who took an action on the discharge orders in the emergency department navigator."
+    },
+    {
+      "index": 17,
+      "name": "DC_VN_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason category ID for the action taken on an order record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo action\n\n\nDiscontinue on discharge\n\n\nResume on discharge\n\n\nPrescribe\n\n\nModify\n\n\nCancel\n\n\nNo Change"
+    },
+    {
+      "index": 31,
+      "name": "DC_VN_ACT_REASON",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason for the action taken on an order record. This is extracted as the category title."
+    },
+    {
+      "index": 36,
+      "name": "DC_VN_ACT_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant an action was taken on discharge orders in an emergency department navigator."
+    },
+    {
+      "index": 41,
+      "name": "DC_VN_PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the contact where the discharge navigator was used. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    }
+  ]
+}

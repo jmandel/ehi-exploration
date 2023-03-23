@@ -1,0 +1,514 @@
+{
+  "table_name": "ACCOUNT_2",
+  "description": "Accounts contain information about billing for services, while coverages contain information about insurance payors, benefits, subscribers, and members. This table contains one row for each account record in your system. This table is the continuation of the ACCOUNT table.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the account record."
+    },
+    {
+      "index": 7,
+      "name": "FOL_UP_LEVEL_CUR",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Current follow up level."
+    },
+    {
+      "index": 12,
+      "name": "EMPL_ID_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Employee ID number of the guarantor."
+    },
+    {
+      "index": 17,
+      "name": "BILLING_NOTE_EXP_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Billing note expiration date."
+    },
+    {
+      "index": 22,
+      "name": "ALT_BILL_ADDR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the Alternate Billing Address is used. \"Y\" indicates that the Alternate Billing Address is used. \"N\" indicates that the Alternate Billing Address is not used.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 31,
+      "name": "ALT_BILL_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the city on the Alternate Billing Address."
+    },
+    {
+      "index": 36,
+      "name": "ALT_BILL_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value of the state on the Alternate Billing Address.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 42,
+      "name": "ALT_BILL_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the zip code on the Alternate Billing Address."
+    },
+    {
+      "index": 47,
+      "name": "RQG_ACCT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this is a requisition grouper account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 56,
+      "name": "GUAR_SYNC_OWNER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "When using guarantor account syncing, this item is the record pointer to the owning guarantor account, if one exists."
+    },
+    {
+      "index": 61,
+      "name": "EAR_ISOLATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This flag is set if the guarantor is considered \"isolated\" for patient data restrictions.  Isolated guarantors are guarantors created from isolated patients.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes\n\n\nNeeds review"
+    },
+    {
+      "index": 71,
+      "name": "CVG_LAST_VERIF_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Contains the date that the corresponding coverage was last verified."
+    },
+    {
+      "index": 76,
+      "name": "USER_CVG_LST_VER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the date that the corresponding coverage was last verified."
+    },
+    {
+      "index": 81,
+      "name": "EMPLOYMENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the guarantor was employed."
+    },
+    {
+      "index": 86,
+      "name": "EMPLOYER_FAX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The guarantor's employer's fax number."
+    },
+    {
+      "index": 91,
+      "name": "FAX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fax number associated with this guarantor account."
+    },
+    {
+      "index": 96,
+      "name": "LAST_BILLED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Last statement's billed amount"
+    },
+    {
+      "index": 101,
+      "name": "LAST_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Last statement's insurance amount"
+    },
+    {
+      "index": 106,
+      "name": "LAST_CLAIM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Last date the claim was produced"
+    },
+    {
+      "index": 111,
+      "name": "BILL_STATUS_EXP_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Billing status expiration date"
+    },
+    {
+      "index": 116,
+      "name": "PMT_PLAN_FREQ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Payment plan frequency\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWeekly\n\n\nSemi-Monthly\n\n\nMonthly"
+    },
+    {
+      "index": 126,
+      "name": "ACCT_VIP_STAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether there is VIP status for this account. Y indicates the account has VIP status. N indicates the account does not have VIP status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 135,
+      "name": "HBMYC_LST_ST_V_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when a Hospital Billing statement was last viewed in MyChart by this guarantor. This field will be updated when either a guarantor-level or hospital account-level statement is viewed in MyChart for this guarantor.  The date and time for this column is stored in Universal Coordinated Time (UTC) and can be converted to local time by using the EFN_UTC_TO_LOCAL Clarity database function."
+    },
+    {
+      "index": 140,
+      "name": "HBMYC_LST_DB_V_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when a Hospital Billing detail bill was last viewed in MyChart by this guarantor.  The date and time for this column is stored in Universal Coordinated Time (UTC) and can be converted to local time by using the EFN_UTC_TO_LOCAL Clarity database function."
+    },
+    {
+      "index": 145,
+      "name": "HBMYC_LST_LT_V_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when a Hospital Billing letter was last viewed in MyChart by this guarantor. This field will be updated when either a guarantor-level or hospital account-level letter is viewed in MyChart for this guarantor.  The date and time for this column is stored in Universal Coordinated Time (UTC) and can be converted to local time by using the EFN_UTC_TO_LOCAL Clarity database function."
+    },
+    {
+      "index": 150,
+      "name": "CREDIT_SCORE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The guarantor's credit score."
+    },
+    {
+      "index": 155,
+      "name": "PROPENSITY_TO_PAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Category describing the likelihood for this guarantor to pay.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 161,
+      "name": "FOL_UP_LAST_LET_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date the last follow-up letter was sent."
+    },
+    {
+      "index": 166,
+      "name": "UNDIST_CREDIT_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total account undistributed credit balance"
+    },
+    {
+      "index": 171,
+      "name": "UNDIST_INS_CR_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Account undistributed credit balance - insurance credits only."
+    },
+    {
+      "index": 176,
+      "name": "UNDIST_SP_CR_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Account undistributed credit balance - self-pay credits only."
+    },
+    {
+      "index": 181,
+      "name": "DELIVERY_POINT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The billing delivery point is a two digit extension to the nine digit US zip code, with values from 00 to 99."
+    },
+    {
+      "index": 186,
+      "name": "MILITARY_RANK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the military rank to which the patient's guarantor belongs.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 193,
+      "name": "BRANCH_OF_SERVICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the military branch of service to which the guarantor belongs.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 200,
+      "name": "MIL_COMPONENT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the guarantor's military component, which is used to distinguish between guarantors who are on regular active duty and those who are members of one of the augmenting support groups.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 207,
+      "name": "MIL_PAY_GRADE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the military pay grade to which the patient's guarantor belongs.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 214,
+      "name": "DIST_LATER_COUNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of undistributed credits that are marked as for later distribution in this account."
+    },
+    {
+      "index": 219,
+      "name": "GUAR_EMPR_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category value corresponding to the county in which the guarantor's employer is located.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 225,
+      "name": "ALT_BILL_COUNTY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the alternate county of the guarantor's billing address.\n\n\n The category values for this column were already listed for column: GUAR_EMPR_COUNTY_C_NAME"
+    },
+    {
+      "index": 231,
+      "name": "ALT_BILL_COUNTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the alternate country of the guarantor's billing address.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 237,
+      "name": "ALT_BILL_HOUSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The alternate billing house number for the guarantor."
+    },
+    {
+      "index": 242,
+      "name": "ALT_BILL_DISTRICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the alternate district of the guarantor's billing address.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 248,
+      "name": "STMT_HOLD_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The most recent date on which the account was held from the Professional Billing (PB) statement processing."
+    },
+    {
+      "index": 253,
+      "name": "STMT_HOLD_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason why the account was held in Professional Billing statement processing.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMinimum guarantor account balance not met\n\n\nCredit balance on the guarantor account\n\n\nGuarantor account already on another run\n\n\nGuarantor account status not to bill\n\n\nMinimum days between two statements not met\n\n\nGuarantor address has no ZIP code\n\n\nCharge Homing is turned on and guarantor account is not in its home\n\n\nSkip guarantor account extension\n\n\nNo professional balance and no hospital account to bill\n\n\nNo hospital account to bill\n\n\nGuarantor account has a hospital account with a self-pay payment/adjustment posted today\n\n\nGuarantor account has a hospital account on payment plan that did not qualify\n\n\nForm not found\n\n\nCannot demand if form requires importing images\n\n\nUndistributed non self-pay credits\n\n\nUndistributed self-pay payment\n\n\nZero Charge\n\n\nStatement already processed this month for payment plan\n\n\nSmartText and Classic forms cannot be included in the same run\n\n\nCannot send tickler to guarantor for paperless bill\n\n\nMinimum days between guarantor detail bill and statement not met\n\n\nPayment plan already paid for this month\n\n\nGuarantor has a balance notification scheduled or recently sent\n\n\nGuarantor billing status not to bill\n\n\nStatement intervention\n\n\nGuarantor does not have new activity\n\n\nGuarantor does not have transactions to bill\n\n\nExcluded during printing\n\n\nGuarantor special billing status set to hold statements\n\n\nVisit auto pay scheduled\n\n\nCannot send another statement before processing auto pay from the last statement\n\n\nVoided transactions\n\n\nPayor hold\n\n\nTransaction skip function\n\n\nContested\n\n\nDebit adjustments\n\n\nFully Paid Insurance Activity\n\n\nVisit is not discharged\n\n\nPosted Not Billed\n\n\nTransaction skip extension\n\n\nService date range\n\n\nSmall balance write off\n\n\nClient guarantor\n\n\nClient next statement date is not before end batch date"
+    },
+    {
+      "index": 304,
+      "name": "MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the MyChart account that is linked to this guarantor record. This is used when the guarantor is not a patient in the system but needs to have access to the billing information in MyChart."
+    },
+    {
+      "index": 309,
+      "name": "GUAR_SUBDIV_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Capture the guarantor's country subdivision code.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 316,
+      "name": "MOBILE_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Mobile phone for guarantor accounts."
+    },
+    {
+      "index": 321,
+      "name": "FOL_UP_LAST_LEVEL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This retains the value of the current follow up level (I EAR 3007) when a letter was last generated."
+    },
+    {
+      "index": 326,
+      "name": "PMT_PLAN_DLQ_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the sum of delinquent payment plan payments."
+    },
+    {
+      "index": 331,
+      "name": "PMT_PLAN_DUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This includes both the delinquent amount and the amount due for the current month."
+    },
+    {
+      "index": 336,
+      "name": "PMT_PLAN_PAID_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the total amount of the payment plan payments."
+    },
+    {
+      "index": 341,
+      "name": "PMT_PLAN_REMAIN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This is the remaining amount of the payment plan."
+    },
+    {
+      "index": 346,
+      "name": "HB_EXT_AR_SELF_PAY_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Hospital Billing (HB) external Accounts Receivable (AR) self-pay balance for the account."
+    },
+    {
+      "index": 351,
+      "name": "HB_EXT_AR_INS_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Hospital Billing (HB) external Accounts Receivable (AR) insurance balance for the account."
+    },
+    {
+      "index": 356,
+      "name": "HB_EXT_AR_UNDIST_BAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Hospital Billing (HB) external Accounts Receivable (AR) undistributed balance for the account."
+    },
+    {
+      "index": 361,
+      "name": "HB_LAST_AUTOPAY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The most recent Auto Pay date for guarantor set up with a payment plan on Auto Pay."
+    },
+    {
+      "index": 366,
+      "name": "EMAIL_ADDRESS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Email address documented on the guarantor.   Any clarity report looking for the guarantor's email address must search in the following sequence, and use the first found one: - The primary email address from the associated patient of the guarantor.  - The email address from the MyChart account associated with the guarantor. - The email address returned by this clarity column."
+    },
+    {
+      "index": 371,
+      "name": "ADDR_CHG_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who initiated the linked address changes."
+    },
+    {
+      "index": 376,
+      "name": "ADDR_CHG_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant that the linked address change was initiated."
+    },
+    {
+      "index": 381,
+      "name": "ADDR_CHG_SOURCE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source record that initiated the linked address changes."
+    },
+    {
+      "index": 386,
+      "name": "PREFERENCE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID number of the communication preferences record for the guarantor."
+    },
+    {
+      "index": 391,
+      "name": "PMT_PLAN_CURRENT_MISS_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item will store the number of payments that are currently late on the payment plan"
+    },
+    {
+      "index": 396,
+      "name": "PMT_PLAN_TOTAL_MISS_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item will store the total number of missed payments on the account's payment plan."
+    },
+    {
+      "index": 401,
+      "name": "PMT_PLAN_AUTOPAY_CARD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Credit card associated with the payment plan. This credit card will be charged automatically when an installment is due for the payment plan.  This column will be deprecated in the future release as the payment plan is being transitioned to use the scheduled payment framework.  Once the transition is complete, reference the scheduled payment record for the current credit card."
+    },
+    {
+      "index": 406,
+      "name": "PB_PP_AUTOPAY_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The scheduled payment record (BSP) associated with the guarantor's payment plan. Scheduled payment record is used to define the auto pay payment plan terms, including the payment method, day to trigger payment, and monthly amount."
+    },
+    {
+      "index": 411,
+      "name": "PMT_PLAN_CURR_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If Guarantor is on autopayment plan using Scheduled Payment architecture, this item stores the monthly amount to be used for this payment plan cycle if the value is different than the updated payment plan monthly amount in payment plan amount."
+    },
+    {
+      "index": 416,
+      "name": "KI_GUAR_ACCT_VERIF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item indicates the most recent date the patient verified the self-guarantor billing information is correct in Welcome."
+    },
+    {
+      "index": 421,
+      "name": "KI_GUAR_ACCT_VERIF_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates the most recent patient-selected status of whether the self-guarantor billing information is correct in Welcome.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nKiosk - Needs Review\n\n\nKiosk - Verified"
+    },
+    {
+      "index": 430,
+      "name": "LAST_PB_BAL_NOTIF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the last balance notification was sent to the guarantor for their Professional Billing (PB) balances."
+    },
+    {
+      "index": 435,
+      "name": "LAST_HB_BAL_NOTIF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the last balance notification was sent to the guarantor for their Hospital Billing (HB) / Single Billing Office (SBO) balances."
+    },
+    {
+      "index": 440,
+      "name": "PB_SELF_PAY_BAL_UPDATE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is updated based on changes to patient balance."
+    },
+    {
+      "index": 445,
+      "name": "HB_SELF_PAY_BAL_UPDATE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is updated based on changes to Hospital Billing (HB) self-pay balance (I EAR 20003)."
+    }
+  ]
+}

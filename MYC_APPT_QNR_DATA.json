@@ -1,0 +1,73 @@
+{
+  "table_name": "MYC_APPT_QNR_DATA",
+  "description": "Table to store the general questionnaire attached to upcoming appointment.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 27,
+      "name": "MYC_APPT_QUESR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of a questionnaire assigned to an upcoming appointment."
+    },
+    {
+      "index": 32,
+      "name": "MYC_APPT_QUESR_ID_FORM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the form associated with the questionnaire."
+    },
+    {
+      "index": 37,
+      "name": "MYC_QUESR_START_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the start date of when a questionnaire can be shown for an upcoming appointment,"
+    },
+    {
+      "index": 42,
+      "name": "PAT_APPT_QNR_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the patient-entered appointment questionnaire.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAssigned\n\n\nStarted at home\n\n\nStarted in facility\n\n\nReviewable\n\n\nCompleted\n\n\nIncomplete\n\n\nHidden\n\n\nTemporarily hidden"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "table_name": "ACCT_HB_STMT_RSN",
+  "description": "This table contains Hospital Billing statement processing hold reasons.",
+  "primary_key": {
+    "column_name": "ACCT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account record for this row."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "STMT_ERROR_LIST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the current list of HB statement processing hold reasons at the guarantor level\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo hospital account to bill\n\n\nGuarantor account already on another run\n\n\nGuarantor account status not to bill\n\n\nMinimum days between two statements not met\n\n\nGuarantor address has no ZIP code\n\n\nForm not found\n\n\nCredit balance on the guarantor account\n\n\nGuarantor account has a hospital account with a self-pay payment/adjustment posted today\n\n\nGuarantor account has a hospital account on payment plan that did not qualify\n\n\nMinimum guarantor account balance not met\n\n\nCharge Homing is turned on and guarantor account is not in its home\n\n\nSkip guarantor account extension\n\n\nCannot demand if form requires importing images\n\n\nStatement already processed this month for payment plan\n\n\nSmartText and Classic forms cannot be included in the same run\n\n\nCannot send tickler to guarantor for paperless bill\n\n\nMinimum days between guarantor detail bill and statement not met\n\n\nPayment plan already paid for this month\n\n\nGuarantor has a balance notification scheduled or recently sent\n\n\nVisit auto pay scheduled\n\n\nCannot send another statement before processing auto pay from the last statement"
+    }
+  ]
+}

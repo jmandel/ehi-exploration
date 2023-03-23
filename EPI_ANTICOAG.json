@@ -1,0 +1,101 @@
+{
+  "table_name": "EPI_ANTICOAG",
+  "description": "This contains episode information pertaining to anticoagulation therapy.   Most fields are accessed through the anticoagulation enrollment form. There is a corresponding encounter table, PAT_ENC_ANTICOAG.  ***Do not assume that all patients on anticoagulation therapy have a record in this table.  The best way to determine anticoagulation episodes is by using the SUM_BLK_TYPE_ID in the EPISODE table.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the episode of care record.  NOTE: This table is filtered to include only non-inpatient episodes.  Inpatient episode data can be found in the table IP_EPISODE_LINK (first released with system 2002)."
+    },
+    {
+      "index": 7,
+      "name": "INR_GOAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Data item to store the INR goal, which is a range, for this episode of anticoagulation\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n1.5-2.0\n\n\n1.5-2.5\n\n\n2.0-3.0\n\n\n2.5-3.5\n\n\n3.0-4.0\n\n\n3.0-4.5\n\n\n3.5-4.5"
+    },
+    {
+      "index": 21,
+      "name": "RESPONSIBLE_HIP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Responsible group for anticoagulation therapy"
+    },
+    {
+      "index": 26,
+      "name": "RESPONSIBLE_HIP_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "index": 31,
+      "name": "TARGET_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Target end date of anticoagulation therapy"
+    },
+    {
+      "index": 36,
+      "name": "LAB_LOCATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient's preferred INR lab location\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClinic Lab\n\n\nOutside Lab\n\n\nAnticoagulation Clinic\n\n\nHome Draw"
+    },
+    {
+      "index": 47,
+      "name": "PREFERRED_LAB_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the lab that is the patient's preferred lab for international normalized ratio (INR) tests. This column is frequently used to link to the CLARITY_LLB table."
+    },
+    {
+      "index": 52,
+      "name": "PREFERRED_LAB_ID_LLB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Interface laboratory name."
+    },
+    {
+      "index": 57,
+      "name": "WEEKLY_MAX_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Weekly maximum coumadin/warfarin dose"
+    },
+    {
+      "index": 62,
+      "name": "DISCONT_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason for discontinuing the anticoagulation therapy.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 68,
+      "name": "NEXT_INR_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the patient should return for their next INR check."
+    },
+    {
+      "index": 73,
+      "name": "INDEFINITE_TREAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies if the patient's treatment is indefinite.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 82,
+      "name": "REFERRING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": true,
+      "description": "Referring provider for an anticoagulation episode"
+    }
+  ]
+}

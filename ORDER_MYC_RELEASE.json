@@ -1,0 +1,45 @@
+{
+  "table_name": "ORDER_MYC_RELEASE",
+  "description": "When a clinician (or interface) releases/unreleases a lab result to/from a web based chart system patient, tracking data for that action is stored in this table.",
+  "primary_key": {
+    "column_name": "ORDER_PROC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the procedure order record that is released/unreleased."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Since an order can be released/unreleased multiple times, the line number identifies a particular release instance."
+    },
+    {
+      "index": 12,
+      "name": "RELEASE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the Hyperspace user who released/unreleased the lab result to the web based chart system patient."
+    },
+    {
+      "index": 17,
+      "name": "RELEASE_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates the action taken on the lab result. The data stored is a category value. 1 corresponds to Released. 2 corresponds to Unreleased.   A null value also corresponds to Unreleased.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRelease\n\n\nUnrelease\n\n\nPrevent autorelease"
+    },
+    {
+      "index": 27,
+      "name": "MYC_REL_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Contains the instant when a result was released to MyChart in UTC."
+    }
+  ]
+}

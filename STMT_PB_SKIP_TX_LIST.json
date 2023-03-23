@@ -1,0 +1,45 @@
+{
+  "table_name": "STMT_PB_SKIP_TX_LIST",
+  "description": "This table stores the list of skipped Professional Billing transactions for a given statement.",
+  "primary_key": {
+    "column_name": "PRINT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the statement print or detail bill record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The skipped Professional Billing transaction ID."
+    },
+    {
+      "index": 17,
+      "name": "STMT_HOLD_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason why the account was held in Professional Billing statement processing.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMinimum guarantor account balance not met\n\n\nCredit balance on the guarantor account\n\n\nGuarantor account already on another run\n\n\nGuarantor account status not to bill\n\n\nMinimum days between two statements not met\n\n\nGuarantor address has no ZIP code\n\n\nCharge Homing is turned on and guarantor account is not in its home\n\n\nSkip guarantor account extension\n\n\nNo professional balance and no hospital account to bill\n\n\nNo hospital account to bill\n\n\nGuarantor account has a hospital account with a self-pay payment/adjustment posted today\n\n\nGuarantor account has a hospital account on payment plan that did not qualify\n\n\nForm not found\n\n\nCannot demand if form requires importing images\n\n\nUndistributed non self-pay credits\n\n\nUndistributed self-pay payment\n\n\nZero Charge\n\n\nStatement already processed this month for payment plan\n\n\nSmartText and Classic forms cannot be included in the same run\n\n\nCannot send tickler to guarantor for paperless bill\n\n\nMinimum days between guarantor detail bill and statement not met\n\n\nPayment plan already paid for this month\n\n\nGuarantor has a balance notification scheduled or recently sent\n\n\nGuarantor billing status not to bill\n\n\nStatement intervention\n\n\nGuarantor does not have new activity\n\n\nGuarantor does not have transactions to bill\n\n\nExcluded during printing\n\n\nGuarantor special billing status set to hold statements\n\n\nVisit auto pay scheduled\n\n\nCannot send another statement before processing auto pay from the last statement\n\n\nVoided transactions\n\n\nPayor hold\n\n\nTransaction skip function\n\n\nContested\n\n\nDebit adjustments\n\n\nFully Paid Insurance Activity\n\n\nVisit is not discharged\n\n\nPosted Not Billed\n\n\nTransaction skip extension\n\n\nService date range\n\n\nSmall balance write off\n\n\nClient guarantor\n\n\nClient next statement date is not before end batch date"
+    },
+    {
+      "index": 68,
+      "name": "STMT_HOLD_RSN_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text information related to the reason why the transaction was held in statement processing."
+    }
+  ]
+}

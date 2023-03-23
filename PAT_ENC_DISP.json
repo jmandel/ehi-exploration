@@ -1,0 +1,101 @@
+{
+  "table_name": "PAT_ENC_DISP",
+  "description": "The PAT_ENC_DISP table contains information from the Follow-up action on the Visit Navigator tab for the ambulatory clinical system. This information specifies how and when a patient and provider should follow up with each other after an encounter. This table also contains information about the level of service (LOS) associated with the encounter.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 17,
+      "name": "DX_FOLLOWUP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column typically stores special instructions that the lab should follow when processing this patient's lab orders. However, some organizations choose to store other information in this column.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 23,
+      "name": "ORDER_INSTR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column typically stores the method of follow-up used to communicate order results with the patient. However, some organizations choose to store other information in this column.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 29,
+      "name": "LOS_DROPPED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number that indicates whether the Level of Service was dropped for this encounter. The category value will be equal to \"pending\" only while it is in the orders queue.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nPending"
+    },
+    {
+      "index": 39,
+      "name": "LOS_TRIG_ERR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not there was an LOS trigger error when dropping the charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 48,
+      "name": "LOS_NEW_OR_EST_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number that indicates whether the patient is a new (first time being seen) or established patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nEstablished"
+    },
+    {
+      "index": 57,
+      "name": "LOS_HX_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for how extensively the patient's history was discussed as entered in the Level of Service calculator.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProblem Focused\n\n\nExpanded Problem Focused\n\n\nDetailed\n\n\nComprehensive"
+    },
+    {
+      "index": 68,
+      "name": "LOS_EXAM_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the extent of the exam as entered in the Level of Service calculator.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProblem Focused\n\n\nExpanded Problem Focused\n\n\nDetailed\n\n\nComprehensive"
+    },
+    {
+      "index": 79,
+      "name": "LOS_MDM_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the complexity of the medical decision-making in this encounter as entered in the Level of Service calculator.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStraightforward\n\n\nLow Complexity\n\n\nModerate Complexity\n\n\nHigh Complexity"
+    },
+    {
+      "index": 90,
+      "name": "LOS_NO_CHG_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason that a charge was not triggered for a level of service. This item being populated does not imply any issues with system integrity or system build; it will be set both for legitimate reasons that a charge was not triggered as well as non-legitimate reasons.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified reason\n\n\nCharge Ready to Trigger flag not set\n\n\nOrder Instructions set to not trigger charges\n\n\nProcedure not specified\n\n\nOrder class set to not trigger charges\n\n\nCharge triggering disabled at resulting lab\n\n\nCharge filtered through discrimination programming point\n\n\nNo charge triggering method specified\n\n\nOrder is canceled\n\n\nHolding until close encounter\n\n\nPatient not specified\n\n\nVisit not specified\n\n\nInvalid LCM build\n\n\nCharge trigger failed to execute\n\n\nNon-chargeable external result\n\n\nOrders in transmittal"
+    },
+    {
+      "index": 113,
+      "name": "LOS_SERV_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Servicing Provider for Physician LOS Charge"
+    }
+  ]
+}

@@ -1,0 +1,710 @@
+{
+  "table_name": "RXA_ADJUD_MESSAGE",
+  "description": "Contains various information relating to a single contact of an adjudication record. Adjudication records are used by Ambulatory Pharmacy during prescription copay adjudication.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the adjudication record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 17,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_SERIAL_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact number for this adjudication"
+    },
+    {
+      "index": 27,
+      "name": "CONTACT_NUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact number for this adjudication"
+    },
+    {
+      "index": 32,
+      "name": "NAME_HX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of the record name"
+    },
+    {
+      "index": 37,
+      "name": "CONTACT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact type category ID for the adjudication record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary\n\n\nSecondary\n\n\nTertiary\n\n\nQuaternary\n\n\nQuinary\n\n\nSenary\n\n\nSeptenary\n\n\nOctonary\n\n\nNonary"
+    },
+    {
+      "index": 53,
+      "name": "STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID of the adjudication message.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Attempted\n\n\nPending\n\n\nSuccess\n\n\nFailure\n\n\nCash\n\n\nCharge Recalculation Needed\n\n\nIn Progress"
+    },
+    {
+      "index": 67,
+      "name": "VERSION_NUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Version number category ID of the NCPDP message\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n5.1\n\n\nD.0\n\n\nUnited Arab Emirates"
+    },
+    {
+      "index": 77,
+      "name": "TX_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transaction code category ID of the adjudication message (Billing, Rebill, Reversal...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBill (B1)\n\n\nReversal (B2)\n\n\nRebill (B3)\n\n\nEligibility (E1)\n\n\nAuthorization\n\n\nCancellation\n\n\nClaim\n\n\nInformation Reporting (N1)"
+    },
+    {
+      "index": 92,
+      "name": "RESPONSE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The response status category ID if the message was accepted or rejected.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccepted\n\n\nRejected"
+    },
+    {
+      "index": 101,
+      "name": "SERVICE_PROV_QUAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The provider ID type category ID (NPI, DEA, State License...) that was sent over RX adjudication\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNational Provider Identifier (NPI)\n\n\nBlue Cross\n\n\nBlue Shield\n\n\nMedicare\n\n\nMedicaid\n\n\nUPIN\n\n\nNCPDP Provider ID\n\n\nState License\n\n\nChampus\n\n\nHealth Industry Number (HIN)\n\n\nFederal Tax ID\n\n\nDrug Enforcement Administration (DEA)\n\n\nState Issued\n\n\nPlan Specific\n\n\nOther"
+    },
+    {
+      "index": 123,
+      "name": "SERVICE_PROV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the pharmacy (service provider)."
+    },
+    {
+      "index": 128,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The service date of the order. This is typically the date the pharmacy starts processing the order."
+    },
+    {
+      "index": 133,
+      "name": "MESSAGE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free text message sent back from the payor."
+    },
+    {
+      "index": 138,
+      "name": "GROUP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Group ID number submitted in the adjudication attempt"
+    },
+    {
+      "index": 143,
+      "name": "PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Assigned by the Pharmacy Benefits Manager to identify a set of parameters, benefits, or coverage criteria used to adjudicate a claim."
+    },
+    {
+      "index": 148,
+      "name": "NETWORK_REIMBURSE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "As defined by the Pharmacy Benefits Bander, this field identifies the network, for the covered member, used to calculate the reimbursement to the pharmacy."
+    },
+    {
+      "index": 153,
+      "name": "PAYOR_QUALIFIER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of payor ID.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNational Payor ID\n\n\nHealth Industry Number\n\n\nBank Information Number (BIN)\n\n\nNational Association of Insurance Commissioners\n\n\nOther"
+    },
+    {
+      "index": 165,
+      "name": "PAYOR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the payer from the Payer ID field of the adjudication response."
+    },
+    {
+      "index": 170,
+      "name": "TX_RESP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID of the  adjudication transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproved\n\n\nCaptured\n\n\nDuplicate of Paid\n\n\nPA Deferred\n\n\nPaid\n\n\nDuplicate of Capture\n\n\nRejected\n\n\nDuplicate of Approved"
+    },
+    {
+      "index": 185,
+      "name": "AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Number assigned by the PBM to identify an authorized transaction."
+    },
+    {
+      "index": 190,
+      "name": "ADDL_MESSAGE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a free text message sent from the PBM."
+    },
+    {
+      "index": 195,
+      "name": "HELPDESK_PH_QUAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code qualifying the phone number in the 'Help Desk Phone Number' (550-8F) Field 550-8F)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSwitch\n\n\nIntermediary\n\n\nProcessor/PBM\n\n\nOther"
+    },
+    {
+      "index": 206,
+      "name": "HELP_DESK_PHONE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Ten-digit phone number of the help desk."
+    },
+    {
+      "index": 211,
+      "name": "PRESC_REF_NUM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reference number (prescription or service) category ID assigned by the provider for the order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRx Billing\n\n\nService Billing"
+    },
+    {
+      "index": 220,
+      "name": "PRESC_REFRENCE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reference number assigned by the provider for the dispensed drug/product and/or service provided."
+    },
+    {
+      "index": 225,
+      "name": "PAT_PAY_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount that is calculated by the PBM and returned to the pharmacy as the TOTAL amount to be paid by the patient to the pharmacy: The patient's total cost share, including copayments, amounts applied to deductible, over maximum amounts, penalties, etc."
+    },
+    {
+      "index": 230,
+      "name": "INGREDIENT_COSTPAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount paid for the drug ingredient. Amount included in 'Total Amount Paid'"
+    },
+    {
+      "index": 235,
+      "name": "DISPENSE_FEE_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Dispensing fee paid included in the \"Total Amount Paid\" sent out in adjudication (NCPDP Field 509-F9)"
+    },
+    {
+      "index": 240,
+      "name": "TAX_EXEMPT_IND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the payor as exempt from taxes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTax Exempt\n\n\nNot Tax Exempt"
+    },
+    {
+      "index": 249,
+      "name": "FLAT_SALES_TAX_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount of flat sales tax paid. Included in the \"Total Amount Paid\"."
+    },
+    {
+      "index": 254,
+      "name": "PERC_SALES_TAX_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount of percentage sales tax paid which is included in the Total Amount Paid"
+    },
+    {
+      "index": 259,
+      "name": "PERC_SALES_TAX_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Percentage sales tax rate used to calculate Percentage Sales Tax Amount Paid"
+    },
+    {
+      "index": 264,
+      "name": "PERC_SALES_TX_BAS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the percentage sales tax paid basis.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGross Amount Due\n\n\nIngredient Cost\n\n\nIngredient Cost + Dispensing Fee"
+    },
+    {
+      "index": 274,
+      "name": "INCENTIVE_AMT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount represents the contractually agreed upon incentive fee paid for specific services rendered. Amount is included in the 'Total Amount Paid'"
+    },
+    {
+      "index": 279,
+      "name": "PROF_SERVICE_FEE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount representing the contractually agreed upon fee for professional services rendered. This amount is included in the Total Amount Paid"
+    },
+    {
+      "index": 284,
+      "name": "OTHER_PAYOR_AMT_REC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total dollar amount of any payment from another source including coupons."
+    },
+    {
+      "index": 289,
+      "name": "TOTAL_AMOUNT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total amount to be paid by the claim's pharmacy benefit manager (PBM)."
+    },
+    {
+      "index": 294,
+      "name": "BASIS_ING_REIMB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code identifying how the reimbursement amount was calculated for Ingredient Cost Paid\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nIngredient Cost Paid as Submitted\n\n\nIngredient Cost Reduced to AWP Pricing\n\n\nIngredient Cost Reduced to AWP Less X% Pricing\n\n\nUsual & Customary Paid as Submitted\n\n\nPaid Lower of Ingredient Cost Plus Fess Versus Usual & Customary\n\n\nMAC Pricing Ingredient Cost Paid\n\n\nMAC Pricing Ingredient Cost Reduced to MAC\n\n\nContract Pricing\n\n\nAcquisition Pricing"
+    },
+    {
+      "index": 311,
+      "name": "AMT_ATTRB_SALES_TAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount to be collected from the patient that is included in Patient Pay Amount that is due to sales tax paid."
+    },
+    {
+      "index": 316,
+      "name": "ACCUMULATED_DED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount in dollars met by the patient/family in a deductible plan."
+    },
+    {
+      "index": 321,
+      "name": "REMAINING_DED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount not met by the patient/family in the deductible plan."
+    },
+    {
+      "index": 326,
+      "name": "REMAINING_BEN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount remaining in a patient/family plan with a periodic maximum benefit."
+    },
+    {
+      "index": 331,
+      "name": "AMT_APPLIED_DEDUCT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount to be collected from a patient that is included in Patient Pay Amount that is applied to a periodic deductible."
+    },
+    {
+      "index": 336,
+      "name": "AMT_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount to be collected from the patient that is included in Patient Pay Amount that is due to a per prescription copay/coinsurance."
+    },
+    {
+      "index": 341,
+      "name": "AMT_ATTRIB_PROD_SEL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount to be collected from the patient that is included in the Patient Pay Amount that is due to the patient's selection of drug product."
+    },
+    {
+      "index": 346,
+      "name": "AMT_EXCEED_BEN_MAX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount to be collected from the patient that is included in Patient Pay Amount that is due to the patient exceeding a periodic benefit maximum"
+    },
+    {
+      "index": 351,
+      "name": "BASIS_CALC_DISP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for Dispensing Fee Paid\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nQuantity Dispensed\n\n\nQuantity Intended To Be Dispensed\n\n\nUsual & Customary/Prorated\n\n\nWaived Due To Partial Fill\n\n\nOther"
+    },
+    {
+      "index": 364,
+      "name": "BASIS_CALC_COPAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for Patient Pay Amount\n\n\n The category values for this column were already listed for column: BASIS_CALC_DISP_C_NAME"
+    },
+    {
+      "index": 370,
+      "name": "BASIS_CALC_FLATTX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for Flat Sales Tax Amount Paid\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nQuantity Dispensed\n\n\nQuantity Intended To Be Dispensed"
+    },
+    {
+      "index": 380,
+      "name": "BASIS_PCT_SLS_TAX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating how the reimbursement amount was calculated for Percentage Sales Tax Amount Paid\n\n\n The category values for this column were already listed for column: BASIS_CALC_FLATTX_C_NAME"
+    },
+    {
+      "index": 386,
+      "name": "PRIOR_AUTH_PROC_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date the prior authorization request was processed."
+    },
+    {
+      "index": 391,
+      "name": "PRIOR_AUTH_EFF_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date the prior authorization became effective."
+    },
+    {
+      "index": 396,
+      "name": "PRIOR_AUTH_EXP_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date the prior authorization expires."
+    },
+    {
+      "index": 401,
+      "name": "PRIOR_AUTH_QUANTITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount authorized by the prior authorization expressed in metric decimal units."
+    },
+    {
+      "index": 406,
+      "name": "PRIOR_AUTH_DOL_AUTH",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount authorized in the prior authorization."
+    },
+    {
+      "index": 411,
+      "name": "PRIOR_AUTH_NM_REFIL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Number of refills authorized by the prior authorization."
+    },
+    {
+      "index": 416,
+      "name": "PRIOR_AUTH_ACCUM",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Accumulated authorized amount expressed in metric decimal units."
+    },
+    {
+      "index": 421,
+      "name": "PRIOR_AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique number identifying the prior authorization assigned by the PBM."
+    },
+    {
+      "index": 426,
+      "name": "INSTANT_OF_ENTRY_TM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Stores the date and time of entry when a record is edited"
+    },
+    {
+      "index": 431,
+      "name": "CONTINUE_ON_FAIL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the adjudication attempt will continue to the next coverage if this fails.  'N' or NULL indicate that the attempt will not continue on failure.  'Y' indicates that the attempt will continue on failure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 440,
+      "name": "PRIOR_AUTH_NUM_SENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number being sent in for prior authorization for prescription adjudication."
+    },
+    {
+      "index": 445,
+      "name": "PRIOR_AUTH_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The prior authorization category ID being sent during prescription adjudication.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nPrior Authorization\n\n\nMedical Certification\n\n\nEarly Periodic Screening Diagnosis Treatment\n\n\nExemption from Copay\n\n\nExemption from RX\n\n\nFamily Plan. Indic. \n\n\nTemporary Assistance for Needy Families \n\n\nPayor Defined Exemption"
+    },
+    {
+      "index": 461,
+      "name": "SUBMISSION_CLR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional information category ID of an adjudication message to tell the payor more information about the order for adjudication. Like the patient is a student or is going on vacation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified, Default\n\n\nNo Override\n\n\nOther Override\n\n\nVacation Supply\n\n\nLost Prescription\n\n\nTherapy Change\n\n\nStarter Dose\n\n\nMedically Necessary\n\n\nProcess Compound For Approved Ingredients\n\n\nMeet Plan Limitations\n\n\nOther"
+    },
+    {
+      "index": 479,
+      "name": "DISPENSE_FEE_SUBMTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Dispensing fee submitted by the pharmacy to the payer. (412-DC)"
+    },
+    {
+      "index": 484,
+      "name": "PROF_SVC_FEE_SUBMTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount submitted by the provider for professional services rendered. (440-E5)"
+    },
+    {
+      "index": 489,
+      "name": "INCENTIV_AMT_SUBMTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount represents a fee that is submitted by the pharmacy for contractually agreed upon services. (439-E3)"
+    },
+    {
+      "index": 494,
+      "name": "QTY_PRESCRIBED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Prescribed amount expressed in metric decimal units. (460-ET)"
+    },
+    {
+      "index": 499,
+      "name": "UNIT_DOSE_IND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of unit dose dispensing. (429-DT)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nNot Unit Dose\n\n\nManufacturer Unit Dose\n\n\nPharmacy Unit Dose"
+    },
+    {
+      "index": 510,
+      "name": "ORG_PRES_PROD_QF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code qualifying the value in 'Originally Prescribed Product/Service' Code. (453-EJ)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nUniversal Product Code (UPC)\n\n\nHealth Related Item (HRI)\n\n\nNational Drug Code (NDC)\n\n\nUniversal Product Number (UPN)\n\n\nDepartment of Defense (DOD)\n\n\nDrug Use Review/ Professional Pharmacy Service (DUR/PPS)\n\n\nCommon Procedure Terminology (CPT4)\n\n\nCommon Procedure Terminology (CPT5)\n\n\nHealth Care Financing Administration Common Procedural Coding System (HCPCS)\n\n\nPharmacy Practice Activity Classification (PPAC)\n\n\nNational Pharmaceutical Product Interface Code (NAPPI)\n\n\nInternational Article Numbering System (EAN)\n\n\nDrug Identification Number (DIN)"
+    },
+    {
+      "index": 531,
+      "name": "LEVEL_OF_SERVICE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of service the provider rendered. (418-DI)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nPatient Consulation\n\n\nHome Delivery\n\n\nEmergency\n\n\n24 hour service\n\n\nPatient Consulation Regarding Generic Product Selection\n\n\nIn-Home Service"
+    },
+    {
+      "index": 545,
+      "name": "INTRMED_AUTH_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating that authorization occurred for intermediary processing. (463-EW)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nIntermediary Authorization\n\n\nOther Override"
+    },
+    {
+      "index": 555,
+      "name": "INTRAUTH_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Value indicating intermediary authorization occurred. (464-EX)"
+    },
+    {
+      "index": 560,
+      "name": "COUPON_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the type of coupon being used. (485-KE)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrice Discount\n\n\nFree Product\n\n\nOther"
+    },
+    {
+      "index": 570,
+      "name": "COUPON_VALUE_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Value of the coupon. (487-NE)"
+    },
+    {
+      "index": 575,
+      "name": "PRIOR_AUTH_REQTYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code identifying type of prior authorization request. (498-PA)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInitial\n\n\nReauthorization\n\n\nDeferred"
+    },
+    {
+      "index": 585,
+      "name": "PRIORAUTH_RQBEG_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Beginning date for a prior authorization request. (498-PB)"
+    },
+    {
+      "index": 590,
+      "name": "PRIORAUTH_RQEND_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Ending date for a prior authorization request. (498-PC)"
+    },
+    {
+      "index": 595,
+      "name": "PRIORAUTH_BAS_RQ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code describing the reason for prior authorization request. (498-PD)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMedical Exception\n\n\nPlan Requirement\n\n\nIncrease Plan Limitation"
+    },
+    {
+      "index": 605,
+      "name": "PRIOR_AUTH_REP_FNAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "First name of the patient's authorized representative (498-PE)"
+    },
+    {
+      "index": 610,
+      "name": "PRIOR_AUTH_REP_LNAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Last name of the patient's authorized representative. (498-PF)"
+    },
+    {
+      "index": 615,
+      "name": "PRIOR_ATH_REP_STADD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Street address of the patient's representative. (498-PG)"
+    },
+    {
+      "index": 620,
+      "name": "PRI_ATH_REP_CITYADD",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "City of the patient's representative. (498-PH)"
+    },
+    {
+      "index": 625,
+      "name": "PRI_ATH_REP_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "State or province category ID of the patient's representative. (498-PJ)\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 631,
+      "name": "PRI_ATH_REP_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ZIP code or other postal zone code of the patient's representative. (498-PK)"
+    },
+    {
+      "index": 636,
+      "name": "PRI_ATH_NUM_ASSGN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique number identifying the prior authorization assigned by the processor. (498-PY)"
+    },
+    {
+      "index": 641,
+      "name": "PRI_ATH_AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Number assigned by the processor to identify an authorized transaction. (503-F3)"
+    },
+    {
+      "index": 646,
+      "name": "PRI_ATH_SUPP_DOC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Free-text comments supplied by the pharmacy that may be used to process a  prior authorization transaction. (498-PP)"
+    },
+    {
+      "index": 651,
+      "name": "SMOKER_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the patient as a smoker or non-smoker. (334-1C)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNon-Smoker\n\n\nSmoker"
+    },
+    {
+      "index": 660,
+      "name": "PREGNANCY_IND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code indicating the patient as pregnant or not pregnant. (335-2C)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Pregnant\n\n\nPregnant"
+    },
+    {
+      "index": 669,
+      "name": "PRESCRIBER_LOC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Location address code assigned to the prescriber as identified in the National Provider System (NPS). (467-1E)"
+    },
+    {
+      "index": 674,
+      "name": "ALT_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Person identifier to be used for controlled product reporting. Identifier may be that of the patient or the person picking up the prescription as required by the governing body. (330-CW)"
+    },
+    {
+      "index": 679,
+      "name": "COUPON_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique serial number assigned to the prescription coupons. (486-ME)"
+    },
+    {
+      "index": 684,
+      "name": "PAT_ID_QF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "NCPDP code qualifying the Patient ID sent in 332-CY. (331-CX)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSocial Security Number\n\n\nDriver's License Number\n\n\nUS Military ID\n\n\nOther"
+    },
+    {
+      "index": 695,
+      "name": "PAT_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID assigned to the patient. (332-CY)"
+    },
+    {
+      "index": 700,
+      "name": "EMPLOYER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A unique ID assigned to the employer. (333-CZ)"
+    },
+    {
+      "index": 705,
+      "name": "PAT_PAID_AMT_SUBMTD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount the pharmacy received from the patient for the prescription dispensed."
+    },
+    {
+      "index": 710,
+      "name": "PAT_DOB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date of birth of patient."
+    }
+  ]
+}

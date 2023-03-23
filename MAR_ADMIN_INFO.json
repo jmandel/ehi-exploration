@@ -1,0 +1,360 @@
+{
+  "table_name": "MAR_ADMIN_INFO",
+  "description": "This table contains the currently active medication administration data. This includes all scheduled and acted upon administrations currently showing on the MAR.",
+  "primary_key": {
+    "column_name": "ORDER_MED_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication order."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line count for the item."
+    },
+    {
+      "index": 12,
+      "name": "TAKEN_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The user-specified time that the action took place."
+    },
+    {
+      "index": 17,
+      "name": "MAR_ORIG_DUE_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The original due time for the administration."
+    },
+    {
+      "index": 22,
+      "name": "SCHEDULED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The scheduled time on the MAR."
+    },
+    {
+      "index": 27,
+      "name": "SAVED_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the medication administration was saved."
+    },
+    {
+      "index": 32,
+      "name": "MAR_SCHD_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the original due time was created by the scheduler.  This item is not populated for data saved by a user, including user-created due times."
+    },
+    {
+      "index": 37,
+      "name": "MAR_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The MAR action category number associated with this administration.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGiven\n\n\nMissed\n\n\nRefused\n\n\nCanceled Entry\n\n\nHeld\n\n\nNew Bag\n\n\nRestarted\n\n\nStopped\n\n\nRate Change\n\n\nMAR Hold\n\n\nMAR Unhold\n\n\nBolus\n\n\nPush\n\n\nRate Verify\n\n\nSee Alternative\n\n\nPaused\n\n\nPending\n\n\nAutomatically Held\n\n\nDue"
+    },
+    {
+      "index": 63,
+      "name": "MAR_UNIT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The blood unit number associated with this administration."
+    },
+    {
+      "index": 68,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user that took action on the administration."
+    },
+    {
+      "index": 73,
+      "name": "SEC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the secondary user associated with this administration."
+    },
+    {
+      "index": 78,
+      "name": "MAR_DOC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User (EMP) ID of the user who documented the med administration. This item is null unless the administering user (ORD 11110) is different than the documenting user."
+    },
+    {
+      "index": 83,
+      "name": "SIG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The dose value of the administration."
+    },
+    {
+      "index": 88,
+      "name": "ROUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The route category number associated with this administration.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 94,
+      "name": "COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comment associated with the administration."
+    },
+    {
+      "index": 99,
+      "name": "REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID of the reason that is given for documenting a certain action. A reason is generally required for the actions of Missed and MAR Hold, but can be configured for any action.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 105,
+      "name": "SITE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The site category number used for the administration.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRight Arm\n\n\nLeft Arm\n\n\nRight Quadriceps\n\n\nLeft Quadriceps\n\n\nRight Upper Outer Quadrant\n\n\nLeft Upper Outer Quadrant\n\n\nAbdominal Tissue\n\n\nPort"
+    },
+    {
+      "index": 120,
+      "name": "INFUSION_RATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rate at which the medication was infused."
+    },
+    {
+      "index": 125,
+      "name": "MAR_INF_RATE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unit category number associated with the infusion rate of the administration.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nmL\n\n\nL\n\n\nmg\n\n\ng\n\n\nUnits\n\n\nmmol\n\n\nmEq\n\n\nmcg\n\n\n%\n\n\nInt'l Units\n\n\nMillion Units\n\n\nkcal\n\n\nng\n\n\nmg PE\n\n\nmilli-units\n\n\npg\n\n\nKBq\n\n\nMBq\n\n\nGBq\n\n\nmcL\n\n\nmL/min\n\n\nL/min\n\n\nmg/min\n\n\ng/min\n\n\nUnits/min\n\n\nmmol/min\n\n\nmEq/min\n\n\nmcg/min\n\n\nkJ/min\n\n\nInt'l Units/min\n\n\nMillion Units/min\n\n\nkcal/min\n\n\nng/min\n\n\nmg PE/min\n\n\nmilli-units/min\n\n\npg/min\n\n\nKBq/min\n\n\nMBq/min\n\n\nGBq/min\n\n\nmcL/min\n\n\nmL/hr\n\n\nL/hr\n\n\nmg/hr\n\n\ng/hr\n\n\nUnits/hr\n\n\nmmol/hr\n\n\nmEq/hr\n\n\nmcg/hr\n\n\nkJ/hr\n\n\nInt'l Units/hr\n\n\nMillion Units/hr\n\n\nkcal/hr\n\n\nng/hr\n\n\nmg PE/hr\n\n\nmilli-units/hr\n\n\npg/hr\n\n\nKBq/hr\n\n\nMBq/hr\n\n\nGBq/hr\n\n\nmcL/hr\n\n\nmL/day\n\n\nL/day\n\n\nmg/day\n\n\ng/day\n\n\nUnits/day\n\n\nmmol/day\n\n\nmEq/day\n\n\nmcg/day\n\n\nkJ/day\n\n\nInt'l Units/day\n\n\nMillion Units/day\n\n\nkcal/day\n\n\nng/day\n\n\nmg PE/day\n\n\nmilli-units/day\n\n\npg/day\n\n\nInch/day\n\n\nKBq/day\n\n\nMBq/day\n\n\nGBq/day\n\n\nmcL/day\n\n\nIR/day\n\n\nBAU/day\n\n\nPFU/day\n\n\nMillion PFU/day\n\n\nMillion Int'l Units/day\n\n\nKilo Int'l Units/day\n\n\nmL/kg\n\n\nL/kg\n\n\nmg/kg\n\n\ng/kg\n\n\nUnits/kg\n\n\nmmol/kg\n\n\nmEq/kg\n\n\nmcg/kg\n\n\nkJ/kg\n\n\nInt'l Units/kg\n\n\nMillion Units/kg\n\n\nkcal/kg\n\n\nng/kg\n\n\nmg PE/kg\n\n\nmilli-units/kg\n\n\npg/kg\n\n\nmg/kg (Actual)\n\n\nEach/kg\n\n\nPuff/kg\n\n\nPackage/kg\n\n\nDrop/kg\n\n\nInch/kg\n\n\nKBq/kg\n\n\nMBq/kg\n\n\nGBq/kg\n\n\nmcL/kg\n\n\nIR/kg\n\n\nBAU/kg\n\n\nMillion Int'l Units/kg\n\n\nmcmol/kg\n\n\n1e12 Vector Genomes/kg\n\n\nVector Genomes/kg\n\n\nDose/kg\n\n\nmcg DFE/kg\n\n\nKilo Int'l Units/kg\n\n\n1e11 Vector Genomes/kg\n\n\n1e13 Vector Genomes/kg\n\n\n1e14 Vector Genomes/kg\n\n\n1e15 Vector Genomes/kg\n\n\nIR/min\n\n\nBAU/min\n\n\nMillion Int'l Units/min\n\n\nKilo Int'l Units/min\n\n\nIR/hr\n\n\nBAU/hr\n\n\nMillion Int'l Units/hr\n\n\nKilo Int'l Units/hr\n\n\nmL/mL\n\n\nL/mL\n\n\nmg/mL\n\n\ng/mL\n\n\nUnits/mL\n\n\nmmol/mL\n\n\nmEq/mL\n\n\nmcg/mL\n\n\nkJ/mL\n\n\nInt'l Units/mL\n\n\nMillion Units/mL\n\n\nkcal/mL\n\n\nng/mL\n\n\nmg PE/mL\n\n\nmilli-units/mL\n\n\npg/mL\n\n\nKBq/mL\n\n\nMBq/mL\n\n\nGBq/mL\n\n\nmcL/mL\n\n\nIR/mL\n\n\nBAU/mL\n\n\nPFU/mL\n\n\nMillion PFU/mL\n\n\nMillion Int'l Units/mL\n\n\nmcmol/mL\n\n\n1e12 Vector Genomes/mL\n\n\nVector Genomes/mL\n\n\nKilo Int'l Units/mL\n\n\n1e11 Vector Genomes/mL\n\n\n1e13 Vector Genomes/mL\n\n\n1e14 Vector Genomes/mL\n\n\n1e15 Vector Genomes/mL\n\n\nmillicurie/mL\n\n\nmL/L\n\n\nL/L\n\n\nmg/L\n\n\ng/L\n\n\nUnits/L\n\n\nmmol/L\n\n\nmEq/L\n\n\nmcg/L\n\n\nkJ/L\n\n\nInt'l Units/L\n\n\nMillion Units/L\n\n\nkcal/L\n\n\nng/L\n\n\nmg PE/L\n\n\nmilli-units/L\n\n\npg/L\n\n\nKBq/L\n\n\nMBq/L\n\n\nGBq/L\n\n\nmcL/L\n\n\nIR/L\n\n\nBAU/L\n\n\nMillion Int'l Units/L\n\n\nKilo Int'l Units/L\n\n\nmL/m2\n\n\nL/m2\n\n\nmg/m2\n\n\ng/m2\n\n\nUnits/m2\n\n\nmmol/m2\n\n\nmEq/m2\n\n\nmcg/m2\n\n\nkJ/m2\n\n\nInt'l Units/m2\n\n\nMillion Units/m2\n\n\nkcal/m2\n\n\nng/m2\n\n\nmg PE/m2\n\n\nmilli-units/m2\n\n\npg/m2\n\n\nmg/m2 (Actual)\n\n\nEach/m2\n\n\nPuff/m2\n\n\nPackage/m2\n\n\nDrop/m2\n\n\nKBq/m2\n\n\nMBq/m2\n\n\nGBq/m2\n\n\nmcL/m2\n\n\nIR/m2\n\n\nBAU/m2\n\n\nMillion Int'l Units/m2\n\n\nmcmol/m2\n\n\n1e12 Vector Genomes/m2\n\n\nVector Genomes/m2\n\n\nKilo Int'l Units/m2\n\n\n1e11 Vector Genomes/m2\n\n\n1e13 Vector Genomes/m2\n\n\n1e14 Vector Genomes/m2\n\n\n1e15 Vector Genomes/m2\n\n\nmL/1.7m2\n\n\nL/1.7m2\n\n\nmg/1.7m2\n\n\ng/1.7m2\n\n\nUnits/1.7m2\n\n\nmmol/1.7m2\n\n\nmEq/1.7m2\n\n\nmcg/1.7m2\n\n\nkJ/1.7m2\n\n\nInt'l Units/1.7m2\n\n\nMillion Units/1.7m2\n\n\nkcal/1.7m2\n\n\nng/1.7m2\n\n\nmg PE/1.7m2\n\n\nmilli-units/1.7m2\n\n\npg/1.7m2\n\n\nEach/1.7m2\n\n\nKBq/1.7m2\n\n\nMBq/1.7m2\n\n\nGBq/1.7m2\n\n\nmcL/1.7m2\n\n\nIR/1.7m2\n\n\nBAU/1.7m2\n\n\nMillion Int'l Units/1.7m2\n\n\nKilo Int'l Units/1.7m2\n\n\nmL/kg (IDL)\n\n\nL/kg (IDL)\n\n\nmg/kg (IDL)\n\n\ng/kg (IDL)\n\n\nUnits/kg (IDL)\n\n\nmmol/kg (IDL)\n\n\nmEq/kg (IDL)\n\n\nmcg/kg (IDL)\n\n\nInt'l Units/kg (IDL)\n\n\nMillion Units/kg (IDL)\n\n\nKcal/kg (IDL)\n\n\nng/kg (IDL)\n\n\nmg PE/kg (IDL)\n\n\nmilli-units/kg (IDL)\n\n\npg/kg (IDL)\n\n\nmg/m2 (IDL)\n\n\nmL/kg (ADJ)\n\n\nL/kg (ADJ)\n\n\nmg/kg (ADJ)\n\n\ng/kg (ADJ)\n\n\nUnits/kg (ADJ)\n\n\nmmol/kg (ADJ)\n\n\nmEq/kg (ADJ)\n\n\nmcg/kg (ADJ)\n\n\nInt'l Units/kg (ADJ)\n\n\nMillion Units/kg (ADJ)\n\n\nKcal/kg (ADJ)\n\n\nng/kg (ADJ)\n\n\nmg PE/kg (ADJ)\n\n\nmilli-units/kg (ADJ)\n\n\npg/kg (ADJ)\n\n\nmg/m2 (ADJ)\n\n\nmL/100 mL\n\n\nL/100 mL\n\n\nmg/100 mL\n\n\ng/100 mL\n\n\nUnits/100 mL\n\n\nmmol/100 mL\n\n\nmEq/100 mL\n\n\nmcg/100 mL\n\n\nkJ/100 mL\n\n\nInt'l Units/100 mL\n\n\nMillion Units/100 mL\n\n\nkcal/100 mL\n\n\nng/100 mL\n\n\nmg PE/100 mL\n\n\nmilli-units/100 mL\n\n\npg/100 mL\n\n\nKBq/100 mL\n\n\nMBq/100 mL\n\n\nGBq/100 mL\n\n\nmcL/100 mL\n\n\nIR/100 mL\n\n\nBAU/100 mL\n\n\nMillion Int'l Units/100 mL\n\n\nKilo Int'l Units/100 mL\n\n\nmL/oz\n\n\nL/oz\n\n\nmg/oz\n\n\ng/oz\n\n\nUnits/oz\n\n\nmmol/oz\n\n\nmEq/oz\n\n\nmcg/oz\n\n\nkJ/oz\n\n\nInt'l Units/oz\n\n\nMillion Units/oz\n\n\nkcal/oz\n\n\nng/oz\n\n\nmg PE/oz\n\n\nmilli-units/oz\n\n\npg/oz\n\n\nKBq/oz\n\n\nMBq/oz\n\n\nGBq/oz\n\n\nmcL/oz\n\n\nIR/oz\n\n\nBAU/oz\n\n\nMillion Int'l Units/oz\n\n\nKilo Int'l Units/oz\n\n\nmL/kg/min\n\n\nL/kg/min\n\n\nmg/kg/min\n\n\ng/kg/min\n\n\nUnits/kg/min\n\n\nmmol/kg/min\n\n\nmEq/kg/min\n\n\nmcg/kg/min\n\n\nkJ/kg/min\n\n\nInt'l Units/kg/min\n\n\nMillion Units/kg/min\n\n\nkcal/kg/min\n\n\nng/kg/min\n\n\nmg PE/kg/min\n\n\nmilli-units/kg/min\n\n\npg/kg/min\n\n\nKBq/kg/min\n\n\nMBq/kg/min\n\n\nGBq/kg/min\n\n\nmcL/kg/min\n\n\nmL/kg/min (IDL)\n\n\nL/kg/min (IDL)\n\n\nmg/kg/min (IDL)\n\n\ng/kg/min (IDL)\n\n\nUnits/kg/min (IDL)\n\n\nmmol/kg/min (IDL)\n\n\nmEq/kg/min (IDL)\n\n\nmcg/kg/min (IDL)\n\n\nInt'l Units/kg/min (IDL)\n\n\nMillion Units/kg/min (IDL)\n\n\nKcal/kg/min (IDL)\n\n\nng/kg/min (IDL)\n\n\nmg PE/kg/min (IDL)\n\n\nmilli-units/kg/min (IDL)\n\n\npg/kg/min (IDL)\n\n\nmL/kg/min (ADJ)\n\n\nL/kg/min (ADJ)\n\n\nmg/kg/min (ADJ)\n\n\ng/kg/min (ADJ)\n\n\nUnits/kg/min (ADJ)\n\n\nmmol/kg/min (ADJ)\n\n\nmEq/kg/min (ADJ)\n\n\nmcg/kg/min (ADJ)\n\n\nInt'l Units/kg/min (ADJ)\n\n\nMillion Units/kg/min (ADJ)\n\n\nKcal/kg/min (ADJ)\n\n\nng/kg/min (ADJ)\n\n\nmg PE/kg/min (ADJ)\n\n\nmilli-units/kg/min (ADJ)\n\n\npg/kg/min (ADJ)\n\n\nIR/kg/min\n\n\nBAU/kg/min\n\n\nMillion Int'l Units/kg/min\n\n\nKilo Int'l Units/kg/min\n\n\nmL/m2/min\n\n\nL/m2/min\n\n\nmg/m2/min\n\n\ng/m2/min\n\n\nUnits/m2/min\n\n\nmmol/m2/min\n\n\nmEq/m2/min\n\n\nmcg/m2/min\n\n\nkJ/m2/min\n\n\nInt'l Units/m2/min\n\n\nMillion Units/m2/min\n\n\nkcal/m2/min\n\n\nng/m2/min\n\n\nmg PE/m2/min\n\n\nmilli-units/m2/min\n\n\npg/m2/min\n\n\nKBq/m2/min\n\n\nMBq/m2/min\n\n\nGBq/m2/min\n\n\nmcL/m2/min\n\n\nmL/1.7m2/min\n\n\nL/1.7m2/min\n\n\nmg/1.7m2/min\n\n\ng/1.7m2/min\n\n\nUnits/1.7m2/min\n\n\nmmol/1.7m2/min\n\n\nmEq/1.7m2/min\n\n\nmcg/1.7m2/min\n\n\nkJ/1.7m2/min\n\n\nInt'l Units/1.7m2/min\n\n\nMillion Units/1.7m2/min\n\n\nkcal/1.7m2/min\n\n\nng/1.7m2/min\n\n\nmg PE/1.7m2/min\n\n\nmilli-units/1.7m2/min\n\n\npg/1.7m2/min\n\n\nKBq/1.7m2/min\n\n\nMBq/1.7m2/min\n\n\nGBq/1.7m2/min\n\n\nmSv\n\n\nmGy\n\n\nmcL/1.7m2/min\n\n\nIR/m2/min\n\n\nBAU/m2/min\n\n\nMillion Int'l Units/m2/min\n\n\nKilo Int'l Units/m2/min\n\n\nIR/1.7m2/min\n\n\nBAU/1.7m2/min\n\n\nMillion Int'l Units/1.7m2/min\n\n\nKilo Int'l Units/1.7m2/min\n\n\nmL/kg/hr\n\n\nL/kg/hr\n\n\nmg/kg/hr\n\n\ng/kg/hr\n\n\nUnits/kg/hr\n\n\nmmol/kg/hr\n\n\nmEq/kg/hr\n\n\nmcg/kg/hr\n\n\nkJ/kg/hr\n\n\nInt'l Units/kg/hr\n\n\nMillion Units/kg/hr\n\n\nkcal/kg/hr\n\n\nng/kg/hr\n\n\nmg PE/kg/hr\n\n\nmilli-units/kg/hr\n\n\npg/kg/hr\n\n\nKBq/kg/hr\n\n\nMBq/kg/hr\n\n\nGBq/kg/hr\n\n\nmcL/kg/hr\n\n\nmL/kg/hr (IDL)\n\n\nL/kg/hr (IDL)\n\n\nmg/kg/hr (IDL)\n\n\ng/kg/hr (IDL)\n\n\nUnits/kg/hr (IDL)\n\n\nmmol/kg/hr (IDL)\n\n\nmEq/kg/hr (IDL)\n\n\nmcg/kg/hr (IDL)\n\n\nInt'l Units/kg/hr (IDL)\n\n\nMillion Units/kg/hr (IDL)\n\n\nKcal/kg/hr (IDL)\n\n\nng/kg/hr (IDL)\n\n\nmg PE/kg/hr (IDL)\n\n\nmilli-units/kg/hr (IDL)\n\n\npg/kg/hr (IDL)\n\n\nmL/kg/hr (ADJ)\n\n\nL/kg/hr (ADJ)\n\n\nmg/kg/hr (ADJ)\n\n\ng/kg/hr (ADJ)\n\n\nUnits/kg/hr (ADJ)\n\n\nmmol/kg/hr (ADJ)\n\n\nmEq/kg/hr (ADJ)\n\n\nmcg/kg/hr (ADJ)\n\n\nInt'l Units/kg/hr (ADJ)\n\n\nMillion Units/kg/hr (ADJ)\n\n\nKcal/kg/hr (ADJ)\n\n\nng/kg/hr (ADJ)\n\n\nmg PE/kg/hr (ADJ)\n\n\nmilli-units/kg/hr (ADJ)\n\n\npg/kg/hr (ADJ)\n\n\nIR/kg/hr\n\n\nBAU/kg/hr\n\n\nMillion Int'l Units/kg/hr\n\n\nKilo Int'l Units/kg/hr\n\n\nmL/m2/hr\n\n\nL/m2/hr\n\n\nmg/m2/hr\n\n\ng/m2/hr\n\n\nUnits/m2/hr\n\n\nmmol/m2/hr\n\n\nmEq/m2/hr\n\n\nmcg/m2/hr\n\n\nkJ/m2/hr\n\n\nInt'l Units/m2/hr\n\n\nMillion Units/m2/hr\n\n\nkcal/m2/hr\n\n\nng/m2/hr\n\n\nmg PE/m2/hr\n\n\nmilli-units/m2/hr\n\n\npg/m2/hr\n\n\nKBq/m2/hr\n\n\nMBq/m2/hr\n\n\nGBq/m2/hr\n\n\nmcL/m2/hr\n\n\nmL/1.7m2/hr\n\n\nL/1.7m2/hr\n\n\nmg/1.7m2/hr\n\n\ng/1.7m2/hr\n\n\nUnits/1.7m2/hr\n\n\nmmol/1.7m2/hr\n\n\nmEq/1.7m2/hr\n\n\nmcg/1.7m2/hr\n\n\nkJ/1.7m2/hr\n\n\nInt'l Units/1.7m2/hr\n\n\nMillion Units/1.7m2/hr\n\n\nkcal/1.7m2/hr\n\n\nng/1.7m2/hr\n\n\nmg PE/1.7m2/hr\n\n\nmilli-units/1.7m2/hr\n\n\npg/1.7m2/hr\n\n\nKBq/1.7m2/hr\n\n\nMBq/1.7m2/hr\n\n\nGBq/1.7m2/hr\n\n\nmcL/1.7m2/hr\n\n\nIR/1.7m2/hr\n\n\nBAU/1.7m2/hr\n\n\nMillion Int'l Units/1.7m2/hr\n\n\nKilo Int'l Units/1.7m2/hr\n\n\nIR/m2/hr\n\n\nBAU/m2/hr\n\n\nMillion Int'l Units/m2/hr\n\n\nKilo Int'l Units/m2/hr\n\n\nmL/kg/day\n\n\nL/kg/day\n\n\nmg/kg/day\n\n\ng/kg/day\n\n\nUnits/kg/day\n\n\nmmol/kg/day\n\n\nmEq/kg/day\n\n\nmcg/kg/day\n\n\nkJ/kg/day\n\n\nInt'l Units/kg/day\n\n\nMillion Units/kg/day\n\n\nkcal/kg/day\n\n\nng/kg/day\n\n\nmg PE/kg/day\n\n\nmilli-units/kg/day\n\n\npg/kg/day\n\n\nInch/kg/day\n\n\nKBq/kg/day\n\n\nMBq/kg/day\n\n\nGBq/kg/day\n\n\nmL/kg/day (IDL)\n\n\nL/kg/day (IDL)\n\n\nmg/kg/day (IDL)\n\n\ng/kg/day (IDL)\n\n\nUnits/kg/day (IDL)\n\n\nmmol/kg/day (IDL)\n\n\nmEq/kg/day (IDL)\n\n\nmcg/kg/day (IDL)\n\n\nInt'l Units/kg/day (IDL)\n\n\nMillion Units/kg/day (IDL)\n\n\nKcal/kg/day (IDL)\n\n\nng/kg/day (IDL)\n\n\nmg PE/kg/day (IDL)\n\n\nmilli-units/kg/day (IDL)\n\n\npg/kg/day (IDL)\n\n\nmL/kg/day (ADJ)\n\n\nL/kg/day (ADJ)\n\n\nmg/kg/day (ADJ)\n\n\ng/kg/day (ADJ)\n\n\nUnits/kg/day (ADJ)\n\n\nmmol/kg/day (ADJ)\n\n\nmEq/kg/day (ADJ)\n\n\nmcg/kg/day (ADJ)\n\n\nInt'l Units/kg/day (ADJ)\n\n\nMillion Units/kg/day (ADJ)\n\n\nKcal/kg/day (ADJ)\n\n\nng/kg/day (ADJ)\n\n\nmg PE/kg/day (ADJ)\n\n\nmilli-units/kg/day (ADJ)\n\n\npg/kg/day (ADJ)\n\n\nmcL/kg/day\n\n\nIR/kg/day\n\n\nBAU/kg/day\n\n\nMillion Int'l Units/kg/day\n\n\nmL/m2/day\n\n\nL/m2/day\n\n\nmg/m2/day\n\n\ng/m2/day\n\n\nUnits/m2/day\n\n\nmmol/m2/day\n\n\nmEq/m2/day\n\n\nmcg/m2/day\n\n\nkJ/m2/day\n\n\nInt'l Units/m2/day\n\n\nMillion Units/m2/day\n\n\nkcal/m2/day\n\n\nng/m2/day\n\n\nmg PE/m2/day\n\n\nmilli-units/m2/day\n\n\npg/m2/day\n\n\nKBq/m2/day\n\n\nMBq/m2/day\n\n\nGBq/m2/day\n\n\nmcL/m2/day\n\n\nmL/1.7m2/day\n\n\nL/1.7m2/day\n\n\nmg/1.7m2/day\n\n\ng/1.7m2/day\n\n\nUnits/1.7m2/day\n\n\nmmol/1.7m2/day\n\n\nmEq/1.7m2/day\n\n\nmcg/1.7m2/day\n\n\nkJ/1.7m2/day\n\n\nInt'l Units/1.7m2/day\n\n\nMillion Units/1.7m2/day\n\n\nkcal/1.7m2/day\n\n\nng/1.7m2/day\n\n\nmg PE/1.7m2/day\n\n\nmilli-units/1.7m2/day\n\n\npg/1.7m2/day\n\n\nKBq/1.7m2/day\n\n\nMBq/1.7m2/day\n\n\nGBq/1.7m2/day\n\n\nmcL/1.7m2/day\n\n\nmL/oz/day\n\n\nL/oz/day\n\n\nmg/oz/day\n\n\ng/oz/day\n\n\nUnits/oz/day\n\n\nmmol/oz/day\n\n\nmEq/oz/day\n\n\nmcg/oz/day\n\n\nkJ/oz/day\n\n\nInt'l Units/oz/day\n\n\nMillion Units/oz/day\n\n\nkcal/oz/day\n\n\nng/oz/day\n\n\nmg PE/oz/day\n\n\nmilli-units/oz/day\n\n\npg/oz/day\n\n\nKBq/oz/day\n\n\nMBq/oz/day\n\n\nGBq/oz/day\n\n\nmcL/oz/day\n\n\nIR/m2/day\n\n\nBAU/m2/day\n\n\nMillion Int'l Units/m2/day\n\n\nKilo Int'l Units/m2/day\n\n\nIR/1.7m2/day\n\n\nBAU/1.7m2/day\n\n\nMillion Int'l Units/1.7m2/day\n\n\nKilo Int'l Units/1.7m2/day\n\n\nIR/oz/day\n\n\nBAU/oz/day\n\n\nMillion Int'l Units/oz/day\n\n\nKilo Int'l Units/oz/day\n\n\nkJ/30 mL\n\n\nkcal/30 mL\n\n\nGy-cm2\n\n\nmL/cm2\n\n\nmg/cm2\n\n\nmOsmol\n\n\neach\n\n\ntablet\n\n\ncapsule\n\n\ndrop\n\n\ntsp\n\n\npuff\n\n\nsuppository\n\n\nspray\n\n\nSquirt\n\n\ninch\n\n\npatch\n\n\nAct\n\n\nampule\n\n\nBar\n\n\nBottle\n\n\nCan\n\n\nDevice\n\n\nenema\n\n\nGallon\n\n\nInhaler\n\n\nkit\n\n\nlb\n\n\nlozenge\n\n\noz\n\n\npacket\n\n\nStick\n\n\nstrip\n\n\nTbsp\n\n\nTube\n\n\nvial\n\n\nWafer\n\n\nContainer\n\n\nSyringe\n\n\nPackage\n\n\napplicator\n\n\ncm\n\n\nApplicatorful\n\n\nTroche\n\n\nmillicurie\n\n\nIntra Uterine Device\n\n\nPart\n\n\nm\n\n\nFilm\n\n\nMillion Cells\n\n\nDose\n\n\nmm\n\n\nIR\n\n\nBAU\n\n\nkg\n\n\ncm2\n\n\nImperial Gallon\n\n\nkJ\n\n\nPFU\n\n\nPiece\n\n\nMillion PFU\n\n\nDoses/Fill\n\n\nCartridge\n\n\nThousand Units\n\n\nLipoprotein Lipase Releasing Unit\n\n\nScoop\n\n\nMillion Int'l Units\n\n\nmm2\n\n\nPump\n\n\nfluid ounce\n\n\nProduct\n\n\nBag\n\n\nmcmol\n\n\n1e12 Vector Genomes\n\n\nVector Genomes\n\n\nmillicurie/kg\n\n\nmillicurie/m2\n\n\nmillicurie/1.7m2\n\n\nmicrocurie\n\n\nmicrocurie/kg\n\n\nmicrocurie/m2\n\n\nmicrocurie/1.7m2\n\n\nCanister\n\n\nmcg DFE\n\n\nBillion Cells\n\n\nApplication\n\n\nBox\n\n\nCapful\n\n\nInhalation\n\n\nLancet\n\n\nNeedle\n\n\nPad\n\n\nPen\n\n\nPiece of gum\n\n\nRing\n\n\nSwab\n\n\nSachet\n\n\nImplant\n\n\nInsert\n\n\nPools\n\n\nKilo Int'l Units\n\n\nKilo Int'l Units/kg/day\n\n\n1e11 Vector Genomes\n\n\n1e13 Vector Genomes\n\n\n1e14 Vector Genomes\n\n\n1e15 Vector Genomes\n\n\nCells\n\n\nNone / Other"
+    },
+    {
+      "index": 905,
+      "name": "DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unit category number associated with the dose of the administration.\n\n\n The category values for this column were already listed for column: MAR_INF_RATE_UNIT_C_NAME"
+    },
+    {
+      "index": 911,
+      "name": "MAR_DURATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The length of time the administration took to complete or infuse."
+    },
+    {
+      "index": 916,
+      "name": "MAR_DURATION_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The duration unit category number associated with the administration.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMinutes\n\n\nHours\n\n\nDays"
+    },
+    {
+      "index": 926,
+      "name": "DEV_RECV_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the device recorded this administration data."
+    },
+    {
+      "index": 931,
+      "name": "MAR_IMM_LINK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the immunization associated with this administration."
+    },
+    {
+      "index": 936,
+      "name": "OVRD_LINK_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The linked override pull status category number of the administration, indicating whether it is linked to a medication order. The status can be 1-\"linked\", 2-\"not linked\", or null.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLinked\n\n\nNot linked"
+    },
+    {
+      "index": 945,
+      "name": "MAR_OVRD_LNK_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user that updated the linked status of the override pull administration."
+    },
+    {
+      "index": 950,
+      "name": "MAR_ADMIN_DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department associated with this administration. A department is associated with an administration by checking the following locations in this order: the order's dispensing department, the order's routing department, and the patient's location at the time of the administration."
+    },
+    {
+      "index": 955,
+      "name": "MAR_ORD_DAT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The order contact for this administration."
+    },
+    {
+      "index": 960,
+      "name": "SCAN_MODE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the user scanned at least one barcode for this admin. This column should not be used to report on scanning compliance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 969,
+      "name": "DUE_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The medication administration record (MAR) action that is scheduled when a due time is acted upon.  This column will only be populated if Duration-Based Due Actions are configured (LSD 34640 and 34641).\n\n\n The category values for this column were already listed for column: MAR_ACTION_C_NAME"
+    },
+    {
+      "index": 975,
+      "name": "MAR_BILLING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This stores the 'billing provider' for a given administration."
+    },
+    {
+      "index": 980,
+      "name": "MED_OVRIDE_ALERT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column will list the overridden \"Med not scanned\" alert ID for an administration"
+    },
+    {
+      "index": 985,
+      "name": "PAT_OVRIDE_ALERT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column will list the overridden \"Patient not scanned\" alert ID for an administration"
+    },
+    {
+      "index": 990,
+      "name": "MAR_BLOOD_INFO_LN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the blood unit information associated with this administration. Together with ORDER_MED_ID, this forms the foreign key to the BLOOD_ADMIN_INFO table."
+    },
+    {
+      "index": 995,
+      "name": "CYCLIC_RATE_PARENT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the parent administration of this cyclic rate change due time."
+    },
+    {
+      "index": 1000,
+      "name": "MORPHINE_EQUIV_MG_DOSE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores a non-rate-based or non-continuous medication administration's equivalent dose in terms of milligrams of morphine. This value represents the relative amount of opiates a patient received from the administration. For medications which do not contain an opioid as defined in System Definitions, this value is 0. For continuous opioids and opioids with a rate-based dose, this value is null. Patches are considered to have a rate-based dose for this column. This is not calculated for blood product, feeding product, or patient-controlled analgesic (PCA) administrations."
+    },
+    {
+      "index": 1005,
+      "name": "MORPHINE_EQUIV_MG_PER_HR_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores a rate-based or continuous medication administration's equivalent dose rate in terms of milligrams of morphine infused per hour. This value represents the relative amount of opiates a patient received over the duration of the administration. For medications which do not contain an opioid as defined in system definitions, this value will be zero. For non-continuous opioids and opioids with a non-rate-based dose, this value will be null. Patches are considered to have a rated-based dose for this column. This item is not calculated for blood product, feeding product, or patient-controlled analgesic (PCA) administrations."
+    },
+    {
+      "index": 1010,
+      "name": "ORIGINAL_AMOUNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "In workflows where weight-based dose simplification or unit conversion can happen, this column contains the originally documented amount."
+    },
+    {
+      "index": 1015,
+      "name": "ORIGINAL_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the originally documented unit if dose simplification or unit conversion occurred.\n\n\n The category values for this column were already listed for column: MAR_INF_RATE_UNIT_C_NAME"
+    },
+    {
+      "index": 1021,
+      "name": "MAR_ORD_CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "The ORD contact date for this administration in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 1026,
+      "name": "CUP_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the ID that dictates which cup an administration belongs to."
+    },
+    {
+      "index": 1031,
+      "name": "SCHEDULED_DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The scheduled dose unit category ID for the administration.\n\n\n The category values for this column were already listed for column: MAR_INF_RATE_UNIT_C_NAME"
+    },
+    {
+      "index": 1037,
+      "name": "SCHEDULED_DOSE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The dose that was scheduled to be due for the administration of an order with multiple possible doses."
+    },
+    {
+      "index": 1042,
+      "name": "CONCENTRATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The concentration for the administration."
+    },
+    {
+      "index": 1047,
+      "name": "DUR_BASED_PARENT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the administration that created this duration-based due time."
+    },
+    {
+      "index": 1052,
+      "name": "DUR_BASED_CHILD_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the duration-based due time administration that was created by this administration."
+    },
+    {
+      "index": 1057,
+      "name": "CYCLIC_RATE_CHILD_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the following child administration of this cyclic rate change due time."
+    },
+    {
+      "index": 1062,
+      "name": "SCHEDULED_AMOUNT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Scheduled administration amount when the order has multiple doses."
+    },
+    {
+      "index": 1067,
+      "name": "SCHEDULED_AMOUNT_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Scheduled administration amount unit when the order has multiple doses.\n\n\n The category values for this column were already listed for column: MAR_INF_RATE_UNIT_C_NAME"
+    },
+    {
+      "index": 1073,
+      "name": "CUP_OVRIDE_ALERT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item will list the overridden \"Container not scanned\" alert for an administration."
+    }
+  ]
+}

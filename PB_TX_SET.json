@@ -1,0 +1,129 @@
+{
+  "table_name": "PB_TX_SET",
+  "description": "The PB_TX_SET table contains the premium billing payment transaction sets.",
+  "primary_key": {
+    "column_name": "PB_TXSET_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PB_TXSET_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the premium billing transaction set."
+    },
+    {
+      "index": 7,
+      "name": "PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the premium billing account associated with the transaction set."
+    },
+    {
+      "index": 12,
+      "name": "PB_PMT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the premium billing payment associated with the transaction set."
+    },
+    {
+      "index": 17,
+      "name": "CANCEL_PB_PMT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the cancelled premium billing payment associated with the transaction set."
+    },
+    {
+      "index": 22,
+      "name": "PB_INVC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "As of system 2002 MU4, this column is discontinued and replaced by the PB_TX_SET_INVOICE table. The unique ID of the premium billing invoice associated with the transaction set."
+    },
+    {
+      "index": 27,
+      "name": "CANCEL_PB_INVC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "As of system 2002 MU4, this column is discontinued and replaced by the PB_TX_SET_CNCL_INV table. The unique ID of the cancelled premium billing invoice associated with the transaction set."
+    },
+    {
+      "index": 32,
+      "name": "PERIOD_FROM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Beginning date of period for the transaction set."
+    },
+    {
+      "index": 37,
+      "name": "PERIOD_TO_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Ending date of the period for the transaction set."
+    },
+    {
+      "index": 42,
+      "name": "PMT_METH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Payment method of the transaction set (balance forward or exception).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBalance Forward\n\n\nException"
+    },
+    {
+      "index": 51,
+      "name": "CUST_PAIDBY_PTS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Describes portion of the invoice that this transaction set was targeted towards (entire invoice, custom portion, remaining invoice, or custom advice).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire Invoice\n\n\nCustom Portion of Invoice\n\n\nRemaining Invoice\n\n\nAll Outstanding Txs\n\n\nNone. Custom PTS Advice used in PBU"
+    },
+    {
+      "index": 63,
+      "name": "CUST_PTS_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment associated with a customized transaction set."
+    },
+    {
+      "index": 68,
+      "name": "LATEST_PB_INVC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the latest premium billing invoice record on the premium billing account when this payment was committed."
+    },
+    {
+      "index": 73,
+      "name": "INC_EFF_FR_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Effective from date for transactions included in the custom transaction set."
+    },
+    {
+      "index": 78,
+      "name": "INC_EFF_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Effective to date for transactions included in the custom transaction set."
+    },
+    {
+      "index": 83,
+      "name": "EXC_EFF_FR_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Effective from date for transactions excluded from the custom transaction set."
+    },
+    {
+      "index": 88,
+      "name": "EXC_EFF_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Effective to date for transactions excluded from the custom transaction set."
+    },
+    {
+      "index": 93,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The extract date and time of the record for this table."
+    }
+  ]
+}

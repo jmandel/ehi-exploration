@@ -1,0 +1,38 @@
+{
+  "table_name": "SVC_PMT_HISTORY",
+  "description": "The SVC_PMT_HISTORY table contains line level history for how a payment was processed.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction Record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this record."
+    },
+    {
+      "index": 17,
+      "name": "SVC_PMT_HISTORY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains a line level action that was taken for the payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nThe claim charge amount was increased due to charge not found extension.\n\n\nResubmit Insurance action will be suppressed. The coverage is not effective.\n\n\nRetro/Transfer/Charge Correction to the invoice has suppressed Resubmit Insurance.\n\n\nRetro/Transfer/Charge Correction to the invoice has suppressed Next Responsible Party.\n\n\nDenial has suppressed Next Responsible Party.\n\n\nWrite-off suppressed due to not allowed write-off performed by other payor.\n\n\nWrite-off suppressed due to not allowed write-off previously performed.\n\n\nWrite-off suppressed as insurance write-off actions are not allowed to overpost.\n\n\nResubmit insurance action will be suppressed. This secondary crossover payment has arrived before the primary.\n\n\nNext responsible party action will be suppressed. This secondary crossover payment has arrived before the primary.\n\n\nSecondary coverage skipped as they have already paid (from crossover).\n\n\nResubmit insurance action will be suppressed. This is a crossover payment.\n\n\nSelf-pay bad debt will be automatically recovered.\n\n\nA next responsible party action has been performed.\n\n\nA next responsible party action has been removed.\n\n\nRemark codes\n\n\nThis is a duplicate payment by the primary payor.\n\n\nA next responsible party was changed to research.\n\n\nA credit adjustment was decreased to preserve patient liability.\n\n\nNAA suppressed due to preserve patient liability.\n\n\nNAA suppressed due to $0 due to preserve patient liability.\n\n\nNAA modified due to preserve patient liability.\n\n\nRemittance workqueue comment.\n\n\nRemittance Note\n\n\nRemoved paid amount and added as capitation adjustment.\n\n\nTax amount removed from line.\n\n\nThe write-off amount is equal to or greater than the charge amount.\n\n\nNAA suppressed for full denials.\n\n\nPayment matched to charge with different procedure code\n\n\nNRP of zero balance is not performed because balance is no longer zero.\n\n\nNo NRP is performed because NRP amount is negative.\n\n\nNo NRP is performed because outstanding balance is negative.\n\n\nNRP amount is reduced to outstanding balance.\n\n\nAction amount adjusted due to FQHC/FPEP adjustment.\n\n\nPayment matched to charge with different billed amount.\n\n\nPaid amount cleared and moved to bundled line. Offsetting adjustment added.\n\n\nPaid amount added from show-only line(s). Offsetting adjustment added."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "table_name": "CLM_VALUE_RECORD",
+  "description": "This table holds basic identification and processing information for the claim value record.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the claim values record."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_CREATION_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the record was created."
+    },
+    {
+      "index": 12,
+      "name": "CLM_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of claim values stored in the record. CMS is used for professional and dental claims. UB is used for institutional claims. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCMS Claim\n\n\nUB Claim\n\n\nState Visit Data\n\n\nState Visit Provider Data\n\n\nVektis Claim\n\n\nPharmacy Claim"
+    },
+    {
+      "index": 25,
+      "name": "FORM_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of form used during processing. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nElectronic Form\n\n\nPaper Form\n\n\nBoth Paper and Electronic"
+    },
+    {
+      "index": 35,
+      "name": "CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The direction of the claim file, either incoming or outgoing. This value is only set for Accounts Payable claims.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncoming - Initial\n\n\nOutgoing\n\n\nIncoming - Repriced\n\n\nIncoming - Canceled\n\n\nOutgoing - External Pricing\n\n\nIncoming - External Pricing\n\n\nIncoming - Rejected"
+    },
+    {
+      "index": 49,
+      "name": "AP_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim information record associated with the invoice. This value is only set for Accounts Payable claims."
+    },
+    {
+      "index": 54,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The service area for the claim values record."
+    },
+    {
+      "index": 59,
+      "name": "HEALTH_SYS_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the Health System Identifier (HSI) of the source for the claim."
+    },
+    {
+      "index": 64,
+      "name": "SOURCE_ORGANIZATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The source organization of the external record. This value is only set for external claims."
+    },
+    {
+      "index": 69,
+      "name": "SOURCE_ORGANIZATION_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    }
+  ]
+}

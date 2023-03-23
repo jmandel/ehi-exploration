@@ -1,0 +1,73 @@
+{
+  "table_name": "PATIENT_ALG_UPD_HX",
+  "description": "The PATIENT_ALG_UPD_HX table contains one record for each update of a patient's allergy information.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID assigned to the patient record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of a specific allergy update in the patient's allergy update history. This is the second column in the primary key and, in addition to the patient ID, uniquely identifies a patient allergy update."
+    },
+    {
+      "index": 12,
+      "name": "ALRG_UPDT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the patient's allergy history was updated."
+    },
+    {
+      "index": 17,
+      "name": "ALRG_UPDT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who last updated the patient's allergy history."
+    },
+    {
+      "index": 22,
+      "name": "ALRG_UPDT_TIME",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The time at which the patient's allergy history was updated."
+    },
+    {
+      "index": 27,
+      "name": "ALRG_HX_REV_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the history of the status of the review of allergies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Used\n\n\nMark as Reviewed\n\n\nVerified\n\n\nViewed Only\n\n\nFully Reviewed\n\n\nPartially Reviewed\n\n\nUnable to Assess"
+    },
+    {
+      "index": 41,
+      "name": "ALRG_HX_REV_REAS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the history of the review reason of allergies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient unable to communicate\n\n\nPatient unreliable\n\n\nPatient not present\n\n\nLanguage barrier\n\n\nParent, guardian, or caregiver unavailable"
+    },
+    {
+      "index": 53,
+      "name": "ALRG_UPDT_DTTM",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date and time at which the patient's allergy history was updated."
+    },
+    {
+      "index": 58,
+      "name": "ALRG_HX_REV_EPT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains historical entries for the source encounter where allergies were reviewed. If allergies were reviewed outside the context of an encounter, the value is null."
+    }
+  ]
+}

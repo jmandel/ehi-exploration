@@ -1,0 +1,108 @@
+{
+  "table_name": "PAT_OR_ADM_LINK",
+  "description": "This table stores the link between encounter ID and the associated log or case ID.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the patient encounter."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
+    },
+    {
+      "index": 12,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The community ID of the owner of this encounter."
+    },
+    {
+      "index": 17,
+      "name": "OR_LINK_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the admission linked to the procedural case/log . This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 22,
+      "name": "OR_LINK_INP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The inpatient data ID used by the case and log."
+    },
+    {
+      "index": 27,
+      "name": "OR_SHARE_PERIOP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Do OR management system Periop activities share data with Inpatient?\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 36,
+      "name": "OR_SUM_BLOCKS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The summary block record associated with this surgery."
+    },
+    {
+      "index": 41,
+      "name": "OR_SRC_VISIT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item will store the Contact Serial Number (CSN) for the visit in which this surgery was created."
+    },
+    {
+      "index": 46,
+      "name": "OR_CASELOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the procedural case/log.  NOTE: Use the CASE_ID or LOG_ID columns to link to the case or log record, respectively. This column should not be used to write reports."
+    },
+    {
+      "index": 51,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when this row was extracted into enterprise reporting."
+    },
+    {
+      "index": 56,
+      "name": "OR_MED_REV_HSB_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The summary block record associated with the medication review workflow.  This summary block record will store all of the review history."
+    },
+    {
+      "index": 61,
+      "name": "CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the case (ORC) that is associated with this encounter."
+    },
+    {
+      "index": 66,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the log (ORL) that is associated with this encounter."
+    },
+    {
+      "index": 71,
+      "name": "PXPASS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the Procedure Pass that is associated with this surgical encounter."
+    }
+  ]
+}

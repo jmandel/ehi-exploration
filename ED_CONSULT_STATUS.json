@@ -1,0 +1,52 @@
+{
+  "table_name": "ED_CONSULT_STATUS",
+  "description": "The ED_CONSULT_STATUS table contains information about ED patients' \"consult\" status. One row in this table corresponds to one ED \"consult\" status change. If a patient's ED \"consult\" status is changed five times in a single encounter, this table will contain five rows for that encounter.",
+  "primary_key": {
+    "column_name": "INPATIENT_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the Inpatient Data Store record for this row. This column is frequently used to link to PAT_ENC_HSP.INPATIENT_DATA_ID."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the status associated with this ED consult. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ED_CONS_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number of the ED consult status for the ED encounter.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nConsult Called\n\n\nConsult Responded\n\n\nConsult Completed\n\n\nConsult Arrived"
+    },
+    {
+      "index": 23,
+      "name": "CONS_STATUS_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time when the ED consult status was set."
+    },
+    {
+      "index": 28,
+      "name": "CONS_STATUS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who is associated with this ED consult status change. This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 33,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI). This column is frequently used to link to PAT_ENC_HSP.PAT_ENC_CSN_ID."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "table_name": "CL_PLC_AUDIT",
+  "description": "This table extracts the audit data from a Patient Location (PLC) record.",
+  "primary_key": {
+    "column_name": "LOCATION_EVNT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "LOCATION_EVNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the location event."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "USER_EDIT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Item stores the user who made a specific modification to a patient location record."
+    },
+    {
+      "index": 17,
+      "name": "INST_OF_CHNG_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Item tracks the instant a change was made to the patient location record."
+    },
+    {
+      "index": 22,
+      "name": "ITM_CHANGED",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Item that holds which patient location item was modified."
+    },
+    {
+      "index": 27,
+      "name": "OLD_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Old value of item to be modified.  This is raw data, to get external data look at OLD_PLF_VALUE, OLD_STATUS_VALUE, OLD_EVENT_TYPE_VALUE, AND OLD_TIME_VALUE columns."
+    },
+    {
+      "index": 32,
+      "name": "NEW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "New value of item that was modified.  This is raw data, to get external data look at NEW_PLF_VALUE, NEW_STATUS_VALUE, NEW_EVENT_TYPE_VALUE, AND NEW_TIME_VALUE columns."
+    },
+    {
+      "index": 37,
+      "name": "CHANGE_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Action that describes how a patient location record was changed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nManual\n\n\nEvent Management\n\n\nAdmission\n\n\nTransfer\n\n\nDischarge\n\n\nHOV\n\n\nUpdate\n\n\nSign In\n\n\nCheck In\n\n\nCheck Out\n\n\nCancel Check In\n\n\nCancel Sign In\n\n\nInterface\n\n\nUndo Transfer\n\n\nUndo Admission\n\n\nUndo Discharge\n\n\nUndo Manual Update\n\n\nUndo HOV\n\n\nPatient Merge\n\n\nPatient Unmerge\n\n\nRoom Patient\n\n\nRemoved from Room\n\n\nPatient Transport\n\n\nLeave of Absence\n\n\nReturn from Leave of Absence\n\n\nUndo Leave of Absence\n\n\nUndo Return from Leave of Absence\n\n\nRTLS Update\n\n\nED Waiting\n\n\nUndo ED Arrival\n\n\nDismiss ED Encounter\n\n\nSurrounding Event Edit"
+    },
+    {
+      "index": 76,
+      "name": "OLD_PLF_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 215, then this column stores the old value of the patient location that was changed."
+    },
+    {
+      "index": 81,
+      "name": "NEW_PLF_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 215, then this column stores the new value of the patient location that was changed."
+    },
+    {
+      "index": 86,
+      "name": "OLD_STATUS_VALUE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 50, then this column stores the old value of the status that was changed."
+    },
+    {
+      "index": 91,
+      "name": "NEW_STATUS_VALUE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 50, then this column stores the new value of the status that was changed."
+    },
+    {
+      "index": 96,
+      "name": "OLD_EVENT_TYPE_VALUE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 70, then this column stores the old value of the event type that was changed."
+    },
+    {
+      "index": 101,
+      "name": "NEW_EVENT_TYPE_VALUE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 70, then this column stores the new value of the event type that was changed."
+    },
+    {
+      "index": 106,
+      "name": "OLD_TIME_VALUE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 221, 222, or 223, then this column stores the old value of the time that was changed."
+    },
+    {
+      "index": 111,
+      "name": "NEW_TIME_VALUE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If ITM_CHANGED is 221, 222, or 223, then this column stores the new value of the time that was changed."
+    }
+  ]
+}

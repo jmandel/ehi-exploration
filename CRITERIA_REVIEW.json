@@ -1,0 +1,269 @@
+{
+  "table_name": "CRITERIA_REVIEW",
+  "description": "This table contains information about medical necessity criteria reviews. The records included in this table are Criteria Review Records (CRR) records storing items that a case manager would enter in the Utilization Review activity or during a criteria review completed in Tapestry. For example, this includes the review outcome, guideline days, and the time and date the review was completed.",
+  "primary_key": {
+    "column_name": "CRITERIA_REVIEW_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CRITERIA_REVIEW_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the criteria review record."
+    },
+    {
+      "index": 7,
+      "name": "CRITERIA_REV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the criteria review record."
+    },
+    {
+      "index": 12,
+      "name": "PATIENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the patient the criteria review is for."
+    },
+    {
+      "index": 17,
+      "name": "OBJECT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of record the criteria review is for.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRFL"
+    },
+    {
+      "index": 25,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the referral that is associated with the criteria review."
+    },
+    {
+      "index": 30,
+      "name": "REVIEW_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The review ID associated with the criteria review."
+    },
+    {
+      "index": 35,
+      "name": "REVIEW_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The review number of the criteria review record."
+    },
+    {
+      "index": 40,
+      "name": "CRITERIA_SET_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The criteria set name for this criteria record."
+    },
+    {
+      "index": 45,
+      "name": "CRITERIA_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the criteria review.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Met\n\n\nMet\n\n\nIn Progress\n\n\nCompleted\n\n\nAcute Met\n\n\nCritical Met\n\n\nObservation Met\n\n\nAlternate Met\n\n\nIntermediate Met\n\n\nNot Applicable\n\n\nNeonatal Intensive Care Level III Met\n\n\nSpecial Care Level II Met\n\n\nNewborn Level I Met\n\n\nTransitional Care Met\n\n\nNeonatal Intensive Care Level IV Met\n\n\nVariance\n\n\nPartially Met\n\n\nAmbulatory Detoxification Met\n\n\nHome Care Met\n\n\nInpatient Met\n\n\nInpatient Detoxification Met\n\n\nIntensive Community-Based Treatment Met\n\n\nIntensive Outpatient Program Met\n\n\nOutpatient Met\n\n\nPartial Hospital Program Met\n\n\nSubacute Care Met\n\n\nResidential Crisis Program Met\n\n\nResidential Treatment Center Met\n\n\nSupervised Living Met\n\n\nInpatient Rehabilitation Met\n\n\nNot Met (Not Selected)\n\n\nNot Met (Selected)\n\n\nMet (Not Selected)\n\n\nMet (Selected)\n\n\nLevel I Met\n\n\nLevel II Met\n\n\nLevel III Met\n\n\nSubacute Met\n\n\nHospital in the Home Met\n\n\nDay Treatment Program Met\n\n\nNeutral\n\n\nSkilled Nursing Facility Met"
+    },
+    {
+      "index": 94,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The service date associated with this criteria review record."
+    },
+    {
+      "index": 99,
+      "name": "PROVIDER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider associated with the criteria review."
+    },
+    {
+      "index": 104,
+      "name": "PROVIDER_ID_REFERRING_PROV_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the referral source."
+    },
+    {
+      "index": 109,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of any notes associated with this criteria review."
+    },
+    {
+      "index": 114,
+      "name": "REVIEW_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Review status for criteria using CERMe (third-party software from McKesson used for utilization review).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending Primary\n\n\nIn Primary\n\n\nPending Secondary\n\n\nPending Secondary-Medical\n\n\nPending Appeal\n\n\nCompleted\n\n\nIn Progress\n\n\nWaiting For Info\n\n\nPrimary Completed\n\n\nSecondary Completed\n\n\nDeleted"
+    },
+    {
+      "index": 132,
+      "name": "PATIENT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Patient Contact Serial Number for the encounter in which the review was created."
+    },
+    {
+      "index": 137,
+      "name": "REV_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the type of review that is performed - Admission, Concurrent, Discharge, etc. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdmission\n\n\nContinued Stay\n\n\nDischarge\n\n\nPreadmission\n\n\nOutpatient Procedure\n\n\nUnspecified\n\n\nPlanned Admission\n\n\nEmergent Admission\n\n\nInitial Review"
+    },
+    {
+      "index": 153,
+      "name": "ADDITIONAL_NOTES_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores additional comments or notes related to the review."
+    },
+    {
+      "index": 158,
+      "name": "REVIEW_INSTANT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant the review was filed."
+    },
+    {
+      "index": 163,
+      "name": "CONTENT_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The content provider used for this review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInterQual�\n\n\nMCG�"
+    },
+    {
+      "index": 172,
+      "name": "REVIEW_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Diagnosis used for the review."
+    },
+    {
+      "index": 177,
+      "name": "REVIEW_PX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure related to this review."
+    },
+    {
+      "index": 182,
+      "name": "CRITERIA_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Final determination of the review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApproved\n\n\nReferred for medical review\n\n\nWaiting for more information\n\n\nRequest withdrawn\n\n\nReview interrupted\n\n\nAlternate procedure/referral/LOC selected\n\n\nCertified\n\n\nDirected to New Criteria Subset\n\n\nDischarged with no further treatment\n\n\nNon-Certified\n\n\nNot Appropriate\n\n\nNot Approved\n\n\nOverturned\n\n\nPartially Certified\n\n\nRedirected\n\n\nRefer to Case Management\n\n\nReferred for Peer Review\n\n\nRefer for Secondary\n\n\nRequest Canceled\n\n\nAppropriate\n\n\nClinically stable for discharge\n\n\nOther"
+    },
+    {
+      "index": 211,
+      "name": "PARENT_REVIEW_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Points to the parent criteria review that generated this review."
+    },
+    {
+      "index": 216,
+      "name": "REV_DAY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the type of day for this review.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClinical Indication\n\n\nCare Day\n\n\nExtended Stay\n\n\nOperative Status\n\n\nIntensive Care\n\n\nIntermediate Care\n\n\nTelemetry Care"
+    },
+    {
+      "index": 230,
+      "name": "REVIEW_DAY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the numeric day of the review."
+    },
+    {
+      "index": 235,
+      "name": "GUIDELINE_DAY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the current Guideline Day for an MCG Optimal Recovery Course."
+    },
+    {
+      "index": 240,
+      "name": "COMP_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The time and date a utilization review was marked complete."
+    },
+    {
+      "index": 245,
+      "name": "COMP_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who marked a utilization review as complete."
+    },
+    {
+      "index": 250,
+      "name": "CLINICAL_ASSESSMENT_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record for the clinical assessment note for this review."
+    },
+    {
+      "index": 255,
+      "name": "INITIAL_REVIEW_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record for comments related to the initial reviewer's decision."
+    },
+    {
+      "index": 260,
+      "name": "PHYS_ADVISOR_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record for comments related to the physician advisor's decision."
+    },
+    {
+      "index": 265,
+      "name": "REVIEW_SELECTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This row indicates whether a patient status associated with a review is the status selected by the user. Selection is relevant for reviews in which the user can check off criteria for more than one patient status such as observation or inpatient, but for which the user must select one target patient status to file the review. If the patient status associated with the review is the selected status, this item is set to Yes. If the patient status associated with a review is not the status selected by the user, it is set to No. If this item is empty, then the review does not have an associated patient status that is either selected or not selected.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 274,
+      "name": "CREATION_REVIEWER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reviewer who first created this review."
+    },
+    {
+      "index": 279,
+      "name": "CREATION_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant at which this review was created."
+    },
+    {
+      "index": 284,
+      "name": "OVERALL_DETERMINATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Textual representation of the overall determination of a review."
+    },
+    {
+      "index": 289,
+      "name": "REVIEW_VENDOR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores which criteria review vendor created the review.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 295,
+      "name": "AUTH_REQUEST_STATUS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Authorization request status from a third party criteria review vendor."
+    }
+  ]
+}

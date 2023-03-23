@@ -1,0 +1,31 @@
+{
+  "table_name": "ORD_ROUTING_INFO",
+  "description": "This table contains the PLF (patient location facility) record and/or department type used to get the routing information for the order record.  It will only contain rows that have at least one value in either the ROUTING_DEPT_PLF_ID column or the ROUTING_DEPT_TYPE_C column.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "ROUTING_DEPT_PLF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the PLF (patient location facility) record that is used to determine the order routing information."
+    },
+    {
+      "index": 12,
+      "name": "ROUTING_DEPT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The phase of care category ID for an order record, used as a routing department to route the order when a specific department is known.\n\n\nMay contain organization-specific values: Yes"
+    }
+  ]
+}

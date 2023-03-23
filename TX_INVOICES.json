@@ -1,0 +1,52 @@
+{
+  "table_name": "TX_INVOICES",
+  "description": "This table maps a link from the CLARITY_TDL table via TX_ID to the Invoice tables via INVOICE_ID.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the invoice associated with this transaction. Multiple invoices can be associated with this transaction."
+    },
+    {
+      "index": 12,
+      "name": "ETR_BC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the transaction is on a bill or a claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim\n\n\nBill"
+    },
+    {
+      "index": 21,
+      "name": "BC_ACCEPT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the bill or claim was accepted."
+    },
+    {
+      "index": 26,
+      "name": "INVOICE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The invoice number for the transaction."
+    },
+    {
+      "index": 31,
+      "name": "INVOICE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique internal identifier of the invoice."
+    }
+  ]
+}

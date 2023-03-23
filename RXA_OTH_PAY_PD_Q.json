@@ -1,0 +1,66 @@
+{
+  "table_name": "RXA_OTH_PAY_PD_Q",
+  "description": "This table extracts the related multiple-response Other Payer Amount Paid Qualifier (I RXA 3605) item.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the adjudication record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated 'Other Payer Amount Paid' code in the adjudication's record. Together with adjudication RECORD_ID, this forms the foreign key to the RXA_OTH_PAY_PD_Q table."
+    },
+    {
+      "index": 17,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple 'Other Payer Amount Paid' codes associated with the adjudication from the RXA_OTH_PAY_PD_Q table"
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "O_OTH_PAY_AMT_Q_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The code that qualifies the \"Other Payer Amount Paid\" (431-DV)"
+    },
+    {
+      "index": 32,
+      "name": "O_OTH_PAY_AMT_Q_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 37,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    }
+  ]
+}

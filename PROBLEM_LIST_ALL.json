@@ -1,0 +1,38 @@
+{
+  "table_name": "PROBLEM_LIST_ALL",
+  "description": "This is a generic table that contains every Problem List (LPL) record regardless of its type. It also contains a link to the patient record that is associated with the LPL record, a column indicating the type of LPL record, and an optional link from a Problem History record (type 7) to the corresponding Problem record (type 1) that it describes.",
+  "primary_key": {
+    "column_name": "PROBLEM_LIST_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PROBLEM_LIST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the problem record."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record associated with this problem list."
+    },
+    {
+      "index": 12,
+      "name": "HX_SOURCE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ID of the problem record that this history record describes."
+    },
+    {
+      "index": 17,
+      "name": "RECORD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the type of information stored in this record, such as Problem List, Allergy, Immunization, etc.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProblem List\n\n\nAllergy\n\n\nImmunization\n\n\nChronic Meds\n\n\nWound\n\n\nSystem\n\n\nProblem History\n\n\nAdverse Event"
+    }
+  ]
+}

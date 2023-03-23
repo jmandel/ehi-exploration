@@ -1,0 +1,52 @@
+{
+  "table_name": "SERVICE_PLAN_HX_CHANGE",
+  "description": "The SERVICE_PLAN_HX_CHANGE table contains details of what items were modified in a revision of a service plan. Information about the user modifying the service plan and the time of modification can be found in SERVICE_PLAN_HX_REVISION.",
+  "primary_key": {
+    "column_name": "SERVICE_PLAN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SERVICE_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the service plan record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AUDIT_TRAIL_REVISION",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The revision in which this update was made. Corresponds with a line of SERVICE_PLAN_HX_REVISION."
+    },
+    {
+      "index": 17,
+      "name": "AUDIT_TRAIL_ITEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of the item that was updated"
+    },
+    {
+      "index": 22,
+      "name": "AUDIT_TRAIL_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line of the item in AUDIT_TRAIL_ITEM being updated. 1 for single response items."
+    },
+    {
+      "index": 27,
+      "name": "AUDIT_TRAIL_NEW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The new value of the item in AUDIT_TRAIL_ITEM at the line in AUDIT_TRAIL_LINE, after the update is made."
+    }
+  ]
+}

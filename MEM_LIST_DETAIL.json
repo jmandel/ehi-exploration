@@ -1,0 +1,73 @@
+{
+  "table_name": "MEM_LIST_DETAIL",
+  "description": "The MEM_LIST _DETAIL table contains a list of members in a transaction like capitation computation or capitation receipt and reconciliation.",
+  "primary_key": {
+    "column_name": "MEM_LIST_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "MEM_LIST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the transaction member list record computed as part of the specialty capitation payment process."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "MEMBER_LIST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the member eligible for inclusion in specialty capitation payment computations."
+    },
+    {
+      "index": 17,
+      "name": "COVERAGE_LIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the coverage record for the member under which the member is eligible for inclusion in specialty capitation payment computations."
+    },
+    {
+      "index": 22,
+      "name": "MEMBER_DOB",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of birth for the member eligible for inclusion in specialty capitation payment computations."
+    },
+    {
+      "index": 27,
+      "name": "MEMBER_SEX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The sex of the member eligible for inclusion in specialty capitation payment computations.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+    },
+    {
+      "index": 40,
+      "name": "MEMBER_CVG_ATTRS_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores members' coverage attributes formatted by category list CVG 2001."
+    },
+    {
+      "index": 45,
+      "name": "MEM_MCARE_CONTRACT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the member's medicare advantage contract number."
+    },
+    {
+      "index": 50,
+      "name": "WITHHOLD_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specialty capitation payment withhold reason category ID for a member in the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMember Suspended\n\n\nMember Limit Exceeded"
+    }
+  ]
+}

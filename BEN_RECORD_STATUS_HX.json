@@ -1,0 +1,45 @@
+{
+  "table_name": "BEN_RECORD_STATUS_HX",
+  "description": "This table contains historical information about the change in benefit statuses.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the benefits record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "EDIT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant that the record status was changed."
+    },
+    {
+      "index": 17,
+      "name": "EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user who changed the record status."
+    },
+    {
+      "index": 22,
+      "name": "EDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the action that was applied to the record status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nUndo Delete\n\n\nHide\n\n\nUnhide"
+    }
+  ]
+}

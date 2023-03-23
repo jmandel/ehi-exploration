@@ -1,0 +1,206 @@
+{
+  "table_name": "SPOC_PARTICIPANTS",
+  "description": "List of participants on the plan of care tracked over versions as the plan is updated.",
+  "primary_key": {
+    "column_name": "POC_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "POC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the plan of care record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "PART_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProvider\n\n\nPatient\n\n\nRelation\n\n\nCommunity Member"
+    },
+    {
+      "index": 33,
+      "name": "PART_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider added as a plan of care participant."
+    },
+    {
+      "index": 38,
+      "name": "PART_COMM_MEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the free text name of a community member participating in the creation of the plan of care."
+    },
+    {
+      "index": 43,
+      "name": "PART_COMM_MEM_CNCT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains user entered contact information about a community member participant."
+    },
+    {
+      "index": 48,
+      "name": "PART_COMM_MEM_REL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the relationship to the patient of a free text community member added to the plan of care."
+    },
+    {
+      "index": 53,
+      "name": "PART_DISCIPLINE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the discipline for the plan of care participant."
+    },
+    {
+      "index": 58,
+      "name": "PART_DISCIPLINE_ID_DISC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the discipline record."
+    },
+    {
+      "index": 63,
+      "name": "PART_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The role category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContributor\n\n\nReviewer\n\n\nOwner"
+    },
+    {
+      "index": 73,
+      "name": "PART_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains comments about the participants. Comments up to 100 characters are allowed."
+    },
+    {
+      "index": 78,
+      "name": "PART_SIGNER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the participant in required to sign the plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 87,
+      "name": "PART_SIGNED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the participant has signed the plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Signed\n\n\nSigned\n\n\nDeclined"
+    },
+    {
+      "index": 97,
+      "name": "PART_SIG_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the participant signed the plan of care."
+    },
+    {
+      "index": 102,
+      "name": "PART_SIG_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The signing method category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMark as Signed\n\n\nRe-Authentication\n\n\nE-Signature"
+    },
+    {
+      "index": 112,
+      "name": "PART_MK_SIG_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The mark as signed reason category ID for the plan of care participant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nParticipant Signed on Paper\n\n\nOther (See Comment)"
+    },
+    {
+      "index": 121,
+      "name": "PART_MK_SIG_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains a comment for the reason a participant was marked as signed."
+    },
+    {
+      "index": 126,
+      "name": "PART_CONTACT_RLA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the patient contact added as a participant for a plan of care."
+    },
+    {
+      "index": 131,
+      "name": "PART_DECLN_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The decline reason category ID for a plan of care participant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRefused to Sign\n\n\nUnable to Sign\n\n\nOther (See Comment)"
+    },
+    {
+      "index": 141,
+      "name": "PART_DECLN_RSN_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the comment for the reason a participant declined to sign the plan."
+    },
+    {
+      "index": 146,
+      "name": "PART_EXTEND_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The extended role category ID for the plan of care participant.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 152,
+      "name": "PART_AGRMNT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The agreement participant type category ID for participants on an agreement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSubject\n\n\nSigner"
+    },
+    {
+      "index": 161,
+      "name": "PART_CONT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the contribution status for the corresponding participant on a plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHas Not Contributed\n\n\nHas Contributed"
+    },
+    {
+      "index": 170,
+      "name": "PART_CONTRIBN_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the instant the contribution for the corresponding participant was recorded on the plan of care."
+    },
+    {
+      "index": 175,
+      "name": "PART_COMM_MEM_PAT_FACING_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the free text patient-facing name of a community member participating in the creation of the plan of care."
+    },
+    {
+      "index": 180,
+      "name": "PART_SIG_DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The linked E-Signature document for a given participant."
+    }
+  ]
+}

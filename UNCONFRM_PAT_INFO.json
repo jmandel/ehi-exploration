@@ -1,0 +1,45 @@
+{
+  "table_name": "UNCONFRM_PAT_INFO",
+  "description": "This table stores unconfirmed patient tracking information.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "UNCONFRM_PAT_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unconfirmed patient status category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDuplicate Review Needed\n\n\nIdentity Verification Needed\n\n\nPatient Creation in Progress\n\n\nFlagged as Suspicious"
+    },
+    {
+      "index": 23,
+      "name": "UNCONFRM_PAT_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unconfirmed patient workflow source category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyChart - On My Way\n\n\nMyChart - Unverified Proxy Video Visit\n\n\nWelcome\n\n\nMyChart - Self-Signup\n\n\nMyChart - Open Scheduling\n\n\nMyChart - Symptom Checker\n\n\nUnconfirmed Identity Activity\n\n\nWeb Service\n\n\nMyChart - SAML Login\n\n\nMyChart - Guest Proxy"
+    },
+    {
+      "index": 40,
+      "name": "UNCONFRM_PAT_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unconfirmed patient status reason category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFake Demographics\n\n\nIdentity Theft\n\n\nNo Identification\n\n\nPatient Not Present\n\n\nPatient Cannot Communicate\n\n\nOther"
+    }
+  ]
+}

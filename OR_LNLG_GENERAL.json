@@ -1,0 +1,199 @@
+{
+  "table_name": "OR_LNLG_GENERAL",
+  "description": "This table contains the general information about the surgical log line (ORM) record. This table also contains the information that can apply to several different types of surgical log line records.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the line record for this row."
+    },
+    {
+      "index": 7,
+      "name": "RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the line record."
+    },
+    {
+      "index": 12,
+      "name": "RECORD_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category number for the line record. A null status means that the record is active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+    },
+    {
+      "index": 27,
+      "name": "PREALL_REC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The pre-allocated record type category number for the line record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPre-Allocated Record\n\n\nShell Record"
+    },
+    {
+      "index": 36,
+      "name": "PREALLOCATED_LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The surgical log to which this record has been pre-allocated. If record is in use or was pre-allocated by the pre-allocation process, this item will not be populated."
+    },
+    {
+      "index": 41,
+      "name": "ORM_REC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The surgical log data type category number for the line record. For example, the types of data stored in line records include delays, staff, and equipment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAnesthesia Staff\n\n\nAnesthesia Equipment\n\n\nAdditional Anesthesia Staff\n\n\nAnesthesia Complications\n\n\nBlood Info\n\n\nAdverse Events\n\n\nComplications\n\n\nDelays\n\n\nStaff\n\n\nEquipment\n\n\nInstruments\n\n\nPre-op Prep\n\n\nPre-op Skin\n\n\nTourniquet Info\n\n\nPost-op Prep\n\n\nPost-op Skin\n\n\nVisitors\n\n\nOther Equipment\n\n\nPre-surgery Events\n\n\nCounts\n\n\nPre-op Appointments\n\n\nPost-op Appointments\n\n\nPatient Positioning\n\n\nDiagnosis/Procedure Info\n\n\nElectro-surgery Devices\n\n\nSCD Devices\n\n\nX-Ray Devices\n\n\nLaser Devices\n\n\nWarming Devices\n\n\nSpecimens\n\n\nMedications\n\n\nCatheters, Drains, Packings\n\n\nImplants\n\n\nArrival Therapies\n\n\nAnesthesia/Diagnosis Info\n\n\nOR Billing History"
+    },
+    {
+      "index": 84,
+      "name": "MARKED_FOR_DEL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the line record has been marked for deletion. Y indicates the record has been marked for deletion. A null value indicates that the record has not been marked for deletion.  An N will not be populated for this column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 93,
+      "name": "LOG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the log to which this ORM record belongs."
+    },
+    {
+      "index": 98,
+      "name": "PRESERVE_RECORD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines whether the ORM resource needs to be preserved during rebuild since it has been documented in the log.\n\n\n The category values for this column were already listed for column: MARKED_FOR_DEL_YN"
+    },
+    {
+      "index": 104,
+      "name": "MAN_ENTERED_TM_SEC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The manually entered total time that a resource was used in seconds."
+    },
+    {
+      "index": 109,
+      "name": "LOANED_EQUIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if a particular piece of equipment is loaned or rented. Y indicates that the piece of equipment is loaned or rented. N indicates that the piece of equipment is not loaned or rented. A null value indicates that the line record is not any type of equipment or the value is not populated.\n\n\n The category values for this column were already listed for column: MARKED_FOR_DEL_YN"
+    },
+    {
+      "index": 115,
+      "name": "LOANED_EQUIP_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the loaned or rented piece of equipment that does not have a provider record in Epic."
+    },
+    {
+      "index": 120,
+      "name": "EQUIP_POSITION_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time a piece of equipment was positioned for use in a procedure."
+    },
+    {
+      "index": 125,
+      "name": "EQUIP_PRESSURE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "General item for storing the recorded equipment pressure, e.g. as measured on a CO2 Insufflator."
+    },
+    {
+      "index": 130,
+      "name": "CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the case whose log will contain this line of documentation."
+    },
+    {
+      "index": 135,
+      "name": "CREATED_EXTERNAL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this line of log documentation was created in an external system.\n\n\n The category values for this column were already listed for column: MARKED_FOR_DEL_YN"
+    },
+    {
+      "index": 141,
+      "name": "PREP_AREA_MOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column displays the modifier for the prep area to allow a more discrete documentation of laterality.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 148,
+      "name": "DEVICE_TEST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Item to document time at which device was tested."
+    },
+    {
+      "index": 153,
+      "name": "TTL_DISSIPATD_ENRGY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The cumulative dissipated energy used by the equipment."
+    },
+    {
+      "index": 158,
+      "name": "EQUIP_FLOW_RATE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The flow rate for the equipment."
+    },
+    {
+      "index": 163,
+      "name": "EQUIP_TOTAL_ENERGY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total energy used by the equipment."
+    },
+    {
+      "index": 168,
+      "name": "MAN_ENTERED_TM_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total length of time the tourniquet was inflated (in minutes)."
+    },
+    {
+      "index": 173,
+      "name": "DEFIB_NUM_APPLIED",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of times the defibrillator was used on the patient."
+    },
+    {
+      "index": 178,
+      "name": "EQUIP_MEASURED_LEN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the length measured by a piece of equipment."
+    },
+    {
+      "index": 183,
+      "name": "FREQUENCY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the equipment frequency."
+    },
+    {
+      "index": 188,
+      "name": "STAFF_NOTIFIED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the time that staff were notified."
+    },
+    {
+      "index": 193,
+      "name": "BACKGROUND_READING",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Reading of the background radiation"
+    }
+  ]
+}

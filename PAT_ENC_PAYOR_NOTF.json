@@ -1,0 +1,122 @@
+{
+  "table_name": "PAT_ENC_PAYOR_NOTF",
+  "description": "This table extracts the payor notification status information.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "MSG_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of notification that is sent to the payor.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient Admission Notification\n\n\nAdvanced Procedure Notification\n\n\nInpatient Discharge Notification\n\n\nObservation Admission Notification\n\n\nObservation Discharge Notification"
+    },
+    {
+      "index": 39,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coverage ID for the notification message sent to the payor"
+    },
+    {
+      "index": 44,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The payor ID for the notification message sent"
+    },
+    {
+      "index": 49,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 54,
+      "name": "BENEFIT_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The benefit plan ID for the notification message sent."
+    },
+    {
+      "index": 59,
+      "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 64,
+      "name": "MSG_SENT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant that notification message has been sent in UTC"
+    },
+    {
+      "index": 69,
+      "name": "MSG_RECEIVED_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant that notification response has been received in UTC"
+    },
+    {
+      "index": 74,
+      "name": "MSG_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Notification message status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSent\n\n\nReceived\n\n\nProcessed\n\n\nMissing Info\n\n\nError\n\n\nFiltered\n\n\nManually Resolved"
+    },
+    {
+      "index": 88,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of the note that corresponds with the notification message."
+    },
+    {
+      "index": 93,
+      "name": "USER_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user-entered text when manually verifying notification status."
+    }
+  ]
+}

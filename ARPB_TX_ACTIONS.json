@@ -1,0 +1,353 @@
+{
+  "table_name": "ARPB_TX_ACTIONS",
+  "description": "This table contains information about actions performed on professional billing transactions.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique key or identification number for a given transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column contains the line count for the information in this table. Each action associated with this transaction is stored on a separate line, one line for each entry."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action type category ID taken on the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Allowed Adjustment\n\n\nTransfer to Self-Pay\n\n\nNext Responsible Party\n\n\nResubmit Insurance\n\n\nWrite Off Self-Pay\n\n\nWrite Off Insurance\n\n\nTransfer to Insurance\n\n\nGramm Rudman Adjustment\n\n\nDenied\n\n\nTurn Off Automatic Self-Pay Write-Off\n\n\nTurn On Automatic Self-Pay Write-Off\n\n\nClose Claim\n\n\nDebit Adjustment\n\n\nResearch\n\n\nDo Not Bill Insurance\n\n\nBill Insurance\n\n\nSuspended NRP\n\n\nRecalculate Discount\n\n\nService Level Authorization Edit\n\n\nPost Dental Upgrade Adjustment"
+    },
+    {
+      "index": 39,
+      "name": "ACTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date in which this action is performed."
+    },
+    {
+      "index": 44,
+      "name": "ACTION_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount associated with this action."
+    },
+    {
+      "index": 49,
+      "name": "PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Payor associated with this action."
+    },
+    {
+      "index": 54,
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 59,
+      "name": "DENIAL_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The denial code associated with this action."
+    },
+    {
+      "index": 64,
+      "name": "DENIAL_CODE_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 69,
+      "name": "POST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date this transaction was posted in calendar format."
+    },
+    {
+      "index": 74,
+      "name": "STMT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The statement date of this transaction."
+    },
+    {
+      "index": 79,
+      "name": "OUT_AMOUNT_BEFORE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Outstanding amount of associated transaction before the action is performed."
+    },
+    {
+      "index": 84,
+      "name": "OUT_AMOUNT_AFTER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Outstanding amount of the associated transaction after the action is performed."
+    },
+    {
+      "index": 89,
+      "name": "INS_AMOUNT_BEFORE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Insurance amount of the associated transaction before the action is performed."
+    },
+    {
+      "index": 94,
+      "name": "INS_AMOUNT_AFTER",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Insurance amount of the associated transaction after the action is performed."
+    },
+    {
+      "index": 99,
+      "name": "BEFORE_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Payor of the associated transaction before the action is performed."
+    },
+    {
+      "index": 104,
+      "name": "BEFORE_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 109,
+      "name": "AFTER_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Payor of the associated transaction after the action is performed."
+    },
+    {
+      "index": 114,
+      "name": "AFTER_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 119,
+      "name": "BEFORE_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coverage of the associated transaction before the action is performed."
+    },
+    {
+      "index": 124,
+      "name": "AFTER_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coverage of the associated transaction after the action is performed."
+    },
+    {
+      "index": 129,
+      "name": "ACTION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who performed this action."
+    },
+    {
+      "index": 134,
+      "name": "ADJ_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If an adjustment is associated with this action, this column contains the adjustment code of that adjustment."
+    },
+    {
+      "index": 139,
+      "name": "RMC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The first reason code ID associated with this action."
+    },
+    {
+      "index": 144,
+      "name": "RMC_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 149,
+      "name": "RMC_TWO_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The second reason code�ID associated with this action."
+    },
+    {
+      "index": 154,
+      "name": "RMC_TWO_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 159,
+      "name": "RMC_THREE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The third reason code ID associated with this action."
+    },
+    {
+      "index": 164,
+      "name": "RMC_THREE_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 169,
+      "name": "RMC_FOUR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fourth reason code ID associated with this action."
+    },
+    {
+      "index": 174,
+      "name": "RMC_FOUR_ID_REMIT_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of each remittance code."
+    },
+    {
+      "index": 179,
+      "name": "PMT_PAYOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Payor of the payment if this action is associated with a payment."
+    },
+    {
+      "index": 184,
+      "name": "PMT_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 189,
+      "name": "POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Place of Service ID of the transaction."
+    },
+    {
+      "index": 194,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Department ID of this transaction."
+    },
+    {
+      "index": 199,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure ID for the transaction record."
+    },
+    {
+      "index": 204,
+      "name": "LOCATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Location Id for this transaction"
+    },
+    {
+      "index": 209,
+      "name": "SERVICE_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Service Area ID for this transaction"
+    },
+    {
+      "index": 214,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The internal ID of the record that maintains the patient's transactions. A patient may use more than one account and an account may contain more than one patient."
+    },
+    {
+      "index": 219,
+      "name": "PRIMARY_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Primary Diagnosis code for this charge."
+    },
+    {
+      "index": 224,
+      "name": "MODIFIER_ONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The first procedure modifier of the associated transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 229,
+      "name": "MODIFIER_TWO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The second procedure modifier of the associated transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 234,
+      "name": "MODIFIER_THREE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The third modifier of the associated transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 239,
+      "name": "MODIFIER_FOUR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The fourth modifier of the associated transaction. This is the external modifier, as it would be printed on the claim."
+    },
+    {
+      "index": 244,
+      "name": "ASSIGNMENT_BEF_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is a Yes/No flag to determine if the transaction was assigned to insurance before the action on this line for this transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 253,
+      "name": "ASSIGNMENT_AFTER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is a Yes/No flag to determine if the transaction was assigned to insurance after the action on this line for this transaction.\n\n\n The category values for this column were already listed for column: ASSIGNMENT_BEF_YN"
+    },
+    {
+      "index": 259,
+      "name": "ACTION_REMIT_CODES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This field stores a comma delimited list of external remittance codes for this transaction."
+    },
+    {
+      "index": 264,
+      "name": "ACTION_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the system generated comment for this transaction."
+    },
+    {
+      "index": 269,
+      "name": "ACTION_DATETIME",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC date and time the action was performed."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "table_name": "PEND_DISCON_ORD_HX",
+  "description": "This table contains history of information about pending discontinued orders.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PEND_DISC_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the pending discontinue action for the order. - 1 means the order is still pending discontinued.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nD/C Accepted\n\n\nPending D/C\n\n\nD/C Rejected"
+    },
+    {
+      "index": 22,
+      "name": "PEND_DISCON_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who entered pend discontinue for the order."
+    },
+    {
+      "index": 27,
+      "name": "PEND_DISC_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number for the reason for discontinue entered by the user who pend discontinued the order. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 33,
+      "name": "PEND_DISC_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant at which order was marked as pending discontinued."
+    },
+    {
+      "index": 38,
+      "name": "PEND_DISC_VERBAL_LN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the line index for the Verbal Order Type Flag item in the order record(SI ORD 34800).  It tells which line of data in the Verbal Order Type Flag corresponds to the lines of data in the Pending Discontinue Action item (SI ORD 34892). (SIGNED_TYPE_C column in tables ORDER_SIGNED_MED and PRDER_SIGNED_PROC)."
+    },
+    {
+      "index": 43,
+      "name": "PEND_DC_RES_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who took action, i.e., verified or rejected the pending discontinued order."
+    },
+    {
+      "index": 48,
+      "name": "PENDDC_RES_INS_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Instant at which an the pending discontinued order was accepted or rejected."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "table_name": "PAT_GUEST_PROXY_AUDIT",
+  "description": "An audit trail that tracks when a patient's guest proxy relationships are created, changed, or removed.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "PROXY_AUD_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Guest proxy relationship to audit"
+    },
+    {
+      "index": 17,
+      "name": "GSTPRXYAUD_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Action done on the guest proxy relationship\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRelationship Created\n\n\nUpgrade Requested\n\n\nUpgrade declined\n\n\nUpgraded\n\n\nDeleted"
+    },
+    {
+      "index": 29,
+      "name": "PROXY_AUD_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The time at which an action was audited for a guest proxy relationship"
+    },
+    {
+      "index": 34,
+      "name": "PROXY_AUD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the user who performed the action being audited"
+    }
+  ]
+}

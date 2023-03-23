@@ -1,0 +1,262 @@
+{
+  "table_name": "DOCS_RCVD_PROBS",
+  "description": "This table stores problems received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "PROB_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the unique reference identifier associated with the problem."
+    },
+    {
+      "index": 27,
+      "name": "PROB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the problem name sent by the external source."
+    },
+    {
+      "index": 32,
+      "name": "PROB_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Diagnosis record identifier that maps to the problem."
+    },
+    {
+      "index": 37,
+      "name": "PROB_DAT_NOT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the problem noted date."
+    },
+    {
+      "index": 42,
+      "name": "PROB_DAT_RSLV_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the problem resolved date."
+    },
+    {
+      "index": 47,
+      "name": "PROB_PRIORITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the priority of the problem."
+    },
+    {
+      "index": 52,
+      "name": "PROB_PRIORITY_ID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the mapped problem priority category ID.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 58,
+      "name": "PROB_IS_CHRONIC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item is set if the problem is chronic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 67,
+      "name": "PROB_STATUS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the problem status."
+    },
+    {
+      "index": 72,
+      "name": "PROB_STATUS_ID_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the mapped problem status category value.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+    },
+    {
+      "index": 82,
+      "name": "PROB_SRC_LPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the ID of the source problem."
+    },
+    {
+      "index": 87,
+      "name": "PROB_TYP_OF_CHNG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the type of change associated with the problem.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReceive\n\n\nEdit\n\n\nDelete"
+    },
+    {
+      "index": 97,
+      "name": "PROB_SRC_DXR_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item will store the contact serial number of the received document record that owns the instance of this problem."
+    },
+    {
+      "index": 102,
+      "name": "PROB_OVRD_LPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the record identifier of the local problem that this external problem should be grouped with."
+    },
+    {
+      "index": 107,
+      "name": "PROB_COMMENTS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the identifier of the Notes (HNO) record that stores problem comments."
+    },
+    {
+      "index": 112,
+      "name": "PROB_LAST_UPD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the date and time when the problem was last updated by the external system."
+    },
+    {
+      "index": 117,
+      "name": "PROB_PT_SRC_APP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this problem is a patient-entered problem (i.e. Received Documents type = 25), this item stores the application which was used to edit the problem for the contact (e.g. MyChart or Welcome). If blank, this is assumed to be MyChart.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyChart\n\n\nWelcome"
+    },
+    {
+      "index": 126,
+      "name": "PROB_DT_NOTED_NF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the nullFlavor value from the effectiveTime low node in a received CDA document.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Information\n\n\nInvalid\n\n\nDerived\n\n\nOther\n\n\nNegative infinity\n\n\nPositive infinity\n\n\nUn-encoded\n\n\nMasked\n\n\nNot applicable\n\n\nUnknown\n\n\nAsked but unknown\n\n\nTemporarily unavailable\n\n\nNot asked\n\n\nSufficient quantity\n\n\nTrace\n\n\nNot present\n\n\nUser Selected"
+    },
+    {
+      "index": 150,
+      "name": "PROB_DT_RESOLV_NF_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the nullFlavor value from the effectiveTime high node in a received CDA document.\n\n\n The category values for this column were already listed for column: PROB_DT_NOTED_NF_C_NAME"
+    },
+    {
+      "index": 156,
+      "name": "PROB_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the value from the statusCode node for a problem entry in a received CDA document.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOther\n\n\nNormal\n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+    },
+    {
+      "index": 174,
+      "name": "PROB_STATUS_ENTRY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the value from the status entryRelationship node in a received CDA document. This item itself is not the status of the problem.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nResolved"
+    },
+    {
+      "index": 184,
+      "name": "PROB_HIST_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The item indicates whether the problem is current or historic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCurrent\n\n\nHistorical\n\n\nInactive\n\n\nDiscontinued\n\n\nDeleted"
+    },
+    {
+      "index": 196,
+      "name": "PROB_HIST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the date that the historical status for this problem is valid through. After this date, the historical status needs to be rechecked."
+    },
+    {
+      "index": 201,
+      "name": "PROB_SRC_WPR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the MyChart user who edited the problem for the contact."
+    },
+    {
+      "index": 206,
+      "name": "PROB_EVENT_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the ID of the event that is associated with a problem. In cases where there are multiple encounters that link to a problem, the earliest encounter is represented here."
+    },
+    {
+      "index": 211,
+      "name": "PROB_DUP_LPL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the Problem List ID of an internal problem that is a duplicate of this row in the Received Document."
+    },
+    {
+      "index": 216,
+      "name": "PROB_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the contact serial number of the encounter that the problem was added on"
+    },
+    {
+      "index": 221,
+      "name": "PROB_DX_LATERALITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The laterality category ID for the problem.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSide unknown\n\n\nLeft\n\n\nRight\n\n\nBilateral\n\n\nNever\n\n\nPossible\n\n\nAlways\n\n\nNot determined"
+    },
+    {
+      "index": 236,
+      "name": "PROB_ANATOMICAL_LOC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anatomical location code of the problem."
+    },
+    {
+      "index": 241,
+      "name": "PROB_ANATOMICAL_LOC_DISP_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The anatomical location display name of the problem."
+    },
+    {
+      "index": 246,
+      "name": "PROB_OVERVIEW_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the Note for the overview note of this problem."
+    },
+    {
+      "index": 251,
+      "name": "PROB_COMMENTS_CHECKSUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the checksum of the Overview note and most recent Assessment and Plan Note along with the creation instant of the most recent Assessment and Plan Note in UTC and the Author's first and last name of the Assessment and Plan note. The format of the data is \"checksum C127 instant C127 first C127 last\". C127 is character 127. There are no spaces between the data elements."
+    }
+  ]
+}

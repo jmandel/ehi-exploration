@@ -1,0 +1,339 @@
+{
+  "table_name": "ORDER_PROC_6",
+  "description": "The ORDER_PROC_6 table enables you to report on the procedures ordered in the clinical system. This procedure table has the same basic structure as ORDER_PROC, but was created as a sixth table to prevent ORDER_PROC_5 from getting any larger.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the order record."
+    },
+    {
+      "index": 7,
+      "name": "FIRST_CHART_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who first made results available on the chart."
+    },
+    {
+      "index": 12,
+      "name": "FIRST_CHART_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time results were first made available on the chart."
+    },
+    {
+      "index": 17,
+      "name": "LAST_CHART_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who last made results available on the chart."
+    },
+    {
+      "index": 22,
+      "name": "LAST_CHART_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time results were last made available on the chart."
+    },
+    {
+      "index": 27,
+      "name": "FIRST_FINAL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who first made final results available on the chart."
+    },
+    {
+      "index": 32,
+      "name": "FIRST_FINAL_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time final results were first made available on the chart."
+    },
+    {
+      "index": 37,
+      "name": "LAST_FINAL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who last made final results available on the chart."
+    },
+    {
+      "index": 42,
+      "name": "LAST_FINAL_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time final results were last made available on the chart."
+    },
+    {
+      "index": 47,
+      "name": "FIRST_CORR_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who first authorized a correction to the result on this order."
+    },
+    {
+      "index": 52,
+      "name": "FIRST_CORR_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the results of this order were first corrected."
+    },
+    {
+      "index": 57,
+      "name": "LAST_CORR_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who last authorized a correction to the results of this order."
+    },
+    {
+      "index": 62,
+      "name": "LAST_CORR_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the results of this order were last corrected."
+    },
+    {
+      "index": 67,
+      "name": "IMG_EXAM_PAT_WT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Most recent patient weight (grams) preceding the end exam instant, within the system's age-based weight lookback range. Exams missing an end exam instant, as well as exams taking place too long after the last recorded patient weight, will not populate this item."
+    },
+    {
+      "index": 72,
+      "name": "IMG_EXAM_PAT_HT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Most recent patient height (centimeters) preceding the end exam instant, within the system's age-based height lookback range. Exams missing an end exam instant, as well as exams taking place too long after the last recorded patient height, will not populate this item."
+    },
+    {
+      "index": 77,
+      "name": "IMG_EXAM_PAT_BMI",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Most recent patient BMI preceding the end exam instant, within the system's�age-based height and weight lookback ranges. Exams missing an end exam instant, as well as exams taking place too long after the last recorded patient height or weight, will not populate this item."
+    },
+    {
+      "index": 82,
+      "name": "FOLLICLE_STDY_MIN_THRSHLD_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The minimum threshold from I LSD 53002 at the time of the study. This value is stored in millimeters."
+    },
+    {
+      "index": 87,
+      "name": "UNIQUE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID generated by the organization that originally created this order."
+    },
+    {
+      "index": 92,
+      "name": "ACCT_SERIAL_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The account serial number associated with the order."
+    },
+    {
+      "index": 97,
+      "name": "RSLT_TRANSMTL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the order was placed on the result transmittal queue."
+    },
+    {
+      "index": 102,
+      "name": "RSLT_TRANSMTL_ENTRY_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID used for the result transmittal queue entry associated with the order."
+    },
+    {
+      "index": 107,
+      "name": "ADD_ON_SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the specimen that the order was added onto."
+    },
+    {
+      "index": 112,
+      "name": "NO_PAT_CLASS_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This holds a reason that the patient class was stripped from the order. If this value is blank, it can mean either that the procedure didn't have a patient class or that the reason the patient class was stripped isn't a reason that's audited.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nThe patient's hospital account did not allow the new patient class.\n\n\nCould not find an ADT event to check the new patient class against.\n\n\nThe accommodation code, accommodation reason, service, or level of care were not allowed in this patient's location.\n\n\nMorrisey Concurrent Care Manager accounts do not allow the new patient class.\n\n\nHome Health accounts do not allow the new patient class.\n\n\nHospice accounts do not allow the new patient class.\n\n\nThe filter LPPs in EAF 62550 do not allow the new patient class.\n\n\nEither the new patient class was not mapped in HB or the patient's HAR did not allow it.\n\n\nThe patient's facility did not allow the new patient class.\n\n\nThe new patient class was the same as the patient's current patient class.\n\n\nThe ordering user did not have appropriate security for the patient class change.\n\n\nThe facility did not allow changing from the patient's current patient class to the new patient class.\n\n\nThe patient had an update effective after this order's effective instant and the facility did not allow changing from the order's patient class to the patient class effective later."
+    },
+    {
+      "index": 132,
+      "name": "PRIORITIZED_INST_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This item stores the prioritized instant (date and time) for an order in local time zone. It represents the most relevant date and time an action was taken on an order."
+    },
+    {
+      "index": 137,
+      "name": "INTENDED_SMOKE_QUIT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date a patient plans to quit smoking. This value is populated by filing an order-specific question."
+    },
+    {
+      "index": 142,
+      "name": "PRIORITIZED_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the prioritized instant (date and time) for an order in UTC time zone. It represents the most relevant date and time an action was taken on an order."
+    },
+    {
+      "index": 147,
+      "name": "RSLT_UPD_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the last update instant for a result in UTC"
+    },
+    {
+      "index": 152,
+      "name": "RECEIVED_EXT_AUTH_PROV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the free-text for the received authorizing provider's name. It is free text and not linked to a provider record because we do not want to generate provider records for all received external result orders."
+    },
+    {
+      "index": 157,
+      "name": "DICOM_LAST_UPD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of the last time the UIDs were updated."
+    },
+    {
+      "index": 162,
+      "name": "STUDY_LAST_OPENED_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The column contains the time the study was last opened in edit mode."
+    },
+    {
+      "index": 167,
+      "name": "PATH_NARRATIVE_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains the pathology result narrative ID and only supports historical data."
+    },
+    {
+      "index": 172,
+      "name": "IMG_CHGEAP_LOADED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether default chargeable Associated Procedures have been added to the Imaging Charge Capture Navigator. 'Y' indicates that default chargeable Associated Procedures have been added, 'N' or NULL indicate they have not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 181,
+      "name": "DEF_BNDL_CODE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates historical data about whether the default bundle codes are used for charges. 'Y' indicates that default bundle codes were used for charges, 'N' or NULL indicate that default bundle codes were not used.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 190,
+      "name": "REF_PRV_ROUT_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The 'Encounter Communication Sent - Method' category ID for the routing method that will be used for automated results routing. The method is determined when placing an order in Ancillary Order Entry.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIn Basket\n\n\nFax\n\n\nMail\n\n\nPhone Call\n\n\nMyChart\n\n\nNetwork Printer\n\n\nCourier Service\n\n\nOutside Provider Messaging\n\n\nPrint Locally\n\n\nEDI\n\n\nOpt Out\n\n\nE-mail\n\n\nFHIR\n\n\nSave to File"
+    },
+    {
+      "index": 211,
+      "name": "BATCH_PRINTED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column holds the instant the results report was printed through batch printing routine RISBSREP or through results routing."
+    },
+    {
+      "index": 216,
+      "name": "STUDY_READ_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the last time an imaging order had a status change of \"SAVED\" or higher."
+    },
+    {
+      "index": 221,
+      "name": "IMG_ADDEND_IN_EPIC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores when the addendum is updated in Epic (addendum sign date if using an Epic workflow, otherwise whenever received over the interface)"
+    },
+    {
+      "index": 226,
+      "name": "IMG_LAST_UPDATE_IN_EPIC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This column stores when the result is updated in Epic (sign date if using an Epic workflow, otherwise whenever received over the interface)"
+    },
+    {
+      "index": 231,
+      "name": "REI_FOLLICLE_ROUNDING_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The measurement rounding method for ovarian follicle averages. This indicates whether follicle measurement averages are rounded to the nearest whole-millimeter or half-millimeter. This is only set for studies that contain ovarian follicle measurements. Also only used for averages, not follicle diameters which always round to the nearest tenth.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWhole Millimeter\n\n\nHalf Millimeter"
+    },
+    {
+      "index": 240,
+      "name": "MYC_BATCH_RELEASE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Server time instant after which a result will be released to MyChart by the batch job"
+    },
+    {
+      "index": 245,
+      "name": "ORDER_DOMAIN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used to semantically group types of procedure orders\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+    },
+    {
+      "index": 252,
+      "name": "PERFORM_BY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Unbuffered perform-by date used in automatic order cancellation batch job."
+    },
+    {
+      "index": 257,
+      "name": "SEQ_DOC_LAST_UPD_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant when the linked sequencing documents were last updated, represented in UTC."
+    },
+    {
+      "index": 262,
+      "name": "SEQ_DOC_LAST_UPD_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the linked sequencing documents were last updated, represented in the local time of the system that made the change."
+    },
+    {
+      "index": 267,
+      "name": "DISCON_LOC_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant the order was discontinued or canceled in the local timezone."
+    },
+    {
+      "index": 272,
+      "name": "FIRST_FINAL_LOC_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant final results were first made available on the chart. This is the result contact instant (ORD-1970) from the first contact where the procedure result status (ORD-115) is 3-Final result."
+    },
+    {
+      "index": 277,
+      "name": "SND_ORG_PAT_MRN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the patient's MRN ID from the organization that sent this order."
+    }
+  ]
+}

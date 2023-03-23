@@ -1,0 +1,45 @@
+{
+  "table_name": "PB_DTL_TX_AR_STAT_HX",
+  "description": "The Status History table contains a history of each time the transaction's status has changed.",
+  "primary_key": {
+    "column_name": "TRANSACTION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TRANSACTION_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the detail transaction record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AR_STATUS_CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of the status change."
+    },
+    {
+      "index": 17,
+      "name": "AR_SYSTEM_UPDATED_STATUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the status change occurred automatically by the system (yes or no).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 26,
+      "name": "AR_TX_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status that the transaction was changed to.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nWaiting to file\n\n\nFiling\n\n\nIn Review\n\n\nFiled\n\n\nVoided"
+    }
+  ]
+}

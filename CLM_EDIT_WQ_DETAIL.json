@@ -1,0 +1,115 @@
+{
+  "table_name": "CLM_EDIT_WQ_DETAIL",
+  "description": "This table contains one row for each transaction on a claim that is or has been in the claim error pool. This table updates records for transactions on claims that are still in the claim error pool but leaves the records for transactions on claims that are no longer in the error pool. There is only one date field concerning when the record was created, EXTRACT_DATE, which functions as in CLM_EDIT_WQ_DETAIL. After the claim has left the claim error pool, the last record will remain in the table indefinitely.",
+  "primary_key": {
+    "column_name": "CLP_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the claim record that entered the claim edit workqueue."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the transaction that appears on the claim record."
+    },
+    {
+      "index": 12,
+      "name": "PERFORMING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the provider who performed the transaction's service(s)."
+    },
+    {
+      "index": 17,
+      "name": "REFERRAL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the transaction's referring provider."
+    },
+    {
+      "index": 22,
+      "name": "REFERRAL_PROV_ID_REFERRING_PROV_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the referral source."
+    },
+    {
+      "index": 27,
+      "name": "ORIG_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The original amount of the transaction."
+    },
+    {
+      "index": 32,
+      "name": "AMOUNT_DUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount of money due for the transaction at the time of the extract."
+    },
+    {
+      "index": 37,
+      "name": "DEPARTMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The department ID where the transaction originated."
+    },
+    {
+      "index": 42,
+      "name": "REV_LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The revenue location where the transaction originated."
+    },
+    {
+      "index": 47,
+      "name": "PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The procedure ID for the transaction."
+    },
+    {
+      "index": 52,
+      "name": "SERVICE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date for which services were performed."
+    },
+    {
+      "index": 57,
+      "name": "POST_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the transaction was posted."
+    },
+    {
+      "index": 62,
+      "name": "BILLING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the provider to whom services are being billed."
+    },
+    {
+      "index": 67,
+      "name": "POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The place of service where the transaction originated."
+    },
+    {
+      "index": 72,
+      "name": "VISIT_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit number within the account that corresponds to the transaction. This number uniquely identifies the visit within the account only."
+    }
+  ]
+}

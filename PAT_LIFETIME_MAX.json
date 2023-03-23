@@ -1,0 +1,94 @@
+{
+  "table_name": "PAT_LIFETIME_MAX",
+  "description": "The PAT_LIFETIME_MAX table contains information regarding patients' amounts credited toward lifetime maximum benefits (assuming the benefit plan is properly configured for tracking lifetime maximum benefits).",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number within a multiple response or over time item"
+    },
+    {
+      "index": 12,
+      "name": "LIFEMAX_CARRIER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the carrier for which this set of lifetime maximum buckets is counting."
+    },
+    {
+      "index": 17,
+      "name": "LIFEMAX_CARRIER_ID_CARRIER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the carrier record."
+    },
+    {
+      "index": 22,
+      "name": "LIFEMAX_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the patient has approached or exceeded the lifetime maximum limit for the carrier\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproaching\n\n\nExceeded"
+    },
+    {
+      "index": 31,
+      "name": "LIFEMAX_BKT_MAN_IN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Allows manual override of the lifetime maximum in-plan accumulated amount"
+    },
+    {
+      "index": 36,
+      "name": "LIFEMAXBKT_MAN_OUT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Allows manual override of the lifetime maximum out-of-plan accumulated amount"
+    },
+    {
+      "index": 41,
+      "name": "LIFEMAXBKT_MAN_ALL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Allows manual override of the lifetime maximum total accumulated amount"
+    },
+    {
+      "index": 46,
+      "name": "LIFEMAXAPPR_CLM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the accounts payable claim record which caused the \"approaching\" flag to be set"
+    },
+    {
+      "index": 51,
+      "name": "LIFEMAX_APP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the approaching lifetime maximum flag was set"
+    },
+    {
+      "index": 56,
+      "name": "LIFEMAX_BKT_IN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The accumulated in-plan amount for claims paid under this carrier"
+    },
+    {
+      "index": 61,
+      "name": "LIFEMAX_BUCKET_OUT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The accumulated out-of-plan amount for claims paid under this carrier"
+    }
+  ]
+}

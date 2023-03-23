@@ -1,0 +1,192 @@
+{
+  "table_name": "ED_IEV_PAT_INFO",
+  "description": "This table contains information that is useful for linking records (patient, department, etc.) to their appropriate events.",
+  "primary_key": {
+    "column_name": "EVENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the event record. This column is frequently used to link to the ED_IEV_EVENT_INFO table."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this line. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 12,
+      "name": "ITEMS_EDITED_TIME",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date and time when this event record was last edited."
+    },
+    {
+      "index": 17,
+      "name": "UPDATE_DATE",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The last date and time the event record was extracted."
+    },
+    {
+      "index": 22,
+      "name": "PAT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 27,
+      "name": "DTE_EXTERNAL",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 32,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across patients and encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 37,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal patient contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 42,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 47,
+      "name": "DEPT_EVENT_DEP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department that is associated with this event record. Note: this item is populated only for department-level events."
+    },
+    {
+      "index": 52,
+      "name": "RECORD_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The record state category number for the event record. Link this column to the ZC_PBA_REC_STAT table to look up the corresponding record state values.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+    },
+    {
+      "index": 67,
+      "name": "TRANSFER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transfer status category number for medication reconciliation events.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nCanceled\n\n\nCompleted"
+    },
+    {
+      "index": 77,
+      "name": "CREATE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when the event record was created."
+    },
+    {
+      "index": 82,
+      "name": "CREATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who created the event record."
+    },
+    {
+      "index": 87,
+      "name": "EVENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the event record was created."
+    },
+    {
+      "index": 92,
+      "name": "PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across patients and encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 97,
+      "name": "ADT_TRANSFER_LINK",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Virtual item for the Admission, Transfer, Discharge, or Leave of Absence (ADT) event link for a medication reconciliation transfer."
+    },
+    {
+      "index": 102,
+      "name": "REG_CLIP_FREETEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User-entered patient name for patient added to clipboard. User-entered text is necessary for users without security to select real patients or for new patients."
+    },
+    {
+      "index": 107,
+      "name": "REG_CLIP_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments for the patient added to the Patients Waiting Registration Clipboard"
+    },
+    {
+      "index": 112,
+      "name": "IP_ORDREC_SORT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "This is the instant that all the orders in the event should be sorted by, instead of using their individual ordering session keys or ordering instants."
+    },
+    {
+      "index": 117,
+      "name": "REG_WAIT_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the state of the record that holds Registration wait list info.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnidentified Patient\n\n\nIdentified Patient\n\n\nIdentified Encounter\n\n\nRemoved"
+    },
+    {
+      "index": 128,
+      "name": "REG_WAIT_PAT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the user-entered patient name for a patient who is waiting but has not yet been identified."
+    },
+    {
+      "index": 133,
+      "name": "REG_WAIT_IS_PRI_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the priority value for a patient who is waiting to be registered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 142,
+      "name": "REG_WAIT_ARRV_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Holds the earliest event instant, which will indicate the time the patient arrived for the encounter this event list is associated with."
+    },
+    {
+      "index": 147,
+      "name": "AVS_COPY_FORWARD_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that a user copied After Visit Summary documentation from another encounter into this one."
+    },
+    {
+      "index": 152,
+      "name": "AVS_COPY_FORWARD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who copied After Visit Summary documentation from another encounter into this one."
+    }
+  ]
+}

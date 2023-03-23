@@ -1,0 +1,52 @@
+{
+  "table_name": "DP_FAC_DECLN_RSN_RM",
+  "description": "This table contains the reasons why a service declined a patient's request for continued care or services.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated post-acute service provider in the patient encounter considered for the patient's post-acute care. Together with the PAT_ENC_CSN_ID column, this forms the foreign key to the DP_FACILITY table."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple selected services that are associated with the patient and the service providers from the DP_FACILITY table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "DP_FAC_DECLN_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason a service declines a patient request.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAcuity too high\n\n\nAge\n\n\nAlready enrolled\n\n\nBariatric\n\n\nBed not available\n\n\nBehavior issues or concerns\n\n\nBenefits exhausted\n\n\nCannot meet patient's needs\n\n\nCannot meet patient's psychosocial needs\n\n\nCost of care\n\n\nCost of medications/treatments\n\n\nCriminal history/record\n\n\nFacility declined (no reason given)\n\n\nFacility full\n\n\nFall risk\n\n\nHistory of violence and/or drug or alcohol abuse\n\n\nInadequate staffing\n\n\nNo payer/insurance\n\n\nNot eligible\n\n\nOut of network\n\n\nOut of service area\n\n\nPatient consent required\n\n\nPayer/insurance denied or not accepted\n\n\nServices no longer provided or available\n\n\nUnable to contact\n\n\nUnable to get help\n\n\nOther (Comment)"
+    }
+  ]
+}

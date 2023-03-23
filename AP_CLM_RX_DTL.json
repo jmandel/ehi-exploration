@@ -1,0 +1,283 @@
+{
+  "table_name": "AP_CLM_RX_DTL",
+  "description": "This table contains information for a single NDC code on a pharmacy claim.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the transaction record"
+    },
+    {
+      "index": 7,
+      "name": "NDC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "National Drug Code (NDC)"
+    },
+    {
+      "index": 12,
+      "name": "NDC_ID_NDC_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
+    },
+    {
+      "index": 17,
+      "name": "PRESC_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Prescription reference number."
+    },
+    {
+      "index": 22,
+      "name": "NDC_UNIT_EXT_CODE_LST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Units (ml, units, etc.). The unit code can be retrieved by joining this column to the EXT_COSE_LST_ID column in FCL_EXTRNL_CDE_LST table."
+    },
+    {
+      "index": 27,
+      "name": "NDC_UNIT_EXT_CODE_LST_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 32,
+      "name": "FILL_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Indicates whether the prescription is an original (0) or a refill (1,2,...)."
+    },
+    {
+      "index": 37,
+      "name": "DAYS_SUPPLY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Estimated number of days the prescription will last."
+    },
+    {
+      "index": 42,
+      "name": "DAW_CODE_EXT_CODE_LST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Code indicating whether or not the prescriber's instructions regarding generic substitution were followed. The Dispense As Written (DAW) code can be retrieved by joining this column to the EXT_COSE_LST_ID column in FCL_EXTRNL_CDE_LST table."
+    },
+    {
+      "index": 47,
+      "name": "DAW_CODE_EXT_CODE_LST_ID_EXT_CODE_LST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the list value."
+    },
+    {
+      "index": 52,
+      "name": "INGRED_COST_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Drug ingredient cost paid."
+    },
+    {
+      "index": 57,
+      "name": "DISPENSING_FEE_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Dispensing fee paid."
+    },
+    {
+      "index": 62,
+      "name": "REG_TAX_AMT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Flat sales tax amount paid."
+    },
+    {
+      "index": 67,
+      "name": "PCT_TAX_AMT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Percentage tax amount paid."
+    },
+    {
+      "index": 72,
+      "name": "INCENTIVE_AMT_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Incentive amount paid."
+    },
+    {
+      "index": 77,
+      "name": "PROF_SVC_FEE_PAID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Professional service fee paid."
+    },
+    {
+      "index": 82,
+      "name": "OTHER_AMT_RECOGNIZED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Total amount recognized by the processor of any payment from another source."
+    },
+    {
+      "index": 87,
+      "name": "QUANTITY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Quantity dispensed"
+    },
+    {
+      "index": 92,
+      "name": "FILL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Identifies date the prescription was filled."
+    },
+    {
+      "index": 97,
+      "name": "OWNING_SAPBS_POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Business segment ID that owns the claim record."
+    },
+    {
+      "index": 102,
+      "name": "POS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Place of service type\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 160,
+      "name": "PRIM_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Sum of all the insurance amount paid by previous payers."
+    },
+    {
+      "index": 165,
+      "name": "BILLED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Billed amount"
+    },
+    {
+      "index": 170,
+      "name": "ALLOWED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Allowed amount"
+    },
+    {
+      "index": 175,
+      "name": "PRIM_PAT_DEDUCTIBLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Store prior patient deductible"
+    },
+    {
+      "index": 180,
+      "name": "PRIM_PAT_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Store prior patient copay"
+    },
+    {
+      "index": 185,
+      "name": "PRIM_PAT_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Store prior patient co-insurance"
+    },
+    {
+      "index": 190,
+      "name": "DEDUCTIBLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Deductible amount"
+    },
+    {
+      "index": 195,
+      "name": "COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Copay amount"
+    },
+    {
+      "index": 200,
+      "name": "COINSURANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Coinsurance amount"
+    },
+    {
+      "index": 205,
+      "name": "PAT_TOTAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient total amount"
+    },
+    {
+      "index": 210,
+      "name": "NET_PAYABLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Net payable"
+    },
+    {
+      "index": 215,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The accounts payable claim to which this service line is associated."
+    },
+    {
+      "index": 220,
+      "name": "RX_POINTER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The medication of this transaction."
+    },
+    {
+      "index": 225,
+      "name": "FILL_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores information on whether the prescription was completely or partially filled.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPartially filled\n\n\nCompletely filled"
+    },
+    {
+      "index": 234,
+      "name": "POS_TYPE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Source of the Place of Service type\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProfile\n\n\nUser\n\n\nBatch Type Definition"
+    },
+    {
+      "index": 244,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Chronicles special item. This is the soft-delete flag that will be set to the appropriate record status option when the record is soft-deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+    },
+    {
+      "index": 259,
+      "name": "PRESC_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the prescribing provider record for this row. This column is frequently used to link to the CLARITY_SER table."
+    },
+    {
+      "index": 264,
+      "name": "SERV_PHARMACY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the service pharmacy record for this row. This column is frequently used to link to the RX_PHR table."
+    }
+  ]
+}

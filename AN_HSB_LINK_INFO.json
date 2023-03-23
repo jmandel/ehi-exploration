@@ -1,0 +1,199 @@
+{
+  "table_name": "AN_HSB_LINK_INFO",
+  "description": "This table stores Anesthesia episode-level information.",
+  "primary_key": {
+    "column_name": "SUMMARY_BLOCK_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the Episode (HSB) record for this row. Episodes store information including the start and end dates, episode status and type, and any contacts associated with the episode."
+    },
+    {
+      "index": 7,
+      "name": "ANES_EPT_CSN_LINK",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient encounter linked to this episode, if one exists (true for surgical or scheduled reasons, false for order or other reasons)."
+    },
+    {
+      "index": 12,
+      "name": "AN_UNLINKED_FLAG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag indicating that episode is not linked to a reason.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 21,
+      "name": "ANES_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the procedure that corresponds to this anesthesia episode."
+    },
+    {
+      "index": 26,
+      "name": "ANES_PROC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date for the procedure of the anesthesia episode."
+    },
+    {
+      "index": 31,
+      "name": "ANES_PRE_OP_DIAG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The pre-op diagnosis for this anesthesia episode."
+    },
+    {
+      "index": 36,
+      "name": "ANES_PROC_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the time when the procedure associated with the anesthesia episode was performed."
+    },
+    {
+      "index": 41,
+      "name": "ANES_PROC_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for anesthesia procedure."
+    },
+    {
+      "index": 46,
+      "name": "ANES_PREOP_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether Pre-op documentation has been completed for Anesthesia.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 52,
+      "name": "ANES_INTRAOP_COM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether Intra-op documentation has been completed for Anesthesia.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 58,
+      "name": "ANES_PACU_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether PACU documentation has been completed for Anesthesia.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 64,
+      "name": "ANES_POSTOP_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether Post-op documentation has been completed for Anesthesia.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 70,
+      "name": "ANES_DOC_COMP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether or not the anesthetic record is complete.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 76,
+      "name": "AN_DOC_COMP_INSTANT",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant that all documentation for an anesthesia episode was marked as complete."
+    },
+    {
+      "index": 81,
+      "name": "AN_BATCH_CLS_DON_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the batch job that closes Anesthesia records has run on this record. It will be set to No with the Anesthesia record is marked completed and Yes when all the constituent contacts are closed.\n\n\n The category values for this column were already listed for column: AN_UNLINKED_FLAG_YN"
+    },
+    {
+      "index": 87,
+      "name": "AN_RESP_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the overall responsible anesthesiologist for the anesthesia record."
+    },
+    {
+      "index": 92,
+      "name": "AN_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the anesthesia procedure date for the anesthesia record."
+    },
+    {
+      "index": 97,
+      "name": "AN_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the time when the procedure associated with the anesthesia record was performed."
+    },
+    {
+      "index": 102,
+      "name": "AN_START_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant at which anesthesia started for the anesthesia record."
+    },
+    {
+      "index": 107,
+      "name": "AN_STOP_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant at which anesthesia stopped for the anesthesia record."
+    },
+    {
+      "index": 112,
+      "name": "NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the anesthesia episode."
+    },
+    {
+      "index": 117,
+      "name": "AN_52_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the unique contact serial number for the 52-Anesthesia patient encounter associated with the anesthesia record. This number is unique across all patient encounters in any given system."
+    },
+    {
+      "index": 122,
+      "name": "AN_RECORD_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date for this anesthesia record."
+    },
+    {
+      "index": 127,
+      "name": "AN_BILLING_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the Billing Encounter. This contains all the billing information needed to drop charges."
+    },
+    {
+      "index": 132,
+      "name": "PRIMARY_LOG_ENC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Identifies the anesthesia record's primary log encounter contact serial number (CSN)."
+    },
+    {
+      "index": 137,
+      "name": "PRIMARY_PRC_ENC_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Identifies the primary procedure's encounter contact serial number (CSN)."
+    },
+    {
+      "index": 142,
+      "name": "AN_PRIMARY_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates which note record (HNO) to treat as the anesthesia preop note."
+    }
+  ]
+}

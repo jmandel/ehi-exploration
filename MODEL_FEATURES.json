@@ -1,0 +1,66 @@
+{
+  "table_name": "MODEL_FEATURES",
+  "description": "This table contains the most recently saved predictive model feature data for a patient.",
+  "primary_key": {
+    "column_name": "REGISTRY_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the registry data record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "MET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The identifier associated with a piece of information consumed by a predictive model. This can be a report column (PAF) ID or an extension mnemonic."
+    },
+    {
+      "index": 17,
+      "name": "MET_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the name of the registry metric record."
+    },
+    {
+      "index": 22,
+      "name": "FEAT_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The most recent value of the associated feature when it was used by a predictive model."
+    },
+    {
+      "index": 27,
+      "name": "FEAT_CONTRIBUTION",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores how much the associated feature contributed to the overall predictive model score. Contributions are rounded up to one decimal place, so that fractionally miniscule contributions can be differentiated from zero contributions."
+    },
+    {
+      "index": 32,
+      "name": "FEAT_UNIT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unit associated with the feature value on this line."
+    },
+    {
+      "index": 37,
+      "name": "FEAT_DISPLAY_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display value associated with the feature on this line."
+    }
+  ]
+}

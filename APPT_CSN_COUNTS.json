@@ -1,0 +1,45 @@
+{
+  "table_name": "APPT_CSN_COUNTS",
+  "description": "This table contains the appointment contact serial numbers (CSNs) linked to an authorization as well as the counts used for each CSN.",
+  "primary_key": {
+    "column_name": "AUTH_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "AUTH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The authorization ID for the authorization record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "LINKED_APPT_CSNS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial numbers (CSNs) of all the appointments which fall within the dates on the authorization record."
+    },
+    {
+      "index": 17,
+      "name": "LINKED_APPT_COUNTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The used counts corresponding to a particular contact serial number (CSN) in the LINKED_APPT_CSN column linked to an Authorization record."
+    },
+    {
+      "index": 22,
+      "name": "USR_OVR_VST_COUNT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to say user has overridden the visit counts.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

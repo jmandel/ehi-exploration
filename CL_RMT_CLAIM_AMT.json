@@ -1,0 +1,38 @@
+{
+  "table_name": "CL_RMT_CLAIM_AMT",
+  "description": "Contains claim supplemental information from the electronic remittance payment. This information is sent in the AMT segment of an ANSI 835 Health Care Claim Payment/Advice file. This segment is used to send monetary amounts associated with the claim being paid. These amounts are in defined categories and sent only when the amount is non-zero. This information is stored in the remittance image record.",
+  "primary_key": {
+    "column_name": "IMAGE_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "IMAGE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID for the remittance image record containing the claim supplemental information."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "CLAIM_AMT_QUAL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The amount qualifier code for the claim supplemental information. This is a standard code that indicates what the monetary amount represents.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage amount\n\n\nDiscount amount\n\n\nPer day limit\n\n\nPatient amount paid\n\n\nInterest\n\n\nNegative ledger balance\n\n\nTax\n\n\nTotal claim before taxes\n\n\nFederal medicare or medicaid payment mandate category 1\n\n\nFederal medicare or medicaid payment mandate category 2\n\n\nFederal medicare or medicaid payment mandate category 3\n\n\nFederal medicare or medicaid payment mandate category 4\n\n\nFederal medicare or medicaid payment mandate category 5\n\n\nMutually defined\n\n\nAllowed - Actual\n\n\nDeduction amount\n\n\nNet billed"
+    },
+    {
+      "index": 36,
+      "name": "CLAIM_SUPPL_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Monetary amount for the supplemental claim information. The specific meaning of this amount is indicated by the associated amount qualifier code."
+    }
+  ]
+}

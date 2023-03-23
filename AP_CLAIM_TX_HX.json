@@ -1,0 +1,549 @@
+{
+  "table_name": "AP_CLAIM_TX_HX",
+  "description": "This table contains the history of service line changes for accounts payable claim records.",
+  "primary_key": {
+    "column_name": "CLAIM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the claim record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "TX_HX_PEND_CODES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the claim code history for each service line."
+    },
+    {
+      "index": 17,
+      "name": "TX_HX_TIME_SAVE_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time the record was saved."
+    },
+    {
+      "index": 22,
+      "name": "TX_HX_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Transaction history procedure."
+    },
+    {
+      "index": 27,
+      "name": "TX_HX_PX_MODIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Historical modifier values for service lines."
+    },
+    {
+      "index": 32,
+      "name": "TX_HX_SVC_FROM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Transaction history service from date."
+    },
+    {
+      "index": 37,
+      "name": "TX_HX_SVC_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Transaction history service to date."
+    },
+    {
+      "index": 42,
+      "name": "TX_HX_PROC_HX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the procedure on previous versions of the service line."
+    },
+    {
+      "index": 47,
+      "name": "TX_HX_DX_CODES",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The history of diagnosis codes on previous versions of the service line."
+    },
+    {
+      "index": 52,
+      "name": "TX_HX_AMT_BILLED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the amount billed on previous versions of the service line."
+    },
+    {
+      "index": 57,
+      "name": "TX_HX_ALLOWED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the allowed amount on previous versions of the service line."
+    },
+    {
+      "index": 62,
+      "name": "TX_HX_PAT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient portion of the bill."
+    },
+    {
+      "index": 67,
+      "name": "TX_HX_WITHHOLDINGS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the withheld amount on previous versions of the service line."
+    },
+    {
+      "index": 72,
+      "name": "TX_HX_DISCOUNTS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the discount amount on previous versions of the service line."
+    },
+    {
+      "index": 77,
+      "name": "TX_HX_NET_PAYABLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the net payable amount on previous versions of the service line."
+    },
+    {
+      "index": 82,
+      "name": "TX_HX_NUM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Transaction history number in the claim procedure history."
+    },
+    {
+      "index": 87,
+      "name": "TX_HX_TX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "AP claims transaction type (for procedure history).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nAdjustment\n\n\nAP Claim Tx\n\n\nAP Claim Refund Tx\n\n\nAP Claim DRG Tx\n\n\nPharmacy Claim Tx"
+    },
+    {
+      "index": 101,
+      "name": "TX_HX_MED_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Transaction history medications."
+    },
+    {
+      "index": 106,
+      "name": "TX_HX_REV_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Transaction history revenue code."
+    },
+    {
+      "index": 111,
+      "name": "TX_HX_MED_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Transaction history medication type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAcute\n\n\nChronic\n\n\nPAT"
+    },
+    {
+      "index": 121,
+      "name": "TX_HX_SVC_START_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Transaction history service start time."
+    },
+    {
+      "index": 126,
+      "name": "TX_HX_SVC_END_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Transaction history service end time."
+    },
+    {
+      "index": 131,
+      "name": "TX_HX_SVC_ELPSD_TM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Transaction history service elapsed time."
+    },
+    {
+      "index": 136,
+      "name": "TX_HX_DRG_CODE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Diagnosis Related Group (DRG) code history item."
+    },
+    {
+      "index": 141,
+      "name": "TX_HX_DRG_CODE_ID_DRG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Diagnoses Related Group name."
+    },
+    {
+      "index": 146,
+      "name": "PX_HX_EOB_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Claim procedure history Explanation of Benefits (EOB) comments."
+    },
+    {
+      "index": 151,
+      "name": "TX_HX_POS_TYPES_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Claim procedure history place of service types.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 209,
+      "name": "TX_HX_TOS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Claim procedure history type of service.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedical Care\n\n\nSurgery\n\n\nConsultation\n\n\nDiagnostic Radiology\n\n\nDiagnostic Laboratory\n\n\nTherapeutic Radiology\n\n\nAnesthesia\n\n\nAssistant at Surgery\n\n\nOther Medical Items or Services\n\n\nWhole Blood\n\n\nUsed Durable Medical Equipment (DME)\n\n\nAmbulatory Surgical Center (Facility usage for Surgical Services)\n\n\nHospice (Obsolete, Discontinued 1/95)\n\n\nESRD Supplies\n\n\nMonthly Capitation Payment for Dialysis\n\n\nKidney Donor\n\n\nPneumococcal/Flu Vaccine\n\n\nSecond Opinion on Elective Surgery (Obsolete)\n\n\nThird Opinion on Elective Surgery (Obsolete)\n\n\nDiagnostic Medical (Obsolete)\n\n\nAncillaries, Hospital and Nursing Home (Obsolete)\n\n\nDrug Services (Obsolete)\n\n\nAccommodations, Hospital and Nursing Home (Obsolete)\n\n\nDental (Obsolete)\n\n\nVision Care and Cataract Lens (Obsolete)\n\n\nNuclear Medicine (Obsolete)\n\n\nDiagnostic X-Ray (Professional) (Obsolete)\n\n\nRental of DME\n\n\nRadiation Therapy (Professional) (Obsolete)\n\n\nDiagnostic Lab (Professional) (Obsolete)\n\n\nDiagnostic Medical (Professional) (Obsolete)\n\n\nDME Purchase (Obsolete)\n\n\nCRD Equipment (Obsolete)\n\n\nPre-Admission Testing (Obsolete)\n\n\nEPSDT\n\n\nHigh Risk Screening Mammography\n\n\nLow Risk Screening Mammography\n\n\nAmbulance\n\n\nEnteral/Parenteral Nutrients/Supplies\n\n\nImmunosuppressive Drugs\n\n\nDiabetic Shoes\n\n\nHearing Items and Services\n\n\nLump Sum Purchase of DME, Prostethics, Orthotics\n\n\nVision Items or Services\n\n\nSurgical Dressings or Other Medical Supplies\n\n\nPsychological Therapy\n\n\nOccupational Therapy\n\n\nPhysical Therapy\n\n\nMedication (Obsolete)\n\n\nChiropractic Care\n\n\nDME Prescription"
+    },
+    {
+      "index": 267,
+      "name": "TX_HX_PRIM_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Insurance amount from primary for history."
+    },
+    {
+      "index": 272,
+      "name": "TX_HX_PRIM_PAT_PRT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient portion from primary for history."
+    },
+    {
+      "index": 277,
+      "name": "PX_HX_OVRID_AMT_C",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Procedure history for override allowed amounts."
+    },
+    {
+      "index": 282,
+      "name": "PX_HX_OVRID_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reason the allowed amount was overridden.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 288,
+      "name": "TX_HX_ALLW_CODES_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Procedure history allowed codes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContracted Rate Payment\n\n\nPayment as per Appeals Review Committee\n\n\nPayment as per Duality Review Committee\n\n\nClaim Denied\n\n\nProcedure Denied\n\n\nSecondary Claim Rate"
+    },
+    {
+      "index": 301,
+      "name": "PROC_HX_PAT_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Procedure history patient portion codes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCo-ins\n\n\nCopay\n\n\nNot Covered\n\n\nNo Patient Payment"
+    },
+    {
+      "index": 312,
+      "name": "TX_HX_CMPTD_WTHLD",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Computed withholding history."
+    },
+    {
+      "index": 317,
+      "name": "TX_HX_WTHLD_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Withhold method history.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPercentage of Net Insurance\n\n\nFixed Amount\n\n\nProgramming Point\n\n\nNone\n\n\nPercentage of Allowed Amount"
+    },
+    {
+      "index": 329,
+      "name": "TX_HX_WTHLD_RATE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Withhold rate history."
+    },
+    {
+      "index": 334,
+      "name": "TX_HX_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Net insurance amount history."
+    },
+    {
+      "index": 339,
+      "name": "TX_HX_NET_INS_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Net Insurance amount history"
+    },
+    {
+      "index": 344,
+      "name": "TX_HX_COMPUTED_ADJ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Computed adjustment history."
+    },
+    {
+      "index": 349,
+      "name": "TX_HX_ACTUAL_ADJ",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Actual adjustment history."
+    },
+    {
+      "index": 354,
+      "name": "TX_HX_ADJ_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Adjustment reason history.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProcedure is capitated\n\n\nCoordination of Benefits\n\n\nMaintenance of Benefits\n\n\nAllowed exceeds amount patient paid\n\n\nPay by DRG"
+    },
+    {
+      "index": 366,
+      "name": "TX_HX_CODE_EDT_SAV",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Transaction history code edit savings."
+    },
+    {
+      "index": 371,
+      "name": "TX_HX_U_AND_C_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Usual and customary amount history."
+    },
+    {
+      "index": 376,
+      "name": "TX_HX_CONTRACT_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contractual amount history."
+    },
+    {
+      "index": 381,
+      "name": "TX_HX_DISALOWED_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Disallowed amount history."
+    },
+    {
+      "index": 386,
+      "name": "TX_HX_NOT_COVERED",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Not covered history."
+    },
+    {
+      "index": 391,
+      "name": "TX_HX_DEDUCTIBLE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the deductible amount on previous versions of the service line."
+    },
+    {
+      "index": 396,
+      "name": "TX_HX_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The history of the copay amount on previous versions of the service line."
+    },
+    {
+      "index": 401,
+      "name": "TX_HX_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Co-insurance history."
+    },
+    {
+      "index": 406,
+      "name": "TX_HX_PAT_TOTAL",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient total history."
+    },
+    {
+      "index": 411,
+      "name": "TX_HX_BFR_BEN_PEN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "History before benefit penalty."
+    },
+    {
+      "index": 416,
+      "name": "TX_HX_AFTR_BEN_PEN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "History after benefit penalty."
+    },
+    {
+      "index": 421,
+      "name": "TX_HX_EXCD_BEN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Exceeded benefit amount history."
+    },
+    {
+      "index": 426,
+      "name": "TX_HX_OVRIDE_DIS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Override disallowed reason history.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 432,
+      "name": "TX_HX_OVRD_DA_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override disallowed amount history."
+    },
+    {
+      "index": 437,
+      "name": "TX_HX_OVRD_NC_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override not covered amount history."
+    },
+    {
+      "index": 442,
+      "name": "TX_HX_OVRD_DEDUCT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override deductible history."
+    },
+    {
+      "index": 447,
+      "name": "TX_HX_OVRIDE_COINS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override co-insurance history."
+    },
+    {
+      "index": 452,
+      "name": "TX_HX_OVRIDE_COPAY",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override copay history."
+    },
+    {
+      "index": 457,
+      "name": "TX_HX_OVRD_PTAMT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Override patient amount reason history.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 463,
+      "name": "TX_HX_OVRD_PATPO",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override patient portion history."
+    },
+    {
+      "index": 468,
+      "name": "TX_HX_COB_SAV_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Coordination of Benefits (COB) Saving amount history."
+    },
+    {
+      "index": 473,
+      "name": "TX_HX_OVRD_BEN_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override exceeded benefit amount for transaction history."
+    },
+    {
+      "index": 478,
+      "name": "TX_HX_PRICE_ATTR_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Pricing attribute for transaction history.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPCP\n\n\nSPECIALIST"
+    },
+    {
+      "index": 487,
+      "name": "TX_HX_PAT_OUTOF_PC",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Patient out of pocket history."
+    },
+    {
+      "index": 492,
+      "name": "TX_HX_SAVED_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the transaction history was saved."
+    },
+    {
+      "index": 497,
+      "name": "TX_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies the transaction history user."
+    },
+    {
+      "index": 502,
+      "name": "TX_HX_UBC_REVCOD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column holds the transaction history for revenue codes in UB Claims. It stores the record ID (this is found in the revenue code master file; it is not the actual revenue code) for revenue codes that were previously entered on the claim."
+    },
+    {
+      "index": 507,
+      "name": "TX_HX_UBC_REVCOD_ID_REVENUE_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue code."
+    },
+    {
+      "index": 512,
+      "name": "TX_HX_REIMB_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Healthcare reimbursement amount history."
+    },
+    {
+      "index": 517,
+      "name": "TX_HX_OVRD_RIMB_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override reimbursement amount history."
+    },
+    {
+      "index": 522,
+      "name": "TX_HX_SYS_ADJ_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "System adjustment reason history.\n\n\n The category values for this column were already listed for column: TX_HX_ADJ_REASON_C_NAME"
+    },
+    {
+      "index": 528,
+      "name": "TX_HX_AFT_BEN_PEN_OVRIDE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Override after benefits penalty history."
+    },
+    {
+      "index": 533,
+      "name": "TX_HX_AFT_BEN_PEN_OVRIDE_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Override after benefits penalty reason history. This should be translated using ZC_PEN_AFT_BEN_OVRIDE_RSN. \n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 539,
+      "name": "TX_HX_COB_SAVINGS_PAYOUT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "COB savings payout history"
+    }
+  ]
+}

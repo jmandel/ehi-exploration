@@ -1,0 +1,38 @@
+{
+  "table_name": "REC_LINK_AUDIT_ASN",
+  "description": "This table contains the appointment serial number for a recommendation audit trail entry.",
+  "primary_key": {
+    "column_name": "FINDING_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the recommendation record."
+    },
+    {
+      "index": 7,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated workflow in this recommendation record. Together with FINDING_ID, this forms the foreign key to the REC_LINK_AUDIT_TRL."
+    },
+    {
+      "index": 12,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple audit trail appointment serial numbers that are associated with the recommendation and the workflow from the REC_LINK_AUDIT_TRL table."
+    },
+    {
+      "index": 17,
+      "name": "AUD_APPT_SERIAL_NO",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The appointment serial number for the recommendation audit trail entry."
+    }
+  ]
+}

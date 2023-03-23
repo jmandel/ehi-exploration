@@ -1,0 +1,276 @@
+{
+  "table_name": "PRE_AR_SESSION",
+  "description": "This table stores single response items for charges. Note: temporary accounts receivable (TAR) records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table might be lost if you truncate the table.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the temporary transaction."
+    },
+    {
+      "index": 7,
+      "name": "TX_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source of the charge session.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTransaction Import\n\n\nInterface\n\n\nEpicCare\n\n\nInpatient Charge Utility\n\n\nHospital Professional Fee\n\n\nInpatient Professional Charge\n\n\nPayment Plan Auto-Pay"
+    },
+    {
+      "index": 21,
+      "name": "LK_IN_PCONC_VAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Concurrency Value locked in anesthesia charge summary."
+    },
+    {
+      "index": 26,
+      "name": "LK_IN_PCONC_USR_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the user who locked-in preconcurrency in anesthesia charge summary."
+    },
+    {
+      "index": 31,
+      "name": "LK_IN_PCONC_IN_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The timestamp when preconcurrency was locked in anesthesia charge summary."
+    },
+    {
+      "index": 36,
+      "name": "TREATMENT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The treatment plan on the charge session."
+    },
+    {
+      "index": 41,
+      "name": "ANES_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type category for the temporary�anesthesia transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral\n\n\nIV\n\n\nLocal\n\n\nMonitored Anesthesia Care\n\n\nRegional"
+    },
+    {
+      "index": 53,
+      "name": "EMERG_STAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates where this charge is associated with an admitted�patient with an emergency status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 62,
+      "name": "PHYSICAL_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Physical status of the patient who had the anesthesia procedure.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal Healthy\n\n\nMild Systemic Disease\n\n\nSevere Systemic Disease\n\n\nSevere/Threat\n\n\nMoribund\n\n\nBrain Dead"
+    },
+    {
+      "index": 75,
+      "name": "SUP_MOD_OVRIDE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Override the normal modifier with the modifier corresponding to a medically supervised case.\n\n\n The category values for this column were already listed for column: EMERG_STAT_YN"
+    },
+    {
+      "index": 81,
+      "name": "ORIGINAL_CRNA_TX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Original CRNA transaction ID."
+    },
+    {
+      "index": 86,
+      "name": "POS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The place of service type category ID for the temporary transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+    },
+    {
+      "index": 144,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the guarantor account on the charge session."
+    },
+    {
+      "index": 149,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient on the charge session."
+    },
+    {
+      "index": 154,
+      "name": "PERF_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the performing provider on the charge session."
+    },
+    {
+      "index": 159,
+      "name": "BILL_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the billing provider on the charge session."
+    },
+    {
+      "index": 164,
+      "name": "REFERRING_PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the referral provider on the charge session."
+    },
+    {
+      "index": 169,
+      "name": "REFERRING_PROV_ID_REFERRING_PROV_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the referral source."
+    },
+    {
+      "index": 174,
+      "name": "DEPT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the department on the charge session."
+    },
+    {
+      "index": 179,
+      "name": "POS_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the place of service on the charge session."
+    },
+    {
+      "index": 184,
+      "name": "SERV_AREA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the service area on the charge session."
+    },
+    {
+      "index": 189,
+      "name": "LOC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the location on the charge session."
+    },
+    {
+      "index": 194,
+      "name": "TX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tells what this transaction record is used for (e.g. charge, payment, adjustment, etc...).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment/Adjustment\n\n\nSingle Adjustment\n\n\nVisit\n\n\nExpress Payment"
+    },
+    {
+      "index": 206,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the patient encounter serial number for the charge session."
+    },
+    {
+      "index": 211,
+      "name": "RQG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column contains the reference lab requisition grouper ID."
+    },
+    {
+      "index": 216,
+      "name": "ANES_SUP_UNIT_PROC_TOT_UNIT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total number of units of supplemental unit procedures for this charge session."
+    },
+    {
+      "index": 221,
+      "name": "CHARGE_SLIP_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is the number used to associate PB charge sessions with encounters."
+    },
+    {
+      "index": 226,
+      "name": "DENTAL_CHARGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates what type of dental charge it is. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVisit Charge\n\n\nPeriodic Charge\n\n\nInitial Charge\n\n\nPredetermination Charge\n\n\nBanding Charge"
+    },
+    {
+      "index": 238,
+      "name": "OVERRIDE_PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The payer that overrides the payer on a charge session. If this item is set, the system uses this payer instead of the payer from the coverage on the charge session. If this item is left blank, the payer from the coverage on the charge session is used."
+    },
+    {
+      "index": 243,
+      "name": "OVERRIDE_PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "index": 248,
+      "name": "OVERRIDE_PLAN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The plan that overrides the plan on a charge session. If this item is set, the system uses this plan instead of the plan from the coverage on the charge session. If this item is left blank, the plan from the coverage on the charge session is used."
+    },
+    {
+      "index": 253,
+      "name": "OVERRIDE_PLAN_ID_BENEFIT_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the benefit plan record."
+    },
+    {
+      "index": 258,
+      "name": "ORIGINAL_HTR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The original hospital billing transaction ID."
+    },
+    {
+      "index": 263,
+      "name": "CODED_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Coded date for charge session."
+    },
+    {
+      "index": 268,
+      "name": "SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The lab specimen ID associated with the temporary charge session."
+    },
+    {
+      "index": 273,
+      "name": "TEST_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The test ID associated with the temporary charge session."
+    },
+    {
+      "index": 278,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The referral number for the referral associated to this charge."
+    },
+    {
+      "index": 283,
+      "name": "REQUISITION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Reference Lab Requisition ID associated with the temporary charge session."
+    }
+  ]
+}

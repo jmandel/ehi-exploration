@@ -1,0 +1,108 @@
+{
+  "table_name": "CHAT_CONVERSATIONS",
+  "description": "Table containing Secure Chat conversation level items.",
+  "primary_key": {
+    "column_name": "CONVERSATION_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CONVERSATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the secure chat conversation record."
+    },
+    {
+      "index": 7,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "index": 12,
+      "name": "RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Record name"
+    },
+    {
+      "index": 17,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+    },
+    {
+      "index": 27,
+      "name": "LST_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the newest message in the conversation was sent."
+    },
+    {
+      "index": 32,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the patient linked to the conversation."
+    },
+    {
+      "index": 37,
+      "name": "RECORD_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the date the record was created"
+    },
+    {
+      "index": 42,
+      "name": "INSTANT_OF_UPDATE_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the instant the record was last locked/unlocked"
+    },
+    {
+      "index": 47,
+      "name": "CONVERSATION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of the conversation record, which indicates the intended audience of the Secure Chat conversation. A null value indicates the conversation is only between staff members.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStaff-only conversation\n\n\nBedside conversation"
+    },
+    {
+      "index": 56,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the patient encounter associated with this conversation. This item will only be populated for Bedside patient-facing conversations. A value here means the conversation may include a patient or their proxies."
+    },
+    {
+      "index": 61,
+      "name": "PAT_CONVERSATION_THREAD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the MyChart conversation linked to this Secure Chat conversation."
+    },
+    {
+      "index": 66,
+      "name": "CHAT_CONTEXT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the Secure Chat conversation context. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlert"
+    },
+    {
+      "index": 74,
+      "name": "LINKED_PUSH_NOTIF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Linked PNN (push notification) record ID to the TLK record that provides additional context about the conversation."
+    },
+    {
+      "index": 79,
+      "name": "ORIGINAL_GROUP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores TGR ID of the original group that received a Secure Chat. Used for starting and continuing conversations with additional context with this group."
+    }
+  ]
+}

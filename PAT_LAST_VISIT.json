@@ -1,0 +1,38 @@
+{
+  "table_name": "PAT_LAST_VISIT",
+  "description": "This stores the appointment serial numbers for the last time a patient was seen for a given visit type group.",
+  "primary_key": {
+    "column_name": "PAT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "VISIT_TYPE_GROUP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit type group category ID associated with this patient. Used in conjunction with the LAST_VISIT_ASN column to find information about the last visit a patient had for a given type of appointment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPhysical\n\n\nMammogram\n\n\nX-Ray\n\n\nCT\n\n\nMRI\n\n\nDental Hygiene\n\n\nPeriodontal Maintenance\n\n\nRehab"
+    },
+    {
+      "index": 27,
+      "name": "LAST_VISIT_ASN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Appointment Serial Number (ASN) of the most recent visit of a particular group. Use this to link to PAT_ENC.APPT_SERIAL_NO for information about this contact."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "table_name": "PAT_MED_RESUME",
+  "description": "This table contains information on suspended medications on discharge. The status of the resumed order, reason for discontinuing or resuming the medication, along with the unique ID of the order is stored.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "MED_RESUME_ORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the medication order that is resumed or discontinued on discharge."
+    },
+    {
+      "index": 17,
+      "name": "MED_RESUME_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the suspended medication that is resumed on discharge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDefault Action (Determined by configuration)\n\n\nWill not be resumed\n\n\nResumed (Default)\n\n\nAuto-Discontinued\n\n\nWill be resumed\n\n\nModified\n\n\nNew\n\n\nNo Change (pending)\n\n\nNo Change"
+    }
+  ]
+}

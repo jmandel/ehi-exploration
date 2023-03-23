@@ -1,0 +1,276 @@
+{
+  "table_name": "TXPORT_REQ_INFO",
+  "description": "This table contains information about transport requests.",
+  "primary_key": {
+    "column_name": "TRANSPORT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TRANSPORT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the transport request record."
+    },
+    {
+      "index": 7,
+      "name": "TRANSPORT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the transport request record."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient to be transported."
+    },
+    {
+      "index": 17,
+      "name": "TXPORT_PAT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the patient associated with this transport request. This is optional as there may not be a particular patient contact that the transport request is linked to."
+    },
+    {
+      "index": 22,
+      "name": "TXPORT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transport type category number for the transport request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient\n\n\nNon-patient\n\n\nCleaning Inspection\n\n\nNon-patient Bundle"
+    },
+    {
+      "index": 33,
+      "name": "TXPORT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the transport request needs to be completed."
+    },
+    {
+      "index": 38,
+      "name": "TXPORT_TIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time at which the transport request needs to be completed."
+    },
+    {
+      "index": 43,
+      "name": "TXPORT_FROM_PLF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the patient location facility record from where the patient is being transported."
+    },
+    {
+      "index": 48,
+      "name": "TXPORT_TO_PLF_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the patient location facility record where the patient is being transported to."
+    },
+    {
+      "index": 53,
+      "name": "ROUND_TRIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate if this is a round trip request. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 62,
+      "name": "TXPORT_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The transport mode category number for the transport request.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 68,
+      "name": "REQUEST_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The source of the transport request.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAd-Hoc\n\n\nTransfer\n\n\nDischarge\n\n\nAdmission\n\n\nScheduling\n\n\nSystem generated\n\n\nLeave of Absence"
+    },
+    {
+      "index": 82,
+      "name": "REQ_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who created the transport request."
+    },
+    {
+      "index": 87,
+      "name": "LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the location record that the transport request is for."
+    },
+    {
+      "index": 92,
+      "name": "CANCEL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who canceled the transport request."
+    },
+    {
+      "index": 97,
+      "name": "CANCEL_EVENT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when a transport request was canceled."
+    },
+    {
+      "index": 102,
+      "name": "PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The priority of the transport request. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStat\n\n\nHigh\n\n\nNormal\n\n\nLow"
+    },
+    {
+      "index": 113,
+      "name": "RECORD_CREATION_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the transport request was created."
+    },
+    {
+      "index": 118,
+      "name": "RND_TRIP_RETURN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the linked return transport request for a round trip request."
+    },
+    {
+      "index": 123,
+      "name": "RND_TRIP_ORIG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the linked original transport request for a round trip request."
+    },
+    {
+      "index": 128,
+      "name": "TXPORT_FROM_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the patient is to be picked up at their current location or an override location specified.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUse current location\n\n\nUse override location\n\n\nUse current bed"
+    },
+    {
+      "index": 138,
+      "name": "TXPORT_TO_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if the patient is to be dropped off at their currently occupied bed or to a specific location.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUse specified location\n\n\nBack to bed"
+    },
+    {
+      "index": 147,
+      "name": "CURRENT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates the current status of the request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nAssigned\n\n\nIn Progress\n\n\nDelayed\n\n\nCompleted\n\n\nCanceled\n\n\nFuture\n\n\nPostponed\n\n\nAcknowledged"
+    },
+    {
+      "index": 163,
+      "name": "TXPORT_ADMIT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the contact serial number (CSN) of the admission contact.  This is optional as there may not be a current admission contact for the patient."
+    },
+    {
+      "index": 168,
+      "name": "PARENT_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the parent transporter request of a multiple transporter request."
+    },
+    {
+      "index": 173,
+      "name": "ASSOCIATED_BEV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the linked bed clean request (if any)."
+    },
+    {
+      "index": 178,
+      "name": "REGION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the region record that the transport request is for."
+    },
+    {
+      "index": 183,
+      "name": "REGION_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this cleaning sector."
+    },
+    {
+      "index": 188,
+      "name": "TXPORT_PAT_OUT_CSN",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the contact serial number (CSN) of the patient contact that is linked to this transport request if the request is an outgoing request from an appointment. This may not always be populated if the request is not linked to an appointment contact."
+    },
+    {
+      "index": 193,
+      "name": "SECTOR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item contains the sector that the transport request is in."
+    },
+    {
+      "index": 198,
+      "name": "SECTOR_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of this cleaning sector."
+    },
+    {
+      "index": 203,
+      "name": "COMP_ACTION_RSLT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the result of the attempt to transfer or discharge a patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted Successfully\n\n\nFailed - Patient Locked\n\n\nFailed - Validation Errors\n\n\nTransported Patient Successful - Linked Patients Failed\n\n\nTransported Patient Failed - Linked Successful\n\n\nFailed - Primary and Linked Patients\n\n\nFailed - Patient has Earlier Pending Transfers"
+    },
+    {
+      "index": 217,
+      "name": "REQ_DEP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item records the user's log in department when creating the request."
+    },
+    {
+      "index": 222,
+      "name": "TXPORT_PHONE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the phone number associated with the transport request, stored as a short free-text string."
+    },
+    {
+      "index": 227,
+      "name": "TNP_CREATE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Specifies what made the request be created\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual\n\n\nAppointment\n\n\nReady To Move"
+    },
+    {
+      "index": 237,
+      "name": "BED_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the bed type associated with this transport request.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEmpty\n\n\nStandard\n\n\nCrib\n\n\nTelemetry\n\n\nBariatric"
+    },
+    {
+      "index": 249,
+      "name": "TXPORT_HOUR_OF_DAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The hour of day category value that the transport was last set to a pending status. Note this is a category value that is often joined to ZC_HOUR_OF_DAY.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n00:00\n\n\n01:00\n\n\n02:00\n\n\n03:00\n\n\n04:00\n\n\n05:00\n\n\n06:00\n\n\n07:00\n\n\n08:00\n\n\n09:00\n\n\n10:00\n\n\n11:00\n\n\n12:00\n\n\n13:00\n\n\n14:00\n\n\n15:00\n\n\n16:00\n\n\n17:00\n\n\n18:00\n\n\n19:00\n\n\n20:00\n\n\n21:00\n\n\n22:00\n\n\n23:00"
+    },
+    {
+      "index": 280,
+      "name": "FOLLOW_UP_SOURCE_TRANSPORT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Holds the transport request record that triggered the creation of this follow-up task."
+    }
+  ]
+}

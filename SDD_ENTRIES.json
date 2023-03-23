@@ -1,0 +1,59 @@
+{
+  "table_name": "SDD_ENTRIES",
+  "description": "This table stores basic info about Social Determinant entries. Each row represents one documentation of a need or risk for the patient in a given domain. This data includes the score that defines the severity of this need or risk.",
+  "primary_key": {
+    "column_name": "SDOH_DATA_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "SDOH_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the social determinant data record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "ENTRY_DOM_CONFIG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the source SDC that this entry contains data for."
+    },
+    {
+      "index": 27,
+      "name": "ENTRY_EFFECTIVE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant at which an entry in SDD was considered active."
+    },
+    {
+      "index": 32,
+      "name": "ENTRY_CONCERN_LVL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the level of concern for this entry on a scale of low, medium, or high (or unknown).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nLow Risk \n\n\nMedium Risk\n\n\nHigh Risk"
+    }
+  ]
+}

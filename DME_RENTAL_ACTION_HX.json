@@ -1,0 +1,80 @@
+{
+  "table_name": "DME_RENTAL_ACTION_HX",
+  "description": "This table contains durable medical equipment (DME) rental record action history information, such as what action was taken, when, and by whom.",
+  "primary_key": {
+    "column_name": "RECORD_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the rental record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "ACTION_HX_INSTANT_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant of the action in local time zone."
+    },
+    {
+      "index": 17,
+      "name": "ACTION_HX_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action taken. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nClaim Modified\n\n\nClosed\n\n\nClaim Removed\n\n\nReopened\n\n\nInitial Amount Modified\n\n\nInitial Maintenance Amount Modified\n\n\nInitial Cycles Modified\n\n\nInitial Maintenance Cycles Modified\n\n\nRental Start Date Modified\n\n\nMaintenance Start Date Modified"
+    },
+    {
+      "index": 35,
+      "name": "ACTION_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the user performing the action."
+    },
+    {
+      "index": 40,
+      "name": "OLD_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Value before it was modified by an action."
+    },
+    {
+      "index": 45,
+      "name": "NEW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Value after it was modified by an action."
+    },
+    {
+      "index": 50,
+      "name": "ACTION_HX_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comment for action taken."
+    },
+    {
+      "index": 55,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores claim record ID for claim actions."
+    },
+    {
+      "index": 60,
+      "name": "ACTION_HX_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of the action in UTC."
+    }
+  ]
+}

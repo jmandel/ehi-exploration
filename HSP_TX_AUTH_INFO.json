@@ -1,0 +1,73 @@
+{
+  "table_name": "HSP_TX_AUTH_INFO",
+  "description": "This table contains the authorization information for each hospital transaction.",
+  "primary_key": {
+    "column_name": "TX_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the hospital billing transaction."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "AUTH_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item is the list of coverages the associated Authorization values are being applied to."
+    },
+    {
+      "index": 17,
+      "name": "AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the list of authorization number overrides for a charge. This item cannot be set at the same time as Authorization ID (I HTR 833)."
+    },
+    {
+      "index": 22,
+      "name": "AUTH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item is the list of authorization records linked to a charge"
+    },
+    {
+      "index": 27,
+      "name": "AUTH_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This stores the source of the authorization link.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nSystem\n\n\nCharge Router Handler"
+    },
+    {
+      "index": 37,
+      "name": "AUTH_OVRIDE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the user who was responsible for the last authorization assignment."
+    },
+    {
+      "index": 42,
+      "name": "AUTH_UPDATE_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the last time the authorization was updated either by the system or a user."
+    },
+    {
+      "index": 47,
+      "name": "INCL_IN_AUTH_CHG_CNT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column indicates whether the charge contributes to the used count of the authorization linked to it.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

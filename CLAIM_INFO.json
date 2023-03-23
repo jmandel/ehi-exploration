@@ -1,0 +1,969 @@
+{
+  "table_name": "CLAIM_INFO",
+  "description": "This table contains information from claim info records for Hospital and Professional Billing.",
+  "primary_key": {
+    "column_name": "CLAIM_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID for the claim information record."
+    },
+    {
+      "index": 7,
+      "name": "CLAIM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The description of the claim record."
+    },
+    {
+      "index": 12,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The billing system accounts receivable account ID associated with this claim."
+    },
+    {
+      "index": 17,
+      "name": "CLAIM_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim type category of the claim. Identifies whether the claim was filed as a workers' compensation or commercial claim.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nWorkers' Compensation"
+    },
+    {
+      "index": 26,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the staff member who entered the claim into the system."
+    },
+    {
+      "index": 31,
+      "name": "ENTRY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which this claim was entered into the system."
+    },
+    {
+      "index": 36,
+      "name": "COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The coverage ID of the coverage used for this claim.  This column can be used to report on coverages that are associated with a hospital account."
+    },
+    {
+      "index": 41,
+      "name": "ADMIT_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The admission date and time for the patient encounter associated with the claim."
+    },
+    {
+      "index": 46,
+      "name": "CLM_PAT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient status category ID for the patient for whom this claim was filed.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 52,
+      "name": "PROV_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the provider for the encounter associated with this claim."
+    },
+    {
+      "index": 57,
+      "name": "ADMISSION_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The admission source (e.g., physician referral, clinic referral, Health Maintenance Organization (HMO) referral, transfer from a hospital, transfer from a skilled nursing facility, emergency room, court/law enforcement, information not available) for the encounter associated with this claim.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 63,
+      "name": "ADMISSION_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The admission type for the patient encounter associated with this claim (e.g., emergency, urgent, elective, newborn, trauma center, information not available).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 69,
+      "name": "ADMIT_DX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The diagnosis ID for the admitting diagnosis of the encounter associated with this claim."
+    },
+    {
+      "index": 74,
+      "name": "ILL_INJ_LMP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category type identifying the claim as resulting from illness, injury or pregnancy (e.g., illness, accident (injury), pregnancy (last menstrual period, or LMP)).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIllness\n\n\nAccident(Injury)\n\n\nPregnancy(LMP)"
+    },
+    {
+      "index": 84,
+      "name": "REL_CONDITION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The related condition for the claim (e.g. Auto, Other Party Liability, Other Accident Related Injury, Patient Employment, Crime Victim).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAuto\n\n\nOther Party Liability\n\n\nOther Accident Related Injury\n\n\nPatient Employment\n\n\nCrime Victim"
+    },
+    {
+      "index": 96,
+      "name": "DOC_CTRL_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The document control number (DCN) for the claim record."
+    },
+    {
+      "index": 101,
+      "name": "INJURY_DATETIME",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time on which the injury resulting in the claim occurred."
+    },
+    {
+      "index": 106,
+      "name": "ACCIDENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The accident type for the injury resulting in the claim (e.g., Workers' Compensation, Automobile).\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 112,
+      "name": "IS_EPSDT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This is a yes/no flag indicating whether or not the patient is being seen for an Early Periodic Screening Diagnosis and Treatment (EPSDT) program.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 121,
+      "name": "EPSDT_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Early Periodic Screening and Diagnosis Treatment (EPSDT) program value.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 127,
+      "name": "WC_CLAIM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' Comp Claim Number for the claim record."
+    },
+    {
+      "index": 132,
+      "name": "WC_EMPLOYER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the employer associated with a Workers' Comp claim."
+    },
+    {
+      "index": 137,
+      "name": "WC_EMPLOYER_ID_EMPLOYER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the employer."
+    },
+    {
+      "index": 142,
+      "name": "TRAN_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Ambulance transport code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInitial Trip\n\n\nReturn Trip\n\n\nTransfer Trip\n\n\nRound Trip"
+    },
+    {
+      "index": 153,
+      "name": "TRAN_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Ambulance transport reason code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNearest Facility for Care of Symptoms, Complaints, or Both\n\n\nFor the Benefit of a Preferred Physician\n\n\nFor the Nearness of Family Members\n\n\nFor the Care of a Specialist or for Availability of Specialized Equipment\n\n\nRehabilitation Facility"
+    },
+    {
+      "index": 165,
+      "name": "TRAN_DIST",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Ambulance transport distance."
+    },
+    {
+      "index": 170,
+      "name": "CLM_LOGIN_SA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The user's login service area at the time of the creation of the claim information record."
+    },
+    {
+      "index": 175,
+      "name": "ILL_INJ_LMP_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the onset of illness, the occurrence of the injury, or the patient's last menstrual period (related to pregnancy)."
+    },
+    {
+      "index": 180,
+      "name": "AUTO_ACDNT_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Auto accident State.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 186,
+      "name": "EMPY_RELATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether patient's condition is related to employment.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 192,
+      "name": "FIRST_CONSULT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "First consult date."
+    },
+    {
+      "index": 197,
+      "name": "PAT_CHIEF_COMPLAINT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patients chief complaint."
+    },
+    {
+      "index": 202,
+      "name": "EMERG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the procedure is related to an emergency.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 208,
+      "name": "LAST_WORKED_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Date last worked."
+    },
+    {
+      "index": 213,
+      "name": "RETURN_TO_WORK_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Return to work date."
+    },
+    {
+      "index": 218,
+      "name": "DISCHARGE_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Discharge date."
+    },
+    {
+      "index": 223,
+      "name": "OUTSIDE_LAB_NAME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Outside lab name.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+    },
+    {
+      "index": 231,
+      "name": "HLTH_APPR_SCRN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Routine health appraisal/screening procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 240,
+      "name": "SIG_ON_FILE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Signature on file?\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 246,
+      "name": "WK_COMP_CLAIM_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' Comp claim number."
+    },
+    {
+      "index": 251,
+      "name": "WK_COMP_INJ_DESC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' Comp injury description."
+    },
+    {
+      "index": 256,
+      "name": "WK_COMP_APRV_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Workers' Comp approval code."
+    },
+    {
+      "index": 261,
+      "name": "WK_COMP_MED_RLS_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Workers' Comp medical release date."
+    },
+    {
+      "index": 266,
+      "name": "DF_DELAY_RSN_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Default delay reason code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProof of Eligibility Unknown or Unavailable\n\n\nLitigation\n\n\nAuthorization Delays\n\n\nDelay in Certifying Provider\n\n\nDelay in Supplying Billing Forms\n\n\nDelay in Delivery of Custom-made Appliances\n\n\nThird-Party Processing Delay\n\n\nDelay in Eligibility Determination\n\n\nOriginal Claim Rejected or Denied Due to a Reason Unrelated to the Billing Limitation\n\n\nAdministration Delay in the Prior Approval Process\n\n\nOther\n\n\nNatural Disaster"
+    },
+    {
+      "index": 285,
+      "name": "FIRST_NEXT_VISIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "First/subsequent visit indicator.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFirst Visit\n\n\nSubsequent Visit"
+    },
+    {
+      "index": 294,
+      "name": "MED_HX_SOC_WORKER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Social worker associated with this visit."
+    },
+    {
+      "index": 299,
+      "name": "MED_HX_PSYCHOLOGIST",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Psychologist associated with this visit."
+    },
+    {
+      "index": 304,
+      "name": "MED_HX_SUP_PROV",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Supervising medical doctor for this visit."
+    },
+    {
+      "index": 309,
+      "name": "MED_HX_COUNSELOR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Counselor associated with this visit."
+    },
+    {
+      "index": 314,
+      "name": "HDH_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the health and developmental history assessment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician\n\n\nDental\n\n\nHearing\n\n\nSpeech\n\n\nVisual-Visual Problem\n\n\nVisual-Specific Medical Problem\n\n\nOther\n\n\nBehavioral"
+    },
+    {
+      "index": 329,
+      "name": "PHY_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the physical assessment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted/Normal\n\n\nABN/Treated Abnormal by Screening Provider\n\n\nABN/Referred Abnormal\n\n\nNot Required\n\n\nNot Performed"
+    },
+    {
+      "index": 341,
+      "name": "PHY_EXAM_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the physical assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 347,
+      "name": "VISION_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the vision assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 353,
+      "name": "VISION_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the vision assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 359,
+      "name": "HEARING_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the hearing assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 365,
+      "name": "HEARING_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the hearing assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 371,
+      "name": "DEV_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the developmental assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 377,
+      "name": "DEV_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the developmental assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 383,
+      "name": "NUTRI_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the nutritional assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 389,
+      "name": "NUTRI_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the nutritional assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 395,
+      "name": "OTHER_TREATMNT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores date of other treatment."
+    },
+    {
+      "index": 400,
+      "name": "HOSPITAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of the hospital where the patient was admitted."
+    },
+    {
+      "index": 405,
+      "name": "HOSPITAL_ADDRESS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The street address of the hospital where the patient was admitted."
+    },
+    {
+      "index": 410,
+      "name": "HOSPITAL_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The city where the hospital to which the patient was admitted is located."
+    },
+    {
+      "index": 415,
+      "name": "HOSPITAL_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The state where the hospital to which the patient was admitted is located.\n\n\n The category values for this column were already listed for column: AUTO_ACDNT_STATE_C_NAME"
+    },
+    {
+      "index": 421,
+      "name": "HOSPITAL_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ZIP of the hospital to which the patient was admitted."
+    },
+    {
+      "index": 426,
+      "name": "HOSP_REQ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag indicating whether or not hospitalization is required.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    },
+    {
+      "index": 435,
+      "name": "ADV_RET_WORK_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to indicate whether a patient was advised to return to work.\n\n\n The category values for this column were already listed for column: HOSP_REQ_YN"
+    },
+    {
+      "index": 441,
+      "name": "ADV_RET_WORK_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that patient was advised to return to work."
+    },
+    {
+      "index": 446,
+      "name": "REF_PHYS_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's name."
+    },
+    {
+      "index": 451,
+      "name": "REF_PHYS_ADDR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's address."
+    },
+    {
+      "index": 456,
+      "name": "REF_PHYS_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's city."
+    },
+    {
+      "index": 461,
+      "name": "REF_PHYS_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's state.\n\n\n The category values for this column were already listed for column: AUTO_ACDNT_STATE_C_NAME"
+    },
+    {
+      "index": 467,
+      "name": "REF_PHYS_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's ZIP code."
+    },
+    {
+      "index": 472,
+      "name": "REF_PHYS_SPEC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores referring physician's specialty.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 478,
+      "name": "REF_PHYS_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the referring physician's reason for the referral.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nConsultation\n\n\nTreatment"
+    },
+    {
+      "index": 487,
+      "name": "FIRST_TREAT_HOUR_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "First treatment hour. Some extensions add a value code to your claim if this item has a value."
+    },
+    {
+      "index": 492,
+      "name": "PAT_PREV_TREATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Is patient previously treated?\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 501,
+      "name": "IDE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Investigational Device Exemption Number."
+    },
+    {
+      "index": 506,
+      "name": "EST_DOB_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The estimated date of delivery for the pregnancy."
+    },
+    {
+      "index": 511,
+      "name": "RESPONSIBLE_IND_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if the patient's condition is due to an accident or illness caused by another party.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 517,
+      "name": "REFERRAL_SOURCE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral source for the visit."
+    },
+    {
+      "index": 522,
+      "name": "REFERRAL_SOURCE_ID_REFERRING_PROV_NAM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the referral source."
+    },
+    {
+      "index": 527,
+      "name": "EMERGENCY_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Emergency Service Code for emergency room services.  This field is required for Illinois Department of Public Aid claims for emergency related services.  It will populate record EA0-05.0 in the Illinois Department of Public Aid NSF 2.00 electronic claim file and box 10b-other on the IDPA 2360 paper claim form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nObstetrical crises and/or labor\n\n\nAcute trauma\n\n\nReparative surgery necessitated by antecedent trauma\n\n\nHemorrhage or threat of hemorrhage\n\n\nSerious infection\n\n\nSevere pain\n\n\nShock or impending shock\n\n\nDecompensated vital functions or threat to vital functions\n\n\nCongenital defects in a newborn infant\n\n\nAny condition requiring prompt diagnostic procedures\n\n\nAny other condition causing serious pain or possible death\n\n\nChild/adult abuse\n\n\nSexual assault\n\n\nNot an emergency"
+    },
+    {
+      "index": 548,
+      "name": "DISABILITY_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The extent of the disability caused by the incident.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nShort Term Disability\n\n\nLong Term Disability\n\n\nPermanent/Total Disability\n\n\nNo Disability"
+    },
+    {
+      "index": 559,
+      "name": "DISABILITY_FROM_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the disability started."
+    },
+    {
+      "index": 564,
+      "name": "DISABILITY_TO_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the disability ended."
+    },
+    {
+      "index": 569,
+      "name": "OUTSIDE_LAB_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if lab services outside the provider's office are involved.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 575,
+      "name": "OUTSIDE_LAB_CHARGE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The cost of services performed at the outside lab."
+    },
+    {
+      "index": 580,
+      "name": "FAM_PLANNING_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether the patient is being seen for family planning care.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 586,
+      "name": "SPECIAL_PROGRAM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The special program under which the services rendered to the patient were performed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSpecial Federal Funding\n\n\nDisability\n\n\nPPV/Medicare 100% Payment\n\n\nInduced Abortion - Danger to Woman's Life\n\n\nInduced Abortion - Victim of Rape/Incest\n\n\nSecond Opinion/Surgery\n\n\nTRICARE Program for the Disabled\n\n\nPhysically Handicapped Children's Program\n\n\nMedicare Demonstration Project for Lung Volume Reduction Surgery"
+    },
+    {
+      "index": 602,
+      "name": "PGM_FOR_HANDICAP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the patient's relationship to the sponsor for the program that benefits people with handicaps.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nChild 1\n\n\nChild 2\n\n\nChild 3\n\n\nChild 4\n\n\nChild 5\n\n\nChild 6\n\n\nChild 7\n\n\nChild 8\n\n\nChild 9\n\n\nChild, PFTH Number Unknown\n\n\nSponsor\n\n\nSpouse\n\n\nWidow/Widower"
+    },
+    {
+      "index": 622,
+      "name": "EMPLOYER_LOB",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free text nature/line of business for the employer."
+    },
+    {
+      "index": 627,
+      "name": "OTH_INFO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Any additional free text information that should be recorded in conjunction with the claim."
+    },
+    {
+      "index": 632,
+      "name": "AUTH_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Authorization date."
+    },
+    {
+      "index": 637,
+      "name": "CHIR_FIRST_TREAT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The initiation date of the course of treatment for chiropractic services."
+    },
+    {
+      "index": 642,
+      "name": "CHIR_X_RAY_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The X-ray date for chiropractic services."
+    },
+    {
+      "index": 647,
+      "name": "NAT_OF_COND_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the nature of condition code for Spinal Manipulation.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAcute Condition\n\n\nChronic Condition\n\n\nNon-acute\n\n\nNon-Life Threatening\n\n\nRoutine\n\n\nSymptomatic\n\n\nAcute Manifestation of a Chronic Condition"
+    },
+    {
+      "index": 661,
+      "name": "CHIR_ACUTE_MANI_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the acute manifestation date for the spinal manipulation therapy."
+    },
+    {
+      "index": 666,
+      "name": "HBG_HCT_TEST_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether hemoglobin/hematocrit (HGB/HCT) test is included.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes\n\n\nCompleted/Normal\n\n\nABN/Treated Abnormal by Screening Provider\n\n\nABN/Referred Abnormal\n\n\nNot Required\n\n\nNot Performed\n\n\nABN/Not Referred Abnormal"
+    },
+    {
+      "index": 681,
+      "name": "URINALYSIS_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether Urinalysis test is included.\n\n\n The category values for this column were already listed for column: HBG_HCT_TEST_INCL_C_NAME"
+    },
+    {
+      "index": 687,
+      "name": "TUBERCULOSIS_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether tuberculosis test is included.\n\n\n The category values for this column were already listed for column: HBG_HCT_TEST_INCL_C_NAME"
+    },
+    {
+      "index": 693,
+      "name": "LEAD_TEST_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether lead test is included.\n\n\n The category values for this column were already listed for column: HBG_HCT_TEST_INCL_C_NAME"
+    },
+    {
+      "index": 699,
+      "name": "SICKLE_CELL_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate whether sickle-cell test is included.\n\n\n The category values for this column were already listed for column: HBG_HCT_TEST_INCL_C_NAME"
+    },
+    {
+      "index": 705,
+      "name": "IMMNZTN_INCL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the immunizations.\n\n\n The category values for this column were already listed for column: HBG_HCT_TEST_INCL_C_NAME"
+    },
+    {
+      "index": 711,
+      "name": "CARDIO_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the cardiovascular assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 717,
+      "name": "CARDIO_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the cardiovascular assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 723,
+      "name": "URINARY_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the genital/urinary tract assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 729,
+      "name": "URINARY_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the genital/urinary tract assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 735,
+      "name": "DIABETE_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the diabetes assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 741,
+      "name": "DIABETE_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the diabetes assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 747,
+      "name": "DENTAL_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for the dental assessment.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 753,
+      "name": "DENTAL_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the dental assessment.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 759,
+      "name": "IMMNZTN_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for the immunizations.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 765,
+      "name": "EDU_EXAM_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The exam code for health education.\n\n\n The category values for this column were already listed for column: PHY_EXAM_CODE_C_NAME"
+    },
+    {
+      "index": 771,
+      "name": "EDU_RFL_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The referral code for health education.\n\n\n The category values for this column were already listed for column: HDH_RFL_CODE_C_NAME"
+    },
+    {
+      "index": 777,
+      "name": "ONLY_CAUSE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to distinguish whether or not this injury is the only cause of the patient's condition.\n\n\n The category values for this column were already listed for column: HOSP_REQ_YN"
+    },
+    {
+      "index": 783,
+      "name": "PAT_BURNED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag to determine whether or not patient has been burned.\n\n\n The category values for this column were already listed for column: HOSP_REQ_YN"
+    },
+    {
+      "index": 789,
+      "name": "XRAY_BY_WHOM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the person or entity that performed x-rays."
+    },
+    {
+      "index": 794,
+      "name": "WC_XRAY_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date comparative x-rays were taken."
+    },
+    {
+      "index": 799,
+      "name": "POLIO_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Polio.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGiven/Up to date\n\n\nGiven/Not up to date\n\n\nNot Given/Up to date\n\n\nNot Given/Refused\n\n\nNot Given/Omitted"
+    },
+    {
+      "index": 811,
+      "name": "DPT_TD_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Diphtheria, pertussis, and tetanus (DPT)/tetanus and diphtheria (DT).\n\n\n The category values for this column were already listed for column: POLIO_IMMNZTN_C_NAME"
+    },
+    {
+      "index": 817,
+      "name": "MEASLES_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Measles.\n\n\n The category values for this column were already listed for column: POLIO_IMMNZTN_C_NAME"
+    },
+    {
+      "index": 823,
+      "name": "MUMPS_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Mumps.\n\n\n The category values for this column were already listed for column: POLIO_IMMNZTN_C_NAME"
+    },
+    {
+      "index": 829,
+      "name": "RUBELLA_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Rubella.\n\n\n The category values for this column were already listed for column: POLIO_IMMNZTN_C_NAME"
+    },
+    {
+      "index": 835,
+      "name": "HIB_IMMNZTN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The immunization status for Haemophilus influenzae type B (HIB).\n\n\n The category values for this column were already listed for column: POLIO_IMMNZTN_C_NAME"
+    },
+    {
+      "index": 841,
+      "name": "CHAMP_NONAVAIL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if the provider has a signed Tricare statement of non-availability on file indicating that the services associated with this claim were not available at a military treatment facility.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 847,
+      "name": "CHAMP_NONAV_STMT_NO",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of the Tricare non-availability statement."
+    },
+    {
+      "index": 852,
+      "name": "CHAMPUS_ORG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tricare Organization."
+    },
+    {
+      "index": 857,
+      "name": "CHAMPUS_STATION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tricare Station."
+    },
+    {
+      "index": 862,
+      "name": "CHAMP_MILIT_ACC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicate if the services performed were treatment as a result of a military accident.\n\n\n The category values for this column were already listed for column: IS_EPSDT_YN"
+    },
+    {
+      "index": 868,
+      "name": "ALTERNATE_CLM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Alternate Claim ID."
+    },
+    {
+      "index": 873,
+      "name": "REF_PROVIDER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the referring provider."
+    },
+    {
+      "index": 878,
+      "name": "MC_CLAIMS_WKFLOW_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the workflow associated with the claim (shadow claims, Accounts Payable claims, export only claims, etc.)\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAP claims\n\n\nReprice claims\n\n\nExport only\n\n\nShadow claims\n\n\nPaid claims\n\n\nPaid claims with bucket update\n\n\nPre-adjudicated external claims\n\n\nEstimate claims\n\n\nAdjudicated external claims"
+    },
+    {
+      "index": 894,
+      "name": "CLM_SENSITIVITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the sensitivity type of the claim.\n\n\nMay contain organization-specific values: Yes"
+    },
+    {
+      "index": 900,
+      "name": "PLACE_OF_SERVICE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the place of service associated with the claim."
+    },
+    {
+      "index": 905,
+      "name": "LOC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the location for this claim."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "table_name": "DISCHARGE_DELAYS",
+  "description": "Holds the discharge delays on a patient.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 17,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 22,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 27,
+      "name": "DD_DELAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Discharge delay\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient refusing to leave\n\n\nClinical state deteriorating\n\n\nWaiting on specialist consultation\n\n\nWaiting on lab result\n\n\nWaiting on destination approval\n\n\nAdministering IV medications\n\n\nPatient's ride delayed\n\n\nNeed physician signoff"
+    },
+    {
+      "index": 42,
+      "name": "DD_ADDED_AT_DDTM_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant discharge delay was added"
+    },
+    {
+      "index": 47,
+      "name": "DD_RESOLVED_AT_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "When the discharge delay was added"
+    },
+    {
+      "index": 52,
+      "name": "DD_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the comment entered by users on a delay"
+    },
+    {
+      "index": 57,
+      "name": "DD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds the current status of a delay \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDiscontinued"
+    },
+    {
+      "index": 67,
+      "name": "DD_IS_PRIMARY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the delay is primary. Y indicates that the delay is primary. A null value indicates that the delay is not primary. An N will not be populated for this column. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+    }
+  ]
+}

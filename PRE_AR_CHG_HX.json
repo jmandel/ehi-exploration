@@ -1,0 +1,94 @@
+{
+  "table_name": "PRE_AR_CHG_HX",
+  "description": "This table contains one row for each activity performed on a temporary accounts receivable (TAR) record of type charge. This table contains basic information about the activity (activity code, user, date, and comment). Note: TAR records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table might be lost if you truncate the table.",
+  "primary_key": {
+    "column_name": "TAR_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the temporary transaction�record."
+    },
+    {
+      "index": 7,
+      "name": "CHARGE_HX_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the history information associated with this record. This does not correspond to the CHARGE_LINE columns of other PRE_AR_CHG tables."
+    },
+    {
+      "index": 12,
+      "name": "ACTIVITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The activity�performed category ID�for the temporary transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnter WQ\n\n\nReview\n\n\nReenter WQ\n\n\nForce Resubmit\n\n\nTransfer\n\n\nDeletion\n\n\nAutomatic Transfer\n\n\nAutomatic Reentry\n\n\nResubmit\n\n\nAutomatic Filing\n\n\nDefer\n\n\nActivate\n\n\nCharge Homed\n\n\nAutomatic Update\n\n\nRetroadjudication\n\n\nPre Charge Review Extension\n\n\nResearch Review\n\n\nRequest for Billing Information\n\n\nResearch Correct\n\n\nAnesthesia Session Flagged\n\n\nAnesthesia Session Unflagged\n\n\nSkip\n\n\nCharge Session Created\n\n\nStart Charge Review Filing\n\n\nViolate Rule\n\n\nRule Resolved\n\n\nExit WQ\n\n\nCharge Filed"
+    },
+    {
+      "index": 47,
+      "name": "ACTIVITY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the activity is performed."
+    },
+    {
+      "index": 52,
+      "name": "ACTIVITY_EXIT_DT",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the \"resolve\" activity is performed."
+    },
+    {
+      "index": 57,
+      "name": "ACTIVITY_TIMESTAMP",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The time when the activity was performed in seconds from 12/31/1840."
+    },
+    {
+      "index": 62,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who performed the activity.  This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 67,
+      "name": "USER_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comments that the user added when performing the activity."
+    },
+    {
+      "index": 72,
+      "name": "EXIT_TIMESTAMP",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The time when the resolving activity was performed in seconds from 12/31/1840."
+    },
+    {
+      "index": 77,
+      "name": "EXIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who performed the resolving activity.  This column is frequently used to link to the CLARITY_EMP table."
+    },
+    {
+      "index": 82,
+      "name": "EXIT_ACTIVITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category number of the resolving activity.\n\n\n The category values for this column were already listed for column: ACTIVITY_C_NAME"
+    },
+    {
+      "index": 88,
+      "name": "DEFER_UNTIL_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Records the date & time (including time zone in UTC format) that a charge session was deferred until."
+    }
+  ]
+}

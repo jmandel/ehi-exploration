@@ -1,0 +1,101 @@
+{
+  "table_name": "PAT_REVIEW_DATA",
+  "description": "Table contains patient entered clinical data review from Welcome Kiosk and MyChart.",
+  "primary_key": {
+    "column_name": "PAT_ENC_CSN_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "index": 7,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
+    },
+    {
+      "index": 12,
+      "name": "PAT_ENC_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "PAT_REVIEW_ELG_C_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient allergies reviewed by the patient. The response to the prompt, \"do you have any additional allergies?\"\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 31,
+      "name": "PAT_REVIEW_ELG_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional comments, entered in a free text format by the patient in response to the prompt, \"Do you have any additional allergies?\""
+    },
+    {
+      "index": 36,
+      "name": "PAT_REVIEW_ORD_C_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient medications reviewed by the patient. The response to the prompt, \"do you have any additional medications?\"\n\n\n The category values for this column were already listed for column: PAT_REVIEW_ELG_C_YN"
+    },
+    {
+      "index": 42,
+      "name": "PAT_REVIEW_ORD_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional comments, entered in a free text format, by the patient in response to the prompt, \"Do you have any additional medications?\""
+    },
+    {
+      "index": 47,
+      "name": "PAT_REVIEW_LPL_C_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient problems reviewed by the patient. The response to the prompt, \"do you have any additional problems?\"\n\n\n The category values for this column were already listed for column: PAT_REVIEW_ELG_C_YN"
+    },
+    {
+      "index": 53,
+      "name": "PAT_REVIEW_LPL_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Additional comments, entered in a freetext format by the patient in response to the prompt, \"Do you have any additional problems?\""
+    },
+    {
+      "index": 58,
+      "name": "PAT_ALG_RVW_INFO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's response to the \"are these allergies correct?\" question in Welcome.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient indicated correct\n\n\nDon't have time\n\n\nDon't understand\n\n\nDon't have medications with me\n\n\nCan't find allergy\n\n\nCan't find medication\n\n\nCan't find health issue\n\n\nDon't know details of allergies\n\n\nDon't know details of medications\n\n\nDon't know details of health issues\n\n\nExited before allergies were verified\n\n\nExited before medications were verified\n\n\nExited before health issues were verified"
+    },
+    {
+      "index": 78,
+      "name": "PAT_MED_RVW_INFO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's response to the \"are these medications correct?\" question in Welcome.\n\n\n The category values for this column were already listed for column: PAT_ALG_RVW_INFO_C_NAME"
+    },
+    {
+      "index": 84,
+      "name": "PAT_PROB_RVW_INFO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's response to the \"are these problems correct?\" question in Welcome.\n\n\n The category values for this column were already listed for column: PAT_ALG_RVW_INFO_C_NAME"
+    }
+  ]
+}

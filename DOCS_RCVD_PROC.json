@@ -1,0 +1,164 @@
+{
+  "table_name": "DOCS_RCVD_PROC",
+  "description": "This table stores procedure information received from outside sources.",
+  "primary_key": {
+    "column_name": "DOCUMENT_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the document record."
+    },
+    {
+      "index": 7,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "index": 12,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "index": 17,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "index": 22,
+      "name": "PROC_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the unique reference ID."
+    },
+    {
+      "index": 27,
+      "name": "PROC_TYPE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the mapped procedure record ID for the external procedure."
+    },
+    {
+      "index": 32,
+      "name": "PROC_TYPE_TXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the free text name for the external procedure."
+    },
+    {
+      "index": 37,
+      "name": "PROC_PERF_AT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the facility record mapped location where the external procedure was performed."
+    },
+    {
+      "index": 42,
+      "name": "PROC_PERF_AT_TXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the free text location where the external procedure was performed."
+    },
+    {
+      "index": 47,
+      "name": "PROC_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the start date of the external procedure."
+    },
+    {
+      "index": 52,
+      "name": "PROC_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the end date of the external procedure."
+    },
+    {
+      "index": 57,
+      "name": "PROC_EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the event identifier of the event information for the procedure."
+    },
+    {
+      "index": 62,
+      "name": "PROC_MASTER_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item will be used to indicate duplicate procedure data."
+    },
+    {
+      "index": 67,
+      "name": "PROC_LST_UPD_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the last update instant of the procedure in Coordinated Universal Time (UTC)."
+    },
+    {
+      "index": 72,
+      "name": "PROC_UNSUCCESSFUL_FLG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a procedure was an unsuccessful attempt\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnsuccessful Attempt\n\n\nDocumented on Wrong Patient"
+    },
+    {
+      "index": 81,
+      "name": "PROC_UNSUCCESS_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant the procedure unsuccessful flag was set"
+    },
+    {
+      "index": 86,
+      "name": "PROC_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the status code of a procedure when received from a document.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOther\n\n\nNormal\n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+    },
+    {
+      "index": 104,
+      "name": "PROC_DUP_INT_PROC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ID of the Order record of an internal charge that is a duplicate of this row in an external document record."
+    },
+    {
+      "index": 109,
+      "name": "PROC_DUP_INT_UCL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID of the Universal Charge Lines record of an internal charge that is a duplicate of this row in an external document record."
+    },
+    {
+      "index": 114,
+      "name": "PROC_DUP_INT_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ID of the Accounts Receivable Transaction record of an internal charge that is a duplicate of this row in an external document record."
+    },
+    {
+      "index": 119,
+      "name": "PROC_DUP_INT_HOSP_TX_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the ID of the Hospital Permanent Transaction record of an internal charge that is a duplicate of this row in an external document record."
+    },
+    {
+      "index": 124,
+      "name": "PROC_FILTER_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason why an external procedure should be filtered from the composite record\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim Derivation: Procedure Code Inclusion/Exclusion List\n\n\nClaim Derivation: Missing Provider\n\n\nClaim Derivation: Sensitive Diagnosis\n\n\nClaim Derivation: Missing Procedure Start Date\n\n\nClaim Derivation: Excluded Procedure Modifier\n\n\nSource Organization Unknown\n\n\nSource Organization Mismatch\n\n\nSource Organization Is Self\n\n\nClinical Note Type Exclusion List\n\n\nClinical Note Missing Service Instant\n\n\nClinical Note Missing Last Filed Instant\n\n\nClinical Note Missing Author Name\n\n\nDispense Cancellation\n\n\nSame Day as Internal Encounter\n\n\nMissing or Invalid Binary URL\n\n\nFiltered or Missing Source Note\n\n\nDocumentReference Status not Current\n\n\nClaim Derivation: Excluded Linked Diagnoses\n\n\nClaim Derivation: Missing Encounter Start Date"
+    }
+  ]
+}

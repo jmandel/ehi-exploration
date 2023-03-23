@@ -1,0 +1,45 @@
+{
+  "table_name": "ORD_SPECIALTY_SIGNATURES",
+  "description": "This table stores information about the required specialties for an order.",
+  "primary_key": {
+    "column_name": "ORDER_ID",
+    "ordinal_position": "1"
+  },
+  "columns": [
+    {
+      "index": 2,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "index": 7,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "index": 12,
+      "name": "NUM_SIG_REQ_BY_SPECIALTY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column stores the number of signatures required by a given specialty."
+    },
+    {
+      "index": 17,
+      "name": "BILLING_SPECIALTY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if providers of the given specialty can also be the billing provider. 'Y' indicates that the provider can also be the billing provider, 'N' or NULL indicates that they can not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+    },
+    {
+      "index": 26,
+      "name": "REQ_SPECIALTIES_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Reading Physician Roles category ID for the specialties required for resulting the study.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nRadiology\n\n\nCardiology\n\n\nOphthalmology\n\n\nObstetrics\n\n\nTest Supervisor\n\n\nECG Reader\n\n\nEcho Reader\n\n\nSPECT Reader"
+    }
+  ]
+}
