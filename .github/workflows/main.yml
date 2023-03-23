@@ -1,0 +1,27 @@
+name: Update EHI Tables
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at 00:00
+
+jobs:
+  update-ehi-tables:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Deno
+      uses: denoland/setup-deno@main
+      with:
+        deno-version: '1.x'
+
+    - name: Install dependencies and run setup.sh
+      run: ./setup.sh
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
