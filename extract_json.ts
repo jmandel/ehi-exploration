@@ -18,7 +18,7 @@ const columns = column_rows
     const name = row.querySelector(".T1Head:nth-child(2)")?.textContent?.trim() ?? "";
     const type = row.querySelector(".T1Head:nth-child(3)")?.textContent?.trim() ?? "";
     const discontinued = row.querySelector("td:nth-child(4)")?.textContent?.trim() === "No" ? false : true;
-    const description = row.nextElementSibling?.querySelector("td")?.textContent?.trim() ?? "";
+    const description = row.nextElementSibling?.querySelector("td:nth-child(2)")?.textContent?.trim() ?? "";
     
     if (!name) return null;
     
