@@ -22,42 +22,40 @@ jobs:
     - name: Install dependencies and run setup.sh
       run: ./setup.sh
       
-    - name: Calculate MD5 hash of Download
-      id: md5
+    - name: Calculate hash of tables.tgz
+      id: hash
       run: |
-        echo "::set-output name=hash::$(md5sum Download | awk '{print $1}')"
+        echo "HASH=$(sha256sum tables.zip | awk '{print $1}')" >> $GITHUB_OUTPUT
 
-    - name: Cache MD5 hash
+    - name: Cache hash
       uses: actions/cache@v2
       with:
-        path: .md5-cache
-        key: ${{ steps.md5.outputs.hash }}
-        restore-keys: |
-          cache-md5-
+        path: .hash-cache
+        key: ${{ steps.hash.outputs.HASH }}
 
-    - name: Check if Download has changed
+    - name: Check if tables.tgz has changed
       id: check-change
       run: |
-        LAST_HASH=$(cat .md5-cache/last-hash 2>/dev/null || echo "")
-        CURRENT_HASH="${{ steps.md5.outputs.hash }}"
+        LAST_HASH=$(cat .hash-cache/last-hash 2>/dev/null || echo "")
+        CURRENT_HASH="${{ steps.hash.outputs.hash }}"
         if [ "$LAST_HASH" != "$CURRENT_HASH" ]; then
-          echo "Download has changed"
-          echo "::set-output name=changed::true"
-          echo $CURRENT_HASH > .md5-cache/last-hash
+          echo "tables.tgz has changed"
+          echo "CHANGED=true" >> $GITHUB_OUTPUT
+          echo $CURRENT_HASH > .hash-cache/last-hash
         else
-          echo "Download has not changed"
-          echo "::set-output name=changed::false"
+          echo "tables.tgz has not changed"
+          echo "CHANGED=false" >> $GITHUB_OUTPUT
         fi
 
     - name: Archive output as an artifact
-      if: steps.check-change.outputs.changed == 'true'
+      if: steps.check-change.outputs.CHANGED == 'true'
       uses: actions/upload-artifact@v2
       with:
         name: output
         path: ./output
 
     - name: Deploy to GitHub Pages
-      if: steps.check-change.outputs.changed == 'true'
+      if: steps.check-change.outputs.CHANGED == 'true'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
