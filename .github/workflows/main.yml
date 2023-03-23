@@ -21,8 +21,43 @@ jobs:
 
     - name: Install dependencies and run setup.sh
       run: ./setup.sh
+      
+    - name: Calculate MD5 hash of Download
+      id: md5
+      run: |
+        echo "::set-output name=hash::$(md5sum Download | awk '{print $1}')"
+
+    - name: Cache MD5 hash
+      uses: actions/cache@v2
+      with:
+        path: .md5-cache
+        key: ${{ steps.md5.outputs.hash }}
+        restore-keys: |
+          cache-md5-
+
+    - name: Check if Download has changed
+      id: check-change
+      run: |
+        LAST_HASH=$(cat .md5-cache/last-hash 2>/dev/null || echo "")
+        CURRENT_HASH="${{ steps.md5.outputs.hash }}"
+        if [ "$LAST_HASH" != "$CURRENT_HASH" ]; then
+          echo "Download has changed"
+          echo "::set-output name=changed::true"
+          echo $CURRENT_HASH > .md5-cache/last-hash
+        else
+          echo "Download has not changed"
+          echo "::set-output name=changed::false"
+        fi
+
+    - name: Archive output as an artifact
+      if: steps.check-change.outputs.changed == 'true'
+      uses: actions/upload-artifact@v2
+      with:
+        name: output
+        path: ./output
 
     - name: Deploy to GitHub Pages
+      if: steps.check-change.outputs.changed == 'true'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
