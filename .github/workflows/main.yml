@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies and run setup.sh
       run: ./setup.sh
       
-    - name: Calculate hash of tables.tgz
+    - name: Calculate hash of tables.zip
       id: hash
       run: |
         echo "HASH=$(sha256sum tables.zip | awk '{print $1}')" >> $GITHUB_OUTPUT
@@ -33,17 +33,18 @@ jobs:
         path: .hash-cache
         key: ${{ steps.hash.outputs.HASH }}
 
-    - name: Check if tables.tgz has changed
+    - name: Check if tables.zip has changed
       id: check-change
       run: |
+        mkdir -p .hash-cache
         LAST_HASH=$(cat .hash-cache/last-hash 2>/dev/null || echo "")
         CURRENT_HASH="${{ steps.hash.outputs.hash }}"
         if [ "$LAST_HASH" != "$CURRENT_HASH" ]; then
-          echo "tables.tgz has changed"
+          echo "tables.zip has changed"
           echo "CHANGED=true" >> $GITHUB_OUTPUT
           echo $CURRENT_HASH > .hash-cache/last-hash
         else
-          echo "tables.tgz has not changed"
+          echo "tables.zip has not changed"
           echo "CHANGED=false" >> $GITHUB_OUTPUT
         fi
 
@@ -53,7 +54,10 @@ jobs:
       with:
         name: output
         path: ./output
-
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "index.tgz"
+        omitBody: true          
     - name: Deploy to GitHub Pages
       if: steps.check-change.outputs.CHANGED == 'true'
       uses: peaceiris/actions-gh-pages@v3
