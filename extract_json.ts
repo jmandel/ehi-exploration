@@ -1,59 +1,66 @@
 // extract_json.ts
 import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 
-
-const html = Deno.readTextFileSync(Deno.args[0])
+const html = Deno.readTextFileSync(Deno.args[0]);
 
 const parser = new DOMParser();
 const doc = parser.parseFromString(html, "text/html");
 
 const table_name = doc.querySelector(".Header2 td")?.textContent?.trim() ?? "";
 const description = doc.querySelector(".T1Value")?.textContent?.trim() ?? "";
-const primary_key_column_name = doc.querySelector(".List tbody tr td")?.textContent?.trim() ?? "";
-const primary_key_ordinal_position = doc.querySelector(".List tbody tr td:nth-child(2)")?.textContent?.trim() ?? "";
 
-const column_rows = Array.from(doc.querySelectorAll(".SubList.List tr"));
-const columns = column_rows
-  .map((row, index) => {
-    const name = row.querySelector(".T1Head:nth-child(2)")?.textContent?.trim() ?? "";
-    const type = row.querySelector(".T1Head:nth-child(3)")?.textContent?.trim() ?? "";
-    const discontinued = row.querySelector("td:nth-child(4)")?.textContent?.trim() === "No" ? false : true;
-    const descriptionRow = row.nextElementSibling;
-    const description = descriptionRow?.querySelector("td:nth-child(2)")?.textContent?.trim() ?? "";
-    
-    if (!name) return null;
+const [primary_key_information, column_information] = Array.from(
+  doc.querySelectorAll("table.SubHeader3 + table.List")
+);
+const pks = Array.from(
+  primary_key_information.querySelectorAll("tbody > tr:nth-child(n+2)")
+);
 
-    // Extract category entries
-    const entries = [];
-    let entriesRow = Array.from(descriptionRow.querySelectorAll("td td")).find(td => td.textContent.includes("Category Entries"));
-    if (entriesRow) {
-      entriesRow = entriesRow.parentElement.nextElementSibling;
-      while (entriesRow && entriesRow.querySelector("td[style]")) {
+const pkCols = [];
+for (const k of pks) {
+  const kcells = Array.from(k.querySelectorAll("td:nth-last-child(n+2)"));
+  const [colname, colposition] = kcells.map((td) => td.innerText);
+  pkCols.push({
+    columnName: colname,
+    ordinalPosition: parseInt(colposition),
+  });
+}
 
-        entries.push(entriesRow.querySelector("td[style]").textContent.trim());
-        entriesRow = entriesRow.nextElementSibling;
-      }
-    }
-    
-    return {
-      index: index + 1,
-      name,
-      type,
-      discontinued,
-      description,
-      entries,
-    };
-  })
-  .filter(column => column !== null);
+const colRows = Array.from(
+  column_information.querySelectorAll(
+    ":scope > tbody > tr > td.T1Head:nth-child(1)"
+  )
+).map((td) => td.parentElement);
 
-const table_json = {
-  table_name,
+const cols = [];
+for (const c of colRows) {
+  const [ordinalPosition, name, type, discontinuedText] = Array.from(
+    c.querySelectorAll(":scope > td")
+  ).map((c) => c.innerText);
+  const colDescComponents = c.nextElementSibling.querySelector("table.SubList");
+  const colDesc: string = colDescComponents
+    .querySelector(":scope > tbody > tr:nth-child(2)")
+    .innerText.trim();
+  const entriesCells = colDescComponents.querySelectorAll(
+    ":scope > tbody > tr:nth-child(n+5)"
+  );
+  const linksTo = colDesc.match(/links? to ([A-Z_]+)/);
+  const entries = Array.from(entriesCells).map((e) => e.innerText.trim());
+  cols.push({
+    ordinalPosition: parseInt(ordinalPosition),
+    name,
+    type,
+    discontinued: discontinuedText !== "No",
+    description: colDesc,
+    linksTo: linksTo?.[1],
+    entries: entries.length ? entries : undefined
+  });
+}
+const output = {
+  name: table_name,
   description,
-  primary_key: {
-    column_name: primary_key_column_name,
-    ordinal_position: primary_key_ordinal_position,
-  },
-  columns,
+  primaryKey: pkCols,
+  columns: cols,
 };
 
-console.log(JSON.stringify(table_json, null, 2));
+console.log(JSON.stringify(output, null, 2));
