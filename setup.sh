@@ -24,3 +24,6 @@ done
 
 # Final count of files in output
 echo "Total files in output: $(find output -type f | wc -l)"
+
+tar -czvf index.tgz output
+mv index.tgz output
