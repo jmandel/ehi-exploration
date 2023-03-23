@@ -53,17 +53,11 @@ jobs:
       if: steps.check-change.outputs.CHANGED == 'true'
       run: ./process.sh
 
-    - name: Archive output as an artifact
-      if: steps.check-change.outputs.CHANGED == 'true'
-      uses: actions/upload-artifact@v2
-      with:
-        name: output
-        path: ./output
-
     - uses: ncipollo/release-action@v1
+      if: steps.check-change.outputs.CHANGED == 'true'
       with:
         tag: ${{ steps.calc.outputs.DATE}}
-        artifacts: "index.tgz"
+        artifacts: "output/index.tgz"
         omitBody: true
 
     - name: Deploy to GitHub Pages
