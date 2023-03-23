@@ -1,9 +1,8 @@
 // extract_json.ts
-import { parse } from "https://deno.land/std/html/mod.ts";
+import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 
-const html = `
-<!-- Your provided HTML code goes here -->
-`;
+
+const html = Deno.readTextFileSync(Deno.args[0])
 
 const parser = new DOMParser();
 const doc = parser.parseFromString(html, "text/html");
