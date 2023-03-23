@@ -1,34 +1,44 @@
 {
-  "table_name": "CODE_INT_CODE_INT_LN",
+  "name": "CODE_INT_CODE_INT_LN",
   "description": "This table connects the coded CPTs used in coding-only and combined service lines with the line where the CPT was stored in Code Integration (HAR 2110 related group). CPTs from multiple lines can be included on one service line. Values are only available for coding-only and combined lines. The table will be blank for charge-only lines.",
-  "primary_key": {
-    "column_name": "HSP_ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CODE_INT_CODE_INT_LN",
       "type": "INTEGER",
       "discontinued": false,

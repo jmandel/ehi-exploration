@@ -1,174 +1,208 @@
 {
-  "table_name": "IP_WORKLIST_2",
+  "name": "IP_WORKLIST_2",
   "description": "This table contains data associated with task (LTK) records.",
-  "primary_key": {
-    "column_name": "TASK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TASK_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TASK_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the task record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "DESC_FOR_PAT_OVRIDE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A descriptive name for instances of this task that is written specifically for a given patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "NAME_FOR_PAT_OVRIDE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A descriptive name for instances of this task at LTK level that is written specifically for patients."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "START_OFFSET_DAYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Number of days to offset the start date from the task assignment or the anchor event date."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "START_OFFSET_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of start date offset (e.g., before/after).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBefore\n\n\nAfter"
+      "description": "The type of start date offset (e.g., before/after).",
+      "entries": [
+        "Before",
+        "After"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "SOURCE_LTT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant the task template (LTT) was assigned which resulted in tasks (LTK) being created."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "CALCULATED_RESUME_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "When resuming a paused task, this will be its start instant if no start date is specified."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "FLO_THRESHOLD_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Threshold value for flowsheet based task completion."
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "TSK_DISCONTINUE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Describe the reason of the discontinued patient-assigned task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDiscontinued by Provider\n\n\nFinished\n\n\nDiscontinued through BPA\n\n\nDiscontinued by Patient\n\n\nDiscontinued by Chart Correction"
+      "description": "Describe the reason of the discontinued patient-assigned task.",
+      "entries": [
+        "Discontinued by Provider",
+        "Finished",
+        "Discontinued through BPA",
+        "Discontinued by Patient",
+        "Discontinued by Chart Correction"
+      ]
     },
     {
-      "index": 58,
+      "ordinalPosition": 10,
       "name": "ENSURE_DELIVERY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Determines whether task will be delivered if scheduled start date has passed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlways\n\n\nIgnore Past Instances\n\n\nNever"
+      "description": "Determines whether task will be delivered if scheduled start date has passed.",
+      "entries": [
+        "Always",
+        "Ignore Past Instances",
+        "Never"
+      ]
     },
     {
-      "index": 68,
+      "ordinalPosition": 11,
       "name": "EFQ_OVRIDE_CYL_LEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "If there is a frequency override specified, this item will contain the length of a relative specified type cycle. For all other specified types this value will be ignored (and should be empty)."
     },
     {
-      "index": 73,
+      "ordinalPosition": 12,
       "name": "EFQ_OVRIDE_DAY_TYP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Specifies what the numeric values in the frequency override days columns represent. If it is 1 then the listed days are relative days. If it is 2 then the listed days are weekdays. Any other value has no meaning."
     },
     {
-      "index": 78,
+      "ordinalPosition": 13,
       "name": "DURATION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Number of days this recurring task should go on for relative to the configured start date."
     },
     {
-      "index": 83,
+      "ordinalPosition": 14,
       "name": "TASK_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The note (HNO) ID that is attached to the task (LTK) record."
     },
     {
-      "index": 88,
+      "ordinalPosition": 15,
       "name": "DECISION_TRACKER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the linked decision, if one exists, for this task"
     },
     {
-      "index": 93,
+      "ordinalPosition": 16,
       "name": "REQ_DOC_NOT_ATTRIBUTED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The did not attribute reason category ID for the required documentation task. This indicates the reason that the task was not attributed to any users.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCould Not Find Any Appropriate Users\n\n\nAlready Completed Before Evaluation"
+      "description": "The did not attribute reason category ID for the required documentation task. This indicates the reason that the task was not attributed to any users.",
+      "entries": [
+        "Could Not Find Any Appropriate Users",
+        "Already Completed Before Evaluation"
+      ]
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "USED_FOR_OUTREACH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a checklist task is used for outreach or not. 'Y' indicates that the checklist task is used for outreach. 'N' or NULL indicates that the checklist task is not used for outreach.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether a checklist task is used for outreach or not. 'Y' indicates that the checklist task is used for outreach. 'N' or NULL indicates that the checklist task is not used for outreach.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 111,
+      "ordinalPosition": 18,
       "name": "PAT_ASGN_TASK_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Admission contact serial number for the admission linked to this task."
     },
     {
-      "index": 116,
+      "ordinalPosition": 19,
       "name": "SC_SUPPORT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value of the support & service type that triggered the generation of this task\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value of the support & service type that triggered the generation of this task"
     },
     {
-      "index": 122,
+      "ordinalPosition": 20,
       "name": "SC_SUPPORT_TYPE_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The start date of the support & service type that triggered the generation of this task"
     },
     {
-      "index": 127,
+      "ordinalPosition": 21,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The referral that this target is tracking."
     },
     {
-      "index": 132,
+      "ordinalPosition": 22,
       "name": "USED_FOR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number which identifies the purpose for which the task is used.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTarget\n\n\nOutpatient Care Plan\n\n\nOutreach\n\n\nCase Review\n\n\nChecklist\n\n\nMedication Therapy Problem"
+      "description": "The category number which identifies the purpose for which the task is used.",
+      "entries": [
+        "Target",
+        "Outpatient Care Plan",
+        "Outreach",
+        "Case Review",
+        "Checklist",
+        "Medication Therapy Problem"
+      ]
     },
     {
-      "index": 145,
+      "ordinalPosition": 23,
       "name": "CREATE_INST_LOCAL_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant at which the task was created, in local time. This item is the local equivalent of the CREATION_UTC_DTTM column, which is in UTC."
     },
     {
-      "index": 150,
+      "ordinalPosition": 24,
       "name": "LINKED_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,

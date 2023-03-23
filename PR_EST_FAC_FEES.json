@@ -1,244 +1,277 @@
 {
-  "table_name": "PR_EST_FAC_FEES",
+  "name": "PR_EST_FAC_FEES",
   "description": "The facility fees information for the price estimate. Facility fees are generated in Resolute Hospital Billing.",
-  "primary_key": {
-    "column_name": "ESTIMATE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ESTIMATE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CODE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category to indicate which type of code (DRG/ICD/CPT) was used when preparing the estimate.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDRG\n\n\nICD\n\n\nCPT\n\n\nEAP"
+      "description": "Category to indicate which type of code (DRG/ICD/CPT) was used when preparing the estimate.",
+      "entries": [
+        "DRG",
+        "ICD",
+        "CPT",
+        "EAP"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "DRG_CODE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the DRG code upon which the estimate for the facility fees is based."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "DRG_CODE_ID_DRG_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Diagnoses Related Group name."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "ICD_CODE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ICD code upon which the estimate for the facility fees is based."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "ICD_CODE_ID_ICD_PX_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the ICD procedure record."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "CPT_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the CPT code upon which the hospital fees estimate is based."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "LOCATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Location for this facility fee estimate."
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "ACCT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Account class for this facility fee estimate.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Account class for this facility fee estimate."
     },
     {
-      "index": 59,
+      "ordinalPosition": 11,
       "name": "BILLED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Estimated charge amount for an Hospital Billing (HB)�historical case estimate."
     },
     {
-      "index": 64,
+      "ordinalPosition": 12,
       "name": "ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The estimated allowed amount for the facility fees."
     },
     {
-      "index": 69,
+      "ordinalPosition": 13,
       "name": "SELF_PAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The estimated self-pay amount for the facility fees."
     },
     {
-      "index": 74,
+      "ordinalPosition": 14,
       "name": "SERVICE_TYPE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The benefit service type used to determine benefit information for the facility fees section.  This information comes from the benefit record attached to the estimate. Use the PR_EST_INFO table, BENEFITS_INFO_ID column to link this data."
     },
     {
-      "index": 79,
+      "ordinalPosition": 15,
       "name": "SERVICE_TYPE_ID_SERVICE_TYPE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of this benefit service type."
     },
     {
-      "index": 84,
+      "ordinalPosition": 16,
       "name": "ACTUAL_DISCOUNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The estimated discount amount for the facility fees."
     },
     {
-      "index": 89,
+      "ordinalPosition": 17,
       "name": "SYSTEM_DISCOUNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The system-calculated discount amount for the facility fees."
     },
     {
-      "index": 94,
+      "ordinalPosition": 18,
       "name": "SYS_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The system-calculated charge amount for a Hospital Billing (HB) historical case estimate."
     },
     {
-      "index": 99,
+      "ordinalPosition": 19,
       "name": "SYS_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The system-calculated allowed amount for a Hospital Billing (HB) historical case estimate."
     },
     {
-      "index": 104,
+      "ordinalPosition": 20,
       "name": "HB_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Provider for this facility fee estimate."
     },
     {
-      "index": 109,
+      "ordinalPosition": 21,
       "name": "HB_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Department for this facility fee estimate."
     },
     {
-      "index": 114,
+      "ordinalPosition": 22,
       "name": "BASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Base class for this facility fee estimate.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nEmergency"
+      "description": "Base class for this facility fee estimate.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Emergency"
+      ]
     },
     {
-      "index": 124,
+      "ordinalPosition": 23,
       "name": "HB_MEDIAN_CHARGES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Median charge amount from historical cases."
     },
     {
-      "index": 129,
+      "ordinalPosition": 24,
       "name": "HB_MEDIAN_ALLOWED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Median allowed amount from historical cases."
     },
     {
-      "index": 134,
+      "ordinalPosition": 25,
       "name": "HB_CONTRACT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The reimbursement contract calculated for a Hospital Billing context."
     },
     {
-      "index": 139,
+      "ordinalPosition": 26,
       "name": "HB_CONTRACT_ID_CONTRACT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Vendor-Network contract."
     },
     {
-      "index": 144,
+      "ordinalPosition": 27,
       "name": "HB_OVRIDE_CONTRACT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The reimbursement contract manually selected to find historical data in a Hospital Billing context."
     },
     {
-      "index": 149,
+      "ordinalPosition": 28,
       "name": "HB_OVRIDE_CONTRACT_ID_CONTRACT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Vendor-Network contract."
     },
     {
-      "index": 154,
+      "ordinalPosition": 29,
       "name": "HB_OVRIDE_BENEFIT_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The plan manually selected to find historical data in a Hospital Billing context."
     },
     {
-      "index": 159,
+      "ordinalPosition": 30,
       "name": "HB_OVRIDE_BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 164,
+      "ordinalPosition": 31,
       "name": "HB_OVRIDE_PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payor manually selected to find historical data in a Hospital Billing context."
     },
     {
-      "index": 169,
+      "ordinalPosition": 32,
       "name": "HB_OVRIDE_PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 174,
+      "ordinalPosition": 33,
       "name": "HB_OVRIDE_FIN_CL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The financial class category ID in an Hospital Billing context for the patient estimate.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+      "description": "The financial class category ID in an Hospital Billing context for the patient estimate.",
+      "entries": [
+        "Commercial",
+        "Medicare",
+        "Medicaid",
+        "Self-Pay",
+        "Worker's Comp",
+        "Tricare",
+        "Champva",
+        "Group Health Plan",
+        "FECA Black Lung",
+        "Blue Shield",
+        "Medigap",
+        "Other",
+        "DK Regional",
+        "Client"
+      ]
     },
     {
-      "index": 195,
+      "ordinalPosition": 34,
       "name": "FAC_ADDL_LINE",
       "type": "INTEGER",
       "discontinued": false,

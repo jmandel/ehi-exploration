@@ -1,62 +1,82 @@
 {
-  "table_name": "DP_COORD_COMP_STATUS",
+  "name": "DP_COORD_COMP_STATUS",
   "description": "This table contains Continued Care and Services Coordination completion information.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DP_COORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The coordination type for Continued Care and Services Coordination.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDestination\n\n\nDurable Medical Equipment\n\n\nDialysis/Infusion\n\n\nHome Medical Care\n\n\nCommunity Resources"
+      "description": "The coordination type for Continued Care and Services Coordination.",
+      "entries": [
+        "Destination",
+        "Durable Medical Equipment",
+        "Dialysis/Infusion",
+        "Home Medical Care",
+        "Community Resources"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "DP_COORD_COMPLETE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether Continued Care and Services Coordination has been completed for this coordination type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column indicates whether Continued Care and Services Coordination has been completed for this coordination type.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 43,
+      "ordinalPosition": 7,
       "name": "DP_COORD_NOT_REQ_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason for completing Continued Care and Services Coordination without selecting any services.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient will return home"
+      "description": "Reason for completing Continued Care and Services Coordination without selecting any services.",
+      "entries": [
+        "Patient will return home"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "DP_COORD_NOT_REQ_RSN_CMT",
       "type": "VARCHAR",
       "discontinued": false,

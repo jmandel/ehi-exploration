@@ -1,31 +1,42 @@
 {
-  "table_name": "PB_ACCT_TYPE",
+  "name": "PB_ACCT_TYPE",
   "description": "Store the PB account types.",
-  "primary_key": {
-    "column_name": "PB_ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_ACCT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "INVOICE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Store areas this account can be used in.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPremium Billing\n\n\nAP Claim\n\n\nCapitation Contract"
+      "description": "Store areas this account can be used in.",
+      "entries": [
+        "Premium Billing",
+        "AP Claim",
+        "Capitation Contract"
+      ]
     }
   ]
 }

@@ -1,384 +1,439 @@
 {
-  "table_name": "PB_DTL_TX",
+  "name": "PB_DTL_TX",
   "description": "The PB_DTL_TX table contains the coverage-level detailed transactions associated with a premium billing account transaction.",
-  "primary_key": {
-    "column_name": "PB_TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing detailed transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PDX_TX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the type of the transaction (i.e. premium billing, payment, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nPremium Billing\n\n\nPayment\n\n\nAd Hoc Adjustment\n\n\nBalance Forward\n\n\nOverpost\n\n\nWriteoff\n\n\nInformation\n\n\nPayment Reversal\n\n\nPreviously Closed"
+      "description": "Indicates the type of the transaction (i.e. premium billing, payment, etc.)",
+      "entries": [
+        "New",
+        "Premium Billing",
+        "Payment",
+        "Ad Hoc Adjustment",
+        "Balance Forward",
+        "Overpost",
+        "Writeoff",
+        "Information",
+        "Payment Reversal",
+        "Previously Closed"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 3,
       "name": "PDX_TX_SENSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the transaction is a credit or debit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCredit\n\n\nDebit"
+      "description": "Indicates whether the transaction is a credit or debit.",
+      "entries": [
+        "Credit",
+        "Debit"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 4,
       "name": "TX_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date that the transaction was created in the system."
     },
     {
-      "index": 38,
+      "ordinalPosition": 5,
       "name": "EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective date of the transaction. This date represents the first day of the coverage period being billed for the transaction."
     },
     {
-      "index": 43,
+      "ordinalPosition": 6,
       "name": "REAL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Realization date of the transaction. This date represents the cycle date of the premium billing batch that computed this transaction."
     },
     {
-      "index": 48,
+      "ordinalPosition": 7,
       "name": "PB_ACCT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing account associated with the detailed transaction."
     },
     {
-      "index": 53,
+      "ordinalPosition": 8,
       "name": "AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Amount of the transaction."
     },
     {
-      "index": 58,
+      "ordinalPosition": 9,
       "name": "PB_ACT_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing account transaction to which the detailed transaction is associated."
     },
     {
-      "index": 63,
+      "ordinalPosition": 10,
       "name": "ACCT_POST_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Account posting date of the detailed transaction. This date represents the day that the detailed transaction was posted to the premium billing account."
     },
     {
-      "index": 68,
+      "ordinalPosition": 11,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID assigned to the coverage record."
     },
     {
-      "index": 73,
+      "ordinalPosition": 12,
       "name": "BENEFIT_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the benefit plan."
     },
     {
-      "index": 78,
+      "ordinalPosition": 13,
       "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 83,
+      "ordinalPosition": 14,
       "name": "RIDER_BEN_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the rider associated with the detailed transaction."
     },
     {
-      "index": 88,
+      "ordinalPosition": 15,
       "name": "RIDER_BEN_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 93,
+      "ordinalPosition": 16,
       "name": "SUB_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient associated with the detailed transaction."
     },
     {
-      "index": 98,
+      "ordinalPosition": 17,
       "name": "NUM_MEMS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Number of members on the coverage associated with the detailed transaction."
     },
     {
-      "index": 103,
+      "ordinalPosition": 18,
       "name": "CVG_ATTR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Coverage attributes associated with the detailed transaction.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Coverage attributes associated with the detailed transaction."
     },
     {
-      "index": 109,
+      "ordinalPosition": 19,
       "name": "PRORATE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether premium is being pro-rated for the detailed transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether premium is being pro-rated for the detailed transaction.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 118,
+      "ordinalPosition": 20,
       "name": "PDX_PRORATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the method used for pro-rating premium.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTest Date Prorating\n\n\nDaily Prorating\n\n\nFull Monthly Rate"
+      "description": "Indicates the method used for pro-rating premium.",
+      "entries": [
+        "Test Date Prorating",
+        "Daily Prorating",
+        "Full Monthly Rate"
+      ]
     },
     {
-      "index": 128,
+      "ordinalPosition": 21,
       "name": "CVG_RATE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether coverage rates are being used on the detailed transaction.\n\n\n The category values for this column were already listed for column: PRORATE_YN"
+      "description": "Indicates whether coverage rates are being used on the detailed transaction."
     },
     {
-      "index": 134,
+      "ordinalPosition": 22,
       "name": "RETRO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this detailed transaction is a retroactive premium adjustments.\n\n\n The category values for this column were already listed for column: PRORATE_YN"
+      "description": "Indicates whether this detailed transaction is a retroactive premium adjustments."
     },
     {
-      "index": 140,
+      "ordinalPosition": 23,
       "name": "RET_RVSL_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of detailed transaction that reversed this detailed transaction."
     },
     {
-      "index": 145,
+      "ordinalPosition": 24,
       "name": "RET_ADJ_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the adjustment detailed transaction if the detailed transaction has been reversed and adjusted."
     },
     {
-      "index": 150,
+      "ordinalPosition": 25,
       "name": "RET_ORIG_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the original detailed transaction if the detailed transaction is an adjustment."
     },
     {
-      "index": 155,
+      "ordinalPosition": 26,
       "name": "CANCELS_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of detailed transaction which this detailed transaction voids out."
     },
     {
-      "index": 160,
+      "ordinalPosition": 27,
       "name": "OUTSTAND_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Outstanding amount for the detailed transaction."
     },
     {
-      "index": 165,
+      "ordinalPosition": 28,
       "name": "INIT_PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of initial invoice on which the detailed transaction is included."
     },
     {
-      "index": 170,
+      "ordinalPosition": 29,
       "name": "ORG_OVPST_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If this detail transaction is an overpost originating from the overpayment of an existing detail transaction, then this field stores the The unique ID of the original detail transaction."
     },
     {
-      "index": 175,
+      "ordinalPosition": 30,
       "name": "PDX_CLOSE_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the reason the detailed transaction was closed (paid in full or balance forward).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaid In Full\n\n\nBalance Forward"
+      "description": "Indicates the reason the detailed transaction was closed (paid in full or balance forward).",
+      "entries": [
+        "Paid In Full",
+        "Balance Forward"
+      ]
     },
     {
-      "index": 184,
+      "ordinalPosition": 31,
       "name": "CHNG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the type of change associated with the detailed transaction (add, delete, or change tiers).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nChange - Tier/Income Category\n\n\nAdd\n\n\nDELETES\n\n\nAmount Change"
+      "description": "Indicates the type of change associated with the detailed transaction (add, delete, or change tiers).",
+      "entries": [
+        "Change - Tier/Income Category",
+        "Add",
+        "DELETES",
+        "Amount Change"
+      ]
     },
     {
-      "index": 195,
+      "ordinalPosition": 32,
       "name": "NUMBER_OF_ADULT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "For income level billing, this field stores the number of additional adult dependents"
     },
     {
-      "index": 200,
+      "ordinalPosition": 33,
       "name": "NUMBER_OF_CHILD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "For income level billing, this field stores the number of child dependents"
     },
     {
-      "index": 205,
+      "ordinalPosition": 34,
       "name": "NUMBER_OF_LTJOINER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "For income level billing, this field stores the number of members identified as late joiners."
     },
     {
-      "index": 210,
+      "ordinalPosition": 35,
       "name": "PREM_SAVINGS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Amount of this detailed transaction that is considered savings premium."
     },
     {
-      "index": 215,
+      "ordinalPosition": 36,
       "name": "REVCLOSED_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "When using a previously closed type of exception in payment posting, this field stores the unique ID of the detailed transaction that this transaction reverses."
     },
     {
-      "index": 220,
+      "ordinalPosition": 37,
       "name": "CLSDREVBY_PB_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "When using a previously closed type of exception in payment posting, this field stores the unique ID of the detailed transaction that reversed this transaction."
     },
     {
-      "index": 225,
+      "ordinalPosition": 38,
       "name": "PAIDBY_PB_TXSET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the transaction set that was last used to post a payment against this transaction."
     },
     {
-      "index": 230,
+      "ordinalPosition": 39,
       "name": "SAVINGS_PDX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether savings premium is included in this detailed transaction.\n\n\n The category values for this column were already listed for column: PRORATE_YN"
+      "description": "Whether savings premium is included in this detailed transaction."
     },
     {
-      "index": 236,
+      "ordinalPosition": 40,
       "name": "OLD_CVG_ATTR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Old coverage attributes associated with the detailed transaction.\n\n\n The category values for this column were already listed for column: CVG_ATTR_C_NAME"
+      "description": "Old coverage attributes associated with the detailed transaction."
     },
     {
-      "index": 242,
+      "ordinalPosition": 41,
       "name": "OLD_PDX_AMOUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Old  amount associated with the detailed transaction."
     },
     {
-      "index": 247,
+      "ordinalPosition": 42,
       "name": "LEP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This flag indicates if a PDX represent a Medicare Part D Late Enrollment Penalty.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This flag indicates if a PDX represent a Medicare Part D Late Enrollment Penalty.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 256,
+      "ordinalPosition": 43,
       "name": "AR_TX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of transaction. This indicates if the transaction is a charge, a payment, or an adjustment. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nPayment\n\n\nDebit Adjustment\n\n\nCredit Adjustment"
+      "description": "The type of transaction. This indicates if the transaction is a charge, a payment, or an adjustment.",
+      "entries": [
+        "Charge",
+        "Payment",
+        "Debit Adjustment",
+        "Credit Adjustment"
+      ]
     },
     {
-      "index": 267,
+      "ordinalPosition": 44,
       "name": "AR_TX_CODE_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The code associated with a transaction. The code is used as a more discrete category for the transaction. For example, an adjustment transaction may use a different code to differentiate between a write-off adjustment and a balance transfer adjustment."
     },
     {
-      "index": 272,
+      "ordinalPosition": 45,
       "name": "AR_TX_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The dollar amount for a transaction."
     },
     {
-      "index": 277,
+      "ordinalPosition": 46,
       "name": "AR_TX_ACCT_PB_ACCT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The account that this transaction is posting to."
     },
     {
-      "index": 282,
+      "ordinalPosition": 47,
       "name": "AR_TX_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage that this transaction applies to."
     },
     {
-      "index": 287,
+      "ordinalPosition": 48,
       "name": "AR_TX_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date that this transaction applies to."
     },
     {
-      "index": 292,
+      "ordinalPosition": 49,
       "name": "AR_TX_MEMBER_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The member that this transaction applies to. This applies only to per-member accounts."
     },
     {
-      "index": 297,
+      "ordinalPosition": 50,
       "name": "AR_TX_SUBSCRIBER_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The subscriber that this transaction applies to."
     },
     {
-      "index": 302,
+      "ordinalPosition": 51,
       "name": "AR_TX_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current status for a transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nWaiting to file\n\n\nFiling\n\n\nIn Review\n\n\nFiled\n\n\nVoided"
+      "description": "The current status for a transaction.",
+      "entries": [
+        "New",
+        "Waiting to file",
+        "Filing",
+        "In Review",
+        "Filed",
+        "Voided"
+      ]
     },
     {
-      "index": 315,
+      "ordinalPosition": 52,
       "name": "AR_TX_FILED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that a transaction has filed to the system."
     },
     {
-      "index": 320,
+      "ordinalPosition": 53,
       "name": "AR_TX_REVERSED_TRANSACTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The transaction ID that is being reversed by a given transaction."
     },
     {
-      "index": 325,
+      "ordinalPosition": 54,
       "name": "AR_TX_CORRECTED_TRANSACTION_ID",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,48 +1,70 @@
 {
-  "table_name": "BILL_SCHED_PMT_STS_HX",
+  "name": "BILL_SCHED_PMT_STS_HX",
   "description": "This table contains the payment schedule status history from the Billing Scheduled Payment (BSP) master file.",
-  "primary_key": {
-    "column_name": "SCHED_PMT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SCHED_PMT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the scheduled payment record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SCHD_STS_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant when the schedule status was changed."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SCHD_STS_HX_STS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the status to which the schedule was changed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScheduled\n\n\nUnscheduled\n\n\nCompleted\n\n\nDeactivated\n\n\nReplaced\n\n\nSuspended\n\n\nIn Progress\n\n\nSkipped\n\n\nPending Consent\n\n\nPending Statement\n\n\nVoided\n\n\nCanceled\n\n\nTerminated\n\n\nSigned Up"
+      "description": "Stores the status to which the schedule was changed.",
+      "entries": [
+        "Scheduled",
+        "Unscheduled",
+        "Completed",
+        "Deactivated",
+        "Replaced",
+        "Suspended",
+        "In Progress",
+        "Skipped",
+        "Pending Consent",
+        "Pending Statement",
+        "Voided",
+        "Canceled",
+        "Terminated",
+        "Signed Up"
+      ]
     },
     {
-      "index": 38,
+      "ordinalPosition": 5,
       "name": "SCHD_STS_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the user who changed the schedule status."
     },
     {
-      "index": 43,
+      "ordinalPosition": 6,
       "name": "STS_HX_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,

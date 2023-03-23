@@ -1,52 +1,69 @@
 {
-  "table_name": "VAR_PGX_MED_USE",
+  "name": "VAR_PGX_MED_USE",
   "description": "Drug-specific information related to a pharmacogenomic variant.",
-  "primary_key": {
-    "column_name": "VARIANT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "VARIANT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "VARIANT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the variant record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PGX_MED_CODESET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The medication coding system category for the pharmacogenomic variant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRxT-Ingrd\n\n\nATC"
+      "description": "The medication coding system category for the pharmacogenomic variant.",
+      "entries": [
+        "RxT-Ingrd",
+        "ATC"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "PGX_MED_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Code for the medication being assessed for usage suggestions based on drug-gene interactions."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "ASSOC_MED_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the medication being assessed for usage suggestions based on drug-gene interactions."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "MED_USE_CATEGORY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The medication usage suggestion category for the pharmacogenomic variant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nConsider alternative medication\n\n\nDecrease dose\n\n\nIncrease dose\n\n\nUse caution\n\n\nNormal response expected"
+      "description": "The medication usage suggestion category for the pharmacogenomic variant.",
+      "entries": [
+        "Consider alternative medication",
+        "Decrease dose",
+        "Increase dose",
+        "Use caution",
+        "Normal response expected"
+      ]
     }
   ]
 }

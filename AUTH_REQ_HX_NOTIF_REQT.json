@@ -1,71 +1,131 @@
 {
-  "table_name": "AUTH_REQ_HX_NOTIF_REQT",
+  "name": "AUTH_REQ_HX_NOTIF_REQT",
   "description": "This table contains the various notification-related requirements for a given review category for a contact, along with when these requirements were satisfied.",
-  "primary_key": {
-    "column_name": "AUTH_REQUEST_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "AUTH_REQUEST_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "AUTH_REQUEST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the authorization request record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "REVIEW_CATEGORY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the review category that the notification requirements apply to.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBehavioral Commercial Urgent Concurrent\n\n\nBehavioral Commercial Urgent Preservice\n\n\nBehavioral Commercial Nonurgent Preservice\n\n\nBehavioral Commercial Postservice\n\n\nBehavioral Marketplace Urgent Concurrent\n\n\nBehavioral Marketplace Urgent Preservice\n\n\nBehavioral Marketplace Nonurgent Preservice\n\n\nBehavioral Marketplace Postservice\n\n\nBehavioral Medicare Urgent Concurrent\n\n\nBehavioral Medicare Urgent Preservice\n\n\nBehavioral Medicare Nonurgent Preservice\n\n\nBehavioral Medicare Postservice\n\n\nBehavioral Medicaid Urgent Concurrent\n\n\nBehavioral Medicaid Urgent Preservice\n\n\nBehavioral Medicaid Nonurgent Preservice\n\n\nBehavioral Medicaid Postservice\n\n\nNonbehavioral Commercial Urgent Concurrent\n\n\nNonbehavioral Commercial Urgent Preservice\n\n\nNonbehavioral Commercial Nonurgent Preservice\n\n\nNonbehavioral Commercial Postservice\n\n\nNonbehavioral Marketplace Urgent Concurrent\n\n\nNonbehavioral Marketplace Urgent Preservice\n\n\nNonbehavioral Marketplace Nonurgent Preservice\n\n\nNonbehavioral Marketplace Postservice\n\n\nNonbehavioral Medicare Urgent Concurrent\n\n\nNonbehavioral Medicare Urgent Preservice\n\n\nNonbehavioral Medicare Nonurgent Preservice\n\n\nNonbehavioral Medicare Postservice\n\n\nNonbehavioral Medicaid Urgent Concurrent\n\n\nNonbehavioral Medicaid Urgent Preservice\n\n\nNonbehavioral Medicaid Nonurgent Preservice\n\n\nNonbehavioral Medicaid Postservice\n\n\nMedicare Advantage Standard\n\n\nMedicare Advantage Expedited\n\n\nMedicare Advantage Standard Part B Drugs\n\n\nMedicare Advantage Expedited Part B Drugs\n\n\nMinimum of Applicable Categories"
+      "description": "The unique ID of the review category that the notification requirements apply to.",
+      "entries": [
+        "Behavioral Commercial Urgent Concurrent",
+        "Behavioral Commercial Urgent Preservice",
+        "Behavioral Commercial Nonurgent Preservice",
+        "Behavioral Commercial Postservice",
+        "Behavioral Marketplace Urgent Concurrent",
+        "Behavioral Marketplace Urgent Preservice",
+        "Behavioral Marketplace Nonurgent Preservice",
+        "Behavioral Marketplace Postservice",
+        "Behavioral Medicare Urgent Concurrent",
+        "Behavioral Medicare Urgent Preservice",
+        "Behavioral Medicare Nonurgent Preservice",
+        "Behavioral Medicare Postservice",
+        "Behavioral Medicaid Urgent Concurrent",
+        "Behavioral Medicaid Urgent Preservice",
+        "Behavioral Medicaid Nonurgent Preservice",
+        "Behavioral Medicaid Postservice",
+        "Nonbehavioral Commercial Urgent Concurrent",
+        "Nonbehavioral Commercial Urgent Preservice",
+        "Nonbehavioral Commercial Nonurgent Preservice",
+        "Nonbehavioral Commercial Postservice",
+        "Nonbehavioral Marketplace Urgent Concurrent",
+        "Nonbehavioral Marketplace Urgent Preservice",
+        "Nonbehavioral Marketplace Nonurgent Preservice",
+        "Nonbehavioral Marketplace Postservice",
+        "Nonbehavioral Medicare Urgent Concurrent",
+        "Nonbehavioral Medicare Urgent Preservice",
+        "Nonbehavioral Medicare Nonurgent Preservice",
+        "Nonbehavioral Medicare Postservice",
+        "Nonbehavioral Medicaid Urgent Concurrent",
+        "Nonbehavioral Medicaid Urgent Preservice",
+        "Nonbehavioral Medicaid Nonurgent Preservice",
+        "Nonbehavioral Medicaid Postservice",
+        "Medicare Advantage Standard",
+        "Medicare Advantage Expedited",
+        "Medicare Advantage Standard Part B Drugs",
+        "Medicare Advantage Expedited Part B Drugs",
+        "Minimum of Applicable Categories"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 5,
       "name": "NOTIF_RECPNT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the required recipient type of the notification requirement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMember\n\n\nProvider\n\n\nAuthorized Representative"
+      "description": "The unique ID of the required recipient type of the notification requirement.",
+      "entries": [
+        "Member",
+        "Provider",
+        "Authorized Representative"
+      ]
     },
     {
-      "index": 71,
+      "ordinalPosition": 6,
       "name": "NOTIF_TOPIC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the notification topic of the notification requirement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApproval Notification\n\n\nDenial Notification\n\n\nNotification of Extension\n\n\nDenial of Request to Expedite"
+      "description": "The unique ID of the notification topic of the notification requirement.",
+      "entries": [
+        "Approval Notification",
+        "Denial Notification",
+        "Notification of Extension",
+        "Denial of Request to Expedite"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 7,
       "name": "RELATED_COMM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The communication record that satisfies this notification requirement."
     },
     {
-      "index": 87,
+      "ordinalPosition": 8,
       "name": "NOTIF_DUE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time (UTC) that the notification requirement is due."
     },
     {
-      "index": 92,
+      "ordinalPosition": 9,
       "name": "NOTIF_COMPLETE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time (UTC) that the notification requirement was completed."
     }

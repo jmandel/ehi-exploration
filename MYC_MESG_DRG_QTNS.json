@@ -1,66 +1,84 @@
 {
-  "table_name": "MYC_MESG_DRG_QTNS",
+  "name": "MYC_MESG_DRG_QTNS",
   "description": "This table contains patient answers to drug use questions submitted in a history questionnaire.",
-  "primary_key": {
-    "column_name": "MESSAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MESSAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MESSAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the message record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DRG_QUESN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the drug use history question answered by the patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DRG_QUESN_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Visit Navigator (VN) History Template Definition (LQH) record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DRG_QUESN_RESP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's response to the question about drug use.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNot Asked\n\n\nDefer\n\n\nNot Currently\n\n\nNever"
+      "description": "The patient's response to the question about drug use.",
+      "entries": [
+        "Yes",
+        "No",
+        "Not Asked",
+        "Defer",
+        "Not Currently",
+        "Never"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "DRG_QUESN_FREQ",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's response to the drug use frequency question."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "DRG_QUESN_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment added by the patient when answering the drug use question."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "DRG_QUESN_FILED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The filed status of the drug use question--has the provider filed it to the patient's record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "The filed status of the drug use question--has the provider filed it to the patient's record.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

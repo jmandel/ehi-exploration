@@ -1,31 +1,42 @@
 {
-  "table_name": "OR_LNLG_LASER_MANL_PRSNT",
+  "name": "OR_LNLG_LASER_MANL_PRSNT",
   "description": "This table stores information regarding the presence of the operator's manual. This is part of the laser safety checklist.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OPERATOR_MANUAL_PRESENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for whether the operator's manual is present as part of the laser safety checklist.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+      "description": "The category ID for whether the operator's manual is present as part of the laser safety checklist.",
+      "entries": [
+        "Yes",
+        "No",
+        "N/A"
+      ]
     }
   ]
 }

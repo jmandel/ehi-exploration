@@ -1,59 +1,70 @@
 {
-  "table_name": "ACCT_COLL_AGENCY_HX",
+  "name": "ACCT_COLL_AGENCY_HX",
   "description": "This table contains historical collection agency information associated with the guarantor account.",
-  "primary_key": {
-    "column_name": "ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AGENCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The collection agency that this account was assigned to."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "AGENCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SUBMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the account was assigned to the collection agency."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RESOLVED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the account was resolved by the collection agency."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RESOLUTION_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of resolution that occurred for this history line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRecalled\n\n\nCompleted\n\n\nConverted to Agency Extract Framework"
+      "description": "The type of resolution that occurred for this history line.",
+      "entries": [
+        "Recalled",
+        "Completed",
+        "Converted to Agency Extract Framework"
+      ]
     }
   ]
 }

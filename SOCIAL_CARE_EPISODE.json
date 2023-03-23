@@ -1,111 +1,166 @@
 {
-  "table_name": "SOCIAL_CARE_EPISODE",
+  "name": "SOCIAL_CARE_EPISODE",
   "description": "This table stores episode information for Coordinated Care Management episodes.",
-  "primary_key": {
-    "column_name": "EPISODE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EPISODE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "EPISODE_DEF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the episode type for the episode."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EPI_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category ID for the episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "The status category ID for the episode.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "EPISODE_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the episode was started."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "EPISODE_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the episode was ended."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "EPISODE_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for a special contact which stores Social Care information at episode-level. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "DECISION_FIN_ASST_CASE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the case which contains all the decisions created in the episode."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "RESPONSIBLE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the responsible user for the episode."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "INIT_REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the referral that initiated the episode."
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "PROGRAM_EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the program episode for a service episode. If the episode is voided, it will contain a link to the parent record at the time the episode was voided."
     },
     {
-      "index": 57,
+      "ordinalPosition": 11,
       "name": "TRACKING_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The tracking status category ID for the episode.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n10 - First Activity\n\n\n11 - First Activity (Active Monitoring End)\n\n\n12 - First Activity (Referral from Consultant or Allied Health Professional)\n\n\n20 - Subsequent Activity (Further activities anticipated)\n\n\n21 - Transfer to another Health Care Provider\n\n\n30 - First Definitive Treatment\n\n\n31 - Start of Active Monitoring (Patient initiated)\n\n\n32 - Start of Active Monitoring (Care Professional initiated)\n\n\n33 - Did Not Attend\n\n\n34 - Decision Not To Treat\n\n\n35 - Patient Declined Offered Treatment\n\n\n36 - Patient Died Before Treatment\n\n\n90 - After Treatment\n\n\n91 - During Active Monitoring\n\n\n92 - Not Yet Referred\n\n\n98 - Not Applicable\n\n\n99 - Not Yet Known\n\n\n11 - Waiting for investigation\n\n\n12 - Waiting for treatment\n\n\n13 - Waiting, redirected from other department\n\n\n14 - Waiting for needed information\n\n\n15 - Waiting for assistance\n\n\n21 - Non waiting for investigation/treatment\n\n\n22 - Non waiting, at control\n\n\n23 - Non waiting, patient's wish\n\n\n24 - Non waiting, ongoing treatment/investigation in other department\n\n\n25 - Non waiting, ongoing investigation\n\n\n26 - Non waiting, ongoing treatment\n\n\n0 - No wait status\n\n\nActive\n\n\nCare plan / proposed treatment plan completed\n\n\nUnplanned patient admission to hospital\n\n\nPlanned patient admission to hospital\n\n\nAlteration in patient medical condition without hospital admission\n\n\nPatient died\n\n\nPatient has declined further services\n\n\nPatient has moved from area\n\n\nPatient is unable to be contacted\n\n\nPatient has been referred to another service\n\n\nNo measurable benefit from continuing the service\n\n\nPatient not complying with program\n\n\nRisk to patient or staff prevents service provision\n\n\nPatient/client death or bereavement phase end\n\n\nDischarged to speciality palliative care provider\n\n\nDischarged to other health care provider\n\n\nOther"
+      "description": "The tracking status category ID for the episode.",
+      "entries": [
+        "10 - First Activity",
+        "11 - First Activity (Active Monitoring End)",
+        "12 - First Activity (Referral from Consultant or Allied Health Professional)",
+        "20 - Subsequent Activity (Further activities anticipated)",
+        "21 - Transfer to another Health Care Provider",
+        "30 - First Definitive Treatment",
+        "31 - Start of Active Monitoring (Patient initiated)",
+        "32 - Start of Active Monitoring (Care Professional initiated)",
+        "33 - Did Not Attend",
+        "34 - Decision Not To Treat",
+        "35 - Patient Declined Offered Treatment",
+        "36 - Patient Died Before Treatment",
+        "90 - After Treatment",
+        "91 - During Active Monitoring",
+        "92 - Not Yet Referred",
+        "98 - Not Applicable",
+        "99 - Not Yet Known",
+        "11 - Waiting for investigation",
+        "12 - Waiting for treatment",
+        "13 - Waiting, redirected from other department",
+        "14 - Waiting for needed information",
+        "15 - Waiting for assistance",
+        "21 - Non waiting for investigation/treatment",
+        "22 - Non waiting, at control",
+        "23 - Non waiting, patient's wish",
+        "24 - Non waiting, ongoing treatment/investigation in other department",
+        "25 - Non waiting, ongoing investigation",
+        "26 - Non waiting, ongoing treatment",
+        "0 - No wait status",
+        "Active",
+        "Care plan / proposed treatment plan completed",
+        "Unplanned patient admission to hospital",
+        "Planned patient admission to hospital",
+        "Alteration in patient medical condition without hospital admission",
+        "Patient died",
+        "Patient has declined further services",
+        "Patient has moved from area",
+        "Patient is unable to be contacted",
+        "Patient has been referred to another service",
+        "No measurable benefit from continuing the service",
+        "Patient not complying with program",
+        "Risk to patient or staff prevents service provision",
+        "Patient/client death or bereavement phase end",
+        "Discharged to speciality palliative care provider",
+        "Discharged to other health care provider",
+        "Other"
+      ]
     },
     {
-      "index": 110,
+      "ordinalPosition": 12,
       "name": "EPISODE_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department responsible for managing the episode."
     },
     {
-      "index": 115,
+      "ordinalPosition": 13,
       "name": "EPISODE_SUMMARY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "An overview of a Social Care episode."
     },
     {
-      "index": 120,
+      "ordinalPosition": 14,
       "name": "CMGMT_ENROLL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the episode became active. Refer to CMGMT_CALC_ENROLL_DATE for more robust reporting."
     },
     {
-      "index": 125,
+      "ordinalPosition": 15,
       "name": "CMGMT_ENROLL_CALC_DATE",
       "type": "DATETIME",
       "discontinued": false,

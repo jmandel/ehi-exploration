@@ -1,38 +1,54 @@
 {
-  "table_name": "ORD_SEQ_DOC",
+  "name": "ORD_SEQ_DOC",
   "description": "This table contains order-level information associated with genomics sequencing documents.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SEQ_DOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the genomics sequencing pipeline document (PDS) associated with the order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ORD_SEQ_DOC_SAMPLE_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The sample type category ID for the associated genomics sequencing document. Sample type represents the relationship between the patient on the order and the source of the genomic sample from which the sequencing document was generated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGermline\n\n\nMaternal\n\n\nPaternal\n\n\nSibling\n\n\nRelative\n\n\nTumor\n\n\nPaired Tumor/Normal\n\n\nPending update"
+      "description": "The sample type category ID for the associated genomics sequencing document. Sample type represents the relationship between the patient on the order and the source of the genomic sample from which the sequencing document was generated.",
+      "entries": [
+        "Germline",
+        "Maternal",
+        "Paternal",
+        "Sibling",
+        "Relative",
+        "Tumor",
+        "Paired Tumor/Normal",
+        "Pending update"
+      ]
     }
   ]
 }

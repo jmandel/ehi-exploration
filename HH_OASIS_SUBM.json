@@ -1,90 +1,109 @@
 {
-  "table_name": "HH_OASIS_SUBM",
+  "name": "HH_OASIS_SUBM",
   "description": "Contains information on the submission of Home Health Outcome and Assessment Information Set (OASIS) data sets.",
-  "primary_key": {
-    "column_name": "OASIS_SET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OASIS_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OASIS_SET_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique identifier for the OASIS data set."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "OASIS_SUBM_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "OASIS data set submission type.  Links to category list ZC_OASIS_SUBM_TYPE.  Submission, correction, resubmission, inactivation.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSubmission\n\n\nCorrection\n\n\nResubmission\n\n\nInactivation"
+      "description": "OASIS data set submission type.  Links to category list ZC_OASIS_SUBM_TYPE.  Submission, correction, resubmission, inactivation.",
+      "entries": [
+        "Submission",
+        "Correction",
+        "Resubmission",
+        "Inactivation"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "OASIS_SUBM_INST_MK",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Instant at which OASIS data set is marked submitted."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "OAS_SUBM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User ID of user who submitted OASIS data set.  Links to table CLARITY_EMP."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "OAS_SUBM_FILE_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant at which OASIS submission was filed."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "OAS_SUBM_CRRCT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "OASIS submission correction number."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "OASIS_SUBMIT_QUE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "OASIS data set's position in submission queue.  Links to category list ZC_OASIS_SUBMIT_Q.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDefault"
+      "description": "OASIS data set's position in submission queue.  Links to category list ZC_OASIS_SUBMIT_Q.",
+      "entries": [
+        "Default"
+      ]
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "QUEUE_HISTORY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "OASIS data set submission queue history.  Links to category table ZC_OASIS_SUBMIT_Q.\n\n\n The category values for this column were already listed for column: OASIS_SUBMIT_QUE_C_NAME"
+      "description": "OASIS data set submission queue history.  Links to category table ZC_OASIS_SUBMIT_Q."
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "SUBM_QUEUE_DT_INDX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "OASIS submission queue index item."
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "HISTORY_INDEX",
       "type": "VARCHAR",
       "discontinued": false,

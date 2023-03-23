@@ -1,34 +1,53 @@
 {
-  "table_name": "REQ_PAT_ADDL_ADDRESS",
+  "name": "REQ_PAT_ADDL_ADDRESS",
   "description": "Store the additional address information for a patient address.",
-  "primary_key": {
-    "column_name": "REQUISITION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REQUISITION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REQUISITION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the requisition record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ADDL_FIELD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of additional address data (floor, unit, building name, etc.) stored in the related field.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStreet address\n\n\nCity\n\n\nState\n\n\nZIP code\n\n\nCounty\n\n\nCountry\n\n\nHouse number\n\n\nDistrict\n\n\nBuilding name\n\n\nFloor\n\n\nUnit"
+      "description": "The type of additional address data (floor, unit, building name, etc.) stored in the related field.",
+      "entries": [
+        "Street address",
+        "City",
+        "State",
+        "ZIP code",
+        "County",
+        "Country",
+        "House number",
+        "District",
+        "Building name",
+        "Floor",
+        "Unit"
+      ]
     },
     {
-      "index": 30,
+      "ordinalPosition": 4,
       "name": "ADDL_DATA",
       "type": "VARCHAR",
       "discontinued": false,

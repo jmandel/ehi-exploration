@@ -1,62 +1,82 @@
 {
-  "table_name": "HSP_PREADM_TEST",
+  "name": "HSP_PREADM_TEST",
   "description": "The HSP_PREADM_TEST table contains information on preadmission testing. Each record in this table is based on PAT_ENC_CSN_ID.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the patient with this preadmission test."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the preadmission test for the patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the department where the preadmission test is scheduled for the patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PREADM_TST_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the status of the preadmission test for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPending\n\n\nRequested\n\n\nScheduled\n\n\nIncomplete\n\n\nCompleted\n\n\nCancelled\n\n\nNoShow"
+      "description": "The category value corresponding to the status of the preadmission test for the patient.",
+      "entries": [
+        "Pending",
+        "Requested",
+        "Scheduled",
+        "Incomplete",
+        "Completed",
+        "Cancelled",
+        "NoShow"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "PROC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The coded procedure of the preadmission test for the patient."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "PREADM_APPT_NOTE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text note associated with preadmission test appointment for the patient."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "PREADM_TST_PRI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The priority category of the preadmission test for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHigh\n\n\nRoutine\n\n\nLow"
+      "description": "The priority category of the preadmission test for the patient.",
+      "entries": [
+        "High",
+        "Routine",
+        "Low"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

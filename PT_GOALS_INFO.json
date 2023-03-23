@@ -1,115 +1,142 @@
 {
-  "table_name": "PT_GOALS_INFO",
+  "name": "PT_GOALS_INFO",
   "description": "This table contains data in the Discrete Goals (IGO) master file that is no-add data.",
-  "primary_key": {
-    "column_name": "GOAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "GOAL_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "GOAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the goal record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user ID of the person who entered this goal."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GOAL_TEMPLATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the goal template used to create this record"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "GOAL_TEMPLATE_ID_GOAL_TEMPLATE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The goal template name."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "GOAL_TEMPLATE_DAT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Goal Template Contact"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient who is associated with this goal."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CREATE_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant this goal was created."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "GOAL_USAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Context in which the goal is used.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCare Plan\n\n\nPatient-Oriented\n\n\nPathway\n\n\nHome Health/Hospice Care Plan"
+      "description": "Context in which the goal is used.",
+      "entries": [
+        "Care Plan",
+        "Patient-Oriented",
+        "Pathway",
+        "Home Health/Hospice Care Plan"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "REC_VAL_COMPLIAN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains a category value denoting whether or not the most recent compliance value is compliant\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Contains a category value denoting whether or not the most recent compliance value is compliant",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "MOST_RECENT_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the most recent compliance value for the goal"
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "RECENT_VALUE_I_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant that the most recent compliance value was recorded"
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "REC_VALUE_CHEC_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant that this goal was checked to determine its most recent compliance value"
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "AMB_GOAL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Ambulatory goal type category (for example, Blood Pressure, Diet, etc.).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDiet\n\n\nExercise\n\n\nWeight\n\n\nBlood Pressure\n\n\nResult Component\n\n\nPatient Stated\n\n\nContingency\n\n\nGeneral"
+      "description": "Ambulatory goal type category (for example, Blood Pressure, Diet, etc.).",
+      "entries": [
+        "Diet",
+        "Exercise",
+        "Weight",
+        "Blood Pressure",
+        "Result Component",
+        "Patient Stated",
+        "Contingency",
+        "General"
+      ]
     },
     {
-      "index": 87,
+      "ordinalPosition": 14,
       "name": "MYC_CREATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the ID of patient account record of the MyChart (Epic Patient Portal) user who created the goal."
     },
     {
-      "index": 92,
+      "ordinalPosition": 15,
       "name": "GOAL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current status of the goal.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nDone\n\n\nDeleted"
+      "description": "The current status of the goal.",
+      "entries": [
+        "Active",
+        "Done",
+        "Deleted"
+      ]
     }
   ]
 }

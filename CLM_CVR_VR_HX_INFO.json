@@ -1,43 +1,53 @@
 {
-  "table_name": "CLM_CVR_VR_HX_INFO",
+  "name": "CLM_CVR_VR_HX_INFO",
   "description": "This table contains contraceptive vaginal ring (CVR) void or resubmit history information.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the Claim Info record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CVR_VR_HX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contraceptive vaginal ring (CVR) resubmission or void history type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVoid\n\n\nResubmit"
+      "description": "Contraceptive vaginal ring (CVR) resubmission or void history type.",
+      "entries": [
+        "Void",
+        "Resubmit"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "CVR_VR_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contraceptive vaginal ring (CVR) resubmission or void history user ID."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "CVR_VR_HX_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Contraceptive vaginal ring (CVR) resubmission or void history time stamp."
     }

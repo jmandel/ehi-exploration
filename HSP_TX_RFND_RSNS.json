@@ -1,31 +1,43 @@
 {
-  "table_name": "HSP_TX_RFND_RSNS",
+  "name": "HSP_TX_RFND_RSNS",
   "description": "Clarity table to hold the refund reason on the transactions (HTR). Only one refund reason is set for the transaction.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REFUND_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Refund reason added to the refund request slip. Only one refund reason is set for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nDuplicate\n\n\nPosted in Error\n\n\nOverpayment\n\n\nFinancial Assistance\n\n\nLeft Without Being Seen\n\n\nPatient Requested\n\n\nVisit Canceled"
+      "description": "Refund reason added to the refund request slip. Only one refund reason is set for the transaction.",
+      "entries": [
+        "Other",
+        "Duplicate",
+        "Posted in Error",
+        "Overpayment",
+        "Financial Assistance",
+        "Left Without Being Seen",
+        "Patient Requested",
+        "Visit Canceled"
+      ]
     }
   ]
 }

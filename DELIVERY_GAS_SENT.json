@@ -1,31 +1,37 @@
 {
-  "table_name": "DELIVERY_GAS_SENT",
+  "name": "DELIVERY_GAS_SENT",
   "description": "This table contains whether cord gasses were sent. This information is entered in Stork's Delivery Summary activity and populated in the delivery record. This information is also copied to the OB_EPT_BH_CRDGASES table in the baby's Patient (EPT) record.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the summary block record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DEL_GASES_SENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether cord gases were sent or not (Y/N). This information is stored in the Delivery Summary.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores whether cord gases were sent or not (Y/N). This information is stored in the Delivery Summary."
     }
   ]
 }

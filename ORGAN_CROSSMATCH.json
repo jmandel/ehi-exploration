@@ -1,41 +1,59 @@
 {
-  "table_name": "ORGAN_CROSSMATCH",
+  "name": "ORGAN_CROSSMATCH",
   "description": "Organ crossmatch types and results.",
-  "primary_key": {
-    "column_name": "ORG_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORG_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORG_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the organ record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CROSSMATCH_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Cross match test type\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nB cell\n\n\nT cell"
+      "description": "Cross match test type",
+      "entries": [
+        "B cell",
+        "T cell"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "CROSSMATCH_RESULT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Crossmatch test result\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPositive\n\n\nNegative\n\n\nUnknown\n\n\nWeak\n\n\nNot Done\n\n\nIndeterminate"
+      "description": "Crossmatch test result",
+      "entries": [
+        "Positive",
+        "Negative",
+        "Unknown",
+        "Weak",
+        "Not Done",
+        "Indeterminate"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 5,
       "name": "CROSSMATCH_FLOW",
       "type": "NUMERIC",
       "discontinued": false,

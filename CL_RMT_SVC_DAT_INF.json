@@ -1,41 +1,53 @@
 {
-  "table_name": "CL_RMT_SVC_DAT_INF",
+  "name": "CL_RMT_SVC_DAT_INF",
   "description": "This table contains service date information for a service line in a remittance record.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the results of a query."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SVC_DATE_QUAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the Code specifying type of service date.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nService Period Start\n\n\nService Period End\n\n\nService\n\n\nProduction"
+      "description": "This is the Code specifying type of service date.",
+      "entries": [
+        "Service Period Start",
+        "Service Period End",
+        "Service",
+        "Production"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the service date."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "SERVICE_LN",
       "type": "VARCHAR",
       "discontinued": false,

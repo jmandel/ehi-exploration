@@ -1,34 +1,44 @@
 {
-  "table_name": "FIN_ASST_CASE_LNKD_TRKR",
+  "name": "FIN_ASST_CASE_LNKD_TRKR",
   "description": "This table contains information on how financial assistance program trackers are linked to each other in a financial assistance case.",
-  "primary_key": {
-    "column_name": "FIN_ASST_CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FIN_ASST_CASE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FIN_ASST_CASE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the financial assistance case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the group of the linked financial assistance trackers in the financial assistance case record. Together with FIN_ASST_CASE_ID, this forms the foreign key to the FIN_ASST_CASE_ASSOC_TRKR table."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple financial assistance trackers associated with the financial assistance case from the FIN_ASST_CASE_ASSOC_TRKR table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LINKED_FIN_ASST_TRACKER_ID",
       "type": "NUMERIC",
       "discontinued": false,

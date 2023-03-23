@@ -1,34 +1,44 @@
 {
-  "table_name": "INV_NUM_TX_PIECES",
+  "name": "INV_NUM_TX_PIECES",
   "description": "Each line in this table corresponds to a transaction (ETR) composing a line on an invoice from item INV 381. Each line can contain a comma-delimited list of transactions composing a claim line. When a transaction is bundled, data will be split out to its own line via the TX_PIECE column.\n\n\n \n\n\nThis table is used as a bridge between transaction- and invoice- based tables.",
-  "primary_key": {
-    "column_name": "INV_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "TX_PIECE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the internal invoice ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column contains the line number for any multiple-response item."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TX_PIECE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column contains the position of the transaction ID in the comma-delimited list of ETR ID's for a given line of INV-381. For example, if a certain line of INV-381 has three transactions, then TX_PIECE will contain 1, 2, and 3 for that line."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,

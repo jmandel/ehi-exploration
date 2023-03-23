@@ -1,41 +1,47 @@
 {
-  "table_name": "HEART_RANKING_STATUS_HX",
+  "name": "HEART_RANKING_STATUS_HX",
   "description": "This table condenses heart status history to a start date and expiration date, and a pointer to the line in TXP_HEART_STATUS_HX where the details can be found.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the heart status in this row became active."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the heart status in this row expired."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SOURCE_LINE",
       "type": "INTEGER",
       "discontinued": false,

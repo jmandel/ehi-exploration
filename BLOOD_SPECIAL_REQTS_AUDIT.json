@@ -1,52 +1,62 @@
 {
-  "table_name": "BLOOD_SPECIAL_REQTS_AUDIT",
+  "name": "BLOOD_SPECIAL_REQTS_AUDIT",
   "description": "This table contains the change user, change instant, and encounter contact serial number (CSN) for the current and all previous values that were set for a patient's special requirements when ordering blood. Use with table BLD_REQS_VALS_AUDIT to view the complete audit trail for the patient's special requirements.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "BLOOD_REQTS_CHANGE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores all previous instants when a patient's special requirements for blood transfusions were edited."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BLOOD_REQTS_CHANGE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user who documented the special requirements needed for a patient's blood transfusion."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "BLOOD_REQTS_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the contact serial number (CSN) of each visit in which the patient's blood special requirements were changed."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TYPE_AND_SCREEN_AUDIT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the history of when the patient was or was not eligible to receive a type and screen.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column stores the history of when the patient was or was not eligible to receive a type and screen.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

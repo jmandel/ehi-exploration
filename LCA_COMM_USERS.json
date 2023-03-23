@@ -1,202 +1,237 @@
 {
-  "table_name": "LCA_COMM_USERS",
+  "name": "LCA_COMM_USERS",
   "description": "Table contains information regarding the sender of a communication and the recipients of the communication. In a record the 1st entry is assumed to be the sender, subsequent entries are the recipients.",
-  "primary_key": {
-    "column_name": "COMMUNICATION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMMUNICATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMMUNICATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "LCA routing record id"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COMM_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the sender/recipient"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "COMM_INI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "INI of the sender/recipient"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "COMM_ID_USER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID  the sender/recipient"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "FAX_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "fax number of the sender/recipient that communication would be sent to if a fax method was used to send the communication"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PHONE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "phone number of the sender/recipient"
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ADDRESS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "address of the sender/recipient that communication would be sent to if a mailing method was used to send the communication"
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "city of the sender/recipient that communication would be sent to if a mailing method was used to send the communication"
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "STATE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "state of the sender/recipient that communication would be sent to if a mailing method was used to send the communication"
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "ZIP_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "zip code of the sender/recipient that communication would be sent to if a mailing method was used to send the communication"
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "COUNTRY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "country of the sender/recipient that communication would be sent to if a mailing method was used to send the communication"
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "SENT_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Send Method category number for the communication.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIn Basket\n\n\nFax\n\n\nMail\n\n\nPhone Call\n\n\nMyChart\n\n\nNetwork Printer\n\n\nCourier Service\n\n\nOutside Provider Messaging\n\n\nPrint Locally\n\n\nEDI\n\n\nOpt Out\n\n\nE-mail\n\n\nFHIR\n\n\nSave to File"
+      "description": "The Send Method category number for the communication.",
+      "entries": [
+        "In Basket",
+        "Fax",
+        "Mail",
+        "Phone Call",
+        "MyChart",
+        "Network Printer",
+        "Courier Service",
+        "Outside Provider Messaging",
+        "Print Locally",
+        "EDI",
+        "Opt Out",
+        "E-mail",
+        "FHIR",
+        "Save to File"
+      ]
     },
     {
-      "index": 83,
+      "ordinalPosition": 14,
       "name": "FILE_CREATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a file was created for that recipient. If so can look in attachments at blob columns for the file name.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates if a file was created for that recipient. If so can look in attachments at blob columns for the file name.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 92,
+      "ordinalPosition": 15,
       "name": "EMAIL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "email address of the sender/recipient"
     },
     {
-      "index": 97,
+      "ordinalPosition": 16,
       "name": "HOUSE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "House number of the sender/recipient that communication would be sent to if mailing method was used to send communication."
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "DISTRICT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "District of the sender/recipient that communication would be sent to if mailing method was used to send the communication.\n\n\nMay contain organization-specific values: Yes"
+      "description": "District of the sender/recipient that communication would be sent to if mailing method was used to send the communication."
     },
     {
-      "index": 108,
+      "ordinalPosition": 18,
       "name": "COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "County of the sender/recipient that communication would be sent to if mailing method was used to send the communication.\n\n\nMay contain organization-specific values: Yes"
+      "description": "County of the sender/recipient that communication would be sent to if mailing method was used to send the communication."
     },
     {
-      "index": 114,
+      "ordinalPosition": 19,
       "name": "COMM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for this communication if COMM_INI is EMP. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 119,
+      "ordinalPosition": 20,
       "name": "COMM_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the provider record for this communication if COMM_INI is SER. This column is frequently used to link to the CLARITY_SER table."
     },
     {
-      "index": 124,
+      "ordinalPosition": 21,
       "name": "COMM_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the patient record for this communication if COMM_INI is EPT. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 129,
+      "ordinalPosition": 22,
       "name": "ORGANIZATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the organization record for this communication if COMM_INI is DXO. This column is frequently used to link to the ORG_DETAILS table."
     },
     {
-      "index": 134,
+      "ordinalPosition": 23,
       "name": "ORGANIZATION_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Organization's external name used as the display name on forms and user interfaces."
     },
     {
-      "index": 139,
+      "ordinalPosition": 24,
       "name": "COMM_REG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the pool record for this communication if COMM_INI is HIP. This column is frequently used to link to the CLARITY_HIP table."
     },
     {
-      "index": 144,
+      "ordinalPosition": 25,
       "name": "COMM_REG_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the In Basket registry in the HIP master file."
     },
     {
-      "index": 149,
+      "ordinalPosition": 26,
       "name": "CONSENT_DOC_INFO_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "DCS record that contains patient consent for sending the communication to this recipient."
     },
     {
-      "index": 154,
+      "ordinalPosition": 27,
       "name": "COMM_CE_SUB_MTHD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The sub-routing method category ID for the communication.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nOutgoing Direct Address\n\n\nEpicCare Link Direct Address\n\n\nMedCom\n\n\nPCEHR\n\n\nKanta\n\n\nPika XML"
+      "description": "The sub-routing method category ID for the communication.",
+      "entries": [
+        "None",
+        "Outgoing Direct Address",
+        "EpicCare Link Direct Address",
+        "MedCom",
+        "PCEHR",
+        "Kanta",
+        "Pika XML"
+      ]
     },
     {
-      "index": 168,
+      "ordinalPosition": 28,
       "name": "SENT_DIRECT_ADDRESS",
       "type": "VARCHAR",
       "discontinued": false,

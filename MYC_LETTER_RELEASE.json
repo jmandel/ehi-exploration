@@ -1,43 +1,53 @@
 {
-  "table_name": "MYC_LETTER_RELEASE",
+  "name": "MYC_LETTER_RELEASE",
   "description": "Information about when letters get released to MyChart.",
-  "primary_key": {
-    "column_name": "NOTE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "NOTE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the note record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user which released this letter to MyChart"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LETTER_REL_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action taken regarding releasing this letter to MyChart\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRelease\n\n\nUnrelease"
+      "description": "The action taken regarding releasing this letter to MyChart",
+      "entries": [
+        "Release",
+        "Unrelease"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "LETTER_RELEASE_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant at which this action related to releasing this letter to MyChart was taken."
     }

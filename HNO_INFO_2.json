@@ -1,134 +1,169 @@
 {
-  "table_name": "HNO_INFO_2",
+  "name": "HNO_INFO_2",
   "description": "This table contains common information from General Use Notes items. This table focuses on one time only data while other HNO tables (e.g., NOTES_ACCT, CODING_CLA_NOTES) contain the data for different note types.",
-  "primary_key": {
-    "column_name": "NOTE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "NOTE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The note ID for the note record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RELEVANT_REC_EVENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the Events (IEV) record which contains records marked relevant to the Note such as problems, allergies, lab results, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GROUP_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the group note ID for notes that are created in a group documentation context."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LETTER_DEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The letter destination category ID for the note. This column is only populated if this row is for a Customer Relationship Management letter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Portal\n\n\nPrint\n\n\nPrint and Portal\n\n\nPatient Portal Retracted\n\n\nPrint and Portal Retracted"
+      "description": "The letter destination category ID for the note. This column is only populated if this row is for a Customer Relationship Management letter.",
+      "entries": [
+        "Patient Portal",
+        "Print",
+        "Print and Portal",
+        "Patient Portal Retracted",
+        "Print and Portal Retracted"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "LETTER_FINAL_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the letter was finalized. This column is only populated if this row is for a Customer Relationship Management letter."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "HNO_RECORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Record type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPB Guarantor Note\n\n\nPB Guarantor Letter\n\n\nPB Insurance Follow-up Letter\n\n\nPB Hospital Account Note\n\n\nHB Guarantor Note\n\n\nHB Hospital Account Note\n\n\nHB Guarantor Letter\n\n\nHB Hospital Account Letter\n\n\nHB Liability Bucket Letter\n\n\nHB Liability Bucket Note\n\n\nHB Contractual History Note\n\n\nEB Guarantor Note\n\n\nReg Financial Assistance Letter\n\n\nReg Financial Assistance Tracker Note\n\n\nReg Financial Assistance Case Note"
+      "description": "Record type.",
+      "entries": [
+        "PB Guarantor Note",
+        "PB Guarantor Letter",
+        "PB Insurance Follow-up Letter",
+        "PB Hospital Account Note",
+        "HB Guarantor Note",
+        "HB Hospital Account Note",
+        "HB Guarantor Letter",
+        "HB Hospital Account Letter",
+        "HB Liability Bucket Letter",
+        "HB Liability Bucket Note",
+        "HB Contractual History Note",
+        "EB Guarantor Note",
+        "Reg Financial Assistance Letter",
+        "Reg Financial Assistance Tracker Note",
+        "Reg Financial Assistance Case Note"
+      ]
     },
     {
-      "index": 56,
+      "ordinalPosition": 7,
       "name": "RFL_LETTER_ENC_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the encounter in which the referral communication letter was written"
     },
     {
-      "index": 61,
+      "ordinalPosition": 8,
       "name": "CONV_MSG_CID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item contains the Community ID (CID) of a related In Basket Message (EOW) record."
     },
     {
-      "index": 66,
+      "ordinalPosition": 9,
       "name": "OUTREACH_TEMPLATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the campaign outreach template that created the letter."
     },
     {
-      "index": 71,
+      "ordinalPosition": 10,
       "name": "SOURCE_EDITS_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores a Contact Serial Number (CSN) pointer to the General Use Notes (HNO) record that holds edits to the parent note while an attestation is in progress."
     },
     {
-      "index": 76,
+      "ordinalPosition": 11,
       "name": "EXT_DOC_EVNT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "External autoreconciled note event identifier"
     },
     {
-      "index": 81,
+      "ordinalPosition": 12,
       "name": "EXT_NOTE_TYPE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Autoreconciled external note type name"
     },
     {
-      "index": 86,
+      "ordinalPosition": 13,
       "name": "EXT_DUP_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Autoreconciled extneral note duplicate source note"
     },
     {
-      "index": 91,
+      "ordinalPosition": 14,
       "name": "EXT_DUP_NOTE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Autoreconciled external note duplicate note type\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSame reference ID\n\n\nDuplicate text\n\n\nSame globally unique ID"
+      "description": "Autoreconciled external note duplicate note type",
+      "entries": [
+        "Same reference ID",
+        "Duplicate text",
+        "Same globally unique ID"
+      ]
     },
     {
-      "index": 101,
+      "ordinalPosition": 15,
       "name": "PARENT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The parent note ID of a soft-deleted transcription record."
     },
     {
-      "index": 106,
+      "ordinalPosition": 16,
       "name": "ACTIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the note is active. This item is not populated for all notes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive"
+      "description": "Whether the note is active. This item is not populated for all notes.",
+      "entries": [
+        "Active",
+        "Inactive"
+      ]
     },
     {
-      "index": 115,
+      "ordinalPosition": 17,
       "name": "EXT_AUTHOR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the external note's author. The name is stored as pieces delimited by character 127 and is ordered as follows: Last Name, Last Name from Spouse, First Name, Middle Name, Last Name Prefix, Spouse Last Name Prefix, Title, Suffix, Academic Initials."
     },
     {
-      "index": 120,
+      "ordinalPosition": 18,
       "name": "NOTE_UPDATE_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The last time this note was received through Care Everywhere. The value of Received Assessment and Plan Existence Days (I DXC 17000) defines how long notes with this item set exist before they are deleted. Scheduled task Remove HNO Records (E1J 88032) deletes notes and all of their references that have not been received within the amount of days defined by Received Assessment and Plan Existence Days (I DXC 17000)  Received Assessment and Plan Existence Days (I DXC 17000) defaults to 30 days if not set."
     }

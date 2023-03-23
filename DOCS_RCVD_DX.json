@@ -1,122 +1,163 @@
 {
-  "table_name": "DOCS_RCVD_DX",
+  "name": "DOCS_RCVD_DX",
   "description": "This table stores discrete diagnosis information received from outside sources.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DX_REF_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Reference ID for this diagnosis."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DX_ENC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Reference ID of the encounter associated with this diagnosis."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "DX_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Display name of this diagnosis."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "DX_CONTEXT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of diagnosis.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmitting Diagnosis\n\n\nDischarge Diagnosis\n\n\nEncounter Diagnosis\n\n\nResult Order"
+      "description": "The type of diagnosis.",
+      "entries": [
+        "Admitting Diagnosis",
+        "Discharge Diagnosis",
+        "Encounter Diagnosis",
+        "Result Order"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "DX_SRC_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the Contact Serial Number (CSN) of the source external document record that has the external diagnosis information."
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "DX_START_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Start time for this diagnosis."
     },
     {
-      "index": 58,
+      "ordinalPosition": 11,
       "name": "DX_END_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "End time for this diagnosis."
     },
     {
-      "index": 63,
+      "ordinalPosition": 12,
       "name": "DX_EDG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Diagnosis ID of this diagnosis."
     },
     {
-      "index": 68,
+      "ordinalPosition": 13,
       "name": "DX_LST_UPD_INST_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the last update instant of the diagnosis in UTC."
     },
     {
-      "index": 73,
+      "ordinalPosition": 14,
       "name": "DX_PRIMARY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Denotes if this diagnosis is the primary diagnosis. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Denotes if this diagnosis is the primary diagnosis.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 15,
       "name": "DX_FILTER_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason why an external diagnosis should be filtered from the composite external document record\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim Derivation: Procedure Code Inclusion/Exclusion List\n\n\nClaim Derivation: Missing Provider\n\n\nClaim Derivation: Sensitive Diagnosis\n\n\nClaim Derivation: Missing Procedure Start Date\n\n\nClaim Derivation: Excluded Procedure Modifier\n\n\nSource Organization Unknown\n\n\nSource Organization Mismatch\n\n\nSource Organization Is Self\n\n\nClinical Note Type Exclusion List\n\n\nClinical Note Missing Service Instant\n\n\nClinical Note Missing Last Filed Instant\n\n\nClinical Note Missing Author Name\n\n\nDispense Cancellation\n\n\nSame Day as Internal Encounter\n\n\nMissing or Invalid Binary URL\n\n\nFiltered or Missing Source Note\n\n\nDocumentReference Status not Current\n\n\nClaim Derivation: Excluded Linked Diagnoses\n\n\nClaim Derivation: Missing Encounter Start Date"
+      "description": "Stores the reason why an external diagnosis should be filtered from the composite external document record",
+      "entries": [
+        "Claim Derivation: Procedure Code Inclusion/Exclusion List",
+        "Claim Derivation: Missing Provider",
+        "Claim Derivation: Sensitive Diagnosis",
+        "Claim Derivation: Missing Procedure Start Date",
+        "Claim Derivation: Excluded Procedure Modifier",
+        "Source Organization Unknown",
+        "Source Organization Mismatch",
+        "Source Organization Is Self",
+        "Clinical Note Type Exclusion List",
+        "Clinical Note Missing Service Instant",
+        "Clinical Note Missing Last Filed Instant",
+        "Clinical Note Missing Author Name",
+        "Dispense Cancellation",
+        "Same Day as Internal Encounter",
+        "Missing or Invalid Binary URL",
+        "Filtered or Missing Source Note",
+        "DocumentReference Status not Current",
+        "Claim Derivation: Excluded Linked Diagnoses",
+        "Claim Derivation: Missing Encounter Start Date"
+      ]
     },
     {
-      "index": 108,
+      "ordinalPosition": 16,
       "name": "DX_IS_ED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Denotes if this diagnosis was made in the ED.\n\n\n The category values for this column were already listed for column: DX_PRIMARY_YN"
+      "description": "Denotes if this diagnosis was made in the ED."
     }
   ]
 }

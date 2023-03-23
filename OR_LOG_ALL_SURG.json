@@ -1,97 +1,118 @@
 {
-  "table_name": "OR_LOG_ALL_SURG",
+  "name": "OR_LOG_ALL_SURG",
   "description": "The OR_LOG_ALL_SURG table contains OR management system log surgeons.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgical log which refers to the surgeon."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of the line of the surgeon in this surgical log."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SURG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgeon."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ROLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the role for the corresponding surgeon in the surgical log.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPrimary"
+      "description": "The category value which represents the role for the corresponding surgeon in the surgical log.",
+      "entries": [
+        "Primary"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 5,
       "name": "SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the kind of service the surgical log falls under.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the kind of service the surgical log falls under."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "TOTAL_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total time a surgeon was needed in the surgical log in seconds."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "PANEL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The panel number in the surgical log in which the surgeon was involved."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "RTLS_OFF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If set to Yes, Real Time Location System (RTLS) tracking has manually been turned off for this provider on this case log.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "If set to Yes, Real Time Location System (RTLS) tracking has manually been turned off for this provider on this case log.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "TIME_SOURCE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source (Manual / RTLS) and status category of this row's start and end time.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual/Active\n\n\nRTLS/Active\n\n\nRTLS/Denied\n\n\nRTLS/Raw Event\n\n\nRTLS/Unresolved\n\n\nManual/PageRespond"
+      "description": "The source (Manual / RTLS) and status category of this row's start and end time.",
+      "entries": [
+        "Manual/Active",
+        "RTLS/Active",
+        "RTLS/Denied",
+        "RTLS/Raw Event",
+        "RTLS/Unresolved",
+        "Manual/PageRespond"
+      ]
     },
     {
-      "index": 63,
+      "ordinalPosition": 10,
       "name": "START_TIME_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The start time comment for the surgeon in the surgical log."
     },
     {
-      "index": 68,
+      "ordinalPosition": 11,
       "name": "END_TIME_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The end time comment for the surgeon in the surgical log."
     },
     {
-      "index": 73,
+      "ordinalPosition": 12,
       "name": "START_TIME_DOCU_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the EMP user who documented the start time for each surgeon associated with any panel of the surgical log."
     },
     {
-      "index": 78,
+      "ordinalPosition": 13,
       "name": "END_TIME_DOCU_ID",
       "type": "VARCHAR",
       "discontinued": false,

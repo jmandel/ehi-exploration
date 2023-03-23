@@ -1,204 +1,257 @@
 {
-  "table_name": "ORDER_RES_FOLLOWUP",
+  "name": "ORDER_RES_FOLLOWUP",
   "description": "Table for lab follow-up tasks.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the Result Finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LAB_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category number for the lab follow-up task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted\n\n\nOpen"
+      "description": "The status category number for the lab follow-up task.",
+      "entries": [
+        "Completed",
+        "Open"
+      ]
     },
     {
-      "index": 16,
+      "ordinalPosition": 3,
       "name": "LAB_ASSIGNED_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who is assigned responsibility for the follow-up task."
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "LAB_SPECIMEN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the specimen that is associated with this follow-up task."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "LAB_TEST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the test that is associated with this follow-up task."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "LAB_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the order that is associated with the comm log follow-up task."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "LAB_ADD_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the follow-up task was added or reopened."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "LAB_REQUISITION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the requisition that is associated with this follow-up task."
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "LAB_TYPE_REQ_FOLL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The follow-up type category number for the lab requisition follow-up task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral Follow-up\n\n\nMissing Items\n\n\nDuplicate Entry\n\n\nReconcile Duplicate Entry\n\n\nMissing Collection Items\n\n\nSubmitter Changed\n\n\nChanged Recipient\n\n\nQC Review\n\n\nHeld Interfaced Results\n\n\nPatient Merged or Contact Moved\n\n\nComm Log"
+      "description": "The follow-up type category number for the lab requisition follow-up task.",
+      "entries": [
+        "General Follow-up",
+        "Missing Items",
+        "Duplicate Entry",
+        "Reconcile Duplicate Entry",
+        "Missing Collection Items",
+        "Submitter Changed",
+        "Changed Recipient",
+        "QC Review",
+        "Held Interfaced Results",
+        "Patient Merged or Contact Moved",
+        "Comm Log"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 10,
       "name": "LAB_ADDING_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who is responsible for adding the follow-up task to the list."
     },
     {
-      "index": 69,
+      "ordinalPosition": 11,
       "name": "LAB_REMOVE_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who is responsible for removing the follow-up task from the list."
     },
     {
-      "index": 74,
+      "ordinalPosition": 12,
       "name": "LAB_REQ_MISSING_ITM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "List of missing required requisition items."
     },
     {
-      "index": 79,
+      "ordinalPosition": 13,
       "name": "LAB_REC_MISSING_ITM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "List of missing recommended requisition items."
     },
     {
-      "index": 84,
+      "ordinalPosition": 14,
       "name": "RESULT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result type category number for the lab follow-up task.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEndoscopy Finding\n\n\nSensitivity Comments\n\n\nBLOOD - Single Division\n\n\nJoint Exam\n\n\nTympanogram Result\n\n\nAudiogram Result\n\n\nSpeech Audiometry\n\n\nAcoustic Reflex\n\n\nLab Follow-Up\n\n\nLab Comm Log\n\n\nLab Requisition\n\n\nRIS General Breast Problem\n\n\nRIS Mammo Mass\n\n\nRIS Mammo Calcification\n\n\nRIS Mammo Architectural Distortion\n\n\nRIS Mammo Asymmetric Density\n\n\nRIS Mammo Misc\n\n\nRIS Mammo Result\n\n\nRIS Mammo Recommendations\n\n\nPathology Result\n\n\nLesion\n\n\nRIS Result Finding Follow-up\n\n\nRIS General Recommendations\n\n\nFinding\n\n\nScreening Program Pathology\n\n\nScreening Program Recommendation\n\n\nDermatology Finding\n\n\nAnatomy\n\n\nDental Finding\n\n\nDental Procedure\n\n\nSoft Tissue Finding\n\n\nSoft Tissue Group Finding"
+      "description": "The result type category number for the lab follow-up task.",
+      "entries": [
+        "Endoscopy Finding",
+        "Sensitivity Comments",
+        "BLOOD - Single Division",
+        "Joint Exam",
+        "Tympanogram Result",
+        "Audiogram Result",
+        "Speech Audiometry",
+        "Acoustic Reflex",
+        "Lab Follow-Up",
+        "Lab Comm Log",
+        "Lab Requisition",
+        "RIS General Breast Problem",
+        "RIS Mammo Mass",
+        "RIS Mammo Calcification",
+        "RIS Mammo Architectural Distortion",
+        "RIS Mammo Asymmetric Density",
+        "RIS Mammo Misc",
+        "RIS Mammo Result",
+        "RIS Mammo Recommendations",
+        "Pathology Result",
+        "Lesion",
+        "RIS Result Finding Follow-up",
+        "RIS General Recommendations",
+        "Finding",
+        "Screening Program Pathology",
+        "Screening Program Recommendation",
+        "Dermatology Finding",
+        "Anatomy",
+        "Dental Finding",
+        "Dental Procedure",
+        "Soft Tissue Finding",
+        "Soft Tissue Group Finding"
+      ]
     },
     {
-      "index": 123,
+      "ordinalPosition": 15,
       "name": "LAB_DUE_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The current due time for this lab follow-up task."
     },
     {
-      "index": 128,
+      "ordinalPosition": 16,
       "name": "LAB_START_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The current start time for this lab follow-up task."
     },
     {
-      "index": 133,
+      "ordinalPosition": 17,
       "name": "LAB_REQ_GRP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the requisition grouper that is associated with this follow-up task."
     },
     {
-      "index": 138,
+      "ordinalPosition": 18,
       "name": "LAB_REMOVE_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time the follow-up task was removed from the work list."
     },
     {
-      "index": 143,
+      "ordinalPosition": 19,
       "name": "LAB_ACTION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the next action will be executed for this follow-up record."
     },
     {
-      "index": 148,
+      "ordinalPosition": 20,
       "name": "LAB_ACTION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the follow-up action record that will be triggered at the next action date."
     },
     {
-      "index": 153,
+      "ordinalPosition": 21,
       "name": "LAB_ACTION_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the node record."
     },
     {
-      "index": 158,
+      "ordinalPosition": 22,
       "name": "ASSOC_LABORATORY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The laboratory that this follow-up task is associated with. This is the laboratory in which context the task was created or re-opened. It also can be manually set by the user."
     },
     {
-      "index": 163,
+      "ordinalPosition": 23,
       "name": "LAB_FU_SUBM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the submitter that is associated with this follow-up task record."
     },
     {
-      "index": 168,
+      "ordinalPosition": 24,
       "name": "LAB_FU_SUBM_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the submitter record."
     },
     {
-      "index": 173,
+      "ordinalPosition": 25,
       "name": "LAB_RMV_INSTANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Indicates the UTC instant a task was removed from the work list."
     },
     {
-      "index": 178,
+      "ordinalPosition": 26,
       "name": "LAB_DUE_INSTANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Lab follow-up task due instant in UTC"
     },
     {
-      "index": 183,
+      "ordinalPosition": 27,
       "name": "LAB_START_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Lab follow-up task start instant in UTC"
     },
     {
-      "index": 188,
+      "ordinalPosition": 28,
       "name": "LAB_ADD_INSTANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Indicates the UTC instant a task was added to the work list, either initially or when a previously closed task was re-opened."
     }

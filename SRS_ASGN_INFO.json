@@ -1,125 +1,149 @@
 {
-  "table_name": "SRS_ASGN_INFO",
+  "name": "SRS_ASGN_INFO",
   "description": "Table that stores series assignment related information as well as information on series answer record status.",
-  "primary_key": {
-    "column_name": "SERIES_ANS_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SERIES_ANS_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SERIES_ANS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the series answer record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the status of the series answer record if it is not active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "This column stores the status of the series answer record if it is not active.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "SERIES_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the ID of the series answer record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "SERIES_ID_SERIES_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name for the questionnaire series record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "SERIES_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the contact date (DAT) for the series answer record."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "SERIES_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the questionnaire series type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Entered Questionnaire Series"
+      "description": "Stores the questionnaire series type.",
+      "entries": [
+        "Patient Entered Questionnaire Series"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "SERIES_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the status of the series answer record if it is active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nCompleted\n\n\nDisabled - Provider\n\n\nDisabled - Patient Opted Out\n\n\nDisabled - Found New Treatment\n\n\nDisabled - Batch Job\n\n\nDisabled - Patient Merge\n\n\nDisabled - Contact Mover\n\n\nDisabled - Procedure Pass\n\n\nDisabled - Patient Expired\n\n\nDisabled - Research Activity Retraction\n\n\nPending Enable"
+      "description": "This column stores the status of the series answer record if it is active.",
+      "entries": [
+        "Active",
+        "Completed",
+        "Disabled - Provider",
+        "Disabled - Patient Opted Out",
+        "Disabled - Found New Treatment",
+        "Disabled - Batch Job",
+        "Disabled - Patient Merge",
+        "Disabled - Contact Mover",
+        "Disabled - Procedure Pass",
+        "Disabled - Patient Expired",
+        "Disabled - Research Activity Retraction",
+        "Pending Enable"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 8,
       "name": "ORDERED_BY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If a series is ordered through Order Entry or through a BestPractice Advisory, this column stores who ordered it for future message routing purposes."
     },
     {
-      "index": 64,
+      "ordinalPosition": 9,
       "name": "SERIES_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "To store ID (EPT id) of the patient who is answering this questionnaire series."
     },
     {
-      "index": 69,
+      "ordinalPosition": 10,
       "name": "HQW_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This column stores the date the series answer record was created."
     },
     {
-      "index": 74,
+      "ordinalPosition": 11,
       "name": "INIT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the contact serial number (CSN) of the encounter where this series is assigned to the user. This item will be empty if the series was assigned from Reporting Workbench."
     },
     {
-      "index": 79,
+      "ordinalPosition": 12,
       "name": "PARENT_SRS_ANS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the ID of the parent questionnaire series answer record."
     },
     {
-      "index": 84,
+      "ordinalPosition": 13,
       "name": "PREV_SRS_ANS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the ID of the previous anchor event questionnaire series answer record."
     },
     {
-      "index": 89,
+      "ordinalPosition": 14,
       "name": "LINKED_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the encounter this questionnaire series is linked to. If the series is linked to an encounter, then the contact date (DAT) of the encounter will be used for evaluating anchor event rules and extensions."
     },
     {
-      "index": 94,
+      "ordinalPosition": 15,
       "name": "LINKED_PROC_PASS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the ID of the Procedure Pass linked to this series. This will only be populated if the series is assigned using the Procedure Pass workflow."
     },
     {
-      "index": 99,
+      "ordinalPosition": 16,
       "name": "ASSIGNING_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the order that assigned this questionnaire series."
     },
     {
-      "index": 104,
+      "ordinalPosition": 17,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,

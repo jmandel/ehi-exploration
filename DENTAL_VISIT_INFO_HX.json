@@ -1,164 +1,190 @@
 {
-  "table_name": "DENTAL_VISIT_INFO_HX",
+  "name": "DENTAL_VISIT_INFO_HX",
   "description": "The DENTAL_VISIT_INFO_HX table contains the edit history of a dental visit record.",
-  "primary_key": {
-    "column_name": "REGIMEN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGIMEN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the visit record for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VISIT_MOD_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the visit was modified."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VISIT_MOD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record that modified data for a visit."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "VISIT_LINKED_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TREATMENT_HX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The revision history of the treatment ID containing the visit."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "VISIT_SPAC_DAYS_HX",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The revision history of the requested spacing, in days, for a visit."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "VISIT_SCHED_INST_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The revision history of the scheduling instructions for a visit."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "VISIT_APPT_LEN_HX",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The revision history of the requested appointment length for a visit."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "VISIT_APPT_HX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The revision history of the appointment linked to a visit."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "VISIT_NUMBER_HX",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The revision history of a visit's order within a dental treatment."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "VISIT_CHRON_INSTANT_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This column records the date and time of a documentation change to the dental visit within the dental treatment plan."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "DENT_SCH_STAT_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Audit trail for dental scheduling status\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNeeds Scheduling\n\n\nScheduled\n\n\nModified\n\n\nCanceled\n\n\nCompleted\n\n\nReferred"
+      "description": "Audit trail for dental scheduling status",
+      "entries": [
+        "Needs Scheduling",
+        "Scheduled",
+        "Modified",
+        "Canceled",
+        "Completed",
+        "Referred"
+      ]
     },
     {
-      "index": 75,
+      "ordinalPosition": 14,
       "name": "DENT_REQ_DATE_HX_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Audit trail for Requested Date to Schedule"
     },
     {
-      "index": 80,
+      "ordinalPosition": 15,
       "name": "DENT_VIS_TYPE_HX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Audit trail for a visit's requested visit type for scheduling"
     },
     {
-      "index": 85,
+      "ordinalPosition": 16,
       "name": "DENT_VIS_DEPT_HX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Audit trail for a visit's requested department for scheduling"
     },
     {
-      "index": 90,
+      "ordinalPosition": 17,
       "name": "DENT_VIS_PROV_HX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Audit trail for a visit's requested provider for scheduling"
     },
     {
-      "index": 95,
+      "ordinalPosition": 18,
       "name": "DENT_VIS_PTYPE_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Audit trail for a visit's requested provider type for scheduling\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nResource\n\n\nPhysician"
+      "description": "Audit trail for a visit's requested provider type for scheduling",
+      "entries": [
+        "Resource",
+        "Physician"
+      ]
     },
     {
-      "index": 104,
+      "ordinalPosition": 19,
       "name": "DENT_VIS_STAT_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental visit status audit item\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nRemoved"
+      "description": "Dental visit status audit item",
+      "entries": [
+        "Active",
+        "Removed"
+      ]
     },
     {
-      "index": 113,
+      "ordinalPosition": 20,
       "name": "VISIT_NAME_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The historical name of the dental visit."
     },
     {
-      "index": 118,
+      "ordinalPosition": 21,
       "name": "RFL_ORDER_HX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History of linked referral orders for a dental visit."
     },
     {
-      "index": 123,
+      "ordinalPosition": 22,
       "name": "DENT_RDY_SCHED_HX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Audit trail for ready for scheduling flag.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Audit trail for ready for scheduling flag.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

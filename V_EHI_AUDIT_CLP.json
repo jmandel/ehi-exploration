@@ -1,83 +1,89 @@
 {
-  "table_name": "V_EHI_AUDIT_CLP",
+  "name": "V_EHI_AUDIT_CLP",
   "description": "This view contains one row for each audited item changed on a claim print record that corresponds to a column that is configured for EHI export.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim print record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CHANGE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user ID of the person who performed edit operations."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CHANGE_UTC_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the date/time instance when the claim was edited."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ITEM_CHANGE_CUR_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the current line number."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ITEM_CHANGE_PREV_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the previous line number."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "OLD_VALUE_INTERNAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the old data value that was edited."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "OLD_VALUE_EXTERNAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the old data value, in an external format, that was edited."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "NEW_VALUE_INTERNAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the new data value that was added to the claim."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "NEW_VALUE_EXTERNAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the new data value, in an external format, that was edited."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "CHANGED_DATA_ELEMENT",
       "type": "VARCHAR",
       "discontinued": false,

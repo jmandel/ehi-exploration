@@ -1,31 +1,41 @@
 {
-  "table_name": "ORD_PROC_GENOMIC_FLAGS",
+  "name": "ORD_PROC_GENOMIC_FLAGS",
   "description": "Contains flags needed to identify orders that meet specific criteria for genomics usage.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GENOMIC_FLAG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains flags needed to identify orders that meet specific criteria for genomics usage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTrack as Genomic Procedure Ordering Event\n\n\nExpects Sequencing Document"
+      "description": "Contains flags needed to identify orders that meet specific criteria for genomics usage.",
+      "entries": [
+        "Track as Genomic Procedure Ordering Event",
+        "Expects Sequencing Document"
+      ]
     }
   ]
 }

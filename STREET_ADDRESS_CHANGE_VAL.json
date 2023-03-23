@@ -1,34 +1,44 @@
 {
-  "table_name": "STREET_ADDRESS_CHANGE_VAL",
+  "name": "STREET_ADDRESS_CHANGE_VAL",
   "description": "This table contains a list of street address lines used to store the street address changes for a patient.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated street address change in this patient record. Together with PAT_ID, this forms the foreign key to the STREET_ADDRESS_CHANGE_HX table."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple street address lines that are associated with the patient and the address change from the STREET_ADDRESS_CHANGE_HX table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "STREET_ADDRESS",
       "type": "VARCHAR",
       "discontinued": false,

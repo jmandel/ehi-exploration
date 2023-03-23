@@ -1,80 +1,94 @@
 {
-  "table_name": "DENTAL_MOUTH_HX",
+  "name": "DENTAL_MOUTH_HX",
   "description": "This table saves information about the history of a patient's mouth.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DENT_BASELINE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This flag indicates whether the patient's tooth chart was saved as a baseline at a given time.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This flag indicates whether the patient's tooth chart was saved as a baseline at a given time.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "PERIO_EXAM_HX_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the clinical date of a periodontal exam. By default this will be the encounter date, but users can specify a past date as well."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "HT_APRV_DTTM_HX_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The history of the date and time when the hard tissue chart was approved."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "HT_APRV_USER_HX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The history of the unique ID of the user who approved the hard tissue chart."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "HT_NEED_APRV_HX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the hard tissue chart requires approval for this patient and contact. 'Y' indicates that the hard tissue chart needs approval for the patient in the encounter. 'N' and NULL indicate that the hard tissue chart does not need approval.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the hard tissue chart requires approval for this patient and contact. 'Y' indicates that the hard tissue chart needs approval for the patient in the encounter. 'N' and NULL indicate that the hard tissue chart does not need approval.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "PERIO_APRV_DTTM_HX_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The history of the date and time when the periodontal chart was approved."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "PERIO_APRV_USER_HX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The history of the unique ID of the user who approved the periodontal chart."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "PERI_NEED_APRV_HX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the periodontal chart requires approval for this patient and contact. 'Y' indicates that the periodontal chart needs approval for the patient in the encounter. 'N' and NULL indicate that the periodontal chart does not need approval.\n\n\n The category values for this column were already listed for column: HT_NEED_APRV_HX_YN"
+      "description": "Indicates whether the periodontal chart requires approval for this patient and contact. 'Y' indicates that the periodontal chart needs approval for the patient in the encounter. 'N' and NULL indicate that the periodontal chart does not need approval."
     }
   ]
 }

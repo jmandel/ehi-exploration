@@ -1,45 +1,85 @@
 {
-  "table_name": "ORD_CV_F_WALL_MOTN",
+  "name": "ORD_CV_F_WALL_MOTN",
   "description": "This table stores the wall motion data - segment, value and modifier.",
-  "primary_key": {
-    "column_name": "CV_FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CV_FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CV_FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "WALL_SEGMENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The wall segment being scored.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAnterior\n\n\nPosterior\n\n\nLateral\n\n\nAnteroseptal\n\n\nSeptal\n\n\nInferior\n\n\nIntravascular septum\n\n\nAnterolateral \n\n\nInferolateral\n\n\nInferoseptal\n\n\nApex"
+      "description": "The wall segment being scored.",
+      "entries": [
+        "Anterior",
+        "Posterior",
+        "Lateral",
+        "Anteroseptal",
+        "Septal",
+        "Inferior",
+        "Intravascular septum",
+        "Anterolateral",
+        "Inferolateral",
+        "Inferoseptal",
+        "Apex"
+      ]
     },
     {
-      "index": 30,
+      "ordinalPosition": 4,
       "name": "WALL_VALUE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The disease value for a wall segment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal\n\n\nHypokinetic\n\n\nAkinetic\n\n\nDyskinetic\n\n\nAneurysmal\n\n\nMild count reduction\n\n\nModerate count reduction\n\n\nSevere count reduction\n\n\nAbsence of Uptake\n\n\nHyperkinetic\n\n\nMildly Hypokinetic\n\n\nSeverely Hypokinetic\n\n\nSeverely Akinetic\n\n\nSeverely Dyskinetic"
+      "description": "The disease value for a wall segment.",
+      "entries": [
+        "Normal",
+        "Hypokinetic",
+        "Akinetic",
+        "Dyskinetic",
+        "Aneurysmal",
+        "Mild count reduction",
+        "Moderate count reduction",
+        "Severe count reduction",
+        "Absence of Uptake",
+        "Hyperkinetic",
+        "Mildly Hypokinetic",
+        "Severely Hypokinetic",
+        "Severely Akinetic",
+        "Severely Dyskinetic"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 5,
       "name": "WALL_MODIFIER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The location modifier for the wall segment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMid\n\n\nBasilar\n\n\nApical"
+      "description": "The location modifier for the wall segment.",
+      "entries": [
+        "Mid",
+        "Basilar",
+        "Apical"
+      ]
     }
   ]
 }

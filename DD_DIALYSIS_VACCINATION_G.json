@@ -1,125 +1,177 @@
 {
-  "table_name": "DD_DIALYSIS_VACCINATION_G",
+  "name": "DD_DIALYSIS_VACCINATION_G",
   "description": "This table contains data elements submitted for CMS ESRD patient vaccination form.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "DLYS_VACCINE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPneumococcal\n\n\nInfluenza\n\n\nHepatitis B"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination type.",
+      "entries": [
+        "Pneumococcal",
+        "Influenza",
+        "Hepatitis B"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "DLYS_VACCINE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination received status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFacility\n\n\nAnother Facility\n\n\nNot Received"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination received status.",
+      "entries": [
+        "Facility",
+        "Another Facility",
+        "Not Received"
+      ]
     },
     {
-      "index": 27,
+      "ordinalPosition": 4,
       "name": "DLYS_VACCINE_SUBTYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination name.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPneumococcal conjugate vaccine (Prevnar 13)\n\n\nVaxneuvance (Prevnar 15)\n\n\nPneumococcal conjugate vaccine (Prevnar 20)\n\n\nPneumococcal polysaccharide vaccine (Pneumovax23)\n\n\nFluarix (IIV4)\n\n\nFluLaval (IIV4)\n\n\nFlublok (RIV4)\n\n\nFluzone (IIV4)\n\n\nFluzone High-Dose Quad (IIV4-HD)\n\n\nAfluria Quad (IIV4)\n\n\nFluad (aIIV3)\n\n\nFluad Quad (aIIV4)\n\n\nFlucelvax (ccIIV4)\n\n\nHeplisav-B\n\n\nRecombivax HB\n\n\nEngerix-B\n\n\nUnknown"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination name.",
+      "entries": [
+        "Pneumococcal conjugate vaccine (Prevnar 13)",
+        "Vaxneuvance (Prevnar 15)",
+        "Pneumococcal conjugate vaccine (Prevnar 20)",
+        "Pneumococcal polysaccharide vaccine (Pneumovax23)",
+        "Fluarix (IIV4)",
+        "FluLaval (IIV4)",
+        "Flublok (RIV4)",
+        "Fluzone (IIV4)",
+        "Fluzone High-Dose Quad (IIV4-HD)",
+        "Afluria Quad (IIV4)",
+        "Fluad (aIIV3)",
+        "Fluad Quad (aIIV4)",
+        "Flucelvax (ccIIV4)",
+        "Heplisav-B",
+        "Recombivax HB",
+        "Engerix-B",
+        "Unknown"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 5,
       "name": "RECEIVED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination received date."
     },
     {
-      "index": 56,
+      "ordinalPosition": 6,
       "name": "RECEIVED_DATE_APPROX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination received date is approximate.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination received date is approximate.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 65,
+      "ordinalPosition": 7,
       "name": "ADVERSE_REACT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient had an adverse reaction from the vaccination.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient had an adverse reaction from the vaccination.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 75,
+      "ordinalPosition": 8,
       "name": "ADVERSE_REACT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores comments about an adverse reaction that a dialysis patient had from the vaccination."
     },
     {
-      "index": 80,
+      "ordinalPosition": 9,
       "name": "ADVERSE_REACT_FDA_REPORTED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination adverse reaction was reported to the FDA.\n\n\n The category values for this column were already listed for column: ADVERSE_REACT_STATUS_C_NAME"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination adverse reaction was reported to the FDA."
     },
     {
-      "index": 86,
+      "ordinalPosition": 10,
       "name": "DLYS_HEPB_DOSE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's hepatitis B vaccination dose is part of a series or a booster.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSeries\n\n\nBooster\n\n\nUnknown"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's hepatitis B vaccination dose is part of a series or a booster.",
+      "entries": [
+        "Series",
+        "Booster",
+        "Unknown"
+      ]
     },
     {
-      "index": 96,
+      "ordinalPosition": 11,
       "name": "DLYS_VACCIN_NT_RCV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination not received reason.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedical Reason - Allergic or Adverse Reaction\n\n\nDeclined - Religious/Philosophical\n\n\nDeclined - Without Explanation\n\n\nOther\n\n\nSeries Completed per Antibody Test Result"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination not received reason.",
+      "entries": [
+        "Medical Reason - Allergic or Adverse Reaction",
+        "Declined - Religious/Philosophical",
+        "Declined - Without Explanation",
+        "Other",
+        "Series Completed per Antibody Test Result"
+      ]
     },
     {
-      "index": 108,
+      "ordinalPosition": 12,
       "name": "VACCINE_NT_RCV_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's vaccination not received reason comments."
     },
     {
-      "index": 113,
+      "ordinalPosition": 13,
       "name": "OFFERED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores the date when the vaccination was offered to a dialysis patient."
     },
     {
-      "index": 118,
+      "ordinalPosition": 14,
       "name": "OFFERED_DATE_APPROX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination offered date is approximate.\n\n\n The category values for this column were already listed for column: RECEIVED_DATE_APPROX_YN"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient's vaccination offered date is approximate."
     },
     {
-      "index": 124,
+      "ordinalPosition": 15,
       "name": "HEPB_ANTIHBS_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient received a hepatitis B antibody test.\n\n\n The category values for this column were already listed for column: ADVERSE_REACT_STATUS_C_NAME"
+      "description": "This item is used in dialysis regulatory reporting. It stores whether a dialysis patient received a hepatitis B antibody test."
     },
     {
-      "index": 130,
+      "ordinalPosition": 16,
       "name": "ANTIHBS_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's hepatitis B antibodies test result value."
     },
     {
-      "index": 135,
+      "ordinalPosition": 17,
       "name": "ANTIHBS_DATE",
       "type": "DATETIME",
       "discontinued": false,

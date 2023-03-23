@@ -1,34 +1,44 @@
 {
-  "table_name": "CHAT_PARTICIPANT_GROUPS",
+  "name": "CHAT_PARTICIPANT_GROUPS",
   "description": "Table for Unified Communication groups in a conversation that a chat user is a part of. To extract data to CHAT_PARTICIPANT_GROUPS: 1. In Clinical Administration, open EMR System Definitions and select Note, Trans, Communication. 2. Go to the Secure Chat Clarity Settings screen. 3. In the Enable Clarity extraction for Secure Chat conversations field, enter 1-Yes.",
-  "primary_key": {
-    "column_name": "CONVERSATION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CONVERSATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CONVERSATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the secure chat conversation record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "USER_IN_UC_GROUP_ID",
       "type": "NUMERIC",
       "discontinued": false,

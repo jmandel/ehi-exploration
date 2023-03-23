@@ -1,24 +1,30 @@
 {
-  "table_name": "ORDER_MYC_INFO",
+  "name": "ORDER_MYC_INFO",
   "description": "When sharing a lab result with a web-based chart system patient, the clinician may choose to attach a Result Comment. Data for the Result Comment patient note is stored in this table.",
-  "primary_key": {
-    "column_name": "ORDER_PROC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_PROC_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the procedure order record that is being released/unreleased."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RELEASED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether a result is released to a patient on MyChart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether a result is released to a patient on MyChart.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

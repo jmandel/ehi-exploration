@@ -1,38 +1,65 @@
 {
-  "table_name": "EXT_ORDER_MAR_INFO",
+  "name": "EXT_ORDER_MAR_INFO",
   "description": "This table contains administration details for external medication orders.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MAR_TAKEN_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item saves the date and time when the administration action was taken on the external medication order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MAR_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item saves the administration action for the external medication order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGiven\n\n\nMissed\n\n\nRefused\n\n\nCanceled Entry\n\n\nHeld\n\n\nNew Bag\n\n\nRestarted\n\n\nStopped\n\n\nRate Change\n\n\nMAR Hold\n\n\nMAR Unhold\n\n\nBolus\n\n\nPush\n\n\nRate Verify\n\n\nSee Alternative\n\n\nPaused\n\n\nPending\n\n\nAutomatically Held\n\n\nDue"
+      "description": "This item saves the administration action for the external medication order.",
+      "entries": [
+        "Given",
+        "Missed",
+        "Refused",
+        "Canceled Entry",
+        "Held",
+        "New Bag",
+        "Restarted",
+        "Stopped",
+        "Rate Change",
+        "MAR Hold",
+        "MAR Unhold",
+        "Bolus",
+        "Push",
+        "Rate Verify",
+        "See Alternative",
+        "Paused",
+        "Pending",
+        "Automatically Held",
+        "Due"
+      ]
     }
   ]
 }

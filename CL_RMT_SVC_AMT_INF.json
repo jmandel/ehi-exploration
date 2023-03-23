@@ -1,41 +1,66 @@
 {
-  "table_name": "CL_RMT_SVC_AMT_INF",
+  "name": "CL_RMT_SVC_AMT_INF",
   "description": "This table contains service line amount information for a remittance record.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record with related remit claim references."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record. (Standard for this column type)"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AMT_SVC_LN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The service line which this amount information refers to."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SVC_AMT_QUAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The amount qualifier code for the claim supplemental information. This is a standard code that indicates what the monetary amount represents.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage amount\n\n\nDiscount amount\n\n\nPer day limit\n\n\nPatient amount paid\n\n\nInterest\n\n\nNegative ledger balance\n\n\nTax\n\n\nTotal claim before taxes\n\n\nFederal medicare or medicaid payment mandate category 1\n\n\nFederal medicare or medicaid payment mandate category 2\n\n\nFederal medicare or medicaid payment mandate category 3\n\n\nFederal medicare or medicaid payment mandate category 4\n\n\nFederal medicare or medicaid payment mandate category 5\n\n\nMutually defined\n\n\nAllowed - Actual\n\n\nDeduction amount\n\n\nNet billed"
+      "description": "The amount qualifier code for the claim supplemental information. This is a standard code that indicates what the monetary amount represents.",
+      "entries": [
+        "Coverage amount",
+        "Discount amount",
+        "Per day limit",
+        "Patient amount paid",
+        "Interest",
+        "Negative ledger balance",
+        "Tax",
+        "Total claim before taxes",
+        "Federal medicare or medicaid payment mandate category 1",
+        "Federal medicare or medicaid payment mandate category 2",
+        "Federal medicare or medicaid payment mandate category 3",
+        "Federal medicare or medicaid payment mandate category 4",
+        "Federal medicare or medicaid payment mandate category 5",
+        "Mutually defined",
+        "Allowed - Actual",
+        "Deduction amount",
+        "Net billed"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 5,
       "name": "SVC_SUPPL_AMT",
       "type": "NUMERIC",
       "discontinued": false,

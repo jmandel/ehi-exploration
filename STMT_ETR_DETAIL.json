@@ -1,209 +1,231 @@
 {
-  "table_name": "STMT_ETR_DETAIL",
+  "name": "STMT_ETR_DETAIL",
   "description": "This table stores information about Professional Billing transactions that are associated with a given statement.",
-  "primary_key": {
-    "column_name": "PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the statement print or detail bill record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing transaction ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient ID for the transaction."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage ID for the transaction."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PAYER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payer ID for the transaction."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PAYER_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "IS_ASSIGNED_TO_PAYER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not the transaction is assigned to a payer.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether or not the transaction is assigned to a payer.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "POST_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The transaction post date."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The transaction service date."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "DESCRIPTION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The transaction description."
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "UNIT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction units."
     },
     {
-      "index": 66,
+      "ordinalPosition": 13,
       "name": "AMT_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction due amount."
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "DEBIT_ORIG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing debit original amount."
     },
     {
-      "index": 76,
+      "ordinalPosition": 15,
       "name": "CREDIT_ORIG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing credit original amount."
     },
     {
-      "index": 81,
+      "ordinalPosition": 16,
       "name": "DEBIT_HOLD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing debit hold amount."
     },
     {
-      "index": 86,
+      "ordinalPosition": 17,
       "name": "CREDIT_HOLD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing credit hold amount."
     },
     {
-      "index": 91,
+      "ordinalPosition": 18,
       "name": "ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing adjustment amount."
     },
     {
-      "index": 96,
+      "ordinalPosition": 19,
       "name": "MATCH_TX_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing matching transaction insurance payment amount."
     },
     {
-      "index": 101,
+      "ordinalPosition": 20,
       "name": "MATCH_TX_PAT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing matching transaction patient payment amount."
     },
     {
-      "index": 106,
+      "ordinalPosition": 21,
       "name": "MATCH_TX_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Professional Billing matching transaction adjustment amount."
     },
     {
-      "index": 111,
+      "ordinalPosition": 22,
       "name": "NOTES",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Professional Billing notes."
     },
     {
-      "index": 116,
+      "ordinalPosition": 23,
       "name": "HOLD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Professional Billing hold status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHold Entire Charge\n\n\nDo Not Hold\n\n\nHold Insurance\n\n\nInform Only\n\n\nHold Assigned\n\n\nHold Ins-Recalc Original Charge"
+      "description": "The Professional Billing hold status.",
+      "entries": [
+        "Hold Entire Charge",
+        "Do Not Hold",
+        "Hold Insurance",
+        "Inform Only",
+        "Hold Assigned",
+        "Hold Ins-Recalc Original Charge"
+      ]
     },
     {
-      "index": 129,
+      "ordinalPosition": 24,
       "name": "IS_NEW_TX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not this is a new transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether or not this is a new transaction.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 138,
+      "ordinalPosition": 25,
       "name": "INS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Insurance balance of a debit transaction."
     },
     {
-      "index": 143,
+      "ordinalPosition": 26,
       "name": "PAT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Patient amount of a debit transaction."
     },
     {
-      "index": 148,
+      "ordinalPosition": 27,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account ID for this professional transaction."
     },
     {
-      "index": 153,
+      "ordinalPosition": 28,
       "name": "PURCHASE_SVC_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The purchased service amount."
     },
     {
-      "index": 158,
+      "ordinalPosition": 29,
       "name": "PURCHASE_SVC_POS",
       "type": "INTEGER",
       "discontinued": false,

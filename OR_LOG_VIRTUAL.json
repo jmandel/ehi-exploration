@@ -1,94 +1,109 @@
 {
-  "table_name": "OR_LOG_VIRTUAL",
+  "name": "OR_LOG_VIRTUAL",
   "description": "The OR_LOG_VIRTUAL table contains virtual items for the OR management system log records.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the log record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RESP_ANES_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the responsible anesthesia provider for the log. The logic first looks to what is documented in Anesthesia and then if nothing is documented, it uses what is documented in OpTime.   For Anesthesia, the responsible anesthesia provider is based on the mode specified in the System Definitions (LSD 1) item 89400. The three options being the provider responsible for the most amount of time, the first responsible, or the last responsible. The staff types considered to be an anesthesia provider are specified in the profile (LPR) settings. For OpTime, the logic to determine who is responsible is based on the first anesthesia provider documented in the room. If no anesthesia provider has a time associated, then the first one listed on the log is used. The staff types associated with an anesthesia provider are specified in the Systems Definitions (EAF 1)."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CASE_LEN_MIN_DIFF",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column holds the absolute difference between the scheduled minutes in room and actual minutes in room of the case."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CASE_LEN_PCT_DIFF",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column holds percent difference between the scheduled minutes in room and actual minutes in room of the case. The percent is determined by taking the absolute difference between scheduled minutes in room and actual minutes in room and dividing by the actual minutes in room."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CASE_LEN_OVER_UND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column holds the category value for whether the case is overscheduled or underscheduled. This column will be blank if case length accuracy cannot be determined or if the case has no deviation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccurate\n\n\nOverscheduled\n\n\nUnderscheduled"
+      "description": "This column holds the category value for whether the case is overscheduled or underscheduled. This column will be blank if case length accuracy cannot be determined or if the case has no deviation.",
+      "entries": [
+        "Accurate",
+        "Overscheduled",
+        "Underscheduled"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "CASE_LEN_ACCURAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether the case was accurately scheduled according to the threshold defined in the System or Location Definitions. Y indicates that the case is considered to have an accurate scheduled case length. N indicates that the case is not considered to have an accurate scheduled case length. A null value indicates that an event needed for the calculation was missing and case length accuracy cannot be determined.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column indicates whether the case was accurately scheduled according to the threshold defined in the System or Location Definitions. Y indicates that the case is considered to have an accurate scheduled case length. N indicates that the case is not considered to have an accurate scheduled case length. A null value indicates that an event needed for the calculation was missing and case length accuracy cannot be determined.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "CASE_LEN_MIN_THRESH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column holds the threshold in minutes used to determine case length accuracy."
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "CASE_CLASS_COMPLIANT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether a case is compliant to the threshold associated with its case classification. Y means the difference between the case request time and in room time is less than the associated threshold for this case. N means the difference between the case request time and in room time is greater than the associated threshold for this case. Null means that compliance could not be determined.\n\n\n The category values for this column were already listed for column: CASE_LEN_ACCURAT_YN"
+      "description": "Stores whether a case is compliant to the threshold associated with its case classification. Y means the difference between the case request time and in room time is less than the associated threshold for this case. N means the difference between the case request time and in room time is greater than the associated threshold for this case. Null means that compliance could not be determined."
     },
     {
-      "index": 52,
+      "ordinalPosition": 9,
       "name": "CASE_CLASS_THRESHOLD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The threshold in minutes associated with the case classification for this case."
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "INCLUDE_ORG_VOLUME_REPORT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether the case is included in organizational volume reporting based on room, service, holiday, weekend, and procedure not performed exclusions defined in System or Location Definitions. Y indicates that the case is included in volume reporting. N indicates that the case is not included in volume reporting.\n\n\n The category values for this column were already listed for column: CASE_LEN_ACCURAT_YN"
+      "description": "This column indicates whether the case is included in organizational volume reporting based on room, service, holiday, weekend, and procedure not performed exclusions defined in System or Location Definitions. Y indicates that the case is included in volume reporting. N indicates that the case is not included in volume reporting."
     },
     {
-      "index": 63,
+      "ordinalPosition": 11,
       "name": "INCLUDE_ORG_CLA_REPORT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether the case is included in organizational case length accuracy reporting based on room, service, holiday, weekend, and add-on exclusions defined in System or Location Definitions. Y indicates that the case is included in case length accuracy reporting. N indicates that the case is not included in case length accuracy reporting.\n\n\n The category values for this column were already listed for column: CASE_LEN_ACCURAT_YN"
+      "description": "This column indicates whether the case is included in organizational case length accuracy reporting based on room, service, holiday, weekend, and add-on exclusions defined in System or Location Definitions. Y indicates that the case is included in case length accuracy reporting. N indicates that the case is not included in case length accuracy reporting."
     },
     {
-      "index": 69,
+      "ordinalPosition": 12,
       "name": "LOG_EXCLUSION_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the reason a log should be excluded from regulatory reporting and registry inclusion. This item is set based on the I ORD 895 value of the log's active procedure orders. If all active linked procedure orders have an active value in I ORD 895, this item will be set to Documented on Wrong Patient [2] if all the orders are set to that value, otherwise this item will be set to Unsuccessful Attempt [1] if all the orders are set to that value or if there is a mix of values 1 and 2. If any active linked procedure orders on the log do not have an active flag in I ORD 895, this item will be null.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnsuccessful Attempt\n\n\nDocumented on Wrong Patient"
+      "description": "This item contains the reason a log should be excluded from regulatory reporting and registry inclusion. This item is set based on the I ORD 895 value of the log's active procedure orders. If all active linked procedure orders have an active value in I ORD 895, this item will be set to Documented on Wrong Patient [2] if all the orders are set to that value, otherwise this item will be set to Unsuccessful Attempt [1] if all the orders are set to that value or if there is a mix of values 1 and 2. If any active linked procedure orders on the log do not have an active flag in I ORD 895, this item will be null.",
+      "entries": [
+        "Unsuccessful Attempt",
+        "Documented on Wrong Patient"
+      ]
     }
   ]
 }

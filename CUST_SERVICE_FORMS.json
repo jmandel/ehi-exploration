@@ -1,45 +1,55 @@
 {
-  "table_name": "CUST_SERVICE_FORMS",
+  "name": "CUST_SERVICE_FORMS",
   "description": "This table contains information about the forms associated to this customer service communication.",
-  "primary_key": {
-    "column_name": "COMM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the communication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CRM_FORMS_LIST_FORM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds both filed and unfiled forms attached to the communication."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CRM_FORMS_LIST_FORM_ID_FORM_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the form associated with the questionnaire."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CRM_FORMS_FILED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the form is filed or not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the form is filed or not.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

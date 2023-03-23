@@ -1,71 +1,82 @@
 {
-  "table_name": "COLL_AGENCY_HX",
+  "name": "COLL_AGENCY_HX",
   "description": "This table contains collection agency history information.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COLL_HX_AGENCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the collection agency which is associated with this history information."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "COLL_HX_AGENCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "COLL_HX_SUBMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when account is submitted to the collection agency."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "COLL_HX_RESOLV_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the agency resolved the submission."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "COLL_HX_RES_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The collection history resolution type category number for this history information.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRecalled\n\n\nCompleted\n\n\nConverted to Agency Extract Framework"
+      "description": "The collection history resolution type category number for this history information.",
+      "entries": [
+        "Recalled",
+        "Completed",
+        "Converted to Agency Extract Framework"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "COLL_HX_SUBMIT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant this transaction was submitted to collections."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "COLL_HX_RESOLV_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant this transaction was resolved with collections."
     }

@@ -1,167 +1,211 @@
 {
-  "table_name": "MPPS_EXPO_DOSE_SEQ",
+  "name": "MPPS_EXPO_DOSE_SEQ",
   "description": "This table contains radiation exposure dose sequence data received from Modality Performed Procedure Step (MPPS) or Radiation Dose Structured Reporting (RDSR) messages. Each MPPS message contains radiation exposure information corresponding to one performed procedure step. Each performed procedure step may, however, consist of multiple slices depending on the sophistication of the modality. Each such slice of radiation exposure administered on the patient is recorded as a separate radiation exposure dose sequence in the MPPS message. Similarly one RDSR message may contain radiation exposure information from multiple irradiation events. Each row in this table will correspond to a slice of radiation exposure information from an MPPS message or an irradiation event from an RDSR.",
-  "primary_key": {
-    "column_name": "IMY_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the modality data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "KVP",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Peak kilo voltage output of the x-ray generator used during the current exposure dose sequence. It holds an average value in the case of fluoroscopy (continuous radiation mode)."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "XRAY_TUBE_CURRENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The current in the x-ray tube measured in �A during the current radiation exposure dose sequence. This holds an average value in the case of fluoroscopy (continuous radiation mode)."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EXPOSURE_TIME",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Time of x-ray exposure or fluoroscopy in milliseconds for the current exposure dose sequence."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "FILTER_TYPE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Type of filters inserted into the x-ray beam during the current exposure dose sequence."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "SEQ_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User-defined comments on any special conditions related to radiation dose encountered during the episode described by the current exposure dose sequence."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "RADIATION_MODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Specifies x-ray radiation mode during the current exposure dose sequence."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "SEQ_CTDIVOL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Computed Tomography Dose Index (CTDIvol) in mGy. It describes the average dose for this image during the current exposure dose sequence for the selected CT conditions of operation."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "SEQ_DLP",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Dose Length Product (DLP) for the current exposure dose sequence."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "RDSR_TARGET_REGN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The anatomical region category ID for the target region of the DICOM instance record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nAbdomen\n\n\nLung\n\n\nPelvis\n\n\nSpine"
+      "description": "The anatomical region category ID for the target region of the DICOM instance record.",
+      "entries": [
+        "Other",
+        "Abdomen",
+        "Lung",
+        "Pelvis",
+        "Spine"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 12,
       "name": "RDSR_ACQUISTN_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The acquisition type category ID for the DICOM instance record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSequenced Acquisition\n\n\nSpiral Acquisition\n\n\nConstant Angle Acquisition\n\n\nStationary Acquisition\n\n\nFree Acquisition"
+      "description": "The acquisition type category ID for the DICOM instance record.",
+      "entries": [
+        "Sequenced Acquisition",
+        "Spiral Acquisition",
+        "Constant Angle Acquisition",
+        "Stationary Acquisition",
+        "Free Acquisition"
+      ]
     },
     {
-      "index": 76,
+      "ordinalPosition": 13,
       "name": "RDSR_PROC_CONTEXT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The procedure context category ID for the DICOM instance record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDiagnostic radiography with contrast media\n\n\nCT without contrast"
+      "description": "The procedure context category ID for the DICOM instance record.",
+      "entries": [
+        "Diagnostic radiography with contrast media",
+        "CT without contrast"
+      ]
     },
     {
-      "index": 85,
+      "ordinalPosition": 14,
       "name": "RDSR_IRRADIATN_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The order instance of the irradiation event."
     },
     {
-      "index": 90,
+      "ordinalPosition": 15,
       "name": "RDSR_SCANG_LENGTH",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The scanning length."
     },
     {
-      "index": 95,
+      "ordinalPosition": 16,
       "name": "RDSR_SINGLE_COLLIMATION_WIDTH",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The single collimation width."
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "RDSR_TOTAL_COLLIMATION_WIDTH",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total collimation width."
     },
     {
-      "index": 105,
+      "ordinalPosition": 18,
       "name": "RDSR_PITCH_FACTOR",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The pitch factor."
     },
     {
-      "index": 110,
+      "ordinalPosition": 19,
       "name": "RDSR_NUM_XRAY_SRC",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of x-ray sources."
     },
     {
-      "index": 115,
+      "ordinalPosition": 20,
       "name": "RDSR_CTDIW_PHNTM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The CTDIW phantom type category ID for the DICOM instance record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPhantom\n\n\nACR Accreditation Phantom - CT\n\n\nACR Accreditation Phantom - MR\n\n\nACR Accreditation Phantom - Mammography\n\n\nACR Accreditation Phantom � Stereotactic Breast Biopsy\n\n\nACR Accreditation Phantom - ECT\n\n\nACR Accreditation Phantom - PET\n\n\nACR Accreditation Phantom � ECT/PET\n\n\nACR Accreditation Phantom � PET Faceplate\n\n\nIEC Head Dosimetry Phantom\n\n\nIEC Body Dosimetry Phantom\n\n\nNEMA XR21-2000 Phantom"
+      "description": "The CTDIW phantom type category ID for the DICOM instance record.",
+      "entries": [
+        "Phantom",
+        "ACR Accreditation Phantom - CT",
+        "ACR Accreditation Phantom - MR",
+        "ACR Accreditation Phantom - Mammography",
+        "ACR Accreditation Phantom � Stereotactic Breast Biopsy",
+        "ACR Accreditation Phantom - ECT",
+        "ACR Accreditation Phantom - PET",
+        "ACR Accreditation Phantom � ECT/PET",
+        "ACR Accreditation Phantom � PET Faceplate",
+        "IEC Head Dosimetry Phantom",
+        "IEC Body Dosimetry Phantom",
+        "NEMA XR21-2000 Phantom"
+      ]
     },
     {
-      "index": 134,
+      "ordinalPosition": 21,
       "name": "RDSR_MSR_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The total dose measurement method category ID for a particular irradiation event DICOM instance record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDLP to E conversion via MC computation\n\n\nCTDIfreeair to E conversion via MC computation\n\n\nDLP to E conversion via measurement\n\n\nCTDIfreeair to E conversion via measurement"
+      "description": "The total dose measurement method category ID for a particular irradiation event DICOM instance record.",
+      "entries": [
+        "DLP to E conversion via MC computation",
+        "CTDIfreeair to E conversion via MC computation",
+        "DLP to E conversion via measurement",
+        "CTDIfreeair to E conversion via measurement"
+      ]
     },
     {
-      "index": 145,
+      "ordinalPosition": 22,
       "name": "RDSR_XRAY_MOD_TYPE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The x-ray modulation type."
     },
     {
-      "index": 150,
+      "ordinalPosition": 23,
       "name": "RDSR_EFF_DOSE",
       "type": "NUMERIC",
       "discontinued": false,

@@ -1,45 +1,58 @@
 {
-  "table_name": "ADV_EVT_SUPPLY_ATTR",
+  "name": "ADV_EVT_SUPPLY_ATTR",
   "description": "This table stores supply attribution information about an adverse event.",
-  "primary_key": {
-    "column_name": "ADVERSE_EVENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ADVERSE_EVENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ADVERSE_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the adverse event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ITEM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the supply record that is related to the adverse event."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ITEM_ID_SUPPLY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the inventory item."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ITEM_ATTRIBUTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The attribution level category ID for the corresponding supply to the adverse event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nUnrelated\n\n\nUnlikely\n\n\nPossible\n\n\nProbable\n\n\nDefinite"
+      "description": "The attribution level category ID for the corresponding supply to the adverse event.",
+      "entries": [
+        "Unrelated",
+        "Unlikely",
+        "Possible",
+        "Probable",
+        "Definite"
+      ]
     }
   ]
 }

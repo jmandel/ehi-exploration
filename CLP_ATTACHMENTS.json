@@ -1,55 +1,65 @@
 {
-  "table_name": "CLP_ATTACHMENTS",
+  "name": "CLP_ATTACHMENTS",
   "description": "This table stores claim-level attachment information.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ATTACHMENT_ROI_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The attachment record ID containing claim-level attachment information."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ATTACHMENT_CONTROL_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The attachment control number for the attachment."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ATTACHMENT_GENERATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The indicator that the attachment was generated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "The indicator that the attachment was generated.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "ATTACH_REMOVED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The indicator that the attachment was removed by a user from a workqueue.\n\n\n The category values for this column were already listed for column: ATTACHMENT_GENERATED_YN"
+      "description": "The indicator that the attachment was removed by a user from a workqueue."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "ATTACH_EDITED_YN",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,73 +1,84 @@
 {
-  "table_name": "DICOM_SLICE_INFO",
+  "name": "DICOM_SLICE_INFO",
   "description": "This table contains metadata information for cross sectional images.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the document record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "INSTANCE_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the DICOM image instance UID (attribute 0008,0018) for a cross-sectional image. A cross-sectional image is also known as a slice."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "INSTANCE_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This is the instance number (attribute 0020,0013) for a cross-sectional image. A cross-sectional image is also known as a slice."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SLICE_WINDOW_WIDTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Instance (slice) specific window width setting."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "SLICE_WINDOW_CENTER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Slice specific window center setting."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "SLICE_PS_SERIES_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The presentation state series UID for this cross sectional image."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "SLICE_PS_INST_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The presentation state instance UID for this cross sectional image."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "IMG_SLCT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID indicating how the slice associated with the record was selected, including if it was computer selected or marked as a key image.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nComputer Selected\n\n\nKey Image"
+      "description": "The category ID indicating how the slice associated with the record was selected, including if it was computer selected or marked as a key image.",
+      "entries": [
+        "None",
+        "Computer Selected",
+        "Key Image"
+      ]
     }
   ]
 }

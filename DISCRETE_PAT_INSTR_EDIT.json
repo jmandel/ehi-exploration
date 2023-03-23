@@ -1,139 +1,161 @@
 {
-  "table_name": "DISCRETE_PAT_INSTR_EDIT",
+  "name": "DISCRETE_PAT_INSTR_EDIT",
   "description": "This table contains contact specific discrete patient instructions information such as the entering user, entry date, and linked medication.",
-  "primary_key": {
-    "column_name": "DISCRETE_PAT_INSTR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DISCRETE_PAT_INSTR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DISCRETE_PAT_INSTR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the instructions name record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_SERIAL_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the discrete patient instructions (DPI) contact. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the contact number"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DISPLAY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Display name of the DPI record."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PAT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number (CSN) of the patient contact on which these instructions were last edited."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ENTERING_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who last edited this record"
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "LAST_EDIT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the last instant the instructions were edited."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "INSTRUCTIONS_END_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the date the instructions are no longer valid"
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "DISCRETE_PAT_INSTR_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source of these instructions\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician Entered"
+      "description": "The source of these instructions",
+      "entries": [
+        "Physician Entered"
+      ]
     },
     {
-      "index": 60,
+      "ordinalPosition": 12,
       "name": "MEDICATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The associated medication record for these instructions"
     },
     {
-      "index": 65,
+      "ordinalPosition": 13,
       "name": "INSTANT_OF_ENTRY_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Stores the instant of entry when a record is edited"
     },
     {
-      "index": 70,
+      "ordinalPosition": 14,
       "name": "SHOW_CARB_RANGES_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if carbs should be printed with a range (ex \"10-19\") or not (ex \"10\") on the AVS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates if carbs should be printed with a range (ex \"10-19\") or not (ex \"10\") on the AVS.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 79,
+      "ordinalPosition": 15,
       "name": "DOSE_ROUNDING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the AVS insulin injection tables should round Down (first row is 0 units) or round Up (first row is one unit increment).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUp\n\n\nDown"
+      "description": "Indicates if the AVS insulin injection tables should round Down (first row is 0 units) or round Up (first row is one unit increment).",
+      "entries": [
+        "Up",
+        "Down"
+      ]
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "DOSING_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the dosing method used on the insulin injection tables.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCarb Ratio\n\n\nFixed Dose\n\n\nCarb Servings"
+      "description": "Indicates the dosing method used on the insulin injection tables.",
+      "entries": [
+        "Carb Ratio",
+        "Fixed Dose",
+        "Carb Servings"
+      ]
     },
     {
-      "index": 98,
+      "ordinalPosition": 17,
       "name": "MAX_BLOOD_GLUCOSE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Maximum blood glucose, in mg/dL, to display on the AVS insulin injection tables."
     },
     {
-      "index": 103,
+      "ordinalPosition": 18,
       "name": "MAX_CARBOHYDRATES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Maximum carbohydrates to display on the AVS insulin injection tables."
     },
     {
-      "index": 108,
+      "ordinalPosition": 19,
       "name": "GLUC_UNIT_INCREMENT",
       "type": "NUMERIC",
       "discontinued": false,

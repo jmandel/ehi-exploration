@@ -1,83 +1,102 @@
 {
-  "table_name": "REFERRAL_CROSS_ORG",
+  "name": "REFERRAL_CROSS_ORG",
   "description": "This table contains cross-organization referral information.",
-  "primary_key": {
-    "column_name": "REFERRAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the referral record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CROSS_ORG_RFL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track the status of a cross-organization referral.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nAccepted\n\n\nDeclined\n\n\nCancellation Requested\n\n\nSpecialist Visit Completed\n\n\nReferral Completed\n\n\nCanceled"
+      "description": "Track the status of a cross-organization referral.",
+      "entries": [
+        "Created",
+        "Accepted",
+        "Declined",
+        "Cancellation Requested",
+        "Specialist Visit Completed",
+        "Referral Completed",
+        "Canceled"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 4,
       "name": "CROSS_ORG_RFL_ORGANIZATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Store the organization for a cross-organization referral."
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "CROSS_ORG_RFL_ORGANIZATION_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Organization's external name used as the display name on forms and user interfaces."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "CROSS_ORG_RFL_UNIQUE_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the unique ID of a cross-organization referral."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "CROSS_ORG_RFL_ASGN_AUTH_OID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the assigning authority OID of a cross-organization referral."
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "CROSS_ORG_RFL_RSN_CNCL_RQST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reason a cancellation was requested for this referral."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "CROSS_ORG_RFL_INST_UPDATE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Instant the cross-organization status was last updated."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "CROSS_ORG_RFL_INACTIVE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this line of cross organization referral information is inactive due to patient unlinking. 'Y' indicates that the information is not currently active. 'N' or NULL indicates that the information is active.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this line of cross organization referral information is inactive due to patient unlinking. 'Y' indicates that the information is not currently active. 'N' or NULL indicates that the information is active.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 65,
+      "ordinalPosition": 11,
       "name": "CROSS_ORG_RFL_REASON_DECLINE",
       "type": "VARCHAR",
       "discontinued": false,

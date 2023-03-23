@@ -1,69 +1,107 @@
 {
-  "table_name": "BED_BLOCK_EVENTS",
+  "name": "BED_BLOCK_EVENTS",
   "description": "This view contains the details on the various updates made to a bed block, such as adding or removing the block, including who updated the block and when they made that update. The records included in this view are Bed Events (BEV) records that are designated as bed blocks -- that is Event Type (I BEV 150), has a value of 1.",
-  "primary_key": {
-    "column_name": "BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the bed event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category number for the bed event status update.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDirty\n\n\nAssigned\n\n\nIn Progress\n\n\nOn Hold\n\n\nClean\n\n\nDelayed\n\n\nStopped Working\n\n\nAdded\n\n\nRemoved\n\n\nBed Ahead Created\n\n\nBed Ahead Assigned\n\n\nBed Ahead Canceled\n\n\nBed Ahead Resurrected\n\n\nBed Ahead Manual Set\n\n\nBed Type Added\n\n\nBed Type Removed"
+      "description": "The status category number for the bed event status update.",
+      "entries": [
+        "Dirty",
+        "Assigned",
+        "In Progress",
+        "On Hold",
+        "Clean",
+        "Delayed",
+        "Stopped Working",
+        "Added",
+        "Removed",
+        "Bed Ahead Created",
+        "Bed Ahead Assigned",
+        "Bed Ahead Canceled",
+        "Bed Ahead Resurrected",
+        "Bed Ahead Manual Set",
+        "Bed Type Added",
+        "Bed Type Removed"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 4,
       "name": "INSTANT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant that the bed event status update happened."
     },
     {
-      "index": 40,
+      "ordinalPosition": 5,
       "name": "UPD_BY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for the user who entered this bed event status update."
     },
     {
-      "index": 45,
+      "ordinalPosition": 6,
       "name": "UPD_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The update reason category number for this bed event status update.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual\n\n\nIsolation\n\n\nInfection\n\n\nRule\n\n\nEvent Management\n\n\nEnvironmental Services\n\n\nBed Planning\n\n\nSaved Block\n\n\nOverride\n\n\nPatient Left Room\n\n\nDeceased Patient\n\n\nUtility"
+      "description": "The update reason category number for this bed event status update.",
+      "entries": [
+        "Manual",
+        "Isolation",
+        "Infection",
+        "Rule",
+        "Event Management",
+        "Environmental Services",
+        "Bed Planning",
+        "Saved Block",
+        "Override",
+        "Patient Left Room",
+        "Deceased Patient",
+        "Utility"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 7,
       "name": "ASSOC_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the Admission, Transfer, Discharge, or Leave of Absence (ADT) event that is associated with this bed event status update."
     },
     {
-      "index": 69,
+      "ordinalPosition": 8,
       "name": "ASSOC_PEND_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the pending event that is associated with this bed event status update."
     },
     {
-      "index": 74,
+      "ordinalPosition": 9,
       "name": "ASSOC_CLEAN_ID",
       "type": "NUMERIC",
       "discontinued": false,

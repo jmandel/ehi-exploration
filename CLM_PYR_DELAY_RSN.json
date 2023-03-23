@@ -1,45 +1,65 @@
 {
-  "table_name": "CLM_PYR_DELAY_RSN",
+  "name": "CLM_PYR_DELAY_RSN",
   "description": "The payor delay reason code for the claim.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the claim information record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payer which requires a delay reason code for the claim."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DELAY_REASON_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The delay reason code for the claim for the given payer.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProof of Eligibility Unknown or Unavailable\n\n\nLitigation\n\n\nAuthorization Delays\n\n\nDelay in Certifying Provider\n\n\nDelay in Supplying Billing Forms\n\n\nDelay in Delivery of Custom-made Appliances\n\n\nThird-Party Processing Delay\n\n\nDelay in Eligibility Determination\n\n\nOriginal Claim Rejected or Denied Due to a Reason Unrelated to the Billing Limitation\n\n\nAdministration Delay in the Prior Approval Process\n\n\nOther\n\n\nNatural Disaster"
+      "description": "The delay reason code for the claim for the given payer.",
+      "entries": [
+        "Proof of Eligibility Unknown or Unavailable",
+        "Litigation",
+        "Authorization Delays",
+        "Delay in Certifying Provider",
+        "Delay in Supplying Billing Forms",
+        "Delay in Delivery of Custom-made Appliances",
+        "Third-Party Processing Delay",
+        "Delay in Eligibility Determination",
+        "Original Claim Rejected or Denied Due to a Reason Unrelated to the Billing Limitation",
+        "Administration Delay in the Prior Approval Process",
+        "Other",
+        "Natural Disaster"
+      ]
     }
   ]
 }

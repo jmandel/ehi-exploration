@@ -1,34 +1,51 @@
 {
-  "table_name": "CONF_OTHER_COMM",
+  "name": "CONF_OTHER_COMM",
   "description": "This table stores information about the miscellaneous confidential communication devices that can be used to reach the patient. Examples include Mobile, Home Phone, and Work Phone.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONF_COMM_DEVI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The confidential communication device type. Examples include Mobile, Home Phone, and Work Phone.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMobile\n\n\nPager\n\n\nHome Fax\n\n\nOther Fax\n\n\nAssistant\n\n\nTTY\n\n\nHome Phone\n\n\nWork Phone\n\n\nVideo Phone"
+      "description": "The confidential communication device type. Examples include Mobile, Home Phone, and Work Phone.",
+      "entries": [
+        "Mobile",
+        "Pager",
+        "Home Fax",
+        "Other Fax",
+        "Assistant",
+        "TTY",
+        "Home Phone",
+        "Work Phone",
+        "Video Phone"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "CONF_COMM_NUMB",
       "type": "VARCHAR",
       "discontinued": false,

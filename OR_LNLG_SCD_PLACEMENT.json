@@ -1,31 +1,43 @@
 {
-  "table_name": "OR_LNLG_SCD_PLACEMENT",
+  "name": "OR_LNLG_SCD_PLACEMENT",
   "description": "This table contains documentation regarding sequential compression device (SCD) placement.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SCD_PLACEMENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to document when a sequential compression device (SCD) was applied to a patient during or before the perioperative stay.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPrior to Arrival\n\n\nUpon arrival\n\n\nDuring surgery\n\n\nAfter closing"
+      "description": "This item is used to document when a sequential compression device (SCD) was applied to a patient during or before the perioperative stay.",
+      "entries": [
+        "Prior to Arrival",
+        "Upon arrival",
+        "During surgery",
+        "After closing"
+      ]
     }
   ]
 }

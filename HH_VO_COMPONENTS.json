@@ -1,129 +1,157 @@
 {
-  "table_name": "HH_VO_COMPONENTS",
+  "name": "HH_VO_COMPONENTS",
   "description": "This table contains Home Health verbal orders components information. This information is used to track changes made to verbal orders on the Home Health Remote Client.",
-  "primary_key": {
-    "column_name": "VERBAL_ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "VERBAL_ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "VERBAL_ORDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the verbal order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COMPON_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Verbal orders component type.  Links to category table ZC_COMP_TYPE.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nMedication\n\n\nIntervention\n\n\nVisit\n\n\nPlan of Care\n\n\nDME\n\n\nAdmit\n\n\nHospice Plan Of Care\n\n\nCertificate of Terminal Illness\n\n\nHospice Face to Face Attestation\n\n\nHome Health Face to Face Attestation\n\n\nCode Status"
+      "description": "Verbal orders component type.  Links to category table ZC_COMP_TYPE.",
+      "entries": [
+        "Other",
+        "Medication",
+        "Intervention",
+        "Visit",
+        "Plan of Care",
+        "DME",
+        "Admit",
+        "Hospice Plan Of Care",
+        "Certificate of Terminal Illness",
+        "Hospice Face to Face Attestation",
+        "Home Health Face to Face Attestation",
+        "Code Status"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 4,
       "name": "COMPON_OLD_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Old medication verbal order ID.  Links to table ORDER_PROC."
     },
     {
-      "index": 36,
+      "ordinalPosition": 5,
       "name": "COMPON_NEW_MED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "New medication verbal order ID."
     },
     {
-      "index": 41,
+      "ordinalPosition": 6,
       "name": "COMPON_VST_DISC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Verbal order component visit discipline.  Links to category table ZC_COMPON_VST_DISC.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Verbal order component visit discipline.  Links to category table ZC_COMPON_VST_DISC."
     },
     {
-      "index": 47,
+      "ordinalPosition": 7,
       "name": "COMPON_OLD_FREQ",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Verbal order component old visit frequency."
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "COMPON_NEW_FREQ",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Verbal order component new visit frequency."
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "COMPON_NOTES_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Verbal order component note ID."
     },
     {
-      "index": 62,
+      "ordinalPosition": 10,
       "name": "COMPON_CERT_PER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Verbal order component certification period."
     },
     {
-      "index": 67,
+      "ordinalPosition": 11,
       "name": "COMPON_EPS_CARE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Verbal order component episode of care ID.  Links to EPISODE table."
     },
     {
-      "index": 72,
+      "ordinalPosition": 12,
       "name": "COMPON_LINK_COMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Verbal order component linked component.  This item is used to store the link to the components for which this verbal order component is created."
     },
     {
-      "index": 77,
+      "ordinalPosition": 13,
       "name": "COMP_PENDING_FAX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores whether the verbal order component  has been pended.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This item stores whether the verbal order component  has been pended.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 86,
+      "ordinalPosition": 14,
       "name": "COMPON_TAKING_DIFF_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the pointer to the patient taking differently line associated with a Home Health medication verbal order, if it exists."
     },
     {
-      "index": 91,
+      "ordinalPosition": 15,
       "name": "DISCON_MED_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Additional information on why an order's medication is discontinued."
     },
     {
-      "index": 96,
+      "ordinalPosition": 16,
       "name": "MED_AUDIT_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the medication audit trail. This is the line number found in column LINE of AUDIT_ORD_RXNOADD."
     },
     {
-      "index": 101,
+      "ordinalPosition": 17,
       "name": "SUPPL_ORDER_NOT_SENT_ALL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the order has been sent to all the providers who should be notified of changes to the plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether the order has been sent to all the providers who should be notified of changes to the plan of care.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

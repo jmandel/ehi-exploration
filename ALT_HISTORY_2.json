@@ -1,139 +1,161 @@
 {
-  "table_name": "ALT_HISTORY_2",
+  "name": "ALT_HISTORY_2",
   "description": "This table contains general history information for each type of medication warning or advisory. Since each warning could be triggered in different activities at different times, it contains general warning information for each time the warning was triggered. This table is an extension of ALT_HISTORY table.",
-  "primary_key": {
-    "column_name": "ALT_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ALT_CSN_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ALT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the med alert record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ALT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this contact. This number is unique across all alerts in the system."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FILTEROUT_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Save the reason that the medication warning is filtered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPreviously overridden - releasing orders\n\n\nUser Marked To Be Filtered"
+      "description": "Save the reason that the medication warning is filtered.",
+      "entries": [
+        "Previously overridden - releasing orders",
+        "User Marked To Be Filtered"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "TPN_VOL_INFUSED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "It is possible to calculate warnings for total parenteral nutrition (TPN) based on the total volume present in the bag or the volume based upon how much the patient will actually receive. If the volume to be infused to the patient is being calculated, then this item will store the volume to be infused at the time that a TPN alert fired. If the warning is based on the volume in the TPN bag, then this item will not be set."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "CRIT_DOSE_POPUP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not a dose warning was saved from the critical dose warning popup.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether or not a dose warning was saved from the critical dose warning popup.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "HARD_STOP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not a warning is a hard stop.\n\n\n The category values for this column were already listed for column: CRIT_DOSE_POPUP_YN"
+      "description": "Indicates whether or not a warning is a hard stop."
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "DRUGSTUDY_SEVERITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the severity of a drug-study warning that is shown in the medication warnings popup.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInvestigational med interaction\n\n\nPotential study disqualification\n\n\nRisk to investigational medication efficacy"
+      "description": "Stores the severity of a drug-study warning that is shown in the medication warnings popup.",
+      "entries": [
+        "Investigational med interaction",
+        "Potential study disqualification",
+        "Risk to investigational medication efficacy"
+      ]
     },
     {
-      "index": 56,
+      "ordinalPosition": 9,
       "name": "NBA_ACTION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant of an next best action event."
     },
     {
-      "index": 61,
+      "ordinalPosition": 10,
       "name": "NBA_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user correlated with this next best action event."
     },
     {
-      "index": 66,
+      "ordinalPosition": 11,
       "name": "NBA_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The department correlated with this next best action event."
     },
     {
-      "index": 71,
+      "ordinalPosition": 12,
       "name": "NBA_RESULT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result of this next best action event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccepted\n\n\nIn Progress\n\n\nDeferred\n\n\nDeclined\n\n\nViewed"
+      "description": "The result of this next best action event.",
+      "entries": [
+        "Accepted",
+        "In Progress",
+        "Deferred",
+        "Declined",
+        "Viewed"
+      ]
     },
     {
-      "index": 83,
+      "ordinalPosition": 13,
       "name": "NBA_DFR_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The defer reason correlated with this next best action event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The defer reason correlated with this next best action event."
     },
     {
-      "index": 89,
+      "ordinalPosition": 14,
       "name": "NBA_DFR_DAYS_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The defer days correlated with this next best action event."
     },
     {
-      "index": 94,
+      "ordinalPosition": 15,
       "name": "NBA_DEC_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The decline reason correlated with this next best action event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The decline reason correlated with this next best action event."
     },
     {
-      "index": 100,
+      "ordinalPosition": 16,
       "name": "NBA_COMM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The contact correlated with this next best action event."
     },
     {
-      "index": 105,
+      "ordinalPosition": 17,
       "name": "NBA_BUSINESS_SEG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The next best action was performed in this business segment."
     },
     {
-      "index": 110,
+      "ordinalPosition": 18,
       "name": "NBA_ACTION_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of a next best action event in local time."
     },
     {
-      "index": 115,
+      "ordinalPosition": 19,
       "name": "MYC_TICKLER_AUDIT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

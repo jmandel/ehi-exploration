@@ -1,50 +1,56 @@
 {
-  "table_name": "PAT_ENC_CALL_PRPTS",
+  "name": "PAT_ENC_CALL_PRPTS",
   "description": "This table traces the Prompts (LPQ) records followed in the Protocol during clinical calls.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the patient call prompts."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date for the encounter in standard date format."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLICKED_LPQS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the prompt followed during the call."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CLICKED_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who clicked the corresponding prompt in CLICKED_LPQS column"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PROMPT_CLICKED_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Instant when the user in CLICKED_USER_ID clicked the prompt in CLICKED_LPQs column."
     }

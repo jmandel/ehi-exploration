@@ -1,94 +1,131 @@
 {
-  "table_name": "HSP_ACCT_ECDDX_ALT",
+  "name": "HSP_ACCT_ECDDX_ALT",
   "description": "This table contains the hospital account alternate external cause of injury diagnoses from the hospital account (HAR) master file.   Alternate external cause of injury diagnoses will be specified if hospital accounts are coded with two sets of ICD codes.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ECD_DX_ALT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The alternate external cause of injury diagnoses stored in the hospital account."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ECD_DX_ALT_EXCLD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis exclude from clinical reporting data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "The alternate external cause of injury diagnosis exclude from clinical reporting data.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "ECD_DX_ALT_POA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis present on admission data.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown\n\n\nClinically Undetermined\n\n\nExempt from POA reporting"
+      "description": "The alternate external cause of injury diagnosis present on admission data.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown",
+        "Clinically Undetermined",
+        "Exempt from POA reporting"
+      ]
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "ECD_DX_ALT_CC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis complication / comorbidity data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCC\n\n\nNo\n\n\nMCC"
+      "description": "The alternate external cause of injury diagnosis complication / comorbidity data.",
+      "entries": [
+        "CC",
+        "No",
+        "MCC"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 7,
       "name": "ECD_DX_ALT_HAC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis hospital acquired condition data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "The alternate external cause of injury diagnosis hospital acquired condition data.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "ECD_DX_ALT_AFDRG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis affects DRG data.\n\n\n The category values for this column were already listed for column: ECD_DX_ALT_EXCLD_YN"
+      "description": "The alternate external cause of injury diagnosis affects DRG data."
     },
     {
-      "index": 63,
+      "ordinalPosition": 9,
       "name": "ECD_DX_ALT_SOI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis severity of illness data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRefinement not possible\n\n\nMinor\n\n\nModerate\n\n\nMajor\n\n\nExtreme\n\n\nPrincipal Dx Used for SOI/ROM Calc\n\n\nExcluded\n\n\nDuplicate Diagnosis\n\n\nExcluded Complication of Care"
+      "description": "The alternate external cause of injury diagnosis severity of illness data.",
+      "entries": [
+        "Refinement not possible",
+        "Minor",
+        "Moderate",
+        "Major",
+        "Extreme",
+        "Principal Dx Used for SOI/ROM Calc",
+        "Excluded",
+        "Duplicate Diagnosis",
+        "Excluded Complication of Care"
+      ]
     },
     {
-      "index": 79,
+      "ordinalPosition": 10,
       "name": "ECD_DX_ALT_ROM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis risk of mortality data.\n\n\n The category values for this column were already listed for column: ECD_DX_ALT_SOI_C_NAME"
+      "description": "The alternate external cause of injury diagnosis risk of mortality data."
     },
     {
-      "index": 85,
+      "ordinalPosition": 11,
       "name": "ECD_DX_ALT_AFSOI_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis affects severity of illness data.\n\n\n The category values for this column were already listed for column: ECD_DX_ALT_EXCLD_YN"
+      "description": "The alternate external cause of injury diagnosis affects severity of illness data."
     },
     {
-      "index": 91,
+      "ordinalPosition": 12,
       "name": "ECD_DX_ALT_AFROM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate external cause of injury diagnosis affects risk of mortality data.\n\n\n The category values for this column were already listed for column: ECD_DX_ALT_EXCLD_YN"
+      "description": "The alternate external cause of injury diagnosis affects risk of mortality data."
     }
   ]
 }

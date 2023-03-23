@@ -1,45 +1,77 @@
 {
-  "table_name": "UNCONFRM_PAT_INFO",
+  "name": "UNCONFRM_PAT_INFO",
   "description": "This table stores unconfirmed patient tracking information.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "UNCONFRM_PAT_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unconfirmed patient status category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDuplicate Review Needed\n\n\nIdentity Verification Needed\n\n\nPatient Creation in Progress\n\n\nFlagged as Suspicious"
+      "description": "The unconfirmed patient status category ID for the patient.",
+      "entries": [
+        "Duplicate Review Needed",
+        "Identity Verification Needed",
+        "Patient Creation in Progress",
+        "Flagged as Suspicious"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "UNCONFRM_PAT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unconfirmed patient workflow source category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyChart - On My Way\n\n\nMyChart - Unverified Proxy Video Visit\n\n\nWelcome\n\n\nMyChart - Self-Signup\n\n\nMyChart - Open Scheduling\n\n\nMyChart - Symptom Checker\n\n\nUnconfirmed Identity Activity\n\n\nWeb Service\n\n\nMyChart - SAML Login\n\n\nMyChart - Guest Proxy"
+      "description": "The unconfirmed patient workflow source category ID for the patient.",
+      "entries": [
+        "MyChart - On My Way",
+        "MyChart - Unverified Proxy Video Visit",
+        "Welcome",
+        "MyChart - Self-Signup",
+        "MyChart - Open Scheduling",
+        "MyChart - Symptom Checker",
+        "Unconfirmed Identity Activity",
+        "Web Service",
+        "MyChart - SAML Login",
+        "MyChart - Guest Proxy"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 5,
       "name": "UNCONFRM_PAT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unconfirmed patient status reason category ID for the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFake Demographics\n\n\nIdentity Theft\n\n\nNo Identification\n\n\nPatient Not Present\n\n\nPatient Cannot Communicate\n\n\nOther"
+      "description": "The unconfirmed patient status reason category ID for the patient.",
+      "entries": [
+        "Fake Demographics",
+        "Identity Theft",
+        "No Identification",
+        "Patient Not Present",
+        "Patient Cannot Communicate",
+        "Other"
+      ]
     }
   ]
 }

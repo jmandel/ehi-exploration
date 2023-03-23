@@ -1,31 +1,45 @@
 {
-  "table_name": "HSP_ACCT_EBC_VG_RSK",
+  "name": "HSP_ACCT_EBC_VG_RSK",
   "description": "Electronic birth certificate extract -- pregnancy risk factors. This table is a new version of HSP_ACCT_EBC_RSKFC, geared toward the 2003 standard for reporting birth information. This item is based on options allowed in birth information form version G from the state of Hawaii.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RSK_FAC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The other risk factors category ID for Electronic Birth Certificate information.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPrevious preterm birth\n\n\nOther previous poor pregnancy outcome\n\n\nPregnancy resulted from infertility treatment\n\n\nFertility enhancing drugs, Artificial insemination or Intrauterine insemination\n\n\nAssisted reproductive technology (IVF, GIFT)\n\n\nNone"
+      "description": "The other risk factors category ID for Electronic Birth Certificate information.",
+      "entries": [
+        "Previous preterm birth",
+        "Other previous poor pregnancy outcome",
+        "Pregnancy resulted from infertility treatment",
+        "Fertility enhancing drugs, Artificial insemination or Intrauterine insemination",
+        "Assisted reproductive technology (IVF, GIFT)",
+        "None"
+      ]
     }
   ]
 }

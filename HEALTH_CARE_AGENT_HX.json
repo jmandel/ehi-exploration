@@ -1,97 +1,117 @@
 {
-  "table_name": "HEALTH_CARE_AGENT_HX",
+  "name": "HEALTH_CARE_AGENT_HX",
   "description": "This table records a history of HCA (Health Care Agent) status changes documented in SEC_ACP_HEALTH_CARE_AGENTS (LVN 44200). Whenever an agent is activated or deactivated, information about the agent is stored in this table.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACTIVE_STATUS_YN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays a history of health care agent status changes. 1 indicates that the agent was activated. 0 indicates that the agent was deactivated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column displays a history of health care agent status changes. 1 indicates that the agent was activated. 0 indicates that the agent was deactivated.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column displays the user ID (EMP ID) of the user who documented the change of status for the agent."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "UTC_INST_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column displays the UTC instant that the change of status for the agent was documented."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "AGENT_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column displays an ID which uniquely identifies which emergency contact stores info about the agent."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "AGENT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column displays the name of the Health Care Agent."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "RELATIONSHIP_PERSONAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays the personal relationship between the Health Care Agent and the patient at the time of the status change.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This column displays the personal relationship between the Health Care Agent and the patient at the time of the status change."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "RELATIONSHIP_AGENT_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays what type of Health Care Agent relationship existed between the agent and the patient at the time of the status change. (Examples: Health Care Agent, First Alternate Health Care Agent, Second Alternate Health Care Agent.)\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHealth Care Agent\n\n\nFirst Alternate Health Care Agent\n\n\nSecond Alternate Health Care Agent"
+      "description": "This column displays what type of Health Care Agent relationship existed between the agent and the patient at the time of the status change. (Examples: Health Care Agent, First Alternate Health Care Agent, Second Alternate Health Care Agent.)",
+      "entries": [
+        "Health Care Agent",
+        "First Alternate Health Care Agent",
+        "Second Alternate Health Care Agent"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "PHONE_PRIMARY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays the primary or preferred phone number on file for the agent at the time of the status change.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHome phone\n\n\nWork phone\n\n\nMobile phone"
+      "description": "This column displays the primary or preferred phone number on file for the agent at the time of the status change.",
+      "entries": [
+        "Home phone",
+        "Work phone",
+        "Mobile phone"
+      ]
     },
     {
-      "index": 67,
+      "ordinalPosition": 11,
       "name": "PHONE_HOME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column displays the home phone number on file for the agent at the time of the status change."
     },
     {
-      "index": 72,
+      "ordinalPosition": 12,
       "name": "PHONE_WORK",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column displays the work phone number on file for the agent at the time of the status change."
     },
     {
-      "index": 77,
+      "ordinalPosition": 13,
       "name": "PHONE_MOBILE",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,69 +1,118 @@
 {
-  "table_name": "CVG_MA_ERROR_HISTORY",
+  "name": "CVG_MA_ERROR_HISTORY",
   "description": "The history of Medicare Advantage errors that have been removed from a coverage. Each row represents an error that has been resolved. CVG_MA_ERRORS has the errors currently present on coverages.",
-  "primary_key": {
-    "column_name": "COVERAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COVERAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the coverage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MA_ERR_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Medicare Advantage error code that was previously on the coverage\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPart A Not Effective\n\n\nPart B Not Effective\n\n\nPart D Not Effective\n\n\nMember Not Found\n\n\nDeceased\n\n\nDate of Birth Mismatch\n\n\nSex Mismatch\n\n\nFirst Name Mismatch\n\n\nLast Name Mismatch\n\n\nMiddle Name Mismatch\n\n\nIncorrect Part C Premium\n\n\nIncorrect Part D Premium\n\n\nIncorrect Contract\n\n\nIncorrect PBP\n\n\nIncorrect Segment\n\n\nEnrolled According to CMS\n\n\nNot Enrolled According to CMS\n\n\nTermed Prior to Enrollment\n\n\nNot Pending Prior to Enrollment\n\n\nMedicaid Status Flag Mismatch\n\n\nESRD Status Flag Mismatch\n\n\nPart A Entitlement Date Mismatch\n\n\nPart B Entitlement Date Mismatch\n\n\nHospice Status Flag Mismatch\n\n\nLong Term Institutional Status Flag Mismatch\n\n\nEligibility Reason Mismatch\n\n\nPart D Eligibility Date Mismatch\n\n\nApplication Date Outside Election Period\n\n\nMissing Rx Information"
+      "description": "The Medicare Advantage error code that was previously on the coverage",
+      "entries": [
+        "Part A Not Effective",
+        "Part B Not Effective",
+        "Part D Not Effective",
+        "Member Not Found",
+        "Deceased",
+        "Date of Birth Mismatch",
+        "Sex Mismatch",
+        "First Name Mismatch",
+        "Last Name Mismatch",
+        "Middle Name Mismatch",
+        "Incorrect Part C Premium",
+        "Incorrect Part D Premium",
+        "Incorrect Contract",
+        "Incorrect PBP",
+        "Incorrect Segment",
+        "Enrolled According to CMS",
+        "Not Enrolled According to CMS",
+        "Termed Prior to Enrollment",
+        "Not Pending Prior to Enrollment",
+        "Medicaid Status Flag Mismatch",
+        "ESRD Status Flag Mismatch",
+        "Part A Entitlement Date Mismatch",
+        "Part B Entitlement Date Mismatch",
+        "Hospice Status Flag Mismatch",
+        "Long Term Institutional Status Flag Mismatch",
+        "Eligibility Reason Mismatch",
+        "Part D Eligibility Date Mismatch",
+        "Application Date Outside Election Period",
+        "Missing Rx Information"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 4,
       "name": "MA_ERR_DATA",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The data from the CMS file associated with the Medicare Advantage error"
     },
     {
-      "index": 53,
+      "ordinalPosition": 5,
       "name": "MA_ERR_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the error was reported."
     },
     {
-      "index": 58,
+      "ordinalPosition": 6,
       "name": "MA_ERR_CODE_FILE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of CMS file that caused this error to be logged.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBatch Eligibility Query Response\n\n\nMonthly NoRx File\n\n\nMonthly Membership Report\n\n\nFull Enrollment File Data"
+      "description": "The type of CMS file that caused this error to be logged.",
+      "entries": [
+        "Batch Eligibility Query Response",
+        "Monthly NoRx File",
+        "Monthly Membership Report",
+        "Full Enrollment File Data"
+      ]
     },
     {
-      "index": 69,
+      "ordinalPosition": 7,
       "name": "MA_ERR_RESOLUTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason the error was resolved.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nResolved\n\n\nIgnored\n\n\nReplaced\n\n\nBEQ Resubmitted"
+      "description": "The reason the error was resolved.",
+      "entries": [
+        "Resolved",
+        "Ignored",
+        "Replaced",
+        "BEQ Resubmitted"
+      ]
     },
     {
-      "index": 80,
+      "ordinalPosition": 8,
       "name": "MA_ERR_RESOLUTION_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who resolved the error."
     },
     {
-      "index": 85,
+      "ordinalPosition": 9,
       "name": "MA_ERR_RESOLUTION_DATE",
       "type": "DATETIME",
       "discontinued": false,

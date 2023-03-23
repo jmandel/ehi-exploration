@@ -1,41 +1,53 @@
 {
-  "table_name": "OR_LOG_COSTS_CHARGES",
+  "name": "OR_LOG_COSTS_CHARGES",
   "description": "The OR_LOG_COSTS_CHARGES table contains information about costs and charges associated with the procedural log.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the log record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COST_CHARGE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cost and charge type category ID for the procedural log.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSupply Used\n\n\nSupply Wasted\n\n\nImplant Used\n\n\nImplant Wasted"
+      "description": "The cost and charge type category ID for the procedural log.",
+      "entries": [
+        "Supply Used",
+        "Supply Wasted",
+        "Implant Used",
+        "Implant Wasted"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "CASE_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost amount of the associated type for the procedural log."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "CASE_CHARGE",
       "type": "NUMERIC",
       "discontinued": false,

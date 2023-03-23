@@ -1,34 +1,46 @@
 {
-  "table_name": "HSPC_NONCVRD_REQUESTS",
+  "name": "HSPC_NONCVRD_REQUESTS",
   "description": "Requests for a patient's Hospice Non-Covered Documentation.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HSPC_NONCVRD_REQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The hospice non-covered request type category ID for the episode.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Requested During Election Period\n\n\nPatient Requested After Election Period\n\n\nThird Party Provider\n\n\nUpdate To Patient Request"
+      "description": "The hospice non-covered request type category ID for the episode.",
+      "entries": [
+        "Patient Requested During Election Period",
+        "Patient Requested After Election Period",
+        "Third Party Provider",
+        "Update To Patient Request"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "HSPC_NONCVRD_ROI_ID",
       "type": "VARCHAR",
       "discontinued": false,

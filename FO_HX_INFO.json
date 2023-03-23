@@ -1,27 +1,34 @@
 {
-  "table_name": "FO_HX_INFO",
+  "name": "FO_HX_INFO",
   "description": "This table stores the information for each filing order history record.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the Filing Order History record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "Stores the record status (hidden, soft-deleted, etc...)",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,

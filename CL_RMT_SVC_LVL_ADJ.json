@@ -1,55 +1,68 @@
 {
-  "table_name": "CL_RMT_SVC_LVL_ADJ",
+  "name": "CL_RMT_SVC_LVL_ADJ",
   "description": "This table contains the claim adjustment (CAS) level information for a service line of a remittance record.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the results of a query."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CAS_SERVICE_LINE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the service line which this adjustment information refers."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SVC_CAS_GRP_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the Code identifying the general category of payment adjustment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Responsibility\n\n\nContractual Obligation\n\n\nPayor Initiated\n\n\nCorrection and Reversal\n\n\nOther Adjustment"
+      "description": "This is the Code identifying the general category of payment adjustment.",
+      "entries": [
+        "Patient Responsibility",
+        "Contractual Obligation",
+        "Payor Initiated",
+        "Correction and Reversal",
+        "Other Adjustment"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "SVC_ADJ_REASON_CD",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the Code identifying the detailed reason the adjustment was made."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "SVC_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the amount of the adjustment."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "SVC_ADJ_QTY",
       "type": "NUMERIC",
       "discontinued": false,

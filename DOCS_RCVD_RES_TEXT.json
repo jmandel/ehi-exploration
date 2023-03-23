@@ -1,48 +1,68 @@
 {
-  "table_name": "DOCS_RCVD_RES_TEXT",
+  "name": "DOCS_RCVD_RES_TEXT",
   "description": "The DOCS_RCVD_RES_TEXT table contains textual information about a result.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RES_TEXT_KEY_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The key which links the result text with the order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RES_TEXT_COMPILED",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A line of text for the result."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "RES_TEXT_CAT_CMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The internal category identifying what kind of textual information is recorded in this line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nComponent Text\n\n\nResult Impression\n\n\nResult Narrative\n\n\nOther Result Text\n\n\nResult Transcription\n\n\nAddendum\n\n\nResult Comment\n\n\nProcedure Note\n\n\nSpecimen Comment\n\n\nResulting Agency Comment\n\n\nImage Note\n\n\nPathologist Signature"
+      "description": "The internal category identifying what kind of textual information is recorded in this line.",
+      "entries": [
+        "Component Text",
+        "Result Impression",
+        "Result Narrative",
+        "Other Result Text",
+        "Result Transcription",
+        "Addendum",
+        "Result Comment",
+        "Procedure Note",
+        "Specimen Comment",
+        "Resulting Agency Comment",
+        "Image Note",
+        "Pathologist Signature"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 6,
       "name": "RES_TEXT_SUBID_CMP",
       "type": "VARCHAR",
       "discontinued": false,

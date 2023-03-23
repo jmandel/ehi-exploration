@@ -1,38 +1,55 @@
 {
-  "table_name": "OR_CASE_RTF_INSTR",
+  "name": "OR_CASE_RTF_INSTR",
   "description": "This table contains the case instructions information for the surgical case (ORC) record.",
-  "primary_key": {
-    "column_name": "CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CASE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CASE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the procedural case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The Line Count"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "INSTRUCTION_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of instructions on this line.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduling\n\n\nPatient\n\n\nNursing\n\n\nPre-proc Prep\n\n\nPosition"
+      "description": "The type of instructions on this line.",
+      "entries": [
+        "Scheduling",
+        "Patient",
+        "Nursing",
+        "Pre-proc Prep",
+        "Position"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "INSTRXNS_EDITED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Has the instructions record on this line been edited since it was last built?\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Has the instructions record on this line been edited since it was last built?",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

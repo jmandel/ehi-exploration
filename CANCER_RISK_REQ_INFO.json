@@ -1,36 +1,42 @@
 {
-  "table_name": "CANCER_RISK_REQ_INFO",
+  "name": "CANCER_RISK_REQ_INFO",
   "description": "This table contains the externally requested cancer risk scores info for a patient.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SCORE_REQ_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the user who requested cancer risk scores."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SCORE_REQ_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the instant when the user requested the cancer risk scores. This column always stores a UTC instant value with no time zone marker."
     }

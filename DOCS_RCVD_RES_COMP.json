@@ -1,164 +1,201 @@
 {
-  "table_name": "DOCS_RCVD_RES_COMP",
+  "name": "DOCS_RCVD_RES_COMP",
   "description": "The DOCS_RCVD_RES_COMP table contains information about compiled results components.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of received documents."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RES_CMP_KEY_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The key which links the component with the order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RES_COMP_NAME_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text name of the result component."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "RES_CMP_CMP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The internal ID of the component to which this result was mapped. This column links to the CLARITY_LRR table."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RES_CMP_CMP_ID_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the component."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RES_COMP_ABBR_COMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The abbreviation for the result component."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "RES_COMP_GRP_COMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The list of component groups that the component belongs to."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "RES_COMP_LOINC_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The LOINC code identifier for the component."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "RES_VAL_COMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The value for this result (populated if a single-line value)."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "RES_VAL_ST_LINE_CMP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The start line for the result component's value (populated if a multi-line value). The line maps to a line in the DOCS_RCVD_RES_TEXT table."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "RES_VAL_END_LN_CMP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The end line for the result component's value (populated if a multi-line value). The line maps to a line in the DOCS_RCVD_RES_TEXT table."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "RES_COMMENT_COMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment for the result value (populated if a single-line value)."
     },
     {
-      "index": 67,
+      "ordinalPosition": 14,
       "name": "RES_CMT_ST_LINE_CMP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The start line for the result component's comment (populated if a multi-line value). The line maps to a line in the DOCS_RCVD_RES_TEXT table."
     },
     {
-      "index": 72,
+      "ordinalPosition": 15,
       "name": "RES_CMT_END_LN_CMP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The end line for the result component's comment (populated if a multi-line value). The line maps to a line in the DOCS_RCVD_RES_TEXT table."
     },
     {
-      "index": 77,
+      "ordinalPosition": 16,
       "name": "RES_UNIT_COMPILED",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unit of measurement for the result."
     },
     {
-      "index": 82,
+      "ordinalPosition": 17,
       "name": "RES_FLAG_NAME_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text version of the result flag."
     },
     {
-      "index": 87,
+      "ordinalPosition": 18,
       "name": "RES_FLAG_COMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result component flag category ID for the received results.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n(NONE)\n\n\nAbnormal\n\n\nPanic\n\n\nLow\n\n\nHigh\n\n\nLow Panic\n\n\nHigh Panic\n\n\nLow Off-Scale\n\n\nHigh Off-Scale\n\n\nSig Change Up\n\n\nSig Change Down\n\n\nBetter\n\n\nWorse\n\n\nSensitive\n\n\nResistant\n\n\nIntermediate\n\n\nModerately Sensitive\n\n\nVery Sensitive"
+      "description": "The result component flag category ID for the received results.",
+      "entries": [
+        "(NONE)",
+        "Abnormal",
+        "Panic",
+        "Low",
+        "High",
+        "Low Panic",
+        "High Panic",
+        "Low Off-Scale",
+        "High Off-Scale",
+        "Sig Change Up",
+        "Sig Change Down",
+        "Better",
+        "Worse",
+        "Sensitive",
+        "Resistant",
+        "Intermediate",
+        "Moderately Sensitive",
+        "Very Sensitive"
+      ]
     },
     {
-      "index": 112,
+      "ordinalPosition": 19,
       "name": "RES_LOW_RNG_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The low end of the normal range for the result."
     },
     {
-      "index": 117,
+      "ordinalPosition": 20,
       "name": "RES_HIGH_RANGE_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The high end of the normal range for the result."
     },
     {
-      "index": 122,
+      "ordinalPosition": 21,
       "name": "RES_NORMAL_CMP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The normal range for the result."
     },
     {
-      "index": 127,
+      "ordinalPosition": 22,
       "name": "RES_COMP_STAT_CMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result component status category ID for the received results.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAborted\n\n\nActive\n\n\nCancelled\n\n\nCompleted\n\n\nHeld\n\n\nNew\n\n\nSuspended\n\n\nNullified\n\n\nObsolete"
+      "description": "The result component status category ID for the received results.",
+      "entries": [
+        "Aborted",
+        "Active",
+        "Cancelled",
+        "Completed",
+        "Held",
+        "New",
+        "Suspended",
+        "Nullified",
+        "Obsolete"
+      ]
     }
   ]
 }

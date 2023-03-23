@@ -1,118 +1,125 @@
 {
-  "table_name": "ENROLL_INFO",
+  "name": "ENROLL_INFO",
   "description": "The ENROLL_INFO table contains information about patient enrollments in research studies, including status, alias, start and end dates, and last modified user and instant.",
-  "primary_key": {
-    "column_name": "ENROLL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ENROLL_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the patient-study association record for this row. This column is frequently used to link to the ENROLL_INFO table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status, such as hidden or soft-deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status, such as hidden or soft-deleted.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "RESEARCH_STUDY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique ID of the associated Research Study record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique ID of the associated Patient record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "ENROLL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Status category number of the patient's enrollment in the study.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Status category number of the patient's enrollment in the study."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "STUDY_ALIAS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Patient's alias for the study enrollment."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "ENROLL_START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Start date of the patient's enrollment in the study."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "ENROLL_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "End date of the patient's enrollment in the study."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "ENROLL_CMT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number for comments/notes associated with the enrollment."
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "LAST_MOD_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Instant the enrollment information was last modified."
     },
     {
-      "index": 58,
+      "ordinalPosition": 11,
       "name": "LAST_MOD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who modified the enrollment information last."
     },
     {
-      "index": 63,
+      "ordinalPosition": 12,
       "name": "STUDY_BRANCH_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "For a patient enrolled in a research study that has multiple branches (or arms), this item stores the ID of the specific branch of that study to which the patient is assigned."
     },
     {
-      "index": 68,
+      "ordinalPosition": 13,
       "name": "MYC_APPROVING_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Either the user who was asked to approve this MyChart recruitment request if it is still awaiting approval, or the one who did approve or decline the request."
     },
     {
-      "index": 73,
+      "ordinalPosition": 14,
       "name": "ADVERSE_EVENT_REVIEW_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time of last review for the adverse events for this study association."
     },
     {
-      "index": 78,
+      "ordinalPosition": 15,
       "name": "ADVERSE_EVENT_REVIEW_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the last reviewing user for the adverse events for this study association."
     },
     {
-      "index": 83,
+      "ordinalPosition": 16,
       "name": "RECRUITMENT_QUESR_ANSWER_ID",
       "type": "VARCHAR",
       "discontinued": false,

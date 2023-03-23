@@ -1,461 +1,533 @@
 {
-  "table_name": "V_AP_CLAIM_CHANGE_HX_DTL",
+  "name": "V_AP_CLAIM_CHANGE_HX_DTL",
   "description": "Contains detailed information about changes made to an AP claim.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the accounts payable claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Change History Action category ID for the claim record. Indicates the item changed on the claim (i.e. workflow, workflow other status, etc.).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage Selection for Crossover\n\n\nDownstream Crossover Claim\n\n\nPossible Duplicate Warning\n\n\nClaim Restoration\n\n\nReferring Provider\n\n\nAttachment\n\n\nMC Claims Workflow\n\n\nProvider\n\n\nPlace of Service\n\n\nOperating Provider\n\n\nOther Provider\n\n\nAttending Provider\n\n\nRendering Provider\n\n\nSupervising Provider\n\n\nVendor\n\n\nCoverage Selection\n\n\nOwning Business Segment\n\n\nReferrals\n\n\nFrozen Status Change\n\n\nClaim Specialty\n\n\nStatus Change\n\n\nAP Status Change\n\n\nClaim EOB Code\n\n\nNetwork Override\n\n\nService Change\n\n\nWorkflow Other Status\n\n\nWorkflow Print Status\n\n\nIs Clinically Invalid Claim?\n\n\nOverride Is Clinically Invalid Claim?\n\n\nTrait 1 Evaluation\n\n\nTrait 2 Evaluation\n\n\nTrait 3 Evaluation\n\n\nTrait 4 Evaluation\n\n\nTrait 5 Evaluation\n\n\nUpstream Crossover Claim\n\n\nOriginal Claim for this Reversal Claim\n\n\nOriginal Claim for this Corrected Claim\n\n\nOriginal Claim for this Adjustment Claim\n\n\nThird-Party Pricer\n\n\nHeld for AP Reasons Change\n\n\nModifiers\n\n\nAssoc Diags\n\n\nService Line EOB Codes\n\n\nPOS Type\n\n\nRevenue Code\n\n\nDRG Code\n\n\nService Line Billed\n\n\nPayer Initiated Reduction\n\n\nPrimary Insurance Amount\n\n\nPrimary Patient Portion\n\n\nOverride Allowed Amount Reason\n\n\nOverride Disallowed Amount Reason\n\n\nNDC Code\n\n\nNDC Quantity\n\n\nNDC Units\n\n\nNDC Prescription Number\n\n\nNDC Link Sequence Number\n\n\nNDC Section 340B\n\n\nService Code\n\n\nQuantity\n\n\nService From Date\n\n\nService To Date\n\n\nType Of Service\n\n\nExternal System Action"
+      "description": "The Change History Action category ID for the claim record. Indicates the item changed on the claim (i.e. workflow, workflow other status, etc.).",
+      "entries": [
+        "Coverage Selection for Crossover",
+        "Downstream Crossover Claim",
+        "Possible Duplicate Warning",
+        "Claim Restoration",
+        "Referring Provider",
+        "Attachment",
+        "MC Claims Workflow",
+        "Provider",
+        "Place of Service",
+        "Operating Provider",
+        "Other Provider",
+        "Attending Provider",
+        "Rendering Provider",
+        "Supervising Provider",
+        "Vendor",
+        "Coverage Selection",
+        "Owning Business Segment",
+        "Referrals",
+        "Frozen Status Change",
+        "Claim Specialty",
+        "Status Change",
+        "AP Status Change",
+        "Claim EOB Code",
+        "Network Override",
+        "Service Change",
+        "Workflow Other Status",
+        "Workflow Print Status",
+        "Is Clinically Invalid Claim?",
+        "Override Is Clinically Invalid Claim?",
+        "Trait 1 Evaluation",
+        "Trait 2 Evaluation",
+        "Trait 3 Evaluation",
+        "Trait 4 Evaluation",
+        "Trait 5 Evaluation",
+        "Upstream Crossover Claim",
+        "Original Claim for this Reversal Claim",
+        "Original Claim for this Corrected Claim",
+        "Original Claim for this Adjustment Claim",
+        "Third-Party Pricer",
+        "Held for AP Reasons Change",
+        "Modifiers",
+        "Assoc Diags",
+        "Service Line EOB Codes",
+        "POS Type",
+        "Revenue Code",
+        "DRG Code",
+        "Service Line Billed",
+        "Payer Initiated Reduction",
+        "Primary Insurance Amount",
+        "Primary Patient Portion",
+        "Override Allowed Amount Reason",
+        "Override Disallowed Amount Reason",
+        "NDC Code",
+        "NDC Quantity",
+        "NDC Units",
+        "NDC Prescription Number",
+        "NDC Link Sequence Number",
+        "NDC Section 340B",
+        "Service Code",
+        "Quantity",
+        "Service From Date",
+        "Service To Date",
+        "Type Of Service",
+        "External System Action"
+      ]
     },
     {
-      "index": 83,
+      "ordinalPosition": 4,
       "name": "PREV_VAL_RAW",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The value of the item before the change was made to the claim. IDs are not translated, so if Intraconnect is used, mapping to CIDs is necessary."
     },
     {
-      "index": 88,
+      "ordinalPosition": 5,
       "name": "NEW_VAL_RAW",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The value of the item after the change was made to the claim. IDs are not translated, so if Intraconnect is used, mapping to CIDs is necessary."
     },
     {
-      "index": 93,
+      "ordinalPosition": 6,
       "name": "PREV_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The claim ID stored in the the item before the change was made to the claim. This column only contains data for items that store claim IDs."
     },
     {
-      "index": 98,
+      "ordinalPosition": 7,
       "name": "NEW_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The claim ID stored in the the item after the change was made to the claim. This column only contains data for items that store claim IDs."
     },
     {
-      "index": 103,
+      "ordinalPosition": 8,
       "name": "PREV_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider ID stored in the the item before the change was made to the claim. This column only contains data for items that store provider IDs."
     },
     {
-      "index": 108,
+      "ordinalPosition": 9,
       "name": "NEW_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider ID stored in the the item after the change was made to the claim. This column only contains data for items that store provider IDs."
     },
     {
-      "index": 113,
+      "ordinalPosition": 10,
       "name": "PREV_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The place of service ID stored in the item before the change was made to the claim. This column only contains data for items that store place of service IDs."
     },
     {
-      "index": 118,
+      "ordinalPosition": 11,
       "name": "NEW_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The place of service ID stored in the item after the change was made to the claim. This column only contains data for items that store place of service IDs."
     },
     {
-      "index": 123,
+      "ordinalPosition": 12,
       "name": "PREV_VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vendor ID stored in the item before the change was made to the claim. This column only contains data for items that store vendor IDs."
     },
     {
-      "index": 128,
+      "ordinalPosition": 13,
       "name": "PREV_VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 133,
+      "ordinalPosition": 14,
       "name": "NEW_VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vendor ID stored in the item after the change was made to the claim. This column only contains data for items that store vendor IDs."
     },
     {
-      "index": 138,
+      "ordinalPosition": 15,
       "name": "NEW_VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 143,
+      "ordinalPosition": 16,
       "name": "PREV_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage ID stored in the item before the change was made to the claim. This column only contains data for items that store coverage IDs."
     },
     {
-      "index": 148,
+      "ordinalPosition": 17,
       "name": "NEW_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage ID stored in the item after the change was made to the claim. This column only contains data for items that store coverage IDs."
     },
     {
-      "index": 153,
+      "ordinalPosition": 18,
       "name": "PREV_REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The referral ID stored in the item before the change was made to the claim. This column only contains data for items that store referral IDs."
     },
     {
-      "index": 158,
+      "ordinalPosition": 19,
       "name": "NEW_REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The referral ID stored in the item after the change was made to the claim. This column only contains data for items that store referral IDs."
     },
     {
-      "index": 163,
+      "ordinalPosition": 20,
       "name": "PREV_RUL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The third party pricing rule, entity or grouper ID stored in the item before the change was made to the claim. This column only contains data for items that store third party pricing rule, entity or grouper IDs."
     },
     {
-      "index": 168,
+      "ordinalPosition": 21,
       "name": "PREV_RUL_ID_RUL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the third-party pricing entity, grouper, or rule."
     },
     {
-      "index": 173,
+      "ordinalPosition": 22,
       "name": "NEW_RUL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The third party pricing rule, entity or grouper ID stored in the item after the change was made to the claim. This column only contains data for items that store third party pricing rule, entity or grouper IDs."
     },
     {
-      "index": 178,
+      "ordinalPosition": 23,
       "name": "NEW_RUL_ID_RUL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the third-party pricing entity, grouper, or rule."
     },
     {
-      "index": 183,
+      "ordinalPosition": 24,
       "name": "PREV_FRZN_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the frozen status stored in the item before the change was made to the claim. This column only contains data for items that store frozen status category IDs."
     },
     {
-      "index": 188,
+      "ordinalPosition": 25,
       "name": "NEW_FRZN_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the frozen status stored in the item after the change was made to the claim. This column only contains data for items that store frozen status category IDs."
     },
     {
-      "index": 193,
+      "ordinalPosition": 26,
       "name": "PREV_CLM_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the claim status stored in the item before the change was made to the claim. This column only contains data for items that store claim status category IDs."
     },
     {
-      "index": 198,
+      "ordinalPosition": 27,
       "name": "NEW_CLM_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the claim status stored in the item after the change was made to the claim. This column only contains data for items that store claim status category IDs."
     },
     {
-      "index": 203,
+      "ordinalPosition": 28,
       "name": "PREV_AP_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the AP status stored in the item before the change was made to the claim. This column only contains data for items that store AP status category IDs."
     },
     {
-      "index": 208,
+      "ordinalPosition": 29,
       "name": "NEW_AP_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the AP status stored in the item after the change was made to the claim. This column only contains data for items that store AP status category IDs."
     },
     {
-      "index": 213,
+      "ordinalPosition": 30,
       "name": "PREV_WKFLW_OTHER_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the workflow other status stored in the item before the change was made to the claim. This column only contains data for items that store workflow other status category IDs."
     },
     {
-      "index": 218,
+      "ordinalPosition": 31,
       "name": "NEW_WKFLW_OTHER_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the workflow other status stored in the item after the change was made to the claim. This column only contains data for items that store workflow other status category IDs."
     },
     {
-      "index": 223,
+      "ordinalPosition": 32,
       "name": "PREV_WKFLW_PRINT_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the workflow print status stored in the item before the change was made to the claim. This column only contains data for items that store workflow print status category IDs."
     },
     {
-      "index": 228,
+      "ordinalPosition": 33,
       "name": "NEW_WKFLW_PRINT_STATUS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the workflow print status stored in the item after the change was made to the claim. This column only contains data for items that store workflow print status category IDs."
     },
     {
-      "index": 233,
+      "ordinalPosition": 34,
       "name": "PREV_CLAIM_TRAIT_1_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the first claim trait stored in the item before the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 238,
+      "ordinalPosition": 35,
       "name": "NEW_CLAIM_TRAIT_1_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the first claim trait stored in the item after the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 243,
+      "ordinalPosition": 36,
       "name": "PREV_CLAIM_TRAIT_2_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the second claim trait stored in the item before the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 248,
+      "ordinalPosition": 37,
       "name": "NEW_CLAIM_TRAIT_2_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the second claim trait stored in the item after the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 253,
+      "ordinalPosition": 38,
       "name": "PREV_CLAIM_TRAIT_3_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the third claim trait stored in the item before the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 258,
+      "ordinalPosition": 39,
       "name": "NEW_CLAIM_TRAIT_3_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the third claim trait stored in the item after the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 263,
+      "ordinalPosition": 40,
       "name": "PREV_CLAIM_TRAIT_4_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the fourth claim trait stored in the item before the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 268,
+      "ordinalPosition": 41,
       "name": "NEW_CLAIM_TRAIT_4_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the fourth claim trait stored in the item after the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 273,
+      "ordinalPosition": 42,
       "name": "PREV_CLAIM_TRAIT_5_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the fifth claim trait stored in the item before the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 278,
+      "ordinalPosition": 43,
       "name": "NEW_CLAIM_TRAIT_5_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the fifth claim trait stored in the item after the change was made to the claim. This column only contains data for items that store claim trait category IDs."
     },
     {
-      "index": 283,
+      "ordinalPosition": 44,
       "name": "PREV_HELD_FOR_AP_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the held for AP reason stored in the item before the change was made to the claim. This column only contains data for items that store held for AP reason category IDs."
     },
     {
-      "index": 288,
+      "ordinalPosition": 45,
       "name": "NEW_HELD_FOR_AP_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the held for AP reason stored in the item after the change was made to the claim. This column only contains data for items that store held for AP reason category IDs."
     },
     {
-      "index": 293,
+      "ordinalPosition": 46,
       "name": "PREV_POS_TYPE_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the place of service type stored in the item before the change was made to the claim. This column only contains data for items that store place of service type category IDs."
     },
     {
-      "index": 298,
+      "ordinalPosition": 47,
       "name": "NEW_POS_TYPE_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the place of service type stored in the item after the change was made to the claim. This column only contains data for items that store place of service type category IDs."
     },
     {
-      "index": 303,
+      "ordinalPosition": 48,
       "name": "PREV_CLAIM_SPEC_C",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category ID of the claim specialty stored in the item before the change was made to the claim. This column only contains data for items that store claim specialty category IDs."
     },
     {
-      "index": 308,
+      "ordinalPosition": 49,
       "name": "NEW_CLAIM_SPEC_C",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category ID of the claim specialty stored in the item after the change was made to the claim. This column only contains data for items that store claim specialty category IDs."
     },
     {
-      "index": 313,
+      "ordinalPosition": 50,
       "name": "PREV_OVRIDE_DISALW_AMT_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the override disallow amount reason stored in the item before the change was made to the claim. This column only contains data for items that store override disallow amount reason category IDs."
     },
     {
-      "index": 318,
+      "ordinalPosition": 51,
       "name": "NEW_OVRIDE_DISALW_AMT_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the override disallow amount reason stored in the item after the change was made to the claim. This column only contains data for items that store override disallow amount reason category IDs."
     },
     {
-      "index": 323,
+      "ordinalPosition": 52,
       "name": "PREV_OVRIDE_ALLOW_AMT_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the override allow amount reason stored in the item before the change was made to the claim. This column only contains data for items that store override allow amount reason category IDs."
     },
     {
-      "index": 328,
+      "ordinalPosition": 53,
       "name": "NEW_OVRIDE_ALLOW_AMT_RSN_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the override allow amount reason stored in the item after the change was made to the claim. This column only contains data for items that store override allow amount reason category IDs."
     },
     {
-      "index": 333,
+      "ordinalPosition": 54,
       "name": "PREV_TYPE_OF_SERVICE_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the type of service stored in the item before the change was made to the claim. This column only contains data for items that store type of service category IDs."
     },
     {
-      "index": 338,
+      "ordinalPosition": 55,
       "name": "NEW_TYPE_OF_SERVICE_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the type of service stored in the item after the change was made to the claim. This column only contains data for items that store type of service category IDs."
     },
     {
-      "index": 343,
+      "ordinalPosition": 56,
       "name": "PREV_WORKFLOW_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the claim workflow stored in the item before the change was made to the claim. This column only contains data for items that store claim workflow category IDs."
     },
     {
-      "index": 348,
+      "ordinalPosition": 57,
       "name": "NEW_WORKFLOW_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the claim workflow stored in the item after the change was made to the claim. This column only contains data for items that store claim workflow category IDs."
     },
     {
-      "index": 353,
+      "ordinalPosition": 58,
       "name": "PREV_VAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Yes/No value stored in the item before the change was made to the claim. This column only contains data for items that store Yes/No values."
     },
     {
-      "index": 358,
+      "ordinalPosition": 59,
       "name": "NEW_VAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Yes/No value stored in the item after the change was made to the claim. This column only contains data for items that store Yes/No values."
     },
     {
-      "index": 363,
+      "ordinalPosition": 60,
       "name": "PREV_NDC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The NDC code ID stored in the item before the change was made to the claim. This column only contains data for items that store NDC code IDs."
     },
     {
-      "index": 368,
+      "ordinalPosition": 61,
       "name": "PREV_NDC_ID_NDC_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
     },
     {
-      "index": 373,
+      "ordinalPosition": 62,
       "name": "NEW_NDC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The NDC code ID stored in the item after the change was made to the claim. This column only contains data for items that store NDC code IDs."
     },
     {
-      "index": 378,
+      "ordinalPosition": 63,
       "name": "NEW_NDC_ID_NDC_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
     },
     {
-      "index": 383,
+      "ordinalPosition": 64,
       "name": "PREV_NDC_UNITS_C",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The category ID of the NDC Units before the change was made to the claim. This column only contains data for items that store NDC Units category IDs."
     },
     {
-      "index": 388,
+      "ordinalPosition": 65,
       "name": "NEW_NDC_UNITS_C",
       "type": "INTEGER",
       "discontinued": false,

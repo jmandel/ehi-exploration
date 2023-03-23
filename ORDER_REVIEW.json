@@ -1,45 +1,55 @@
 {
-  "table_name": "ORDER_REVIEW",
+  "name": "ORDER_REVIEW",
   "description": "This table contains a list of all the users that have reviewed the order and whether that review was accepted or not.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for this table is determined by the number of users who reviewed this order."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REVIEW_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that reviewed the order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "REVIEWED_TIME",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time when the order was reviewed."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "REVIEW_ACCEPTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains Y/N to determine if the reviewer accepted the order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This column contains Y/N to determine if the reviewer accepted the order.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     }
   ]
 }

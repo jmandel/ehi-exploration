@@ -1,57 +1,72 @@
 {
-  "table_name": "FIN_ASST_INFO",
+  "name": "FIN_ASST_INFO",
   "description": "This table contains financial assistance information from the Hospital Accounts Receivable (HAR) master file.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FIN_ASST_TRACKER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the financial assistance tracker associated with the hospital account."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "FIN_ASST_EXCL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if the hospital account is not eligible for financial assistance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Stores if the hospital account is not eligible for financial assistance.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "FIN_ASST_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the source of the financial assistance information on the hospital account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nSystem\n\n\nCharge Router Handler"
+      "description": "Stores the source of the financial assistance information on the hospital account.",
+      "entries": [
+        "User",
+        "System",
+        "Charge Router Handler"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "FIN_ASST_UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who last updated the financial assistance tracker on the hospital account."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "FIN_ASST_UPDATE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant at which the user updated the financial assistance tracker on the hospital account."
     }

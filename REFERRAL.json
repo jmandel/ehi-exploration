@@ -1,720 +1,799 @@
 {
-  "table_name": "REFERRAL",
+  "name": "REFERRAL",
   "description": "The REFERRAL table is the primary table for referral information stored in system.",
-  "primary_key": {
-    "column_name": "REFERRAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the referral in database. This is the primary key for the REFERRAL table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "EXTERNAL_ID_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external identification number used on the referral."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the patient associated with the referral."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PCP_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient's primary care provider at the time the referral was created."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ENTRY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the referral was entered."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RFL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value representing the status of the referral (I.e. authorized, open, pending, etc.).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAuthorized\n\n\nOpen\n\n\nPending Review\n\n\nCanceled\n\n\nDenied\n\n\nClosed\n\n\nNew Request\n\n\nIncomplete"
+      "description": "The category value representing the status of the referral (I.e. authorized, open, pending, etc.).",
+      "entries": [
+        "Authorized",
+        "Open",
+        "Pending Review",
+        "Canceled",
+        "Denied",
+        "Closed",
+        "New Request",
+        "Incomplete"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "REFERRING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the referral source (REF) record of the provider who made the referral. This column is frequently used to link to the REFERRAL_SOURCE table. The actual provider (SER) ID can be found in column REF_PROVIDER_ID of table REFERRAL_SOURCE."
     },
     {
-      "index": 47,
+      "ordinalPosition": 8,
       "name": "REFERRING_PROV_ID_REFERRING_PROV_NAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the referral source."
     },
     {
-      "index": 52,
+      "ordinalPosition": 9,
       "name": "VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the vendor associated with the referral."
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "REFERRAL_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the provider (SER) being referred to. This column is frequently used to link to the CLARITY_SER table."
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "PROV_SPEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the provider specialty being referred to.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value indicating the provider specialty being referred to."
     },
     {
-      "index": 73,
+      "ordinalPosition": 13,
       "name": "RFL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the type of referral.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value indicating the type of referral."
     },
     {
-      "index": 79,
+      "ordinalPosition": 14,
       "name": "RSN_FOR_RFL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the main (first) reason for the referral.   Since multiple reasons can be listed, use table REFERRAL_REASONS to view all of them.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value indicating the main (first) reason for the referral.   Since multiple reasons can be listed, use table REFERRAL_REASONS to view all of them."
     },
     {
-      "index": 85,
+      "ordinalPosition": 15,
       "name": "RFL_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the class of the referral.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInternal\n\n\nIncoming\n\n\nOutgoing"
+      "description": "The category value indicating the class of the referral.",
+      "entries": [
+        "Internal",
+        "Incoming",
+        "Outgoing"
+      ]
     },
     {
-      "index": 95,
+      "ordinalPosition": 16,
       "name": "AUTH_VIS_PERIOD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of authorized visits in each visit period."
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "AUTH_PERIOD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the type of period for authorized visits - i.e. hour, day, week, month, year.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHour\n\n\nDay\n\n\nWeek\n\n\nMonth\n\n\nYear"
+      "description": "The category value indicating the type of period for authorized visits - i.e. hour, day, week, month, year.",
+      "entries": [
+        "Hour",
+        "Day",
+        "Week",
+        "Month",
+        "Year"
+      ]
     },
     {
-      "index": 112,
+      "ordinalPosition": 18,
       "name": "AUTH_NUM_PERIODS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of periods authorized for this referral."
     },
     {
-      "index": 117,
+      "ordinalPosition": 19,
       "name": "AUTH_NUM_OF_VISITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of visits authorized for this referral."
     },
     {
-      "index": 122,
+      "ordinalPosition": 20,
       "name": "ADMISSION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The admission date associated with the referral."
     },
     {
-      "index": 127,
+      "ordinalPosition": 21,
       "name": "DISCHARGE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The discharge date associated with the referral."
     },
     {
-      "index": 132,
+      "ordinalPosition": 22,
       "name": "ESTIMATED_DAYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The authorized length of stay if the patient is being admitted."
     },
     {
-      "index": 137,
+      "ordinalPosition": 23,
       "name": "START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The start date of the referral."
     },
     {
-      "index": 142,
+      "ordinalPosition": 24,
       "name": "EXP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The expiration date of the referral."
     },
     {
-      "index": 147,
+      "ordinalPosition": 25,
       "name": "PEND_TO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The person or pool to whom an In Basket message should be sent about this referral."
     },
     {
-      "index": 152,
+      "ordinalPosition": 26,
       "name": "PEND_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "For pended referrals, the category value indicating the reason for pending.\n\n\nMay contain organization-specific values: Yes"
+      "description": "For pended referrals, the category value indicating the reason for pending."
     },
     {
-      "index": 158,
+      "ordinalPosition": 27,
       "name": "DENY_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "For denied referrals, the category value indicating the reason for denial.\n\n\nMay contain organization-specific values: Yes"
+      "description": "For denied referrals, the category value indicating the reason for denial."
     },
     {
-      "index": 164,
+      "ordinalPosition": 28,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the service area associated with the referral."
     },
     {
-      "index": 169,
+      "ordinalPosition": 29,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the coverage associated with the referral."
     },
     {
-      "index": 174,
+      "ordinalPosition": 30,
       "name": "NUM_PROC",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of procedures associated with the referral."
     },
     {
-      "index": 179,
+      "ordinalPosition": 31,
       "name": "SVC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "If available, this column is populated by the authorized start date (I RFL 85). If not, it is populated by the expiration date on the referral (I RFL 90). If neither of these are available, the column will be empty. The date in this column is based on days since December 31, 1840."
     },
     {
-      "index": 184,
+      "ordinalPosition": 32,
       "name": "CARRIER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the carrier associated with the referral."
     },
     {
-      "index": 189,
+      "ordinalPosition": 33,
       "name": "CARRIER_ID_CARRIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the carrier record."
     },
     {
-      "index": 194,
+      "ordinalPosition": 34,
       "name": "PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the payor associated with the referral."
     },
     {
-      "index": 199,
+      "ordinalPosition": 35,
       "name": "PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 204,
+      "ordinalPosition": 36,
       "name": "PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the plan associated with the referral."
     },
     {
-      "index": 209,
+      "ordinalPosition": 37,
       "name": "PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 214,
+      "ordinalPosition": 38,
       "name": "SERV_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This column is populated by the authorized start date (I RFL 85) if available. If not, it is populated by the expiration date on the referral (I RFL 90). If neither of these are available, the column will be empty. The date in this column is in MM/DD/YYYY format."
     },
     {
-      "index": 219,
+      "ordinalPosition": 39,
       "name": "RETRO_FLAG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value used to mark a referral as being \"Retro\" entered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "The category value used to mark a referral as being \"Retro\" entered.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 228,
+      "ordinalPosition": 40,
       "name": "IBNR",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The \"Incurred but not reported\" amount associated with this referral."
     },
     {
-      "index": 233,
+      "ordinalPosition": 41,
       "name": "AUTO_APPROVED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the referral was approved automatically by the system."
     },
     {
-      "index": 238,
+      "ordinalPosition": 42,
       "name": "AUTH_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the authorization reason associated with the referral.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value indicating the authorization reason associated with the referral."
     },
     {
-      "index": 244,
+      "ordinalPosition": 43,
       "name": "REFD_BY_LOC_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the place of service the referral was referred from."
     },
     {
-      "index": 249,
+      "ordinalPosition": 44,
       "name": "REFD_TO_LOC_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the place of service the referral was referred to."
     },
     {
-      "index": 254,
+      "ordinalPosition": 45,
       "name": "REFD_TO_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the department the referral was referred to."
     },
     {
-      "index": 259,
+      "ordinalPosition": 46,
       "name": "REFD_TO_SPEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the specialty the department was referred to.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value indicating the specialty the department was referred to."
     },
     {
-      "index": 265,
+      "ordinalPosition": 47,
       "name": "PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating the priority of the referral.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRoutine\n\n\nUrgent\n\n\nEmergency\n\n\nElective\n\n\nTwo Week Wait\n\n\nSee Details"
+      "description": "The category value indicating the priority of the referral.",
+      "entries": [
+        "Routine",
+        "Urgent",
+        "Emergency",
+        "Elective",
+        "Two Week Wait",
+        "See Details"
+      ]
     },
     {
-      "index": 278,
+      "ordinalPosition": 48,
       "name": "TOTAL_PRICE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total cost of the procedures authorized under the referral."
     },
     {
-      "index": 283,
+      "ordinalPosition": 49,
       "name": "TOTAL_PAYABLE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The portion of the total price for which your facility is responsible."
     },
     {
-      "index": 288,
+      "ordinalPosition": 50,
       "name": "PATIENT_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total patient liability, under the parameters of the primary coverage used, for the procedures authorized under the referral."
     },
     {
-      "index": 293,
+      "ordinalPosition": 51,
       "name": "EXPECT_TO_PAY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount you expect your facility will pay for the procedures authorized under the referral. This amount entered by you overrides the total payable amount for the purpose of calculating IBNR."
     },
     {
-      "index": 298,
+      "ordinalPosition": 52,
       "name": "IBNR_PAY_UNTIL_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date up to which your facility will pay claims for the procedures approved on this referral."
     },
     {
-      "index": 303,
+      "ordinalPosition": 53,
       "name": "CASE_RATE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating whether this referral involves services that are reimbursed at a specific case rate.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "The category value indicating whether this referral involves services that are reimbursed at a specific case rate.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 312,
+      "ordinalPosition": 54,
       "name": "PRIM_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the member's primary location at the time the referral was entered."
     },
     {
-      "index": 317,
+      "ordinalPosition": 55,
       "name": "MED_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating what type of confirmation it is - acute, chronic or PAT.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAcute\n\n\nChronic\n\n\nPAT"
+      "description": "The category value indicating what type of confirmation it is - acute, chronic or PAT.",
+      "entries": [
+        "Acute",
+        "Chronic",
+        "PAT"
+      ]
     },
     {
-      "index": 327,
+      "ordinalPosition": 56,
       "name": "ACUTE_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of the confirmation if the confirmation is acute."
     },
     {
-      "index": 332,
+      "ordinalPosition": 57,
       "name": "CHRONIC_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of the confirmation if the confirmation is chronic."
     },
     {
-      "index": 337,
+      "ordinalPosition": 58,
       "name": "PAT_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of the confirmation if the confirmation is an acute medication that was suggested by the pharmacist or over-the-counter medication."
     },
     {
-      "index": 342,
+      "ordinalPosition": 59,
       "name": "RFL_LOB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the Line of Business (LOB) assigned to the referral."
     },
     {
-      "index": 347,
+      "ordinalPosition": 60,
       "name": "RFL_LOB_ID_LOB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the line of business record."
     },
     {
-      "index": 352,
+      "ordinalPosition": 61,
       "name": "ACTUAL_NUM_VISITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The actual number of completed visits for this referral."
     },
     {
-      "index": 357,
+      "ordinalPosition": 62,
       "name": "SCHED_NUM_VISITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of visits scheduled for this referral."
     },
     {
-      "index": 362,
+      "ordinalPosition": 63,
       "name": "REQUEST_NUM_VISITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of visits requested for this referral."
     },
     {
-      "index": 367,
+      "ordinalPosition": 64,
       "name": "GUIDELINE_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Guideline days for this referral."
     },
     {
-      "index": 372,
+      "ordinalPosition": 65,
       "name": "OVRD_ADMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Override admit date for this referral."
     },
     {
-      "index": 377,
+      "ordinalPosition": 66,
       "name": "OVRD_DISCHARGE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Override discharge date for this referral."
     },
     {
-      "index": 382,
+      "ordinalPosition": 67,
       "name": "DISP_VAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the referral was accepted (\"appointed\") or refused (\"denied\") by the referred-to provider, department or facility.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAppointed\n\n\nDenied"
+      "description": "Whether the referral was accepted (\"appointed\") or refused (\"denied\") by the referred-to provider, department or facility.",
+      "entries": [
+        "Appointed",
+        "Denied"
+      ]
     },
     {
-      "index": 391,
+      "ordinalPosition": 68,
       "name": "DISP_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason that a referral's disposition has a status of \"denied.\"\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nForwarded to External\n\n\nForwarded to Internal"
+      "description": "The reason that a referral's disposition has a status of \"denied.\"",
+      "entries": [
+        "Forwarded to External",
+        "Forwarded to Internal"
+      ]
     },
     {
-      "index": 400,
+      "ordinalPosition": 69,
       "name": "DISP_EAF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique id of the facility to which the referral was forwarded."
     },
     {
-      "index": 405,
+      "ordinalPosition": 70,
       "name": "REFD_BY_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the department the referral was referred by."
     },
     {
-      "index": 410,
+      "ordinalPosition": 71,
       "name": "CLOSE_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "For closed referrals, the category value indicating the reason for closing.\n\n\nMay contain organization-specific values: Yes"
+      "description": "For closed referrals, the category value indicating the reason for closing."
     },
     {
-      "index": 416,
+      "ordinalPosition": 72,
       "name": "SCHED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Scheduling status of the referral to keep track of internally schedulable referrals.  For category list use ZC_SCHED_STATUS.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDo not change"
+      "description": "Scheduling status of the referral to keep track of internally schedulable referrals.  For category list use ZC_SCHED_STATUS.",
+      "entries": [
+        "Do not change"
+      ]
     },
     {
-      "index": 424,
+      "ordinalPosition": 73,
       "name": "SCHED_BY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Indicates deadline to schedule a referral."
     },
     {
-      "index": 429,
+      "ordinalPosition": 74,
       "name": "PREAUTH_REQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "For referrals created from an order, indicates if a preauthorization number must be collected before scheduling.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrior Authorization Number Required\n\n\nPrior Authorization Number Collected\n\n\nPrior Authorization Number Not Collected\n\n\nPrior Authorization Number Processed"
+      "description": "For referrals created from an order, indicates if a preauthorization number must be collected before scheduling.",
+      "entries": [
+        "Prior Authorization Number Required",
+        "Prior Authorization Number Collected",
+        "Prior Authorization Number Not Collected",
+        "Prior Authorization Number Processed"
+      ]
     },
     {
-      "index": 440,
+      "ordinalPosition": 75,
       "name": "NOT_COLLCTD_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason indicating why the preauth number will not be collected for this referral.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Reason indicating why the preauth number will not be collected for this referral."
     },
     {
-      "index": 446,
+      "ordinalPosition": 76,
       "name": "PROCESSED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason indicating why the preauth number is marked as processed for this referral.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Reason indicating why the preauth number is marked as processed for this referral."
     },
     {
-      "index": 452,
+      "ordinalPosition": 77,
       "name": "PREAUTH_CHG_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who last changed the preauthorization data."
     },
     {
-      "index": 457,
+      "ordinalPosition": 78,
       "name": "PREAUTH_CHNGD_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Date/time stamp for last time the preauthorization data was changed."
     },
     {
-      "index": 462,
+      "ordinalPosition": 79,
       "name": "AUTH_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Authorization number."
     },
     {
-      "index": 467,
+      "ordinalPosition": 80,
       "name": "PRE_CERT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Pre-certification number."
     },
     {
-      "index": 472,
+      "ordinalPosition": 81,
       "name": "NON_PREF_PROV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason why a non preferred level provider was chosen.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the reason why a non preferred level provider was chosen."
     },
     {
-      "index": 478,
+      "ordinalPosition": 82,
       "name": "EXT_REF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the external referring date."
     },
     {
-      "index": 483,
+      "ordinalPosition": 83,
       "name": "EOW_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique EOW ID associated with the referral."
     },
     {
-      "index": 488,
+      "ordinalPosition": 84,
       "name": "REQ_VIS_PER_PERIOD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The requested visits per period on the referral."
     },
     {
-      "index": 493,
+      "ordinalPosition": 85,
       "name": "REQ_PERIOD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The requested period type on the referral.\n\n\n The category values for this column were already listed for column: AUTH_PERIOD_TYPE_C_NAME"
+      "description": "The requested period type on the referral."
     },
     {
-      "index": 499,
+      "ordinalPosition": 86,
       "name": "REQ_NUM_OF_PERIODS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The requested number of periods on the referral."
     },
     {
-      "index": 504,
+      "ordinalPosition": 87,
       "name": "REF_TO_PROV_ADDR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the address ID of the referred to provider. The format is as follows: ProvID-AddressID. AddressID is the line number of the multiple response address items in the SER masterfile. To use this column, join to CLARITY_SER_ADDR on REFERRAL.REF_TO_PROV_ADDR_ID = CLARITY_SER_ADDR.ADDR_UNIQUE_ID. If you use IntraConnect, also join on REFERRAL.REFERRAL_PROV_ID = CLARITY_SER_ADDR.PROV_ID."
     },
     {
-      "index": 509,
+      "ordinalPosition": 88,
       "name": "DECISION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date on which the referral's current status was assigned."
     },
     {
-      "index": 514,
+      "ordinalPosition": 89,
       "name": "NUM_CLMS_EXPECTED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Number of claims expected to be filed on this referral."
     },
     {
-      "index": 519,
+      "ordinalPosition": 90,
       "name": "RFL_STATCHG_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason category number describing why the referral status was changed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCanceled Order\n\n\nTPL Created\n\n\nOrder Added\n\n\nOrder Modified\n\n\nOrder Deleted\n\n\nBuild Change\n\n\nCoverage Change\n\n\nTreatment Department Change\n\n\nDiagnosis Change\n\n\nCreate AUTs for new coverage"
+      "description": "The reason category number describing why the referral status was changed.",
+      "entries": [
+        "Canceled Order",
+        "TPL Created",
+        "Order Added",
+        "Order Modified",
+        "Order Deleted",
+        "Build Change",
+        "Coverage Change",
+        "Treatment Department Change",
+        "Diagnosis Change",
+        "Create AUTs for new coverage"
+      ]
     },
     {
-      "index": 536,
+      "ordinalPosition": 91,
       "name": "TOTAL_EST_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total estimated days for the referral."
     },
     {
-      "index": 541,
+      "ordinalPosition": 92,
       "name": "TOTAL_OVERRIDE_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total number of override days on the referral."
     },
     {
-      "index": 546,
+      "ordinalPosition": 93,
       "name": "TOTAL_CONVTD_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total number of converted days on the referral."
     },
     {
-      "index": 551,
+      "ordinalPosition": 94,
       "name": "AMT_CLMS_ADJUDICTD",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of claims adjudicated."
     },
     {
-      "index": 556,
+      "ordinalPosition": 95,
       "name": "AMT_CLMS_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of claims paid."
     },
     {
-      "index": 561,
+      "ordinalPosition": 96,
       "name": "ADJ_VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The adjudication vendor."
     },
     {
-      "index": 566,
+      "ordinalPosition": 97,
       "name": "ADJ_VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 571,
+      "ordinalPosition": 98,
       "name": "ADJ_MEMBER_GROUP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Adjudication member group."
     },
     {
-      "index": 576,
+      "ordinalPosition": 99,
       "name": "ADJ_MEMBER_GROUP_ID_MEM_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the member group"
     },
     {
-      "index": 581,
+      "ordinalPosition": 100,
       "name": "ADJ_NET_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Adjudication network status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIN NETWORK\n\n\nOUT OF NETWORK\n\n\nN/A"
+      "description": "Adjudication network status.",
+      "entries": [
+        "IN NETWORK",
+        "OUT OF NETWORK",
+        "N/A"
+      ]
     },
     {
-      "index": 591,
+      "ordinalPosition": 101,
       "name": "NO_CLAIMS_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of claims paid on the claim."
     },
     {
-      "index": 596,
+      "ordinalPosition": 102,
       "name": "ADJUD_SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,

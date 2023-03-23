@@ -1,52 +1,68 @@
 {
-  "table_name": "SPEC_AP_RESULT",
+  "name": "SPEC_AP_RESULT",
   "description": "This table contains information related to results entered on a specimen's anatomic pathology result.",
-  "primary_key": {
-    "column_name": "SPECIMEN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SPECIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SPECIMEN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CM_PHY_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "AP_RES_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The note type category ID for this AP specimen result note.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGrossing\n\n\nIntra-Op\n\n\nFinal Diagnosis"
+      "description": "The note type category ID for this AP specimen result note.",
+      "entries": [
+        "Grossing",
+        "Intra-Op",
+        "Final Diagnosis"
+      ]
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "AP_RES_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of this AP specimen result note."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "AP_RES_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category ID for this AP specimen result note.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nComplete"
+      "description": "The status category ID for this AP specimen result note.",
+      "entries": [
+        "Not Started",
+        "In Progress",
+        "Complete"
+      ]
     }
   ]
 }

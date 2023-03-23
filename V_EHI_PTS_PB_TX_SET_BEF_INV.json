@@ -1,34 +1,40 @@
 {
-  "table_name": "V_EHI_PTS_PB_TX_SET_BEF_INV",
+  "name": "V_EHI_PTS_PB_TX_SET_BEF_INV",
   "description": "This view filters out premium billing payment data that is not appropriate for member level EHI exports when group billing is used.",
-  "primary_key": {
-    "column_name": "TRANSACTION_SET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TRANSACTION_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TRANSACTION_SET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the set record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "BEF_INV_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The invoice amount associated with this transaction set prior being commited."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BEF_INVOICE_ID",
       "type": "VARCHAR",
       "discontinued": false,

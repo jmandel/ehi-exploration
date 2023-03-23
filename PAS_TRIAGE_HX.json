@@ -1,227 +1,274 @@
 {
-  "table_name": "PAS_TRIAGE_HX",
+  "name": "PAS_TRIAGE_HX",
   "description": "The triage history for the referral record.",
-  "primary_key": {
-    "column_name": "REFERRAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The referral ID for the referral record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAS_TRIAGE_HX_DEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral triage history - triage decision\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccept\n\n\nReject\n\n\nRedirect\n\n\nInformation Request"
+      "description": "Referral triage history - triage decision",
+      "entries": [
+        "Accept",
+        "Reject",
+        "Redirect",
+        "Information Request"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "PAS_TRIAGE_HX_PRI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral triage history - priority\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRoutine\n\n\nUrgent\n\n\nEmergency\n\n\nElective\n\n\nTwo Week Wait\n\n\nSee Details"
+      "description": "Referral triage history - priority",
+      "entries": [
+        "Routine",
+        "Urgent",
+        "Emergency",
+        "Elective",
+        "Two Week Wait",
+        "See Details"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 5,
       "name": "PAS_TRI_RJCT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral triage history - reject reason\n\n\nMay contain organization-specific values: Yes"
+      "description": "Referral triage history - reject reason"
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "PAS_TRI_RD_SPEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral triage history - redirect specialty\n\n\nMay contain organization-specific values: Yes"
+      "description": "Referral triage history - redirect specialty"
     },
     {
-      "index": 48,
+      "ordinalPosition": 7,
       "name": "PAS_TRI_HX_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Referral triage history - redirect consultant"
     },
     {
-      "index": 53,
+      "ordinalPosition": 8,
       "name": "PAS_TRI_HX_SITE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Referral triage history - redirect site"
     },
     {
-      "index": 58,
+      "ordinalPosition": 9,
       "name": "PAS_TRI_HX_APPT_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Referral triage information - appointment change comments"
     },
     {
-      "index": 63,
+      "ordinalPosition": 10,
       "name": "PAS_TRI_HX_PW_UPG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral triage history - pathway upgrade request history\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Referral triage history - pathway upgrade request history",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 72,
+      "ordinalPosition": 11,
       "name": "PAS_TRI_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Referral triage history - user"
     },
     {
-      "index": 77,
+      "ordinalPosition": 12,
       "name": "PAS_TRI_HX_INSTANT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Referral triage history - instant of update"
     },
     {
-      "index": 82,
+      "ordinalPosition": 13,
       "name": "PAS_TRI_HX_FREE_PX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Referral triage history - free text procedures"
     },
     {
-      "index": 87,
+      "ordinalPosition": 14,
       "name": "PAS_TRI_HX_FREE_DX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "PAS TRIAGE HISTORY - FREE TEXT DIAGNOSES"
     },
     {
-      "index": 92,
+      "ordinalPosition": 15,
       "name": "TRIAGE_HX_RFL_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History item to track changes made to referral diagnosis during triage."
     },
     {
-      "index": 97,
+      "ordinalPosition": 16,
       "name": "TRIAGE_HX_ENC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History item to track changes made to encounter type during triage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOutpatient\n\n\nInpatient"
+      "description": "History item to track changes made to encounter type during triage.",
+      "entries": [
+        "Outpatient",
+        "Inpatient"
+      ]
     },
     {
-      "index": 106,
+      "ordinalPosition": 17,
       "name": "TRIAGE_HX_PACKAGE_TYPE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History item to track changes made to package type during triage."
     },
     {
-      "index": 111,
+      "ordinalPosition": 18,
       "name": "TRIAGE_HX_TREATMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History item to track changes made to treatment type during triage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHighly Specialized\n\n\nSpecialized by Region\n\n\nNormal"
+      "description": "History item to track changes made to treatment type during triage.",
+      "entries": [
+        "Highly Specialized",
+        "Specialized by Region",
+        "Normal"
+      ]
     },
     {
-      "index": 121,
+      "ordinalPosition": 19,
       "name": "TRIAGE_HX_RESP_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History item to track changes made to responsible location during triage"
     },
     {
-      "index": 126,
+      "ordinalPosition": 20,
       "name": "TRIAGE_HX_PHASE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History item to track changes made to referral phase during referral triage\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nReview"
+      "description": "History item to track changes made to referral phase during referral triage",
+      "entries": [
+        "New",
+        "Review"
+      ]
     },
     {
-      "index": 135,
+      "ordinalPosition": 21,
       "name": "TRIAGE_HX_RESP_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "History item to track changes made to responsible provider during triage accept."
     },
     {
-      "index": 140,
+      "ordinalPosition": 22,
       "name": "TRIAGE_HX_RESP_DEP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History item to track changes made to responsible department during triage accept."
     },
     {
-      "index": 145,
+      "ordinalPosition": 23,
       "name": "TRIAGE_HX_RFL_DX_TXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "History item to track changes made to free text associated with referral diagnoses during triage."
     },
     {
-      "index": 150,
+      "ordinalPosition": 24,
       "name": "TRIAGE_HX_REMIND_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "An audit of when the user asked to be reminded of this referral."
     },
     {
-      "index": 155,
+      "ordinalPosition": 25,
       "name": "TRIAGE_HX_RECPNT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "An audit of who a request for more information went to.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nReferred by Provider\n\n\nReferred by Department\n\n\nReferred by Location\n\n\nPCP\n\n\nReferral Source\n\n\nAutomatic Notification\n\n\nOther"
+      "description": "An audit of who a request for more information went to.",
+      "entries": [
+        "None",
+        "Referred by Provider",
+        "Referred by Department",
+        "Referred by Location",
+        "PCP",
+        "Referral Source",
+        "Automatic Notification",
+        "Other"
+      ]
     },
     {
-      "index": 170,
+      "ordinalPosition": 26,
       "name": "PAS_TRI_RD_DEP_C_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Store which department the referral was redirected to"
     },
     {
-      "index": 175,
+      "ordinalPosition": 27,
       "name": "PAS_TRI_RD_PROVSP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores which provider specialty the patient was redirected to in triage\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores which provider specialty the patient was redirected to in triage"
     },
     {
-      "index": 181,
+      "ordinalPosition": 28,
       "name": "TRIAGE_HX_UNACCEPT_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Triage history item to track changes made to unaccept reason during referral triage.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Triage history item to track changes made to unaccept reason during referral triage."
     },
     {
-      "index": 188,
+      "ordinalPosition": 29,
       "name": "TRIAGE_HX_COND_GRP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral Triage History - Condition Group.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Referral Triage History - Condition Group."
     },
     {
-      "index": 194,
+      "ordinalPosition": 30,
       "name": "TRIAGE_HX_RIGHT_TO_CARE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral Triage History - Right To Healthcare.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Referral Triage History - Right To Healthcare."
     },
     {
-      "index": 200,
+      "ordinalPosition": 31,
       "name": "TRIAGE_HX_RSLT_INIT_ASMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Referral Triage History - Result of Initial Assessment\n\n\nMay contain organization-specific values: Yes"
+      "description": "Referral Triage History - Result of Initial Assessment"
     }
   ]
 }

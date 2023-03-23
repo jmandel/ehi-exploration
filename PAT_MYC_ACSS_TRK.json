@@ -1,55 +1,69 @@
 {
-  "table_name": "PAT_MYC_ACSS_TRK",
+  "name": "PAT_MYC_ACSS_TRK",
   "description": "This table keeps an audit trail of changes made to the status of a web based chart system account.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the patient record. This ID may be encrypted if you have elected to use enterprise reporting�s security utility."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number used to identify each row of access data associated with an individual patient record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MYC_ACSS_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user record who performed some action regarding the patient's web based chart system account."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MYC_ACSS_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the action that was performed on the patient's web based chart system account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nENABLE\n\n\nDISABLE\n\n\nDELETECODE\n\n\nEnable for proxy\n\n\nDisable for proxy\n\n\nActivate Patient"
+      "description": "The category value corresponding to the action that was performed on the patient's web based chart system account.",
+      "entries": [
+        "ENABLE",
+        "DISABLE",
+        "DELETECODE",
+        "Enable for proxy",
+        "Disable for proxy",
+        "Activate Patient"
+      ]
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "ACSS_TIMESTAMP",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This is a timestamp indicating when the patient's web based chart system account was changed."
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "ACSS_PROXY_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment, if one was entered, when an account was activated for proxy use."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "MYC_ACSS_CODE",
       "type": "VARCHAR",
       "discontinued": false,

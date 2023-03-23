@@ -1,45 +1,54 @@
 {
-  "table_name": "LAB_CASE_FLAGS",
+  "name": "LAB_CASE_FLAGS",
   "description": "This table contains any flags attached directly to a case record.",
-  "primary_key": {
-    "column_name": "REQUISITION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REQUISITION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REQUISITION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CASE_FLAGS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores any flags that are put on the case.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores any flags that are put on the case."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "CASE_FLAGS_CMT",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A free text comment associated with each case flag.\n\n\n The category values for this column were already listed for column: CASE_FLAGS_C_NAME"
+      "description": "A free text comment associated with each case flag."
     },
     {
-      "index": 24,
+      "ordinalPosition": 5,
       "name": "AP_CASE_FLAG_GRP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The flag group category ID for the case.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSubspecialty"
+      "description": "The flag group category ID for the case.",
+      "entries": [
+        "Subspecialty"
+      ]
     }
   ]
 }

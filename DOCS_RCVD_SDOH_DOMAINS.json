@@ -1,52 +1,103 @@
 {
-  "table_name": "DOCS_RCVD_SDOH_DOMAINS",
+  "name": "DOCS_RCVD_SDOH_DOMAINS",
   "description": "This table extracts the domains linked to an external social determinant of health entry.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 3
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 4
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the document record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this contact."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "SDOH_DOMAIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the domains a social determinant entry is included in.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIntimate Partner Violence\n\n\nSocial Connections\n\n\nAlcohol Use\n\n\nTobacco Use\n\n\nFinancial Resource Strain\n\n\nDepression\n\n\nStress\n\n\nPhysical Activity\n\n\nFood Insecurity\n\n\nTransportation Needs\n\n\nHousing Stability\n\n\nHealth Literacy\n\n\nSubstance Use\n\n\nInternet Access\n\n\nDigital Skills\n\n\nInadequate Housing\n\n\nHomelessness\n\n\nEducational Attainment\n\n\nEmployment Status\n\n\nVeteran Status\n\n\nElder Abuse\n\n\nHealth Insurance Status\n\n\nMedical Cost Burden\n\n\nUtilities\n\n\nPersonal Safety\n\n\nAccess to Care\n\n\nPostpartum Depression\n\n\nCaregiver Education and Work\n\n\nSafety and Environment\n\n\nCaregiver Health\n\n\nChild Education\n\n\nAdolescent Education and Socialization\n\n\nAdolescent Substance Use\n\n\nAdolescent Education\n\n\nAdolescent Socialization"
+      "description": "This item stores the domains a social determinant entry is included in.",
+      "entries": [
+        "Intimate Partner Violence",
+        "Social Connections",
+        "Alcohol Use",
+        "Tobacco Use",
+        "Financial Resource Strain",
+        "Depression",
+        "Stress",
+        "Physical Activity",
+        "Food Insecurity",
+        "Transportation Needs",
+        "Housing Stability",
+        "Health Literacy",
+        "Substance Use",
+        "Internet Access",
+        "Digital Skills",
+        "Inadequate Housing",
+        "Homelessness",
+        "Educational Attainment",
+        "Employment Status",
+        "Veteran Status",
+        "Elder Abuse",
+        "Health Insurance Status",
+        "Medical Cost Burden",
+        "Utilities",
+        "Personal Safety",
+        "Access to Care",
+        "Postpartum Depression",
+        "Caregiver Education and Work",
+        "Safety and Environment",
+        "Caregiver Health",
+        "Child Education",
+        "Adolescent Education and Socialization",
+        "Adolescent Substance Use",
+        "Adolescent Education",
+        "Adolescent Socialization"
+      ]
     }
   ]
 }

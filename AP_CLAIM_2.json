@@ -1,486 +1,552 @@
 {
-  "table_name": "AP_CLAIM_2",
+  "name": "AP_CLAIM_2",
   "description": "The AP_CLAIM_2 table contains one record for each claim in Tapestry's Accounts Payable module.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "E_CODE_POA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Present on Admission (POA) indicator for the external cause of injury diagnosis code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n1 - Unreported/Not used\n\n\nY - Yes\n\n\nN - No\n\n\nU - Unknown\n\n\nW - Clinically undetermined"
+      "description": "Present on Admission (POA) indicator for the external cause of injury diagnosis code.",
+      "entries": [
+        "1 - Unreported/Not used",
+        "Y - Yes",
+        "N - No",
+        "U - Unknown",
+        "W - Clinically undetermined"
+      ]
     },
     {
-      "index": 19,
+      "ordinalPosition": 3,
       "name": "READY_FOR_AP_MGR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the member group ID if the claim is ready for AP."
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "READY_FOR_AP_MGR_ID_MEM_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the member group"
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "TOT_REFD_RECVD",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total refund received for the claim."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "TOTAL_COB_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the calculated Coordination of Benefits (COB) amount for all services on the claim."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "EPSDT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if an Early and Periodic Screening, Diagnosis, and Treatment (EPSDT) referral was given to the patient on the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Stores if an Early and Periodic Screening, Diagnosis, and Treatment (EPSDT) referral was given to the patient on the claim.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 8,
       "name": "RENDERING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the unique identifier of the rendering provider for the claim, if supplied."
     },
     {
-      "index": 53,
+      "ordinalPosition": 9,
       "name": "TOTAL_MOB_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Maintenance of Benefits (MOB) amount for all services on the claim."
     },
     {
-      "index": 58,
+      "ordinalPosition": 10,
       "name": "PMT_INFO_MAP_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the line that the Tapestry Profile responsibility map matched on."
     },
     {
-      "index": 63,
+      "ordinalPosition": 11,
       "name": "PMT_INFO_GRPR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the grouper rule that the Tapestry Profile responsibility map matched on."
     },
     {
-      "index": 68,
+      "ordinalPosition": 12,
       "name": "PMT_INFO_GRPR_ID_RULE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the rule."
     },
     {
-      "index": 73,
+      "ordinalPosition": 13,
       "name": "PMT_INFO_RULE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the rule that the Tapestry Profile responsibility map matched on."
     },
     {
-      "index": 78,
+      "ordinalPosition": 14,
       "name": "PMT_INFO_RULE_ID_RULE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the rule."
     },
     {
-      "index": 83,
+      "ordinalPosition": 15,
       "name": "PMT_INFO_SPLIT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the split definition record that was determined by the Tapestry Profile responsibility map."
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "PMT_INFO_SPLIT_ID_SPLIT_DEF_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the split definition record."
     },
     {
-      "index": 93,
+      "ordinalPosition": 17,
       "name": "SPECIALTY_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Source of associated specialty.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVendor\n\n\nPhysician\n\n\nUser\n\n\nProvider Taxonomy Code\n\n\nVendor Taxonomy Code\n\n\nProvider Specialty Table\n\n\nProfile Specialty Table"
+      "description": "Source of associated specialty.",
+      "entries": [
+        "Vendor",
+        "Physician",
+        "User",
+        "Provider Taxonomy Code",
+        "Vendor Taxonomy Code",
+        "Provider Specialty Table",
+        "Profile Specialty Table"
+      ]
     },
     {
-      "index": 107,
+      "ordinalPosition": 18,
       "name": "CASE_MGMT_CREAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the case trigger message associated with the claim."
     },
     {
-      "index": 112,
+      "ordinalPosition": 19,
       "name": "CVG_FILTER_EPP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Filter plan on the coverage."
     },
     {
-      "index": 117,
+      "ordinalPosition": 20,
       "name": "CVG_FILTER_EPP_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 122,
+      "ordinalPosition": 21,
       "name": "PMT_INFO_STOP_COND",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the procedure line that triggered a stopping condition during  pricing."
     },
     {
-      "index": 127,
+      "ordinalPosition": 22,
       "name": "NO_MEM_GRP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies that the claim does not have a member group. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Identifies that the claim does not have a member group.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 136,
+      "ordinalPosition": 23,
       "name": "INTEREST_TOTAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total interest for the claim, from the constituent service lines."
     },
     {
-      "index": 141,
+      "ordinalPosition": 24,
       "name": "PROV_ACPT_ASGN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the provider accept assignment code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nA - Assigned\n\n\nB - Assigned for Clinical Lab Services Only\n\n\nC - Not Assigned\n\n\nP - Patient Refused to Assign Benefits"
+      "description": "Stores the provider accept assignment code.",
+      "entries": [
+        "A - Assigned",
+        "B - Assigned for Clinical Lab Services Only",
+        "C - Not Assigned",
+        "P - Patient Refused to Assign Benefits"
+      ]
     },
     {
-      "index": 152,
+      "ordinalPosition": 25,
       "name": "BEN_ASGN_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the benefits assignment indicator.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nN - No\n\n\nY - Yes\n\n\nW - Not Applicable"
+      "description": "Stores the benefits assignment indicator.",
+      "entries": [
+        "N - No",
+        "Y - Yes",
+        "W - Not Applicable"
+      ]
     },
     {
-      "index": 162,
+      "ordinalPosition": 26,
       "name": "OVRD_SUB_POLICY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If this item is set, the submission policy tables at the profile and on the vendor contract are ignored.  The Claim filing window (days) setting on the vendor contract is also ignored.\n\n\n The category values for this column were already listed for column: NO_MEM_GRP_YN"
+      "description": "If this item is set, the submission policy tables at the profile and on the vendor contract are ignored.  The Claim filing window (days) setting on the vendor contract is also ignored."
     },
     {
-      "index": 168,
+      "ordinalPosition": 27,
       "name": "OVRD_SUB_POL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item provides an explanation as to why the override submission policy item is set.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item provides an explanation as to why the override submission policy item is set."
     },
     {
-      "index": 175,
+      "ordinalPosition": 28,
       "name": "CLM_TRAIT_1_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The first custom claim trait, used to classify and group claims.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The first custom claim trait, used to classify and group claims."
     },
     {
-      "index": 181,
+      "ordinalPosition": 29,
       "name": "CLM_TRAIT_2_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The second custom claim trait, used to classify and group claims.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The second custom claim trait, used to classify and group claims."
     },
     {
-      "index": 187,
+      "ordinalPosition": 30,
       "name": "CLM_TRAIT_3_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The third custom claim trait, used to classify and group claims.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The third custom claim trait, used to classify and group claims."
     },
     {
-      "index": 194,
+      "ordinalPosition": 31,
       "name": "CLM_TRAIT_4_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The fourth custom claim trait, used to classify and group claims.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The fourth custom claim trait, used to classify and group claims."
     },
     {
-      "index": 201,
+      "ordinalPosition": 32,
       "name": "CLM_TRAIT_5_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The fifth custom claim trait, used to classify and group claims.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The fifth custom claim trait, used to classify and group claims."
     },
     {
-      "index": 208,
+      "ordinalPosition": 33,
       "name": "TP_INFO_837_SEND_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The trading partner (NTP record) that sent the ANSI 837 claim file that was used to submit this claim."
     },
     {
-      "index": 213,
+      "ordinalPosition": 34,
       "name": "TP_INFO_837_SEND_ID_TRADING_PARTNR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the trading partner record."
     },
     {
-      "index": 218,
+      "ordinalPosition": 35,
       "name": "TP_INFO_837_RCVR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The trading partner (NTP record) that received the ANSI 837 claim file that was used to submit this claim."
     },
     {
-      "index": 223,
+      "ordinalPosition": 36,
       "name": "TP_INFO_837_RCVR_ID_TRADING_PARTNR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the trading partner record."
     },
     {
-      "index": 228,
+      "ordinalPosition": 37,
       "name": "APPLIANCE_PLACE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the date orthodontic appliances were placed."
     },
     {
-      "index": 233,
+      "ordinalPosition": 38,
       "name": "DNTL_SVC_FROM_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the dental service span from date."
     },
     {
-      "index": 238,
+      "ordinalPosition": 39,
       "name": "DNTL_SVC_TO_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the dental service span to date."
     },
     {
-      "index": 243,
+      "ordinalPosition": 40,
       "name": "ORTHO_SVCS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is to determine if orthodontic services were performed.\n\n\n The category values for this column were already listed for column: NO_MEM_GRP_YN"
+      "description": "This is to determine if orthodontic services were performed."
     },
     {
-      "index": 249,
+      "ordinalPosition": 41,
       "name": "ORTHO_TOT_MONTHS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This is the total months of orthodontic treatment."
     },
     {
-      "index": 254,
+      "ordinalPosition": 42,
       "name": "ORTHO_MNTHS_REMAIN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This is the months of orthodontic treatment remaining"
     },
     {
-      "index": 259,
+      "ordinalPosition": 43,
       "name": "ASSIST_SURGEON_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the unique identifier of the assisting surgeon, if supplied."
     },
     {
-      "index": 264,
+      "ordinalPosition": 44,
       "name": "DENTAL_INFO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is to determine if the claim has dental information.\n\n\n The category values for this column were already listed for column: NO_MEM_GRP_YN"
+      "description": "This is to determine if the claim has dental information."
     },
     {
-      "index": 270,
+      "ordinalPosition": 45,
       "name": "LMP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the patient's last menstrual period."
     },
     {
-      "index": 275,
+      "ordinalPosition": 46,
       "name": "CHIR_FRST_TRT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "First treatment date listed on the patient's claim."
     },
     {
-      "index": 280,
+      "ordinalPosition": 47,
       "name": "FROM_OCR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Flags whether the claim was originally paper or scanned into the system through an EDI batch load.\n\n\n The category values for this column were already listed for column: NO_MEM_GRP_YN"
+      "description": "Flags whether the claim was originally paper or scanned into the system through an EDI batch load."
     },
     {
-      "index": 286,
+      "ordinalPosition": 48,
       "name": "CLM_PRICER_IDENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "When a matching repricer organization is found, the identification is stored on the claim.\n\n\nMay contain organization-specific values: Yes"
+      "description": "When a matching repricer organization is found, the identification is stored on the claim."
     },
     {
-      "index": 292,
+      "ordinalPosition": 49,
       "name": "TOTAL_HRA_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total reimbursement amount for all services on the claim."
     },
     {
-      "index": 297,
+      "ordinalPosition": 50,
       "name": "ORIG_ACT_ADJ_CLM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original claim ID of the actual adjustment claim."
     },
     {
-      "index": 302,
+      "ordinalPosition": 51,
       "name": "REF_CLM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the reference claim ID in the ANSI 837 file from Loop 2300, Segment REF02 with identifier F8. This is often used in combination with the claim frequency code. When the claim frequency code indicates the claim needs to be adjusted or voided, the reference claim ID is used to help identify the claim."
     },
     {
-      "index": 307,
+      "ordinalPosition": 52,
       "name": "MGR_ASSOC_EXT_VAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the association extension value returned by the association extension on the member group.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the association extension value returned by the association extension on the member group."
     },
     {
-      "index": 313,
+      "ordinalPosition": 53,
       "name": "AMBU_TRAN_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Transport Reason code for ANSI claims.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNearest Facility for Care of Symptoms, Complaints, or Both\n\n\nFor the Benefit of a Preferred Physician\n\n\nFor the Nearness of Family Members\n\n\nFor the Care of a Specialist or for Availability of Specialized Equipment\n\n\nRehabilitation Facility"
+      "description": "Transport Reason code for ANSI claims.",
+      "entries": [
+        "Nearest Facility for Care of Symptoms, Complaints, or Both",
+        "For the Benefit of a Preferred Physician",
+        "For the Nearness of Family Members",
+        "For the Care of a Specialist or for Availability of Specialized Equipment",
+        "Rehabilitation Facility"
+      ]
     },
     {
-      "index": 325,
+      "ordinalPosition": 54,
       "name": "AMBU_TRAN_DIST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Transport distance for the CRC segment in the 2300 loop on ANSI claims."
     },
     {
-      "index": 330,
+      "ordinalPosition": 55,
       "name": "AMBU_TXPORT_WT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Weight of the patient at the time of transport in an ambulance."
     },
     {
-      "index": 335,
+      "ordinalPosition": 56,
       "name": "AMBU_COND_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates a yes or a no condition response code in the related item.\n\n\n The category values for this column were already listed for column: NO_MEM_GRP_YN"
+      "description": "Indicates a yes or a no condition response code in the related item."
     },
     {
-      "index": 341,
+      "ordinalPosition": 57,
       "name": "AMBU_PICK_UP_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the city of the ambulance pick-up location."
     },
     {
-      "index": 346,
+      "ordinalPosition": 58,
       "name": "AMBU_PICK_UP_ST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the state of the ambulance pick-up location.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the state of the ambulance pick-up location."
     },
     {
-      "index": 352,
+      "ordinalPosition": 59,
       "name": "AMBU_PICK_UP_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the ZIP code of the ambulance pick-up location."
     },
     {
-      "index": 357,
+      "ordinalPosition": 60,
       "name": "AMBU_DROP_OFF_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the city of the ambulance drop-off location."
     },
     {
-      "index": 362,
+      "ordinalPosition": 61,
       "name": "AMBU_DROP_OFF_ST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the state of the ambulance drop-off location.\n\n\n The category values for this column were already listed for column: AMBU_PICK_UP_ST_C_NAME"
+      "description": "Stores the state of the ambulance drop-off location."
     },
     {
-      "index": 368,
+      "ordinalPosition": 62,
       "name": "AMBU_DROP_OFF_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the ZIP code of the ambulance drop-off location."
     },
     {
-      "index": 373,
+      "ordinalPosition": 63,
       "name": "AMBU_DROP_OFF_NM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the last name or organization name of the ambulance drop-off location."
     },
     {
-      "index": 378,
+      "ordinalPosition": 64,
       "name": "PAYEE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Payee of the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSubscriber\n\n\nVendor\n\n\nMember\n\n\nThird Party"
+      "description": "Payee of the claim.",
+      "entries": [
+        "Subscriber",
+        "Vendor",
+        "Member",
+        "Third Party"
+      ]
     },
     {
-      "index": 389,
+      "ordinalPosition": 65,
       "name": "ESRD_ONSET_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the onset date of End Stage Renal Disease. This date is sent on CMS 2728 form in Field 24."
     },
     {
-      "index": 394,
+      "ordinalPosition": 66,
       "name": "PAYOR_SEQ_NUMBER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Sequence number of the payor of the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary\n\n\nSecondary\n\n\nTertiary\n\n\nQuaternary\n\n\nQuinary\n\n\nSenary\n\n\nSeptenary\n\n\nOctonary\n\n\nNonary\n\n\nDenary\n\n\nUndenary"
+      "description": "Sequence number of the payor of the claim.",
+      "entries": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Quaternary",
+        "Quinary",
+        "Senary",
+        "Septenary",
+        "Octonary",
+        "Nonary",
+        "Denary",
+        "Undenary"
+      ]
     },
     {
-      "index": 412,
+      "ordinalPosition": 67,
       "name": "CLM_FREQ_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the claim frequency type code from the ANSI 837 file. The value comes from Loop 2300, Segment CLM05, Piece 3.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Contains the claim frequency type code from the ANSI 837 file. The value comes from Loop 2300, Segment CLM05, Piece 3."
     },
     {
-      "index": 418,
+      "ordinalPosition": 68,
       "name": "DENY_CLM_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Tracks the source of an attempt to deny a claim that can't be immediately denied, but has not yet reached a status of fully paid to be able to be reversed and adjusted. When claims with this item set are removed from a batch or become fully paid, they can be denied or reversed, adjusted and denied. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCancel 837"
+      "description": "Tracks the source of an attempt to deny a claim that can't be immediately denied, but has not yet reached a status of fully paid to be able to be reversed and adjusted. When claims with this item set are removed from a batch or become fully paid, they can be denied or reversed, adjusted and denied.",
+      "entries": [
+        "Cancel 837"
+      ]
     }
   ]
 }

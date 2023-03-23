@@ -1,31 +1,40 @@
 {
-  "table_name": "HH_COVCHG_MULTI",
+  "name": "HH_COVCHG_MULTI",
   "description": "This table stores the Home Health coverage change no-add multi items.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HH_COVCHG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "When a home health coverage change occurs, this item stores the type of coverage change that occurred for the hospital account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreate PPS"
+      "description": "When a home health coverage change occurs, this item stores the type of coverage change that occurred for the hospital account.",
+      "entries": [
+        "Create PPS"
+      ]
     }
   ]
 }

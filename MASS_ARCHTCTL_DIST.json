@@ -1,31 +1,42 @@
 {
-  "table_name": "MASS_ARCHTCTL_DIST",
+  "name": "MASS_ARCHTCTL_DIST",
   "description": "This table holds information about the architectural distortion of a mass documented within the mammography drawing tools if QuickForms are being utilized. SmartForms within the drawing tools will file data to the SmartData Element structures.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ARCHTCTL_DIST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The architectural distortion category ID for the mass finding documented in the BI-RADS questionnaire.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRadiating Spiculations\n\n\nFocal Retraction\n\n\nParenchyma Edge Distortion"
+      "description": "The architectural distortion category ID for the mass finding documented in the BI-RADS questionnaire.",
+      "entries": [
+        "Radiating Spiculations",
+        "Focal Retraction",
+        "Parenchyma Edge Distortion"
+      ]
     }
   ]
 }

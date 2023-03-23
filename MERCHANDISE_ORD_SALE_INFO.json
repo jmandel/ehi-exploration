@@ -1,167 +1,306 @@
 {
-  "table_name": "MERCHANDISE_ORD_SALE_INFO",
+  "name": "MERCHANDISE_ORD_SALE_INFO",
   "description": "This table stores the sale level information of merchandise orders.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the merchandise order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This column contains a unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This column contains the date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MERCH_UNIT_PR",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the final sale price for a merchandise in an order. If the price was overridden, this column contains the override price, and the original price is stored in Merchandise Original Unit Price column."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MERCH_RETURN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The merchandise return reason category ID for the order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Needed\n\n\nWrong Product\n\n\nDamaged Product\n\n\nPrice Match\n\n\nOther"
+      "description": "The merchandise return reason category ID for the order.",
+      "entries": [
+        "Not Needed",
+        "Wrong Product",
+        "Damaged Product",
+        "Price Match",
+        "Other"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "QUANTITY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column holds the quantity of merchandise sold in the sale contact."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current status category ID for the sale contact.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nPending Rx Entry\n\n\nScheduled Fill\n\n\nPending Fill\n\n\nFill Rejected\n\n\nWaiting For Approval\n\n\nReady to Fill\n\n\nFill Initiated\n\n\nFilled\n\n\nReady to Verify\n\n\nFill Rejected\n\n\nVerified\n\n\nReady to Package\n\n\nReady to Transport\n\n\nIn Transit\n\n\nReceived\n\n\nWaiting for Filling Pharmacies\n\n\nReady to Dispense\n\n\nForced Dispense Approved\n\n\nDispense Received from External System\n\n\nDispensed\n\n\nShipped\n\n\nDelivered\n\n\nConsult\n\n\nCompleted\n\n\nApproved Refill Request\n\n\nDenied Refill Request\n\n\nProfiled\n\n\nCanceled\n\n\nOrder Edited\n\n\nFlag Removed\n\n\nFill Returned\n\n\nFill Wasted\n\n\nClinically Reviewed\n\n\nClinical Changes Reviewed\n\n\nCharge\n\n\nPayment\n\n\nBagged\n\n\nToted\n\n\nTrucked\n\n\nBoxed\n\n\nPackaged\n\n\nSealed\n\n\nBarcode Scan\n\n\nPatient Notification\n\n\nAbandoned Rx Sale\n\n\nNeeds Tracking Number\n\n\nNo Sale Completed\n\n\nAuthentication\n\n\nPatient Pay Amount Changed\n\n\nInvalidated Billing Item\n\n\nPrescription Revision Needed\n\n\nPrescription Revised\n\n\nIP Dispense Prepared\n\n\nIP Dispense Prep Started\n\n\nIP Dispense Prep Saved Work\n\n\nIP Dispense Prep Pending Final Review\n\n\nIP Reused For Another Dose Dispense Prep\n\n\nIP Reused From Previous Dose Dispense Prep\n\n\nIP Dispense Prep Partial Complete\n\n\nIP Dispense Prep Resumed\n\n\nIP Dispense Prep Stopped\n\n\nIP Dispense Prep Saved on Admin\n\n\nIP Dispense Checked\n\n\nIP Dispense Prep Partial Check\n\n\nIP Dispense Prep Revise\n\n\nIP Dispense Rejected\n\n\nIP Dispense Check Removed\n\n\nIP Dispense Check Started\n\n\nIP Second Dispense Check\n\n\nIP Added to Dispense Queue\n\n\nIP Printed From Dispense Queue\n\n\nIP Removed From Dispense Queue\n\n\nRx Dispense Sent\n\n\nRx Dispense Received\n\n\nRx Cancel Tracking Action\n\n\nIP Dispense Prepared via Interface\n\n\nDownload Request Pending\n\n\nDownload Request Submitted\n\n\nDownload Successful\n\n\nDownload Request Rejected\n\n\nDownload Request Canceled\n\n\nDownload Error\n\n\nDownload Not Attempted\n\n\nSale Completed\n\n\nSale Updated\n\n\nSale Canceled\n\n\nSale Price Override Approved\n\n\nSale Pending\n\n\nFee Sold in POS\n\n\nTax Exemption Applied\n\n\nTax Exemption Removed\n\n\nTax Charge\n\n\nRx Inv Stock Location Overridden\n\n\nRx Inv Stock Location Override Removed\n\n\nNot Dispensed\n\n\nHI Shipment Started\n\n\nHI Shipment Audited \n\n\nHI Dispensed\n\n\nHI Worksheet Printed\n\n\nHI New Revision\n\n\nHI Meds Staged\n\n\nHI Supplies Staged\n\n\nHI Meds Stage Checked\n\n\nHI Supplies Stage Checked\n\n\nHI Staged\n\n\nHI Stage Checked\n\n\nHI Meds Packed\n\n\nHI Supplies Packed\n\n\nHI Packed\n\n\nHI Ready To Ship\n\n\nHI Post Shipment Change\n\n\nHI In Transit\n\n\nHI Delivered\n\n\nHI Complete\n\n\nHI Canceled"
+      "description": "The current status category ID for the sale contact.",
+      "entries": [
+        "New",
+        "Pending Rx Entry",
+        "Scheduled Fill",
+        "Pending Fill",
+        "Fill Rejected",
+        "Waiting For Approval",
+        "Ready to Fill",
+        "Fill Initiated",
+        "Filled",
+        "Ready to Verify",
+        "Fill Rejected",
+        "Verified",
+        "Ready to Package",
+        "Ready to Transport",
+        "In Transit",
+        "Received",
+        "Waiting for Filling Pharmacies",
+        "Ready to Dispense",
+        "Forced Dispense Approved",
+        "Dispense Received from External System",
+        "Dispensed",
+        "Shipped",
+        "Delivered",
+        "Consult",
+        "Completed",
+        "Approved Refill Request",
+        "Denied Refill Request",
+        "Profiled",
+        "Canceled",
+        "Order Edited",
+        "Flag Removed",
+        "Fill Returned",
+        "Fill Wasted",
+        "Clinically Reviewed",
+        "Clinical Changes Reviewed",
+        "Charge",
+        "Payment",
+        "Bagged",
+        "Toted",
+        "Trucked",
+        "Boxed",
+        "Packaged",
+        "Sealed",
+        "Barcode Scan",
+        "Patient Notification",
+        "Abandoned Rx Sale",
+        "Needs Tracking Number",
+        "No Sale Completed",
+        "Authentication",
+        "Patient Pay Amount Changed",
+        "Invalidated Billing Item",
+        "Prescription Revision Needed",
+        "Prescription Revised",
+        "IP Dispense Prepared",
+        "IP Dispense Prep Started",
+        "IP Dispense Prep Saved Work",
+        "IP Dispense Prep Pending Final Review",
+        "IP Reused For Another Dose Dispense Prep",
+        "IP Reused From Previous Dose Dispense Prep",
+        "IP Dispense Prep Partial Complete",
+        "IP Dispense Prep Resumed",
+        "IP Dispense Prep Stopped",
+        "IP Dispense Prep Saved on Admin",
+        "IP Dispense Checked",
+        "IP Dispense Prep Partial Check",
+        "IP Dispense Prep Revise",
+        "IP Dispense Rejected",
+        "IP Dispense Check Removed",
+        "IP Dispense Check Started",
+        "IP Second Dispense Check",
+        "IP Added to Dispense Queue",
+        "IP Printed From Dispense Queue",
+        "IP Removed From Dispense Queue",
+        "Rx Dispense Sent",
+        "Rx Dispense Received",
+        "Rx Cancel Tracking Action",
+        "IP Dispense Prepared via Interface",
+        "Download Request Pending",
+        "Download Request Submitted",
+        "Download Successful",
+        "Download Request Rejected",
+        "Download Request Canceled",
+        "Download Error",
+        "Download Not Attempted",
+        "Sale Completed",
+        "Sale Updated",
+        "Sale Canceled",
+        "Sale Price Override Approved",
+        "Sale Pending",
+        "Fee Sold in POS",
+        "Tax Exemption Applied",
+        "Tax Exemption Removed",
+        "Tax Charge",
+        "Rx Inv Stock Location Overridden",
+        "Rx Inv Stock Location Override Removed",
+        "Not Dispensed",
+        "HI Shipment Started",
+        "HI Shipment Audited",
+        "HI Dispensed",
+        "HI Worksheet Printed",
+        "HI New Revision",
+        "HI Meds Staged",
+        "HI Supplies Staged",
+        "HI Meds Stage Checked",
+        "HI Supplies Stage Checked",
+        "HI Staged",
+        "HI Stage Checked",
+        "HI Meds Packed",
+        "HI Supplies Packed",
+        "HI Packed",
+        "HI Ready To Ship",
+        "HI Post Shipment Change",
+        "HI In Transit",
+        "HI Delivered",
+        "HI Complete",
+        "HI Canceled"
+      ]
     },
     {
-      "index": 162,
+      "ordinalPosition": 8,
       "name": "STATUS_INSTANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column contains the instant that sale contact moved to its current status."
     },
     {
-      "index": 167,
+      "ordinalPosition": 9,
       "name": "CHARGING_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number of the patient of the pharmacy visit contact to use for charge and payment posting."
     },
     {
-      "index": 172,
+      "ordinalPosition": 10,
       "name": "UNIT_ACQUISITION_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the acquisition cost for the merchandise."
     },
     {
-      "index": 177,
+      "ordinalPosition": 11,
       "name": "CASH_PRICE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the total cash price for the merchandise sale."
     },
     {
-      "index": 182,
+      "ordinalPosition": 12,
       "name": "CASH_PRICE_CALCULATED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column holds the original total cash price for the merchandise sale when the cash price was overridden."
     },
     {
-      "index": 187,
+      "ordinalPosition": 13,
       "name": "CASH_PRICE_OVERRIDE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason category ID for the cash price override for a merchandise sale.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The reason category ID for the cash price override for a merchandise sale."
     },
     {
-      "index": 193,
+      "ordinalPosition": 14,
       "name": "CASH_PRICE_OVERRIDE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column holds the user specified value for the cash price for the merchandise sale."
     },
     {
-      "index": 198,
+      "ordinalPosition": 15,
       "name": "TAX_DUE_TOTAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the rounded value for total taxes due for the merchandise sale."
     },
     {
-      "index": 203,
+      "ordinalPosition": 16,
       "name": "PAT_PAY_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the total cost of the merchandise including any taxes applicable to the merchandise sale."
     },
     {
-      "index": 208,
+      "ordinalPosition": 17,
       "name": "TAX_EXEMPT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the tax was exempted for the merchandise sale.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the tax was exempted for the merchandise sale.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 217,
+      "ordinalPosition": 18,
       "name": "RX_TAX_ROUNDING_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The rounding method  category ID used to calculate the total taxes for a merchandise sale.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStandard\n\n\nRound Up"
+      "description": "The rounding method  category ID used to calculate the total taxes for a merchandise sale.",
+      "entries": [
+        "Standard",
+        "Round Up"
+      ]
     },
     {
-      "index": 226,
+      "ordinalPosition": 19,
       "name": "TAX_EXEMPTED_TOTAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the rounded value for total amount of taxes exempted for a merchandise sale."
     },
     {
-      "index": 231,
+      "ordinalPosition": 20,
       "name": "SALE_PHARMACY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the pharmacy record associated with the merchandise sale contact."
     },
     {
-      "index": 236,
+      "ordinalPosition": 21,
       "name": "RX_CHARGE_DROP_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column contains the latest instant the charge associated with this contact was dropped/credited."
     },
     {
-      "index": 241,
+      "ordinalPosition": 22,
       "name": "PHARMACY_SALE_ITEM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the  fee or merchandise record for the pharmacy sale."
     },
     {
-      "index": 246,
+      "ordinalPosition": 23,
       "name": "PHARMACY_SALE_ITEM_ID_SUPPLY_NAME",
       "type": "VARCHAR",
       "discontinued": false,

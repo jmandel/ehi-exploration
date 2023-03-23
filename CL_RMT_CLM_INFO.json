@@ -1,104 +1,177 @@
 {
-  "table_name": "CL_RMT_CLM_INFO",
+  "name": "CL_RMT_CLM_INFO",
   "description": "This table contains the invoice level information to which the payment in the remittance record is posted.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "INV_NO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The invoice number for the remittance image."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLM_STAT_CD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the code identifying the status of an entire claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProcessed as Primary\n\n\nProcessed as Secondary\n\n\nProcessed as Tertiary\n\n\nDenied\n\n\nPended\n\n\nReceived, but not in process\n\n\nSuspended\n\n\nSuspended-investigation with field\n\n\nSuspended-return with material\n\n\nSuspended-review pending\n\n\nProcessed as Primary, Forwarded to additional Payer(s)\n\n\nProcessed as Secondary, Forwarded to additional Payer(s)\n\n\nProcessed as Tertiary, Forwarded to additional Payer(s)\n\n\nReversal of previous payment\n\n\nNot Our Claim, Forwarded to additional Payer(s)\n\n\nPredetermination pricing only, No payment\n\n\nReviewed"
+      "description": "This is the code identifying the status of an entire claim.",
+      "entries": [
+        "Processed as Primary",
+        "Processed as Secondary",
+        "Processed as Tertiary",
+        "Denied",
+        "Pended",
+        "Received, but not in process",
+        "Suspended",
+        "Suspended-investigation with field",
+        "Suspended-return with material",
+        "Suspended-review pending",
+        "Processed as Primary, Forwarded to additional Payer(s)",
+        "Processed as Secondary, Forwarded to additional Payer(s)",
+        "Processed as Tertiary, Forwarded to additional Payer(s)",
+        "Reversal of previous payment",
+        "Not Our Claim, Forwarded to additional Payer(s)",
+        "Predetermination pricing only, No payment",
+        "Reviewed"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 4,
       "name": "CLAIM_CHRG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the amount for submitted charges on this claim."
     },
     {
-      "index": 41,
+      "ordinalPosition": 5,
       "name": "CLAIM_PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the amount paid on the claim."
     },
     {
-      "index": 46,
+      "ordinalPosition": 6,
       "name": "PAT_RESP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the patient responsibility amount for the claim."
     },
     {
-      "index": 51,
+      "ordinalPosition": 7,
       "name": "CLM_FILING_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is a code identifying the type of claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPreferred provider organization (PPO)\n\n\nPoint of service (POS)\n\n\nExclusive provider organization (EPO)\n\n\nIndemnity Insurance\n\n\nHealth maintenance organization (HMO) medicare risk\n\n\nAutomobile medical\n\n\nTricare\n\n\nDisability\n\n\nHealth maintenance organization\n\n\nLiability medical\n\n\nMedicare part A\n\n\nMedicare part B\n\n\nMedicaid\n\n\nOther federal program\n\n\nTitle V\n\n\nVeteran administration plan\n\n\nWorkers' compensation health claim\n\n\nDental Maintenance Organization\n\n\nChampus\n\n\nMutually Defined"
+      "description": "This is a code identifying the type of claim.",
+      "entries": [
+        "Preferred provider organization (PPO)",
+        "Point of service (POS)",
+        "Exclusive provider organization (EPO)",
+        "Indemnity Insurance",
+        "Health maintenance organization (HMO) medicare risk",
+        "Automobile medical",
+        "Tricare",
+        "Disability",
+        "Health maintenance organization",
+        "Liability medical",
+        "Medicare part A",
+        "Medicare part B",
+        "Medicaid",
+        "Other federal program",
+        "Title V",
+        "Veteran administration plan",
+        "Workers' compensation health claim",
+        "Dental Maintenance Organization",
+        "Champus",
+        "Mutually Defined"
+      ]
     },
     {
-      "index": 78,
+      "ordinalPosition": 8,
       "name": "ICN_NO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the payer's internal control number for the claim."
     },
     {
-      "index": 83,
+      "ordinalPosition": 9,
       "name": "FAC_CODE_VAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the facility code used when the submitted code has been modified through adjudication."
     },
     {
-      "index": 88,
+      "ordinalPosition": 10,
       "name": "CLAIM_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the frequency code of the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNon-Payment/Zero\n\n\nORIGINAL\n\n\nCORRECTED\n\n\nREPLACEMENT\n\n\nVOID\n\n\nLate Charge(s) Only\n\n\nInterim - First Claim\n\n\nInterim - Continuing Claim\n\n\nInterim - Last Claim\n\n\nFinal Claim for a Home Health PPS Episode\n\n\nAdmission/Election Notice\n\n\nHospice/Demonstration (CMS Coord, Centers of Ex, Prov Part)/Rel Non-Med Care Inst\n\n\nHospice Change of Provider Notice\n\n\nHospice/Demonstration (CMS Coord, Centers of Ex, Prov Part)/Rel Non-Med Care Inst V/C\n\n\nHospice Change of Ownership\n\n\nBeneficiary Initiated Adjustment\n\n\nCWF Initiated Adjustment Claim\n\n\nCMS Initiated Adjustment\n\n\nIntermediary Adjustment Claim (Other than QIO or Provider)\n\n\nInitiated Adjustment Claim - Other\n\n\nOIG Initiated Adjustment Claim\n\n\nMSP Initiated Adjustment Claim\n\n\nNonpayment/Zero Claims\n\n\nQIO Adjustment Claim\n\n\nClaim Submitted for Reconsideration Outside of Timely Limits\n\n\nVoid/Cancel a Prior Abbreviated Encounter Submission\n\n\nReplacement of Prior Abbreviated Encounter Submission\n\n\nNew Abbreviated Encounter Submission"
+      "description": "This is the frequency code of the claim.",
+      "entries": [
+        "Non-Payment/Zero",
+        "ORIGINAL",
+        "CORRECTED",
+        "REPLACEMENT",
+        "VOID",
+        "Late Charge(s) Only",
+        "Interim - First Claim",
+        "Interim - Continuing Claim",
+        "Interim - Last Claim",
+        "Final Claim for a Home Health PPS Episode",
+        "Admission/Election Notice",
+        "Hospice/Demonstration (CMS Coord, Centers of Ex, Prov Part)/Rel Non-Med Care Inst",
+        "Hospice Change of Provider Notice",
+        "Hospice/Demonstration (CMS Coord, Centers of Ex, Prov Part)/Rel Non-Med Care Inst V/C",
+        "Hospice Change of Ownership",
+        "Beneficiary Initiated Adjustment",
+        "CWF Initiated Adjustment Claim",
+        "CMS Initiated Adjustment",
+        "Intermediary Adjustment Claim (Other than QIO or Provider)",
+        "Initiated Adjustment Claim - Other",
+        "OIG Initiated Adjustment Claim",
+        "MSP Initiated Adjustment Claim",
+        "Nonpayment/Zero Claims",
+        "QIO Adjustment Claim",
+        "Claim Submitted for Reconsideration Outside of Timely Limits",
+        "Void/Cancel a Prior Abbreviated Encounter Submission",
+        "Replacement of Prior Abbreviated Encounter Submission",
+        "New Abbreviated Encounter Submission"
+      ]
     },
     {
-      "index": 123,
+      "ordinalPosition": 11,
       "name": "DRG_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the Diagnosis Related Group (DRG) code indicating a patient's diagnosis group based on a patient's illnesses, diseases, and medical problems."
     },
     {
-      "index": 128,
+      "ordinalPosition": 12,
       "name": "DRG_WGT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The diagnosis related group weight."
     },
     {
-      "index": 133,
+      "ordinalPosition": 13,
       "name": "DISCHRG_FRAC",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The discharge fraction expressed as a decimal."
     },
     {
-      "index": 138,
+      "ordinalPosition": 14,
       "name": "FILE_INV_NUM",
       "type": "VARCHAR",
       "discontinued": false,

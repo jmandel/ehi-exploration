@@ -1,59 +1,87 @@
 {
-  "table_name": "TRANSPLANT_COOR_HX",
+  "name": "TRANSPLANT_COOR_HX",
   "description": "This table contains a list of all coordinator(s) who have been or are listed as the transplant episode coordinators. This table also contains all organ classes that have been added or removed from the episode.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transplant episode record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TX_COORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the provider listed as a coordinator for the transplant."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TX_COORD_UPD_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who updated transplant coordinator field."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TX_COORD_UPD_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when transplant coordinator was updated"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TX_COORD_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the coordinator is active or inactive\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdded\n\n\nRemoved\n\n\nAutomatically Added"
+      "description": "Stores whether the coordinator is active or inactive",
+      "entries": [
+        "Added",
+        "Removed",
+        "Automatically Added"
+      ]
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "TX_CLASS_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores organ classifications that have been added or deleted from the episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLung\n\n\nPancreas\n\n\nLiver\n\n\nKidney\n\n\nIntestine\n\n\nHeart\n\n\nIslet\n\n\nFace\n\n\nUpper Limb\n\n\nAbdominal Wall\n\n\nLeg\n\n\nPenis\n\n\nTrachea\n\n\nUterus\n\n\nLarynx"
+      "description": "Stores organ classifications that have been added or deleted from the episode.",
+      "entries": [
+        "Lung",
+        "Pancreas",
+        "Liver",
+        "Kidney",
+        "Intestine",
+        "Heart",
+        "Islet",
+        "Face",
+        "Upper Limb",
+        "Abdominal Wall",
+        "Leg",
+        "Penis",
+        "Trachea",
+        "Uterus",
+        "Larynx"
+      ]
     }
   ]
 }

@@ -1,48 +1,58 @@
 {
-  "table_name": "PAT_NFC_DEVICES",
+  "name": "PAT_NFC_DEVICES",
   "description": "This table stores unique identifiers for each of a patient's Near-Field Communication (NFC) devices.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DEVICE_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A unique identifier for a specific NFC tag."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DEVICE_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "An action taken on a specific NFC device (DEVICE_IDENT).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAssigned\n\n\nRemoved"
+      "description": "An action taken on a specific NFC device (DEVICE_IDENT).",
+      "entries": [
+        "Assigned",
+        "Removed"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "ACTION_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item stores the instant at which an action (DEVICE_ACTION_C) was taken on an NFC device (DEVICE_IDENT)."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "NFC_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

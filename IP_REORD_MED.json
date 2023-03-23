@@ -1,55 +1,65 @@
 {
-  "table_name": "IP_REORD_MED",
+  "name": "IP_REORD_MED",
   "description": "This table displays reordered medication information.",
-  "primary_key": {
-    "column_name": "INPATIENT_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INPATIENT_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INPATIENT_DATA_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the inpatient record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ORIGINAL_ERX_IP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The original reordered medication ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SUBSTITUTE_ERX_IP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The substitute for the reordered medication ID."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "OLD_ORDER_ID_IP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reordered current medication ID."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "REORD_PEND_IP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if the reorderd medication is pending or not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Stores if the reorderd medication is pending or not.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "NEW_ORDER_ID_IP",
       "type": "VARCHAR",
       "discontinued": false,

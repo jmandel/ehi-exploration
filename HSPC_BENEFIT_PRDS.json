@@ -1,55 +1,65 @@
 {
-  "table_name": "HSPC_BENEFIT_PRDS",
+  "name": "HSPC_BENEFIT_PRDS",
   "description": "This table contains hospice benefit period information.",
-  "primary_key": {
-    "column_name": "CVG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CVG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the coverage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HSPC_START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the start date for any hospice benefit periods."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HSPC_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the end date for any hospice benefit periods."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HSPC_CTI_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the signature status of the certificate of terminal illness for the hospice benefit period.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSigned\n\n\nNot signed"
+      "description": "This item stores the signature status of the certificate of terminal illness for the hospice benefit period.",
+      "entries": [
+        "Signed",
+        "Not signed"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "HSPC_CTI_SIGN_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the date that the certificate of terminal illness (CTI) was signed for each hospice benefit period."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "HSPC_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

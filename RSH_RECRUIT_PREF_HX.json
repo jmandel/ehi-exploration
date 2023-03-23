@@ -1,48 +1,59 @@
 {
-  "table_name": "RSH_RECRUIT_PREF_HX",
+  "name": "RSH_RECRUIT_PREF_HX",
   "description": "This table contains the history of patient research recruitment preferences.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RSH_PREF_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the history of the patient's explicit research recruitment preference.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOK to Contact\n\n\nDo Not Contact\n\n\nUndecided"
+      "description": "Contains the history of the patient's explicit research recruitment preference.",
+      "entries": [
+        "OK to Contact",
+        "Do Not Contact",
+        "Undecided"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "RSH_PREF_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Contains the history of the instants that the patient has indicated an explicit research recruitment preference."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "RSH_PREF_HX_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the history of the users who have recorded the patient's explicit research recruitment preference."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "RSH_PREF_HX_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,

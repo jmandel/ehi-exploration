@@ -1,127 +1,151 @@
 {
-  "table_name": "REFERRAL_APT",
+  "name": "REFERRAL_APT",
   "description": "This table contains information about referral appointments.",
-  "primary_key": {
-    "column_name": "REFERRAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE_COUNT",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The referral ID for the referral record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "A line number that is used to group information about contacts that have counted towards the referral."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the service (date of the appointment, claim, charge, or admission date) that is associated with the referral"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SERVICE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of service that has been counted as a contact toward the total of completed contacts for this referral.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOverride\n\n\nAdmission\n\n\nVisit\n\n\nClaim\n\n\nCharge\n\n\nHome Health Intake\n\n\nSurgery\n\n\nHome Infusion"
+      "description": "The type of service that has been counted as a contact toward the total of completed contacts for this referral.",
+      "entries": [
+        "Override",
+        "Admission",
+        "Visit",
+        "Claim",
+        "Charge",
+        "Home Health Intake",
+        "Surgery",
+        "Home Infusion"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "CHARGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the charge, if the source is �Charge.�"
     },
     {
-      "index": 37,
+      "ordinalPosition": 6,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the AP Claim, if the source is �Claim�"
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "SERIAL_NUMBER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the contact, if the source is either \"Visit\" or \"Admission\""
     },
     {
-      "index": 47,
+      "ordinalPosition": 8,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the user who performed an override of the counting/contact information, if the source of the contact is \"User Override\""
     },
     {
-      "index": 52,
+      "ordinalPosition": 9,
       "name": "REASON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reason for the user override, if the source of the contact was \"User Override\""
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "TABLE_COUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of completed contacts that have been counted for this source."
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "EXT_SVC_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the provider record for this row."
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "EXT_SVC_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time associated with the external appointment that was added to the referral."
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "EXT_SVC_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the location or place of service record for this row.  This column is frequently used to link to the CLARITY_POS table."
     },
     {
-      "index": 77,
+      "ordinalPosition": 14,
       "name": "EXT_APPT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the appointment status for external appointments.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduled\n\n\nCompleted\n\n\nCanceled\n\n\nNo Show\n\n\nLeft without seen\n\n\nArrived"
+      "description": "This column contains the appointment status for external appointments.",
+      "entries": [
+        "Scheduled",
+        "Completed",
+        "Canceled",
+        "No Show",
+        "Left without seen",
+        "Arrived"
+      ]
     },
     {
-      "index": 90,
+      "ordinalPosition": 15,
       "name": "EXT_APPT_UNIQ_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the unique ID for external appointments."
     },
     {
-      "index": 95,
+      "ordinalPosition": 16,
       "name": "EXT_SVC_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column contains the timestamp when the service is performed in UTC format."
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "EXT_SVC_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This column contains the external service date and time as an instant in the local time zone."
     }

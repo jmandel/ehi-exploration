@@ -1,69 +1,75 @@
 {
-  "table_name": "HSP_ACCT_DNB_SB_HX",
+  "name": "HSP_ACCT_DNB_SB_HX",
   "description": "This table holds the history items of adding and removing discharged-not-billed (DNBs), Stop Bills, and Validation Checks to Hospital Accounts. This includes the user that initiated the action, when the action was initiated, and what rule was used to initiate the action.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account ID with related stop bill/DNB/validation check information."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the results of a query. Each piece of stop bill/DNB/validation check history will have its own line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HX_DNBSB_ADD_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user who placed the stop bill/DNB/validation check on the hospital account."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_DNBSB_RMV_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user who removed the stop bill/DNB/validation check from the hospital account."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HX_BILLING_INDC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the billing indicator category that was added or removed from the account.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This is the billing indicator category that was added or removed from the account."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "HX_FILTER_CER_RULE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the edit check's CER filter rule."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "HX_FILTER_CER_RULE_ID_RULE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the rule."
     },
     {
-      "index": 38,
+      "ordinalPosition": 8,
       "name": "HX_FILTER_BWR_RULE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the edit check's BWR filter rule."
     },
     {
-      "index": 43,
+      "ordinalPosition": 9,
       "name": "HX_FILTER_BWR_RULE_ID_RULE_NAME",
       "type": "VARCHAR",
       "discontinued": false,

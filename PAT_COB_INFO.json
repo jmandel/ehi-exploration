@@ -1,202 +1,250 @@
 {
-  "table_name": "PAT_COB_INFO",
+  "name": "PAT_COB_INFO",
   "description": "This table contains a list of coordination of benefits savings bucket (COB) coverages to which a member belongs, and information specific to that COB coverage, such as insurance company and subscriber name.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique patient ID associated with the Coordination of Benefits (COB) information."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line number of Coordination of Benefits (COB) information on patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COB_INS_CO_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the insurance company for Coordination of Benefits (COB) information."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "COB_INS_CO_ADDR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Address of insurance company for Coordination of Benefits (COB) information."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "COB_INSURED_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of subscriber on Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "COB_GRP_POLICY_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Group/policy number on Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "COB_GRP_NAME_EMPR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Group/employer name on Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "COB_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Status of information for a member/Coordination of Benefits (COB) coverage.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Status of information for a member/Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 43,
+      "ordinalPosition": 9,
       "name": "COB_INS_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Phone number of contact at Coordination of Benefits (COB) insurance company."
     },
     {
-      "index": 48,
+      "ordinalPosition": 10,
       "name": "COB_INS_CONTACT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contact at Coordination of Benefits (COB) insurance company."
     },
     {
-      "index": 53,
+      "ordinalPosition": 11,
       "name": "COB_INSURED_DOB",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of birth for subscriber on a Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 58,
+      "ordinalPosition": 12,
       "name": "COB_MEM_RELX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Relationship of member to the subscriber on a Coordination of Benefits (COB) coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSelf\n\n\nSpouse\n\n\nChild\n\n\nEmployee\n\n\nUnknown"
+      "description": "Relationship of member to the subscriber on a Coordination of Benefits (COB) coverage.",
+      "entries": [
+        "Self",
+        "Spouse",
+        "Child",
+        "Employee",
+        "Unknown"
+      ]
     },
     {
-      "index": 70,
+      "ordinalPosition": 13,
       "name": "COB_MEM_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective date of member on a Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 75,
+      "ordinalPosition": 14,
       "name": "COB_MEM_TERM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Termination date for a member on a Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 80,
+      "ordinalPosition": 15,
       "name": "COB_MEM_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free-text comment for a member on a Coordination of Benefits (COB) coverage (member-level)."
     },
     {
-      "index": 85,
+      "ordinalPosition": 16,
       "name": "COB_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free-text comment associated with a Coordination of Benefits (COB) coverage (coverage-level)."
     },
     {
-      "index": 90,
+      "ordinalPosition": 17,
       "name": "COB_MEM_PRI_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the Coordination of Benefits (COB) coverage should be considered primary for the member (Y=COB coverage is primary, N=COB coverage is not primary).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary\n\n\nUnknown\n\n\nSecondary\n\n\nTertiary"
+      "description": "Indicates if the Coordination of Benefits (COB) coverage should be considered primary for the member (Y=COB coverage is primary, N=COB coverage is not primary).",
+      "entries": [
+        "Primary",
+        "Unknown",
+        "Secondary",
+        "Tertiary"
+      ]
     },
     {
-      "index": 101,
+      "ordinalPosition": 18,
       "name": "COB_MEMBERS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Returns internal member IDs associated with Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 106,
+      "ordinalPosition": 19,
       "name": "COB_PART_D_RX_BIN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Beneficiary Identification Number (BIN) used for Part D Coordination of Benefits"
     },
     {
-      "index": 111,
+      "ordinalPosition": 20,
       "name": "COB_PART_D_RX_PCN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Processor Control Number (PCN) used for Part D Coordination of Benefits"
     },
     {
-      "index": 116,
+      "ordinalPosition": 21,
       "name": "COB_PART_D_RX_GRP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The group used for Part D Coordination of Benefits"
     },
     {
-      "index": 121,
+      "ordinalPosition": 22,
       "name": "COB_PART_D_RX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID used for Part D Coordination of Benefits"
     },
     {
-      "index": 126,
+      "ordinalPosition": 23,
       "name": "COB_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the indemnity coverage that is associated with this Coordination of Benefits (COB) coverage."
     },
     {
-      "index": 131,
+      "ordinalPosition": 24,
       "name": "COB_SUB_EMPLOYMENT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The employment status of the subscriber on this Coordination of Benefits (COB) coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFull Time\n\n\nPart Time\n\n\nNot Employed\n\n\nSelf Employed\n\n\nRetired\n\n\nOn Active Military Duty\n\n\nStudent - Full Time\n\n\nStudent - Part Time\n\n\nUnknown"
+      "description": "The employment status of the subscriber on this Coordination of Benefits (COB) coverage.",
+      "entries": [
+        "Full Time",
+        "Part Time",
+        "Not Employed",
+        "Self Employed",
+        "Retired",
+        "On Active Military Duty",
+        "Student - Full Time",
+        "Student - Part Time",
+        "Unknown"
+      ]
     },
     {
-      "index": 147,
+      "ordinalPosition": 25,
       "name": "COB_MEM_COURT_DECREE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The court decree for the member on this Coordination of Benefits (COB) coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Applicable (no court decree concerning healthcare expenses)\n\n\nSubscriber is the parent responsible for healthcare expenses\n\n\nSubscriber is the spouse of the parent responsible for healthcare expenses\n\n\nSubscriber is a parent jointly responsible for healthcare expenses\n\n\nSubscriber is the spouse of a parent jointly responsible for healthcare expenses\n\n\nSubscriber is the parent not responsible for healthcare expenses\n\n\nSubscriber is the spouse of the parent not responsible for healthcare expenses"
+      "description": "The court decree for the member on this Coordination of Benefits (COB) coverage.",
+      "entries": [
+        "Not Applicable (no court decree concerning healthcare expenses)",
+        "Subscriber is the parent responsible for healthcare expenses",
+        "Subscriber is the spouse of the parent responsible for healthcare expenses",
+        "Subscriber is a parent jointly responsible for healthcare expenses",
+        "Subscriber is the spouse of a parent jointly responsible for healthcare expenses",
+        "Subscriber is the parent not responsible for healthcare expenses",
+        "Subscriber is the spouse of the parent not responsible for healthcare expenses"
+      ]
     },
     {
-      "index": 161,
+      "ordinalPosition": 26,
       "name": "COB_MEM_SUB_CUSTODY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The subscriber custody for the member on this Coordination of Benefits (COB) coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Applicable (parents married, widowed parent, etc)\n\n\nSubscriber is the custodial parent\n\n\nSubscriber is a joint custody parent\n\n\nSubscriber is the spouse of the custodial parent\n\n\nSubscriber is the spouse of a joint custody parent\n\n\nSubscriber is the non-custodial parent\n\n\nSubscriber is the spouse of the non-custodial parent"
+      "description": "The subscriber custody for the member on this Coordination of Benefits (COB) coverage.",
+      "entries": [
+        "Not Applicable (parents married, widowed parent, etc)",
+        "Subscriber is the custodial parent",
+        "Subscriber is a joint custody parent",
+        "Subscriber is the spouse of the custodial parent",
+        "Subscriber is the spouse of a joint custody parent",
+        "Subscriber is the non-custodial parent",
+        "Subscriber is the spouse of the non-custodial parent"
+      ]
     },
     {
-      "index": 175,
+      "ordinalPosition": 27,
       "name": "COB_SUBSCRIBER_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The identifier for Coordination of Benefits (COB) coverages that is shared by all members on the same coverage."
     },
     {
-      "index": 180,
+      "ordinalPosition": 28,
       "name": "COB_MEMBER_NUM",
       "type": "VARCHAR",
       "discontinued": false,

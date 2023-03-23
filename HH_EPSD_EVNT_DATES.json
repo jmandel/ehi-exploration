@@ -1,69 +1,96 @@
 {
-  "table_name": "HH_EPSD_EVNT_DATES",
+  "name": "HH_EPSD_EVNT_DATES",
   "description": "This table contains event dates information for Home Health episodes. This information can be entered manually in the Episode of Care Information form in Intake. For certain events, such as Admit, Discharge, and SOC, the information is triggered automatically.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique identifier for the episode."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DATE_OF_EVENT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of event in the episode."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DATE_EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category list selection for event on this date.  Links to category table ZC_DATE_EVENT.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIntake Completed\n\n\nStart of Care\n\n\nAssessment \n\n\nResumption of Care\n\n\nCert Period Start\n\n\nCert Period End\n\n\nEpisode Created\n\n\nCoverage Change Start of Care\n\n\nAlternative Billing Start Date for Cutover\n\n\nMCCM Election\n\n\nNotice of Admission Date for Cutover\n\n\nInpatient Discharge\n\n\nHome Health Discharge\n\n\nDemographic Update\n\n\nDiscard Episode\n\n\nMCCM Discharge\n\n\nHospice Admission\n\n\nHospice Discharge\n\n\nHospice Non-Admit"
+      "description": "Category list selection for event on this date.  Links to category table ZC_DATE_EVENT.",
+      "entries": [
+        "Intake Completed",
+        "Start of Care",
+        "Assessment",
+        "Resumption of Care",
+        "Cert Period Start",
+        "Cert Period End",
+        "Episode Created",
+        "Coverage Change Start of Care",
+        "Alternative Billing Start Date for Cutover",
+        "MCCM Election",
+        "Notice of Admission Date for Cutover",
+        "Inpatient Discharge",
+        "Home Health Discharge",
+        "Demographic Update",
+        "Discard Episode",
+        "MCCM Discharge",
+        "Hospice Admission",
+        "Hospice Discharge",
+        "Hospice Non-Admit"
+      ]
     },
     {
-      "index": 43,
+      "ordinalPosition": 5,
       "name": "DATE_ENTERED_BY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the user who entered the event.  Links to CLARITY_EMP."
     },
     {
-      "index": 48,
+      "ordinalPosition": 6,
       "name": "EVENT_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Comments text typed in by a user."
     },
     {
-      "index": 53,
+      "ordinalPosition": 7,
       "name": "EVENT_CREAT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the time and date when an event type was created for the first time for a Home Care episode."
     },
     {
-      "index": 58,
+      "ordinalPosition": 8,
       "name": "EVENT_UPDATE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the time and date when an event type was last updated for a Home Care episode. If an event is not updated after being created then this item will contain the same value as Summary Block / Episode record (HSB) 27408."
     },
     {
-      "index": 63,
+      "ordinalPosition": 9,
       "name": "LAST_UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

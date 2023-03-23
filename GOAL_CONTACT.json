@@ -1,125 +1,139 @@
 {
-  "table_name": "GOAL_CONTACT",
+  "name": "GOAL_CONTACT",
   "description": "This table contains contact specific data for the IGO (Discrete Goals) master file.",
-  "primary_key": {
-    "column_name": "GOAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "GOAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "GOAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID for the goal record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The DTE contact date for the goal record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CP_PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The priority assigned to this goal.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The priority assigned to this goal."
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date to begin work on this goal."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date work on this goal was completed."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "EXP_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date work on this goal is expected to be completed."
     },
     {
-      "index": 38,
+      "ordinalPosition": 8,
       "name": "GOAL_OUTCOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The outcome(s) associated with a care plan goal.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The outcome(s) associated with a care plan goal."
     },
     {
-      "index": 44,
+      "ordinalPosition": 9,
       "name": "EDIT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item holds edited user ID information."
     },
     {
-      "index": 49,
+      "ordinalPosition": 10,
       "name": "PATH_OUTCOME_VAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the documentation value assigned to this pathway outcome for this contact.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMet\n\n\nNot Met"
+      "description": "The category number for the documentation value assigned to this pathway outcome for this contact.",
+      "entries": [
+        "Met",
+        "Not Met"
+      ]
     },
     {
-      "index": 58,
+      "ordinalPosition": 11,
       "name": "PATH_OUTCOME_VAR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the variance that was documented on this pathway outcome for this contact."
     },
     {
-      "index": 63,
+      "ordinalPosition": 12,
       "name": "CARE_PLAN_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Links to the care plan contact. Used to recreate historic versions of the care plan."
     },
     {
-      "index": 68,
+      "ordinalPosition": 13,
       "name": "INCLUDE_DESC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If set to Yes, the goal description will be included on the plan of care. If set to No or left blank, the goal description will be omitted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "If set to Yes, the goal description will be included on the plan of care. If set to No or left blank, the goal description will be omitted.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 77,
+      "ordinalPosition": 14,
       "name": "HAS_NOTE_EDIT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Y means that, for this reading, the default smarttext has been pulled in at least once.\n\n\n The category values for this column were already listed for column: INCLUDE_DESC_YN"
+      "description": "Y means that, for this reading, the default smarttext has been pulled in at least once."
     },
     {
-      "index": 83,
+      "ordinalPosition": 15,
       "name": "READING_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Documents when the original reading contact was documented. Used to order active documentation readings in the order they clinically happened."
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "UPDATED_GOAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item links to the new goal ID that was created when this original goal was resolved and updated."
     },
     {
-      "index": 93,
+      "ordinalPosition": 17,
       "name": "REASON_FOR_UPDATE",
       "type": "VARCHAR",
       "discontinued": false,

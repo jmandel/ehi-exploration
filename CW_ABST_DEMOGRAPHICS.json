@@ -1,675 +1,1063 @@
 {
-  "table_name": "CW_ABST_DEMOGRAPHICS",
+  "name": "CW_ABST_DEMOGRAPHICS",
   "description": "General abstraction details and demographic information reported to the United States ESRD patient registry.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "MCARE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current Medicare status of the dialysis patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nNoCoverage\n\n\nCoverage"
+      "description": "The current Medicare status of the dialysis patient.",
+      "entries": [
+        "Pending",
+        "NoCoverage",
+        "Coverage"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "MCARE_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the current Medicare status of the dialysis patient."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "EMPY_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current employment status of the dialysis patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnemployed\n\n\nFullTime\n\n\nPartTime\n\n\nHomemaker\n\n\nRetiredAgePref\n\n\nRetiredDisability\n\n\nMedicalLeave\n\n\nStudent"
+      "description": "The current employment status of the dialysis patient.",
+      "entries": [
+        "Unemployed",
+        "FullTime",
+        "PartTime",
+        "Homemaker",
+        "RetiredAgePref",
+        "RetiredDisability",
+        "MedicalLeave",
+        "Student"
+      ]
     },
     {
-      "index": 37,
+      "ordinalPosition": 5,
       "name": "EMPY_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the current employment status of the dialysis patient."
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "SCHOOL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current school status of the dialysis patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSchool Full-Time\n\n\nSchool Part-Time\n\n\nNot in School"
+      "description": "The current school status of the dialysis patient.",
+      "entries": [
+        "School Full-Time",
+        "School Part-Time",
+        "Not in School"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 7,
       "name": "SCHOOL_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the current school status of the dialysis patient."
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "VOCATIONAL_REHAB_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current vocational rehab status of the dialysis patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReferred to VR\n\n\nCurrently in VR\n\n\nCompleted\n\n\nNot Eligible for VR\n\n\nDeclined VR"
+      "description": "The current vocational rehab status of the dialysis patient.",
+      "entries": [
+        "Referred to VR",
+        "Currently in VR",
+        "Completed",
+        "Not Eligible for VR",
+        "Declined VR"
+      ]
     },
     {
-      "index": 69,
+      "ordinalPosition": 9,
       "name": "VOCATIONAL_REHAB_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the current vocational rehab status of the dialysis patient."
     },
     {
-      "index": 74,
+      "ordinalPosition": 10,
       "name": "ADMSN_FACILITY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The dialysis patient's admission facility ID."
     },
     {
-      "index": 79,
+      "ordinalPosition": 11,
       "name": "ADMSN_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the dialysis patient started dialysis treatment in this facility."
     },
     {
-      "index": 84,
+      "ordinalPosition": 12,
       "name": "ADMSN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for dialysis admission. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew ESRD Patient\n\n\nTransfer In\n\n\nRestart Dialysis\n\n\nDialysis after Transplant Failed\n\n\nDialysis in Support of Transplant"
+      "description": "The reason for dialysis admission.",
+      "entries": [
+        "New ESRD Patient",
+        "Transfer In",
+        "Restart Dialysis",
+        "Dialysis after Transplant Failed",
+        "Dialysis in Support of Transplant"
+      ]
     },
     {
-      "index": 96,
+      "ordinalPosition": 13,
       "name": "TRANSIENT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for the dialysis patient being transient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDisaster\n\n\nTravel\n\n\nHome Maintenance\n\n\nFacility Maintenance\n\n\nDialysis in Support of Transplant\n\n\nBackup Hemodialysis"
+      "description": "The reason for the dialysis patient being transient.",
+      "entries": [
+        "Disaster",
+        "Travel",
+        "Home Maintenance",
+        "Facility Maintenance",
+        "Dialysis in Support of Transplant",
+        "Backup Hemodialysis"
+      ]
     },
     {
-      "index": 109,
+      "ordinalPosition": 14,
       "name": "TRANSFER_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The transfer discharge reason of a dialysis patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDialysis Facility\n\n\nHospice\n\n\nHospital\n\n\nLong Term Care Facility\n\n\nRehab Center\n\n\nNursing Home"
+      "description": "The transfer discharge reason of a dialysis patient.",
+      "entries": [
+        "Dialysis Facility",
+        "Hospice",
+        "Hospital",
+        "Long Term Care Facility",
+        "Rehab Center",
+        "Nursing Home"
+      ]
     },
     {
-      "index": 122,
+      "ordinalPosition": 15,
       "name": "DISCH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when a patient is discharged from the dialysis outpatient facility."
     },
     {
-      "index": 127,
+      "ordinalPosition": 16,
       "name": "DISCH_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for discharging a patient from the dialysis facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDeath\n\n\nDiscontinue\n\n\nLost to Follow-Up\n\n\nRecover Function of Original Kidney\n\n\nInvoluntary\n\n\nOther\n\n\nTransplant in US\n\n\nTransplant outside US\n\n\nTransfer\n\n\nAcute\n\n\nDelayed Function Resolved following a Transplant\n\n\nDelayed Function Unresolved following a Transplant"
+      "description": "The reason for discharging a patient from the dialysis facility.",
+      "entries": [
+        "Death",
+        "Discontinue",
+        "Lost to Follow-Up",
+        "Recover Function of Original Kidney",
+        "Involuntary",
+        "Other",
+        "Transplant in US",
+        "Transplant outside US",
+        "Transfer",
+        "Acute",
+        "Delayed Function Resolved following a Transplant",
+        "Delayed Function Unresolved following a Transplant"
+      ]
     },
     {
-      "index": 146,
+      "ordinalPosition": 17,
       "name": "PRIMARY_TRT_LOCATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The primary setting of the patient's dialysis treatment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHome\n\n\nDialysis Facility/ Center\n\n\nSNF/ Long Term Care Facility"
+      "description": "The primary setting of the patient's dialysis treatment.",
+      "entries": [
+        "Home",
+        "Dialysis Facility/ Center",
+        "SNF/ Long Term Care Facility"
+      ]
     },
     {
-      "index": 156,
+      "ordinalPosition": 18,
       "name": "TRT_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The treatment start date for dialysis."
     },
     {
-      "index": 161,
+      "ordinalPosition": 19,
       "name": "TRT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The treatment type of dialysis patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHemodialysis\n\n\nCAPD\n\n\nCCPD\n\n\nOther"
+      "description": "The treatment type of dialysis patient.",
+      "entries": [
+        "Hemodialysis",
+        "CAPD",
+        "CCPD",
+        "Other"
+      ]
     },
     {
-      "index": 172,
+      "ordinalPosition": 20,
       "name": "SESSIONS_PER_WEEK",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of hemodialysis sessions per week for the dialysis patient."
     },
     {
-      "index": 177,
+      "ordinalPosition": 21,
       "name": "SESSION_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The hemodialysis session length."
     },
     {
-      "index": 182,
+      "ordinalPosition": 22,
       "name": "TRT_PROVIDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The dialysis patient's treatment provider's ID."
     },
     {
-      "index": 187,
+      "ordinalPosition": 23,
       "name": "IS_TRANSIENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Shows whether the dialysis patient is transient or not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Shows whether the dialysis patient is transient or not.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 196,
+      "ordinalPosition": 24,
       "name": "TRAINING_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of training obtained by dialysis patient.\n\n\n The category values for this column were already listed for column: TRT_TYPE_C_NAME"
+      "description": "The type of training obtained by dialysis patient."
     },
     {
-      "index": 202,
+      "ordinalPosition": 25,
       "name": "OTHER_TRAINING_TYPE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The type of training type if not in the list of common types."
     },
     {
-      "index": 207,
+      "ordinalPosition": 26,
       "name": "TRAINING_TIME_OF_DAY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The information on whether the patient obtained training for day or nocturnal dialysis.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDay\n\n\nNocturnal"
+      "description": "The information on whether the patient obtained training for day or nocturnal dialysis.",
+      "entries": [
+        "Day",
+        "Nocturnal"
+      ]
     },
     {
-      "index": 216,
+      "ordinalPosition": 27,
       "name": "TRAINING_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The training start date for the dialysis patient."
     },
     {
-      "index": 221,
+      "ordinalPosition": 28,
       "name": "TRAINING_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The training end date for the dialysis patient."
     },
     {
-      "index": 226,
+      "ordinalPosition": 29,
       "name": "SELFCARE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Shows whether the dialysis patient is expected to perform self-care at home or in-center after dialysis training.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHome\n\n\nIncenter"
+      "description": "Shows whether the dialysis patient is expected to perform self-care at home or in-center after dialysis training.",
+      "entries": [
+        "Home",
+        "Incenter"
+      ]
     },
     {
-      "index": 235,
+      "ordinalPosition": 30,
       "name": "NO_CLINICAL_DATA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Shows whether the dialysis patient's monthly clinical submission information is available or not.\n\n\n The category values for this column were already listed for column: IS_TRANSIENT_YN"
+      "description": "Shows whether the dialysis patient's monthly clinical submission information is available or not."
     },
     {
-      "index": 241,
+      "ordinalPosition": 31,
       "name": "EQRS_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The dialysis patient's End Stage Renal Disease Quality Reporting System (EQRS) ID used in CMS reporting."
     },
     {
-      "index": 246,
+      "ordinalPosition": 32,
       "name": "ADMISSION_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for dialysis admission."
     },
     {
-      "index": 251,
+      "ordinalPosition": 33,
       "name": "TREATMENT_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores the dialysis treatment modality ID of a patient."
     },
     {
-      "index": 256,
+      "ordinalPosition": 34,
       "name": "PAT_FIRST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores the dialysis patient's first name."
     },
     {
-      "index": 261,
+      "ordinalPosition": 35,
       "name": "PAT_MIDDLE_INITIAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's middle name initial."
     },
     {
-      "index": 266,
+      "ordinalPosition": 36,
       "name": "PAT_LAST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's last name."
     },
     {
-      "index": 271,
+      "ordinalPosition": 37,
       "name": "PAT_NAME_SUFFIX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's name suffix.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nJr\n\n\nSr\n\n\nII\n\n\nIII\n\n\nIV\n\n\nV\n\n\nVI"
+      "description": "It stores a dialysis patient's name suffix.",
+      "entries": [
+        "Jr",
+        "Sr",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI"
+      ]
     },
     {
-      "index": 285,
+      "ordinalPosition": 38,
       "name": "PAT_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the dialysis patient's sex assigned at birth.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nF\n\n\nM"
+      "description": "It stores the dialysis patient's sex assigned at birth.",
+      "entries": [
+        "F",
+        "M"
+      ]
     },
     {
-      "index": 294,
+      "ordinalPosition": 39,
       "name": "PAT_BIRTH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "It stores a dialysis patient's date of birth."
     },
     {
-      "index": 299,
+      "ordinalPosition": 40,
       "name": "PAT_DEATH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "It stores a dialysis patient's date of death."
     },
     {
-      "index": 304,
+      "ordinalPosition": 41,
       "name": "PAT_MBI_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's Medicare Beneficiary Identifier number."
     },
     {
-      "index": 309,
+      "ordinalPosition": 42,
       "name": "PAT_SSN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's social security number."
     },
     {
-      "index": 314,
+      "ordinalPosition": 43,
       "name": "PHYS_ADDRESS_STREET_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's physical address street line 1."
     },
     {
-      "index": 319,
+      "ordinalPosition": 44,
       "name": "PHYS_ADDRESS_STREET_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's physical address street line 2."
     },
     {
-      "index": 324,
+      "ordinalPosition": 45,
       "name": "PHYS_ADDRESS_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's physical address state.\n\n\nMay contain organization-specific values: Yes"
+      "description": "It stores a dialysis patient's physical address state."
     },
     {
-      "index": 330,
+      "ordinalPosition": 46,
       "name": "PHYS_ADDRESS_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's physical address county.\n\n\nMay contain organization-specific values: Yes"
+      "description": "It stores a dialysis patient's physical address county."
     },
     {
-      "index": 336,
+      "ordinalPosition": 47,
       "name": "PHYS_ADDRESS_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's ZIP code."
     },
     {
-      "index": 341,
+      "ordinalPosition": 48,
       "name": "PHYS_ADDRESS_ZIP_EXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's physical address ZIP extension."
     },
     {
-      "index": 346,
+      "ordinalPosition": 49,
       "name": "MAIL_ADDRESS_STREET_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's mailing address street line 1."
     },
     {
-      "index": 351,
+      "ordinalPosition": 50,
       "name": "MAIL_ADDRESS_STREET_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's mailing address street line 2."
     },
     {
-      "index": 356,
+      "ordinalPosition": 51,
       "name": "PHYS_ADDRESS_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's physical address city."
     },
     {
-      "index": 361,
+      "ordinalPosition": 52,
       "name": "MAIL_ADDRESS_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's mailing address city."
     },
     {
-      "index": 366,
+      "ordinalPosition": 53,
       "name": "MAIL_ADDRESS_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's mailing address state.\n\n\n The category values for this column were already listed for column: PHYS_ADDRESS_STATE_C_NAME"
+      "description": "It stores a dialysis patient's mailing address state."
     },
     {
-      "index": 372,
+      "ordinalPosition": 54,
       "name": "MAIL_ADDRESS_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's mailing address county.\n\n\n The category values for this column were already listed for column: PHYS_ADDRESS_COUNTY_C_NAME"
+      "description": "It stores a dialysis patient's mailing address county."
     },
     {
-      "index": 378,
+      "ordinalPosition": 55,
       "name": "MAIL_ADDRESS_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's mailing address zip code."
     },
     {
-      "index": 383,
+      "ordinalPosition": 56,
       "name": "MAIL_ADDRESS_ZIP_EXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's mailing address zip code extension."
     },
     {
-      "index": 388,
+      "ordinalPosition": 57,
       "name": "WORK_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's work phone number area code."
     },
     {
-      "index": 393,
+      "ordinalPosition": 58,
       "name": "WORK_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It indicates a dialysis patient's work phone number without the area code."
     },
     {
-      "index": 398,
+      "ordinalPosition": 59,
       "name": "WORK_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's work phone number extension."
     },
     {
-      "index": 403,
+      "ordinalPosition": 60,
       "name": "HOME_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It stores the area code from a dialysis patient's phone number."
     },
     {
-      "index": 408,
+      "ordinalPosition": 61,
       "name": "HOME_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's phone number."
     },
     {
-      "index": 413,
+      "ordinalPosition": 62,
       "name": "HOME_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It stores the phone number extension of a dialysis patient."
     },
     {
-      "index": 418,
+      "ordinalPosition": 63,
       "name": "FAX_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's fax number area code."
     },
     {
-      "index": 423,
+      "ordinalPosition": 64,
       "name": "FAX_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It indicates a dialysis patient's fax number without the area code."
     },
     {
-      "index": 428,
+      "ordinalPosition": 65,
       "name": "FAX_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's fax number extension."
     },
     {
-      "index": 433,
+      "ordinalPosition": 66,
       "name": "MOBILE_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's mobile phone number area code piece."
     },
     {
-      "index": 438,
+      "ordinalPosition": 67,
       "name": "MOBILE_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It indicates a dialysis patient's mobile phone number without the area code."
     },
     {
-      "index": 443,
+      "ordinalPosition": 68,
       "name": "PAGER_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's pager number area code piece."
     },
     {
-      "index": 448,
+      "ordinalPosition": 69,
       "name": "PAGER_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It indicates a dialysis patient's pager number without the area code."
     },
     {
-      "index": 453,
+      "ordinalPosition": 70,
       "name": "PAGER_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's pager number extension."
     },
     {
-      "index": 458,
+      "ordinalPosition": 71,
       "name": "OTHER_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's other phone number area code."
     },
     {
-      "index": 463,
+      "ordinalPosition": 72,
       "name": "OTHER_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It indicates a dialysis patient's other phone number without the area code."
     },
     {
-      "index": 468,
+      "ordinalPosition": 73,
       "name": "OTHER_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It indicates a dialysis patient's other phone number extension."
     },
     {
-      "index": 473,
+      "ordinalPosition": 74,
       "name": "TRANSIENT_ADDRESS_STREET_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a transient dialysis patient's street address line 1."
     },
     {
-      "index": 478,
+      "ordinalPosition": 75,
       "name": "TRANSIENT_ADDRESS_STREET_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a transient dialysis patient's street address line 2."
     },
     {
-      "index": 483,
+      "ordinalPosition": 76,
       "name": "TRANSIENT_ADDRESS_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores the city name of a dialysis patient's transient address."
     },
     {
-      "index": 488,
+      "ordinalPosition": 77,
       "name": "TRANSIENT_ADDRESS_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's transient address state.\n\n\n The category values for this column were already listed for column: PHYS_ADDRESS_STATE_C_NAME"
+      "description": "It stores a dialysis patient's transient address state."
     },
     {
-      "index": 494,
+      "ordinalPosition": 78,
       "name": "TRANSIENT_ADDRESS_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's transient address ZIP code."
     },
     {
-      "index": 499,
+      "ordinalPosition": 79,
       "name": "TRANSIENT_ADDRESS_ZIP_EXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's transient address ZIP code extension."
     },
     {
-      "index": 504,
+      "ordinalPosition": 80,
       "name": "TRANSIENT_PHONE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a transient dialysis patient's preferred phone number type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nWork\n\n\nTel\n\n\nFax\n\n\nMobile\n\n\nPager\n\n\nOther"
+      "description": "It stores a transient dialysis patient's preferred phone number type.",
+      "entries": [
+        "Work",
+        "Tel",
+        "Fax",
+        "Mobile",
+        "Pager",
+        "Other"
+      ]
     },
     {
-      "index": 517,
+      "ordinalPosition": 81,
       "name": "TRANSIENT_PHONE_AREA_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It stores the area code from a transient dialysis patient's phone number."
     },
     {
-      "index": 522,
+      "ordinalPosition": 82,
       "name": "TRANSIENT_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores the transient phone number of a dialysis patient."
     },
     {
-      "index": 527,
+      "ordinalPosition": 83,
       "name": "TRANSIENT_PHONE_EXTENSION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It stores the extension from a dialysis patient's transient phone number."
     },
     {
-      "index": 532,
+      "ordinalPosition": 84,
       "name": "TRANSIENT_ADDRESS_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's transient address county.\n\n\n The category values for this column were already listed for column: PHYS_ADDRESS_COUNTY_C_NAME"
+      "description": "It stores a dialysis patient's transient address county."
     },
     {
-      "index": 538,
+      "ordinalPosition": 85,
       "name": "PAT_ETHNICITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's ethnicity.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNon-Hispanic or Latino\n\n\nHispanic or Latino"
+      "description": "It stores a dialysis patient's ethnicity.",
+      "entries": [
+        "Non-Hispanic or Latino",
+        "Hispanic or Latino"
+      ]
     },
     {
-      "index": 547,
+      "ordinalPosition": 86,
       "name": "PAT_COUNTRY_OF_ORIGIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores a dialysis patient's country of origin.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAfghanistan\n\n\nAland Islands\n\n\nAlbania\n\n\nAlgeria\n\n\nAmerican Samoa\n\n\nAndorra\n\n\nAngola\n\n\nAnguilla\n\n\nAntarctica\n\n\nAntigua and Barbuda\n\n\nArgentina\n\n\nArmenia\n\n\nAruba\n\n\nAustralia\n\n\nAustria\n\n\nAzerbaijan\n\n\nBahamas\n\n\nBahrain\n\n\nBangladesh\n\n\nBarbados\n\n\nBelarus\n\n\nBelgium\n\n\nBelize\n\n\nBenin\n\n\nBermuda\n\n\nBhutan\n\n\nBolivia\n\n\nBosnia and Herzegovina\n\n\nBotswana\n\n\nBouvet Island\n\n\nBrazil\n\n\nBritish Indian Ocean Territory\n\n\nBrunei Darussalam\n\n\nBulgaria\n\n\nBurkina Faso\n\n\nBurundi\n\n\nCambodia\n\n\nCameroon\n\n\nCanada\n\n\nCape Verde\n\n\nCayman Islands\n\n\nCentral African Republic\n\n\nChad\n\n\nChile\n\n\nChina\n\n\nChristmas Island\n\n\nCocos (Keeling) Islands\n\n\nColombia\n\n\nComoros\n\n\nCongo\n\n\nCongo, The Democratic Republic of the \n\n\nCook Islands\n\n\nCosta Rica\n\n\nCote D'Ivoire\n\n\nCroatia\n\n\nCuba\n\n\nCyprus\n\n\nCzech Republic\n\n\nDenmark\n\n\nDjibouti\n\n\nDominica\n\n\nDominican Republic\n\n\nEcuador\n\n\nEgypt\n\n\nEl Salvador\n\n\nEquatorial Guinea\n\n\nEritrea\n\n\nEstonia\n\n\nEthiopia\n\n\nFalkland Islands (Malvinas)\n\n\nFaroe Islands\n\n\nFiji\n\n\nFinland\n\n\nFrance\n\n\nFrench Guiana\n\n\nFrench Polynesia\n\n\nFrench Southern Territories\n\n\nGabon\n\n\nGambia\n\n\nGeorgia\n\n\nGermany\n\n\nGhana\n\n\nGibraltar\n\n\nGreece\n\n\nGreenland\n\n\nGrenada\n\n\nGuadeloupe\n\n\nGuam\n\n\nGuatemala\n\n\nGuinea\n\n\nGuinea-Bissau\n\n\nGuyana\n\n\nHaiti\n\n\nHeard Island and McDonald Islands\n\n\nHoly See (Vatican City State)\n\n\nHonduras\n\n\nHong Kong\n\n\nHungary\n\n\nIceland\n\n\nIndia\n\n\nIndonesia\n\n\nIran, Islamic Republic of\n\n\nIraq\n\n\nIreland\n\n\nIsrael\n\n\nItaly\n\n\nJamaica\n\n\nJapan\n\n\nJordan\n\n\nKazakhstan\n\n\nKenya\n\n\nKiribati\n\n\nKorea, Democratic People's Republic of (North Korea)\n\n\nKorea, Republic of (South Korea)\n\n\nKuwait\n\n\nKyrgyzstan\n\n\nLao People's Democratic Republic (Laos)\n\n\nLatvia\n\n\nLebanon\n\n\nLesotho\n\n\nLiberia\n\n\nLibyan Arab Jamahiriya (Libya)\n\n\nLiechtenstein\n\n\nLithuania\n\n\nLuxembourg\n\n\nMacao\n\n\nMacedonia, The Former Yugoslav Republic of\n\n\nMadagascar\n\n\nMalawi\n\n\nMalaysia\n\n\nMaldives\n\n\nMali\n\n\nMalta\n\n\nMarshall Islands\n\n\nMartinique\n\n\nMauritania\n\n\nMauritius\n\n\nMayotte\n\n\nMexico\n\n\nMicronesia\n\n\nMoldova, Republic of\n\n\nMonaco\n\n\nMongolia\n\n\nMontserrat\n\n\nMorocco\n\n\nMozambique\n\n\nMyanmar\n\n\nNamibia\n\n\nNauru\n\n\nNepal\n\n\nNetherlands\n\n\nNetherlands Antilles\n\n\nNew Caledonia\n\n\nNew Zealand\n\n\nNicaragua\n\n\nNiger\n\n\nNigeria\n\n\nNiue\n\n\nNorfolk Island\n\n\nNorthern Mariana Islands\n\n\nNorway\n\n\nOman\n\n\nPakistan\n\n\nPalau\n\n\nPalestinian Territory, Occupied\n\n\nPanama\n\n\nPapua New Guinea\n\n\nParaguay\n\n\nPeru\n\n\nPhilippines\n\n\nPitcairn\n\n\nPoland\n\n\nPortugal\n\n\nPuerto Rico\n\n\nQatar\n\n\nReunion\n\n\nRomania\n\n\nRussian Federation\n\n\nRwanda\n\n\nSaint Helena\n\n\nSaint Kitts and Nevis\n\n\nSaint Lucia\n\n\nSaint Pierre and Miquelon\n\n\nSaint Vincent and The Grenadines\n\n\nSamoa\n\n\nSan Marino\n\n\nSao Tome and Principe\n\n\nSaudi Arabia\n\n\nSenegal\n\n\nSerbia and Montenegro\n\n\nSeychelles\n\n\nSierra Leone\n\n\nSingapore\n\n\nSlovakia\n\n\nSlovenia\n\n\nSolomon Islands\n\n\nSomalia\n\n\nSouth Africa\n\n\nSouth Georgia and South Sandwich Islands\n\n\nSpain\n\n\nSri Lanka\n\n\nSudan\n\n\nSuriname\n\n\nSvalbard and Jan Mayen\n\n\nSwaziland\n\n\nSweden\n\n\nSwitzerland\n\n\nSyrian Arab Republic\n\n\nTaiwan\n\n\nTajikistan\n\n\nTanzania, United Republic of\n\n\nThailand\n\n\nTimor-Leste\n\n\nTogo\n\n\nTokelau\n\n\nTonga\n\n\nTrinidad and Tobago\n\n\nTunisia\n\n\nTurkey\n\n\nTurkmenistan\n\n\nTurks and Caicos Islands\n\n\nTuvalu\n\n\nUganda\n\n\nUkraine\n\n\nUnited Arab Emirates\n\n\nGreat Britain\n\n\nUnited States\n\n\nUnited States Minor Outlying Islands\n\n\nUruguay\n\n\nUzbekistan\n\n\nVanuatu\n\n\nVenezuela\n\n\nVietnam\n\n\nVirgin Islands (British)\n\n\nVirgin Islands (U.S.)\n\n\nWallis and Futuna\n\n\nWestern Sahara\n\n\nYemen\n\n\nZambia\n\n\nZimbabwe"
+      "description": "It stores a dialysis patient's country of origin.",
+      "entries": [
+        "Afghanistan",
+        "Aland Islands",
+        "Albania",
+        "Algeria",
+        "American Samoa",
+        "Andorra",
+        "Angola",
+        "Anguilla",
+        "Antarctica",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Aruba",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bermuda",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Bouvet Island",
+        "Brazil",
+        "British Indian Ocean Territory",
+        "Brunei Darussalam",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Cayman Islands",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Christmas Island",
+        "Cocos (Keeling) Islands",
+        "Colombia",
+        "Comoros",
+        "Congo",
+        "Congo, The Democratic Republic of the",
+        "Cook Islands",
+        "Costa Rica",
+        "Cote D'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Falkland Islands (Malvinas)",
+        "Faroe Islands",
+        "Fiji",
+        "Finland",
+        "France",
+        "French Guiana",
+        "French Polynesia",
+        "French Southern Territories",
+        "Gabon",
+        "Gambia",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Gibraltar",
+        "Greece",
+        "Greenland",
+        "Grenada",
+        "Guadeloupe",
+        "Guam",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Heard Island and McDonald Islands",
+        "Holy See (Vatican City State)",
+        "Honduras",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran, Islamic Republic of",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, Democratic People's Republic of (North Korea)",
+        "Korea, Republic of (South Korea)",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Lao People's Democratic Republic (Laos)",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libyan Arab Jamahiriya (Libya)",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macao",
+        "Macedonia, The Former Yugoslav Republic of",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Martinique",
+        "Mauritania",
+        "Mauritius",
+        "Mayotte",
+        "Mexico",
+        "Micronesia",
+        "Moldova, Republic of",
+        "Monaco",
+        "Mongolia",
+        "Montserrat",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "Netherlands Antilles",
+        "New Caledonia",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Niue",
+        "Norfolk Island",
+        "Northern Mariana Islands",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Palestinian Territory, Occupied",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Pitcairn",
+        "Poland",
+        "Portugal",
+        "Puerto Rico",
+        "Qatar",
+        "Reunion",
+        "Romania",
+        "Russian Federation",
+        "Rwanda",
+        "Saint Helena",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Pierre and Miquelon",
+        "Saint Vincent and The Grenadines",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "South Georgia and South Sandwich Islands",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Svalbard and Jan Mayen",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syrian Arab Republic",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania, United Republic of",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tokelau",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Turks and Caicos Islands",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "Great Britain",
+        "United States",
+        "United States Minor Outlying Islands",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Venezuela",
+        "Vietnam",
+        "Virgin Islands (British)",
+        "Virgin Islands (U.S.)",
+        "Wallis and Futuna",
+        "Western Sahara",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe"
+      ]
     },
     {
-      "index": 794,
+      "ordinalPosition": 87,
       "name": "PAT_ETHNICITY_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the source of a dialysis patient's race and ethnicity information. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelfReported\n\n\nNotSelfReported\n\n\nFamilyReported\n\n\nPatientDeclined"
+      "description": "It stores the source of a dialysis patient's race and ethnicity information.",
+      "entries": [
+        "SelfReported",
+        "NotSelfReported",
+        "FamilyReported",
+        "PatientDeclined"
+      ]
     },
     {
-      "index": 805,
+      "ordinalPosition": 88,
       "name": "PAT_CITIZENSHIP_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the current citizenship status of a dialysis patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUSCitizen\n\n\nNonUSCitizen\n\n\nForeignUsResident\n\n\nUSResident"
+      "description": "It stores the current citizenship status of a dialysis patient.",
+      "entries": [
+        "USCitizen",
+        "NonUSCitizen",
+        "ForeignUsResident",
+        "USResident"
+      ]
     },
     {
-      "index": 816,
+      "ordinalPosition": 89,
       "name": "PAT_CITIZENSHIP_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "It stores the effective date of the current citizenship status of a dialysis patient."
     },
     {
-      "index": 821,
+      "ordinalPosition": 90,
       "name": "PAT_HIC_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's Medicare health insurance claim number."
     },
     {
-      "index": 826,
+      "ordinalPosition": 91,
       "name": "PAT_TRIBE_CODE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "It stores a dialysis patient's tribe code."
     },
     {
-      "index": 831,
+      "ordinalPosition": 92,
       "name": "INVOLUNTARY_DISCH_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the reason of involuntary discharge for a dialysis patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNon-adherence\n\n\nVerbal/written abuse\n\n\nVerbal/written threat\n\n\nPhysical threat\n\n\nPhysical harm\n\n\nProperty damage/theft\n\n\nLack of payment"
+      "description": "It stores the reason of involuntary discharge for a dialysis patient.",
+      "entries": [
+        "Non-adherence",
+        "Verbal/written abuse",
+        "Verbal/written threat",
+        "Physical threat",
+        "Physical harm",
+        "Property damage/theft",
+        "Lack of payment"
+      ]
     },
     {
-      "index": 845,
+      "ordinalPosition": 93,
       "name": "DLYS_ABSTRACTION_PURPOSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the purpose of a patient's dialysis regulatory reporting form, such as an admission, a discharge, or a monthly submission.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMonthly\n\n\nAdmission\n\n\nDischarge\n\n\nTransient Admission"
+      "description": "It stores the purpose of a patient's dialysis regulatory reporting form, such as an admission, a discharge, or a monthly submission.",
+      "entries": [
+        "Monthly",
+        "Admission",
+        "Discharge",
+        "Transient Admission"
+      ]
     },
     {
-      "index": 856,
+      "ordinalPosition": 94,
       "name": "PAT_IN_NURSING_HOME_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores whether the dialysis patient was in a nursing home setting as of the end of the reporting period.\n\n\n The category values for this column were already listed for column: IS_TRANSIENT_YN"
+      "description": "It stores whether the dialysis patient was in a nursing home setting as of the end of the reporting period."
     },
     {
-      "index": 862,
+      "ordinalPosition": 95,
       "name": "DIALYSIS_NURSING_HOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "It stores the dialysis patient's nursing home setting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPermanent Resident\n\n\nShort Term Care/Rehabilitation\n\n\nOther"
+      "description": "It stores the dialysis patient's nursing home setting.",
+      "entries": [
+        "Permanent Resident",
+        "Short Term Care/Rehabilitation",
+        "Other"
+      ]
     }
   ]
 }

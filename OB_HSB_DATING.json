@@ -1,143 +1,180 @@
 {
-  "table_name": "OB_HSB_DATING",
+  "name": "OB_HSB_DATING",
   "description": "This table contains the associated information about the criteria for determining the estimated date of delivery for this pregnancy.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID assigned to the episode record (HSB .1)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The Line Count"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OB_DT_EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The event or criterion that identifies this line in the dating table.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther Basis\n\n\nLast Menstrual Period\n\n\nEst. Date of Conception\n\n\nEmbryo Transfer\n\n\nUltrasound\n\n\nUterus Size\n\n\nQuickening\n\n\nFundal Ht. at Umbil.\n\n\nFHR with Doppler\n\n\nFHR with Fetoscope\n\n\nPatient Reported\n\n\nAlternate EDD Entry"
+      "description": "The event or criterion that identifies this line in the dating table.",
+      "entries": [
+        "Other Basis",
+        "Last Menstrual Period",
+        "Est. Date of Conception",
+        "Embryo Transfer",
+        "Ultrasound",
+        "Uterus Size",
+        "Quickening",
+        "Fundal Ht. at Umbil.",
+        "FHR with Doppler",
+        "FHR with Fetoscope",
+        "Patient Reported",
+        "Alternate EDD Entry"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 4,
       "name": "OB_DT_DTESYS_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The system-calculated date when this event occurred."
     },
     {
-      "index": 36,
+      "ordinalPosition": 5,
       "name": "OB_DT_DTEUSR_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when this event occurred, as entered by the user."
     },
     {
-      "index": 41,
+      "ordinalPosition": 6,
       "name": "OB_DT_GA_SYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The gestational age at which this event is expected to occur, as calculated by the system. This value represents the gestational age in days."
     },
     {
-      "index": 46,
+      "ordinalPosition": 7,
       "name": "OB_DT_GA_USR",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The gestational age at which this criterion did occur, as specified by the user. This value represents the gestational age in days."
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "OB_DT_EDDSYS_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The estimated date of delivery based on this criterion, as calculated by the system."
     },
     {
-      "index": 56,
+      "ordinalPosition": 9,
       "name": "OB_DT_EDDUSR_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The estimated date of delivery based on this criterion, as entered by the user."
     },
     {
-      "index": 61,
+      "ordinalPosition": 10,
       "name": "OB_DT_WRKEDD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If this column is yes, then the current event is the one that is considered the working estimated date of delivery for this pregnancy.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "If this column is yes, then the current event is the one that is considered the working estimated date of delivery for this pregnancy.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 70,
+      "ordinalPosition": 11,
       "name": "OB_DT_ENTINS_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant this row was entered and saved."
     },
     {
-      "index": 75,
+      "ordinalPosition": 12,
       "name": "OB_DT_ENTUSR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who has entered the information for this specific dating event."
     },
     {
-      "index": 80,
+      "ordinalPosition": 13,
       "name": "OB_DT_CYC_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The patient's average menstrual cycle length."
     },
     {
-      "index": 85,
+      "ordinalPosition": 14,
       "name": "OB_DT_LUT_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The average length of the menstrual cycle's luteal phase."
     },
     {
-      "index": 90,
+      "ordinalPosition": 15,
       "name": "OB_DT_AFTOVU",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of days after ovulation that conception occurred."
     },
     {
-      "index": 95,
+      "ordinalPosition": 16,
       "name": "OB_DT_ENT_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A comment for this event."
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "OB_DT_BTHCTL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If yes, the patient was on birth control at the time of conception.\n\n\n The category values for this column were already listed for column: OB_DT_WRKEDD_YN"
+      "description": "If yes, the patient was on birth control at the time of conception."
     },
     {
-      "index": 106,
+      "ordinalPosition": 18,
       "name": "OB_DT_DTEPREC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item represents the uncertainty of the date in column OB_DT_DTEUSR_DT. Category table ZC_OB_DT_DTEPREC maps the category numbers to their names.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nExact Date\n\n\nWithin Days\n\n\nWithin Weeks\n\n\nWithin Months\n\n\nWithin Years\n\n\nLMP Unknown\n\n\nApproximate"
+      "description": "This item represents the uncertainty of the date in column OB_DT_DTEUSR_DT. Category table ZC_OB_DT_DTEPREC maps the category numbers to their names.",
+      "entries": [
+        "Exact Date",
+        "Within Days",
+        "Within Weeks",
+        "Within Months",
+        "Within Years",
+        "LMP Unknown",
+        "Approximate"
+      ]
     },
     {
-      "index": 120,
+      "ordinalPosition": 19,
       "name": "OB_DT_REASONCHNG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the user-supplied reason for changing the working EDD of a pregnant patient. This improves the auditing of pregnancy dating events.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nData entry error\n\n\nOther (Comment)"
+      "description": "This item contains the user-supplied reason for changing the working EDD of a pregnant patient. This improves the auditing of pregnancy dating events.",
+      "entries": [
+        "Data entry error",
+        "Other (Comment)"
+      ]
     }
   ]
 }

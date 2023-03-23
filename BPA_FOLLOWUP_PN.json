@@ -1,38 +1,53 @@
 {
-  "table_name": "BPA_FOLLOWUP_PN",
+  "name": "BPA_FOLLOWUP_PN",
   "description": "This table contains logged information related to a push notification follow-up action for an alert.",
-  "primary_key": {
-    "column_name": "ALERT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ALERT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ALERT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the med alert record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BPA_FOLLOWUP_PN_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the data trail of how the action was presented to the user (manually or automatically).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManually Once\n\n\nAlways Automatically\n\n\nOnce Automatically\n\n\nManually Unselected\n\n\nManually Selected\n\n\nAutomatically Based on Selected Research Status\n\n\nHidden"
+      "description": "This item stores the data trail of how the action was presented to the user (manually or automatically).",
+      "entries": [
+        "Manually Once",
+        "Always Automatically",
+        "Once Automatically",
+        "Manually Unselected",
+        "Manually Selected",
+        "Automatically Based on Selected Research Status",
+        "Hidden"
+      ]
     }
   ]
 }

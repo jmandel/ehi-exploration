@@ -1,31 +1,46 @@
 {
-  "table_name": "HSP_ACCT_EBC_MAT_MORB",
+  "name": "HSP_ACCT_EBC_MAT_MORB",
   "description": "Maternal morbidity for electronic birth certificate extract.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MAT_MORB_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The maternal morbidity category ID for Electronic Birth Certificate information.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMaternal transfusion\n\n\nThird or fourth degree perineal laceration\n\n\nRuptured uterus\n\n\nUnplanned hysterectomy\n\n\nAdmission to intensive care unit\n\n\nUnplanned operating room procedure following delivery\n\n\nNone"
+      "description": "The maternal morbidity category ID for Electronic Birth Certificate information.",
+      "entries": [
+        "Maternal transfusion",
+        "Third or fourth degree perineal laceration",
+        "Ruptured uterus",
+        "Unplanned hysterectomy",
+        "Admission to intensive care unit",
+        "Unplanned operating room procedure following delivery",
+        "None"
+      ]
     }
   ]
 }

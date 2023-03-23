@@ -1,80 +1,90 @@
 {
-  "table_name": "HSP_ACCT_ICDPX_ALT",
+  "name": "HSP_ACCT_ICDPX_ALT",
   "description": "This table contains the hospital account alternate ICD procedures from the hospital account (HAR) master file. Alternate ICD procedures will be specified if hospital accounts are coded with two sets of ICD codes.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ICD_PX_ALT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The alternate ICD procedures stored in the hospital account."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ICD_PX_ALT_ID_ICD_PX_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the ICD procedure record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ICD_PX_ALT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The alternate ICD procedure service date."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ICD_PX_ALT_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The alternate ICD procedure performing provider."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "ICD_PX_ALT_EVNT_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The alternate ICD procedure event link number."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ICD_PX_ALT_EXCLD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate ICD procedure exclude from clinical reporting data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "The alternate ICD procedure exclude from clinical reporting data.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "ICD_PX_ALT_AFSOI_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate ICD procedure affects severity of illness data.\n\n\n The category values for this column were already listed for column: ICD_PX_ALT_EXCLD_YN"
+      "description": "The alternate ICD procedure affects severity of illness data."
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "ICD_PX_ALT_AFROM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The alternate ICD procedure affects risk of mortality data.\n\n\n The category values for this column were already listed for column: ICD_PX_ALT_EXCLD_YN"
+      "description": "The alternate ICD procedure affects risk of mortality data."
     }
   ]
 }

@@ -1,34 +1,40 @@
 {
-  "table_name": "ORDER_DEVIATION_INFO",
+  "name": "ORDER_DEVIATION_INFO",
   "description": "This table stores order-level deviation information (in an oncology treatment plan context), including deviation instant, user, and change type.",
-  "primary_key": {
-    "column_name": "OTP_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OTP_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OTP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient order template record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DEVIATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This is the instant the order deviated within a patient's oncology treatment plan."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DEVIATION_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

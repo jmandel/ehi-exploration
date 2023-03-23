@@ -1,31 +1,38 @@
 {
-  "table_name": "CL_LNK_ORDERS",
+  "name": "CL_LNK_ORDERS",
   "description": "The CL_LNK_ORDERS table contains the noadd information about the linked group.",
-  "primary_key": {
-    "column_name": "LNK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LNK_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LNK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the linked order group record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PAT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the contact serial number (CSN) of the patient visit associated with this linked order group record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINK_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the link type of the linked order group.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFollowed by\n\n\nOr\n\n\nAnd"
+      "description": "This is the link type of the linked order group.",
+      "entries": [
+        "Followed by",
+        "Or",
+        "And"
+      ]
     }
   ]
 }

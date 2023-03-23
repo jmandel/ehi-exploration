@@ -1,108 +1,243 @@
 {
-  "table_name": "DOC_EPSD_LIST_INFO",
+  "name": "DOC_EPSD_LIST_INFO",
   "description": "Episodes received from external documents.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EPSD_START_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Start instant for the received episode."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "EPSD_END_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "End instant for the received episode."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "EPSD_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the received episode."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "EPSD_SET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Episode set ID that represents a common identifier across all document revisions."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "EPSD_TYP_ID_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The episode type category ID for the received episode.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nObstetrics\n\n\nAcute Care\n\n\nAnticoagulation\n\n\nTransplant\n\n\nOncology - Chemotherapy\n\n\nOncology - Supportive Care\n\n\nOncology - Follow-up\n\n\nHome Health\n\n\nHospice\n\n\nObstetrics - Delivery\n\n\nBlood and Marrow Transplant\n\n\nTraveler\n\n\nObstetrics History\n\n\nObstetrics - Delivery History\n\n\nPatient Administrative Pathway\n\n\nBilling\n\n\nLong Term Care\n\n\nBeacon - Treatment Plan\n\n\nTherapy Plan\n\n\nMechanical Circulatory Support\n\n\nPatient-Entered Data (Storage)\n\n\nPatient-Entered Data (View)\n\n\nFertility\n\n\nALS (Amyotrophic Lateral Sclerosis)\n\n\nPatient Administrative Pathway Parent\n\n\nBehavioral Health\n\n\nCare Path\n\n\nCare/Case Management\n\n\nSpecialty Pharmacy\n\n\nRadiation Therapy\n\n\nResearch\n\n\nSocial Care Program\n\n\nSocial Care Service\n\n\nDialysis Episode\n\n\nBMT Care Path\n\n\nMedication Management\n\n\nHome Infusion\n\n\nStructural Heart\n\n\nRecurring Billing\n\n\nOrthodontics\n\n\nInpatient Rehab\n\n\nOutpatient Rehab\n\n\nDBC\n\n\nMedication for Opioid Use Disorder Treatment\n\n\nTapestry Cross-Claim Pricing"
+      "description": "The episode type category ID for the received episode.",
+      "entries": [
+        "Obstetrics",
+        "Acute Care",
+        "Anticoagulation",
+        "Transplant",
+        "Oncology - Chemotherapy",
+        "Oncology - Supportive Care",
+        "Oncology - Follow-up",
+        "Home Health",
+        "Hospice",
+        "Obstetrics - Delivery",
+        "Blood and Marrow Transplant",
+        "Traveler",
+        "Obstetrics History",
+        "Obstetrics - Delivery History",
+        "Patient Administrative Pathway",
+        "Billing",
+        "Long Term Care",
+        "Beacon - Treatment Plan",
+        "Therapy Plan",
+        "Mechanical Circulatory Support",
+        "Patient-Entered Data (Storage)",
+        "Patient-Entered Data (View)",
+        "Fertility",
+        "ALS (Amyotrophic Lateral Sclerosis)",
+        "Patient Administrative Pathway Parent",
+        "Behavioral Health",
+        "Care Path",
+        "Care/Case Management",
+        "Specialty Pharmacy",
+        "Radiation Therapy",
+        "Research",
+        "Social Care Program",
+        "Social Care Service",
+        "Dialysis Episode",
+        "BMT Care Path",
+        "Medication Management",
+        "Home Infusion",
+        "Structural Heart",
+        "Recurring Billing",
+        "Orthodontics",
+        "Inpatient Rehab",
+        "Outpatient Rehab",
+        "DBC",
+        "Medication for Opioid Use Disorder Treatment",
+        "Tapestry Cross-Claim Pricing"
+      ]
     },
     {
-      "index": 94,
+      "ordinalPosition": 10,
       "name": "EPSD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the received episode."
     },
     {
-      "index": 99,
+      "ordinalPosition": 11,
       "name": "EPSD_STAT_INFO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Status of the received episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "Status of the received episode.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 109,
+      "ordinalPosition": 12,
       "name": "EPSD_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text comment for this row's received episode."
     },
     {
-      "index": 114,
+      "ordinalPosition": 13,
       "name": "EPSD_DOC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Universally unique identifier (UUID) of the received episode DXR document."
     },
     {
-      "index": 119,
+      "ordinalPosition": 14,
       "name": "EPSD_DOC_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Document type for the document that has the received episode.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClinical Summary\n\n\nDocument List\n\n\nOther Results\n\n\nEncounter Summary\n\n\nLab Results\n\n\nContinuity of Care Document\n\n\nReferral Summary\n\n\nDischarge Summary\n\n\nLPR3 Document\n\n\nLPR3 Event Document\n\n\nEmergency Department Summary\n\n\nExternal Document - PDF\n\n\nExternal Document - Text\n\n\nQuality Reporting Document Architecture\n\n\nContinuity of Care Record\n\n\nCare Plan\n\n\nOverall Plan of Care\n\n\nPatient Health Summary\n\n\nConstellation Update\n\n\nLabor and Delivery Summary\n\n\nLaboratory Reports\n\n\nImmunization Content\n\n\nConsultation Note\n\n\nDiagnostic Imaging Report\n\n\nHistory and Physical Note\n\n\nOperative Note\n\n\nProcedure Note\n\n\nProgress Note\n\n\nPhysician consulting Progress note\n\n\nLocation Summary\n\n\nIRIS Ophthalmology Report\n\n\nPayer Document\n\n\nEndoscopy Registry\n\n\nPatient Level Quality Reporting Document\n\n\nPopulation Level Quality Reporting Document\n\n\nCancer Registry\n\n\nInitial Public Health Case Report\n\n\nOutgoing Death Registry Reporting IHE VRDR Profile\n\n\nOutgoing NHCS Survey Documents\n\n\nPatient-Reported Information\n\n\nSpecialist Letter\n\n\nDecision Support Request\n\n\nCosmos Document Patient Level\n\n\nCosmos Document Encounter Level\n\n\nTreatment Document - eArchive\n\n\nForms - eArchive\n\n\nService Event - eArchive\n\n\nFinland eRx\n\n\nKanta Social Care\n\n\nTHL Registry Document\n\n\nTHL Calculation Document\n\n\nNavitas Patient Summary Document\n\n\nNavitas Encounter Document\n\n\nNavitas Imaging Document\n\n\nUSCDI CCD (Patient Level) \n\n\nUSCDI CCD (Encounter Level) \n\n\n2015 CCDS CCD\n\n\nBasisgegevensset Zorg (BgZ)\n\n\nBasisgegevensset Zorg (BgZ) - Encounter\n\n\nClinical Analytics\n\n\nOverall Clinical Analytics\n\n\nSupplemental Analytics\n\n\nOverall Supplemental Analytics\n\n\nTransplant Episode Summary\n\n\nComprehensive Care Coordination Summary\n\n\nDialysis Summary\n\n\nOncology Summary\n\n\nGenomics Summary\n\n\nHealth Plan Sourced Clinical Summary\n\n\nPatient Dialysis Summary\n\n\nPatient Oncology Summary"
+      "description": "Document type for the document that has the received episode.",
+      "entries": [
+        "Clinical Summary",
+        "Document List",
+        "Other Results",
+        "Encounter Summary",
+        "Lab Results",
+        "Continuity of Care Document",
+        "Referral Summary",
+        "Discharge Summary",
+        "LPR3 Document",
+        "LPR3 Event Document",
+        "Emergency Department Summary",
+        "External Document - PDF",
+        "External Document - Text",
+        "Quality Reporting Document Architecture",
+        "Continuity of Care Record",
+        "Care Plan",
+        "Overall Plan of Care",
+        "Patient Health Summary",
+        "Constellation Update",
+        "Labor and Delivery Summary",
+        "Laboratory Reports",
+        "Immunization Content",
+        "Consultation Note",
+        "Diagnostic Imaging Report",
+        "History and Physical Note",
+        "Operative Note",
+        "Procedure Note",
+        "Progress Note",
+        "Physician consulting Progress note",
+        "Location Summary",
+        "IRIS Ophthalmology Report",
+        "Payer Document",
+        "Endoscopy Registry",
+        "Patient Level Quality Reporting Document",
+        "Population Level Quality Reporting Document",
+        "Cancer Registry",
+        "Initial Public Health Case Report",
+        "Outgoing Death Registry Reporting IHE VRDR Profile",
+        "Outgoing NHCS Survey Documents",
+        "Patient-Reported Information",
+        "Specialist Letter",
+        "Decision Support Request",
+        "Cosmos Document Patient Level",
+        "Cosmos Document Encounter Level",
+        "Treatment Document - eArchive",
+        "Forms - eArchive",
+        "Service Event - eArchive",
+        "Finland eRx",
+        "Kanta Social Care",
+        "THL Registry Document",
+        "THL Calculation Document",
+        "Navitas Patient Summary Document",
+        "Navitas Encounter Document",
+        "Navitas Imaging Document",
+        "USCDI CCD (Patient Level)",
+        "USCDI CCD (Encounter Level)",
+        "2015 CCDS CCD",
+        "Basisgegevensset Zorg (BgZ)",
+        "Basisgegevensset Zorg (BgZ) - Encounter",
+        "Clinical Analytics",
+        "Overall Clinical Analytics",
+        "Supplemental Analytics",
+        "Overall Supplemental Analytics",
+        "Transplant Episode Summary",
+        "Comprehensive Care Coordination Summary",
+        "Dialysis Summary",
+        "Oncology Summary",
+        "Genomics Summary",
+        "Health Plan Sourced Clinical Summary",
+        "Patient Dialysis Summary",
+        "Patient Oncology Summary"
+      ]
     }
   ]
 }

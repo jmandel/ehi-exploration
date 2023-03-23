@@ -1,62 +1,72 @@
 {
-  "table_name": "INV_CLM_ICN",
+  "name": "INV_CLM_ICN",
   "description": "This table holds information of claim override internal control number (ICN) on A/R Invoice (INV) for Resolute Professional Billing.",
-  "primary_key": {
-    "column_name": "INVOICE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INVOICE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INVOICE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The invoice record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLM_OVRD_ICN_CVG_ID",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The override coverage ID for the internal control number for the claim."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CLM_OVERRIDE_ICN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The override internal control number for the claim."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CLM_OVRD_ICN_T_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The override edit time for the internal control number for the claim."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CLM_OVRD_ICN_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The override edit user for the internal control number for the claim."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CLM_OVRD_ICN_IGN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether or not the override for the internal control number for the claim was ignored.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether or not the override for the internal control number for the claim was ignored.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "CLM_OVRD_ICN_CMNT",
       "type": "VARCHAR",
       "discontinued": false,

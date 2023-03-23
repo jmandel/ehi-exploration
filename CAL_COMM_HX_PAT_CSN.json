@@ -1,34 +1,44 @@
 {
-  "table_name": "CAL_COMM_HX_PAT_CSN",
+  "name": "CAL_COMM_HX_PAT_CSN",
   "description": "Stores the history of patient contacts referenced by a communication (i.e. the history of CAL_REFERENCE_PAT.REF_PAT_CSN). Each GROUP_LINE corresponds to a line in CAL_COMM_HX for a COMM_ID.",
-  "primary_key": {
-    "column_name": "COMM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the communication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "REF_PAT_CSN",
       "type": "NUMERIC",
       "discontinued": false,

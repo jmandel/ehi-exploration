@@ -1,73 +1,83 @@
 {
-  "table_name": "RSLT_CULTURE_LEGACY",
+  "name": "RSLT_CULTURE_LEGACY",
   "description": "This table stores legacy information about microbiology culture identification results.",
-  "primary_key": {
-    "column_name": "RESULT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RESULT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the result record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MEDIA_CONTAINER_TYPE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID for the media plate container type associated with an observation on the culture identification."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MEDIA_CONTAINER_TYPE_ID_CONTAINER_TYPE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the container type record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DESCRIPTION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The description of an observation for the culture identification."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "REPORT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the culture identification will be reported to the patient's chart. 'Y' indicates that the culture identification will be reported. 'N' or NULL indicate that the culture identification will not be reported.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the culture identification will be reported to the patient's chart. 'Y' indicates that the culture identification will be reported. 'N' or NULL indicate that the culture identification will not be reported.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "CMT_MICRO_QUANTITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The quantity category ID for the culture identification.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The quantity category ID for the culture identification."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "MICRO_GENUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Genus category ID for the culture identification.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The Genus category ID for the culture identification."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "MICRO_SPECIES_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Species category ID for the culture identification.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The Species category ID for the culture identification."
     }
   ]
 }

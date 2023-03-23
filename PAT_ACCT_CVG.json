@@ -1,76 +1,136 @@
 {
-  "table_name": "PAT_ACCT_CVG",
+  "name": "PAT_ACCT_CVG",
   "description": "The PAT_ACCT_CVG table contains information about a patient�s accounts and coverages. The table will contain one record for each account for a patient. The record will also contain the patient�s primary coverage for that account.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID assigned to the patient record. This ID may be encrypted if you have elected to use enterprise reporting�s security utility."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number. A patient id can be associated with multiple rows of accounts and coverages."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique account record ID for an account associated with this patient. This ID number may be encrypted if you have elected to use enterprise reporting�s security utility."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ACCOUNT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category value associated with the type of account, such as Personal/Family, Worker�s Comp, etc.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nPersonal/Family\n\n\nNon-employed CRNA\n\n\nCase Rate\n\n\nClearing Account\n\n\nTrust Account\n\n\nROI Requester\n\n\nInvalid"
+      "description": "Category value associated with the type of account, such as Personal/Family, Worker�s Comp, etc.",
+      "entries": [
+        "Other",
+        "Personal/Family",
+        "Non-employed CRNA",
+        "Case Rate",
+        "Clearing Account",
+        "Trust Account",
+        "ROI Requester",
+        "Invalid"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "ACCOUNT_ACTIVE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Is the account active at the time of the extract: Y or N.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Is the account active at the time of the extract: Y or N.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 6,
       "name": "FIN_CLASS_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The financial class category number for the patient's primary coverage on the account.  If there is no coverage, it is the account's financial class.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+      "description": "The financial class category number for the patient's primary coverage on the account.  If there is no coverage, it is the account's financial class.",
+      "entries": [
+        "Commercial",
+        "Medicare",
+        "Medicaid",
+        "Self-Pay",
+        "Worker's Comp",
+        "Tricare",
+        "Champva",
+        "Group Health Plan",
+        "FECA Black Lung",
+        "Blue Shield",
+        "Medigap",
+        "Other",
+        "DK Regional",
+        "Client"
+      ]
     },
     {
-      "index": 62,
+      "ordinalPosition": 7,
       "name": "GUAR_PAT_REL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Relation between the guarantor and patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAunt\n\n\nBrother\n\n\nDaughter\n\n\nFather\n\n\nFriend\n\n\nGranddaughter\n\n\nGrandfather\n\n\nGrandmother\n\n\nGrandson\n\n\nLegal Guardian\n\n\nMother\n\n\nOther\n\n\nStep Father\n\n\nSister\n\n\nSelf\n\n\nStep Mother\n\n\nSon\n\n\nSpouse\n\n\nUncle\n\n\nEmployer\n\n\nUnverified Proxy\n\n\nTransplant Recipient"
+      "description": "Relation between the guarantor and patient.",
+      "entries": [
+        "Aunt",
+        "Brother",
+        "Daughter",
+        "Father",
+        "Friend",
+        "Granddaughter",
+        "Grandfather",
+        "Grandmother",
+        "Grandson",
+        "Legal Guardian",
+        "Mother",
+        "Other",
+        "Step Father",
+        "Sister",
+        "Self",
+        "Step Mother",
+        "Son",
+        "Spouse",
+        "Uncle",
+        "Employer",
+        "Unverified Proxy",
+        "Transplant Recipient"
+      ]
     },
     {
-      "index": 91,
+      "ordinalPosition": 8,
       "name": "ACCT_PRIM_EPSD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Episode associated with this account."
     },
     {
-      "index": 96,
+      "ordinalPosition": 9,
       "name": "ACCT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment associated with this account."
     },
     {
-      "index": 101,
+      "ordinalPosition": 10,
       "name": "ACCT_PRIM_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,

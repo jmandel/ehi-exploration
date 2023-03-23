@@ -1,27 +1,33 @@
 {
-  "table_name": "IB_MESSAGE_PAT_ENC",
+  "name": "IB_MESSAGE_PAT_ENC",
   "description": "This table holds related patient contacts for the In Basket message record. This table is intended to replace IB_MESSAGES_2__EPT_CSN_ID because this table can store multiple encounters per message. Typically, this table will only have one line per message because most In Basket message records only have a singular contact associated, if any.",
-  "primary_key": {
-    "column_name": "MSG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MSG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MSG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the task record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

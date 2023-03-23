@@ -1,31 +1,44 @@
 {
-  "table_name": "UNOS_BKV_TREATMENT",
+  "name": "UNOS_BKV_TREATMENT",
   "description": "Treatments for BK (Polyoma) virus.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The registry record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "UNOS_BKV_TREAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The treatments used to treat the patient for BK viral infections.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nImmunosuppression reduction\n\n\nCidofovir\n\n\nIVIG\n\n\nUnknown\n\n\nOther, specify"
+      "description": "The treatments used to treat the patient for BK viral infections.",
+      "entries": [
+        "Immunosuppression reduction",
+        "Cidofovir",
+        "IVIG",
+        "Unknown",
+        "Other, specify"
+      ]
     }
   ]
 }

@@ -1,43 +1,49 @@
 {
-  "table_name": "BED_BLOCK_CMTS",
+  "name": "BED_BLOCK_CMTS",
   "description": "The view holds the comments entered into bed blocks. The records included in this view are Bed Events (BEV) records that are designated as bed blocks -- that is, Event Type (I BEV 150) has a value of 1.",
-  "primary_key": {
-    "column_name": "BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the bed event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COMMENT_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The text of the bed event comment."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "COMMENT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who entered the bed event comment."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "COMMENT_ADDED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the bed event comment was added."
     }

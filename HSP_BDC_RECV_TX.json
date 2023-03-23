@@ -1,41 +1,47 @@
 {
-  "table_name": "HSP_BDC_RECV_TX",
+  "name": "HSP_BDC_RECV_TX",
   "description": "This table contains recovery payment information for Denial/Correspondence (BDC) records.",
-  "primary_key": {
-    "column_name": "BDC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BDC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BDC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the denial/correspondence record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECV_PAYMENT_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the hospital payment transactions posted onto this denial record. Payment transactions posted onto a bucket with open denial record on it will be linked here from this denial record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RECV_PAYMENT_TX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The dollar amount, corresponding to a payment transaction, posted onto this denial record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PB_RECV_PMT_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,

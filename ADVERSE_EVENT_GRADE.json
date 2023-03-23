@@ -1,34 +1,48 @@
 {
-  "table_name": "ADVERSE_EVENT_GRADE",
+  "name": "ADVERSE_EVENT_GRADE",
   "description": "The ADVERSE_EVENT_GRADE table contains grade information about adverse event records for a patient.",
-  "primary_key": {
-    "column_name": "ADVERSE_EVENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ADVERSE_EVENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ADVERSE_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the adverse event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ADVERSE_EVENT_GRADE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the grade for the adverse event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Present\n\n\nMild\n\n\nModerate\n\n\nSevere\n\n\nLife-threatening\n\n\nDeath"
+      "description": "The category ID for the grade for the adverse event.",
+      "entries": [
+        "Not Present",
+        "Mild",
+        "Moderate",
+        "Severe",
+        "Life-threatening",
+        "Death"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 4,
       "name": "START_DATE",
       "type": "DATETIME",
       "discontinued": false,

@@ -1,160 +1,236 @@
 {
-  "table_name": "NEPHROLOGY_INFO",
+  "name": "NEPHROLOGY_INFO",
   "description": "*** Not yet fully populated ***\n\n\nAs part of an ongoing conversion, historic dialysis information is being transitioned to this new data structure.\n\n\nUse V_PAT_DIALYSIS_HISTORY to accurately report on all historic and new dialysis data.\n\n\nThis table stores dialysis episodes information.",
-  "primary_key": {
-    "column_name": "EPISODE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EPISODE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the dialysis episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_TYPE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The episode type."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EPISODE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The episode's status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "The episode's status.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the department primarily responsible for managing the episode."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The episode comments."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "DIALYSIS_ADMISSION_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the patient's reason for starting dialysis treatment in a facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew Dialysis Patient\n\n\nTransfer In\n\n\nRestart Dialysis\n\n\nDialysis after Transplant Failed\n\n\nDialysis in Support of Transplant"
+      "description": "This item stores the patient's reason for starting dialysis treatment in a facility.",
+      "entries": [
+        "New Dialysis Patient",
+        "Transfer In",
+        "Restart Dialysis",
+        "Dialysis after Transplant Failed",
+        "Dialysis in Support of Transplant"
+      ]
     },
     {
-      "index": 44,
+      "ordinalPosition": 7,
       "name": "TRANSIENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to indicate whether the patient is receiving temporary treatment at a dialysis facility. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This item is used to indicate whether the patient is receiving temporary treatment at a dialysis facility.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 53,
+      "ordinalPosition": 8,
       "name": "DIALYSIS_DISCHARGE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the patient's reason for ending dialysis treatment in a facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDeath\n\n\nDiscontinue\n\n\nLost to Follow-Up\n\n\nRecover Function of Original Kidney\n\n\nInvoluntary\n\n\nOther\n\n\nTransplant in US\n\n\nTransplant outside US\n\n\nTransfer\n\n\nAcute\n\n\nMove to Chronic\n\n\nDelayed Function Resolved following a Transplant\n\n\nDelayed Function Unresolved following a Transplant"
+      "description": "This item stores the patient's reason for ending dialysis treatment in a facility.",
+      "entries": [
+        "Death",
+        "Discontinue",
+        "Lost to Follow-Up",
+        "Recover Function of Original Kidney",
+        "Involuntary",
+        "Other",
+        "Transplant in US",
+        "Transplant outside US",
+        "Transfer",
+        "Acute",
+        "Move to Chronic",
+        "Delayed Function Resolved following a Transplant",
+        "Delayed Function Unresolved following a Transplant"
+      ]
     },
     {
-      "index": 73,
+      "ordinalPosition": 9,
       "name": "TRANSFER_DESTINATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to store where a patient will be getting dialysis treatment after discharging from the current facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDialysis Facility\n\n\nHospice\n\n\nHospital\n\n\nLong Term Care Facility\n\n\nRehab Center\n\n\nNursing Home"
+      "description": "This item is used to store where a patient will be getting dialysis treatment after discharging from the current facility.",
+      "entries": [
+        "Dialysis Facility",
+        "Hospice",
+        "Hospital",
+        "Long Term Care Facility",
+        "Rehab Center",
+        "Nursing Home"
+      ]
     },
     {
-      "index": 86,
+      "ordinalPosition": 10,
       "name": "TREATMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to store a patient's type of dialysis treatment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHemo\n\n\nPeritoneal\n\n\nContinuous Arteriovenous Hemofiltration\n\n\nContinuous Veno-Venous Hemofiltration\n\n\nAcute-Hemo\n\n\nAcute-Peritoneal\n\n\nContinuous Veno-Venous Hemodialysis\n\n\nContinuous Arteriovenous Hemodialysis\n\n\nMaintenance (Type Unknown)\n\n\nIn-center Hemodialysis\n\n\nHome Hemodialysis\n\n\nContinuous Ambulatory Peritoneal Dialysis\n\n\nContinuous Cycling Peritoneal Dialysis"
+      "description": "This item is used to store a patient's type of dialysis treatment.",
+      "entries": [
+        "Hemo",
+        "Peritoneal",
+        "Continuous Arteriovenous Hemofiltration",
+        "Continuous Veno-Venous Hemofiltration",
+        "Acute-Hemo",
+        "Acute-Peritoneal",
+        "Continuous Veno-Venous Hemodialysis",
+        "Continuous Arteriovenous Hemodialysis",
+        "Maintenance (Type Unknown)",
+        "In-center Hemodialysis",
+        "Home Hemodialysis",
+        "Continuous Ambulatory Peritoneal Dialysis",
+        "Continuous Cycling Peritoneal Dialysis"
+      ]
     },
     {
-      "index": 106,
+      "ordinalPosition": 11,
       "name": "DIALYSIS_HISTORICAL_EPISODE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to indicate whether the episode is a historical or external dialysis treatment episode, or an internal dialysis treatment episode. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item is used to indicate whether the episode is a historical or external dialysis treatment episode, or an internal dialysis treatment episode.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 115,
+      "ordinalPosition": 12,
       "name": "DIALYSIS_DISCHARGE_OTHR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores a free text comment if a patient's dialysis discharge reason is set to Other."
     },
     {
-      "index": 120,
+      "ordinalPosition": 13,
       "name": "DIALYSIS_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used to store the start date of a patient's dialysis treatment episode."
     },
     {
-      "index": 125,
+      "ordinalPosition": 14,
       "name": "DIALYSIS_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used to store the end date of a patient's dialysis treatment episode."
     },
     {
-      "index": 130,
+      "ordinalPosition": 15,
       "name": "PLACE_OF_SERVICE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The episode's service area."
     },
     {
-      "index": 135,
+      "ordinalPosition": 16,
       "name": "MODALITY_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores a dialysis patient's start date of their current treatment details."
     },
     {
-      "index": 140,
+      "ordinalPosition": 17,
       "name": "DIALYSIS_EPISODE_PURPOSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the purpose of the dialysis episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDialysis Tracking\n\n\nSPoC Pre-Dialysis Tracking"
+      "description": "Indicates the purpose of the dialysis episode.",
+      "entries": [
+        "Dialysis Tracking",
+        "SPoC Pre-Dialysis Tracking"
+      ]
     },
     {
-      "index": 149,
+      "ordinalPosition": 18,
       "name": "NEPH_DLYS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of dialysis. Either end stage renal disease (ESRD) or acute kidney injury (AKI). If null then the episode is assumed to be ESRD.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnd Stage Renal Disease\n\n\nAcute Kidney Injury"
+      "description": "The type of dialysis. Either end stage renal disease (ESRD) or acute kidney injury (AKI). If null then the episode is assumed to be ESRD.",
+      "entries": [
+        "End Stage Renal Disease",
+        "Acute Kidney Injury"
+      ]
     },
     {
-      "index": 158,
+      "ordinalPosition": 19,
       "name": "NEPH_TRANSIENT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the patient's reason for receiving temporary treatment at a dialysis facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDisaster\n\n\nTravel\n\n\nHome Maintenance\n\n\nFacility Maintenance\n\n\nDialysis in Support of Transplant\n\n\nBackup Hemodialysis"
+      "description": "This item stores the patient's reason for receiving temporary treatment at a dialysis facility.",
+      "entries": [
+        "Disaster",
+        "Travel",
+        "Home Maintenance",
+        "Facility Maintenance",
+        "Dialysis in Support of Transplant",
+        "Backup Hemodialysis"
+      ]
     },
     {
-      "index": 171,
+      "ordinalPosition": 20,
       "name": "TREATMENT_SESSIONS_PER_WEEK",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the most recently prescribed sessions per week of the dialysis treatments."
     },
     {
-      "index": 176,
+      "ordinalPosition": 21,
       "name": "TREATMENT_DURATION_MINUTES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the most recently prescribed duration of each dialysis treatment in minutes."
     },
     {
-      "index": 181,
+      "ordinalPosition": 22,
       "name": "EXTERNAL_FACILITY_ID",
       "type": "NUMERIC",
       "discontinued": false,

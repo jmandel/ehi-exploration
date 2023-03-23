@@ -1,43 +1,54 @@
 {
-  "table_name": "GYN_CCS_STATUS",
+  "name": "GYN_CCS_STATUS",
   "description": "This table contains the cervical cancer screening tracking status for patients.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GYN_CCS_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's cervical cancer screening tracking status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nN/A\n\n\nIn Progress\n\n\nComplete"
+      "description": "The patient's cervical cancer screening tracking status.",
+      "entries": [
+        "N/A",
+        "In Progress",
+        "Complete"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "GYN_CCS_UPD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that updated the patient's tracking status."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "GYN_CCS_UPD_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant that the tracking status is updated."
     }

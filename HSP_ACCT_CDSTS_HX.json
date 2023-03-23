@@ -1,41 +1,51 @@
 {
-  "table_name": "HSP_ACCT_CDSTS_HX",
+  "name": "HSP_ACCT_CDSTS_HX",
   "description": "This table contains the history of coding status changes for each account coded.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account ID with related coding status history information."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the results of a query. Each coding history will have its own line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CDSTS_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Coding status changed instant - stored in UTC time.  Data will not exist in this column for coding statuses created before UTC instant tracking was enabled for coding history."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CDSTS_HX_SVC_STS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the simple visit coding (SVC) completion status when coding status is set by simple visit coding.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSuccess\n\n\nFail"
+      "description": "Holds the simple visit coding (SVC) completion status when coding status is set by simple visit coding.",
+      "entries": [
+        "Success",
+        "Fail"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "CDSTS_HX_ASGN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

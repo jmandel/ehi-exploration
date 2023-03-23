@@ -1,38 +1,68 @@
 {
-  "table_name": "ACCT_GUAR_GROUPER",
+  "name": "ACCT_GUAR_GROUPER",
   "description": "This table contains information about the requisition grouper patient and their relationship to the guarantor on the account.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GROUPER_ID",
       "type": "NUMERIC",
       "discontinued": true,
       "description": "The unique ID of the requisition grouper patient associated with this account. This is legacy data that is no longer populated."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "GUAR_REL_TO_PAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": true,
-      "description": "The guarantor relationship to requisition grouper patient category ID for the account. This is legacy data that is no longer populated.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAunt\n\n\nBrother\n\n\nDaughter\n\n\nFather\n\n\nFriend\n\n\nGranddaughter\n\n\nGrandfather\n\n\nGrandmother\n\n\nGrandson\n\n\nLegal Guardian\n\n\nMother\n\n\nOther\n\n\nStep Father\n\n\nSister\n\n\nSelf\n\n\nStep Mother\n\n\nSon\n\n\nSpouse\n\n\nUncle\n\n\nEmployer\n\n\nUnverified Proxy\n\n\nTransplant Recipient"
+      "description": "The guarantor relationship to requisition grouper patient category ID for the account. This is legacy data that is no longer populated.",
+      "entries": [
+        "Aunt",
+        "Brother",
+        "Daughter",
+        "Father",
+        "Friend",
+        "Granddaughter",
+        "Grandfather",
+        "Grandmother",
+        "Grandson",
+        "Legal Guardian",
+        "Mother",
+        "Other",
+        "Step Father",
+        "Sister",
+        "Self",
+        "Step Mother",
+        "Son",
+        "Spouse",
+        "Uncle",
+        "Employer",
+        "Unverified Proxy",
+        "Transplant Recipient"
+      ]
     }
   ]
 }

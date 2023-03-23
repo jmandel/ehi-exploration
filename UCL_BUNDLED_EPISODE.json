@@ -1,55 +1,74 @@
 {
-  "table_name": "UCL_BUNDLED_EPISODE",
+  "name": "UCL_BUNDLED_EPISODE",
   "description": "Information about the episodes related to a charge line.",
-  "primary_key": {
-    "column_name": "UCL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "UCL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "UCL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the charge line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LAST_UPDT_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant the bundled episode was updated on this charge line."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The bundled episode whose link is defined on this line"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "LINK_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This indicates whether this episode is linked to the universal charge line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLink\n\n\nUnlink"
+      "description": "This indicates whether this episode is linked to the universal charge line.",
+      "entries": [
+        "Link",
+        "Unlink"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "LINK_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether it's a user-override or something different that set the link.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nVisit Association\n\n\nAuto Link\n\n\nAuto Creation\n\n\nAuto Link Via Transform\n\n\nAuto Link Via Association\n\n\nAuto Removal"
+      "description": "Indicates whether it's a user-override or something different that set the link.",
+      "entries": [
+        "User",
+        "Visit Association",
+        "Auto Link",
+        "Auto Creation",
+        "Auto Link Via Transform",
+        "Auto Link Via Association",
+        "Auto Removal"
+      ]
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "LINK_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

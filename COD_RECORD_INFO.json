@@ -1,69 +1,86 @@
 {
-  "table_name": "COD_RECORD_INFO",
+  "name": "COD_RECORD_INFO",
   "description": "This table stores Health Information Management (HIM)-specific information about printed letters.",
-  "primary_key": {
-    "column_name": "CODING_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CODING_RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CODING_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the coding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the patient associated with the coding record at the time the coding record was created."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status of the coding record (hidden, soft-deleted, etc.).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status of the coding record (hidden, soft-deleted, etc.).",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "COD_RCD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record type of the coding record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCDI Review\n\n\nDoc Review Tracking"
+      "description": "The record type of the coding record.",
+      "entries": [
+        "CDI Review",
+        "Doc Review Tracking"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The creation date of the coding record."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account which is linked to the coding record."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "CDI_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current clinical documentation improvement (CDI) status of the account.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nPhysician Query\n\n\nAll Reviews Completed"
+      "description": "The current clinical documentation improvement (CDI) status of the account.",
+      "entries": [
+        "Not Started",
+        "In Progress",
+        "Physician Query",
+        "All Reviews Completed"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "CDI_ASGN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the clinical documentation improvement (CDI) user currently assigned to this account."
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "CDI_STATUS_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

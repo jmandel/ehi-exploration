@@ -1,80 +1,97 @@
 {
-  "table_name": "MED_ADMIN_RESPONSIBILITY",
+  "name": "MED_ADMIN_RESPONSIBILITY",
   "description": "This table contains rows for each medication administration responsibility assigned for an order.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RESPONSIBILITY_VALUE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the medication administration responsibility value set in an encounter that is valid for a given time range.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Administered\n\n\nStaff\n\n\nSelf\n\n\nCaregiver"
+      "description": "This column stores the medication administration responsibility value set in an encounter that is valid for a given time range.",
+      "entries": [
+        "Not Administered",
+        "Staff",
+        "Self",
+        "Caregiver"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the encounter in which a medication administration responsibility value was set for a given time range."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "DOCUMENTING_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the UTC instant at which a medication administration responsibility value was set for a given time range."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "DOCUMENTING_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the user ID who documented a medication administration responsibility value for a given time range."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "START_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the start instant for a medication administration responsibility value set on an encounter."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "END_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the end instant for a medication administration responsibility value set on an encounter. If this is not set, then the responsibility does not have an end instant."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "MAPPED_RESPONSIBILITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The medication's mapped administration responsibility for a given time in an encounter. The mapped responsibility is the value that exists in the responsibility mapping configuration at the time the custom responsibilty is set for the order.\n\n\n The category values for this column were already listed for column: RESPONSIBILITY_VALUE_C_NAME"
+      "description": "The medication's mapped administration responsibility for a given time in an encounter. The mapped responsibility is the value that exists in the responsibility mapping configuration at the time the custom responsibilty is set for the order."
     },
     {
-      "index": 54,
+      "ordinalPosition": 10,
       "name": "MED_ADMIN_RESP_UPDATE_EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the event that saved a medication administration responsibility value set on an encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAssign Responsibility\n\n\nOrder Created\n\n\nCopied Forward"
+      "description": "This column stores the event that saved a medication administration responsibility value set on an encounter.",
+      "entries": [
+        "Assign Responsibility",
+        "Order Created",
+        "Copied Forward"
+      ]
     }
   ]
 }

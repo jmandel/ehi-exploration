@@ -1,199 +1,330 @@
 {
-  "table_name": "DOCS_RCVD_OBJECTS",
+  "name": "DOCS_RCVD_OBJECTS",
   "description": "High level information and metadata about received binary objects.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "OBJECT_VERSION_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Universal Unique Identifier (UUID) for the binary object."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "OBJECT_SET_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The document set ID that represents a common identifier across all document revisions."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "OBJECT_EXTERNAL_TYPE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The type assigned to the object at the sending organization."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "DOCUMENT_TYPE_GROUP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The object's type group (I ECT 55330 value)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdministration\n\n\nClinical\n\n\nOther\n\n\nBilling\n\n\nInsurance Card\n\n\nInsurance-Related Form\n\n\nPatient Consent\n\n\nROI / HIM Consent\n\n\nLegal Document\n\n\nLiving Will\n\n\nDNR\n\n\nPower of Attorney\n\n\nLegal Letter\n\n\nDriver's License\n\n\nBirth Certificate\n\n\nDeath Certificate\n\n\nMisc Administration\n\n\nMedication\n\n\nMedication Order Report\n\n\nMedication Reconciliation\n\n\nPrescription List\n\n\nRadiology and Imaging\n\n\nCardiology Imaging\n\n\nEndoscopy Imaging\n\n\nOB/GYN Imaging\n\n\nDental Imaging\n\n\nOncology Imaging\n\n\nLab\n\n\nProcedure\n\n\nReferral Request / Referral Report\n\n\nOther Order\n\n\nNote\n\n\nConsult Note\n\n\nH&P Note\n\n\nProgress Note\n\n\nProcedure Note\n\n\nOperative Note\n\n\nNurse Note\n\n\nED Note\n\n\nCardiology Note\n\n\nGI Note\n\n\nOncology Note\n\n\nBehavior Health Note\n\n\nReferral Note\n\n\nPhysical Therapy Note\n\n\nOccupational Therapy Note\n\n\nOB/GYN Note\n\n\nClinical Consent\n\n\nProcedure Consent\n\n\nAnesthesia Consent\n\n\nSurgical Consent\n\n\nAbortion Consent\n\n\nSterilization Consent\n\n\nOrgan Donation Consent\n\n\nResearch Consent\n\n\nPhotographic Image\n\n\nWound Care Image\n\n\nDermatology Image\n\n\nPlastic Surgery Image\n\n\nFlowsheet\n\n\nPhysician Letter\n\n\nPatient Summary\n\n\nDischarge Summary\n\n\nTransfer Summary\n\n\nImmunization Summary\n\n\nLabor and Delivery Summary\n\n\nPhysical Therapy Summary\n\n\nOccupational Therapy Summary\n\n\nAfter Visit Summary\n\n\nPatient Reported Information\n\n\nQuestionnaire\n\n\nPatient Upload\n\n\nPatient History\n\n\nPatient Education and Instructions\n\n\nDischarge Instructions\n\n\nEvaluation and Plan\n\n\nTransplant Evaluation\n\n\nRisk Assessment\n\n\nPhysical Therapy Treatment Plan\n\n\nOccupational Therapy Treatment Plan\n\n\nOncology Treatment Plan\n\n\nCase Management\n\n\nEpisode Summary\n\n\nSurgical Treatment Plan\n\n\nMisc Clinical"
+      "description": "The object's type group (I ECT 55330 value)",
+      "entries": [
+        "Administration",
+        "Clinical",
+        "Other",
+        "Billing",
+        "Insurance Card",
+        "Insurance-Related Form",
+        "Patient Consent",
+        "ROI / HIM Consent",
+        "Legal Document",
+        "Living Will",
+        "DNR",
+        "Power of Attorney",
+        "Legal Letter",
+        "Driver's License",
+        "Birth Certificate",
+        "Death Certificate",
+        "Misc Administration",
+        "Medication",
+        "Medication Order Report",
+        "Medication Reconciliation",
+        "Prescription List",
+        "Radiology and Imaging",
+        "Cardiology Imaging",
+        "Endoscopy Imaging",
+        "OB/GYN Imaging",
+        "Dental Imaging",
+        "Oncology Imaging",
+        "Lab",
+        "Procedure",
+        "Referral Request / Referral Report",
+        "Other Order",
+        "Note",
+        "Consult Note",
+        "H&P Note",
+        "Progress Note",
+        "Procedure Note",
+        "Operative Note",
+        "Nurse Note",
+        "ED Note",
+        "Cardiology Note",
+        "GI Note",
+        "Oncology Note",
+        "Behavior Health Note",
+        "Referral Note",
+        "Physical Therapy Note",
+        "Occupational Therapy Note",
+        "OB/GYN Note",
+        "Clinical Consent",
+        "Procedure Consent",
+        "Anesthesia Consent",
+        "Surgical Consent",
+        "Abortion Consent",
+        "Sterilization Consent",
+        "Organ Donation Consent",
+        "Research Consent",
+        "Photographic Image",
+        "Wound Care Image",
+        "Dermatology Image",
+        "Plastic Surgery Image",
+        "Flowsheet",
+        "Physician Letter",
+        "Patient Summary",
+        "Discharge Summary",
+        "Transfer Summary",
+        "Immunization Summary",
+        "Labor and Delivery Summary",
+        "Physical Therapy Summary",
+        "Occupational Therapy Summary",
+        "After Visit Summary",
+        "Patient Reported Information",
+        "Questionnaire",
+        "Patient Upload",
+        "Patient History",
+        "Patient Education and Instructions",
+        "Discharge Instructions",
+        "Evaluation and Plan",
+        "Transplant Evaluation",
+        "Risk Assessment",
+        "Physical Therapy Treatment Plan",
+        "Occupational Therapy Treatment Plan",
+        "Oncology Treatment Plan",
+        "Case Management",
+        "Episode Summary",
+        "Surgical Treatment Plan",
+        "Misc Clinical"
+      ]
     },
     {
-      "index": 129,
+      "ordinalPosition": 9,
       "name": "OBJECT_MIME_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The format used to store the object.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\napplication/pdf\n\n\nimage/jpeg\n\n\nimage/png\n\n\nimage/bmp\n\n\nimage/tiff"
+      "description": "The format used to store the object.",
+      "entries": [
+        "application/pdf",
+        "image/jpeg",
+        "image/png",
+        "image/bmp",
+        "image/tiff"
+      ]
     },
     {
-      "index": 141,
+      "ordinalPosition": 10,
       "name": "OBJECT_PROV",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the provider associated with the object."
     },
     {
-      "index": 146,
+      "ordinalPosition": 11,
       "name": "DICOM_STUDY_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Digital Imaging and Communications in Medicine (DICOM) Study Instance Unique Identifier (UID) as recorded by the image archive."
     },
     {
-      "index": 151,
+      "ordinalPosition": 12,
       "name": "DICOM_SERIES_UID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Digital Imaging and Communications in Medicine (DICOM) Series Instance Unique Identifier (UID) for the imaging series."
     },
     {
-      "index": 156,
+      "ordinalPosition": 13,
       "name": "DICOM_SERIES_SEQ_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The order a series occurs in a Digital Imaging and Communications in Medicine (DICOM) Study Instance"
     },
     {
-      "index": 161,
+      "ordinalPosition": 14,
       "name": "DICOM_IMAGE_SEQ_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The order an image occurs in in a Digital Imaging and Communications in Medicine (DICOM) Series Instant"
     },
     {
-      "index": 166,
+      "ordinalPosition": 15,
       "name": "DICOM_MODALITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Digital Imaging and Communications in Medicine (DICOM) modality type as determined by a DICOM image header."
     },
     {
-      "index": 171,
+      "ordinalPosition": 16,
       "name": "OBJECT_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The description for the object."
     },
     {
-      "index": 176,
+      "ordinalPosition": 17,
       "name": "OBJECT_CREATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the received object was created at the sending organization."
     },
     {
-      "index": 181,
+      "ordinalPosition": 18,
       "name": "OBJECT_RECEIVED_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The last instant the object was received on a query response."
     },
     {
-      "index": 186,
+      "ordinalPosition": 19,
       "name": "OBJECT_UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The last instant the binary data was changed for the object at the sending organization."
     },
     {
-      "index": 191,
+      "ordinalPosition": 20,
       "name": "CLINICALLY_RELEVANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The most clinically relevant instant for the object at the sending organization."
     },
     {
-      "index": 196,
+      "ordinalPosition": 21,
       "name": "LINKED_EVENT_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The event identifier for the encounter document at the sending organization to which the object is related."
     },
     {
-      "index": 201,
+      "ordinalPosition": 22,
       "name": "OBJECT_LOCATION_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Care Everywhere location name for the object."
     },
     {
-      "index": 206,
+      "ordinalPosition": 23,
       "name": "OBJECT_LOCATION_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Care Everywhere location ID for the object."
     },
     {
-      "index": 211,
+      "ordinalPosition": 24,
       "name": "OBJECT_HOME_COMMUNITY_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the Home Community ID for the object. This item stores the Home Community ID where this object lives. This is used for IHE XDS.b and XCA  profiles."
     },
     {
-      "index": 216,
+      "ordinalPosition": 25,
       "name": "OBJECT_SPECIALTY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the specialty this object is associated with. The specialty listed is the department specialty from the received object."
     },
     {
-      "index": 221,
+      "ordinalPosition": 26,
       "name": "OBJECT_BLOB_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the object's blob type (DCS 250) if it was received in a query response.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSCAN\n\n\nVOICE\n\n\nANNOTATION\n\n\nVIDEO\n\n\nECG\n\n\nSPIRO\n\n\nHOLTER RESULT\n\n\nHOLTER ANALYSIS\n\n\nWAVEFORM STRIP\n\n\nESIG\n\n\nVirtual Authorization\n\n\nPHOTO\n\n\nLINK\n\n\nDOCUMENT\n\n\nREPORT VIEWER\n\n\nCHF\n\n\nDICOM Study\n\n\nDICOM Series\n\n\nDICOM Image\n\n\nTEMPORARY"
+      "description": "Stores the object's blob type (DCS 250) if it was received in a query response.",
+      "entries": [
+        "SCAN",
+        "VOICE",
+        "ANNOTATION",
+        "VIDEO",
+        "ECG",
+        "SPIRO",
+        "HOLTER RESULT",
+        "HOLTER ANALYSIS",
+        "WAVEFORM STRIP",
+        "ESIG",
+        "Virtual Authorization",
+        "PHOTO",
+        "LINK",
+        "DOCUMENT",
+        "REPORT VIEWER",
+        "CHF",
+        "DICOM Study",
+        "DICOM Series",
+        "DICOM Image",
+        "TEMPORARY"
+      ]
     },
     {
-      "index": 248,
+      "ordinalPosition": 27,
       "name": "IMG_SLCT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores how this Digital Imaging and Communications in Medicine (DICOM) image was selected by image exchange.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nComputer Selected\n\n\nKey Image"
+      "description": "This item stores how this Digital Imaging and Communications in Medicine (DICOM) image was selected by image exchange.",
+      "entries": [
+        "None",
+        "Computer Selected",
+        "Key Image"
+      ]
     }
   ]
 }

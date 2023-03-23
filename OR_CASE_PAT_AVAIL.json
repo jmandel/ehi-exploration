@@ -1,31 +1,37 @@
 {
-  "table_name": "OR_CASE_PAT_AVAIL",
+  "name": "OR_CASE_PAT_AVAIL",
   "description": "This table holds any special reasons related to patient availability such as short notice, first surgeon, etc.",
-  "primary_key": {
-    "column_name": "CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CASE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CASE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the case request record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_AVAIL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The special reasons related to the patient availability.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The special reasons related to the patient availability."
     }
   ]
 }

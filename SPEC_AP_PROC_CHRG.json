@@ -1,55 +1,66 @@
 {
-  "table_name": "SPEC_AP_PROC_CHRG",
+  "name": "SPEC_AP_PROC_CHRG",
   "description": "This is the specimen protocol charge table for anatomic pathology specimens.",
-  "primary_key": {
-    "column_name": "SPECIMEN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SPECIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SPECIMEN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AP_PRO_CHARGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This will save the specimen-level protocol charge for the anatomic pathology specimen."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "AP_PRO_CHARGE_QTY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This will save the specimen-level protocol charge quantity for the anatomic pathology specimen."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "AP_CHG_TR_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The charge trigger status category ID for the anatomic pathology (AP) protocol level charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTech/No type charges have been triggered\n\n\nProfessional charges have been triggered\n\n\nAll types of charges have been triggered"
+      "description": "The charge trigger status category ID for the anatomic pathology (AP) protocol level charge.",
+      "entries": [
+        "Tech/No type charges have been triggered",
+        "Professional charges have been triggered",
+        "All types of charges have been triggered"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "CHARGE_SS_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the procedure that was the last dropped charge for the AP specimen."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "CHARGE_QTY_SS",
       "type": "INTEGER",
       "discontinued": false,

@@ -1,45 +1,59 @@
 {
-  "table_name": "HX_RSH_DATA_CAPTURE",
+  "name": "HX_RSH_DATA_CAPTURE",
   "description": "The HX_RSH_DATA_CAPTURE table contains information about updates to research data capture forms.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the document record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A history of the unique IDs of users who have updated this form."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "A history of instants in which this form has been updated."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "FORM_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A history of status category IDs for this form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nIn Progress\n\n\nVoid\n\n\nComplete\n\n\nError\n\n\nRejected"
+      "description": "A history of status category IDs for this form.",
+      "entries": [
+        "New",
+        "In Progress",
+        "Void",
+        "Complete",
+        "Error",
+        "Rejected"
+      ]
     }
   ]
 }

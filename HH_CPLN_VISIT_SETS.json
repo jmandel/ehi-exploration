@@ -1,167 +1,185 @@
 {
-  "table_name": "HH_CPLN_VISIT_SETS",
+  "name": "HH_CPLN_VISIT_SETS",
   "description": "This table contains Home Health care plan visit set information entered on the Remote Client. The table contains information about the date ranges that the visit sets are scheduled for as well as their frequency.",
-  "primary_key": {
-    "column_name": "CAREPLAN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CAREPLAN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CAREPLAN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the care plan."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VISIT_SET_DISC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Visit set discipline category list.  Links to category table ZC_DISCIPLINE.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Visit set discipline category list.  Links to category table ZC_DISCIPLINE."
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "VISIT_SET_DISC_IDX",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Visit set discipline index."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "VISITS_PER_PERIOD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Visit set visits per period."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "PERIOD_TIME_UNTS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Period time units (day, week, prn, etc.) for the visit set.  Links to category table ZC_PER_TIME_UNITS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPRN\n\n\nHour\n\n\nDay\n\n\nWeek\n\n\n30 Day Month\n\n\nMonth"
+      "description": "Period time units (day, week, prn, etc.) for the visit set.  Links to category table ZC_PER_TIME_UNITS.",
+      "entries": [
+        "PRN",
+        "Hour",
+        "Day",
+        "Week",
+        "30 Day Month",
+        "Month"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "TIME_UNITS_PER_PRD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Visit set time units per period."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "VISIT_SET_DURATION",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Visit set duration."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "VST_SER_DISCHRG_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Visit series discharge date."
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "VST_SER_CERT_PRD",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Visit series certification period."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "VST_FROM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Visit set from date."
     },
     {
-      "index": 71,
+      "ordinalPosition": 13,
       "name": "VST_TO_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Visit set to date."
     },
     {
-      "index": 76,
+      "ordinalPosition": 14,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is populated only if you use IntraConnect."
     },
     {
-      "index": 81,
+      "ordinalPosition": 15,
       "name": "VSTS_FROM_PER_PRD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the from part of the visits range in the visit set."
     },
     {
-      "index": 86,
+      "ordinalPosition": 16,
       "name": "VS_VERBAL_ORDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The verbal order linked to the visit set for a specific version of that visit set."
     },
     {
-      "index": 91,
+      "ordinalPosition": 17,
       "name": "VISIT_SET_DC_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the discontinued date of the visit set, which becomes the effective end date when a visit set is discontinued."
     },
     {
-      "index": 96,
+      "ordinalPosition": 18,
       "name": "VISIT_SET_MOD_LINK",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the visit set that this was modified to. The \"child\" visit set."
     },
     {
-      "index": 101,
+      "ordinalPosition": 19,
       "name": "VISIT_SET_COMMENT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the note record that stores the visit set comments."
     },
     {
-      "index": 106,
+      "ordinalPosition": 20,
       "name": "VS_LAST_EDIT_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when this visit set was last edited."
     },
     {
-      "index": 111,
+      "ordinalPosition": 21,
       "name": "SCHEDULING_INSTR_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the HNO ID for the visit set scheduling instructions."
     },
     {
-      "index": 116,
+      "ordinalPosition": 22,
       "name": "VISIT_SET_VER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The current version of the visit set."
     },
     {
-      "index": 121,
+      "ordinalPosition": 23,
       "name": "VISIT_SET_VER_ON_POC",
       "type": "INTEGER",
       "discontinued": false,

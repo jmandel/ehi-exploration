@@ -1,59 +1,72 @@
 {
-  "table_name": "HH_OASIS_ENC",
+  "name": "HH_OASIS_ENC",
   "description": "Contains Home Health Outcome and Assessment Information Set (OASIS) and Hospice Item Set (HIS) overtime single items.",
-  "primary_key": {
-    "column_name": "OASIS_SET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OASIS_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OASIS_SET_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique identifier for the OASIS data set."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contact number."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "INSTANT_OF_ENTRY",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant of OASIS data set data entry."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DATA_ENTRY_PERSON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of user who entered data in OASIS data set."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "DATASET_CONTACT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the OASIS/HIS dataset type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOASIS Creation\n\n\nOASIS Snapshot\n\n\nError\n\n\nHIS Creation\n\n\nOASIS Inactivation Snapshot"
+      "description": "This item stores the OASIS/HIS dataset type.",
+      "entries": [
+        "OASIS Creation",
+        "OASIS Snapshot",
+        "Error",
+        "HIS Creation",
+        "OASIS Inactivation Snapshot"
+      ]
     }
   ]
 }

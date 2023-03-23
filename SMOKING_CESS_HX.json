@@ -1,43 +1,59 @@
 {
-  "table_name": "SMOKING_CESS_HX",
+  "name": "SMOKING_CESS_HX",
   "description": "This table is for the Historical Smoking Cessation items: Ready to Quit Historical, Counseling Given Historical, Smoking Cessation Historical Update User, and Smoking Cessation Historical Update Instant.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "READY_QT_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column holds historical data for whether or not the patient stated they were ready to quit smoking.  \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Asked\n\n\nYes\n\n\nNo"
+      "description": "This column holds historical data for whether or not the patient stated they were ready to quit smoking.",
+      "entries": [
+        "Not Asked",
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "COUNSELING_GVN_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column holds historical data for whether or not counseling was given to a patient who smokes.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Answered\n\n\nYes\n\n\nNo"
+      "description": "This column holds historical data for whether or not counseling was given to a patient who smokes.",
+      "entries": [
+        "Not Answered",
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "SMK_CESS_HX_DT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the date and time the corresponding entries in the Smoking Cessation Historical items were updated."
     }

@@ -1,87 +1,110 @@
 {
-  "table_name": "ARPB_TX_E_PMT",
+  "name": "ARPB_TX_E_PMT",
   "description": "Contains information on electronically made payments.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RESPONSE_TAG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Authorization code sent back by the merchant"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "APPROVAL_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Transaction ID sent back by the merchant"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PMT_INSTANT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant at which the electronic payment was made."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CARD_BRAND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The card brand category ID used for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVisa\n\n\nMasterCard\n\n\nAmerican Express\n\n\nDiscover\n\n\nDiners Club\n\n\nHealth Benefit\n\n\nBank Account (Unknown Type)\n\n\nChecking Account\n\n\nSavings Account\n\n\nOther"
+      "description": "The card brand category ID used for the transaction.",
+      "entries": [
+        "Visa",
+        "MasterCard",
+        "American Express",
+        "Discover",
+        "Diners Club",
+        "Health Benefit",
+        "Bank Account (Unknown Type)",
+        "Checking Account",
+        "Savings Account",
+        "Other"
+      ]
     },
     {
-      "index": 39,
+      "ordinalPosition": 6,
       "name": "TOKEN_NICKNAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A helpful name to identify the payment method."
     },
     {
-      "index": 44,
+      "ordinalPosition": 7,
       "name": "ACCT_HOLDER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the credit card account holder or bank account holder."
     },
     {
-      "index": 49,
+      "ordinalPosition": 8,
       "name": "LAST_4_DIGITS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last 4 digits of the card or bank account used for the transaction."
     },
     {
-      "index": 54,
+      "ordinalPosition": 9,
       "name": "BANK_ACCT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The bank account type for bank account transactions.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nChecking\n\n\nSavings"
+      "description": "The bank account type for bank account transactions.",
+      "entries": [
+        "Unknown",
+        "Checking",
+        "Savings"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 10,
       "name": "DIGITAL_WALLET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the digital wallet used for an electronic payment. Stored on payments made from a digital wallet and on reversals. This item is not stored on refund transactions.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nApple Pay\n\n\nGoogle Pay"
+      "description": "Holds the digital wallet used for an electronic payment. Stored on payments made from a digital wallet and on reversals. This item is not stored on refund transactions.",
+      "entries": [
+        "Apple Pay",
+        "Google Pay"
+      ]
     },
     {
-      "index": 73,
+      "ordinalPosition": 11,
       "name": "SAVED_PMT_DIGITAL_WALLET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the digital wallet of the saved payment method used to make the payment \n\n\n The category values for this column were already listed for column: DIGITAL_WALLET_C_NAME"
+      "description": "Holds the digital wallet of the saved payment method used to make the payment"
     }
   ]
 }

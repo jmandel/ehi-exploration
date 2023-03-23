@@ -1,45 +1,57 @@
 {
-  "table_name": "PAT_GUEST_PROXY",
+  "name": "PAT_GUEST_PROXY",
   "description": "Lists the guest proxies for a patient, and the relationship types of those guest proxies.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PROXY_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The MyChart account ID (WPR) of the delegate who has guest proxy access to this patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PROXY_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Lists the relationship type of this proxy relationship\n\n\nMay contain organization-specific values: Yes"
+      "description": "Lists the relationship type of this proxy relationship"
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "PROXY_UPG_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Lists the current status of the guest proxy's upgrade request\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUpgrade Tickler Sent\n\n\nUpgrade Requested\n\n\nUpgrade Declined\n\n\nUpgraded"
+      "description": "Lists the current status of the guest proxy's upgrade request",
+      "entries": [
+        "Upgrade Tickler Sent",
+        "Upgrade Requested",
+        "Upgrade Declined",
+        "Upgraded"
+      ]
     }
   ]
 }

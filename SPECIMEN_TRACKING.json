@@ -1,55 +1,99 @@
 {
-  "table_name": "SPECIMEN_TRACKING",
+  "name": "SPECIMEN_TRACKING",
   "description": "Contains the post resulted tracking information about specimens.",
-  "primary_key": {
-    "column_name": "SPECIMEN_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SPECIMEN_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SPECIMEN_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TRACKING_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the current status for tracking a specimen after it's been resulted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo Treatment Required\n\n\nPatient/Caregiver Needs to be Contacted\n\n\nPatient/Caregiver Informed\n\n\nSchedule Follow-up\n\n\nSchedule Procedure\n\n\nRefer Mohs/Surgeon\n\n\nFollow-up Arranged\n\n\nTreatment Complete\n\n\nUnable to Contact Patient\n\n\nPatient Refused\n\n\nRefer for Excision\n\n\nRefer to Resident Surgery Clinic\n\n\nRefer to Other Specialties\n\n\nAwaiting Additional Workup"
+      "description": "Contains the current status for tracking a specimen after it's been resulted.",
+      "entries": [
+        "No Treatment Required",
+        "Patient/Caregiver Needs to be Contacted",
+        "Patient/Caregiver Informed",
+        "Schedule Follow-up",
+        "Schedule Procedure",
+        "Refer Mohs/Surgeon",
+        "Follow-up Arranged",
+        "Treatment Complete",
+        "Unable to Contact Patient",
+        "Patient Refused",
+        "Refer for Excision",
+        "Refer to Resident Surgery Clinic",
+        "Refer to Other Specialties",
+        "Awaiting Additional Workup"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 4,
       "name": "TRACKING_COMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether this specimen is considered complete with respect to tracking after the specimen is resulted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted\n\n\nNot Tracked"
+      "description": "Stores whether this specimen is considered complete with respect to tracking after the specimen is resulted.",
+      "entries": [
+        "Completed",
+        "Not Tracked"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 5,
       "name": "POST_RESULT_DX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the diagnosis used for tracking purposes after the specimen has been resulted. Not to be used as a clinical diagnosis.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBCC\n\n\nBCC, Superficial\n\n\nSCC\n\n\nSCC in Situ\n\n\nMelanoma\n\n\nMelanoma in Situ\n\n\nOther Skin Cancer\n\n\nOther Malignant Neoplasm\n\n\nAtypical Nevus - Mild\n\n\nAtypical Nevus - Moderate\n\n\nAtypical Nevus - Severe\n\n\nActinic Keratosis\n\n\nOther Benign Neoplasm\n\n\nOther Skin Eruption\n\n\nNeoplasm of Uncertain Behavior\n\n\nOther"
+      "description": "Contains the diagnosis used for tracking purposes after the specimen has been resulted. Not to be used as a clinical diagnosis.",
+      "entries": [
+        "BCC",
+        "BCC, Superficial",
+        "SCC",
+        "SCC in Situ",
+        "Melanoma",
+        "Melanoma in Situ",
+        "Other Skin Cancer",
+        "Other Malignant Neoplasm",
+        "Atypical Nevus - Mild",
+        "Atypical Nevus - Moderate",
+        "Atypical Nevus - Severe",
+        "Actinic Keratosis",
+        "Other Benign Neoplasm",
+        "Other Skin Eruption",
+        "Neoplasm of Uncertain Behavior",
+        "Other"
+      ]
     },
     {
-      "index": 65,
+      "ordinalPosition": 6,
       "name": "TRACKING_DESC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the a summary/comment about the specimen tracking done after the specimen has been resulted."
     },
     {
-      "index": 70,
+      "ordinalPosition": 7,
       "name": "TRACK_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,

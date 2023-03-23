@@ -1,83 +1,129 @@
 {
-  "table_name": "INVOICE_APC",
+  "name": "INVOICE_APC",
   "description": "The INVOICE_APC table contains information on payment classifications.",
-  "primary_key": {
-    "column_name": "INVOICE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INVOICE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INVOICE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the invoice record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the payment classification type for this invoice record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of payment classification that appears on the invoice (i.e. CPT�, APC, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAmbulatory Payment Classification\n\n\nHome Health\n\n\nCPT\n\n\nAmbulatory Patient Grouping\n\n\nMDS RUG Code\n\n\nInpatient Rehabilitation Facility"
+      "description": "The type of payment classification that appears on the invoice (i.e. CPT�, APC, etc.)",
+      "entries": [
+        "Ambulatory Payment Classification",
+        "Home Health",
+        "CPT",
+        "Ambulatory Patient Grouping",
+        "MDS RUG Code",
+        "Inpatient Rehabilitation Facility"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 4,
       "name": "PC_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The payment classification code that appears on the invoice."
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "PC_MODIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The payment classification modifier that appears on the invoice."
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "PC_SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The service date the services were performed on."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "PC_PMT_STAT_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status indicator for this payment classification.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nS (Significant Procedures)\n\n\nT (Surgical Services)\n\n\nV (Medical Visits)\n\n\nX (Ancillary Services)\n\n\nP (Partial Hospitalization)\n\n\nN (Incidental Services)\n\n\nE (Not Allowed under APC or Not Covered)\n\n\nC (Inpatient Services Not Payable under APC)\n\n\nA (Miscellaneous Non-PPS)\n\n\nF (Acquisition of Corneal Tissue)\n\n\nG (Current Drug/Biological Pass-Through)\n\n\nH (Device Pass-Through)\n\n\nJ (New Drug/Biological Pass-Through)\n\n\nK (Non Pass-Through Drug/Biological)\n\n\nB (Not Recognized by OPPS for Part B)\n\n\nD (Discontinued Codes)\n\n\nL (Influenza/Pneumonia Vaccine)\n\n\nM (Not Billable to the FI)\n\n\nQ (Packaged Services Subject to Separate Payment)\n\n\nY (Non-Implantable Durable Medical Equipment)\n\n\nQ1 (STV-Packaged Codes)\n\n\nQ2 (T-Packaged Codes)\n\n\nQ3 (Codes paid through a composite APC)\n\n\nR (Blood and blood products)\n\n\nU (Brachytherapy Sources)\n\n\nJ1 (Services paid through a comprehensive APC)\n\n\nJ2 (Services that may be paid through a comprehensive APC)\n\n\nQ4 (Conditionally packaged laboratory tests)\n\n\nE1 (Items and services not covered by Medicare)\n\n\nE2 (Items and services without price or claim data)"
+      "description": "The status indicator for this payment classification.",
+      "entries": [
+        "S (Significant Procedures)",
+        "T (Surgical Services)",
+        "V (Medical Visits)",
+        "X (Ancillary Services)",
+        "P (Partial Hospitalization)",
+        "N (Incidental Services)",
+        "E (Not Allowed under APC or Not Covered)",
+        "C (Inpatient Services Not Payable under APC)",
+        "A (Miscellaneous Non-PPS)",
+        "F (Acquisition of Corneal Tissue)",
+        "G (Current Drug/Biological Pass-Through)",
+        "H (Device Pass-Through)",
+        "J (New Drug/Biological Pass-Through)",
+        "K (Non Pass-Through Drug/Biological)",
+        "B (Not Recognized by OPPS for Part B)",
+        "D (Discontinued Codes)",
+        "L (Influenza/Pneumonia Vaccine)",
+        "M (Not Billable to the FI)",
+        "Q (Packaged Services Subject to Separate Payment)",
+        "Y (Non-Implantable Durable Medical Equipment)",
+        "Q1 (STV-Packaged Codes)",
+        "Q2 (T-Packaged Codes)",
+        "Q3 (Codes paid through a composite APC)",
+        "R (Blood and blood products)",
+        "U (Brachytherapy Sources)",
+        "J1 (Services paid through a comprehensive APC)",
+        "J2 (Services that may be paid through a comprehensive APC)",
+        "Q4 (Conditionally packaged laboratory tests)",
+        "E1 (Items and services not covered by Medicare)",
+        "E2 (Items and services without price or claim data)"
+      ]
     },
     {
-      "index": 77,
+      "ordinalPosition": 8,
       "name": "PC_ETR_LIST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The transaction record that appears on the invoice."
     },
     {
-      "index": 82,
+      "ordinalPosition": 9,
       "name": "PC_ORIG_REIMB_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payment classification reimbursement amount that appears on the invoice."
     },
     {
-      "index": 87,
+      "ordinalPosition": 10,
       "name": "PC_REIMB_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payment classification expected reimbursement amount that appears on the invoice."
     },
     {
-      "index": 92,
+      "ordinalPosition": 11,
       "name": "PC_QUANTITY",
       "type": "NUMERIC",
       "discontinued": false,

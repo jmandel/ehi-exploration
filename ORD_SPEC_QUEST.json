@@ -1,62 +1,72 @@
 {
-  "table_name": "ORD_SPEC_QUEST",
+  "name": "ORD_SPEC_QUEST",
   "description": "This table contains order specific questions and their responses.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line item for this record determined by the order specific question ID"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ORD_QUEST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The identification number of the question for this order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ORD_QUEST_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the question for this order."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "IS_ANSWR_BYPROC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not this question was answered by the procedure. 'Y' indicates that the question was answered. 'N' indicates that the question was not answered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether or not this question was answered by the procedure. 'Y' indicates that the question was answered. 'N' indicates that the question was not answered.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "ORD_QUEST_COMP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the medication in the mixture that triggers this specific question for an IV or total parenteral nutrition (TPN) order."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "ORD_QUEST_RESP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The response to the question for this order."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "ORD_QUEST_CMT",
       "type": "VARCHAR",
       "discontinued": false,

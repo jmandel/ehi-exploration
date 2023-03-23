@@ -1,48 +1,54 @@
 {
-  "table_name": "CL_QANSWER",
+  "name": "CL_QANSWER",
   "description": "This table contains general information about questionnaire answer records. For example, the questionnaire the answer record is for, the date it was answered, and whether the answer record is closed.",
-  "primary_key": {
-    "column_name": "ANSWER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ANSWER_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ANSWER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the questionnaire answer record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "REC_CREATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who created this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PE_HX_REVIEWED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This records whether a provider has viewed the history data in this record in the MyChart\\Welcome patient history visit navigator section. It is assumed that if the provider has had a chance to look at the submitted history data, they have filed or reviewed the data. After the provider review, MyChart and Welcome will start pre-loading answers from the history section rather than the patient's previous responses.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This records whether a provider has viewed the history data in this record in the MyChart\\Welcome patient history visit navigator section. It is assumed that if the provider has had a chance to look at the submitted history data, they have filed or reviewed the data. After the provider review, MyChart and Welcome will start pre-loading answers from the history section rather than the patient's previous responses.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "PE_HX_DONE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This records whether a provider has completed review of the history data in this record in the MyChart\\Welcome patient history visit navigator section. After the provider review, MyChart and Welcome will start pre-loading answers from the history section rather than the patient's previous responses.\n\n\n The category values for this column were already listed for column: PE_HX_REVIEWED_YN"
+      "description": "This records whether a provider has completed review of the history data in this record in the MyChart\\Welcome patient history visit navigator section. After the provider review, MyChart and Welcome will start pre-loading answers from the history section rather than the patient's previous responses."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the research study-patient association for the questionnaire."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "IMG_PROC_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,

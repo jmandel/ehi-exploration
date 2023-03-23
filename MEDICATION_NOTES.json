@@ -1,50 +1,56 @@
 {
-  "table_name": "MEDICATION_NOTES",
+  "name": "MEDICATION_NOTES",
   "description": "This table contains medication note information that can be attached to the medication order from order entry or other medication-related activities.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the order record containing the medication note"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MED_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID number for this medication note."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MED_NOTE_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for the patient encounter when this note was created. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MED_NOTE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who wrote the medication note."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MED_NOTE_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time when the medication note was created"
     }

@@ -1,62 +1,95 @@
 {
-  "table_name": "WKQUEUE_REVIEW",
+  "name": "WKQUEUE_REVIEW",
   "description": "This is the clarity table for Infection Control Workqueue functionality. It contains the review information for a result.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "WKQUEUE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores user group of a workqueue. This is meant to be used in conjunction with the Workqueue Type parameter from Reporting Workbench reports from the Infection Control Find Results template.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInfection Preventionist\n\n\nPharmacist\n\n\nNHSN C. diff Reviewer\n\n\nNHSN MRSA Reviewer\n\n\nNHSN CephR-Klebsiella Reviewer\n\n\nNHSN MSSA Reviewer\n\n\nNHSN VRE Reviewer\n\n\nNHSN CRE-E. coli Reviewer\n\n\nNHSN CRE-Klebsiella Reviewer\n\n\nNHSN MDR-Acinetobacter Reviewer\n\n\nNHSN CRE-Enterobacter Reviewer\n\n\nNHSN CAUTI Reviewer\n\n\nNHSN CLABSI Reviewer"
+      "description": "This stores user group of a workqueue. This is meant to be used in conjunction with the Workqueue Type parameter from Reporting Workbench reports from the Infection Control Find Results template.",
+      "entries": [
+        "Infection Preventionist",
+        "Pharmacist",
+        "NHSN C. diff Reviewer",
+        "NHSN MRSA Reviewer",
+        "NHSN CephR-Klebsiella Reviewer",
+        "NHSN MSSA Reviewer",
+        "NHSN VRE Reviewer",
+        "NHSN CRE-E. coli Reviewer",
+        "NHSN CRE-Klebsiella Reviewer",
+        "NHSN MDR-Acinetobacter Reviewer",
+        "NHSN CRE-Enterobacter Reviewer",
+        "NHSN CAUTI Reviewer",
+        "NHSN CLABSI Reviewer"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 4,
       "name": "WKQUEUE_REVIEW_TIME_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This stores the review instant for a result. This is the time at which a user clicked the \"Reviewed\" button from a Reporting Workbench Workqueue. Each instant is specific to the Workqueue Type and User ID."
     },
     {
-      "index": 37,
+      "ordinalPosition": 5,
       "name": "WKQUEUE_REV_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reviewer for a result. This is related to the review instant and the workqueue type."
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "WKQUEUE_REVIEW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores the review action for a result. This is the action a user took from a Reporting Workbench Workqueue.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReview\n\n\nUnreview"
+      "description": "This stores the review action for a result. This is the action a user took from a Reporting Workbench Workqueue.",
+      "entries": [
+        "Review",
+        "Unreview"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 7,
       "name": "WKQUEUE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores a result review reason. This is the discrete reason a user documented while reviewing the result. Each reason is specific to a workqueue and user ID.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPresent on admission\n\n\nPresent on insertion\n\n\nDoes not meet NHSN criteria\n\n\nContaminant\n\n\nSent to Department of Health\n\n\nInfection case created"
+      "description": "This stores a result review reason. This is the discrete reason a user documented while reviewing the result. Each reason is specific to a workqueue and user ID.",
+      "entries": [
+        "Present on admission",
+        "Present on insertion",
+        "Does not meet NHSN criteria",
+        "Contaminant",
+        "Sent to Department of Health",
+        "Infection case created"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 8,
       "name": "WKQUEUE_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

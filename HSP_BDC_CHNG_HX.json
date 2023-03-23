@@ -1,69 +1,90 @@
 {
-  "table_name": "HSP_BDC_CHNG_HX",
+  "name": "HSP_BDC_CHNG_HX",
   "description": "Change History for the Denial/Correspondence (BDC) record.",
-  "primary_key": {
-    "column_name": "BDC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BDC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE_COUNT",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BDC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the denial or correspondence record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line number of change history that is being extracted by enterprise reporting."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CHNG_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant this change occurred"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CHNG_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who initiated the change"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CHNG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Type of change that occurred.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nUpdated\n\n\nTransferred to Other Account\n\n\nTransferred to Other Bucket\n\n\nStatus Changed\n\n\nClosed\n\n\nRe-opened\n\n\nVoided\n\n\nChanged Follow-up Dt\n\n\nChanged Stage\n\n\nExpected Allowed Amount Updated\n\n\nOwning Area Changed\n\n\nOwning User Changed"
+      "description": "Type of change that occurred.",
+      "entries": [
+        "Created",
+        "Updated",
+        "Transferred to Other Account",
+        "Transferred to Other Bucket",
+        "Status Changed",
+        "Closed",
+        "Re-opened",
+        "Voided",
+        "Changed Follow-up Dt",
+        "Changed Stage",
+        "Expected Allowed Amount Updated",
+        "Owning Area Changed",
+        "Owning User Changed"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "CHNG_SOURCE_VAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the source value before change. It can be the unique identifier for the liability bucket or the denial/correspondence type (I BDC 30) depending on the type of change."
     },
     {
-      "index": 47,
+      "ordinalPosition": 7,
       "name": "CHNG_TARGET_VAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the target value after change. It can be the unique identifier for the liability bucket or the denial/correspondence type (I BDC 30) depending on the type of change."
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "CHNG_FOLLOW_UP_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The follow-up date associated with the change."
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "CHNG_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

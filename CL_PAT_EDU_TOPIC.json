@@ -1,48 +1,59 @@
 {
-  "table_name": "CL_PAT_EDU_TOPIC",
+  "name": "CL_PAT_EDU_TOPIC",
   "description": "Enterprise reporting table for patient topic items.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Unique ID for the Patient Education Record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line count for the Patient education topic data."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_TOPIC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the patient education topic. It is stored in internal format and can be used to link to the teaching topic (IED) master file."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_TOPIC_TITLE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the patient education title to which the topic is attached to. It is stored in internal format and can be used to link to the teaching title (IED) master file."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PAT_TOPIC_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A category item that specifies each topic's status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "A category item that specifies each topic's status.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "PAT_TOPIC_KEY",
       "type": "VARCHAR",
       "discontinued": false,

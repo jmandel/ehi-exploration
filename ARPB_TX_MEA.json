@@ -1,41 +1,58 @@
 {
-  "table_name": "ARPB_TX_MEA",
+  "name": "ARPB_TX_MEA",
   "description": "This tables stores the MEA test-related information.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for the item.  This represents a single charge procedure on the transaction record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MEA_TEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The measurement qualifier category ID for Mouse Embryo Assay (MEA) test associated to the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nConcentration\n\n\nGas Test Rate\n\n\nHeight\n\n\nHemoglobin\n\n\nHematocrit\n\n\nEpoetin Starting Dosage\n\n\nCreatinine\n\n\nOxygen\n\n\nLast Kt/V Result"
+      "description": "The measurement qualifier category ID for Mouse Embryo Assay (MEA) test associated to the transaction.",
+      "entries": [
+        "Concentration",
+        "Gas Test Rate",
+        "Height",
+        "Hemoglobin",
+        "Hematocrit",
+        "Epoetin Starting Dosage",
+        "Creatinine",
+        "Oxygen",
+        "Last Kt/V Result"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "MEA_RESULT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Th measurement value."
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "MEA_DATE",
       "type": "DATETIME",
       "discontinued": false,

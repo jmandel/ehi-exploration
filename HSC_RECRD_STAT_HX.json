@@ -1,45 +1,57 @@
 {
-  "table_name": "HSC_RECRD_STAT_HX",
+  "name": "HSC_RECRD_STAT_HX",
   "description": "This table stores information related to the record status of specimens.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the Specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the record statuses that are associated with the specimens from the HSC master file."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SDFL_EDIT_INSTANT",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The instant the Specimen record status was changed."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SDFL_EDIT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique User ID of the user who changed the specimen record status."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SDFL_EDIT_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the action taken in a change of the Specimen record status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nUndo Delete\n\n\nHide\n\n\nUnhide"
+      "description": "The category number for the action taken in a change of the Specimen record status.",
+      "entries": [
+        "Soft Delete",
+        "Undo Delete",
+        "Hide",
+        "Unhide"
+      ]
     }
   ]
 }

@@ -1,202 +1,237 @@
 {
-  "table_name": "HSP_CLP_REV_CODE",
+  "name": "HSP_CLP_REV_CODE",
   "description": "This table contains the revenue code list for the claim print records associated with the hospital account/liability bucket.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim record associated with a single hospital account or liability bucket."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The contact date for the creation of the record in internal format. (There is only one contact date per claim print record.)"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "UB_MIN_SERVICE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The minimum service date for the claim print record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "UB_MAX_SERVICE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The maximum service date for the claim print record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "UB_CHARGES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The uniform billing charges on the claim"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "UB_MODIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The modifier for the claim print record."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "UB_CPT_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing current procedural terminology code on the claim print record."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the hospital account associated with this claim print record."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "CM_PHY_OWN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the physical deployment owner for this record. Physical owners will be where the data is hosted, either on the cross-over server or the owner deployment."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "REV_CODE_EXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external uniform billing revenue code."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "UB_REV_CD_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The description of the uniform billing line."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "UB_HIPPS_CD",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing line health insurance prospective payment system code."
     },
     {
-      "index": 67,
+      "ordinalPosition": 14,
       "name": "UB_QTY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing line quality."
     },
     {
-      "index": 72,
+      "ordinalPosition": 15,
       "name": "UB_NON_CVD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The non-covered amount for the uniform billing line."
     },
     {
-      "index": 77,
+      "ordinalPosition": 16,
       "name": "UB_LMRP_CD",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing local coverage determination code."
     },
     {
-      "index": 82,
+      "ordinalPosition": 17,
       "name": "UB_HCPCS_RATE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing healthcare common procedure coding system code and modifier or rate."
     },
     {
-      "index": 87,
+      "ordinalPosition": 18,
       "name": "UB_CODE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The code type for the uniform billing claim line. If there is no code type this field will be blank.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCPT(R)\n\n\nHCPCS\n\n\nADA\n\n\nASA\n\n\nSKS\n\n\nTHL\n\n\nCBV\n\n\nVT\n\n\nZA\n\n\nCCSD"
+      "description": "The code type for the uniform billing claim line. If there is no code type this field will be blank.",
+      "entries": [
+        "CPT(R)",
+        "HCPCS",
+        "ADA",
+        "ASA",
+        "SKS",
+        "THL",
+        "CBV",
+        "VT",
+        "ZA",
+        "CCSD"
+      ]
     },
     {
-      "index": 104,
+      "ordinalPosition": 19,
       "name": "UB_PRIOR_AUTH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The prior authorization number for the uniform billing line."
     },
     {
-      "index": 109,
+      "ordinalPosition": 20,
       "name": "UB_RFL_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The uniform billing line referral number."
     },
     {
-      "index": 114,
+      "ordinalPosition": 21,
       "name": "UB_REND_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The line level rendering provider for an American National Standards Institute institutional claim. This will only be populated for a combined claim."
     },
     {
-      "index": 119,
+      "ordinalPosition": 22,
       "name": "UB_LINE_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category of the line source for the uniform billing line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCharge\n\n\nCoding\n\n\nCombined\n\n\nSNF HIPPS\n\n\nIRF HIPPS\n\n\nExtension\n\n\nEdited"
+      "description": "The category of the line source for the uniform billing line.",
+      "entries": [
+        "Charge",
+        "Coding",
+        "Combined",
+        "SNF HIPPS",
+        "IRF HIPPS",
+        "Extension",
+        "Edited"
+      ]
     },
     {
-      "index": 133,
+      "ordinalPosition": 23,
       "name": "UB_REIMB_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The reimbursement amount for the uniform billing line."
     },
     {
-      "index": 138,
+      "ordinalPosition": 24,
       "name": "UB_REIMB_CNTRCT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The reimbursement contract amount for the uniform billing line."
     },
     {
-      "index": 143,
+      "ordinalPosition": 25,
       "name": "UB_SVC_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The service date of the uniform billing service line."
     },
     {
-      "index": 148,
+      "ordinalPosition": 26,
       "name": "UB_MOLDX_TEST_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The auxiliary procedure code for a uniform billing line."
     },
     {
-      "index": 153,
+      "ordinalPosition": 27,
       "name": "UB_AUXPX_CD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of auxiliary procedure code when one is applicable to a uniform billing line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLaboratory Test Code\n\n\nMolecular Diagnostic Test Code"
+      "description": "The type of auxiliary procedure code when one is applicable to a uniform billing line.",
+      "entries": [
+        "Laboratory Test Code",
+        "Molecular Diagnostic Test Code"
+      ]
     },
     {
-      "index": 162,
+      "ordinalPosition": 28,
       "name": "UB_AUTH_ID",
       "type": "NUMERIC",
       "discontinued": false,

@@ -1,57 +1,75 @@
 {
-  "table_name": "CLAIM_INVOICE_STATUS_HX",
+  "name": "CLAIM_INVOICE_STATUS_HX",
   "description": "Stores the status change history for an AP claim invoice.",
-  "primary_key": {
-    "column_name": "CLAIM_INVC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_INVC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the invoice record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CHANGED_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores instant when status was changed in UTC time."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PREV_INV_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the category identifier of the status the invoice was changed from.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nPrinted\n\n\nPayment Received\n\n\nClosed\n\n\nCancelled\n\n\nApproved\n\n\nRejected\n\n\nReleased\n\n\nDisputed\n\n\nNot Printed - Paperless"
+      "description": "Stores the category identifier of the status the invoice was changed from.",
+      "entries": [
+        "Created",
+        "Printed",
+        "Payment Received",
+        "Closed",
+        "Cancelled",
+        "Approved",
+        "Rejected",
+        "Released",
+        "Disputed",
+        "Not Printed - Paperless"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 5,
       "name": "NEW_INV_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the category identifier of the status the invoice was changed to.\n\n\n The category values for this column were already listed for column: PREV_INV_STAT_C_NAME"
+      "description": "Stores the category identifier of the status the invoice was changed to."
     },
     {
-      "index": 40,
+      "ordinalPosition": 6,
       "name": "CHANGE_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores a comment related to the status change."
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "CHANGED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores instant when status was changed in local time for the extracting deployment."
     }

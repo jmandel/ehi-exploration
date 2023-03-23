@@ -1,57 +1,63 @@
 {
-  "table_name": "VERIF_STATUS_HX",
+  "name": "VERIF_STATUS_HX",
   "description": "The VERIF_STATUS_HX table contains the history of your verification records. These records include verification information for patients, guarantors, coverages, coverage members, hospital accounts, and encounters.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the verification record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VERIF_STATUS_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The history of the verification status for this record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The history of the verification status for this record."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "VERIF_DATE_HX_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The history of the date on which the record was verified."
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "VERIF_USER_HX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The history of the user who last verified the record."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "NEXT_REV_DATE_HX_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The history of the next review date for this record."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "STAT_CHNG_HX_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The history of the status change date for this record."
     }

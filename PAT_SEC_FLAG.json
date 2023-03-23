@@ -1,31 +1,40 @@
 {
-  "table_name": "PAT_SEC_FLAG",
+  "name": "PAT_SEC_FLAG",
   "description": "The PAT_SEC_FLAG table contains a list of patient security flags associated with patients.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SEC_FLAG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The security flag associated with the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSpecial Address"
+      "description": "The security flag associated with the patient.",
+      "entries": [
+        "Special Address"
+      ]
     }
   ]
 }

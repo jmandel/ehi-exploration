@@ -1,52 +1,59 @@
 {
-  "table_name": "CL_PAT_EDU_NS",
+  "name": "CL_PAT_EDU_NS",
   "description": "Enterprise reporting table for no add single items in Patient Education (PED) records.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Unique ID for the Patient Education Record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Patient Identifier to for which the Education record is created. Stored in internal format and can be used to link to patient record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "METHOD_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category item that specifies method of education.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Category item that specifies method of education."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "RESPONSE_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category item that specifies learner's response to the education.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Category item that specifies learner's response to the education."
     },
     {
-      "index": 24,
+      "ordinalPosition": 5,
       "name": "INSTANT_NOADD_EDIT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Date/Time stamp for the instance when the patient education record was last edited."
     },
     {
-      "index": 29,
+      "ordinalPosition": 6,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status category number for the patient education record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status category number for the patient education record.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     }
   ]
 }

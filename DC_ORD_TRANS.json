@@ -1,36 +1,42 @@
 {
-  "table_name": "DC_ORD_TRANS",
+  "name": "DC_ORD_TRANS",
   "description": "User and instant info of the order which is transcribed as being discontinued to the paper MAR (medication administration record).",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DC_ORD_TRAN_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who transcribes the order as being discontinued to the paper MAR (medication administration record)."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DC_ORD_TRAN_IN_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant (date/time) that the order was transcribed as being discontinued to the paper MAR (medication administration record)."
     }

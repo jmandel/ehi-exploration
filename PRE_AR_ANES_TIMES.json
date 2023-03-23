@@ -1,34 +1,40 @@
 {
-  "table_name": "PRE_AR_ANES_TIMES",
+  "name": "PRE_AR_ANES_TIMES",
   "description": "This table stores the anesthesia start and end times for each line in a temporary transaction (TAR) record.\n\n\n\n\n\n*Note: TAR records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table may be lost if you truncate the table.",
-  "primary_key": {
-    "column_name": "TAR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TAR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TAR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the temporary transaction�record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CE_ANES_START_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The start date and time of the anesthesia procedure."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CE_ANES_END_DTTM",
       "type": "DATETIME",
       "discontinued": false,

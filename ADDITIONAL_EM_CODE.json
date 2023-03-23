@@ -1,62 +1,86 @@
 {
-  "table_name": "ADDITIONAL_EM_CODE",
+  "name": "ADDITIONAL_EM_CODE",
   "description": "This table holds all information related to additional evaluation and management (E/M) codes.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EM_CODE_ADDL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Procedure codes used in addition to the Level of Service (LOS)."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EM_CODE_MOD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Modifiers associated with the additional E/M code. Stored in comma-delimited format with up to four modifiers."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EM_CODE_BILPROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The billing provider for the additional Evaluation and Management (E/M) codes."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "EM_CODE_UNIQUE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique number associated with each additional E/M code. The number is only unique within the contact."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "EM_NO_CHG_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason that a charge was not triggered for an E/M code. This item being populated does not imply any issues with system integrity or system build; it will be set both for legitimate reasons that a charge was not triggered as well as non-legitimate reasons.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified reason\n\n\nCharge Ready to Trigger flag not set\n\n\nOrder Instructions set to not trigger charges\n\n\nProcedure not specified\n\n\nOrder class set to not trigger charges\n\n\nCharge triggering disabled at resulting lab\n\n\nCharge filtered through discrimination programming point\n\n\nNo charge triggering method specified\n\n\nOrder is canceled\n\n\nHolding until close encounter\n\n\nPatient not specified\n\n\nVisit not specified\n\n\nInvalid LCM build\n\n\nCharge trigger failed to execute\n\n\nNon-chargeable external result\n\n\nOrders in transmittal"
+      "description": "The reason that a charge was not triggered for an E/M code. This item being populated does not imply any issues with system integrity or system build; it will be set both for legitimate reasons that a charge was not triggered as well as non-legitimate reasons.",
+      "entries": [
+        "Unspecified reason",
+        "Charge Ready to Trigger flag not set",
+        "Order Instructions set to not trigger charges",
+        "Procedure not specified",
+        "Order class set to not trigger charges",
+        "Charge triggering disabled at resulting lab",
+        "Charge filtered through discrimination programming point",
+        "No charge triggering method specified",
+        "Order is canceled",
+        "Holding until close encounter",
+        "Patient not specified",
+        "Visit not specified",
+        "Invalid LCM build",
+        "Charge trigger failed to execute",
+        "Non-chargeable external result",
+        "Orders in transmittal"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 8,
       "name": "AR_EM_CODE_DX",
       "type": "VARCHAR",
       "discontinued": false,

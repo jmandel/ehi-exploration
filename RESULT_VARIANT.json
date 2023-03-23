@@ -1,38 +1,48 @@
 {
-  "table_name": "RESULT_VARIANT",
+  "name": "RESULT_VARIANT",
   "description": "RESULT_VARIANT is the primary table for storing variant result data.",
-  "primary_key": {
-    "column_name": "RESULT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RESULT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the result record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VARIANT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A list of variant records associated with this result"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VARIANT_RPT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item tracks if the corresponding variant record will be sent to the patient's chart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item tracks if the corresponding variant record will be sent to the patient's chart.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

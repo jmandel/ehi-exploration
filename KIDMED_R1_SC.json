@@ -1,31 +1,48 @@
 {
-  "table_name": "KIDMED_R1_SC",
+  "name": "KIDMED_R1_SC",
   "description": "This table holds claim information from KIDMED REFERRAL 1 multiple response columns.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim information record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "KIDMED_R1_SC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the suspected conditions for referral 1 in the claim information record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedical\n\n\nVision\n\n\nHearing\n\n\nDental\n\n\nNutritional\n\n\nDevelopmental\n\n\nAbuse/Neglect\n\n\nPsychological/Social\n\n\nSpeech/Language"
+      "description": "Stores the suspected conditions for referral 1 in the claim information record.",
+      "entries": [
+        "Medical",
+        "Vision",
+        "Hearing",
+        "Dental",
+        "Nutritional",
+        "Developmental",
+        "Abuse/Neglect",
+        "Psychological/Social",
+        "Speech/Language"
+      ]
     }
   ]
 }

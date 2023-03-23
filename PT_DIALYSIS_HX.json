@@ -1,76 +1,97 @@
 {
-  "table_name": "PT_DIALYSIS_HX",
+  "name": "PT_DIALYSIS_HX",
   "description": "*** Soon to be DEPRECATED ***\n\n\nAs part of an ongoing conversion, the data in this table will be transitioned to a different data structure.\n\n\nUse V_PAT_DIALYSIS_HISTORY to accurately report on all historic and new dialysis data.\n\n\nPatient's dialysis history.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter.  This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the deployment owner for this contact."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DIALYSIS_EAF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the facility profile that is associated with the dialysis center."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "DIALYSIS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of dialysis, such as continuous veno-venous hemofiltration or peritoneal dialysis.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHemo\n\n\nPeritoneal\n\n\nContinuous Arteriovenous Hemofiltration\n\n\nContinuous Veno-Venous Hemofiltration\n\n\nAcute-Hemo\n\n\nAcute-Peritoneal\n\n\nContinuous Veno-Venous Hemodialysis\n\n\nContinuous Arteriovenous Hemodialysis\n\n\nMaintenance (Type Unknown)\n\n\nIn-center Hemodialysis\n\n\nHome Hemodialysis\n\n\nContinuous Ambulatory Peritoneal Dialysis\n\n\nContinuous Cycling Peritoneal Dialysis"
+      "description": "The type of dialysis, such as continuous veno-venous hemofiltration or peritoneal dialysis.",
+      "entries": [
+        "Hemo",
+        "Peritoneal",
+        "Continuous Arteriovenous Hemofiltration",
+        "Continuous Veno-Venous Hemofiltration",
+        "Acute-Hemo",
+        "Acute-Peritoneal",
+        "Continuous Veno-Venous Hemodialysis",
+        "Continuous Arteriovenous Hemodialysis",
+        "Maintenance (Type Unknown)",
+        "In-center Hemodialysis",
+        "Home Hemodialysis",
+        "Continuous Ambulatory Peritoneal Dialysis",
+        "Continuous Cycling Peritoneal Dialysis"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "DIALYSIS_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Start date of patient dialysis."
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "DIALYSIS_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "End date for patient dialysis."
     },
     {
-      "index": 62,
+      "ordinalPosition": 10,
       "name": "DIALYSIS_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,66 +1,77 @@
 {
-  "table_name": "ABN_FOLLOW_UP",
+  "name": "ABN_FOLLOW_UP",
   "description": "This table stores the data related to the follow up done on an Advanced Beneficiary Notice (ABN).",
-  "primary_key": {
-    "column_name": "NOTE_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "NOTE_CSN_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "NOTE_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number (CSN) of the contact."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the note (HNO) record that contains the Advance Beneficiary Notice (ABN) information."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The number of this contact."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ABN_FLUP_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who did the follow up on this ABN"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "ABN_FOLLOW_UP_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant at which the follow up was done."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ABN_FLUP_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the status of the Advance Beneficiary Notice (ABN) follow-up.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Started\n\n\nProvider Contacted\n\n\nReview Complete: ABN Resolved\n\n\nReview Complete: ABN Required\n\n\nPatient Contacted\n\n\nFollow-Up Complete\n\n\nReview Needed: ABN Changed"
+      "description": "Stores the status of the Advance Beneficiary Notice (ABN) follow-up.",
+      "entries": [
+        "Not Started",
+        "Provider Contacted",
+        "Review Complete: ABN Resolved",
+        "Review Complete: ABN Required",
+        "Patient Contacted",
+        "Follow-Up Complete",
+        "Review Needed: ABN Changed"
+      ]
     }
   ]
 }

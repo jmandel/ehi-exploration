@@ -1,318 +1,377 @@
 {
-  "table_name": "RES_REPEAT_COMP",
+  "name": "RES_REPEAT_COMP",
   "description": "This table is used to extract information on component-level repeats.",
-  "primary_key": {
-    "column_name": "RESULT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RESULT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the result record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RPT_COMP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the repeat component."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RPT_COMP_ID_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the component."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "RPT_SELECT_YN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a repeat component was selected.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether a repeat component was selected.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "RPT_COMP_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component value"
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "RPT_ORIG_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component original value"
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "RPT_COMP_UNITS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component units"
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "RPT_ABNORMAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component abnormal value\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal"
+      "description": "Repeat component abnormal value",
+      "entries": [
+        "Normal"
+      ]
     },
     {
-      "index": 54,
+      "ordinalPosition": 10,
       "name": "RPT_DELTA_YN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component delta\n\n\n The category values for this column were already listed for column: RPT_SELECT_YN_NAME"
+      "description": "Repeat component delta"
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "RPT_NORM_LOW",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component normal low value"
     },
     {
-      "index": 65,
+      "ordinalPosition": 12,
       "name": "RPT_NORM_HIGH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component normal high value"
     },
     {
-      "index": 70,
+      "ordinalPosition": 13,
       "name": "RPT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component comment"
     },
     {
-      "index": 75,
+      "ordinalPosition": 14,
       "name": "RPT_METHOD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component method"
     },
     {
-      "index": 80,
+      "ordinalPosition": 15,
       "name": "RPT_METHOD_ID_METHOD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the instrument interface, method, method grouper, or middle tier interface record."
     },
     {
-      "index": 85,
+      "ordinalPosition": 16,
       "name": "RPT_NORM_RANGE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The normal range for the repeat component or a list of values that are considered normal."
     },
     {
-      "index": 90,
+      "ordinalPosition": 17,
       "name": "RPT_VAL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The repeat component validation status category number for the repeat component.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Verified and Held\n\n\nVerified and Passed\n\n\nVerified and Failed\n\n\nVerified, Failed & Held\n\n\nNot Evaluated"
+      "description": "The repeat component validation status category number for the repeat component.",
+      "entries": [
+        "Not Verified and Held",
+        "Verified and Passed",
+        "Verified and Failed",
+        "Verified, Failed & Held",
+        "Not Evaluated"
+      ]
     },
     {
-      "index": 102,
+      "ordinalPosition": 18,
       "name": "RPT_RES_INSTANT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Repeat component resulting instant"
     },
     {
-      "index": 107,
+      "ordinalPosition": 19,
       "name": "RPT_RES_LAB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component resulting lab ID"
     },
     {
-      "index": 112,
+      "ordinalPosition": 20,
       "name": "RPT_VER_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component verification status\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Progress\n\n\nResulted\n\n\nPreliminary\n\n\nVerified\n\n\nCancel\n\n\nDon't Test\n\n\nDeleted\n\n\nPending Preliminary Verification\n\n\nPending Final Verification\n\n\nCorrected\n\n\nCosign"
+      "description": "Repeat component verification status",
+      "entries": [
+        "In Progress",
+        "Resulted",
+        "Preliminary",
+        "Verified",
+        "Cancel",
+        "Don't Test",
+        "Deleted",
+        "Pending Preliminary Verification",
+        "Pending Final Verification",
+        "Corrected",
+        "Cosign"
+      ]
     },
     {
-      "index": 130,
+      "ordinalPosition": 21,
       "name": "RPT_VER_INSTANT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Repeat component verification instant"
     },
     {
-      "index": 135,
+      "ordinalPosition": 22,
       "name": "RPT_VER_LAB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component verification lab ID"
     },
     {
-      "index": 140,
+      "ordinalPosition": 23,
       "name": "RPT_VER_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component verification user"
     },
     {
-      "index": 145,
+      "ordinalPosition": 24,
       "name": "IS_RPT_REPORTD_YN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Flags whether or not repeat component is reported\n\n\n The category values for this column were already listed for column: RPT_SELECT_YN_NAME"
+      "description": "Flags whether or not repeat component is reported"
     },
     {
-      "index": 151,
+      "ordinalPosition": 25,
       "name": "RPT_INTERPRET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component interpretation\n\n\nMay contain organization-specific values: Yes"
+      "description": "Repeat component interpretation"
     },
     {
-      "index": 157,
+      "ordinalPosition": 26,
       "name": "RPT_AB_UNITS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component antibiotic units\n\n\nMay contain organization-specific values: Yes"
+      "description": "Repeat component antibiotic units"
     },
     {
-      "index": 163,
+      "ordinalPosition": 27,
       "name": "RPT_AB_COMMENTS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The antibiotic comment category number for the repeat antibiotic component.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The antibiotic comment category number for the repeat antibiotic component."
     },
     {
-      "index": 169,
+      "ordinalPosition": 28,
       "name": "RPT_RFLX_ACTIONS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component reflex actions fired"
     },
     {
-      "index": 174,
+      "ordinalPosition": 29,
       "name": "RPT_CAL_COM_RFLX_R",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat calculated component reflex reasons"
     },
     {
-      "index": 179,
+      "ordinalPosition": 30,
       "name": "RPT_COMP_RESULT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component result"
     },
     {
-      "index": 184,
+      "ordinalPosition": 31,
       "name": "REPEAT_COMP_DILUTE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The factor by which the value is diluted for each component repeat."
     },
     {
-      "index": 189,
+      "ordinalPosition": 32,
       "name": "REPEAT_LINEARITY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The linearity flag for this component repeat.\n\n\n The category values for this column were already listed for column: RPT_SELECT_YN_NAME"
+      "description": "The linearity flag for this component repeat."
     },
     {
-      "index": 195,
+      "ordinalPosition": 33,
       "name": "REPEAT_RPT_SET_BY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates how the report flag for this component was determined\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTest Settings\n\n\nUser\n\n\nPreference Rules\n\n\nCascading Rules\n\n\nOrganism Result Checking\n\n\nSuppressed by User\n\n\nSuppressed by Auto Verification\n\n\nInterface"
+      "description": "Indicates how the report flag for this component was determined",
+      "entries": [
+        "Test Settings",
+        "User",
+        "Preference Rules",
+        "Cascading Rules",
+        "Organism Result Checking",
+        "Suppressed by User",
+        "Suppressed by Auto Verification",
+        "Interface"
+      ]
     },
     {
-      "index": 210,
+      "ordinalPosition": 34,
       "name": "REP_CMP_REV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Records the type of cytology review performed for a given result.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInitial cytotech review\n\n\nCytotech rescreen\n\n\nPathologist review"
+      "description": "Records the type of cytology review performed for a given result.",
+      "entries": [
+        "Initial cytotech review",
+        "Cytotech rescreen",
+        "Pathologist review"
+      ]
     },
     {
-      "index": 220,
+      "ordinalPosition": 35,
       "name": "RPT_EDITING_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that resulted the related repeat component."
     },
     {
-      "index": 225,
+      "ordinalPosition": 36,
       "name": "REPEAT_INTERP_SET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates how the interpretation for this component was determined.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nInterface\n\n\nResult Checking\n\n\nPreference Rules\n\n\nCascading Rules"
+      "description": "Indicates how the interpretation for this component was determined.",
+      "entries": [
+        "User",
+        "Interface",
+        "Result Checking",
+        "Preference Rules",
+        "Cascading Rules"
+      ]
     },
     {
-      "index": 237,
+      "ordinalPosition": 37,
       "name": "USR_OVRD_ABNL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record. This column is frequently used to link to the CLARITY_EMP table. Records the user responsible for overriding abnormality or reference range for this component repeat."
     },
     {
-      "index": 242,
+      "ordinalPosition": 38,
       "name": "USR_OVRD_RPT_FLG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record. This column is frequently used to link to the CLARITY_EMP table. Records the user responsible for overriding the reportable flag for this component repeat."
     },
     {
-      "index": 247,
+      "ordinalPosition": 39,
       "name": "REPEAT_RES_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when the repeat was resulted in UTC."
     },
     {
-      "index": 252,
+      "ordinalPosition": 40,
       "name": "RPT_VERIF_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant in UTC at which the component repeat on the corresponding line was verified."
     },
     {
-      "index": 257,
+      "ordinalPosition": 41,
       "name": "REPEAT_REPORTABLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reportable category ID for the component repeat.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Reportable\n\n\nReportable"
+      "description": "The reportable category ID for the component repeat.",
+      "entries": [
+        "Not Reportable",
+        "Reportable"
+      ]
     },
     {
-      "index": 266,
+      "ordinalPosition": 42,
       "name": "RPT_LNC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the LOINC record as reported by the external resulting agency for a specific repeat of the component associated with this result."
     },
     {
-      "index": 271,
+      "ordinalPosition": 43,
       "name": "RPT_SUSC_MTD_LNC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the LOINC record associated with the susceptibility method for the specific repeat of the component on this result as reported by the external resulting agency."
     },
     {
-      "index": 276,
+      "ordinalPosition": 44,
       "name": "REPEAT_COMP_ACCR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item determines the accreditation status of the corresponding component repeat. If set to Y-Yes, the corresponding component repeat is accredited. If set to N-No, the corresponding component repeated is not accredited. If null, no evaluation was performed on the component repeat to determine if it is accredited or not.\n\n\n The category values for this column were already listed for column: RPT_SELECT_YN_NAME"
+      "description": "This item determines the accreditation status of the corresponding component repeat. If set to Y-Yes, the corresponding component repeat is accredited. If set to N-No, the corresponding component repeated is not accredited. If null, no evaluation was performed on the component repeat to determine if it is accredited or not."
     }
   ]
 }

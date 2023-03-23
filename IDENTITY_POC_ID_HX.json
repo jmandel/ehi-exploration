@@ -1,90 +1,104 @@
 {
-  "table_name": "IDENTITY_POC_ID_HX",
+  "name": "IDENTITY_POC_ID_HX",
   "description": "This table contains the system Master Person Index ID history for your Plan of Care. Each Plan of Care may have multiple Master Person Index IDs. A line number is used to identify each identification number for a Plan of Care.",
-  "primary_key": {
-    "column_name": "POC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "POC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "POC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the plan of care record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MPI_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the Master Patient Index (MPI) identifier before an audit event occurred."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MPI_HX_INSTANT_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The instant at which the audit event was logged for the identifier."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MPI_HX_ID_TYPE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the ID type of the Master Patient Index (MPI) identifier."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MPI_HX_ID_TYPE_ID_ID_TYPE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the ID Type."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "MPI_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user that triggered an audit event for the Master Patient Index (MPI) identifier."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "MPI_HX_AUDIT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit event category ID for the plan of care that updated the identifier.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNEW\n\n\nCHANGE\n\n\nDELETED\n\n\nMERGE\n\n\nUNMERGE\n\n\nEXPIRED"
+      "description": "The audit event category ID for the plan of care that updated the identifier.",
+      "entries": [
+        "NEW",
+        "CHANGE",
+        "DELETED",
+        "MERGE",
+        "UNMERGE",
+        "EXPIRED"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "MPI_HX_NEW_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the Master Patient Index (MPI) identifier after an audit event has occurred."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "MPI_HX_DOTONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The internal Chronicles ID of the record for which this audit event was logged."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "MPI_HX_FROM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the Master Patient Index (MPI) identifier is or was effective from."
     },
     {
-      "index": 65,
+      "ordinalPosition": 12,
       "name": "MPI_HX_TO_DATE",
       "type": "DATETIME",
       "discontinued": false,

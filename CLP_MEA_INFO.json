@@ -1,55 +1,76 @@
 {
-  "table_name": "CLP_MEA_INFO",
+  "name": "CLP_MEA_INFO",
   "description": "This table contains test result information (e.g. hematocrit readings, hemoglobin readings etc.) from the claim print record.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Claim record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MEA_TEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the measurement result qualifier.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nConcentration\n\n\nGas Test Rate\n\n\nHeight\n\n\nHemoglobin\n\n\nHematocrit\n\n\nEpoetin Starting Dosage\n\n\nCreatinine\n\n\nOxygen\n\n\nLast Kt/V Result"
+      "description": "This is the measurement result qualifier.",
+      "entries": [
+        "Concentration",
+        "Gas Test Rate",
+        "Height",
+        "Hemoglobin",
+        "Hematocrit",
+        "Epoetin Starting Dosage",
+        "Creatinine",
+        "Oxygen",
+        "Last Kt/V Result"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "MEA_RESULT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the measurement result value."
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "MEA_IDENTIFIER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Measurement identifier.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOriginal/Starting dosage\n\n\nTest Results"
+      "description": "Measurement identifier.",
+      "entries": [
+        "Original/Starting dosage",
+        "Test Results"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "MEA_LINE_INDEX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This contains a line number that corresponds to the claim line the measurement result is related to."
     },
     {
-      "index": 47,
+      "ordinalPosition": 7,
       "name": "MEA_TEST_DATE",
       "type": "DATETIME",
       "discontinued": false,

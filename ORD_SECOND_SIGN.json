@@ -1,94 +1,117 @@
 {
-  "table_name": "ORD_SECOND_SIGN",
+  "name": "ORD_SECOND_SIGN",
   "description": "This table stores the information about second sign for orders.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "SEC_SIGN_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the status of the second sign.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo second sign needed\n\n\nNeeds second sign\n\n\nSecond sign rejected\n\n\nSecond sign accepted\n\n\nSecond sign modify"
+      "description": "This item stores the status of the second sign.",
+      "entries": [
+        "No second sign needed",
+        "Needs second sign",
+        "Second sign rejected",
+        "Second sign accepted",
+        "Second sign modify"
+      ]
     },
     {
-      "index": 19,
+      "ordinalPosition": 3,
       "name": "SEC_SIGN_FIRS_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the instant at which the first sign occurred."
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "SEC_SIGN_MESSAGE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the message shown to the user."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "SEC_SIGN_REQUIRE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the second sign requirement that this order was signed with.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nManually Set\n\n\nSystem Set Peer Review\n\n\nSystem Set Required\n\n\nLinked Order"
+      "description": "This is the second sign requirement that this order was signed with.",
+      "entries": [
+        "None",
+        "Manually Set",
+        "System Set Peer Review",
+        "System Set Required",
+        "Linked Order"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 6,
       "name": "SEC_SIGN_SIGNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the secondary signing user."
     },
     {
-      "index": 46,
+      "ordinalPosition": 7,
       "name": "SEC_SIGN_SEC_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the instant at which the second sign occurred."
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "SEC_SIGN_REJECT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason that this order was rejected.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMedication Refill Refused"
+      "description": "The reason that this order was rejected.",
+      "entries": [
+        "Medication Refill Refused"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 9,
       "name": "SEC_SIGN_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the comment for the rejection."
     },
     {
-      "index": 64,
+      "ordinalPosition": 10,
       "name": "SEC_SIGN_MESSAG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The second sign message ID."
     },
     {
-      "index": 69,
+      "ordinalPosition": 11,
       "name": "SEC_SIGN_REJECT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID of the rejection message that is sent."
     },
     {
-      "index": 74,
+      "ordinalPosition": 12,
       "name": "SEC_SIGN_INDIV_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether individual review was required for this order when second signing the order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether individual review was required for this order when second signing the order.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

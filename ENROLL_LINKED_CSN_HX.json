@@ -1,83 +1,93 @@
 {
-  "table_name": "ENROLL_LINKED_CSN_HX",
+  "name": "ENROLL_LINKED_CSN_HX",
   "description": "This table stores history information about encounters linked to or unlinked from research enrollments.",
-  "primary_key": {
-    "column_name": "ENROLL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ENROLL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the enrollment record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HX_PRL_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History information of study protocols linked to the encounter's contact serial numbers (CSN)."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_LNK_UNIQ_DAY_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "History information of the timeline day linked to this encounter. This value corresponds to the value in ENROLL_TIMELINE.UNIQ_DAY_NUM."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HX_TPL_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History information of the treatment plan contact serial number (CSN) linked to the encounter."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "HX_TREATMENTDAY_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History information of the treatment day contact serial number (CSN) linked to the encounter."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "HX_WHO_LINK_ENC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "History information of the user who linked or unlinked an encounter to a study."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "HX_WHEN_LINK_ENC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "History information of UTC formatted instant when user links or unlinks an encounter to a study."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "HX_LINKENC_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History information of what action the user takes on encounter-study linkage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLinked\n\n\nUnlinked"
+      "description": "History information of what action the user takes on encounter-study linkage.",
+      "entries": [
+        "Linked",
+        "Unlinked"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "HX_LINKED_ENC_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "History information of contact serial numbers (CSN) of encounters linked to the study."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "HX_TREATMENT_DAY_LINE",
       "type": "INTEGER",
       "discontinued": false,

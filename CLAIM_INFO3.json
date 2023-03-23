@@ -1,643 +1,726 @@
 {
-  "table_name": "CLAIM_INFO3",
+  "name": "CLAIM_INFO3",
   "description": "This table contains claims information from Claim Information (CLM) records for Hospital and Professional Billing.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the Claim Info record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "KIDMED_IMMUNI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The last immunization date for the KidMed visit.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes, Status Current\n\n\nNo, Medically contraindicated\n\n\nNo, Parent Refusal\n\n\nNo, Off Schedule"
+      "description": "The last immunization date for the KidMed visit.",
+      "entries": [
+        "Yes, Status Current",
+        "No, Medically contraindicated",
+        "No, Parent Refusal",
+        "No, Off Schedule"
+      ]
     },
     {
-      "index": 18,
+      "ordinalPosition": 3,
       "name": "KIDMED_SUSPECTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether there are suspected conditions, for the KidMed visit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Whether there are suspected conditions, for the KidMed visit.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 27,
+      "ordinalPosition": 4,
       "name": "KIDMED_R1_PROV_FST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's last name for the first referral for the KidMed visit."
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "KIDMED_R1_PROV_LAST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's first name for the first referral for the KidMed visit."
     },
     {
-      "index": 37,
+      "ordinalPosition": 6,
       "name": "KIDMED_R1_PROV_PH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's phone number for the first referral for the KidMed visit."
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "KIDMED_R1_APPT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The appointment date for the first referral for the KidMed visit."
     },
     {
-      "index": 47,
+      "ordinalPosition": 8,
       "name": "KIDMED_R1_REASON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The appointment reason for the first referral for the KidMed visit."
     },
     {
-      "index": 52,
+      "ordinalPosition": 9,
       "name": "KIDMED_R1_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The appointment type for the first referral for the KidMed visit.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReferral Offsite\n\n\nReferral In-house"
+      "description": "The appointment type for the first referral for the KidMed visit.",
+      "entries": [
+        "Referral Offsite",
+        "Referral In-house"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 10,
       "name": "KIDMED_R2_PROV_FST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's last name for the second referral for the KidMed visit."
     },
     {
-      "index": 66,
+      "ordinalPosition": 11,
       "name": "KIDMED_R2_PROV_LAST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's first name for the second referral for the KidMed visit."
     },
     {
-      "index": 71,
+      "ordinalPosition": 12,
       "name": "KIDMED_R2_PROV_PH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's phone number for the second referral for the KidMed visit."
     },
     {
-      "index": 76,
+      "ordinalPosition": 13,
       "name": "KIDMED_R2_APPT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The appointment date for the second referral for the KidMed visit."
     },
     {
-      "index": 81,
+      "ordinalPosition": 14,
       "name": "KIDMED_R2_REASON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The appointment reason for the second referral for the KidMed visit."
     },
     {
-      "index": 86,
+      "ordinalPosition": 15,
       "name": "KIDMED_R2_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The appointment type for the second referral for the KidMed visit.\n\n\n The category values for this column were already listed for column: KIDMED_R1_TYPE_C_NAME"
+      "description": "The appointment type for the second referral for the KidMed visit."
     },
     {
-      "index": 92,
+      "ordinalPosition": 16,
       "name": "KIDMED_R3_PROV_FST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's last name for the third referral for the KidMed visit."
     },
     {
-      "index": 97,
+      "ordinalPosition": 17,
       "name": "KIDMED_R3_PROV_LAST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's first name for the third referral for the KidMed visit."
     },
     {
-      "index": 102,
+      "ordinalPosition": 18,
       "name": "KIDMED_R3_PROV_PH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referred-to provider's phone number for the third referral for the KidMed visit."
     },
     {
-      "index": 107,
+      "ordinalPosition": 19,
       "name": "KIDMED_R3_APPT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The appointment date for the third referral for the KidMed visit."
     },
     {
-      "index": 112,
+      "ordinalPosition": 20,
       "name": "KIDMED_R3_REASON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The appointment reason for the third referral for the KidMed visit."
     },
     {
-      "index": 117,
+      "ordinalPosition": 21,
       "name": "KIDMED_R3_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The appointment type for the third referral for the KidMed visit.\n\n\n The category values for this column were already listed for column: KIDMED_R1_TYPE_C_NAME"
+      "description": "The appointment type for the third referral for the KidMed visit."
     },
     {
-      "index": 123,
+      "ordinalPosition": 22,
       "name": "SPARCS_START_DATETIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The start date and time of the patient's presence in the operating room."
     },
     {
-      "index": 128,
+      "ordinalPosition": 23,
       "name": "SPARCS_END_DATETIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The end date and time of the patient's presence in the operating room."
     },
     {
-      "index": 133,
+      "ordinalPosition": 24,
       "name": "SPARCS_ANESTHESIA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Type of anesthesia administered during the stay.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLocal Anesthesia\n\n\nGeneral Anesthesia\n\n\nRegional Anesthesia\n\n\nOther\n\n\nNo Anesthesia"
+      "description": "Type of anesthesia administered during the stay.",
+      "entries": [
+        "Local Anesthesia",
+        "General Anesthesia",
+        "Regional Anesthesia",
+        "Other",
+        "No Anesthesia"
+      ]
     },
     {
-      "index": 145,
+      "ordinalPosition": 25,
       "name": "SPARCS_EXEMPT_UI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The code which identifies a discharge from a unit within the facility that is exempt from Diagnosis Related Group (DRG) reimbursement.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAlcohol Rehabilitation\n\n\nAlternate Level of Care\n\n\nComprehensive Psychiatric Emergency Program Observation\n\n\nDrug Rehabilitation\n\n\nEpilepsy\n\n\nAll Services at Hospital are Exempt\n\n\nMedical Rehabilitation\n\n\nNon-DRG Billable Claim\n\n\nPsychiatric\n\n\nHIV-AIDS\n\n\nTraumatic Brain Injury\n\n\nVentilator Dependent"
+      "description": "The code which identifies a discharge from a unit within the facility that is exempt from Diagnosis Related Group (DRG) reimbursement.",
+      "entries": [
+        "Alcohol Rehabilitation",
+        "Alternate Level of Care",
+        "Comprehensive Psychiatric Emergency Program Observation",
+        "Drug Rehabilitation",
+        "Epilepsy",
+        "All Services at Hospital are Exempt",
+        "Medical Rehabilitation",
+        "Non-DRG Billable Claim",
+        "Psychiatric",
+        "HIV-AIDS",
+        "Traumatic Brain Injury",
+        "Ventilator Dependent"
+      ]
     },
     {
-      "index": 164,
+      "ordinalPosition": 26,
       "name": "AMBL_PICK_CNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the ambulance pick-up location address country.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the ambulance pick-up location address country."
     },
     {
-      "index": 170,
+      "ordinalPosition": 27,
       "name": "AMBL_DROP_CNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the ambulance drop-off location address country.\n\n\n The category values for this column were already listed for column: AMBL_PICK_CNTRY_C_NAME"
+      "description": "Stores the ambulance drop-off location address country."
     },
     {
-      "index": 176,
+      "ordinalPosition": 28,
       "name": "CLIENT_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient is a new or existing client.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Whether the patient is a new or existing client."
     },
     {
-      "index": 183,
+      "ordinalPosition": 29,
       "name": "INCOME_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's annual income."
     },
     {
-      "index": 188,
+      "ordinalPosition": 30,
       "name": "NUM_PEOPLE_SUPPORTD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item is used to store the number of people financially supported by the patient."
     },
     {
-      "index": 193,
+      "ordinalPosition": 31,
       "name": "ML_PRIM_BRTH_CTRL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to store the primary method of male birth control being used by the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item is used to store the primary method of male birth control being used by the patient."
     },
     {
-      "index": 200,
+      "ordinalPosition": 32,
       "name": "PRACTITNR_LVL_CD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to store the medical practitioner level code of the practitioner that's seeing the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item is used to store the medical practitioner level code of the practitioner that's seeing the patient."
     },
     {
-      "index": 207,
+      "ordinalPosition": 33,
       "name": "PAYMENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to store whether the patient made a full, partial, or no payment for the visit.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item is used to store whether the patient made a full, partial, or no payment for the visit."
     },
     {
-      "index": 214,
+      "ordinalPosition": 34,
       "name": "FAM_PLANNG_ELIG_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient became eligible for family planning insurance."
     },
     {
-      "index": 219,
+      "ordinalPosition": 35,
       "name": "INSURANCE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The family planning insurance type used by the patient.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The family planning insurance type used by the patient."
     },
     {
-      "index": 225,
+      "ordinalPosition": 36,
       "name": "WK_COMP_EMPR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the employer record for this Workers' Comp claim."
     },
     {
-      "index": 230,
+      "ordinalPosition": 37,
       "name": "WK_COMP_EMPR_ID_EMPLOYER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the employer."
     },
     {
-      "index": 235,
+      "ordinalPosition": 38,
       "name": "CLINICAL_TRIAL_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The National Clinical Trial (NCT) number."
     },
     {
-      "index": 240,
+      "ordinalPosition": 39,
       "name": "RESUB_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Record the reason for the claim resubmission.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Record the reason for the claim resubmission."
     },
     {
-      "index": 247,
+      "ordinalPosition": 40,
       "name": "CVR_LST_CT_TEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether there was a last chlamydia test, for contraceptive vaginal ring (CVR).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNever\n\n\nUnknown\n\n\nDate"
+      "description": "Whether there was a last chlamydia test, for contraceptive vaginal ring (CVR).",
+      "entries": [
+        "Never",
+        "Unknown",
+        "Date"
+      ]
     },
     {
-      "index": 257,
+      "ordinalPosition": 41,
       "name": "CVR_LST_CT_TEST_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of the last chlamydia test, for contraceptive vaginal ring (CVR)."
     },
     {
-      "index": 262,
+      "ordinalPosition": 42,
       "name": "CVR_LST_PAP_TEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether there was a last pap test, for contraceptive vaginal ring (CVR).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNever\n\n\nUnknown\n\n\nDate"
+      "description": "Whether there was a last pap test, for contraceptive vaginal ring (CVR).",
+      "entries": [
+        "Never",
+        "Unknown",
+        "Date"
+      ]
     },
     {
-      "index": 272,
+      "ordinalPosition": 43,
       "name": "CVR_LST_PAP_TEST_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of the last pap test, for contraceptive vaginal ring (CVR)."
     },
     {
-      "index": 277,
+      "ordinalPosition": 44,
       "name": "CVR_INS_ENRL_ASST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "How the patient enrolled in assistance, for contraceptive vaginal ring (CVR).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOnsite\n\n\nReferral"
+      "description": "How the patient enrolled in assistance, for contraceptive vaginal ring (CVR).",
+      "entries": [
+        "Onsite",
+        "Referral"
+      ]
     },
     {
-      "index": 286,
+      "ordinalPosition": 45,
       "name": "CVR_PREG_INT_SCR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient plans to have a pregnancy intention screening, for contraceptive vaginal ring (CVR).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes, Near Future\n\n\nNo, Maybe Later\n\n\nUnsure\n\n\nNever"
+      "description": "Whether the patient plans to have a pregnancy intention screening, for contraceptive vaginal ring (CVR).",
+      "entries": [
+        "Yes, Near Future",
+        "No, Maybe Later",
+        "Unsure",
+        "Never"
+      ]
     },
     {
-      "index": 297,
+      "ordinalPosition": 46,
       "name": "DME_LAST_CERT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Last certification date for the durable medical equipment (DME)."
     },
     {
-      "index": 302,
+      "ordinalPosition": 47,
       "name": "HDH_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The exam code for Health and Developmental History.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted/Normal\n\n\nABN/Treated Abnormal by Screening Provider\n\n\nABN/Referred Abnormal\n\n\nNot Required\n\n\nNot Performed"
+      "description": "The exam code for Health and Developmental History.",
+      "entries": [
+        "Completed/Normal",
+        "ABN/Treated Abnormal by Screening Provider",
+        "ABN/Referred Abnormal",
+        "Not Required",
+        "Not Performed"
+      ]
     },
     {
-      "index": 314,
+      "ordinalPosition": 48,
       "name": "OVRIDE_OHIP_MASTER_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The override master number for Ontario Health Insurance Plan (OHIP)."
     },
     {
-      "index": 319,
+      "ordinalPosition": 49,
       "name": "OVRIDE_DON_REC_OHIP_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The recipient's Ontario Health Insurance Plan (OHIP) number for donor claims."
     },
     {
-      "index": 324,
+      "ordinalPosition": 50,
       "name": "WK_COMP_EMPR_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Employer city for an accident claim."
     },
     {
-      "index": 329,
+      "ordinalPosition": 51,
       "name": "WK_COMP_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Employer state for an accident claim.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Employer state for an accident claim."
     },
     {
-      "index": 335,
+      "ordinalPosition": 52,
       "name": "WK_COMP_EMPR_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Employer zip for an accident claim."
     },
     {
-      "index": 340,
+      "ordinalPosition": 53,
       "name": "WK_COMP_CNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Employer country for an accident claim.\n\n\n The category values for this column were already listed for column: AMBL_PICK_CNTRY_C_NAME"
+      "description": "Employer country for an accident claim."
     },
     {
-      "index": 346,
+      "ordinalPosition": 54,
       "name": "WK_COMP_EMPR_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Employer phone number for an accident claim."
     },
     {
-      "index": 351,
+      "ordinalPosition": 55,
       "name": "PAT_ROLE_IN_ACCIDENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's role for an automobile accident claim.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDriver\n\n\nPassenger\n\n\nPedestrian\n\n\nCyclist\n\n\nOther"
+      "description": "The patient's role for an automobile accident claim.",
+      "entries": [
+        "Driver",
+        "Passenger",
+        "Pedestrian",
+        "Cyclist",
+        "Other"
+      ]
     },
     {
-      "index": 363,
+      "ordinalPosition": 56,
       "name": "DRIVER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Driver's name, for an auto accident."
     },
     {
-      "index": 368,
+      "ordinalPosition": 57,
       "name": "DRIVER_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Driver's city, for an auto accident."
     },
     {
-      "index": 373,
+      "ordinalPosition": 58,
       "name": "DRIVER_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Driver's state, for an auto accident.\n\n\n The category values for this column were already listed for column: WK_COMP_STATE_C_NAME"
+      "description": "Driver's state, for an auto accident."
     },
     {
-      "index": 379,
+      "ordinalPosition": 59,
       "name": "DRIVER_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Driver's ZIP code, for an auto accident."
     },
     {
-      "index": 384,
+      "ordinalPosition": 60,
       "name": "DRIVER_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Driver's country, for an auto accident.\n\n\n The category values for this column were already listed for column: AMBL_PICK_CNTRY_C_NAME"
+      "description": "Driver's country, for an auto accident."
     },
     {
-      "index": 390,
+      "ordinalPosition": 61,
       "name": "DRIVER_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Driver's phone number, for an auto accident."
     },
     {
-      "index": 395,
+      "ordinalPosition": 62,
       "name": "VEHICLE_REG_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vehicle registration number of the car involved in an auto accident."
     },
     {
-      "index": 400,
+      "ordinalPosition": 63,
       "name": "PAY_TO_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Override for the Alberta Health Services (AHS) pay-to code.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBusiness Arrangement\n\n\nContract Holder\n\n\nService Provider\n\n\nService Recipient\n\n\nOther"
+      "description": "Override for the Alberta Health Services (AHS) pay-to code.",
+      "entries": [
+        "Business Arrangement",
+        "Contract Holder",
+        "Service Provider",
+        "Service Recipient",
+        "Other"
+      ]
     },
     {
-      "index": 412,
+      "ordinalPosition": 64,
       "name": "PAY_TO_PHN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Alberta Health Services (AHS) pay-to patient health number."
     },
     {
-      "index": 417,
+      "ordinalPosition": 65,
       "name": "OTHER_PAYEE_ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the other payee guarantor account number for AHS."
     },
     {
-      "index": 422,
+      "ordinalPosition": 66,
       "name": "AMBULANCE_PICK_CD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Emergency Medical Services (EMS) code for the ambulance pick-up location, for Alberta Blue Cross.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Emergency Medical Services (EMS) code for the ambulance pick-up location, for Alberta Blue Cross."
     },
     {
-      "index": 429,
+      "ordinalPosition": 67,
       "name": "AMBULANCE_DROP_CD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Emergency Medical Services (EMS) code for the ambulance drop-off location, for Alberta Blue Cross.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Emergency Medical Services (EMS) code for the ambulance drop-off location, for Alberta Blue Cross."
     },
     {
-      "index": 436,
+      "ordinalPosition": 68,
       "name": "PRIOR_INV_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The previous invoice number for Alberta Health Services (AHS) professional claims."
     },
     {
-      "index": 441,
+      "ordinalPosition": 69,
       "name": "INJURY_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cause of the injury.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The cause of the injury."
     },
     {
-      "index": 448,
+      "ordinalPosition": 70,
       "name": "INJURY_ACTIVITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The main activity of the injured person, or the type of situation the injured person was in, at the time of injury.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The main activity of the injured person, or the type of situation the injured person was in, at the time of injury."
     },
     {
-      "index": 455,
+      "ordinalPosition": 71,
       "name": "INJURY_MECHANISM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The activity, contact, or influence that caused the injury to occur.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The activity, contact, or influence that caused the injury to occur."
     },
     {
-      "index": 462,
+      "ordinalPosition": 72,
       "name": "INJURY_SEVERITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "How seriously the patient appears to be injured.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "How seriously the patient appears to be injured."
     },
     {
-      "index": 469,
+      "ordinalPosition": 73,
       "name": "TXPORT_MEANS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the type of transportation being used by the injured person at the time of the traffic accident.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Indicates the type of transportation being used by the injured person at the time of the traffic accident."
     },
     {
-      "index": 476,
+      "ordinalPosition": 74,
       "name": "INJURY_MUNICIP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The municipality where the injury took place.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The municipality where the injury took place."
     },
     {
-      "index": 483,
+      "ordinalPosition": 75,
       "name": "ACCIDENT_LONGITUDE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The longitude of where the auto accident took place."
     },
     {
-      "index": 488,
+      "ordinalPosition": 76,
       "name": "ACCIDENT_LATITUDE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The latitude of where the auto accident took place."
     },
     {
-      "index": 493,
+      "ordinalPosition": 77,
       "name": "CNTRPARTY_VEHICLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of vehicle which caused the auto accident.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The type of vehicle which caused the auto accident."
     },
     {
-      "index": 500,
+      "ordinalPosition": 78,
       "name": "TRAFFIC_SITUATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the accident-causing traffic situation.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Indicates the accident-causing traffic situation."
     },
     {
-      "index": 507,
+      "ordinalPosition": 79,
       "name": "USED_PROTECTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the injured person used protection, such as a helmet or seat belt, at the time of the injury.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "Indicates whether the injured person used protection, such as a helmet or seat belt, at the time of the injury.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 517,
+      "ordinalPosition": 80,
       "name": "PRODUCT_USED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the machinery or equipment being used at the time of the work-related injury.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Indicates the machinery or equipment being used at the time of the work-related injury."
     },
     {
-      "index": 524,
+      "ordinalPosition": 81,
       "name": "PLAYGROUND_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Type of playground the accident occurred on.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Type of playground the accident occurred on."
     },
     {
-      "index": 531,
+      "ordinalPosition": 82,
       "name": "INJURY_PRODUCT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Type of product involved in the injury.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Type of product involved in the injury."
     },
     {
-      "index": 538,
+      "ordinalPosition": 83,
       "name": "PRODUCT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the product involved in the injury."
     },
     {
-      "index": 543,
+      "ordinalPosition": 84,
       "name": "PRODUCT_DEFECTIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the product that led to injury was defective.\n\n\n The category values for this column were already listed for column: USED_PROTECTION_C_NAME"
+      "description": "Whether the product that led to injury was defective."
     },
     {
-      "index": 549,
+      "ordinalPosition": 85,
       "name": "PRODUCT_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A description of the product involved in the injury."
     },
     {
-      "index": 554,
+      "ordinalPosition": 86,
       "name": "EMPR_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the industry of the injured person�s employer.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Indicates the industry of the injured person�s employer."
     },
     {
-      "index": 561,
+      "ordinalPosition": 87,
       "name": "ACCIDENT_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Country where the accident occurred.\n\n\n The category values for this column were already listed for column: AMBL_PICK_CNTRY_C_NAME"
+      "description": "Country where the accident occurred."
     },
     {
-      "index": 567,
+      "ordinalPosition": 88,
       "name": "ACCIDENT_DISTRICT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "District where the accident occurred.\n\n\nMay contain organization-specific values: Yes"
+      "description": "District where the accident occurred."
     },
     {
-      "index": 573,
+      "ordinalPosition": 89,
       "name": "ACDNT_HOUSE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "House number where the accident occurred."
     },
     {
-      "index": 578,
+      "ordinalPosition": 90,
       "name": "FIRST_DEPT_REFERRED_TO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Referral 1: referred-to department name"
     },
     {
-      "index": 583,
+      "ordinalPosition": 91,
       "name": "SECOND_DEPT_REFERRED_TO",
       "type": "VARCHAR",
       "discontinued": false,

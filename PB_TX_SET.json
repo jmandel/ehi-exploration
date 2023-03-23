@@ -1,127 +1,140 @@
 {
-  "table_name": "PB_TX_SET",
+  "name": "PB_TX_SET",
   "description": "The PB_TX_SET table contains the premium billing payment transaction sets.",
-  "primary_key": {
-    "column_name": "PB_TXSET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_TXSET_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_TXSET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing transaction set."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PB_ACCT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing account associated with the transaction set."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PB_PMT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing payment associated with the transaction set."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CANCEL_PB_PMT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the cancelled premium billing payment associated with the transaction set."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "As of system 2002 MU4, this column is discontinued and replaced by the PB_TX_SET_INVOICE table. The unique ID of the premium billing invoice associated with the transaction set."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CANCEL_PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "As of system 2002 MU4, this column is discontinued and replaced by the PB_TX_SET_CNCL_INV table. The unique ID of the cancelled premium billing invoice associated with the transaction set."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PERIOD_FROM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Beginning date of period for the transaction set."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "PERIOD_TO_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Ending date of the period for the transaction set."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "PMT_METH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Payment method of the transaction set (balance forward or exception).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBalance Forward\n\n\nException"
+      "description": "Payment method of the transaction set (balance forward or exception).",
+      "entries": [
+        "Balance Forward",
+        "Exception"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "CUST_PAIDBY_PTS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Describes portion of the invoice that this transaction set was targeted towards (entire invoice, custom portion, remaining invoice, or custom advice).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire Invoice\n\n\nCustom Portion of Invoice\n\n\nRemaining Invoice\n\n\nAll Outstanding Txs\n\n\nNone. Custom PTS Advice used in PBU"
+      "description": "Describes portion of the invoice that this transaction set was targeted towards (entire invoice, custom portion, remaining invoice, or custom advice).",
+      "entries": [
+        "Entire Invoice",
+        "Custom Portion of Invoice",
+        "Remaining Invoice",
+        "All Outstanding Txs",
+        "None. Custom PTS Advice used in PBU"
+      ]
     },
     {
-      "index": 63,
+      "ordinalPosition": 11,
       "name": "CUST_PTS_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Comment associated with a customized transaction set."
     },
     {
-      "index": 68,
+      "ordinalPosition": 12,
       "name": "LATEST_PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the latest premium billing invoice record on the premium billing account when this payment was committed."
     },
     {
-      "index": 73,
+      "ordinalPosition": 13,
       "name": "INC_EFF_FR_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective from date for transactions included in the custom transaction set."
     },
     {
-      "index": 78,
+      "ordinalPosition": 14,
       "name": "INC_EFF_TO_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective to date for transactions included in the custom transaction set."
     },
     {
-      "index": 83,
+      "ordinalPosition": 15,
       "name": "EXC_EFF_FR_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective from date for transactions excluded from the custom transaction set."
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "EXC_EFF_TO_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective to date for transactions excluded from the custom transaction set."
     },
     {
-      "index": 93,
+      "ordinalPosition": 17,
       "name": "UPDATE_DATE",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The extract date and time of the record for this table."
     }

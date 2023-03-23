@@ -1,43 +1,54 @@
 {
-  "table_name": "OTP_REVIEW_HISTORY",
+  "name": "OTP_REVIEW_HISTORY",
   "description": "This table contains the review history for a given patient order template.  The review history consists of the review action, the reviewing user, and the instant of review.",
-  "primary_key": {
-    "column_name": "OTP_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OTP_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OTP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient order template record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ORD_REVIEW_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The review status category ID of an order in the treatment plan manager.  An order can be unreviewed, reviewed, or changed since it was last reviewed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnreviewed\n\n\nReviewed\n\n\nChanged"
+      "description": "The review status category ID of an order in the treatment plan manager.  An order can be unreviewed, reviewed, or changed since it was last reviewed.",
+      "entries": [
+        "Unreviewed",
+        "Reviewed",
+        "Changed"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "ORD_REV_UPDT_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who changed the review status for the patient order template record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "ORD_REVIEW_UPDT_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the review status stored in the related line in the patient order template was updated."
     }

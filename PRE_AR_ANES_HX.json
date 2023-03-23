@@ -1,48 +1,62 @@
 {
-  "table_name": "PRE_AR_ANES_HX",
+  "name": "PRE_AR_ANES_HX",
   "description": "Contains history of activities performed on Anesthesia charge. Information about the activity, time at which the activity is performed, user performing the activity and comment are stored. Note: temporary accounts receivable (TAR) records in Chronicles are purged periodically depending on your system setting. Be aware that old data in this table might be lost if you truncate the table.",
-  "primary_key": {
-    "column_name": "TAR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TAR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TAR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the temporary transaction�record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ANES_HX_ACTIVITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The activity category ID performed on an Anesthesia temporary transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFlag\n\n\nUnflag\n\n\nEdit\n\n\nDelete\n\n\nSubmit\n\n\nEntry"
+      "description": "The activity category ID performed on an Anesthesia temporary transaction.",
+      "entries": [
+        "Flag",
+        "Unflag",
+        "Edit",
+        "Delete",
+        "Submit",
+        "Entry"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 4,
       "name": "ANES_HX_TIMES_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Contains the time when the activity is performed on Anesthesia charge."
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "ANES_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who performed the activity on Anesthesia charge."
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "ANES_HX_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

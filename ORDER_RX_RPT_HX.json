@@ -1,27 +1,34 @@
 {
-  "table_name": "ORDER_RX_RPT_HX",
+  "name": "ORDER_RX_RPT_HX",
   "description": "This table is used to extract history of report information for each order. From the table, you could find out when the label is printed.",
-  "primary_key": {
-    "column_name": "ORDER_MED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_MED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "The unique ID of the medication order (prescription) record. NOTE: This is an internal unique identifier for ORD master file records in this table and cannot be used to link to CLARITY_MEDICATION."
+      "description": "The unique ID of the medication order (prescription) record. NOTE: This is an internal unique identifier for ORD master file records in this table and cannot be used to link to CLARITY_MEDICATION.",
+      "linksTo": "CLARITY_MEDICATION"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for each report printed for the order."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REPORT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

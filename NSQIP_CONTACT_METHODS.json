@@ -1,31 +1,44 @@
 {
-  "table_name": "NSQIP_CONTACT_METHODS",
+  "name": "NSQIP_CONTACT_METHODS",
   "description": "This table contains the contact methods for patient follow-up for NSQIP registry data for the surgeries that are selected for NSQIP submission. It is used in conjunction with NSQIP_INFO table.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "NSQIP_CONTACT_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The contact method that was used to follow the case. It is used only if the case was not followed for full 30 days.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhone\n\n\nLetter\n\n\nDocumentation\n\n\nOther\n\n\nEmail"
+      "description": "The contact method that was used to follow the case. It is used only if the case was not followed for full 30 days.",
+      "entries": [
+        "Phone",
+        "Letter",
+        "Documentation",
+        "Other",
+        "Email"
+      ]
     }
   ]
 }

@@ -1,461 +1,509 @@
 {
-  "table_name": "OR_LOG",
+  "name": "OR_LOG",
   "description": "The OR_LOG table contains information about surgical and procedural log (ORL) records.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the procedural log record for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "SURGERY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the case was performed."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CASE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which identifies the type of the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which identifies the type of the surgical log."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "CASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The classification category ID for the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The classification category ID for the surgical log."
     },
     {
-      "index": 24,
+      "ordinalPosition": 5,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient associated with the procedural log record."
     },
     {
-      "index": 29,
+      "ordinalPosition": 6,
       "name": "POSTOP_CONSCIOUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the consciousness level of the patient during post-op.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the consciousness level of the patient during post-op."
     },
     {
-      "index": 35,
+      "ordinalPosition": 7,
       "name": "PREOP_CONSCIOUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the consciousness level of the patient during pre-op.\n\n\n The category values for this column were already listed for column: POSTOP_CONSCIOUS_C_NAME"
+      "description": "The category value which represents the consciousness level of the patient during pre-op."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "PREOP_BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the bed to which the patient is to be assigned for pre-op."
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "PREOP_BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "PACU_BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the bed to which the patient is to be assigned for post-op."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "PACU_BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "NUM_OF_PANELS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of panels in the surgical log."
     },
     {
-      "index": 66,
+      "ordinalPosition": 13,
       "name": "REQUEST_PERSON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the person requesting the surgery"
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "TOTAL_TIME_NEEDED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total time needed for the log in minutes"
     },
     {
-      "index": 76,
+      "ordinalPosition": 15,
       "name": "REFER_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the physician who referred the patient associated with the log."
     },
     {
-      "index": 81,
+      "ordinalPosition": 16,
       "name": "PAT_PREOP_COND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates the patient's condition before the surgery in the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates the patient's condition before the surgery in the surgical log."
     },
     {
-      "index": 87,
+      "ordinalPosition": 17,
       "name": "PAT_POSTOP_COND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates the patient's condition after the surgery in the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates the patient's condition after the surgery in the surgical log."
     },
     {
-      "index": 93,
+      "ordinalPosition": 18,
       "name": "ASA_RATING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's ASA rating category number for the procedure. ASA stands for American Society of Anesthesiologists. This column is frequently used to link to ZC_OR_ASA_RATING.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The patient's ASA rating category number for the procedure. ASA stands for American Society of Anesthesiologists. This column is frequently used to link to ZC_OR_ASA_RATING.",
+      "linksTo": "ZC_OR_ASA_RATING"
     },
     {
-      "index": 99,
+      "ordinalPosition": 19,
       "name": "DISCHARGE_TO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category list which indicates where the patient was discharged to in the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category list which indicates where the patient was discharged to in the surgical log."
     },
     {
-      "index": 105,
+      "ordinalPosition": 20,
       "name": "DISPOSITION_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time at which the patient was discharged. NOTE: Only the time value of this field is to be used. The date should always be 1/1/1900 for historical reasons."
     },
     {
-      "index": 110,
+      "ordinalPosition": 21,
       "name": "EXPIRED_WHERE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If needed, indicates where the patient expired.\n\n\nMay contain organization-specific values: Yes"
+      "description": "If needed, indicates where the patient expired."
     },
     {
-      "index": 116,
+      "ordinalPosition": 22,
       "name": "EXPIRED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "If needed, records the time at which the patient expired"
     },
     {
-      "index": 121,
+      "ordinalPosition": 23,
       "name": "EST_BLOOD_LOSS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The estimated amount of blood lost during the surgery."
     },
     {
-      "index": 126,
+      "ordinalPosition": 24,
       "name": "ROOM_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the room in which the procedure in the procedural log was performed. This column is frequently used to link to CLARITY_SER."
+      "description": "The unique ID of the room in which the procedure in the procedural log was performed. This column is frequently used to link to CLARITY_SER.",
+      "linksTo": "CLARITY_SER"
     },
     {
-      "index": 131,
+      "ordinalPosition": 25,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "The unique ID of the location where the procedure was performed. This column is frequently used to link to CLARITY_LOC."
+      "description": "The unique ID of the location where the procedure was performed. This column is frequently used to link to CLARITY_LOC.",
+      "linksTo": "CLARITY_LOC"
     },
     {
-      "index": 136,
+      "ordinalPosition": 26,
       "name": "PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category list which represents the priority of the surgical log\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLow\n\n\nNormal\n\n\nHigh"
+      "description": "The category list which represents the priority of the surgical log",
+      "entries": [
+        "Low",
+        "Normal",
+        "High"
+      ]
     },
     {
-      "index": 146,
+      "ordinalPosition": 27,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the log status (Posted, Unposted, Voided, etc.) associated with the log record. This column is frequently used to link to  ZC_OR_STATUS. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMissing Information\n\n\nPosted\n\n\nUnposted\n\n\nVoided\n\n\nCompleted\n\n\nCanceled"
+      "description": "The category ID for the log status (Posted, Unposted, Voided, etc.) associated with the log record. This column is frequently used to link to  ZC_OR_STATUS.",
+      "entries": [
+        "Missing Information",
+        "Posted",
+        "Unposted",
+        "Voided",
+        "Completed",
+        "Canceled"
+      ]
     },
     {
-      "index": 159,
+      "ordinalPosition": 28,
       "name": "SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The service category ID for the surgical log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The service category ID for the surgical log."
     },
     {
-      "index": 165,
+      "ordinalPosition": 29,
       "name": "VOID_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A category list which indicates the reason the log was voided. It is entered by the user that voided that log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "A category list which indicates the reason the log was voided. It is entered by the user that voided that log."
     },
     {
-      "index": 171,
+      "ordinalPosition": 30,
       "name": "CASE_REQUEST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgical case attached to this log."
     },
     {
-      "index": 176,
+      "ordinalPosition": 31,
       "name": "RESEARCH_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the candidacy of the surgical log for research.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the candidacy of the surgical log for research."
     },
     {
-      "index": 182,
+      "ordinalPosition": 32,
       "name": "PACU1_LOC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the patient's location in the PACU.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the patient's location in the PACU."
     },
     {
-      "index": 188,
+      "ordinalPosition": 33,
       "name": "REASON_OVER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the reason for overnight stay.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the reason for overnight stay."
     },
     {
-      "index": 194,
+      "ordinalPosition": 34,
       "name": "POSTOP_DEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the patient's post-op destination.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the patient's post-op destination."
     },
     {
-      "index": 200,
+      "ordinalPosition": 35,
       "name": "ADDENDA_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of addenda on posted logs. This will return the number of addenda on the log if the log status is posted, otherwise, returns null."
     },
     {
-      "index": 205,
+      "ordinalPosition": 36,
       "name": "INTRAOP_DISCH_TO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates to where the patient was discharged.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates to where the patient was discharged."
     },
     {
-      "index": 211,
+      "ordinalPosition": 37,
       "name": "SURGEON_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the surgeons.   The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 216,
+      "ordinalPosition": 38,
       "name": "ANES_STAFF_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the anesthesia staff.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 221,
+      "ordinalPosition": 39,
       "name": "OR_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the operating room.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 226,
+      "ordinalPosition": 40,
       "name": "SURG_STAFF_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the surgical staff.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 231,
+      "ordinalPosition": 41,
       "name": "SURG_EQUIP_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the surgical equipment.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 236,
+      "ordinalPosition": 42,
       "name": "ANES_EQUIP_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the anesthesia equipment.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 241,
+      "ordinalPosition": 43,
       "name": "INSTR_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the surgical instruments.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 246,
+      "ordinalPosition": 44,
       "name": "PROC_COST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost associated with the procedures.  The item from which this column extracts is no longer populated in released workflows, but may include historical data."
     },
     {
-      "index": 251,
+      "ordinalPosition": 45,
       "name": "LOG_ACCEPTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Yes/No flag indicating whether or not the log was accepted in Log Entry.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Yes/No flag indicating whether or not the log was accepted in Log Entry.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 260,
+      "ordinalPosition": 46,
       "name": "PROC_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Level of the procedure for the log.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Level of the procedure for the log."
     },
     {
-      "index": 266,
+      "ordinalPosition": 47,
       "name": "OR_TIME_EVTS_ENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the timing events status of the case. This is used to see if the case is not started, in progress or done.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nCompleted"
+      "description": "Indicates the timing events status of the case. This is used to see if the case is not started, in progress or done.",
+      "entries": [
+        "Not Started",
+        "In Progress",
+        "Completed"
+      ]
     },
     {
-      "index": 276,
+      "ordinalPosition": 48,
       "name": "PROC_NOT_PERF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the reason why the procedure was not performed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProcedure Aborted"
+      "description": "The category number for the reason why the procedure was not performed.",
+      "entries": [
+        "Procedure Aborted"
+      ]
     },
     {
-      "index": 284,
+      "ordinalPosition": 49,
       "name": "PROC_NOT_PERF_COM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the comments, if the procedure not performed."
     },
     {
-      "index": 289,
+      "ordinalPosition": 50,
       "name": "LOG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of log category number for the log.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSurgical Log\n\n\nProcedure Log"
+      "description": "The type of log category number for the log.",
+      "entries": [
+        "Surgical Log",
+        "Procedure Log"
+      ]
     },
     {
-      "index": 298,
+      "ordinalPosition": 51,
       "name": "PHASE_TWO_BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the bed to which the patient is to be assigned for Post-Op Phase II."
     },
     {
-      "index": 303,
+      "ordinalPosition": 52,
       "name": "PHASE_TWO_BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 308,
+      "ordinalPosition": 53,
       "name": "CASE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the case ID (ORC) for this log."
     },
     {
-      "index": 313,
+      "ordinalPosition": 54,
       "name": "IS_CLINICAL_TRL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the log is a clinical trial log.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates if the log is a clinical trial log.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 322,
+      "ordinalPosition": 55,
       "name": "BLOOD_LOSS_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Unit of measure of blood loss.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Unit of measure of blood loss."
     },
     {
-      "index": 328,
+      "ordinalPosition": 56,
       "name": "SCHED_INSTR_EDIT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the scheduling instructions were edited.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "Stores whether the scheduling instructions were edited."
     },
     {
-      "index": 334,
+      "ordinalPosition": 57,
       "name": "PAT_INSTR_EDITED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the patient instructions were edited.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "Stores whether the patient instructions were edited."
     },
     {
-      "index": 340,
+      "ordinalPosition": 58,
       "name": "NURSE_NOTES_EDIT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the nursing notes have been edited.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "Stores whether the nursing notes have been edited."
     },
     {
-      "index": 346,
+      "ordinalPosition": 59,
       "name": "POSITION_NOTES_E_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the positioning notes have been edited.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "Stores whether the positioning notes have been edited."
     },
     {
-      "index": 352,
+      "ordinalPosition": 60,
       "name": "EMERG_STATUS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether there is an emergency status for this log. If the log does have an emergency status, this column will display Y.  The column will display N if there is not an emergency status and null if the status was not set. \n\n\n The category values for this column were already listed for column: LOG_ACCEPTED_YN"
+      "description": "Indicates whether there is an emergency status for this log. If the log does have an emergency status, this column will display Y.  The column will display N if there is not an emergency status and null if the status was not set."
     },
     {
-      "index": 358,
+      "ordinalPosition": 61,
       "name": "IS_JOINT_RVSN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item documents whether the log is for a revision of a joint procedure. It is used for Surgical Care Improvement Project (SCIP) reports.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "This item documents whether the log is for a revision of a joint procedure. It is used for Surgical Care Improvement Project (SCIP) reports."
     },
     {
-      "index": 364,
+      "ordinalPosition": 62,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status category number for this log.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+      "description": "The record status category number for this log.",
+      "entries": [
+        "Active",
+        "Inactive",
+        "Deleted",
+        "Inactive and Deleted",
+        "Hidden",
+        "Inactive and Hidden",
+        "Deleted and Hidden",
+        "Inactive Deleted and Hidden"
+      ]
     },
     {
-      "index": 379,
+      "ordinalPosition": 63,
       "name": "FORM_ID_COUNTER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Annotated images form ID counter."
     },
     {
-      "index": 384,
+      "ordinalPosition": 64,
       "name": "CHRGS_AT_ADDEND_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is populated as Yes or No when an addendum is filed, or when log charges are calculated, to indicate whether there are charges to be sent. This item will be set to 1-Yes if there are any new charges, charges to be updated, or charges to be cancelled, or if there are any charge errors or warnings. Otherwise, this item will be set to 2-No. If this item is blank, the log charges will be calculated on the fly by the Log Charges Work List to evaluate whether to include the log in the report.\n\n\n The category values for this column were already listed for column: IS_CLINICAL_TRL_YN"
+      "description": "This item is populated as Yes or No when an addendum is filed, or when log charges are calculated, to indicate whether there are charges to be sent. This item will be set to 1-Yes if there are any new charges, charges to be updated, or charges to be cancelled, or if there are any charge errors or warnings. Otherwise, this item will be set to 2-No. If this item is blank, the log charges will be calculated on the fly by the Log Charges Work List to evaluate whether to include the log in the report."
     },
     {
-      "index": 390,
+      "ordinalPosition": 65,
       "name": "PRIMARY_PHYS_ID",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,153 +1,175 @@
 {
-  "table_name": "ED_FOLLOWUP_AUDIT",
+  "name": "ED_FOLLOWUP_AUDIT",
   "description": "Each record in ED_FOLLOWUP_AUDIT corresponds to a patient's edited follow-up information -- i.e. information for where and when a patient was told to follow up with other providers. This table does not include the current follow-up information.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this edit. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the deployment owner for this contact."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the provider record with whom the patient should follow up."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CONTACT_INFO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The contact information for the patient's follow-up."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "SUMMARY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A summary of the patient contact."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "EDIT_COUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the number of units (days/weeks/months) for follow up associated with this contact."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "ED_FUP_UNIT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether patient has to follow-up in days/weeks/months or on a specific day.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone specified\n\n\nDays\n\n\nWeeks\n\n\nMonths\n\n\nDate"
+      "description": "Stores whether patient has to follow-up in days/weeks/months or on a specific day.",
+      "entries": [
+        "None specified",
+        "Days",
+        "Weeks",
+        "Months",
+        "Date"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 11,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID number of the office location for the follow-up."
     },
     {
-      "index": 64,
+      "ordinalPosition": 12,
       "name": "ED_FU_PRN_USED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column shows a 1 if there is something written in the comments field.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes"
+      "description": "This column shows a 1 if there is something written in the comments field.",
+      "entries": [
+        "Yes"
+      ]
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "ED_FU_PRN_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text entry from the comments field for providers to enter any other information they deem important."
     },
     {
-      "index": 77,
+      "ordinalPosition": 14,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Department ID associated with the department with whom the patient should follow up."
     },
     {
-      "index": 82,
+      "ordinalPosition": 15,
       "name": "ED_FU_OTHER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text entry that contains with whom the patient should follow up."
     },
     {
-      "index": 87,
+      "ordinalPosition": 16,
       "name": "ED_FUP_HOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores how the patient should follow up (Call, Make an appointment, etc.).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone specified\n\n\nCall\n\n\nMake Appointment\n\n\nGo To"
+      "description": "Stores how the patient should follow up (Call, Make an appointment, etc.).",
+      "entries": [
+        "None specified",
+        "Call",
+        "Make Appointment",
+        "Go To"
+      ]
     },
     {
-      "index": 98,
+      "ordinalPosition": 17,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record who entered this follow-up information."
     },
     {
-      "index": 103,
+      "ordinalPosition": 18,
       "name": "ED_FU_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time when this follow-up information was filed."
     },
     {
-      "index": 108,
+      "ordinalPosition": 19,
       "name": "ED_FUEDIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the history of the follow-up dates entered for an encounter."
     },
     {
-      "index": 113,
+      "ordinalPosition": 20,
       "name": "ED_FUEDIT_ADDR_KEY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The edit trail for the ED Follow Up Provider Address Key."
     },
     {
-      "index": 118,
+      "ordinalPosition": 21,
       "name": "IP_FUEDIT_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,

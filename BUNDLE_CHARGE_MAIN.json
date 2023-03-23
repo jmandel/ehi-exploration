@@ -1,188 +1,225 @@
 {
-  "table_name": "BUNDLE_CHARGE_MAIN",
+  "name": "BUNDLE_CHARGE_MAIN",
   "description": "Main bundleable charge line table.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the bundleable charge line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the procedure that is associated with this bundleable charge line."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the account that is associated with this bundleable charge line record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ACCT_SERIAL_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The account serial number associated with this charge."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the coverage that is associated with this bundleable charge line record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DO_NOT_BILL_INS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether to not bill insurance for this charge. Y indicates that the charge should not be billed to insurance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether to not bill insurance for this charge. Y indicates that the charge should not be billed to insurance.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of service for this charge."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "REQ_GROUPER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the requisition grouper that is associated with this bundleable charge line record."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "SUBMITTER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the submitter that is associated with this bundleable charge line record."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "SUBMITTER_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the submitter record."
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the payor that is associated with this bundleable charge line record."
     },
     {
-      "index": 66,
+      "ordinalPosition": 13,
       "name": "PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "FINANCIAL_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The financial class category number for the bundleable charge line record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+      "description": "The financial class category number for the bundleable charge line record.",
+      "entries": [
+        "Commercial",
+        "Medicare",
+        "Medicaid",
+        "Self-Pay",
+        "Worker's Comp",
+        "Tricare",
+        "Champva",
+        "Group Health Plan",
+        "FECA Black Lung",
+        "Blue Shield",
+        "Medigap",
+        "Other",
+        "DK Regional",
+        "Client"
+      ]
     },
     {
-      "index": 92,
+      "ordinalPosition": 15,
       "name": "ORDERING_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department that is associated with this bundleable charge line record."
     },
     {
-      "index": 97,
+      "ordinalPosition": 16,
       "name": "PERFORMING_LAB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the performing lab that is associated with this bundleable charge line record."
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "CHARGE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The linked charge type category ID for the bundleable charge line.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProfessional\n\n\nTechnical\n\n\nGlobal"
+      "description": "The linked charge type category ID for the bundleable charge line.",
+      "entries": [
+        "Professional",
+        "Technical",
+        "Global"
+      ]
     },
     {
-      "index": 112,
+      "ordinalPosition": 18,
       "name": "NOT_CHARGE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the reason the charge was voided.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nCAP testing\n\n\nCredit\n\n\nDuplicate (confirmatory) testing\n\n\nEmployee testing\n\n\nNon-human testing\n\n\nTest ordered on wrong patient\n\n\nWrong test ordered"
+      "description": "The category ID of the reason the charge was voided.",
+      "entries": [
+        "Other",
+        "CAP testing",
+        "Credit",
+        "Duplicate (confirmatory) testing",
+        "Employee testing",
+        "Non-human testing",
+        "Test ordered on wrong patient",
+        "Wrong test ordered"
+      ]
     },
     {
-      "index": 127,
+      "ordinalPosition": 19,
       "name": "NOT_CHARGE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who voided this charge."
     },
     {
-      "index": 132,
+      "ordinalPosition": 20,
       "name": "NOT_CHARGE_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered by the user who voided this charge."
     },
     {
-      "index": 137,
+      "ordinalPosition": 21,
       "name": "NOT_CHARGE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time when this charge was voided."
     },
     {
-      "index": 142,
+      "ordinalPosition": 22,
       "name": "TASK_ID_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The task category ID that triggered the charge.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The task category ID that triggered the charge."
     },
     {
-      "index": 148,
+      "ordinalPosition": 23,
       "name": "PERFORMING_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the performing department that is associated with this bundleable charge line record."
     },
     {
-      "index": 153,
+      "ordinalPosition": 24,
       "name": "BILL_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the billing provider that is associated with this bundleable charge line record."
     },
     {
-      "index": 158,
+      "ordinalPosition": 25,
       "name": "SERV_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the service provider that is associated with this bundleable charge line record."
     },
     {
-      "index": 163,
+      "ordinalPosition": 26,
       "name": "PAT_CSN",
       "type": "NUMERIC",
       "discontinued": false,

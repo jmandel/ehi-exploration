@@ -1,104 +1,138 @@
 {
-  "table_name": "COVERAGE_STATUS_HX",
+  "name": "COVERAGE_STATUS_HX",
   "description": "The historical values of the COVERAGE_STATUS table over time.",
-  "primary_key": {
-    "column_name": "COVERAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COVERAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "CVG_ITM_HX_REL_ACT_GUID",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the coverage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COVERAGE_STATUS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The coverage status type category ID for the coverage record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBinder Payment\n\n\nEnrollment Geographic Area Verification\n\n\nGeographic Area Investigation"
+      "description": "The coverage status type category ID for the coverage record.",
+      "entries": [
+        "Binder Payment",
+        "Enrollment Geographic Area Verification",
+        "Geographic Area Investigation"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "COVERAGE_STATUS_RESOLUTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The coverage status resolution category ID for the coverage record. This column's associated ZC table is ZC_CVD_STAT_OUTST_ACT_RES.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Resolved\n\n\nApproved\n\n\nDenied\n\n\nCanceled\n\n\nPaid\n\n\nFailed To Pay\n\n\nGeographic Area Verification Passed\n\n\nSubscriber Gained Coverage\n\n\nResolved\n\n\nUnder Investigation\n\n\nTemporary Address\n\n\nIn Geographic Area\n\n\nOut of Geographic Area"
+      "description": "The coverage status resolution category ID for the coverage record. This column's associated ZC table is ZC_CVD_STAT_OUTST_ACT_RES.",
+      "entries": [
+        "Not Resolved",
+        "Approved",
+        "Denied",
+        "Canceled",
+        "Paid",
+        "Failed To Pay",
+        "Geographic Area Verification Passed",
+        "Subscriber Gained Coverage",
+        "Resolved",
+        "Under Investigation",
+        "Temporary Address",
+        "In Geographic Area",
+        "Out of Geographic Area"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 5,
       "name": "CREATION_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The local date and time when the coverage gained the coverage status."
     },
     {
-      "index": 47,
+      "ordinalPosition": 6,
       "name": "CREATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time when the coverage gained the coverage status."
     },
     {
-      "index": 52,
+      "ordinalPosition": 7,
       "name": "RESOLUTION_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The local date and time when the coverage had its resolution for this coverage status set."
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "RESOLUTION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time when the resolution had its state for this coverage status set."
     },
     {
-      "index": 62,
+      "ordinalPosition": 9,
       "name": "COVERAGE_STATE_CHANGE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Coverage Status - Change Reason category ID for the coverage record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeographic Area Verification Result\n\n\nDTRR TRC 154 Out of Area"
+      "description": "The Coverage Status - Change Reason category ID for the coverage record.",
+      "entries": [
+        "Geographic Area Verification Result",
+        "DTRR TRC 154 Out of Area"
+      ]
     },
     {
-      "index": 71,
+      "ordinalPosition": 10,
       "name": "ITM_HX_START_LOCAL_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The start instant of when the coverage/line combination is valid in local time."
     },
     {
-      "index": 76,
+      "ordinalPosition": 11,
       "name": "ITM_HX_START_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The start instant of when the coverage/line combination is valid in UTC."
     },
     {
-      "index": 81,
+      "ordinalPosition": 12,
       "name": "ITM_HX_END_LOCAL_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The end instant of when the coverage/line combination is valid in local time."
     },
     {
-      "index": 86,
+      "ordinalPosition": 13,
       "name": "ITM_HX_END_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The end instant of when the coverage/line combination is valid in UTC."
     },
     {
-      "index": 91,
+      "ordinalPosition": 14,
       "name": "CVG_ITM_HX_REL_ACT_GUID",
       "type": "VARCHAR",
       "discontinued": false,

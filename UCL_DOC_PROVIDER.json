@@ -1,50 +1,65 @@
 {
-  "table_name": "UCL_DOC_PROVIDER",
+  "name": "UCL_DOC_PROVIDER",
   "description": "The UCL_DOC_PROVIDER table contains information about the documentation providers for universal charge records.",
-  "primary_key": {
-    "column_name": "UCL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "UCL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "UCL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the charge record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DOC_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The documentation provider for this procedure."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DOC_PROV_FUNC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The documentation provider's function for this procedure.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSupervised\n\n\nPerformed\n\n\nAssisted\n\n\nObserved\n\n\nBilling Provider\n\n\nSurrogate Provider\n\n\nOrdering Provider"
+      "description": "The documentation provider's function for this procedure.",
+      "entries": [
+        "Supervised",
+        "Performed",
+        "Assisted",
+        "Observed",
+        "Billing Provider",
+        "Surrogate Provider",
+        "Ordering Provider"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "DOC_PROV_ST_DT_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The start date and time for the documentation provider for this procedure."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "DOC_PROV_ED_DT_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The end date and time for the documentation provider for this procedure."
     }

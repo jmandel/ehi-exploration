@@ -1,76 +1,148 @@
 {
-  "table_name": "AP_CLAIM_CHANGE_HX",
+  "name": "AP_CLAIM_CHANGE_HX",
   "description": "The AP_CLAIM_CHANGE_HX table contains the change history of an accounts payable claim.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the accounts payable claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CHANGE_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time of change to the claim."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Change History Action category ID for the claim record. Indicates the item changed on the claim (i.e. workflow, workflow other status, etc.).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoverage Selection for Crossover\n\n\nDownstream Crossover Claim\n\n\nPossible Duplicate Warning\n\n\nClaim Restoration\n\n\nReferring Provider\n\n\nAttachment\n\n\nMC Claims Workflow\n\n\nProvider\n\n\nPlace of Service\n\n\nOperating Provider\n\n\nOther Provider\n\n\nAttending Provider\n\n\nRendering Provider\n\n\nSupervising Provider\n\n\nVendor\n\n\nCoverage Selection\n\n\nOwning Business Segment\n\n\nReferrals\n\n\nFrozen Status Change\n\n\nClaim Specialty\n\n\nStatus Change\n\n\nAP Status Change\n\n\nClaim EOB Code\n\n\nNetwork Override\n\n\nService Change\n\n\nWorkflow Other Status\n\n\nWorkflow Print Status\n\n\nIs Clinically Invalid Claim?\n\n\nOverride Is Clinically Invalid Claim?\n\n\nTrait 1 Evaluation\n\n\nTrait 2 Evaluation\n\n\nTrait 3 Evaluation\n\n\nTrait 4 Evaluation\n\n\nTrait 5 Evaluation\n\n\nUpstream Crossover Claim\n\n\nOriginal Claim for this Reversal Claim\n\n\nOriginal Claim for this Corrected Claim\n\n\nOriginal Claim for this Adjustment Claim\n\n\nThird-Party Pricer\n\n\nHeld for AP Reasons Change\n\n\nModifiers\n\n\nAssoc Diags\n\n\nService Line EOB Codes\n\n\nPOS Type\n\n\nRevenue Code\n\n\nDRG Code\n\n\nService Line Billed\n\n\nPayer Initiated Reduction\n\n\nPrimary Insurance Amount\n\n\nPrimary Patient Portion\n\n\nOverride Allowed Amount Reason\n\n\nOverride Disallowed Amount Reason\n\n\nNDC Code\n\n\nNDC Quantity\n\n\nNDC Units\n\n\nNDC Prescription Number\n\n\nNDC Link Sequence Number\n\n\nNDC Section 340B\n\n\nService Code\n\n\nQuantity\n\n\nService From Date\n\n\nService To Date\n\n\nType Of Service\n\n\nExternal System Action"
+      "description": "The Change History Action category ID for the claim record. Indicates the item changed on the claim (i.e. workflow, workflow other status, etc.).",
+      "entries": [
+        "Coverage Selection for Crossover",
+        "Downstream Crossover Claim",
+        "Possible Duplicate Warning",
+        "Claim Restoration",
+        "Referring Provider",
+        "Attachment",
+        "MC Claims Workflow",
+        "Provider",
+        "Place of Service",
+        "Operating Provider",
+        "Other Provider",
+        "Attending Provider",
+        "Rendering Provider",
+        "Supervising Provider",
+        "Vendor",
+        "Coverage Selection",
+        "Owning Business Segment",
+        "Referrals",
+        "Frozen Status Change",
+        "Claim Specialty",
+        "Status Change",
+        "AP Status Change",
+        "Claim EOB Code",
+        "Network Override",
+        "Service Change",
+        "Workflow Other Status",
+        "Workflow Print Status",
+        "Is Clinically Invalid Claim?",
+        "Override Is Clinically Invalid Claim?",
+        "Trait 1 Evaluation",
+        "Trait 2 Evaluation",
+        "Trait 3 Evaluation",
+        "Trait 4 Evaluation",
+        "Trait 5 Evaluation",
+        "Upstream Crossover Claim",
+        "Original Claim for this Reversal Claim",
+        "Original Claim for this Corrected Claim",
+        "Original Claim for this Adjustment Claim",
+        "Third-Party Pricer",
+        "Held for AP Reasons Change",
+        "Modifiers",
+        "Assoc Diags",
+        "Service Line EOB Codes",
+        "POS Type",
+        "Revenue Code",
+        "DRG Code",
+        "Service Line Billed",
+        "Payer Initiated Reduction",
+        "Primary Insurance Amount",
+        "Primary Patient Portion",
+        "Override Allowed Amount Reason",
+        "Override Disallowed Amount Reason",
+        "NDC Code",
+        "NDC Quantity",
+        "NDC Units",
+        "NDC Prescription Number",
+        "NDC Link Sequence Number",
+        "NDC Section 340B",
+        "Service Code",
+        "Quantity",
+        "Service From Date",
+        "Service To Date",
+        "Type Of Service",
+        "External System Action"
+      ]
     },
     {
-      "index": 88,
+      "ordinalPosition": 5,
       "name": "CHANGE_HX_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment associated with the change."
     },
     {
-      "index": 93,
+      "ordinalPosition": 6,
       "name": "CHANGE_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of user making the change."
     },
     {
-      "index": 98,
+      "ordinalPosition": 7,
       "name": "CHANGE_HX_CODEEDIT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The code edit reason associated with the change."
     },
     {
-      "index": 103,
+      "ordinalPosition": 8,
       "name": "CHANGE_HX_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction ID associated with change."
     },
     {
-      "index": 108,
+      "ordinalPosition": 9,
       "name": "CHANGE_HX_PREV_REC_OR_CAT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The record or category ID stored in the item before changes were made. This column will contain the translated record or category CID if CID translation is enabled."
     },
     {
-      "index": 113,
+      "ordinalPosition": 10,
       "name": "CHANGE_HX_NEW_REC_OR_CAT",
       "type": "VARCHAR",
       "discontinued": false,

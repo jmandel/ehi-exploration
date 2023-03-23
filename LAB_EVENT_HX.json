@@ -1,55 +1,78 @@
 {
-  "table_name": "LAB_EVENT_HX",
+  "name": "LAB_EVENT_HX",
   "description": "This table contains the lab follow-up task event history that audits the events and actions that were taken on follow-up tasks.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LAB_EVENTHX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The event history type category number for the follow-up task history event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTask Created\n\n\nCompleted\n\n\nRe-opened\n\n\nDue Date/Time Updated\n\n\nStart Date/Time Updated\n\n\nChanged Assigned User\n\n\nConverted\n\n\nPrinted Label/Document\n\n\nActions Triggered\n\n\nAction: Complete Task\n\n\nAction: Print Letter\n\n\nAction: Use Extension\n\n\nChanged Laboratory\n\n\nNote\n\n\nComments Edited"
+      "description": "The event history type category number for the follow-up task history event.",
+      "entries": [
+        "Task Created",
+        "Completed",
+        "Re-opened",
+        "Due Date/Time Updated",
+        "Start Date/Time Updated",
+        "Changed Assigned User",
+        "Converted",
+        "Printed Label/Document",
+        "Actions Triggered",
+        "Action: Complete Task",
+        "Action: Print Letter",
+        "Action: Use Extension",
+        "Changed Laboratory",
+        "Note",
+        "Comments Edited"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 4,
       "name": "LAB_EVENTHX_DT_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The date and time when the event occurred."
     },
     {
-      "index": 39,
+      "ordinalPosition": 5,
       "name": "LAB_EVENTHX_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user who is associated with this event."
     },
     {
-      "index": 44,
+      "ordinalPosition": 6,
       "name": "LAB_EVENTHX_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comments associated with this event."
     },
     {
-      "index": 49,
+      "ordinalPosition": 7,
       "name": "LAB_EVENTHX_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,

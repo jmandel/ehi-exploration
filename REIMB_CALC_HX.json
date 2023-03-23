@@ -1,76 +1,96 @@
 {
-  "table_name": "REIMB_CALC_HX",
+  "name": "REIMB_CALC_HX",
   "description": "This table contains a line for each reimbursement calculation related to a transaction.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique ID of the transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Dollar amount of the calculated reimbursement. This value is the amount we expect to be reimbursed and cannot exceed the charge amount."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User ID of the person who performed the reimbursement calculation."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CALC_MODULE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Module that triggered this reimbursement calculation.  The possible values for this column are:   1) CLAIMS: Claims Processing   2) CHG ENTRY: Charge Entry   3) ACCT MAINT: Account Maintenance   4) PMT POST: Payment Posting   5) RECALC UTIL: Reimbursement Recalculation Utility\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaims Processing\n\n\nCharge Entry\n\n\nAccount Maintenance\n\n\nPayment Posting\n\n\nReimbursement Recalculation Utility\n\n\nTesting/Modeling"
+      "description": "Module that triggered this reimbursement calculation.  The possible values for this column are:   1) CLAIMS: Claims Processing   2) CHG ENTRY: Charge Entry   3) ACCT MAINT: Account Maintenance   4) PMT POST: Payment Posting   5) RECALC UTIL: Reimbursement Recalculation Utility",
+      "entries": [
+        "Claims Processing",
+        "Charge Entry",
+        "Account Maintenance",
+        "Payment Posting",
+        "Reimbursement Recalculation Utility",
+        "Testing/Modeling"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "CALC_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of the reimbursement calculation."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "CALC_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Date and time of the reimbursement calculation."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "CONTRACT_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the allowed amount as calculated by the reimbursement contract. This amount can exceed the charge amount."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "REIMB_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores how the reimbursement amount was calculated for the charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSystem Calculated\n\n\nContract Overridden\n\n\nExpected Amounts Overridden\n\n\nOverridden by Wisdom Estimate"
+      "description": "Stores how the reimbursement amount was calculated for the charge.",
+      "entries": [
+        "System Calculated",
+        "Contract Overridden",
+        "Expected Amounts Overridden",
+        "Overridden by Wisdom Estimate"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 10,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,

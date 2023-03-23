@@ -1,171 +1,199 @@
 {
-  "table_name": "HL_REQ_INFO_AUDIT",
+  "name": "HL_REQ_INFO_AUDIT",
   "description": "Hospital Logistics Request Information Audit.",
-  "primary_key": {
-    "column_name": "HLR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HLR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HLR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the request record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ENTRY_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant when a change was made to this Logistics Request's info."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ENTRY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that made the change to this Logistics Request."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ENTRY_TECH_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Logistics Technician that made the change to this Logistics Request."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "START_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's start instant (I HLR 115)."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail for this Logistics Request's priority (I HLR 120).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStat\n\n\nHigh\n\n\nNormal\n\n\nLow"
+      "description": "The audit trail for this Logistics Request's priority (I HLR 120).",
+      "entries": [
+        "Stat",
+        "High",
+        "Normal",
+        "Low"
+      ]
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "START_PLF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's start location (I HLR 125)."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "DYNAMIC_START_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail for this Logistics Request's dynamic start location type (I HLR 126).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSpecified Location\n\n\nCurrent Location\n\n\nCurrent Bed"
+      "description": "The audit trail for this Logistics Request's dynamic start location type (I HLR 126).",
+      "entries": [
+        "Specified Location",
+        "Current Location",
+        "Current Bed"
+      ]
     },
     {
-      "index": 58,
+      "ordinalPosition": 10,
       "name": "END_PLF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's end location (I HLR 130)."
     },
     {
-      "index": 63,
+      "ordinalPosition": 11,
       "name": "DYNAMIC_END_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail for this Logistics Request's dynamic end location type (I HLR 131).\n\n\n The category values for this column were already listed for column: DYNAMIC_START_TYPE_C_NAME"
+      "description": "The audit trail for this Logistics Request's dynamic end location type (I HLR 131)."
     },
     {
-      "index": 69,
+      "ordinalPosition": 12,
       "name": "TECHS_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's number of required techs (I HLR 135)."
     },
     {
-      "index": 74,
+      "ordinalPosition": 13,
       "name": "MODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail for this Logistics Request's mode (I HLR 140).\n\n\nMay contain organization-specific values: Yes"
+      "description": "The audit trail for this Logistics Request's mode (I HLR 140)."
     },
     {
-      "index": 80,
+      "ordinalPosition": 14,
       "name": "REGION_SEC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's region (I HLR 240)."
     },
     {
-      "index": 85,
+      "ordinalPosition": 15,
       "name": "REGION_SEC_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of this cleaning sector."
     },
     {
-      "index": 90,
+      "ordinalPosition": 16,
       "name": "SECTOR_SEC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's sector (I HLR 241)."
     },
     {
-      "index": 95,
+      "ordinalPosition": 17,
       "name": "SECTOR_SEC_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of this cleaning sector."
     },
     {
-      "index": 100,
+      "ordinalPosition": 18,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's department (I HLR 242)."
     },
     {
-      "index": 105,
+      "ordinalPosition": 19,
       "name": "HOSP_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's hospital location (I HLR 243)."
     },
     {
-      "index": 110,
+      "ordinalPosition": 20,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's service area (I HLR 244)."
     },
     {
-      "index": 115,
+      "ordinalPosition": 21,
       "name": "PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The audit trail for this Logistics Request's phone number (I HLR 260)."
     },
     {
-      "index": 120,
+      "ordinalPosition": 22,
       "name": "BED_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail for this Logistics Request's bed type (I HLR 148). \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEmpty\n\n\nStandard\n\n\nCrib\n\n\nTelemetry\n\n\nBariatric"
+      "description": "The audit trail for this Logistics Request's bed type (I HLR 148).",
+      "entries": [
+        "Empty",
+        "Standard",
+        "Crib",
+        "Telemetry",
+        "Bariatric"
+      ]
     },
     {
-      "index": 132,
+      "ordinalPosition": 23,
       "name": "TRIP_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The audit trail indicating this request's trip type. Blank is interpreted as One-Way.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOne-Way\n\n\nRound Trip"
+      "description": "The audit trail indicating this request's trip type. Blank is interpreted as One-Way.",
+      "entries": [
+        "One-Way",
+        "Round Trip"
+      ]
     }
   ]
 }

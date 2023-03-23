@@ -1,52 +1,65 @@
 {
-  "table_name": "PNEG_SURG_HX",
+  "name": "PNEG_SURG_HX",
   "description": "The PNEG_SURG_HX table contains pertinent negative surgical history data from history contacts entered in clinical system patient encounters. Since one patient encounter may contain multiple surgical history contacts, each contact is uniquely identified by a patient encounter serial number and a line number.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PNEG_SURG_HX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The entry date for a patient's pertinent negative surgical history"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PNEG_SURG_HX_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The entry date for a patient's pertinent negative surgical history for a procedure."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PNEG_SURG_HX_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comments entered for the patient's pertinent negative surgical history."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PNEG_SURG_HX_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the source of entry for the surgical history. Category table information for this item is stored in the Clarity table ZC_HISTORY_SOURCE.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nProvider\n\n\nPatient\n\n\nParent\n\n\nLegal Guardian\n\n\nProxy User"
+      "description": "The category number for the source of entry for the surgical history. Category table information for this item is stored in the Clarity table ZC_HISTORY_SOURCE.",
+      "entries": [
+        "Provider",
+        "Patient",
+        "Parent",
+        "Legal Guardian",
+        "Proxy User"
+      ]
     }
   ]
 }

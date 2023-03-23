@@ -1,689 +1,763 @@
 {
-  "table_name": "OR_IMP_2",
+  "name": "OR_IMP_2",
   "description": "The OR_IMP_2 table contains implant information specific to Mechanical Circulatory System and Implantable Cardioverter Defibrillator devices.",
-  "primary_key": {
-    "column_name": "IMPLANT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMPLANT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMPLANT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the implant record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PRIMARY_DEVICE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Specifies whether this is the patient's primary device.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Specifies whether this is the patient's primary device.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 16,
+      "ordinalPosition": 3,
       "name": "DEVICE_EXPLANT_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the reason a device was explanted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTransplant\n\n\nDevice Malfunction - Elective\n\n\nDevice Malfunction - Emergent\n\n\nDevice Thrombosis - Elective\n\n\nDevice Thrombosis - Emergent\n\n\nInfection - Emergent\n\n\nInfection - Elective\n\n\nVentricular Recovery - Device Removed\n\n\nVentricular Recovery - Device Not Removed, Turned Off"
+      "description": "The category ID for the reason a device was explanted.",
+      "entries": [
+        "Transplant",
+        "Device Malfunction - Elective",
+        "Device Malfunction - Emergent",
+        "Device Thrombosis - Elective",
+        "Device Thrombosis - Emergent",
+        "Infection - Emergent",
+        "Infection - Elective",
+        "Ventricular Recovery - Device Removed",
+        "Ventricular Recovery - Device Not Removed, Turned Off"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 4,
       "name": "CONSOLE_TRACKING_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The mechanical circulatory system device console tracking number."
     },
     {
-      "index": 37,
+      "ordinalPosition": 5,
       "name": "CANNULAE_LOC_INFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for a device's cannulae inflow location.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLA Appendage\n\n\nLA Interatrial Groove\n\n\nLA Apex\n\n\nRA\n\n\nRV\n\n\nUnknown"
+      "description": "The category ID for a device's cannulae inflow location.",
+      "entries": [
+        "LA Appendage",
+        "LA Interatrial Groove",
+        "LA Apex",
+        "RA",
+        "RV",
+        "Unknown"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 6,
       "name": "CANNULAE_LOC_OUTFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for a device's cannulae outflow location.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAbdominal Aorta\n\n\nAscending Aorta\n\n\nDescending Aorta\n\n\nPulmonary Artery\n\n\nUnknown"
+      "description": "The category ID for a device's cannulae outflow location.",
+      "entries": [
+        "Abdominal Aorta",
+        "Ascending Aorta",
+        "Descending Aorta",
+        "Pulmonary Artery",
+        "Unknown"
+      ]
     },
     {
-      "index": 62,
+      "ordinalPosition": 7,
       "name": "DEVICE_STUDY_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The device research study number."
     },
     {
-      "index": 67,
+      "ordinalPosition": 8,
       "name": "DEVICE_STRAT_TIME_IMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the intended treatment of an implanted mechanical circulatory device.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBridge to Recovery\n\n\nRescue Therapy\n\n\nBridge to Transplant (Currently Listed)\n\n\nPossible Bridge to Transplant - Likely Eligible\n\n\nPossible Bridge to Transplant - Moderate Likelihood\n\n\nPossible Bridge to Transplant - Unlikely Eligible\n\n\nDestination Therapy - Modifiable\n\n\nDestination Therapy - Unmodifiable\n\n\nUnknown\n\n\nOther"
+      "description": "The category ID for the intended treatment of an implanted mechanical circulatory device.",
+      "entries": [
+        "Bridge to Recovery",
+        "Rescue Therapy",
+        "Bridge to Transplant (Currently Listed)",
+        "Possible Bridge to Transplant - Likely Eligible",
+        "Possible Bridge to Transplant - Moderate Likelihood",
+        "Possible Bridge to Transplant - Unlikely Eligible",
+        "Destination Therapy - Modifiable",
+        "Destination Therapy - Unmodifiable",
+        "Unknown",
+        "Other"
+      ]
     },
     {
-      "index": 84,
+      "ordinalPosition": 9,
       "name": "DEVICE_STRAT_TIME_IMP_FREETEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The intended treatment for an implanted mechanical circulatory device. This is a free-text field for describing values not found in Device Strategy At Time of Implant (I IMP 16507)."
     },
     {
-      "index": 89,
+      "ordinalPosition": 10,
       "name": "ICD_CS_LV_SUCCESS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the coronary sinus/left ventricular (CS/LV) lead was successfully implanted. This item corresponds to ICD Sequence 6145.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNot Implanted\n\n\nPreviously Implanted"
+      "description": "Indicates if the coronary sinus/left ventricular (CS/LV) lead was successfully implanted. This item corresponds to ICD Sequence 6145.",
+      "entries": [
+        "Yes",
+        "Not Implanted",
+        "Previously Implanted"
+      ]
     },
     {
-      "index": 99,
+      "ordinalPosition": 11,
       "name": "ICD_CSLV_NT_IMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the reason a Coronary Sinus Access or Left Ventricular (CS/LV) lead was not implanted. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVascular access\n\n\nCoronary sinus access\n\n\nTributary vein access\n\n\nCoronary sinus dissection\n\n\nUnacceptable threshold\n\n\nDiaphragmatic stimulation"
+      "description": "Indicates the reason a Coronary Sinus Access or Left Ventricular (CS/LV) lead was not implanted.",
+      "entries": [
+        "Vascular access",
+        "Coronary sinus access",
+        "Tributary vein access",
+        "Coronary sinus dissection",
+        "Unacceptable threshold",
+        "Diaphragmatic stimulation"
+      ]
     },
     {
-      "index": 112,
+      "ordinalPosition": 12,
       "name": "ICD_LET_SUCCESSFUL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates the lowest energy tested (LET) or defibrillation threshold that demonstrated that the device performs successfully (in joules)."
     },
     {
-      "index": 117,
+      "ordinalPosition": 13,
       "name": "ICD_LET_NOT_TSTD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the lowest energy tested (LET) that was successful was not tested.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates the lowest energy tested (LET) that was successful was not tested."
     },
     {
-      "index": 123,
+      "ordinalPosition": 14,
       "name": "ICD_ULV",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates the upper limit of vulnerability (ULV) in joules."
     },
     {
-      "index": 128,
+      "ordinalPosition": 15,
       "name": "ICD_ULV_NOT_TEST_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the upper limit of vulnerability (ULV) was not tested. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates the upper limit of vulnerability (ULV) was not tested."
     },
     {
-      "index": 134,
+      "ordinalPosition": 16,
       "name": "ICD_REIMP_ENDBAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is the end of expected battery life of a previous ICD.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is the end of expected battery life of a previous ICD."
     },
     {
-      "index": 140,
+      "ordinalPosition": 17,
       "name": "ICD_REIMP_LEADRVN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is that the generator is being replaced at the time of lead revision.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is that the generator is being replaced at the time of lead revision."
     },
     {
-      "index": 146,
+      "ordinalPosition": 18,
       "name": "ICD_REIMP_UPGRADE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is an upgrade of a previous device with additional pacing capabilities such as an upgrade from a single to a dual chamber device, or the replacement of a non-CRT with a CRT device.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is an upgrade of a previous device with additional pacing capabilities such as an upgrade from a single to a dual chamber device, or the replacement of a non-CRT with a CRT device."
     },
     {
-      "index": 152,
+      "ordinalPosition": 19,
       "name": "ICD_REIMP_INFECTN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is due to infection in the location of the previously implanted device. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is due to infection in the location of the previously implanted device."
     },
     {
-      "index": 158,
+      "ordinalPosition": 20,
       "name": "ICD_REIMP_MNRCALL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is that the previous device has been recognized by the manufacturer as demonstrating a recurring performance failure resulting in an advisory letter to physicians. This may or may not reach the level of a food and drug administration (FDA) designated recall. This also may or may not have led to device malfunction. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is that the previous device has been recognized by the manufacturer as demonstrating a recurring performance failure resulting in an advisory letter to physicians. This may or may not reach the level of a food and drug administration (FDA) designated recall. This also may or may not have led to device malfunction."
     },
     {
-      "index": 164,
+      "ordinalPosition": 21,
       "name": "ICD_REIMP_FLTYHDR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is that there was a faulty connector/header which required Coding Instructions: another implant. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is that there was a faulty connector/header which required Coding Instructions: another implant."
     },
     {
-      "index": 170,
+      "ordinalPosition": 22,
       "name": "ICD_REIMP_DVRELOC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is that the device needed to be relocated because of a medical condition, or procedure near the original pocket. An example is if the patient was diagnosed with breast cancer and required treatment or surgery near the original implant. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is that the device needed to be relocated because of a medical condition, or procedure near the original pocket. An example is if the patient was diagnosed with breast cancer and required treatment or surgery near the original implant."
     },
     {
-      "index": 176,
+      "ordinalPosition": 23,
       "name": "ICD_REIMP_MALFUNC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a reason for reimplant is that the previous generator has malfunctioned. The device performance is outside the manufacturer's designated specification and cannot be resolved with reprogramming, necessitating in the replacement of the device, in the opinion of the physician. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a reason for reimplant is that the previous generator has malfunctioned. The device performance is outside the manufacturer's designated specification and cannot be resolved with reprogramming, necessitating in the replacement of the device, in the opinion of the physician."
     },
     {
-      "index": 182,
+      "ordinalPosition": 24,
       "name": "ICD_MLFN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the reason for malfunction of the ICD implant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAtrial pacing\n\n\nLeft ventricular (LV) pacing\n\n\nRight ventricular (RV) pacing\n\n\nDefibrillation\n\n\nPremature battery depletion"
+      "description": "Indicates the reason for malfunction of the ICD implant.",
+      "entries": [
+        "Atrial pacing",
+        "Left ventricular (LV) pacing",
+        "Right ventricular (RV) pacing",
+        "Defibrillation",
+        "Premature battery depletion"
+      ]
     },
     {
-      "index": 194,
+      "ordinalPosition": 25,
       "name": "ICD_ATPSHCK_DLVRD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if, at any point in time, the ICD being removed had delivered antitachycardia pacing (ATP) or shock therapy. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if, at any point in time, the ICD being removed had delivered antitachycardia pacing (ATP) or shock therapy."
     },
     {
-      "index": 200,
+      "ordinalPosition": 26,
       "name": "ICD_ATPSHCK_APPRO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if, at any point in time, the Implantable Cardioverter Defibrillator (ICD) being removed had delivered appropriate antitachycardia pacing (ATP) or shock therapy for spontaneous ventricular tachycardia and/or ventricular fibrillation.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if, at any point in time, the Implantable Cardioverter Defibrillator (ICD) being removed had delivered appropriate antitachycardia pacing (ATP) or shock therapy for spontaneous ventricular tachycardia and/or ventricular fibrillation."
     },
     {
-      "index": 206,
+      "ordinalPosition": 27,
       "name": "ICD_ATP_SUCCESSFL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the antitachycardia pacing (ATP) therapy for ventricular tachycardia and/or ventricular fibrillation was successful.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the antitachycardia pacing (ATP) therapy for ventricular tachycardia and/or ventricular fibrillation was successful."
     },
     {
-      "index": 212,
+      "ordinalPosition": 28,
       "name": "ICD_SHCK_SUCCESS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the shock therapy for ventricular tachycardia and/or ventricular fibrillation was successful. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the shock therapy for ventricular tachycardia and/or ventricular fibrillation was successful."
     },
     {
-      "index": 218,
+      "ordinalPosition": 29,
       "name": "ICD_LD_PLCMNT_ISS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had any placement issues.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had any placement issues."
     },
     {
-      "index": 224,
+      "ordinalPosition": 30,
       "name": "ICD_LD_PERF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was penetration of the existing lead through a systemic vein, coronary vein, or the myocardium. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was penetration of the existing lead through a systemic vein, coronary vein, or the myocardium."
     },
     {
-      "index": 230,
+      "ordinalPosition": 31,
       "name": "ICD_PT_CLIN_STATS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a non-lead related medical or surgical procedure required the existing lead to be replaced.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if a non-lead related medical or surgical procedure required the existing lead to be replaced."
     },
     {
-      "index": 236,
+      "ordinalPosition": 32,
       "name": "ICD_LD_DISLDGEMNT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was movement (macroscopic or microscopic) of an existing lead within the heart or vascular tree away from the original implantation site. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was movement (macroscopic or microscopic) of an existing lead within the heart or vascular tree away from the original implantation site."
     },
     {
-      "index": 242,
+      "ordinalPosition": 33,
       "name": "ICD_LEAD_INFCTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was a suspected or documented infection of the existing lead.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was a suspected or documented infection of the existing lead."
     },
     {
-      "index": 248,
+      "ordinalPosition": 34,
       "name": "ICD_EROSION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was erosion of the existing lead.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was erosion of the existing lead."
     },
     {
-      "index": 254,
+      "ordinalPosition": 35,
       "name": "ICD_FAULTY_CONNCT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was a faulty connector/header in the existing lead. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was a faulty connector/header in the existing lead."
     },
     {
-      "index": 260,
+      "ordinalPosition": 36,
       "name": "ICD_DOC_INFECTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there was a documented infection of the existing lead as evidenced by positive microbiological cultures/smears or other microbiological evidence indicating infection. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there was a documented infection of the existing lead as evidenced by positive microbiological cultures/smears or other microbiological evidence indicating infection."
     },
     {
-      "index": 266,
+      "ordinalPosition": 37,
       "name": "ICD_PACING_ISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there were pacing issues such as oversensing, undersensing, failure to pace, failure to capture with acceptable safety margin, or extracardiac stimulation. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if there were pacing issues such as oversensing, undersensing, failure to pace, failure to capture with acceptable safety margin, or extracardiac stimulation."
     },
     {
-      "index": 272,
+      "ordinalPosition": 38,
       "name": "ICD_OVERSENSE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead was functioning abnormally due to oversensing. Oversensing manifests as sensing of electrical signals not related to cardiac depolarization of the lead chamber that cannot be resolved acceptably by device reprogramming. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead was functioning abnormally due to oversensing. Oversensing manifests as sensing of electrical signals not related to cardiac depolarization of the lead chamber that cannot be resolved acceptably by device reprogramming."
     },
     {
-      "index": 278,
+      "ordinalPosition": 39,
       "name": "ICD_UNDERSENSE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead was functioning abnormally due to undersensing. Undersensing manifests as failure to sense appropriate cardiac depolarizations that cannot be resolved with reprogramming. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead was functioning abnormally due to undersensing. Undersensing manifests as failure to sense appropriate cardiac depolarizations that cannot be resolved with reprogramming."
     },
     {
-      "index": 284,
+      "ordinalPosition": 40,
       "name": "ICD_FAIL_TO_PACE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead was functioning abnormally because there was failure to pace. Failure to pace manifests as absence of pacemaker stimulation artifacts on electrocardiographic recordings despite rates below pacemaker programmed rate. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead was functioning abnormally because there was failure to pace. Failure to pace manifests as absence of pacemaker stimulation artifacts on electrocardiographic recordings despite rates below pacemaker programmed rate."
     },
     {
-      "index": 290,
+      "ordinalPosition": 41,
       "name": "ICD_FAIL_SF_MRGN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead was functioning abnormally because there was failure to capture with acceptable safety margins. This manifests as a high pacing threshold that results in either intermittent failure to capture at maximal programmed output or excessive batter drain leading to premature battery exhaustion. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead was functioning abnormally because there was failure to capture with acceptable safety margins. This manifests as a high pacing threshold that results in either intermittent failure to capture at maximal programmed output or excessive batter drain leading to premature battery exhaustion."
     },
     {
-      "index": 296,
+      "ordinalPosition": 42,
       "name": "ICD_XTRACARD_STIM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead was functioning abnormally because there was extracardiac stimulation. This manifests as stimulation by the lead of non-cardiac structures such as the diaphragm, chest wall, or pectoral muscle. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead was functioning abnormally because there was extracardiac stimulation. This manifests as stimulation by the lead of non-cardiac structures such as the diaphragm, chest wall, or pectoral muscle."
     },
     {
-      "index": 302,
+      "ordinalPosition": 43,
       "name": "ICD_DEFIB_ISSUES_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had defibrillation issues such as oversensing with or without shock/ATP, or failed shocks/inadequate Defibrillation Threshold (DFT) safety margins.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had defibrillation issues such as oversensing with or without shock/ATP, or failed shocks/inadequate Defibrillation Threshold (DFT) safety margins."
     },
     {
-      "index": 308,
+      "ordinalPosition": 44,
       "name": "ICD_DFIB_OVRSNS_W_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had defibrillation problems due to oversensing with shock/antitachycardia pacing (ATP). This manifests as sensing of non-cardiac depolarization signals that met arrhythmia detection criteria and elicited programmed tachyarrhythmia therapy. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had defibrillation problems due to oversensing with shock/antitachycardia pacing (ATP). This manifests as sensing of non-cardiac depolarization signals that met arrhythmia detection criteria and elicited programmed tachyarrhythmia therapy."
     },
     {
-      "index": 314,
+      "ordinalPosition": 45,
       "name": "ICD_DFB_OVRSNS_WO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had defibrillation issues due to oversensing without shock/antitachycardia pacing (ATP). This manifests as sensing of non-cardiac depolarization signals that did not meet arrhythmia detection criteria and do not elicit programmed tachyarrhythmia therapy. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had defibrillation issues due to oversensing without shock/antitachycardia pacing (ATP). This manifests as sensing of non-cardiac depolarization signals that did not meet arrhythmia detection criteria and do not elicit programmed tachyarrhythmia therapy."
     },
     {
-      "index": 320,
+      "ordinalPosition": 46,
       "name": "ICD_DFB_FAIL_SHCK_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had defibrillation issues due to failed shocks or inadequate defibrillation threshold safety margins. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had defibrillation issues due to failed shocks or inadequate defibrillation threshold safety margins."
     },
     {
-      "index": 326,
+      "ordinalPosition": 47,
       "name": "ICD_LD_INTG_ISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had abnormal function due to lead integrity issues.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had abnormal function due to lead integrity issues."
     },
     {
-      "index": 332,
+      "ordinalPosition": 48,
       "name": "ICD_LD_CNDCT_FAIL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had abnormal function due to a lead integrity issue of conductor failure. Conductor failure manifests by high lead impedance either absolutely (above manufacturer's product specifications) or by a significant increase from previously stable chronic values. \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had abnormal function due to a lead integrity issue of conductor failure. Conductor failure manifests by high lead impedance either absolutely (above manufacturer's product specifications) or by a significant increase from previously stable chronic values."
     },
     {
-      "index": 338,
+      "ordinalPosition": 49,
       "name": "ICD_LD_INSUL_FAIL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the existing lead had abnormal function due to a lead integrity issue of insulation failure. Insulation failure manifests as low lead impedance either absolutely (below manufacture's product specifications) or by a significant decrease from previously stable chronic values.  \n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates if the existing lead had abnormal function due to a lead integrity issue of insulation failure. Insulation failure manifests as low lead impedance either absolutely (below manufacture's product specifications) or by a significant decrease from previously stable chronic values."
     },
     {
-      "index": 344,
+      "ordinalPosition": 50,
       "name": "IMPLANTATION_TEMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the tissue temperature at implantation.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item stores the tissue temperature at implantation."
     },
     {
-      "index": 351,
+      "ordinalPosition": 51,
       "name": "STORAGE_TEMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the tissue storage temperature.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This item stores the tissue storage temperature."
     },
     {
-      "index": 358,
+      "ordinalPosition": 52,
       "name": "IMPLANT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the class of the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Stores the class of the implant."
     },
     {
-      "index": 365,
+      "ordinalPosition": 53,
       "name": "PATIENT_REQUESTED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if the implant was requested by the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Stores if the implant was requested by the patient."
     },
     {
-      "index": 372,
+      "ordinalPosition": 54,
       "name": "IMPLANT_FIN_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the comment for the implant."
     },
     {
-      "index": 377,
+      "ordinalPosition": 55,
       "name": "CLINICAL_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the clinical indication for the requested implant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNone"
+      "description": "Stores the clinical indication for the requested implant.",
+      "entries": [
+        "None"
+      ]
     },
     {
-      "index": 385,
+      "ordinalPosition": 56,
       "name": "GUDID_REQUEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the status of a request to the FDA's GUDID for information on this implant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSuccessful\n\n\nRequest failed - retrying\n\n\nPreparing to send request\n\n\nWaiting for response\n\n\nRequest failed - device not in GUDID"
+      "description": "This column stores the status of a request to the FDA's GUDID for information on this implant.",
+      "entries": [
+        "Successful",
+        "Request failed - retrying",
+        "Preparing to send request",
+        "Waiting for response",
+        "Request failed - device not in GUDID"
+      ]
     },
     {
-      "index": 397,
+      "ordinalPosition": 57,
       "name": "GUDID_BRAND_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the brand name obtained from Global Unique Device Identification Database (GUDID) for an implant."
     },
     {
-      "index": 402,
+      "ordinalPosition": 58,
       "name": "GUDID_VERSION_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the version or model number obtained from GUDID for an implant."
     },
     {
-      "index": 407,
+      "ordinalPosition": 59,
       "name": "GUDID_COMPANY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the company name obtained from GUDID for an implant."
     },
     {
-      "index": 412,
+      "ordinalPosition": 60,
       "name": "GUDID_CONTAINS_LATEX_RUBBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores whether or not an implant is labeled as containing natural rubber latex or dry natural rubber according to GUDID. GUDID returns either a \"true\" or a \"false\" for this item. However, this is not a YN column as we want to be able to handle any new values that might be added for this field."
     },
     {
-      "index": 417,
+      "ordinalPosition": 61,
       "name": "GUDID_IMPLANT_DESCRIPTION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the implant Global Medical Device Nomenclature (GMDN) Preferred Term name obtained from GUDID for an implant."
     },
     {
-      "index": 422,
+      "ordinalPosition": 62,
       "name": "TISSUE_IDNT_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the Distinct Identification Code for tissue implants."
     },
     {
-      "index": 427,
+      "ordinalPosition": 63,
       "name": "TISSUE_DIC_FLAGS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores flag characters associated with the distinct identification code of a tissue implant."
     },
     {
-      "index": 432,
+      "ordinalPosition": 64,
       "name": "CONTAINER_LOT_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the container lot number for implants."
     },
     {
-      "index": 437,
+      "ordinalPosition": 65,
       "name": "CONTAINER_EXP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This stores the container expiration date for implants."
     },
     {
-      "index": 442,
+      "ordinalPosition": 66,
       "name": "TISSUE_PLACED_IN_STORAGE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This stores the instant the tissue was placed in storage."
     },
     {
-      "index": 447,
+      "ordinalPosition": 67,
       "name": "TISSUE_PLACED_IN_STORAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the user that placed the tissue in storage."
     },
     {
-      "index": 452,
+      "ordinalPosition": 68,
       "name": "TISSUE_DONATION_VERIFIED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the user that verified the tissue donation."
     },
     {
-      "index": 457,
+      "ordinalPosition": 69,
       "name": "TISSUE_CULTURE_COLLECTED_BY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the user that collected the tissue culture."
     },
     {
-      "index": 462,
+      "ordinalPosition": 70,
       "name": "TISSUE_CULTURE_SENT_BY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the user that sent the tissue culture."
     },
     {
-      "index": 467,
+      "ordinalPosition": 71,
       "name": "TISSUE_REMOVED_FROM_STORAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider ID for the person who removed the tissue from storage."
     },
     {
-      "index": 472,
+      "ordinalPosition": 72,
       "name": "TISSUE_REC_STORAGE_TEMPERATURE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This stores information regarding the recommended storage temperature."
     },
     {
-      "index": 477,
+      "ordinalPosition": 73,
       "name": "IMPLANT_APPROACH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the approach taken for the implant/joint.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The category ID for the approach taken for the implant/joint."
     },
     {
-      "index": 484,
+      "ordinalPosition": 74,
       "name": "FEMUR_MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The femur manufacturer category ID for the implant.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The femur manufacturer category ID for the implant."
     },
     {
-      "index": 490,
+      "ordinalPosition": 75,
       "name": "TIBIA_MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The tibia manufacturer category ID for the implant.\n\n\n The category values for this column were already listed for column: FEMUR_MANUFACTURER_C_NAME"
+      "description": "The tibia manufacturer category ID for the implant."
     },
     {
-      "index": 496,
+      "ordinalPosition": 76,
       "name": "PREV_FEMUR_MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The old femur prosthesis manufacturer category ID for the implant.\n\n\n The category values for this column were already listed for column: FEMUR_MANUFACTURER_C_NAME"
+      "description": "The old femur prosthesis manufacturer category ID for the implant."
     },
     {
-      "index": 502,
+      "ordinalPosition": 77,
       "name": "PREV_TIBIA_MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The old tibia prosthesis manufacturer category ID for the implant.\n\n\n The category values for this column were already listed for column: FEMUR_MANUFACTURER_C_NAME"
+      "description": "The old tibia prosthesis manufacturer category ID for the implant."
     },
     {
-      "index": 508,
+      "ordinalPosition": 78,
       "name": "CEMENT_USED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used for this implant. Y indicates cement was used. N indicates cement was not used. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used for this implant. Y indicates cement was used. N indicates cement was not used. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 514,
+      "ordinalPosition": 79,
       "name": "CEMENT_USED_FEMUR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used on the femur for this implant. Y indicates cement was used on the femur. N indicates cement was not used on the femur. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used on the femur for this implant. Y indicates cement was used on the femur. N indicates cement was not used on the femur. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 520,
+      "ordinalPosition": 80,
       "name": "CEMENT_USED_ACETABULUM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used on the acetabulum for this implant. Y indicates cement was used on the acetabulum. N indicates cement was not used on the acetabulum. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used on the acetabulum for this implant. Y indicates cement was used on the acetabulum. N indicates cement was not used on the acetabulum. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 526,
+      "ordinalPosition": 81,
       "name": "CEMENT_USED_TIBIA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used on the tibia for this implant. Y indicates cement was used on the tibia. N indicates cement was not used on the tibia. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used on the tibia for this implant. Y indicates cement was used on the tibia. N indicates cement was not used on the tibia. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 532,
+      "ordinalPosition": 82,
       "name": "CEMENT_USED_PATELLA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used on the patella for this implant. Y indicates cement was used on the patella. N indicates cement was not used on the patella. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used on the patella for this implant. Y indicates cement was used on the patella. N indicates cement was not used on the patella. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 538,
+      "ordinalPosition": 83,
       "name": "CEMENT_USED_OTHER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether cement was used on another prosthesis for this implant. Y indicates cement was used on another prosthesis. N indicates cement was not used on another prosthesis. Null indicates cement usage was not assessed or is not applicable for this type of implant.\n\n\n The category values for this column were already listed for column: PRIMARY_DEVICE_YN"
+      "description": "Indicates whether cement was used on another prosthesis for this implant. Y indicates cement was used on another prosthesis. N indicates cement was not used on another prosthesis. Null indicates cement usage was not assessed or is not applicable for this type of implant."
     },
     {
-      "index": 544,
+      "ordinalPosition": 84,
       "name": "CEMENT_TECHNIQUE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cement application technique category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The cement application technique category ID for the implant."
     },
     {
-      "index": 551,
+      "ordinalPosition": 85,
       "name": "CEMENT_MIX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cement mix category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The cement mix category ID for the implant."
     },
     {
-      "index": 558,
+      "ordinalPosition": 86,
       "name": "CEMENT_MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cement manufacturer category ID for the implant.\n\n\n The category values for this column were already listed for column: FEMUR_MANUFACTURER_C_NAME"
+      "description": "The cement manufacturer category ID for the implant."
     },
     {
-      "index": 564,
+      "ordinalPosition": 87,
       "name": "BONE_GRAFT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The bone graft type category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The bone graft type category ID for the implant."
     },
     {
-      "index": 571,
+      "ordinalPosition": 88,
       "name": "DEGEN_GLENOHUMERAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The glenohumeral joint degeneration category ID for the implant. This describes the type of degeneration exhibited by the joint.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The glenohumeral joint degeneration category ID for the implant. This describes the type of degeneration exhibited by the joint."
     },
     {
-      "index": 578,
+      "ordinalPosition": 89,
       "name": "AP_CONGRUENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The anteroposterior congruence category ID for the implant. This describes the congruence of the joint in the anteroposterior direction.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The anteroposterior congruence category ID for the implant. This describes the congruence of the joint in the anteroposterior direction."
     },
     {
-      "index": 585,
+      "ordinalPosition": 90,
       "name": "CENTRIC_JOINT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The centric joint type category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The centric joint type category ID for the implant."
     },
     {
-      "index": 592,
+      "ordinalPosition": 91,
       "name": "POST_ECCENTRIC_CAPUT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The posteriorly eccentric caput category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The posteriorly eccentric caput category ID for the implant."
     },
     {
-      "index": 599,
+      "ordinalPosition": 92,
       "name": "ANT_ECCENTRIC_CAPUT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The anteriorly eccentric caput category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The anteriorly eccentric caput category ID for the implant."
     },
     {
-      "index": 606,
+      "ordinalPosition": 93,
       "name": "CRANIO_CONGRUENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The craniocaudal congruence category ID for the implant. This describes the congruence of the joint in the craniocaudal direction.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The craniocaudal congruence category ID for the implant. This describes the congruence of the joint in the craniocaudal direction."
     },
     {
-      "index": 613,
+      "ordinalPosition": 94,
       "name": "SUP_ECCENTRIC_CAPUT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The superiorly eccentric caput category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The superiorly eccentric caput category ID for the implant."
     },
     {
-      "index": 620,
+      "ordinalPosition": 95,
       "name": "JOINT_CONGRUENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The joint congruence category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The joint congruence category ID for the implant."
     },
     {
-      "index": 627,
+      "ordinalPosition": 96,
       "name": "GLENOID_COMPONENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The glenoid component category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The glenoid component category ID for the implant."
     },
     {
-      "index": 634,
+      "ordinalPosition": 97,
       "name": "HUMERAL_COMPONENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The humeral component category ID for the implant.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The humeral component category ID for the implant."
     }
   ]
 }

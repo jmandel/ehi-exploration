@@ -1,55 +1,74 @@
 {
-  "table_name": "HSP_TX_BND_EPSD_HX",
+  "name": "HSP_TX_BND_EPSD_HX",
   "description": "This table holds the history of bundled episodes linked to and unlinked from this transaction.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital billing transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "BND_EPSD_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant that an episode was linked or unlinked to this transaction."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BND_EPSD_EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The episode that this transaction was linked or unlinked to."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "BND_EPSD_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action that occurred with this episode on this transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLink\n\n\nUnlink"
+      "description": "The action that occurred with this episode on this transaction.",
+      "entries": [
+        "Link",
+        "Unlink"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "BND_EPSD_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source of the episode link or unlink.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nVisit Association\n\n\nAuto Link\n\n\nAuto Creation\n\n\nAuto Link Via Transform\n\n\nAuto Link Via Association\n\n\nAuto Removal"
+      "description": "The source of the episode link or unlink.",
+      "entries": [
+        "User",
+        "Visit Association",
+        "Auto Link",
+        "Auto Creation",
+        "Auto Link Via Transform",
+        "Auto Link Via Association",
+        "Auto Removal"
+      ]
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "BND_EPSD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

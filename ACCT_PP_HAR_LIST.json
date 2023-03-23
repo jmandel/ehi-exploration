@@ -1,34 +1,44 @@
 {
-  "table_name": "ACCT_PP_HAR_LIST",
+  "name": "ACCT_PP_HAR_LIST",
   "description": "The hospital account ID lists that are associated with payment plans attached to guarantor accounts.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the guarantor record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated payment plan in this guarantor account's record. Together with ACCT_ID, this forms the foreign key to the HSP_GUAR_PMT_PLAN table."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple hospital account IDs that are associated with the guarantor account and the payment plan from the HSP_GUAR_PMT_PLAN table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HB_PP_HAR",
       "type": "NUMERIC",
       "discontinued": false,

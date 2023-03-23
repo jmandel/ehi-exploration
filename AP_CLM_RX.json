@@ -1,363 +1,405 @@
 {
-  "table_name": "AP_CLM_RX",
+  "name": "AP_CLM_RX",
   "description": "This table contains information from pharmacy claims. Each record represents one pharmacy claim in the managed care system's AP Claims module.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim info record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RX_BATCH_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "National Council for Prescription Drug Programs (NCPDP) file batch number"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RX_SUBMISSION_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "NCPDP file submission number."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RECORD_STATUS_EXT_CODE_LST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Identifies the status of the pharmacy claim (paid, reversed, canceled, etc.). The record status code can be retrieved by joining this column to the EXT_CODE_LST_ID column in table FCL_EXTRNL_CDE_LST."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "RECORD_STATUS_EXT_CODE_LST_ID_EXT_CODE_LST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the list value."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "REJECT_OVRIDE_EXT_CODE_LST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Indicates reason for paying a pharmacy claim when override is used. The reject override code can be retrieved by joining this column to the EXT_CODE_LST_ID column in table FCL_EXTRNL_CDE_LST."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "REJECT_OVRIDE_EXT_CODE_LST_ID_EXT_CODE_LST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the list value."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "PHARMACY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Pharmacy associated to the claim."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "PRESC_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Prescribing provider."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "PRESC_PROV_TAXONOMY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the prescribing provider's taxonomy code for pharmacy claims."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "TTL_INGRED_COST_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Drug ingredient cost paid."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "TTL_DISPENSING_FEE_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Dispensing fee paid."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "TTL_REG_TAX_AMT_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Flat sales tax amount paid."
     },
     {
-      "index": 67,
+      "ordinalPosition": 14,
       "name": "TTL_PCT_TAX_AMT_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Percentage tax amount paid."
     },
     {
-      "index": 72,
+      "ordinalPosition": 15,
       "name": "TTL_INCENTIVE_AMT_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Incentive amount paid."
     },
     {
-      "index": 77,
+      "ordinalPosition": 16,
       "name": "TTL_PROF_SVC_FEE_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Professional service fee paid."
     },
     {
-      "index": 82,
+      "ordinalPosition": 17,
       "name": "OTHER_AMT_RECOGNIZED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount recognized by the processor of any payment from another source."
     },
     {
-      "index": 87,
+      "ordinalPosition": 18,
       "name": "ALTERNATE_CLM_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Alternate Claim ID"
     },
     {
-      "index": 92,
+      "ordinalPosition": 19,
       "name": "REF_CLAIM_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Reference claim ID for the original claim"
     },
     {
-      "index": 97,
+      "ordinalPosition": 20,
       "name": "WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Claim workflow type (AP claim, paid claim, estimate claim, etc.)\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAP claims\n\n\nReprice claims\n\n\nExport only\n\n\nShadow claims\n\n\nPaid claims\n\n\nPaid claims with bucket update\n\n\nPre-adjudicated external claims\n\n\nEstimate claims\n\n\nAdjudicated external claims"
+      "description": "Claim workflow type (AP claim, paid claim, estimate claim, etc.)",
+      "entries": [
+        "AP claims",
+        "Reprice claims",
+        "Export only",
+        "Shadow claims",
+        "Paid claims",
+        "Paid claims with bucket update",
+        "Pre-adjudicated external claims",
+        "Estimate claims",
+        "Adjudicated external claims"
+      ]
     },
     {
-      "index": 113,
+      "ordinalPosition": 21,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Coverage used to pay the claim"
     },
     {
-      "index": 118,
+      "ordinalPosition": 22,
       "name": "PAYER_SEQ_NUMBER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Sequence number of the payer of the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary\n\n\nSecondary\n\n\nTertiary\n\n\nQuaternary\n\n\nQuinary\n\n\nSenary\n\n\nSeptenary\n\n\nOctonary\n\n\nNonary\n\n\nDenary\n\n\nUndenary"
+      "description": "Sequence number of the payer of the claim.",
+      "entries": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Quaternary",
+        "Quinary",
+        "Senary",
+        "Septenary",
+        "Octonary",
+        "Nonary",
+        "Denary",
+        "Undenary"
+      ]
     },
     {
-      "index": 136,
+      "ordinalPosition": 23,
       "name": "OWN_BUSINESS_SEGMENT_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the business segment ID that owns the claim record."
     },
     {
-      "index": 141,
+      "ordinalPosition": 24,
       "name": "CLM_SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the business segment or service area of the claim."
     },
     {
-      "index": 146,
+      "ordinalPosition": 25,
       "name": "CLM_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Claim status\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew\n\n\nPending\n\n\nDenied\n\n\nClean\n\n\nVoid"
+      "description": "Claim status",
+      "entries": [
+        "New",
+        "Pending",
+        "Denied",
+        "Clean",
+        "Void"
+      ]
     },
     {
-      "index": 158,
+      "ordinalPosition": 26,
       "name": "STATUS_SET_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date when claim status was updated"
     },
     {
-      "index": 163,
+      "ordinalPosition": 27,
       "name": "RECEIVED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the claim was received"
     },
     {
-      "index": 168,
+      "ordinalPosition": 28,
       "name": "ADJUD_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Adjudication date and time"
     },
     {
-      "index": 173,
+      "ordinalPosition": 29,
       "name": "SERVICE_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Service start date for the claim"
     },
     {
-      "index": 178,
+      "ordinalPosition": 30,
       "name": "SERVICE_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Service end date for the claim"
     },
     {
-      "index": 183,
+      "ordinalPosition": 31,
       "name": "TTL_DEDUCTIBLE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total deductible"
     },
     {
-      "index": 188,
+      "ordinalPosition": 32,
       "name": "TTL_COPAY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total copay"
     },
     {
-      "index": 193,
+      "ordinalPosition": 33,
       "name": "TTL_COINS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total coinsurance"
     },
     {
-      "index": 198,
+      "ordinalPosition": 34,
       "name": "TTL_PAT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total patient amount"
     },
     {
-      "index": 203,
+      "ordinalPosition": 35,
       "name": "TTL_PRIM_INS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total prior insurance amount"
     },
     {
-      "index": 208,
+      "ordinalPosition": 36,
       "name": "TTL_BILLED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total billed amount"
     },
     {
-      "index": 213,
+      "ordinalPosition": 37,
       "name": "TTL_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total allowed amount"
     },
     {
-      "index": 218,
+      "ordinalPosition": 38,
       "name": "TTL_NET_PAYABLE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total net payable"
     },
     {
-      "index": 223,
+      "ordinalPosition": 39,
       "name": "ORIG_OF_REV_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If this claim is a reversal claim, this column contains the ID of the claim reversed by this claim."
     },
     {
-      "index": 228,
+      "ordinalPosition": 40,
       "name": "ADJUST_BY_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If this claim has been adjusted, this column contains the ID of the claim which adjusts this claim."
     },
     {
-      "index": 233,
+      "ordinalPosition": 41,
       "name": "ORIG_OF_ADJUST_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If this claim adjusts another claim, this column contains the ID of the claim adjusted by this claim."
     },
     {
-      "index": 238,
+      "ordinalPosition": 42,
       "name": "TTL_PRIM_PAT_DEDUCTIBLE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total prior patient deductible"
     },
     {
-      "index": 243,
+      "ordinalPosition": 43,
       "name": "TTL_PRIM_PAT_COPAY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total prior patient copay"
     },
     {
-      "index": 248,
+      "ordinalPosition": 44,
       "name": "TTL_PRIM_PAT_COINS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total prior patient coinsurance"
     },
     {
-      "index": 253,
+      "ordinalPosition": 45,
       "name": "UNBALANCED_AMOUNTS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies whether the adjustment claim was received with credit/debit information that reflect the adjusted amount as opposed to new claim amounts.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Identifies whether the adjustment claim was received with credit/debit information that reflect the adjusted amount as opposed to new claim amounts.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 262,
+      "ordinalPosition": 46,
       "name": "INVALID_CLM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If the system determined we cannot trust the claim's data for reporting or clinical purposes, this column will store Y (invalid). Otherwise it will be N (valid) or NULL (has not been evaluated by the system). This column's value can be overridden by AP_CLM_RX.OVERRIDE_INVALID_CLM_YN.\n\n\n The category values for this column were already listed for column: UNBALANCED_AMOUNTS_YN"
+      "description": "If the system determined we cannot trust the claim's data for reporting or clinical purposes, this column will store Y (invalid). Otherwise it will be N (valid) or NULL (has not been evaluated by the system). This column's value can be overridden by AP_CLM_RX.OVERRIDE_INVALID_CLM_YN."
     },
     {
-      "index": 268,
+      "ordinalPosition": 47,
       "name": "OVERRIDE_INVALID_CLM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Overrides the INVALID_CLM_YN column and determines if we cannot trust the claim's data for reporting or clinical purposes. This column will store Y if overridden to invalid, N if overridden to valid, or NULL if validity has not been overridden and the value in AP_CLM_RX.INVALID_CLM_YN will be used.\n\n\n The category values for this column were already listed for column: UNBALANCED_AMOUNTS_YN"
+      "description": "Overrides the INVALID_CLM_YN column and determines if we cannot trust the claim's data for reporting or clinical purposes. This column will store Y if overridden to invalid, N if overridden to valid, or NULL if validity has not been overridden and the value in AP_CLM_RX.INVALID_CLM_YN will be used."
     },
     {
-      "index": 274,
+      "ordinalPosition": 48,
       "name": "IS_INVLD_ADJ_SEQ_RX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a claim is part of an adjustment sequence that is not valid. An adjustment sequence can be invalid for a number of reasons, such as the sequence ending in a cancellation or the sequence having gaps.\n\n\n The category values for this column were already listed for column: UNBALANCED_AMOUNTS_YN"
+      "description": "Indicates whether a claim is part of an adjustment sequence that is not valid. An adjustment sequence can be invalid for a number of reasons, such as the sequence ending in a cancellation or the sequence having gaps."
     },
     {
-      "index": 280,
+      "ordinalPosition": 49,
       "name": "TOT_NOT_COVERED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total not covered amount"
     },
     {
-      "index": 285,
+      "ordinalPosition": 50,
       "name": "MEDICARE_DRUG_CVG_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Code to distinguish if a claim was paid under Medicare Part B or Part D.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nMedicare Part D\n\n\nMedicare Part B"
+      "description": "Code to distinguish if a claim was paid under Medicare Part B or Part D.",
+      "entries": [
+        "None",
+        "Medicare Part D",
+        "Medicare Part B"
+      ]
     },
     {
-      "index": 295,
+      "ordinalPosition": 51,
       "name": "REC_OWN_BUSSEG_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,

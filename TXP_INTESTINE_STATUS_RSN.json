@@ -1,38 +1,53 @@
 {
-  "table_name": "TXP_INTESTINE_STATUS_RSN",
+  "name": "TXP_INTESTINE_STATUS_RSN",
   "description": "This table extracts the related multiple-response Intestine Status Reasons History (I HSB 30523) item.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "IN_STATUS_REASONS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reasons the transplant patient was given the corresponding intestine status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTemporarily unsuitable for transplant\n\n\nLiver function test abnormalities\n\n\nNo longer has vascular access"
+      "description": "The reasons the transplant patient was given the corresponding intestine status.",
+      "entries": [
+        "Temporarily unsuitable for transplant",
+        "Liver function test abnormalities",
+        "No longer has vascular access"
+      ]
     }
   ]
 }

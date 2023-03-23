@@ -1,41 +1,47 @@
 {
-  "table_name": "V_EHI_PAX_PB_ACCT_TX_GRP_TTL",
+  "name": "V_EHI_PAX_PB_ACCT_TX_GRP_TTL",
   "description": "This view filters out premium billing transaction data that is not appropriate for member level EHI exports when group billing is used.",
-  "primary_key": {
-    "column_name": "TRANSACTION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TRANSACTION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TRANSACTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the account transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EMP_GRP_PAX_GRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Specifies the employer groups for premium billing acount transactions group total."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EMP_GRP_PAX_GRP_ID_PLAN_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the employer group record"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "REM_PAX_GRP_TTL_AMT",
       "type": "NUMERIC",
       "discontinued": false,

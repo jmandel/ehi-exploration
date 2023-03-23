@@ -1,108 +1,175 @@
 {
-  "table_name": "DENTAL_FINDING_HX",
+  "name": "DENTAL_FINDING_HX",
   "description": "This table contains the history of edits for a dental finding record.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DENTAL_PATIENT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the patient encounter in which a particular contact of the record was modified if it was available."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DENTAL_MOD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who modified a piece of dental data in the finding record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DENTAL_MOD_INSTANT_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Stores the date and time when a piece of dental data in the finding record was modified"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DEN_FIND_STAT_HIS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The history of the finding's status (unaddressed, resolved, removed, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAddressed\n\n\nUnaddressed\n\n\nResolved\n\n\nRemoved\n\n\nAuto Resolved\n\n\nAuto Resolved Untoggled"
+      "description": "The history of the finding's status (unaddressed, resolved, removed, etc.)",
+      "entries": [
+        "Addressed",
+        "Unaddressed",
+        "Resolved",
+        "Removed",
+        "Auto Resolved",
+        "Auto Resolved Untoggled"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "TOO_FIND_TYPE_H_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the history of the finding type of a tooth-level finding\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPARL\n\n\nNeeds Extraction\n\n\nCaries\n\n\nFracture\n\n\nImpacted\n\n\nMonitor\n\n\nDefective Restoration\n\n\nBleeding\n\n\nSuppuration\n\n\nMobility\n\n\nFurcation\n\n\nPlaque\n\n\nCalculus\n\n\nRetained Root\n\n\nMissing\n\n\nOther"
+      "description": "Stores the history of the finding type of a tooth-level finding",
+      "entries": [
+        "PARL",
+        "Needs Extraction",
+        "Caries",
+        "Fracture",
+        "Impacted",
+        "Monitor",
+        "Defective Restoration",
+        "Bleeding",
+        "Suppuration",
+        "Mobility",
+        "Furcation",
+        "Plaque",
+        "Calculus",
+        "Retained Root",
+        "Missing",
+        "Other"
+      ]
     },
     {
-      "index": 63,
+      "ordinalPosition": 8,
       "name": "DENT_CHRON_INSTANT_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This is the date and time the documentation was made for, such as when documenting past historical data."
     },
     {
-      "index": 68,
+      "ordinalPosition": 9,
       "name": "CARIES_CLASS_HIST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The history of the finding's caries classification\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nI\n\n\nII\n\n\nIII\n\n\nIV\n\n\nV\n\n\nVI\n\n\nE1\n\n\nE2\n\n\nD1\n\n\nD2\n\n\nD3\n\n\nC1\n\n\nC2"
+      "description": "The history of the finding's caries classification",
+      "entries": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "E1",
+        "E2",
+        "D1",
+        "D2",
+        "D3",
+        "C1",
+        "C2"
+      ]
     },
     {
-      "index": 88,
+      "ordinalPosition": 10,
       "name": "CARIES_DEPTH_HIST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The history of the finding's caries depth"
     },
     {
-      "index": 93,
+      "ordinalPosition": 11,
       "name": "DENT_FUR_CLASS_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the history of the severity of furcation documented on a tooth.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClass I\n\n\nClass II\n\n\nClass III\n\n\nClass IV"
+      "description": "This item stores the history of the severity of furcation documented on a tooth.",
+      "entries": [
+        "Class I",
+        "Class II",
+        "Class III",
+        "Class IV"
+      ]
     },
     {
-      "index": 104,
+      "ordinalPosition": 12,
       "name": "DENT_MOB_CLASS_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the history of a tooth's mobility classification, which is its severity of mobility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClass I\n\n\nClass II\n\n\nClass III"
+      "description": "This item stores the history of a tooth's mobility classification, which is its severity of mobility.",
+      "entries": [
+        "Class I",
+        "Class II",
+        "Class III"
+      ]
     },
     {
-      "index": 114,
+      "ordinalPosition": 13,
       "name": "CARIES_INCIP_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The history of whether a caries finding is incipient\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Incipient\n\n\nIncipient"
+      "description": "The history of whether a caries finding is incipient",
+      "entries": [
+        "Not Incipient",
+        "Incipient"
+      ]
     },
     {
-      "index": 123,
+      "ordinalPosition": 14,
       "name": "DENT_PERIFIND_SEVERITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item tracks the history of the level of severity for a periodontal finding. It contains the periodontal finding severity category ID for the finding.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSlight\n\n\nModerate\n\n\nSevere"
+      "description": "This item tracks the history of the level of severity for a periodontal finding. It contains the periodontal finding severity category ID for the finding.",
+      "entries": [
+        "Slight",
+        "Moderate",
+        "Severe"
+      ]
     }
   ]
 }

@@ -1,71 +1,97 @@
 {
-  "table_name": "NEPH_TREATMENT_HX_AUDIT",
+  "name": "NEPH_TREATMENT_HX_AUDIT",
   "description": "Stores the audit of changes made to the patient's dialysis treatment details.",
-  "primary_key": {
-    "column_name": "EPISODE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EPISODE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TREATMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the modality of the modified dialysis treatment history entry.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHemo\n\n\nPeritoneal\n\n\nContinuous Arteriovenous Hemofiltration\n\n\nContinuous Veno-Venous Hemofiltration\n\n\nAcute-Hemo\n\n\nAcute-Peritoneal\n\n\nContinuous Veno-Venous Hemodialysis\n\n\nContinuous Arteriovenous Hemodialysis\n\n\nMaintenance (Type Unknown)\n\n\nIn-center Hemodialysis\n\n\nHome Hemodialysis\n\n\nContinuous Ambulatory Peritoneal Dialysis\n\n\nContinuous Cycling Peritoneal Dialysis"
+      "description": "Stores the modality of the modified dialysis treatment history entry.",
+      "entries": [
+        "Hemo",
+        "Peritoneal",
+        "Continuous Arteriovenous Hemofiltration",
+        "Continuous Veno-Venous Hemofiltration",
+        "Acute-Hemo",
+        "Acute-Peritoneal",
+        "Continuous Veno-Venous Hemodialysis",
+        "Continuous Arteriovenous Hemodialysis",
+        "Maintenance (Type Unknown)",
+        "In-center Hemodialysis",
+        "Home Hemodialysis",
+        "Continuous Ambulatory Peritoneal Dialysis",
+        "Continuous Cycling Peritoneal Dialysis"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 4,
       "name": "TREATMENT_SESSIONS_PER_WEEK",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the sessions per week of the modified dialysis treatment history entry."
     },
     {
-      "index": 37,
+      "ordinalPosition": 5,
       "name": "TREATMENT_DURATION_MINUTES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the duration in minutes of the modified dialysis treatment history entry."
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "TREATMENT_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the effective date of the modified dialysis treatment history entry."
     },
     {
-      "index": 47,
+      "ordinalPosition": 7,
       "name": "CHANGE_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the edit made to the dialysis treatment history entry.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdded\n\n\nRemoved\n\n\nAutomatically Added"
+      "description": "Stores the edit made to the dialysis treatment history entry.",
+      "entries": [
+        "Added",
+        "Removed",
+        "Automatically Added"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "CHANGE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who edited the dialysis treatment history entry."
     },
     {
-      "index": 62,
+      "ordinalPosition": 9,
       "name": "CHANGE_INSTANT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant the edit was made to the dialysis treatment history entry."
     }

@@ -1,500 +1,681 @@
 {
-  "table_name": "ORDER_STATUS",
+  "name": "ORDER_STATUS",
   "description": "The ORDER_STATUS table contains overtime single response orders information.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "ORD_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique ID for this order record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ORD_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_NUMBER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The contact number of the orders record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value for the contact type, such as \"1\" for \"Ordered\" or \"2\" for \"Resulted\"\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOrdered\n\n\nResulted\n\n\nCanceled\n\n\nVerify\n\n\nDispense\n\n\nReturn\n\n\nAdministration\n\n\nEdited History\n\n\nCredit\n\n\nAdd Refill\n\n\nFill Request\n\n\nPrescription Transfer\n\n\nPend Verify\n\n\nWaste\n\n\nWaste Credit\n\n\nCanceled Verify\n\n\nCanceled Pend Verify\n\n\nCanceled Dispense\n\n\nAdjudication\n\n\nHospice Refill\n\n\nCharge\n\n\nPend Autoverify Review\n\n\nCanceled Return\n\n\nCanceled Waste\n\n\nEdit Infusion Rate\n\n\nPharmacy Sale"
+      "description": "The category value for the contact type, such as \"1\" for \"Ordered\" or \"2\" for \"Resulted\"",
+      "entries": [
+        "Ordered",
+        "Resulted",
+        "Canceled",
+        "Verify",
+        "Dispense",
+        "Return",
+        "Administration",
+        "Edited History",
+        "Credit",
+        "Add Refill",
+        "Fill Request",
+        "Prescription Transfer",
+        "Pend Verify",
+        "Waste",
+        "Waste Credit",
+        "Canceled Verify",
+        "Canceled Pend Verify",
+        "Canceled Dispense",
+        "Adjudication",
+        "Hospice Refill",
+        "Charge",
+        "Pend Autoverify Review",
+        "Canceled Return",
+        "Canceled Waste",
+        "Edit Infusion Rate",
+        "Pharmacy Sale"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 6,
       "name": "ABNORMAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This Y/N flag reports Y if a result component in the order is reported as abnormal or N if the order is normal.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAbnormal\n\n\nNormal"
+      "description": "This Y/N flag reports Y if a result component in the order is reported as abnormal or N if the order is normal.",
+      "entries": [
+        "Abnormal",
+        "Normal"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 7,
       "name": "ORDER_CREATOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the person creating the order."
     },
     {
-      "index": 69,
+      "ordinalPosition": 8,
       "name": "RESULTING_PROV",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the provider signing off on the results."
     },
     {
-      "index": 74,
+      "ordinalPosition": 9,
       "name": "LAB_TECHNICIAN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The technician responsible for the order tests."
     },
     {
-      "index": 79,
+      "ordinalPosition": 10,
       "name": "RESULTING_LAB_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the lab running the test."
     },
     {
-      "index": 84,
+      "ordinalPosition": 11,
       "name": "RESULTING_LAB_ID_LLB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Interface laboratory name."
     },
     {
-      "index": 89,
+      "ordinalPosition": 12,
       "name": "INSTANT_OF_ENTRY",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the record was last entered."
     },
     {
-      "index": 94,
+      "ordinalPosition": 13,
       "name": "INSTANT_OF_EDIT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The instant the record was last edited."
     },
     {
-      "index": 99,
+      "ordinalPosition": 14,
       "name": "RX_DISPENSE_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The pharmacy dispense code used for this order.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The pharmacy dispense code used for this order."
     },
     {
-      "index": 105,
+      "ordinalPosition": 15,
       "name": "RX_PAR_DOSES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "PRN par level number of doses"
     },
     {
-      "index": 110,
+      "ordinalPosition": 16,
       "name": "CSN_FOR_ADD_REFILL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item only applies to refill orders. It stores the contact serial numbers of the patient visits where the refill order was modified."
     },
     {
-      "index": 115,
+      "ordinalPosition": 17,
       "name": "SCHEDULED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date a standard ambulatory order is scheduled for."
     },
     {
-      "index": 120,
+      "ordinalPosition": 18,
       "name": "SCHEDULED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time a standard ambulatory order is scheduled for."
     },
     {
-      "index": 125,
+      "ordinalPosition": 19,
       "name": "PROCEDURE_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the unique notes record identifier of the note that resulted the narrative for the order."
     },
     {
-      "index": 130,
+      "ordinalPosition": 20,
       "name": "PROCEDURE_NOTE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the date for the procedure note that resulted the order."
     },
     {
-      "index": 135,
+      "ordinalPosition": 21,
       "name": "ERFLL_REQ_RFL_PRN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the time period for refills requested in the erefill.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPRN-2Yr\n\n\nPRN-1Yr\n\n\nPRN-Other"
+      "description": "This item stores the time period for refills requested in the erefill.",
+      "entries": [
+        "PRN-2Yr",
+        "PRN-1Yr",
+        "PRN-Other"
+      ]
     },
     {
-      "index": 145,
+      "ordinalPosition": 22,
       "name": "ERFLL_APP_RFL_PRN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the time period for refills approved in the erefill.\n\n\n The category values for this column were already listed for column: ERFLL_REQ_RFL_PRN_C_NAME"
+      "description": "This item stores the time period for refills approved in the erefill."
     },
     {
-      "index": 151,
+      "ordinalPosition": 23,
       "name": "EREFILL_TO_PHM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the link to the general use notes record containing the action message to the pharmacy."
     },
     {
-      "index": 156,
+      "ordinalPosition": 24,
       "name": "WET_READS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this contact is created by Wet Reads. Used in ED Wet Reads pop-up form.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWet Reads"
+      "description": "Indicates whether this contact is created by Wet Reads. Used in ED Wet Reads pop-up form.",
+      "entries": [
+        "Wet Reads"
+      ]
     },
     {
-      "index": 164,
+      "ordinalPosition": 25,
       "name": "ROUTING_OUTCOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value of the outcome of results routing for each resulting contact of order associated with this row.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nResult not sent \n\n\nPrimary notification suppressed, CC list and Care Team evaluated\n\n\nRouted using only CC list and additional recipients\n\n\nRouted using routing scheme\n\n\nRouted using routing scheme and additional recipients\n\n\nRouted using results routing rule\n\n\nRouted using results routing rule and additional recipients\n\n\nRouted using an override provider\n\n\nRouted using the authorizing provider\n\n\nRouted using the authorizing provider and additional recipients\n\n\nRouted using the encounter provider\n\n\nRouted using the encounter provider and additional recipients\n\n\nRouting failure - routed via batch\n\n\nSent with a different order as part of a grouped result\n\n\nRouted as a group with other orders\n\n\nPrimary notification suppressed, CC list evaluated except Care Team"
+      "description": "The category value of the outcome of results routing for each resulting contact of order associated with this row.",
+      "entries": [
+        "Result not sent",
+        "Primary notification suppressed, CC list and Care Team evaluated",
+        "Routed using only CC list and additional recipients",
+        "Routed using routing scheme",
+        "Routed using routing scheme and additional recipients",
+        "Routed using results routing rule",
+        "Routed using results routing rule and additional recipients",
+        "Routed using an override provider",
+        "Routed using the authorizing provider",
+        "Routed using the authorizing provider and additional recipients",
+        "Routed using the encounter provider",
+        "Routed using the encounter provider and additional recipients",
+        "Routing failure - routed via batch",
+        "Sent with a different order as part of a grouped result",
+        "Routed as a group with other orders",
+        "Primary notification suppressed, CC list evaluated except Care Team"
+      ]
     },
     {
-      "index": 187,
+      "ordinalPosition": 26,
       "name": "ROUTING_RULE_LEVEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The level at which the results routing rule used to determine recipients was specified. The possible levels are: Auth Prov, Auth Prov Primary Dept, Enc Dept, or System"
     },
     {
-      "index": 192,
+      "ordinalPosition": 27,
       "name": "ROUTING_SCHEME_LINE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The line of the results routing scheme that was executed to determine recipients for this result. If no line was executed, the value of the column will be the string \"DEFAULT\"."
     },
     {
-      "index": 197,
+      "ordinalPosition": 28,
       "name": "ROUTING_INST_TM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the order was resulted and routed."
     },
     {
-      "index": 202,
+      "ordinalPosition": 29,
       "name": "ROUTING_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user the result was routed to for this row."
     },
     {
-      "index": 207,
+      "ordinalPosition": 30,
       "name": "RIS_LET_TEMPLT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the SmartText record for a mammography result letter associated with this order."
     },
     {
-      "index": 212,
+      "ordinalPosition": 31,
       "name": "RIS_LET_TEMPLT_ID_SMARTTEXT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
     },
     {
-      "index": 217,
+      "ordinalPosition": 32,
       "name": "ROUTING_CURSTATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the current routing status for a resulting contact.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nResult contact created\n\n\nRouting started\n\n\nNeeds Chart Sync\n\n\nSynced - Needs routing\n\n\nRe-Routing attempted\n\n\nRe-routing attempt failed\n\n\nRouting Complete"
+      "description": "This item stores the current routing status for a resulting contact.",
+      "entries": [
+        "Result contact created",
+        "Routing started",
+        "Needs Chart Sync",
+        "Synced - Needs routing",
+        "Re-Routing attempted",
+        "Re-routing attempt failed",
+        "Routing Complete"
+      ]
     },
     {
-      "index": 231,
+      "ordinalPosition": 33,
       "name": "MAM_LIFETIME_RISK",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Patient's probability of getting breast cancer in a lifetime. Calculated using external formula."
     },
     {
-      "index": 236,
+      "ordinalPosition": 34,
       "name": "LAB_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the lab status value associated with each order contact.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn process\n\n\nPreliminary result\n\n\nFinal result\n\n\nEdited\n\n\nEdited Result - FINAL"
+      "description": "Indicates the lab status value associated with each order contact.",
+      "entries": [
+        "In process",
+        "Preliminary result",
+        "Final result",
+        "Edited",
+        "Edited Result - FINAL"
+      ]
     },
     {
-      "index": 248,
+      "ordinalPosition": 35,
       "name": "OVRL_BREAST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Overall breast density. Entered when reading a mammography study.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAlmost entirely fatty\n\n\nScattered fibroglandular density\n\n\nHeterogeneously dense\n\n\nExtremely dense\n\n\nUnknown"
+      "description": "Overall breast density. Entered when reading a mammography study.",
+      "entries": [
+        "Almost entirely fatty",
+        "Scattered fibroglandular density",
+        "Heterogeneously dense",
+        "Extremely dense",
+        "Unknown"
+      ]
     },
     {
-      "index": 260,
+      "ordinalPosition": 36,
       "name": "RIGHT_BREAST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Right breast density. Entered when reading a mammography study.\n\n\n The category values for this column were already listed for column: OVRL_BREAST_DENS_C_NAME"
+      "description": "Right breast density. Entered when reading a mammography study."
     },
     {
-      "index": 266,
+      "ordinalPosition": 37,
       "name": "LEFT_BREAST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Left breast density. Entered when reading a mammography study.\n\n\n The category values for this column were already listed for column: OVRL_BREAST_DENS_C_NAME"
+      "description": "Left breast density. Entered when reading a mammography study."
     },
     {
-      "index": 272,
+      "ordinalPosition": 38,
       "name": "MOST_SIG_MAM_FIND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores the most significant mammography finding as documented by a radiologist.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNone\n\n\nMass\n\n\nCalcification\n\n\nArchitectural distortion\n\n\nAsymmetries\n\n\nOther"
+      "description": "This stores the most significant mammography finding as documented by a radiologist.",
+      "entries": [
+        "None",
+        "Mass",
+        "Calcification",
+        "Architectural distortion",
+        "Asymmetries",
+        "Other"
+      ]
     },
     {
-      "index": 285,
+      "ordinalPosition": 39,
       "name": "IMG_DOUBLE_READ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This tracks if a double read was performed while resulting an imaging study, and if so, what type of double read was it.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes - standard views\n\n\nYes - additional views\n\n\nYes - both standard and additional views\n\n\nYes - NOS\n\n\nUnknown"
+      "description": "This tracks if a double read was performed while resulting an imaging study, and if so, what type of double read was it.",
+      "entries": [
+        "No",
+        "Yes - standard views",
+        "Yes - additional views",
+        "Yes - both standard and additional views",
+        "Yes - NOS",
+        "Unknown"
+      ]
     },
     {
-      "index": 298,
+      "ordinalPosition": 40,
       "name": "CAD_USAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores whether CAD (Computer Aided Detection) was used while interpreting an imaging study.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes - standard views\n\n\nYes - additional views\n\n\nYes - both standard and additional views\n\n\nYes - NOS\n\n\nUnknown"
+      "description": "This stores whether CAD (Computer Aided Detection) was used while interpreting an imaging study.",
+      "entries": [
+        "No",
+        "Yes - standard views",
+        "Yes - additional views",
+        "Yes - both standard and additional views",
+        "Yes - NOS",
+        "Unknown"
+      ]
     },
     {
-      "index": 311,
+      "ordinalPosition": 41,
       "name": "LAB_PATHOLOGIST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique user ID of the pathologist that has responsibility for the current Anatomic Pathology order."
     },
     {
-      "index": 316,
+      "ordinalPosition": 42,
       "name": "RSLT_CNCT_INSTANT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant in which a result contact is modified/filed to the system. Not to be confused with Result Date/Time, which is when the result was actually generated."
     },
     {
-      "index": 321,
+      "ordinalPosition": 43,
       "name": "RSLT_CNCT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user filing the result contact. For interfaces or Beaker Result Filing background job, this might be a generic user."
     },
     {
-      "index": 326,
+      "ordinalPosition": 44,
       "name": "RSLT_CNCT_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores which entry point modified the result contact.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnknown\n\n\nEnter/Edit Results\n\n\nResult Orders Visit Navigator\n\n\nResults Console Visit Navigator\n\n\nAnticoag Tracker Visit Navigator\n\n\nLab Auto Verification\n\n\nLab Manual Verification\n\n\nStudy Review\n\n\nProcedure Notes\n\n\nBegin/End Exam\n\n\nMedia Manager\n\n\nPrior Status\n\n\nUpdate Assessment and Recommendation\n\n\nValidation Queue\n\n\nChange Procedure\n\n\nChange Imaging Study Status\n\n\nTrack Result\n\n\nIn Basket\n\n\nED Narrator\n\n\nWet Read\n\n\nExternal Results Entry\n\n\nHH Remote Client Lab Result\n\n\nDonor Organ Editor\n\n\nUNOS Import\n\n\nHistorical Cervical Cytology\n\n\nAutomatically Reconciled Lab Result\n\n\nLink Health Maintenance\n\n\nDermatology Exam\n\n\nAutomatically Reconciled Image Result\n\n\nInterfaces\n\n\nTranscription Utility\n\n\n3rd Party Result Entry\n\n\nBulk Ordering Utility\n\n\nUtilities"
+      "description": "Stores which entry point modified the result contact.",
+      "entries": [
+        "Unknown",
+        "Enter/Edit Results",
+        "Result Orders Visit Navigator",
+        "Results Console Visit Navigator",
+        "Anticoag Tracker Visit Navigator",
+        "Lab Auto Verification",
+        "Lab Manual Verification",
+        "Study Review",
+        "Procedure Notes",
+        "Begin/End Exam",
+        "Media Manager",
+        "Prior Status",
+        "Update Assessment and Recommendation",
+        "Validation Queue",
+        "Change Procedure",
+        "Change Imaging Study Status",
+        "Track Result",
+        "In Basket",
+        "ED Narrator",
+        "Wet Read",
+        "External Results Entry",
+        "HH Remote Client Lab Result",
+        "Donor Organ Editor",
+        "UNOS Import",
+        "Historical Cervical Cytology",
+        "Automatically Reconciled Lab Result",
+        "Link Health Maintenance",
+        "Dermatology Exam",
+        "Automatically Reconciled Image Result",
+        "Interfaces",
+        "Transcription Utility",
+        "3rd Party Result Entry",
+        "Bulk Ordering Utility",
+        "Utilities"
+      ]
     },
     {
-      "index": 367,
+      "ordinalPosition": 45,
       "name": "IPROC_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the ID to the general use notes record of the Imaging and Procedures Resulting Note."
     },
     {
-      "index": 372,
+      "ordinalPosition": 46,
       "name": "IPROC_NOTE_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the contact serial number to the general use notes record of the Imaging and Procedures Resulting Note."
     },
     {
-      "index": 377,
+      "ordinalPosition": 47,
       "name": "RES_INTERPRETER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who is the interpreter of the results for this order."
     },
     {
-      "index": 382,
+      "ordinalPosition": 48,
       "name": "RESPONS_AP_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the lab user that has responsibility for the current anatomic pathology order."
     },
     {
-      "index": 387,
+      "ordinalPosition": 49,
       "name": "OVRL_TISSUE_COMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Patient level tissue composition. Entered when reading a breast US.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHomogeneous background echotexture - fat\n\n\nHomogeneous background echotexture - fibroglandular\n\n\nHeterogeneous background echotexture"
+      "description": "Patient level tissue composition. Entered when reading a breast US.",
+      "entries": [
+        "Homogeneous background echotexture - fat",
+        "Homogeneous background echotexture - fibroglandular",
+        "Heterogeneous background echotexture"
+      ]
     },
     {
-      "index": 397,
+      "ordinalPosition": 50,
       "name": "RIGHT_TISSUE_COMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Right breast tissue composition. Entered when reading a breast US.\n\n\n The category values for this column were already listed for column: OVRL_TISSUE_COMP_C_NAME"
+      "description": "Right breast tissue composition. Entered when reading a breast US."
     },
     {
-      "index": 403,
+      "ordinalPosition": 51,
       "name": "LEFT_TISSUE_COMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Left breast tissue composition. Entered when reading a breast US.\n\n\n The category values for this column were already listed for column: OVRL_TISSUE_COMP_C_NAME"
+      "description": "Left breast tissue composition. Entered when reading a breast US."
     },
     {
-      "index": 409,
+      "ordinalPosition": 52,
       "name": "OVRL_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Patient level amount of fibroglandular tissue. Entered when reading a breast MR.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlmost entirely fatty\n\n\nScattered fibroglandular tissue\n\n\nHeterogeneous fibroglandular tissue\n\n\nExtreme fibroglandular tissue"
+      "description": "Patient level amount of fibroglandular tissue. Entered when reading a breast MR.",
+      "entries": [
+        "Almost entirely fatty",
+        "Scattered fibroglandular tissue",
+        "Heterogeneous fibroglandular tissue",
+        "Extreme fibroglandular tissue"
+      ]
     },
     {
-      "index": 420,
+      "ordinalPosition": 53,
       "name": "RIGHT_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Right breast amount of fibroglandular tissue. Entered when reading a breast MR.\n\n\n The category values for this column were already listed for column: OVRL_FGT_C_NAME"
+      "description": "Right breast amount of fibroglandular tissue. Entered when reading a breast MR."
     },
     {
-      "index": 426,
+      "ordinalPosition": 54,
       "name": "LEFT_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Left breast amount of fibroglandular tissue. Entered when reading a breast MR.\n\n\n The category values for this column were already listed for column: OVRL_FGT_C_NAME"
+      "description": "Left breast amount of fibroglandular tissue. Entered when reading a breast MR."
     },
     {
-      "index": 432,
+      "ordinalPosition": 55,
       "name": "OVRL_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Patient level background parenchymal enhancement. Entered when reading a breast MR.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMinimal\n\n\nMild\n\n\nModerate\n\n\nMarked"
+      "description": "Patient level background parenchymal enhancement. Entered when reading a breast MR.",
+      "entries": [
+        "Minimal",
+        "Mild",
+        "Moderate",
+        "Marked"
+      ]
     },
     {
-      "index": 443,
+      "ordinalPosition": 56,
       "name": "RIGHT_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Right breast background parenchymal enhancement. Entered when reading a breast MR.\n\n\n The category values for this column were already listed for column: OVRL_BPE_C_NAME"
+      "description": "Right breast background parenchymal enhancement. Entered when reading a breast MR."
     },
     {
-      "index": 449,
+      "ordinalPosition": 57,
       "name": "LEFT_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Left breast background parenchymal enhancement. Entered when reading a breast MR.\n\n\n The category values for this column were already listed for column: OVRL_BPE_C_NAME"
+      "description": "Left breast background parenchymal enhancement. Entered when reading a breast MR."
     },
     {
-      "index": 455,
+      "ordinalPosition": 58,
       "name": "SYMMETRIC_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Symmetric flag for background parenchymal enhancement. Entered when reading a bilateral breast magnetic resonance (MR).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSymmetric\n\n\nAsymmetric"
+      "description": "Symmetric flag for background parenchymal enhancement. Entered when reading a bilateral breast magnetic resonance (MR).",
+      "entries": [
+        "Symmetric",
+        "Asymmetric"
+      ]
     },
     {
-      "index": 464,
+      "ordinalPosition": 59,
       "name": "LAB_CORR_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of correction that was made to an anatomic pathology report.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAddendum\n\n\nCorrection"
+      "description": "Stores the type of correction that was made to an anatomic pathology report.",
+      "entries": [
+        "Addendum",
+        "Correction"
+      ]
     },
     {
-      "index": 473,
+      "ordinalPosition": 60,
       "name": "RESULT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the technician ran the tests for each order in calendar format. NOTE: Concatenates the result date (ORD 26) and result time (ORD 28) into a datetime format. If the time value is null, the query will return 12:00 AM for a time."
     },
     {
-      "index": 478,
+      "ordinalPosition": 61,
       "name": "LEFT_OVARY_SMALL_FOLLICLE_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of follicles in the left ovary at or below the minimum threshold as defined in system definitions (I LSD 53002)."
     },
     {
-      "index": 483,
+      "ordinalPosition": 62,
       "name": "RIGHT_OVARY_SMALL_FOLLICLE_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of follicles in the right ovary at or below the minimum threshold as defined in system definitions (I LSD 53002)."
     },
     {
-      "index": 488,
+      "ordinalPosition": 63,
       "name": "ENDOMETRIAL_STRIPE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The measurement of the endometrial stripe."
     },
     {
-      "index": 493,
+      "ordinalPosition": 64,
       "name": "OV_CYST_PRESENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether ovarian cysts are present in this ultrasound study.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Present\n\n\nPresent\n\n\nNot Evaluated"
+      "description": "Whether ovarian cysts are present in this ultrasound study.",
+      "entries": [
+        "Not Present",
+        "Present",
+        "Not Evaluated"
+      ]
     },
     {
-      "index": 503,
+      "ordinalPosition": 65,
       "name": "UTERINE_FIBROID_PRESENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether uterine fibroids are present in this ultrasound study.\n\n\n The category values for this column were already listed for column: OV_CYST_PRESENCE_C_NAME"
+      "description": "Whether uterine fibroids are present in this ultrasound study."
     },
     {
-      "index": 509,
+      "ordinalPosition": 66,
       "name": "UTERINE_POLYP_PRESENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether uterine polyps are present in this ultrasound study.\n\n\n The category values for this column were already listed for column: OV_CYST_PRESENCE_C_NAME"
+      "description": "Whether uterine polyps are present in this ultrasound study."
     },
     {
-      "index": 515,
+      "ordinalPosition": 67,
       "name": "NARRATIVE_PERF_ORG_INFO",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the line number of the performing organization related group (ORD 1220) and acts as a pointer to the performing organization information of narrative of the result."
     },
     {
-      "index": 520,
+      "ordinalPosition": 68,
       "name": "IMPRESSION_PERF_ORG_INFO",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the line number of the preforming organization related group (ORD 1220) and acts as a pointer to the performing organization information of impression of the result."
     },
     {
-      "index": 525,
+      "ordinalPosition": 69,
       "name": "EXT_DISP_FILL_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the unique identifier for a given fill used to identify the external dispense"
     },
     {
-      "index": 530,
+      "ordinalPosition": 70,
       "name": "SR_VALID_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the study has been properly updated and validated for a particular order, and is ready for enhanced validation from outside of Study Review. Validated [1] means that the study is ready for enhanced validation. Not Validated [0] or blank means that it is not ready, usually because the study was modified from outside of Study Review, or has never been opened in Study Review.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Validated\n\n\nValidated"
+      "description": "Indicates whether the study has been properly updated and validated for a particular order, and is ready for enhanced validation from outside of Study Review. Validated [1] means that the study is ready for enhanced validation. Not Validated [0] or blank means that it is not ready, usually because the study was modified from outside of Study Review, or has never been opened in Study Review.",
+      "entries": [
+        "Not Validated",
+        "Validated"
+      ]
     }
   ]
 }

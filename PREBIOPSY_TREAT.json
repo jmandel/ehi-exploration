@@ -1,31 +1,44 @@
 {
-  "table_name": "PREBIOPSY_TREAT",
+  "name": "PREBIOPSY_TREAT",
   "description": "Stores data for College of American Pathologists (CAP) form field Prebiopsy Treatment.",
-  "primary_key": {
-    "column_name": "RESULT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RESULT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the result record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PREBIOPSY_TREAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "CAP synoptic form item: Prebiopsy Treatment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo therapy\n\n\nChemotherapy performed\n\n\nRadiation therapy performed\n\n\nTherapy performed, type not specified\n\n\nUnknown"
+      "description": "CAP synoptic form item: Prebiopsy Treatment.",
+      "entries": [
+        "No therapy",
+        "Chemotherapy performed",
+        "Radiation therapy performed",
+        "Therapy performed, type not specified",
+        "Unknown"
+      ]
     }
   ]
 }

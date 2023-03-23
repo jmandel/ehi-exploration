@@ -1,31 +1,37 @@
 {
-  "table_name": "HSP_ACCT_COND_HAR",
+  "name": "HSP_ACCT_COND_HAR",
   "description": "This table contains hospital account claim condition codes from the Hospital Account Receivable (HAR) master file.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column stores the line number in the results of a query. Because multiple condition codes can be stored in one hospital account, each condition code will have a unique line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONDITION_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A condition code used for claims associated with the hospital account. \n\n\nMay contain organization-specific values: Yes"
+      "description": "A condition code used for claims associated with the hospital account."
     }
   ]
 }

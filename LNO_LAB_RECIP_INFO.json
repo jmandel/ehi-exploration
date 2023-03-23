@@ -1,272 +1,358 @@
 {
-  "table_name": "LNO_LAB_RECIP_INFO",
+  "name": "LNO_LAB_RECIP_INFO",
   "description": "Recipient information for lab result report (LNO) records.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the LNO record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RCPNT_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the order record for which a report will be printed or has printed for the given recipient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RECIPIENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the report's recipient type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAuthorizing Provider\n\n\nPrimary Care Physician\n\n\nCC Provider\n\n\nCC Employee\n\n\nFree text CC\n\n\nSubmitter\n\n\nDepartment\n\n\nPatient\n\n\nPatient/Source\n\n\nCC Submitter\n\n\nOrdering Provider"
+      "description": "Stores the report's recipient type.",
+      "entries": [
+        "Authorizing Provider",
+        "Primary Care Physician",
+        "CC Provider",
+        "CC Employee",
+        "Free text CC",
+        "Submitter",
+        "Department",
+        "Patient",
+        "Patient/Source",
+        "CC Submitter",
+        "Ordering Provider"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 5,
       "name": "RECIPIENT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the status of the report which will be printed or has printed for the given recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReady\n\n\nReplaced\n\n\nPrinted - Ad hoc\n\n\nPrinted - Auto\n\n\nPatient not discharged\n\n\nReport not final\n\n\nPrinted - Manually\n\n\nDelayed Recipient\n\n\nHold\n\n\nHold - Resolved\n\n\nPaper report skipped: Suppressed by recipient setup\n\n\nMessage sent\n\n\nMessage sent: Extension\n\n\nRecipient Removed\n\n\nMessage initiated\n\n\nMessage not sent: Submitter ineligible\n\n\nMessage not sent: Verification status ineligible\n\n\nMessage not sent: Result not reportable\n\n\nMessage not sent: Result source ineligible\n\n\nMessage not sent: Resulting agency ineligible\n\n\nMessage not sent: CC submitters ineligible\n\n\nMessage not sent: Miscellaneous failure\n\n\nMessage not sent: Order not linked to patient\n\n\nMessage not sent: Order group not ready\n\n\nMessage not sent: Custom interface filter\n\n\nMessage not sent: Consent not given\n\n\nMessage not sent: Interface only sends Final and Corrected\n\n\nMessage not sent: Interface only sends Prelim, Final, and Corrected\n\n\nMessage not sent: interface only sends In Process, Prelim, or Final\n\n\nMessage not sent: CC submitter cancel won't be sent\n\n\nMessage not sent: Parent orders aren't sent\n\n\nMessage not sent: Interface only sends electronic cancer checklists\n\n\nMessage not sent: Interface canceled orders aren't sent\n\n\nMessage not sent: Performable cancels aren't sent\n\n\nMessage not sent: Order suppressed\n\n\nMessage initiated: Sending pending results\n\n\nMessage not sent: Ineligible interface\n\n\nMessage not sent: Order filtered by rule\n\n\nMessage not sent: Network orders aren't sent\n\n\nMessage not sent: Interface does not send unsolicited cancels"
+      "description": "Stores the status of the report which will be printed or has printed for the given recipient.",
+      "entries": [
+        "Ready",
+        "Replaced",
+        "Printed - Ad hoc",
+        "Printed - Auto",
+        "Patient not discharged",
+        "Report not final",
+        "Printed - Manually",
+        "Delayed Recipient",
+        "Hold",
+        "Hold - Resolved",
+        "Paper report skipped: Suppressed by recipient setup",
+        "Message sent",
+        "Message sent: Extension",
+        "Recipient Removed",
+        "Message initiated",
+        "Message not sent: Submitter ineligible",
+        "Message not sent: Verification status ineligible",
+        "Message not sent: Result not reportable",
+        "Message not sent: Result source ineligible",
+        "Message not sent: Resulting agency ineligible",
+        "Message not sent: CC submitters ineligible",
+        "Message not sent: Miscellaneous failure",
+        "Message not sent: Order not linked to patient",
+        "Message not sent: Order group not ready",
+        "Message not sent: Custom interface filter",
+        "Message not sent: Consent not given",
+        "Message not sent: Interface only sends Final and Corrected",
+        "Message not sent: Interface only sends Prelim, Final, and Corrected",
+        "Message not sent: interface only sends In Process, Prelim, or Final",
+        "Message not sent: CC submitter cancel won't be sent",
+        "Message not sent: Parent orders aren't sent",
+        "Message not sent: Interface only sends electronic cancer checklists",
+        "Message not sent: Interface canceled orders aren't sent",
+        "Message not sent: Performable cancels aren't sent",
+        "Message not sent: Order suppressed",
+        "Message initiated: Sending pending results",
+        "Message not sent: Ineligible interface",
+        "Message not sent: Order filtered by rule",
+        "Message not sent: Network orders aren't sent",
+        "Message not sent: Interface does not send unsolicited cancels"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 6,
       "name": "RECIPIENT_EVNT_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant this line was added to the recipient's table."
     },
     {
-      "index": 87,
+      "ordinalPosition": 7,
       "name": "RCPT_RRT_SUB_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the sub type of the report.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnd of Week Report\n\n\nFinal Summary Report"
+      "description": "Stores the sub type of the report.",
+      "entries": [
+        "End of Week Report",
+        "Final Summary Report"
+      ]
     },
     {
-      "index": 96,
+      "ordinalPosition": 8,
       "name": "RCPNT_TYPE_DEP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the department record if the recipient is the department."
     },
     {
-      "index": 101,
+      "ordinalPosition": 9,
       "name": "RCPNT_TYPE_SMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the submitter record if the recipient is the submitter."
     },
     {
-      "index": 106,
+      "ordinalPosition": 10,
       "name": "RCPNT_TYPE_SMT_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the submitter record."
     },
     {
-      "index": 111,
+      "ordinalPosition": 11,
       "name": "RCPNT_TYPE_SER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the provider record if the recipient is the provider."
     },
     {
-      "index": 116,
+      "ordinalPosition": 12,
       "name": "RCPNT_TYPE_RQG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the patient/source record if the recipient is a non enterprise patient."
     },
     {
-      "index": 121,
+      "ordinalPosition": 13,
       "name": "RCPNT_TYPE_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the employee record if the recipient is the employee."
     },
     {
-      "index": 126,
+      "ordinalPosition": 14,
       "name": "RCPNT_TYPE_FREE_TXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the free text name of the recipient."
     },
     {
-      "index": 131,
+      "ordinalPosition": 15,
       "name": "RCPNT_HOLD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The recipient hold type category number for the recipient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCity mismatch"
+      "description": "The recipient hold type category number for the recipient.",
+      "entries": [
+        "City mismatch"
+      ]
     },
     {
-      "index": 139,
+      "ordinalPosition": 16,
       "name": "RCPNT_HOLD_OVT_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contains the recipient hold test (OVT) line."
     },
     {
-      "index": 144,
+      "ordinalPosition": 17,
       "name": "RCPNT_HOLD_BSDON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the recipient hold based on address category.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician\n\n\nAgency\n\n\nPatient\n\n\nProvider\n\n\nSubmitter"
+      "description": "Contains the recipient hold based on address category.",
+      "entries": [
+        "Physician",
+        "Agency",
+        "Patient",
+        "Provider",
+        "Submitter"
+      ]
     },
     {
-      "index": 156,
+      "ordinalPosition": 18,
       "name": "RCPNT_HOLD_QUAL_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contains the recipient hold rule qualifier line."
     },
     {
-      "index": 161,
+      "ordinalPosition": 19,
       "name": "RCPNT_RSLN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The recipient hold resolution category number for the recipient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIgnore\n\n\nAdded Recipient"
+      "description": "The recipient hold resolution category number for the recipient.",
+      "entries": [
+        "Ignore",
+        "Added Recipient"
+      ]
     },
     {
-      "index": 170,
+      "ordinalPosition": 20,
       "name": "RCPNT_RSLN_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Contains the recipient hold resolution instant."
     },
     {
-      "index": 175,
+      "ordinalPosition": 21,
       "name": "RCPNT_RSLN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the recipient hold resolution user."
     },
     {
-      "index": 180,
+      "ordinalPosition": 22,
       "name": "RCPNT_RSLN_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contains the line in the related group for the recipient hold resolution instant that audits the chosen CC recipient"
     },
     {
-      "index": 185,
+      "ordinalPosition": 23,
       "name": "RCPNT_LPP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the programming point which added this recipient"
     },
     {
-      "index": 190,
+      "ordinalPosition": 24,
       "name": "RCPNT_LPP_ID_LPP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the extension."
     },
     {
-      "index": 195,
+      "ordinalPosition": 25,
       "name": "RCPNT_RPTBL_RULE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the recipient on the row was added because of a reportable rule.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates if the recipient on the row was added because of a reportable rule.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 204,
+      "ordinalPosition": 26,
       "name": "RCPNT_CORRECTED_RPT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "If the report on the row was sent to a health agency based on a reportable rule, and the results later change such that it is no longer reportable to the health agency, this item stores the row in the LNO_LAB_RECIP_INFO table that contains the corrected report."
     },
     {
-      "index": 209,
+      "ordinalPosition": 27,
       "name": "RESEND_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the user who resent the message. Messages sent over an interface may sometimes fail to deliver and would need to be resent. This column will have a value only for resent messages."
     },
     {
-      "index": 214,
+      "ordinalPosition": 28,
       "name": "RESEND_RELATED_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated recipient's record. This points to the recipient line of the interface message that was resent. Messages sent over an interface may sometimes fail to deliver and would need to be resent. This column will have a value only for resent messages."
     },
     {
-      "index": 219,
+      "ordinalPosition": 29,
       "name": "RESEND_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the reason for resending an interface message. Messages sent over an interface may sometimes fail to deliver and would need to be resent. This column will have a value only for resent messages.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOthers"
+      "description": "The category number of the reason for resending an interface message. Messages sent over an interface may sometimes fail to deliver and would need to be resent. This column will have a value only for resent messages.",
+      "entries": [
+        "Others"
+      ]
     },
     {
-      "index": 227,
+      "ordinalPosition": 30,
       "name": "RESULT_TRGR_LPP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the extension that triggered the result. This column will have a value only for those results that were triggered by a post event extension set up to send results over an interface."
     },
     {
-      "index": 232,
+      "ordinalPosition": 31,
       "name": "RESULT_TRGR_LPP_ID_LPP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the extension."
     },
     {
-      "index": 237,
+      "ordinalPosition": 32,
       "name": "WHO_REMOV_RECPNT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user ID of the user who removed this recipient from result reports."
     },
     {
-      "index": 242,
+      "ordinalPosition": 33,
       "name": "RECPNT_REMOV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the reason for which this recipient was removed from result reports.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category number of the reason for which this recipient was removed from result reports."
     },
     {
-      "index": 248,
+      "ordinalPosition": 34,
       "name": "RCPNT_OVRD_DEV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The record ID of the override device that the recipient is to use when the report prints."
     },
     {
-      "index": 253,
+      "ordinalPosition": 35,
       "name": "RCPNT_OVRD_DEV_ID_PRINT_DEVICE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The printer name."
     },
     {
-      "index": 258,
+      "ordinalPosition": 36,
       "name": "RCPNT_OVRD_FAX_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The override fax number that the recipient is to use when the report prints."
     },
     {
-      "index": 263,
+      "ordinalPosition": 37,
       "name": "RCPNT_RPTBL_RULE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the record ID for the reporting rule that caused the recipient to be added."
     },
     {
-      "index": 268,
+      "ordinalPosition": 38,
       "name": "RCPNT_RPTBL_RULE_ID_RULE_NAME",
       "type": "VARCHAR",
       "discontinued": false,

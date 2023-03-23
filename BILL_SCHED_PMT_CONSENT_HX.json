@@ -1,48 +1,61 @@
 {
-  "table_name": "BILL_SCHED_PMT_CONSENT_HX",
+  "name": "BILL_SCHED_PMT_CONSENT_HX",
   "description": "The history of the consent-to-be-charged-later information for the Visit Auto Pay arrangement represented by a Billing Scheduled Payment record.",
-  "primary_key": {
-    "column_name": "SCHED_PMT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SCHED_PMT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the scheduled payment record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONSENT_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant at which consent was given for the Visit Auto Pay arrangement represented by this scheduled payment."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONSENT_HX_BSP_CONSENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The method by which a guarantor consented to be charged automatically for the Visit Auto Pay agreement represented by this scheduled payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVerbal\n\n\nPaper - Not Yet Scanned\n\n\nPaper - Scanned\n\n\nE-Signature\n\n\nSelf Service"
+      "description": "The method by which a guarantor consented to be charged automatically for the Visit Auto Pay agreement represented by this scheduled payment.",
+      "entries": [
+        "Verbal",
+        "Paper - Not Yet Scanned",
+        "Paper - Scanned",
+        "E-Signature",
+        "Self Service"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "CONSENT_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that collected or updated the consent for Visit Auto Pay."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "CONSENT_HX_DOCUMENT_ID",
       "type": "VARCHAR",
       "discontinued": false,

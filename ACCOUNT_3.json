@@ -1,146 +1,176 @@
 {
-  "table_name": "ACCOUNT_3",
+  "name": "ACCOUNT_3",
   "description": "Accounts contain information about billing for services, while coverages contain information about insurance payors, benefits, subscribers, and members. This table contains one row for each account record in your system.",
-  "primary_key": {
-    "column_name": "ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCOUNT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PNB_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Posted Not Billed rule type category ID for the guarantor account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nError\n\n\nWarning"
+      "description": "The Posted Not Billed rule type category ID for the guarantor account.",
+      "entries": [
+        "Error",
+        "Warning"
+      ]
     },
     {
-      "index": 16,
+      "ordinalPosition": 3,
       "name": "ALWAYS_SELF_PAY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this account should always be self-pay.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this account should always be self-pay.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 4,
       "name": "REFERRAL_SOURCE_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment associated with the referral source in ACCOUNT.REFERRAL_SOURCE."
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "BILLING_TITLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the title used to address the person associated with the guarantor account.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMs.\n\n\nMr.\n\n\nMiss\n\n\nMrs.\n\n\nDr.\n\n\nFr.\n\n\nSr.\n\n\nRev.\n\n\nLord\n\n\nKing\n\n\nQueen\n\n\nPrince\n\n\nPrincess\n\n\nSheikh\n\n\nSheikha"
+      "description": "The category ID of the title used to address the person associated with the guarantor account.",
+      "entries": [
+        "Ms.",
+        "Mr.",
+        "Miss",
+        "Mrs.",
+        "Dr.",
+        "Fr.",
+        "Sr.",
+        "Rev.",
+        "Lord",
+        "King",
+        "Queen",
+        "Prince",
+        "Princess",
+        "Sheikh",
+        "Sheikha"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 6,
       "name": "HB_NEXT_BAL_NOTIF_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the next balance notification will be sent to the guarantor for their HB/SBO balances."
     },
     {
-      "index": 57,
+      "ordinalPosition": 7,
       "name": "HB_NEXT_AUTOPAY_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The next Auto Pay date for guarantor set up with a payment plan on Auto Pay."
     },
     {
-      "index": 62,
+      "ordinalPosition": 8,
       "name": "PB_NEXT_BAL_NOTIF_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date on which the next balance notification will be sent to the guarantor for their PB balances."
     },
     {
-      "index": 67,
+      "ordinalPosition": 9,
       "name": "FAMILY_INCOME",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The annual family income for this account."
     },
     {
-      "index": 72,
+      "ordinalPosition": 10,
       "name": "CLEAR_FOLLOWUP_FLAG",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores whether the account should be considered for a new follow-up cycle by nightly processing."
     },
     {
-      "index": 77,
+      "ordinalPosition": 11,
       "name": "FOL_UP_LETTER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The follow-up letter associated with the account."
     },
     {
-      "index": 82,
+      "ordinalPosition": 12,
       "name": "FOL_UP_TEMPLATE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comma-delimited string of SmartText records associated with the account."
     },
     {
-      "index": 87,
+      "ordinalPosition": 13,
       "name": "FAMILY_SIZE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of family members associated with the account."
     },
     {
-      "index": 92,
+      "ordinalPosition": 14,
       "name": "OUTSTANDING_ACCT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column specifies if the account is outstanding or not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOUTSTANDING"
+      "description": "This column specifies if the account is outstanding or not.",
+      "entries": [
+        "OUTSTANDING"
+      ]
     },
     {
-      "index": 100,
+      "ordinalPosition": 15,
       "name": "PMT_PLAN_SECOND_DUE_DT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contains the day of the month that the second bi-monthly payment is due."
     },
     {
-      "index": 105,
+      "ordinalPosition": 16,
       "name": "PMT_PLAN_EXP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The expected paid amount of the payment plan. This amount is updated by nightly processing. The amount is incremented by the monthly amount when the closed batch date equals the current due date."
     },
     {
-      "index": 110,
+      "ordinalPosition": 17,
       "name": "PMT_PLAN_NEXT_DUE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Next due date of the payment plan. The date is updated by nightly processing when the closed batch date is the current due date."
     },
     {
-      "index": 115,
+      "ordinalPosition": 18,
       "name": "PMT_PLAN_AUTOPAY_DUE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the card will be charged for the auto-pay payment plan."
     },
     {
-      "index": 120,
+      "ordinalPosition": 19,
       "name": "PMT_PLAN_AUTOPAY_DAY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The day of the month when card will be automatically charged."
     },
     {
-      "index": 125,
+      "ordinalPosition": 20,
       "name": "STMT_HOLD_REASON_TEXT",
       "type": "VARCHAR",
       "discontinued": false,

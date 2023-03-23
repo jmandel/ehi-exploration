@@ -1,232 +1,287 @@
 {
-  "table_name": "AP_CLM_RX_2",
+  "name": "AP_CLM_RX_2",
   "description": "This table contains information from pharmacy claims.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim info record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PRIM_PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The primary medical payer. This is only set when the primary medical payer is different than the primary pharmacy payer."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PRIM_PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BCDA_GROUP_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Claim group identifier provided by Beneficiary Claims Data API (BCDA)"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TOT_PAT_PORTION",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total patient portion"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MOST_RECENT_INCOMING_CEV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The most recent incoming Claim External Values (CEV) record ID"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CLAIM_HEADER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the claim header ID for the claim received from raw data"
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ADJ_SEQUENCE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the adjustment sequence for the claim received from raw data"
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "ADJ_TO_CLAIM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the adjustment to claim ID for the claim received from raw data"
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "REV_TO_CLAIM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the reversal to claim ID for the claim received from raw data"
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "IS_CLINICALLY_VALID_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether a claim is considered valid for the purpose of clinical data derivation \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Stores whether a claim is considered valid for the purpose of clinical data derivation",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "KLCTCEV_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Holds the CEV ID containing the KLCT metadata for a reversal claim."
     },
     {
-      "index": 66,
+      "ordinalPosition": 13,
       "name": "WORKFLOW_PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the workflow payer associated with this claim"
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "WORKFLOW_PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 76,
+      "ordinalPosition": 15,
       "name": "SOURCE_ORG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The source organization of the external record."
     },
     {
-      "index": 81,
+      "ordinalPosition": 16,
       "name": "SOURCE_ORG_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Organization's external name used as the display name on forms and user interfaces."
     },
     {
-      "index": 86,
+      "ordinalPosition": 17,
       "name": "LOOP_OR_SPLIT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a claim is part of an adjustment sequence that contains a split claim or an adjustment sequence loop. This CLM does not have to be in the split or loop istelf, just a part of the adjustment sequence.\n\n\n The category values for this column were already listed for column: IS_CLINICALLY_VALID_YN"
+      "description": "Indicates whether a claim is part of an adjustment sequence that contains a split claim or an adjustment sequence loop. This CLM does not have to be in the split or loop istelf, just a part of the adjustment sequence."
     },
     {
-      "index": 92,
+      "ordinalPosition": 18,
       "name": "EXTERNAL_DEMOG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Holds a pointer to the REQ record that holds the identifier and demographics that this claim was received with, linking this claim into an ID bundle."
     },
     {
-      "index": 97,
+      "ordinalPosition": 19,
       "name": "BENEFIT_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the ID of the benefit plan used to adjudicate a claim."
     },
     {
-      "index": 102,
+      "ordinalPosition": 20,
       "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 107,
+      "ordinalPosition": 21,
       "name": "CLM_LOB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the unique identifier of the line of business associated with the claim. This is the LOB determined at adjudication."
     },
     {
-      "index": 112,
+      "ordinalPosition": 22,
       "name": "CLM_LOB_ID_LOB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the line of business record."
     },
     {
-      "index": 117,
+      "ordinalPosition": 23,
       "name": "IN_OUT_OF_NET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the network level of a claim.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIN NETWORK\n\n\nOUT OF NETWORK\n\n\nN/A"
+      "description": "Contains the network level of a claim.",
+      "entries": [
+        "IN NETWORK",
+        "OUT OF NETWORK",
+        "N/A"
+      ]
     },
     {
-      "index": 127,
+      "ordinalPosition": 24,
       "name": "CLAIM_PAID_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the claim was paid, which is determined by the date the claim reaches the AP Status EOB Generated"
     },
     {
-      "index": 132,
+      "ordinalPosition": 25,
       "name": "CLAIM_NAT_KEY_HASH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The hashed value of the mapped claim natural key."
     },
     {
-      "index": 137,
+      "ordinalPosition": 26,
       "name": "CLAIM_NAT_KEY_ORDER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ordering value for the claim natural key."
     },
     {
-      "index": 142,
+      "ordinalPosition": 27,
       "name": "CLM_ADJ_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Claim Adjustment Type Code\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOriginal\n\n\nAdjustment\n\n\nReversal"
+      "description": "The Claim Adjustment Type Code",
+      "entries": [
+        "Original",
+        "Adjustment",
+        "Reversal"
+      ]
     },
     {
-      "index": 152,
+      "ordinalPosition": 28,
       "name": "NAT_KEY_FINAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a claim is the final action of an adjustment sequence that is tracking adjustments via natural keys. Natural key adjustments are tracked using superitem CLM 18690. A claim is the final action of its natural key if it has the maximum order value (item 18692) for a given natural key (item 18691). If there is a tie, the claim with the largest claim header id (item 18681) is deemed the final action. \n\n\n The category values for this column were already listed for column: IS_CLINICALLY_VALID_YN"
+      "description": "Indicates whether a claim is the final action of an adjustment sequence that is tracking adjustments via natural keys. Natural key adjustments are tracked using superitem CLM 18690. A claim is the final action of its natural key if it has the maximum order value (item 18692) for a given natural key (item 18691). If there is a tie, the claim with the largest claim header id (item 18681) is deemed the final action."
     },
     {
-      "index": 158,
+      "ordinalPosition": 29,
       "name": "CLAIM_SVC_CLASS_CTX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents a high-level clinical classification context of the services billed for on this claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nProfessional Services\n\n\nPharmacy\n\n\nLab Services\n\n\nHospice\n\n\nNot Classified"
+      "description": "Represents a high-level clinical classification context of the services billed for on this claim.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Professional Services",
+        "Pharmacy",
+        "Lab Services",
+        "Hospice",
+        "Not Classified"
+      ]
     },
     {
-      "index": 172,
+      "ordinalPosition": 30,
       "name": "CLAIM_SVC_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents a clinical classification for the services billed on this claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAcute Inpatient\n\n\nOther Inpatient\n\n\nSkilled Nursing\n\n\nInpatient Psychiatric Care\n\n\nInpatient Rehabilitation Care\n\n\nHospice\n\n\nHome Health\n\n\nOutpatient\n\n\nEmergency\n\n\nSpecimen Only\n\n\nPharmacy\n\n\nObservation\n\n\nUrgent Care\n\n\nSurgery\n\n\nNursing Facility\n\n\nResidential Facility Services\n\n\nOffice Visit\n\n\nSubstance Abuse and Behavioral Health Services\n\n\nAmbulance\n\n\nTelemedicine\n\n\nHome Visit\n\n\nOutpatient Rehabilitation Services\n\n\nIndependent Laboratory\n\n\nInpatient Part B\n\n\nInpatient Part B Preventive Services\n\n\nSkilled Nursing Part B\n\n\nSkilled Nursing Part B Preventive Services\n\n\nNot Classified"
+      "description": "Represents a clinical classification for the services billed on this claim.",
+      "entries": [
+        "Acute Inpatient",
+        "Other Inpatient",
+        "Skilled Nursing",
+        "Inpatient Psychiatric Care",
+        "Inpatient Rehabilitation Care",
+        "Hospice",
+        "Home Health",
+        "Outpatient",
+        "Emergency",
+        "Specimen Only",
+        "Pharmacy",
+        "Observation",
+        "Urgent Care",
+        "Surgery",
+        "Nursing Facility",
+        "Residential Facility Services",
+        "Office Visit",
+        "Substance Abuse and Behavioral Health Services",
+        "Ambulance",
+        "Telemedicine",
+        "Home Visit",
+        "Outpatient Rehabilitation Services",
+        "Independent Laboratory",
+        "Inpatient Part B",
+        "Inpatient Part B Preventive Services",
+        "Skilled Nursing Part B",
+        "Skilled Nursing Part B Preventive Services",
+        "Not Classified"
+      ]
     },
     {
-      "index": 207,
+      "ordinalPosition": 31,
       "name": "CLIN_FILTER_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Last UTC instant clinical data derivation filters (I CLM 18625) were updated or calculated without changes for this claim."
     },
     {
-      "index": 212,
+      "ordinalPosition": 32,
       "name": "CLIN_FILTER_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Last local instant clinical data derivation filters (I CLM 18625) were updated or calculated without changes for this claim. Calculated using EPIC_UTC_TO_LOCAL on I CLM 18626."
     }

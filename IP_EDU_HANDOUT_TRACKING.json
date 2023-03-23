@@ -1,106 +1,116 @@
 {
-  "table_name": "IP_EDU_HANDOUT_TRACKING",
+  "name": "IP_EDU_HANDOUT_TRACKING",
   "description": "Stores the current status for patient handouts that have been given to the patient or viewed on MyChart.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the education record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HANDOUT_LINK",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the handout link for a patient handout that has been viewed by the patient or marked as given to the patient."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "HANDOUT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The handout name of a handout received by the patient."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "GIVEN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user ID who marked a patient handout as given."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "VIEWED_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the WPR ID for the MyChart account that viewed the patient material."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "GIVEN_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The local instant that the handout was marked as given to the patient"
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "SMARTTEXT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ETX ID for a clinical reference that has been viewed by the patient."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "SMARTTEXT_ID_SMARTTEXT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "FDI_DOCUMENT_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the FDI document ID for tracking FDI handouts"
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "FDI_CLIENT_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the client ID from the FDI patient interface for tracking FDI handouts"
     },
     {
-      "index": 67,
+      "ordinalPosition": 14,
       "name": "VIEWED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The local instant that the material was most recently viewed by the patient electronically."
     }

@@ -1,55 +1,69 @@
 {
-  "table_name": "HH_OASIS_LOCK",
+  "name": "HH_OASIS_LOCK",
   "description": "Contains information on the locked status of Home Health Outcome and Assessment Information Set (OASIS) data sets.",
-  "primary_key": {
-    "column_name": "OASIS_SET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OASIS_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OASIS_SET_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique identifier for the OASIS data set."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "OASIS_LOCK_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "OASIS data set locked status, locked or unlocked.  Links to category table ZC_OASIS_LOCK_STAT.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnlocked\n\n\nLocked"
+      "description": "OASIS data set locked status, locked or unlocked.  Links to category table ZC_OASIS_LOCK_STAT.",
+      "entries": [
+        "Unlocked",
+        "Locked"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "OASIS_LOCK_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User ID of the user who locked the OASIS data set.  Links to table CLARITY_EMP."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "OASIS_LOCK_INSTANT",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Instant at which the OASIS data set was locked."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "OASIS_SNAPSHOT_DAT",
       "type": "VARCHAR",
       "discontinued": false,

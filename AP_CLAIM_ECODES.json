@@ -1,38 +1,51 @@
 {
-  "table_name": "AP_CLAIM_ECODES",
+  "name": "AP_CLAIM_ECODES",
   "description": "E-Codes information on a claim.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ECODE_MULT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "External cause of injury code. Can store multiple codes."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ECODE_MULT_POA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if the corresponding external cause of injury was present on admission.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\n1 - Unreported/Not used\n\n\nY - Yes\n\n\nN - No\n\n\nU - Unknown\n\n\nW - Clinically undetermined"
+      "description": "Stores if the corresponding external cause of injury was present on admission.",
+      "entries": [
+        "1 - Unreported/Not used",
+        "Y - Yes",
+        "N - No",
+        "U - Unknown",
+        "W - Clinically undetermined"
+      ]
     }
   ]
 }

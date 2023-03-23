@@ -1,31 +1,42 @@
 {
-  "table_name": "OR_LNLG_XRAY_SHLD_APP",
+  "name": "OR_LNLG_XRAY_SHLD_APP",
   "description": "The OR_LNLG_XRAY_SHLD_APP table contains information about the shielding applied to the patient and staff during X-Rays for the procedure.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "XRAY_SHIELD_APPL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the x-ray shielding applied. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes\n\n\nN/A"
+      "description": "The category ID for the x-ray shielding applied.",
+      "entries": [
+        "No",
+        "Yes",
+        "N/A"
+      ]
     }
   ]
 }

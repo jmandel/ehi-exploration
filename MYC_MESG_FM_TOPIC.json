@@ -1,83 +1,93 @@
 {
-  "table_name": "MYC_MESG_FM_TOPIC",
+  "name": "MYC_MESG_FM_TOPIC",
   "description": "This table contains information about family medical history submitted by the patient in a history questionnaire.",
-  "primary_key": {
-    "column_name": "MESSAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MESSAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MESSAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the web-based chart system message record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FAM_TOPIC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the family history topic in the history questionnaire submitted by the patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "FAM_TOPIC_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Visit Navigator (VN) History Template Definition (LQH) record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "FAM_TOPIC_PROB_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value of the problem entered by the patient when answering a family history questionnaire.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value of the problem entered by the patient when answering a family history questionnaire."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "FAM_TOPIC_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The relation type of the family member entered by the patient in a family history questionnaire.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The relation type of the family member entered by the patient in a family history questionnaire."
     },
     {
-      "index": 34,
+      "ordinalPosition": 7,
       "name": "FAM_TOPIC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the family member entered by the patient in a family history questionnaire."
     },
     {
-      "index": 39,
+      "ordinalPosition": 8,
       "name": "FAM_TOPIC_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered by the patient for a family history topic in a family history questionnaire."
     },
     {
-      "index": 44,
+      "ordinalPosition": 9,
       "name": "FAM_TOPIC_UNCHKD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the problem status - checked or unchecked by the patient in MyChart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column stores the problem status - checked or unchecked by the patient in MyChart.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "FAM_TOPIC_FILED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The filed status of the family history topic--has the provider filed it to the patient's record.\n\n\n The category values for this column were already listed for column: FAM_TOPIC_UNCHKD_YN"
+      "description": "The filed status of the family history topic--has the provider filed it to the patient's record."
     },
     {
-      "index": 59,
+      "ordinalPosition": 11,
       "name": "FAM_TOPIC_REL_ID",
       "type": "VARCHAR",
       "discontinued": false,

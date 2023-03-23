@@ -1,160 +1,182 @@
 {
-  "table_name": "AUTH_REQUEST",
+  "name": "AUTH_REQUEST",
   "description": "This table contains information about an individual authorization request.",
-  "primary_key": {
-    "column_name": "AUTH_REQUEST_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "AUTH_REQUEST_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "AUTH_REQUEST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the authorization request."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_2_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Chronicles record status category ID for the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The Chronicles record status category ID for the authorization request.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "EXTERNAL_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external identifier of the authorization request."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "LAST_EDIT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time (UTC) of the latest published (non-draft) contact of the authorization request."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "REQUEST_CONTEXT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The request context category ID for the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUtilization Management\n\n\nUtilization Management Appeals"
+      "description": "The request context category ID for the authorization request.",
+      "entries": [
+        "Utilization Management",
+        "Utilization Management Appeals"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient/member that this authorization request is for. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the referral record that this authorization request is associated with."
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the coverage record that applies to this authorization request."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "REQUEST_CREATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time (UTC) that this authorization request was initiated."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "LOB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the line of business associated with the coverage when the authorization request was processed."
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "LOB_ID_LOB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the line of business record."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "PAYER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the payer associated with the coverage when the authorization request was processed."
     },
     {
-      "index": 71,
+      "ordinalPosition": 13,
       "name": "PAYER_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 76,
+      "ordinalPosition": 14,
       "name": "BENEFIT_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the plan associated with the coverage when the authorization request was processed."
     },
     {
-      "index": 81,
+      "ordinalPosition": 15,
       "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 86,
+      "ordinalPosition": 16,
       "name": "ORDER_ENTRY_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When an authorization request is received, if any of the requested services were created during order entry, this column will be populated as a pointer back to the order."
     },
     {
-      "index": 91,
+      "ordinalPosition": 17,
       "name": "DECISION_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user responsible for the decision of the authorization request. In the case of medical director review, this is the person who conducted the medical director review rather than the user who changed the status in the system. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 96,
+      "ordinalPosition": 18,
       "name": "UM_DECISION_USER_ROLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The decision user role category ID for the user making the decision on the authorization request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNon-Medical Director\n\n\nMedical Director\n\n\nAuto Status Assignment\n\n\nDecision Made Externally"
+      "description": "The decision user role category ID for the user making the decision on the authorization request.",
+      "entries": [
+        "Non-Medical Director",
+        "Medical Director",
+        "Auto Status Assignment",
+        "Decision Made Externally"
+      ]
     },
     {
-      "index": 107,
+      "ordinalPosition": 19,
       "name": "RESP_PARTY_AGENCY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the responsibility class of the party responsible for rendering a decision for the authorization request."
     },
     {
-      "index": 112,
+      "ordinalPosition": 20,
       "name": "RESP_PARTY_AGENCY_ID_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the agency."
     },
     {
-      "index": 117,
+      "ordinalPosition": 21,
       "name": "EXT_TRACKED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Keeps track of the reason why this auth request's turnaround time is tracked externally.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLegacy Auth Request\n\n\nRouted Through Payer Platform\n\n\nIncoming 278N"
+      "description": "Keeps track of the reason why this auth request's turnaround time is tracked externally.",
+      "entries": [
+        "Legacy Auth Request",
+        "Routed Through Payer Platform",
+        "Incoming 278N"
+      ]
     },
     {
-      "index": 127,
+      "ordinalPosition": 22,
       "name": "APPEALED_AUTH_REQUEST_ID",
       "type": "NUMERIC",
       "discontinued": false,

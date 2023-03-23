@@ -1,398 +1,705 @@
 {
-  "table_name": "HSP_BFH_ACT_DATA",
+  "name": "HSP_BFH_ACT_DATA",
   "description": "Actions performed during the billing activity.",
-  "primary_key": {
-    "column_name": "BFH_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BFH_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BFH_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the billing activity history record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores what actions were actually performed on the account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSend Breeze Letter\n\n\nSend to Pre-Collect\n\n\nSend to Bad Debt\n\n\nReturn from Agency\n\n\nWrite-Off Self-Pay\n\n\nUpdate Billing/Statement Note\n\n\nChange Notification Date\n\n\nAdd to Workqueue\n\n\nAdd Note\n\n\nOutsource Account\n\n\nChange Agency\n\n\nUpdate Billing Indicators\n\n\nSend Letter\n\n\nChange Self-Pay Follow-up Date\n\n\nSend to External Agency AR\n\n\nModify SNF PPS Codes\n\n\nDefer\n\n\nChange Self-Pay Follow-up Level\n\n\nAdd Charge\n\n\nReverse Transaction\n\n\nReprice Charge\n\n\nCorrect Charge\n\n\nUpdate Stop Bills\n\n\nEnable Paperless Billing\n\n\nDisable Paperless Billing\n\n\nPost Adjustment\n\n\nTransfer Follow-up Record\n\n\nNext Responsible Party\n\n\nTransfer to Self-Pay\n\n\nUndo Billing\n\n\nSubmit Claim Status Request\n\n\nUpdate Guarantor Status\n\n\nPost Refund\n\n\nChange Bundled Episode\n\n\nDuplicate and Send Charge\n\n\nInitiate Informational Claim\n\n\nEvaluate Pricing Contracts\n\n\nOverride Home Health Discharge Disposition\n\n\nChange Financial Assistance\n\n\nReevaluate Self-Pay Discounts\n\n\nUnlock Pay as Guest\n\n\nChange Admit/Discharge Dates\n\n\nUpdate Additional Payment Reconciliation\n\n\nChange Account Class\n\n\nOverride Surcharge\n\n\nOverride Expected Reimbursement\n\n\nUpdate Invoice Numbers\n\n\nDischarge Account\n\n\nCombine Account\n\n\nUncombine Account\n\n\nReopen Account\n\n\nClose Account\n\n\nOverride Claim Sent Dates\n\n\nOverride Claim ICN\n\n\nCreate Related Account\n\n\nAdd Guarantor Note\n\n\nUpdate Coding Status\n\n\nUpdate Abstracting Status\n\n\nUpdate CDI Review Status\n\n\nChange Assigned Coder\n\n\nChange Assigned Abstracter\n\n\nChange Assigned CDI Specialist\n\n\nInitiate Homing\n\n\nInitiate Billing\n\n\nPost Not Allowed Adjustment\n\n\nOverride Self-Pay Discount\n\n\nUpdate Settlement Numbers\n\n\nAdmission Day Billing\n\n\nSend Detail Bill\n\n\nSend Statement\n\n\nProcess Late Charges\n\n\nUndo All Billing\n\n\nSend Guarantor Detail Bill\n\n\nUndo Discharge\n\n\nOverride DNB Warnings\n\n\nOverride RAP Checks\n\n\nUpdate Coding Flags\n\n\nOverride Expected Self-Pay Liability\n\n\nCreate Trust Account Series\n\n\nChange Next Statement Date\n\n\nChange Next Payment Plan Auto Pay Date\n\n\nLog Denial/Remark\n\n\nContest Account\n\n\nComplete\n\n\nTransfer\n\n\nSkip\n\n\nRoute\n\n\nReevaluate Expected Reimbursement\n\n\nReevaluate APC Grouping\n\n\nUndo Informational Bucket\n\n\nInitiate No-Pay Claim\n\n\nInitiate Exhaust Claim\n\n\nResearch Review\n\n\nSend Denied Amount to Self-Pay\n\n\nIgnore Denied Amount\n\n\nVoid DBC\n\n\nUndo Close DBC\n\n\nPark DBC\n\n\nUnpark DBC\n\n\nReprice DBC\n\n\nSend In Basket Message for DBC\n\n\nFlag for Review\n\n\nClose DBC\n\n\nRecalculate DBC Close Dates\n\n\nUpdate Visit Auto Pay\n\n\nTerminate Visit Auto Pay\n\n\nSet Up Recurring Payment\n\n\nUpdate Recurring Payment\n\n\nTerminate Recurring Payment\n\n\nSplit Account\n\n\nUpdate SNF Exhaust Date\n\n\nProcess Payment Plan Payment Now\n\n\nChange Next Visit Auto Pay Date\n\n\nSet Up Recurring Trust Transfer\n\n\nUpdate Recurring Trust Transfer\n\n\nTerminate Recurring Trust Transfer\n\n\nProcess Recurring Trust Transfer Now\n\n\nPerform One-Time Trust Transfer\n\n\nClose Recurring Series\n\n\nReopen Recurring Series\n\n\nOverride Send DBC to Grouper Checks\n\n\nSend DBC to Grouper\n\n\nClose Case\n\n\nRefund\n\n\nLog Correspondence\n\n\nLog Variance\n\n\nMark for Separate Service Area Billing\n\n\nUnmark for Separate Service Area Billing\n\n\nSend to Billing Service Area\n\n\nReturn to Care Service Area\n\n\nSend Claim Detail Bill\n\n\nProcess Visit Auto Pay Payment Now\n\n\nProcess Recurring Payment Now\n\n\nResubmit Charge\n\n\nPerform Workqueue Action\n\n\nResubmit Claim\n\n\nPrint Claim\n\n\nTransfer to Insurance\n\n\nVoid Charge\n\n\nPost Split Write-off\n\n\nSend Guarantor Letter\n\n\nSend Invoice Letter\n\n\nInitiate RAP\n\n\nInitiate Secondary RAP\n\n\nInitiate Notice of Election\n\n\nInitiate Home Health No-Pay RAP\n\n\nInitiate Home Health Notice of Admission\n\n\nTransaction Reverse\n\n\nTransfer Transaction\n\n\nCharge Duplicate and Send \n\n\nResearch Correct\n\n\nClient Correct\n\n\nQuick Correct\n\n\nContest Charge\n\n\nPost Transaction Refund\n\n\nAdd Corresponding Charge\n\n\nEdit Refund\n\n\nUpdate Denial/Remark\n\n\nVoid Denial/Remark\n\n\nReopen Denial/Remark\n\n\nUpdate Correspondence\n\n\nVoid Correspondence\n\n\nReopen Correspondence\n\n\nUpdate Variance\n\n\nVoid Variance\n\n\nReopen Variance\n\n\nGenerate Release\n\n\nReset Self-Pay Aging Date\n\n\nReset Insurance Aging Date\n\n\nReplace Claim\n\n\nSubmit Cancel Claim\n\n\nRecalculate Discount\n\n\nRepost\n\n\nReprint Refund Slip\n\n\nUndistribute\n\n\nTransfer to HB\n\n\nRefund Request\n\n\nVoid Transaction\n\n\nSend to Collection Agency\n\n\nRecall from Collection Agency\n\n\nRefund Review\n\n\nEdit Visit Filing Order\n\n\nChange AP Import Status\n\n\nEdit Payment\n\n\nEdit Adjustment\n\n\nPost Debit Adjustment\n\n\nPB Demand Claim\n\n\nTransfer Visit/Invoice\n\n\nPB Accept Filing Order\n\n\nPB Reject Filing Order\n\n\nPost PB Debit Adjustment\n\n\nTurn On Automatic Self-Pay Write-Off\n\n\nTurn Off Automatic Self-Pay Write-Off\n\n\nPB Undistribute\n\n\nOverride Posted Not Billed Warnings\n\n\nRetroadjudication\n\n\nUpdate Payment Plan\n\n\nTerminate Payment Plan\n\n\nSet Reminder\n\n\nSend Balance Notification\n\n\nUpdate PB Billing Status\n\n\nDemand Claim\n\n\nRemove From Claim Queue\n\n\nRehome\n\n\nAdd to Credit Workqueue\n\n\nSend Tapestry Letter"
+      "description": "Stores what actions were actually performed on the account.",
+      "entries": [
+        "Send Breeze Letter",
+        "Send to Pre-Collect",
+        "Send to Bad Debt",
+        "Return from Agency",
+        "Write-Off Self-Pay",
+        "Update Billing/Statement Note",
+        "Change Notification Date",
+        "Add to Workqueue",
+        "Add Note",
+        "Outsource Account",
+        "Change Agency",
+        "Update Billing Indicators",
+        "Send Letter",
+        "Change Self-Pay Follow-up Date",
+        "Send to External Agency AR",
+        "Modify SNF PPS Codes",
+        "Defer",
+        "Change Self-Pay Follow-up Level",
+        "Add Charge",
+        "Reverse Transaction",
+        "Reprice Charge",
+        "Correct Charge",
+        "Update Stop Bills",
+        "Enable Paperless Billing",
+        "Disable Paperless Billing",
+        "Post Adjustment",
+        "Transfer Follow-up Record",
+        "Next Responsible Party",
+        "Transfer to Self-Pay",
+        "Undo Billing",
+        "Submit Claim Status Request",
+        "Update Guarantor Status",
+        "Post Refund",
+        "Change Bundled Episode",
+        "Duplicate and Send Charge",
+        "Initiate Informational Claim",
+        "Evaluate Pricing Contracts",
+        "Override Home Health Discharge Disposition",
+        "Change Financial Assistance",
+        "Reevaluate Self-Pay Discounts",
+        "Unlock Pay as Guest",
+        "Change Admit/Discharge Dates",
+        "Update Additional Payment Reconciliation",
+        "Change Account Class",
+        "Override Surcharge",
+        "Override Expected Reimbursement",
+        "Update Invoice Numbers",
+        "Discharge Account",
+        "Combine Account",
+        "Uncombine Account",
+        "Reopen Account",
+        "Close Account",
+        "Override Claim Sent Dates",
+        "Override Claim ICN",
+        "Create Related Account",
+        "Add Guarantor Note",
+        "Update Coding Status",
+        "Update Abstracting Status",
+        "Update CDI Review Status",
+        "Change Assigned Coder",
+        "Change Assigned Abstracter",
+        "Change Assigned CDI Specialist",
+        "Initiate Homing",
+        "Initiate Billing",
+        "Post Not Allowed Adjustment",
+        "Override Self-Pay Discount",
+        "Update Settlement Numbers",
+        "Admission Day Billing",
+        "Send Detail Bill",
+        "Send Statement",
+        "Process Late Charges",
+        "Undo All Billing",
+        "Send Guarantor Detail Bill",
+        "Undo Discharge",
+        "Override DNB Warnings",
+        "Override RAP Checks",
+        "Update Coding Flags",
+        "Override Expected Self-Pay Liability",
+        "Create Trust Account Series",
+        "Change Next Statement Date",
+        "Change Next Payment Plan Auto Pay Date",
+        "Log Denial/Remark",
+        "Contest Account",
+        "Complete",
+        "Transfer",
+        "Skip",
+        "Route",
+        "Reevaluate Expected Reimbursement",
+        "Reevaluate APC Grouping",
+        "Undo Informational Bucket",
+        "Initiate No-Pay Claim",
+        "Initiate Exhaust Claim",
+        "Research Review",
+        "Send Denied Amount to Self-Pay",
+        "Ignore Denied Amount",
+        "Void DBC",
+        "Undo Close DBC",
+        "Park DBC",
+        "Unpark DBC",
+        "Reprice DBC",
+        "Send In Basket Message for DBC",
+        "Flag for Review",
+        "Close DBC",
+        "Recalculate DBC Close Dates",
+        "Update Visit Auto Pay",
+        "Terminate Visit Auto Pay",
+        "Set Up Recurring Payment",
+        "Update Recurring Payment",
+        "Terminate Recurring Payment",
+        "Split Account",
+        "Update SNF Exhaust Date",
+        "Process Payment Plan Payment Now",
+        "Change Next Visit Auto Pay Date",
+        "Set Up Recurring Trust Transfer",
+        "Update Recurring Trust Transfer",
+        "Terminate Recurring Trust Transfer",
+        "Process Recurring Trust Transfer Now",
+        "Perform One-Time Trust Transfer",
+        "Close Recurring Series",
+        "Reopen Recurring Series",
+        "Override Send DBC to Grouper Checks",
+        "Send DBC to Grouper",
+        "Close Case",
+        "Refund",
+        "Log Correspondence",
+        "Log Variance",
+        "Mark for Separate Service Area Billing",
+        "Unmark for Separate Service Area Billing",
+        "Send to Billing Service Area",
+        "Return to Care Service Area",
+        "Send Claim Detail Bill",
+        "Process Visit Auto Pay Payment Now",
+        "Process Recurring Payment Now",
+        "Resubmit Charge",
+        "Perform Workqueue Action",
+        "Resubmit Claim",
+        "Print Claim",
+        "Transfer to Insurance",
+        "Void Charge",
+        "Post Split Write-off",
+        "Send Guarantor Letter",
+        "Send Invoice Letter",
+        "Initiate RAP",
+        "Initiate Secondary RAP",
+        "Initiate Notice of Election",
+        "Initiate Home Health No-Pay RAP",
+        "Initiate Home Health Notice of Admission",
+        "Transaction Reverse",
+        "Transfer Transaction",
+        "Charge Duplicate and Send",
+        "Research Correct",
+        "Client Correct",
+        "Quick Correct",
+        "Contest Charge",
+        "Post Transaction Refund",
+        "Add Corresponding Charge",
+        "Edit Refund",
+        "Update Denial/Remark",
+        "Void Denial/Remark",
+        "Reopen Denial/Remark",
+        "Update Correspondence",
+        "Void Correspondence",
+        "Reopen Correspondence",
+        "Update Variance",
+        "Void Variance",
+        "Reopen Variance",
+        "Generate Release",
+        "Reset Self-Pay Aging Date",
+        "Reset Insurance Aging Date",
+        "Replace Claim",
+        "Submit Cancel Claim",
+        "Recalculate Discount",
+        "Repost",
+        "Reprint Refund Slip",
+        "Undistribute",
+        "Transfer to HB",
+        "Refund Request",
+        "Void Transaction",
+        "Send to Collection Agency",
+        "Recall from Collection Agency",
+        "Refund Review",
+        "Edit Visit Filing Order",
+        "Change AP Import Status",
+        "Edit Payment",
+        "Edit Adjustment",
+        "Post Debit Adjustment",
+        "PB Demand Claim",
+        "Transfer Visit/Invoice",
+        "PB Accept Filing Order",
+        "PB Reject Filing Order",
+        "Post PB Debit Adjustment",
+        "Turn On Automatic Self-Pay Write-Off",
+        "Turn Off Automatic Self-Pay Write-Off",
+        "PB Undistribute",
+        "Override Posted Not Billed Warnings",
+        "Retroadjudication",
+        "Update Payment Plan",
+        "Terminate Payment Plan",
+        "Set Reminder",
+        "Send Balance Notification",
+        "Update PB Billing Status",
+        "Demand Claim",
+        "Remove From Claim Queue",
+        "Rehome",
+        "Add to Credit Workqueue",
+        "Send Tapestry Letter"
+      ]
     },
     {
-      "index": 225,
+      "ordinalPosition": 4,
       "name": "ACTION_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the resultant hospital account note record from this activity."
     },
     {
-      "index": 230,
+      "ordinalPosition": 5,
       "name": "ACTION_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user entered comment for the action."
     },
     {
-      "index": 235,
+      "ordinalPosition": 6,
       "name": "ACTION_AGENCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user-entered agency for the action."
     },
     {
-      "index": 240,
+      "ordinalPosition": 7,
       "name": "ACTION_AGENCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 245,
+      "ordinalPosition": 8,
       "name": "ACTION_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user entered procedure for the action."
     },
     {
-      "index": 250,
+      "ordinalPosition": 9,
       "name": "ACTION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The user entered date for the action."
     },
     {
-      "index": 255,
+      "ordinalPosition": 10,
       "name": "ACTION_ASGN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The agency assign reason category number that is set as a result of this action.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The agency assign reason category number that is set as a result of this action."
     },
     {
-      "index": 262,
+      "ordinalPosition": 11,
       "name": "ACTION_WD_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The agency withdraw reason category number that is set as a result of this action.\n\n\n The category values for this column were already listed for column: ACTION_ASGN_RSN_C_NAME"
+      "description": "The agency withdraw reason category number that is set as a result of this action."
     },
     {
-      "index": 268,
+      "ordinalPosition": 12,
       "name": "ACTION_PAPRLS_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason the paperless billing status was changed for the associated action\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the reason the paperless billing status was changed for the associated action"
     },
     {
-      "index": 274,
+      "ordinalPosition": 13,
       "name": "ACTION_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the associated transaction created as a result of a billing activity action."
     },
     {
-      "index": 279,
+      "ordinalPosition": 14,
       "name": "ACTION_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores an amount associated with a performed billing activity action."
     },
     {
-      "index": 284,
+      "ordinalPosition": 15,
       "name": "ACT_NOT_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores a not allowed amount associated with a performed billing activity action."
     },
     {
-      "index": 289,
+      "ordinalPosition": 16,
       "name": "ACCT_RMV_FROM_TRACKER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the financial assistance tracker from which the hospital account is removed as part of the billing action."
     },
     {
-      "index": 294,
+      "ordinalPosition": 17,
       "name": "ACCT_ADD_TO_TRACKER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the financial assistance tracker to which the hospital account is added as part of the billing action."
     },
     {
-      "index": 299,
+      "ordinalPosition": 18,
       "name": "ACTION_LOCATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The location that this action set for the account."
     },
     {
-      "index": 304,
+      "ordinalPosition": 19,
       "name": "ACT_RELATED_HAR_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The related account type this action changed the account to. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nElective Services\n\n\nED/Inpatient Split Billing\n\n\nLeave of Absence / Bed Hold\n\n\nInterrupted Stay\n\n\nSeparate Service Area Billing\n\n\nHome Infusion Medical Benefits\n\n\nOther"
+      "description": "The related account type this action changed the account to.",
+      "entries": [
+        "Elective Services",
+        "ED/Inpatient Split Billing",
+        "Leave of Absence / Bed Hold",
+        "Interrupted Stay",
+        "Separate Service Area Billing",
+        "Home Infusion Medical Benefits",
+        "Other"
+      ]
     },
     {
-      "index": 318,
+      "ordinalPosition": 20,
       "name": "ACTION_ADMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the admit date set through a billing activity action."
     },
     {
-      "index": 323,
+      "ordinalPosition": 21,
       "name": "ACTION_DISCHRG_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the discharge date set through a billing activity action."
     },
     {
-      "index": 328,
+      "ordinalPosition": 22,
       "name": "ACT_RELATED_HAR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the related hospital account created through the Create Related Account billing action."
     },
     {
-      "index": 333,
+      "ordinalPosition": 23,
       "name": "ACT_COMB_HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for a hospital account that was combined or uncombined through a billing activity action."
     },
     {
-      "index": 338,
+      "ordinalPosition": 24,
       "name": "ACT_COMBINE_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item tracks the reason that an account was combined\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCombine due to billing\n\n\nCombine due to error\n\n\nSystem combine due to contact move\n\n\nSystem combine - recurring series split no longer needed\n\n\nSystem combine - Home Health/Hospice\n\n\nSystem combine - replaced voided Hospital Account"
+      "description": "This item tracks the reason that an account was combined",
+      "entries": [
+        "Combine due to billing",
+        "Combine due to error",
+        "System combine due to contact move",
+        "System combine - recurring series split no longer needed",
+        "System combine - Home Health/Hospice",
+        "System combine - replaced voided Hospital Account"
+      ]
     },
     {
-      "index": 351,
+      "ordinalPosition": 25,
       "name": "COMM_MODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History of the communication mode used in an account activity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaper\n\n\nElectronic\n\n\nGuarantor Preference"
+      "description": "History of the communication mode used in an account activity.",
+      "entries": [
+        "Paper",
+        "Electronic",
+        "Guarantor Preference"
+      ]
     },
     {
-      "index": 361,
+      "ordinalPosition": 26,
       "name": "ACT_HH_DISCHRG_DISP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the patient status (I CLM 1021) value entered for the Override Home Health Discharge Disposition action in an account activity.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This column stores the patient status (I CLM 1021) value entered for the Override Home Health Discharge Disposition action in an account activity."
     },
     {
-      "index": 367,
+      "ordinalPosition": 27,
       "name": "ACTION_ACCT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The account class this action changed the account to.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The account class this action changed the account to."
     },
     {
-      "index": 373,
+      "ordinalPosition": 28,
       "name": "ACTION_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "History of start date used in a date range of an action."
     },
     {
-      "index": 378,
+      "ordinalPosition": 29,
       "name": "ACTION_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "History of end date used in a date range of an action."
     },
     {
-      "index": 383,
+      "ordinalPosition": 30,
       "name": "ACT_CODABS_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Coding or Abstracting status change made by the action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nWaiting\n\n\nCompleted\n\n\nReady To Start\n\n\nOn Hold"
+      "description": "The Coding or Abstracting status change made by the action.",
+      "entries": [
+        "Not Started",
+        "In Progress",
+        "Waiting",
+        "Completed",
+        "Ready To Start",
+        "On Hold"
+      ]
     },
     {
-      "index": 396,
+      "ordinalPosition": 31,
       "name": "ACT_CDI_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the clinical documentation improvement (CDI) status change made by the action.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Started\n\n\nIn Progress\n\n\nPhysician Query\n\n\nAll Reviews Completed"
+      "description": "This column stores the clinical documentation improvement (CDI) status change made by the action.",
+      "entries": [
+        "Not Started",
+        "In Progress",
+        "Physician Query",
+        "All Reviews Completed"
+      ]
     },
     {
-      "index": 407,
+      "ordinalPosition": 32,
       "name": "ACT_CHNG_STAT_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment associated with the change made by the action."
     },
     {
-      "index": 412,
+      "ordinalPosition": 33,
       "name": "ACT_ASGN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the Coding, Abstracting, or Clinical Documentation Improvement user assignment made by the action."
     },
     {
-      "index": 417,
+      "ordinalPosition": 34,
       "name": "ACTION_DAY_OF_MONTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The day of month that was selected when the action was performed."
     },
     {
-      "index": 422,
+      "ordinalPosition": 35,
       "name": "ACTION_CARD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payment method that was selected when the action was performed."
     },
     {
-      "index": 427,
+      "ordinalPosition": 36,
       "name": "ACT_BILL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates how the account was billed. (Date Range, Cumulative, Part A Final)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDate Range Billing\n\n\nCumulative Billing\n\n\nPart A Final Billing\n\n\nDefault System Billing"
+      "description": "Indicates how the account was billed. (Date Range, Cumulative, Part A Final)",
+      "entries": [
+        "Date Range Billing",
+        "Cumulative Billing",
+        "Part A Final Billing",
+        "Default System Billing"
+      ]
     },
     {
-      "index": 438,
+      "ordinalPosition": 37,
       "name": "ACT_CONTEST_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Shows why the account was contested.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAccount Has Contested Charges\n\n\nPatient Not Seen\n\n\nBankruptcy\n\n\nLegal\n\n\nDeceased\n\n\nNot Informed Service Not Covered\n\n\nService Not Provided\n\n\nInsurance Appeal\n\n\nPatient Grievance\n\n\nOther"
+      "description": "Shows why the account was contested.",
+      "entries": [
+        "Account Has Contested Charges",
+        "Patient Not Seen",
+        "Bankruptcy",
+        "Legal",
+        "Deceased",
+        "Not Informed Service Not Covered",
+        "Service Not Provided",
+        "Insurance Appeal",
+        "Patient Grievance",
+        "Other"
+      ]
     },
     {
-      "index": 455,
+      "ordinalPosition": 38,
       "name": "ACT_CONTEST_RESOLUTION_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds why the account's contested status was resolved.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTransfer\n\n\nAll Charges Resolved\n\n\nContested in Error\n\n\nConfirmed Billed Correctly\n\n\nPatient No Longer Contesting\n\n\nInsurance Issue Resolved\n\n\nProblem Fixed"
+      "description": "Holds why the account's contested status was resolved.",
+      "entries": [
+        "Transfer",
+        "All Charges Resolved",
+        "Contested in Error",
+        "Confirmed Billed Correctly",
+        "Patient No Longer Contesting",
+        "Insurance Issue Resolved",
+        "Problem Fixed"
+      ]
     },
     {
-      "index": 469,
+      "ordinalPosition": 39,
       "name": "ACTION_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the new coverage for the Professional Billing Next Responsible Party (PB NRP) action and the unique identifier for the current coverage for the PB Transfer to Insurance action."
     },
     {
-      "index": 474,
+      "ordinalPosition": 40,
       "name": "ACTION_NAA_WRITE_OFF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the code that is used to write-off not allowed amount."
     },
     {
-      "index": 479,
+      "ordinalPosition": 41,
       "name": "ACTION_BASE_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the base amount set through by a billing activity (ATM) action (for actions with a second, calculated amount)."
     },
     {
-      "index": 484,
+      "ordinalPosition": 42,
       "name": "ACTION_PERCENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the percent used by a billing activity (ATM) action."
     },
     {
-      "index": 489,
+      "ordinalPosition": 43,
       "name": "ACT_LATE_CHG_OPTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The late charge processing type that was performed on an account\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLate Replacement\n\n\nLate Charge Claim\n\n\nLate Charge Write-Off\n\n\nLate Addition"
+      "description": "The late charge processing type that was performed on an account",
+      "entries": [
+        "Late Replacement",
+        "Late Charge Claim",
+        "Late Charge Write-Off",
+        "Late Addition"
+      ]
     },
     {
-      "index": 500,
+      "ordinalPosition": 44,
       "name": "ACTION_NUM_OF_PMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of payments entered into the billing activity."
     },
     {
-      "index": 505,
+      "ordinalPosition": 45,
       "name": "ACTION_STMT_DAY_OF_MONTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The statement day of the month entered into the billing activity."
     },
     {
-      "index": 510,
+      "ordinalPosition": 46,
       "name": "ACT_ACCT_MAN_SPLIT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The manual split account reason that a billing action set for the account.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStep-Down Level of Care\n\n\nStep-Up Level of Care\n\n\nPart A Benefits Exhaust\n\n\nNew Coverage Effective\n\n\nCoverage No Longer Effective\n\n\nLeave of Absence Out\n\n\nLeave of Absence Return"
+      "description": "The manual split account reason that a billing action set for the account.",
+      "entries": [
+        "Step-Down Level of Care",
+        "Step-Up Level of Care",
+        "Part A Benefits Exhaust",
+        "New Coverage Effective",
+        "Coverage No Longer Effective",
+        "Leave of Absence Out",
+        "Leave of Absence Return"
+      ]
     },
     {
-      "index": 524,
+      "ordinalPosition": 47,
       "name": "ACTION_RESEARCH_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The study associated with this action."
     },
     {
-      "index": 529,
+      "ordinalPosition": 48,
       "name": "ACTION_NUM_OF_CHGS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of charges associated with the action."
     },
     {
-      "index": 534,
+      "ordinalPosition": 49,
       "name": "ACTION_SP_DSCNT_OV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the billing follow-up history item for tracking the self-pay discount override reason if the account is not insured.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+      "description": "This column stores the billing follow-up history item for tracking the self-pay discount override reason if the account is not insured.",
+      "entries": [
+        "Other"
+      ]
     },
     {
-      "index": 542,
+      "ordinalPosition": 50,
       "name": "ACTION_SP_DSNT_IOV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the billing follow-up history item for tracking the self-pay discount override reason if the account is insured.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+      "description": "This column stores the billing follow-up history item for tracking the self-pay discount override reason if the account is insured.",
+      "entries": [
+        "Other"
+      ]
     },
     {
-      "index": 550,
+      "ordinalPosition": 51,
       "name": "ACT_WRITE_OFF_BALANCE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether to write off the entire balance\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether to write off the entire balance",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 559,
+      "ordinalPosition": 52,
       "name": "ACT_REFERENCE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the reference number"
     },
     {
-      "index": 564,
+      "ordinalPosition": 53,
       "name": "ACTION_EMAIL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the email from the activity when the notification was sent."
     },
     {
-      "index": 569,
+      "ordinalPosition": 54,
       "name": "ACTION_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the phone number from the activity when the notification was sent."
     },
     {
-      "index": 574,
+      "ordinalPosition": 55,
       "name": "ACT_DATE_FLTR_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item describes how the start and end dates were interpreted when filtering transactions on a detail bill.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTransaction Service Dates\n\n\nTransaction Post Dates\n\n\nHospital Account Admit/Discharge Dates"
+      "description": "This item describes how the start and end dates were interpreted when filtering transactions on a detail bill.",
+      "entries": [
+        "Transaction Service Dates",
+        "Transaction Post Dates",
+        "Hospital Account Admit/Discharge Dates"
+      ]
     },
     {
-      "index": 584,
+      "ordinalPosition": 56,
       "name": "ACTION_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,

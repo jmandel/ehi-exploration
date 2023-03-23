@@ -1,101 +1,123 @@
 {
-  "table_name": "BED_BLOCK",
+  "name": "BED_BLOCK",
   "description": "This view contains information about your bed block records. The records included in this view are Bed Events (BEV) records that are designated as bed blocks -- that is, Event Type (I BEV 150) has a value of 1.",
-  "primary_key": {
-    "column_name": "BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BLOCK_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the bed event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of this bed event."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status category number for this bed event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status category number for this bed event.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the bed that this bed event pertains to."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "FACILITY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the location containing the bed that this bed event pertains to."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "ACTIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The active flag category number for the bed event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCompleted\n\n\nAssigned\n\n\nUnassigned\n\n\nDelayed\n\n\nCanceled\n\n\nBed Block Active\n\n\nBed Block Completed\n\n\nBed Block Canceled\n\n\nBed Ahead Active\n\n\nBed Ahead Completed\n\n\nBed Ahead Canceled\n\n\nBed Type Active\n\n\nBed Type Completed"
+      "description": "The active flag category number for the bed event.",
+      "entries": [
+        "Completed",
+        "Assigned",
+        "Unassigned",
+        "Delayed",
+        "Canceled",
+        "Bed Block Active",
+        "Bed Block Completed",
+        "Bed Block Canceled",
+        "Bed Ahead Active",
+        "Bed Ahead Completed",
+        "Bed Ahead Canceled",
+        "Bed Type Active",
+        "Bed Type Completed"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department containing the bed that this bed event pertains to."
     },
     {
-      "index": 62,
+      "ordinalPosition": 9,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient that was associated with this bed block."
     },
     {
-      "index": 67,
+      "ordinalPosition": 10,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number of the patient encounter that was associated with this bed event."
     },
     {
-      "index": 72,
+      "ordinalPosition": 11,
       "name": "BLOCK_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The blocking reason category number for the bed event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The blocking reason category number for the bed event."
     },
     {
-      "index": 78,
+      "ordinalPosition": 12,
       "name": "BLOCK_SRC_ISO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The isolation category number that was the source of this bed event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The isolation category number that was the source of this bed event."
     },
     {
-      "index": 84,
+      "ordinalPosition": 13,
       "name": "BLOCK_SRC_INF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The infection category number that was the source of this bed event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The infection category number that was the source of this bed event."
     }
   ]
 }

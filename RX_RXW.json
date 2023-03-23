@@ -1,153 +1,166 @@
 {
-  "table_name": "RX_RXW",
+  "name": "RX_RXW",
   "description": "This table contains no add single response data for ambulatory pharmacy work requests. \n\n\n\n\n\nEach work request is associated with a set of fill requests. \n\n\n\n\n\nA fill request is a contact on the order record which contains information about the specific dispense of the attached order. The patient, the order, and the order DAT is stored on the order record of the work request, which also links the work request to its associated fill request. This value lives in table RX_RXW_ORDER_INFO. \n\n\n\n\n\nEach work request is also linked to a master patient, for which the work request was originally created. Pickup priority and contact information is also stored in this record to assist in prescription filling and dispensing.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Work request ID. This is the primary key for the work request table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "MASTER_PATIENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the main patient in a work request. Additional patients attached to the work request are reported in the RXW_ORDER_INFO table in association with the specific fill request for that patient. This column can be linked to the PATIENT table in order to report on any patient noadd information."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PLANNED_PICKUP_INST",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time the patient plans to pick up the fills associated with this work request. Used in conjunction with the fill priority to determine the overall priority of the work request for filling."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "WAITING_SINCE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when the work request was marked as waiting."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "DELIVERY_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The prescription delivery method for the work request. Pickup and mail order are two examples of this.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPickup\n\n\nMail\n\n\nCourier\n\n\nRoom Delivery"
+      "description": "The prescription delivery method for the work request. Pickup and mail order are two examples of this.",
+      "entries": [
+        "Pickup",
+        "Mail",
+        "Courier",
+        "Room Delivery"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "DELIVERY_HOUSE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The house number of the prescription delivery address."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "DELIVERY_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The city of the prescription delivery address."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "DELIVERY_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The state of the prescription delivery address. \n\n\nMay contain organization-specific values: Yes"
+      "description": "The state of the prescription delivery address."
     },
     {
-      "index": 49,
+      "ordinalPosition": 9,
       "name": "DELIVERY_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ZIP code of the prescription delivery address."
     },
     {
-      "index": 54,
+      "ordinalPosition": 10,
       "name": "DELIVERY_DIST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The district of the prescription delivery address. \n\n\nMay contain organization-specific values: Yes"
+      "description": "The district of the prescription delivery address."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "DELIVERY_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The county of the prescription delivery address. \n\n\nMay contain organization-specific values: Yes"
+      "description": "The county of the prescription delivery address."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "DELIVERY_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The country of the prescription delivery address. \n\n\nMay contain organization-specific values: Yes"
+      "description": "The country of the prescription delivery address."
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "DELIVERY_ADDRTYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of address from the patient that is used for the prescription delivery address on the work request. For example, the patient's home address will commonly be used as the ship to address.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHome Address\n\n\nTemporary Address\n\n\nOther Address"
+      "description": "The type of address from the patient that is used for the prescription delivery address on the work request. For example, the patient's home address will commonly be used as the ship to address.",
+      "entries": [
+        "Home Address",
+        "Temporary Address",
+        "Other Address"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 14,
       "name": "RX_PMT_GUARANTOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If Professional Billing integration is enabled, this contains the guarantor account associated with the sale of merchandise products."
     },
     {
-      "index": 87,
+      "ordinalPosition": 15,
       "name": "DELIVERY_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the CSN of the patient encounter associated with a room delivery work request."
     },
     {
-      "index": 92,
+      "ordinalPosition": 16,
       "name": "DELIVERY_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the unit (DEP) record that represents the unit the patient occupied at the time of delivery of a room delivery work request."
     },
     {
-      "index": 97,
+      "ordinalPosition": 17,
       "name": "DELIVERY_ROOM_RECORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the ADT room (ROM) record that represents the room the patient occupied at the time of delivery of a room delivery work request."
     },
     {
-      "index": 102,
+      "ordinalPosition": 18,
       "name": "DELIVERY_EXAM_ROOM_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The column contains the free-text room number that represents the exam room the patient occupied at the time of delivery of room delivery work request."
     },
     {
-      "index": 107,
+      "ordinalPosition": 19,
       "name": "DELIVERY_BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the ADT bed (BED) record that represents the physical bed the patient occupied at the time of delivery of a room delivery work request."
     },
     {
-      "index": 112,
+      "ordinalPosition": 20,
       "name": "DELIVERY_BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 117,
+      "ordinalPosition": 21,
       "name": "CREATION_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

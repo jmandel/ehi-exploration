@@ -1,148 +1,190 @@
 {
-  "table_name": "HSP_ACCT_DETAIL_BILL_HX",
+  "name": "HSP_ACCT_DETAIL_BILL_HX",
   "description": "This table contains the history of hospital billing detail bills for a given hospital account.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HBP_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital billing print record ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EB_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The enterprise statement/detail bill ID."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "BILL_RUN_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The run type of the detail bill.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStatement\n\n\nHospital Account Detail Bill\n\n\nGuarantor Detail Bill\n\n\nClaim Detail Bill"
+      "description": "The run type of the detail bill.",
+      "entries": [
+        "Statement",
+        "Hospital Account Detail Bill",
+        "Guarantor Detail Bill",
+        "Claim Detail Bill"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "IS_DEMAND_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Flag to indicate whether this detail bill was produced on demand instead of as part of a batch.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Flag to indicate whether this detail bill was produced on demand instead of as part of a batch.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "ACCEPT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the detail bill was accepted."
     },
     {
-      "index": 47,
+      "ordinalPosition": 8,
       "name": "BATCH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The batch date of the detail bill."
     },
     {
-      "index": 52,
+      "ordinalPosition": 9,
       "name": "DELIVERY_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "How the detail bill was delivered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaper, No Electronic Notification\n\n\nPaperless, No Electronic Notification\n\n\nPaper and Electronic Notification\n\n\nPaperless, Electronic Notification"
+      "description": "How the detail bill was delivered.",
+      "entries": [
+        "Paper, No Electronic Notification",
+        "Paperless, No Electronic Notification",
+        "Paper and Electronic Notification",
+        "Paperless, Electronic Notification"
+      ]
     },
     {
-      "index": 63,
+      "ordinalPosition": 10,
       "name": "CREATION_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who created the detail bill."
     },
     {
-      "index": 68,
+      "ordinalPosition": 11,
       "name": "TOT_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sum of all charges on the detail bill."
     },
     {
-      "index": 73,
+      "ordinalPosition": 12,
       "name": "TOT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sum of all payments on the detail bill."
     },
     {
-      "index": 78,
+      "ordinalPosition": 13,
       "name": "TOT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sum of all adjustments on the detail bill."
     },
     {
-      "index": 83,
+      "ordinalPosition": 14,
       "name": "INSURANCE_BALANCE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount of the detail bill that is currently with insurance."
     },
     {
-      "index": 88,
+      "ordinalPosition": 15,
       "name": "PATIENT_BALANCE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount of the detail bill that is currently in self-pay."
     },
     {
-      "index": 93,
+      "ordinalPosition": 16,
       "name": "PATIENT_AMOUNT_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount due for this detail bill."
     },
     {
-      "index": 98,
+      "ordinalPosition": 17,
       "name": "MYC_NOTIFICATION_SENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "*** Deprecated *** This column has been deprecated, as this information is already available in STMT_PRINT.IS_MYCHART_NOTIF_YN. You can join to this table by using the column HSP_ACCT_DETAIL_BILL_HXN.EB_PRINT_ID. ****** Stores if the detail bill notification was sent via MyChart.\n\n\n The category values for this column were already listed for column: IS_DEMAND_YN"
+      "description": "*** Deprecated *** This column has been deprecated, as this information is already available in STMT_PRINT.IS_MYCHART_NOTIF_YN. You can join to this table by using the column HSP_ACCT_DETAIL_BILL_HXN.EB_PRINT_ID. ****** Stores if the detail bill notification was sent via MyChart."
     },
     {
-      "index": 104,
+      "ordinalPosition": 18,
       "name": "FORCE_TO_PAPER_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "*** Deprecated *** This column was incorrectly marked as containing EHI so it has been deprecated. ****** Stores the reason why the detail bill was sent via paper.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaperless Billing is disabled for the service area\n\n\nUser specified\n\n\nForced to paper because of self-pay follow-up level\n\n\nForced to paper because of guarantor rule\n\n\nForced to paper because of hospital account rule\n\n\nGuarantor declined paperless billing\n\n\nFinancial Assistance Program Not Allowed In MyChart\n\n\nNot self-pay correspondence\n\n\nForm is not allowed to be displayed in MyChart\n\n\nGuarantor missing associated patient or MyChart account\n\n\nGuarantor is not MyChart active\n\n\nGuarantor is not available in MyChart\n\n\nNo access to billing features in MyChart\n\n\nMyChart tickler could not be sent\n\n\nProfessional billing letter not marked as Sent\n\n\nPatient is not active on MyChart\n\n\nQueued for printing based on estimate rule\n\n\nPatient is deceased"
+      "description": "*** Deprecated *** This column was incorrectly marked as containing EHI so it has been deprecated. ****** Stores the reason why the detail bill was sent via paper.",
+      "entries": [
+        "Paperless Billing is disabled for the service area",
+        "User specified",
+        "Forced to paper because of self-pay follow-up level",
+        "Forced to paper because of guarantor rule",
+        "Forced to paper because of hospital account rule",
+        "Guarantor declined paperless billing",
+        "Financial Assistance Program Not Allowed In MyChart",
+        "Not self-pay correspondence",
+        "Form is not allowed to be displayed in MyChart",
+        "Guarantor missing associated patient or MyChart account",
+        "Guarantor is not MyChart active",
+        "Guarantor is not available in MyChart",
+        "No access to billing features in MyChart",
+        "MyChart tickler could not be sent",
+        "Professional billing letter not marked as Sent",
+        "Patient is not active on MyChart",
+        "Queued for printing based on estimate rule",
+        "Patient is deceased"
+      ]
     },
     {
-      "index": 129,
+      "ordinalPosition": 19,
       "name": "FIRST_MYC_VIEW_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "*** Deprecated *** This column was incorrectly marked as containing EHI so it has been deprecated. ****** Stores the instant the detail was first viewed in MyChart."
     },
     {
-      "index": 134,
+      "ordinalPosition": 20,
       "name": "LAST_MYC_VIEW_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "*** Deprecated *** This column was incorrectly marked as containing EHI so it has been deprecated. ****** Stores the instant the detail was last viewed in MyChart."
     }

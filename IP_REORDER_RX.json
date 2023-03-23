@@ -1,55 +1,65 @@
 {
-  "table_name": "IP_REORDER_RX",
+  "name": "IP_REORDER_RX",
   "description": "This table contains reordered meds information.",
-  "primary_key": {
-    "column_name": "INPATIENT_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INPATIENT_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INPATIENT_DATA_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the inpatient data store record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for the item."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ORIGINAL_ERX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The original medication the patient was using."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "REOR_ORDER_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The order ID of the medication being reordered."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "NEW_ORDER_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new order ID for the medication."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "REORDRD_MED_PEND_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This determines if the reordered medication is a pending order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This determines if the reordered medication is a pending order.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "SUBSTITUTE_ERX",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,31 +1,46 @@
 {
-  "table_name": "DD_DIA_CMS_START_MED_CVG",
+  "name": "DD_DIA_CMS_START_MED_CVG",
   "description": "This table contains patients' current medical coverage eligibility as submitted for CMS ESRD patient registration forms (CMS-2728).",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DIA_CMS_START_MED_CVG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS registration form 2728 reporting. It stores a dialysis patient's current medical coverage eligibility.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMedicaid\n\n\nDVA\n\n\nMedicare\n\n\nMedicareAdvantage\n\n\nEmployerGroupHealthInsurance\n\n\nOther\n\n\nNone"
+      "description": "This item is used in CMS registration form 2728 reporting. It stores a dialysis patient's current medical coverage eligibility.",
+      "entries": [
+        "Medicaid",
+        "DVA",
+        "Medicare",
+        "MedicareAdvantage",
+        "EmployerGroupHealthInsurance",
+        "Other",
+        "None"
+      ]
     }
   ]
 }

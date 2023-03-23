@@ -1,38 +1,61 @@
 {
-  "table_name": "DP_FAC_FOLLOW_UP",
+  "name": "DP_FAC_FOLLOW_UP",
   "description": "This table contains the follow-ups describing why a service request for continued care or services is being considered.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DP_FAC_FOLLOW_UP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the follow-up for a service provider that is considering the patient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNeed insurance authorization\n\n\nNeed bed availability\n\n\nNeed clinical review\n\n\nPatient not stable\n\n\nNeed additional clinical information\n\n\nRequires onsite review\n\n\nNeed family discussion\n\n\nNeed COVID-19 immunization record\n\n\nNeed expected discharge date\n\n\nNeed negative COVID-19 test\n\n\nOther (Comment)"
+      "description": "The category ID of the follow-up for a service provider that is considering the patient.",
+      "entries": [
+        "Need insurance authorization",
+        "Need bed availability",
+        "Need clinical review",
+        "Patient not stable",
+        "Need additional clinical information",
+        "Requires onsite review",
+        "Need family discussion",
+        "Need COVID-19 immunization record",
+        "Need expected discharge date",
+        "Need negative COVID-19 test",
+        "Other (Comment)"
+      ]
     }
   ]
 }

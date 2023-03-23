@@ -1,465 +1,523 @@
 {
-  "table_name": "CAP_PAY",
+  "name": "CAP_PAY",
   "description": "The CAP_PAY table contains information about capitation payments.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The internal ID of the transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "TX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncoming Receipt\n\n\nPCP Capitation\n\n\nSpecialty Capitation\n\n\nAP Claims Adjustment\n\n\nWithhold Adjustment\n\n\nGeneral Adjustment\n\n\nOther Reimbursement\n\n\nPCP Capitation Adjustment\n\n\nSpecialty Capitation Adjustment"
+      "description": "The type of the transaction.",
+      "entries": [
+        "Incoming Receipt",
+        "PCP Capitation",
+        "Specialty Capitation",
+        "AP Claims Adjustment",
+        "Withhold Adjustment",
+        "General Adjustment",
+        "Other Reimbursement",
+        "PCP Capitation Adjustment",
+        "Specialty Capitation Adjustment"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 3,
       "name": "TX_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLoaded\n\n\nReconciled\n\n\nCalculated\n\n\nAP Batched\n\n\nPaid\n\n\nVoid"
+      "description": "The status of the transaction.",
+      "entries": [
+        "Loaded",
+        "Reconciled",
+        "Calculated",
+        "AP Batched",
+        "Paid",
+        "Void"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 4,
       "name": "SPECIAL_TX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The special transaction type of the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nManual\n\n\nRetro\n\n\nAP Claims Holdback\n\n\nPaid By Carrier Claim\n\n\nWithhold Payback\n\n\nCOB Savings Member Payout\n\n\nRefund\n\n\nExtra Refund\n\n\nRemittance Recovery\n\n\nWrite-off Refund\n\n\nHRA Remittance Recovery\n\n\nPrepayment\n\n\nFuture Prepayment\n\n\nPrepayment Recovery"
+      "description": "The special transaction type of the transaction.",
+      "entries": [
+        "Manual",
+        "Retro",
+        "AP Claims Holdback",
+        "Paid By Carrier Claim",
+        "Withhold Payback",
+        "COB Savings Member Payout",
+        "Refund",
+        "Extra Refund",
+        "Remittance Recovery",
+        "Write-off Refund",
+        "HRA Remittance Recovery",
+        "Prepayment",
+        "Future Prepayment",
+        "Prepayment Recovery"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 5,
       "name": "EFFECTIVE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the transaction."
     },
     {
-      "index": 62,
+      "ordinalPosition": 6,
       "name": "POSTING_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The posting date of the transaction."
     },
     {
-      "index": 67,
+      "ordinalPosition": 7,
       "name": "ELIGIBILITY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The eligibility date of the transaction."
     },
     {
-      "index": 72,
+      "ordinalPosition": 8,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the user who created the transaction."
     },
     {
-      "index": 77,
+      "ordinalPosition": 9,
       "name": "COMMENT_LINE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text comment of the transaction."
     },
     {
-      "index": 82,
+      "ordinalPosition": 10,
       "name": "MEM_DOB",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of birth of the member in the transaction."
     },
     {
-      "index": 87,
+      "ordinalPosition": 11,
       "name": "MEM_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The sex of the member in the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+      "description": "The sex of the member in the transaction.",
+      "entries": [
+        "Female",
+        "Male",
+        "Unknown",
+        "Nonbinary",
+        "X",
+        "Other"
+      ]
     },
     {
-      "index": 100,
+      "ordinalPosition": 12,
       "name": "MEM_LIST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the associated transaction member list. It is only populated for Specialty Capitation transactions."
     },
     {
-      "index": 105,
+      "ordinalPosition": 13,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The service area ID of the transaction."
     },
     {
-      "index": 110,
+      "ordinalPosition": 14,
       "name": "CARRIER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The carrier ID of the transaction."
     },
     {
-      "index": 115,
+      "ordinalPosition": 15,
       "name": "CARRIER_ID_CARRIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the carrier record."
     },
     {
-      "index": 120,
+      "ordinalPosition": 16,
       "name": "NETWORK_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The network ID of the transaction."
     },
     {
-      "index": 125,
+      "ordinalPosition": 17,
       "name": "NETWORK_ID_NETWORK_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the network."
     },
     {
-      "index": 130,
+      "ordinalPosition": 18,
       "name": "PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The benefit ID of the transaction."
     },
     {
-      "index": 135,
+      "ordinalPosition": 19,
       "name": "PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 140,
+      "ordinalPosition": 20,
       "name": "PLAN_GRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The employer group ID of the transaction."
     },
     {
-      "index": 145,
+      "ordinalPosition": 21,
       "name": "PLAN_GRP_ID_PLAN_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the employer group record"
     },
     {
-      "index": 150,
+      "ordinalPosition": 22,
       "name": "LOCATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The primary location ID of the transaction."
     },
     {
-      "index": 155,
+      "ordinalPosition": 23,
       "name": "PCP_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The primary care provider ID of the transaction."
     },
     {
-      "index": 160,
+      "ordinalPosition": 24,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage ID of the member in the transaction."
     },
     {
-      "index": 165,
+      "ordinalPosition": 25,
       "name": "SPECIALTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specialty of the transaction.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The specialty of the transaction."
     },
     {
-      "index": 171,
+      "ordinalPosition": 26,
       "name": "SPEC_RATE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The rate for specialty of the transaction."
     },
     {
-      "index": 176,
+      "ordinalPosition": 27,
       "name": "VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vendor ID of the transaction."
     },
     {
-      "index": 181,
+      "ordinalPosition": 28,
       "name": "VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 186,
+      "ordinalPosition": 29,
       "name": "TX_CANC_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction ID which cancels this transaction."
     },
     {
-      "index": 191,
+      "ordinalPosition": 30,
       "name": "REPLACES_DTX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction that this transaction replaces."
     },
     {
-      "index": 196,
+      "ordinalPosition": 31,
       "name": "REPLACED_BY_DTX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction which replaced this transaction."
     },
     {
-      "index": 201,
+      "ordinalPosition": 32,
       "name": "RTRO_CNCL_BY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The retro transaction ID that canceled this transaction."
     },
     {
-      "index": 206,
+      "ordinalPosition": 33,
       "name": "RTRO_CNCL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category of the retro mismatch code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDuplicate Transaction\n\n\nMember Not Eligible\n\n\nIncorrect Capitation Context or Amount"
+      "description": "The category of the retro mismatch code.",
+      "entries": [
+        "Duplicate Transaction",
+        "Member Not Eligible",
+        "Incorrect Capitation Context or Amount"
+      ]
     },
     {
-      "index": 216,
+      "ordinalPosition": 34,
       "name": "SPEC_MEMBER_MONTHS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The specialty member months of the transaction."
     },
     {
-      "index": 221,
+      "ordinalPosition": 35,
       "name": "ADJ_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of the adjustment transaction."
     },
     {
-      "index": 226,
+      "ordinalPosition": 36,
       "name": "ADJ_VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vendor ID of this adjustment transaction."
     },
     {
-      "index": 231,
+      "ordinalPosition": 37,
       "name": "ADJ_VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 236,
+      "ordinalPosition": 38,
       "name": "ADJ_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The claim ID of this adjustment transaction."
     },
     {
-      "index": 241,
+      "ordinalPosition": 39,
       "name": "ADJU_CLAIM_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The claim line number of this adjustment transaction."
     },
     {
-      "index": 246,
+      "ordinalPosition": 40,
       "name": "ADJ_MEM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The member ID associated with this adjustment transaction."
     },
     {
-      "index": 251,
+      "ordinalPosition": 41,
       "name": "ADJ_MEM_DOB",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of birth of the member in this adjustment transaction."
     },
     {
-      "index": 256,
+      "ordinalPosition": 42,
       "name": "ADJ_MEM_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The sex of the member in this adjustment transaction.\n\n\n The category values for this column were already listed for column: MEM_SEX_C_NAME"
+      "description": "The sex of the member in this adjustment transaction."
     },
     {
-      "index": 262,
+      "ordinalPosition": 43,
       "name": "ADJ_MEM_LIST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The member list ID of this adjustment transaction."
     },
     {
-      "index": 267,
+      "ordinalPosition": 44,
       "name": "ADJ_PCP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The primary care provider ID of this adjustment transaction."
     },
     {
-      "index": 272,
+      "ordinalPosition": 45,
       "name": "ADJ_SPECIALTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specialty of this adjustment transaction.\n\n\n The category values for this column were already listed for column: SPECIALTY_C_NAME"
+      "description": "The specialty of this adjustment transaction."
     },
     {
-      "index": 278,
+      "ordinalPosition": 46,
       "name": "ADJ_SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The service area ID of this adjustment transaction."
     },
     {
-      "index": 283,
+      "ordinalPosition": 47,
       "name": "ADJ_CARRIER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The carrier ID of this adjustment transaction."
     },
     {
-      "index": 288,
+      "ordinalPosition": 48,
       "name": "ADJ_CARRIER_ID_CARRIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the carrier record."
     },
     {
-      "index": 293,
+      "ordinalPosition": 49,
       "name": "ADJ_NETWORK_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The network ID of this adjustment transaction."
     },
     {
-      "index": 298,
+      "ordinalPosition": 50,
       "name": "ADJ_NETWORK_ID_NETWORK_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the network."
     },
     {
-      "index": 303,
+      "ordinalPosition": 51,
       "name": "ADJ_BEN_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The benefit plan ID of this adjustment transaction."
     },
     {
-      "index": 308,
+      "ordinalPosition": 52,
       "name": "ADJ_BEN_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 313,
+      "ordinalPosition": 53,
       "name": "DIST_LOB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The capitation payment line of business."
     },
     {
-      "index": 318,
+      "ordinalPosition": 54,
       "name": "DIST_LOB_ID_LOB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the line of business record."
     },
     {
-      "index": 323,
+      "ordinalPosition": 55,
       "name": "DIST_RKP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the risk panel for capitation distribution."
     },
     {
-      "index": 328,
+      "ordinalPosition": 56,
       "name": "DIST_RKP_ID_RISK_PANEL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the risk panel."
     },
     {
-      "index": 333,
+      "ordinalPosition": 57,
       "name": "DIST_MGRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the member group for capitation distribution."
     },
     {
-      "index": 338,
+      "ordinalPosition": 58,
       "name": "DIST_MGRP_ID_MEM_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the member group"
     },
     {
-      "index": 343,
+      "ordinalPosition": 59,
       "name": "CAP_RETRO_LEVEL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Retro level capitation transactions."
     },
     {
-      "index": 348,
+      "ordinalPosition": 60,
       "name": "MEM_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of members listed in the associated member list of the transaction. This data is only populated for Specialty Capitation transactions."
     },
     {
-      "index": 353,
+      "ordinalPosition": 61,
       "name": "RELEASED_TO_AP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the transaction has been released to accounts payable (AP).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether the transaction has been released to accounts payable (AP).",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 362,
+      "ordinalPosition": 62,
       "name": "CAP_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The member's county used in outgoing capitation.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The member's county used in outgoing capitation."
     },
     {
-      "index": 368,
+      "ordinalPosition": 63,
       "name": "PCP_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount for this transaction. This is only populated for PCP capitation transactions."
     },
     {
-      "index": 373,
+      "ordinalPosition": 64,
       "name": "MCARE_CONTRACT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The medicare advantage contract number that matches the Member Group's medicare advantage contract number."
     },
     {
-      "index": 378,
+      "ordinalPosition": 65,
       "name": "WITHHOLD_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The PCP capitation payment withhold reason category ID for the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMember Suspended\n\n\nMember Limit Exceeded"
+      "description": "The PCP capitation payment withhold reason category ID for the transaction.",
+      "entries": [
+        "Member Suspended",
+        "Member Limit Exceeded"
+      ]
     }
   ]
 }

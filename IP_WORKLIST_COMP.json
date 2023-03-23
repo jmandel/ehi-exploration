@@ -1,125 +1,154 @@
 {
-  "table_name": "IP_WORKLIST_COMP",
+  "name": "IP_WORKLIST_COMP",
   "description": "This table provides information on completed work list tasks.",
-  "primary_key": {
-    "column_name": "TASK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TASK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TASK_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the task record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COMP_ON_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant a work list task was completed."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SCHED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the work list task was scheduled."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "INSTANCE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current instance status category ID for the task record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncomplete\n\n\nCompleted\n\n\nCanceled\n\n\nRemoved\n\n\nForwarded\n\n\nSkipped"
+      "description": "The current instance status category ID for the task record.",
+      "entries": [
+        "Incomplete",
+        "Completed",
+        "Canceled",
+        "Removed",
+        "Forwarded",
+        "Skipped"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "ANCHOR_SCHED_I_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "If this task was created from an anchored order, this is the due time of the anchor order related to this task due time"
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "NOTIFICATION_GRP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The notification group category ID for the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMorning\n\n\nAround Noon\n\n\nAfternoon\n\n\nEvening\n\n\nBedtime\n\n\nAs Needed\n\n\nAnytime\n\n\nOther"
+      "description": "The notification group category ID for the task.",
+      "entries": [
+        "Morning",
+        "Around Noon",
+        "Afternoon",
+        "Evening",
+        "Bedtime",
+        "As Needed",
+        "Anytime",
+        "Other"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 8,
       "name": "SCHED_TIME_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the work list task was scheduled in UTC."
     },
     {
-      "index": 60,
+      "ordinalPosition": 9,
       "name": "COMPLETED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact in which the task was completed. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 65,
+      "ordinalPosition": 10,
       "name": "TASK_COMP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the user indicates the task was completed"
     },
     {
-      "index": 70,
+      "ordinalPosition": 11,
       "name": "OUTCOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The task outcome category ID for the task.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPositive\n\n\nNegative\n\n\nNot Done"
+      "description": "The task outcome category ID for the task.",
+      "entries": [
+        "Positive",
+        "Negative",
+        "Not Done"
+      ]
     },
     {
-      "index": 80,
+      "ordinalPosition": 12,
       "name": "REMOVED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact from which a user removed the task. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 85,
+      "ordinalPosition": 13,
       "name": "UNCOMPLETED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact from which a user undid the completion action for the task. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 90,
+      "ordinalPosition": 14,
       "name": "TASK_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the note record for the comment associated with a specific task instance."
     },
     {
-      "index": 95,
+      "ordinalPosition": 15,
       "name": "TASK_RESPONSIBLE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The responsible user assigned to an instance of a care plan task."
     },
     {
-      "index": 100,
+      "ordinalPosition": 16,
       "name": "TASK_RESPONSIBLE_IB_POOL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The responsible pool assigned to an instance of a care plan task."
     },
     {
-      "index": 105,
+      "ordinalPosition": 17,
       "name": "TASK_RESPONSIBLE_IB_POOL_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,69 +1,81 @@
 {
-  "table_name": "RXFILL",
+  "name": "RXFILL",
   "description": "RxFill and adherence information.",
-  "primary_key": {
-    "column_name": "MED_PRBLM_LIST_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MED_PRBLM_LIST_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MED_PRBLM_LIST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the referral record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RXFILL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the status received from the pharmacy's RxFill message.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDispensed\n\n\nNot Dispensed\n\n\nPartial Dispense\n\n\nTransferred"
+      "description": "Stores the status received from the pharmacy's RxFill message.",
+      "entries": [
+        "Dispensed",
+        "Not Dispensed",
+        "Partial Dispense",
+        "Transferred"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "RXFILL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the date when the RxFill message was generated/received."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "RXFILL_DAYS_DISP",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the number of days for which the medication was dispensed, according to the RxFill message (if the message status is Dispensed)"
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "RXFILL_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores a link to the original order for which the RxFill message was sent."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "RXFILL_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the original medication (ERX) record for which the RxFill message was sent."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "REFERENCE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores a reference number that uniquely identifies this dispense."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "RXFILL_PHARMACY_ID",
       "type": "NUMERIC",
       "discontinued": false,

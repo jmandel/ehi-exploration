@@ -1,76 +1,102 @@
 {
-  "table_name": "OTHER_COMMUNCTN",
+  "name": "OTHER_COMMUNCTN",
   "description": "This table stores miscellaneous communication devices that can be used to reach the patient.  Examples are mobile phone and pager.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the patient record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OTHER_COMMUNIC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Other communication devices such as: 1) MOBILE: Mobile 2) PAGER: Pager 3) HOME FAX: Home Fax 4) OTH FAX: Other Fax 5) ASTNT: Assistant 6) TTY/TDP: TTY/TDP 7) HOME PH: Home Phone 8) WORK PH: Work Phone\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMobile\n\n\nPager\n\n\nHome Fax\n\n\nOther Fax\n\n\nAssistant\n\n\nTTY\n\n\nHome Phone\n\n\nWork Phone\n\n\nVideo Phone"
+      "description": "Other communication devices such as: 1) MOBILE: Mobile 2) PAGER: Pager 3) HOME FAX: Home Fax 4) OTH FAX: Other Fax 5) ASTNT: Assistant 6) TTY/TDP: TTY/TDP 7) HOME PH: Home Phone 8) WORK PH: Work Phone",
+      "entries": [
+        "Mobile",
+        "Pager",
+        "Home Fax",
+        "Other Fax",
+        "Assistant",
+        "TTY",
+        "Home Phone",
+        "Work Phone",
+        "Video Phone"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "OTHER_COMMUNIC_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Different kinds of communication numbers such as Home Phone, Work Phone, Fax, Pager, etc, that correspond to the type of device stored in OTHER_COMMUNIC_C."
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "START_DAY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The beginning day for the date range that this phone number is valid.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSunday\n\n\nMonday\n\n\nTuesday\n\n\nWednesday\n\n\nThursday\n\n\nFriday\n\n\nSaturday"
+      "description": "The beginning day for the date range that this phone number is valid.",
+      "entries": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
     },
     {
-      "index": 47,
+      "ordinalPosition": 6,
       "name": "END_DAY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The end day for the date range that this phone number is valid.\n\n\n The category values for this column were already listed for column: START_DAY_C_NAME"
+      "description": "The end day for the date range that this phone number is valid."
     },
     {
-      "index": 53,
+      "ordinalPosition": 7,
       "name": "START_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The beginning time for the time range that this phone number is valid."
     },
     {
-      "index": 58,
+      "ordinalPosition": 8,
       "name": "END_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The end time for the time range that this phone number is valid."
     },
     {
-      "index": 63,
+      "ordinalPosition": 9,
       "name": "CONTACT_PRIORITY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Priorities are numbers, and are used to set a calling preference for phone numbers.  1 is the highest priority."
     },
     {
-      "index": 68,
+      "ordinalPosition": 10,
       "name": "CONTACT_NOTES",
       "type": "VARCHAR",
       "discontinued": false,

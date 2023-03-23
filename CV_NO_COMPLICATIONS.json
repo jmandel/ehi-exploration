@@ -1,43 +1,53 @@
 {
-  "table_name": "CV_NO_COMPLICATIONS",
+  "name": "CV_NO_COMPLICATIONS",
   "description": "Table to keep track of \"no complications\".",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the log record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "NO_COMPLICATIONS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Item to keep track that there were no complications.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Item to keep track that there were no complications.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "NO_COMP_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Item to keep track the user that modified \"no complications\"."
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "NO_COMP_EDIT_TIME_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Item to keep track the time \"no complications\" was modified."
     }

@@ -1,41 +1,47 @@
 {
-  "table_name": "EXT_DEM_UPDATES",
+  "name": "EXT_DEM_UPDATES",
   "description": "This table holds the systems and instants that updated demographics in Epic.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EXT_DEM_UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column holds the instant that the associated patient's demographics were updated from an external system (Data Exchange Organization)."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EXT_DEM_UPDATE_ORG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column holds the unique ID of the external system (Data Exchange Organization) from which we received the associated patient's demographic updates"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EXT_DEM_UPDATE_ORG_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,

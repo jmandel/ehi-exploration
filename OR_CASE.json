@@ -1,682 +1,726 @@
 {
-  "table_name": "OR_CASE",
+  "name": "OR_CASE",
   "description": "The OR_CASE table contains OR management system case records.",
-  "primary_key": {
-    "column_name": "OR_CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OR_CASE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OR_CASE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the procedural case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CASE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the surgical case record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SURGERY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the surgery is scheduled to take place."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CASE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The case type category number for the case. Example case types include elective and emergency. This column is frequently used to link to ZC_OR_CASE_TYPE.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The case type category number for the case. Example case types include elective and emergency. This column is frequently used to link to ZC_OR_CASE_TYPE.",
+      "linksTo": "ZC_OR_CASE_TYPE"
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "CASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The case classification category number for the case. Example case types include elective and trauma. This column is frequently used to link to ZC_OR_CASE_CLASS.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The case classification category number for the case. Example case types include elective and trauma. This column is frequently used to link to ZC_OR_CASE_CLASS.",
+      "linksTo": "ZC_OR_CASE_CLASS"
     },
     {
-      "index": 29,
+      "ordinalPosition": 6,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient associated with the procedural case record."
     },
     {
-      "index": 34,
+      "ordinalPosition": 7,
       "name": "PAT_AGE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The age of the patient associated with the surgical case."
     },
     {
-      "index": 39,
+      "ordinalPosition": 8,
       "name": "PAT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the type of the patient associated with the surgical case record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the type of the patient associated with the surgical case record."
     },
     {
-      "index": 45,
+      "ordinalPosition": 9,
       "name": "SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which identifies the surgical service of the case record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which identifies the surgical service of the case record."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "NUM_OF_PANELS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total number of procedure panels in the surgical case record. A panel is a grouping of surgical procedures performed together."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "EXP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which this surgical case expires. The case should be scheduled on or before this date."
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "REQUESTED_BY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the person who requested that the surgical case be created."
     },
     {
-      "index": 66,
+      "ordinalPosition": 13,
       "name": "SETUP_OFFSET",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time in minutes required to set up at the beginning of the case."
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "CLEANUP_OFFSET",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time in minutes required to clean up at the end of the case."
     },
     {
-      "index": 76,
+      "ordinalPosition": 15,
       "name": "TOTAL_TIME_NEEDED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required to perform the case."
     },
     {
-      "index": 81,
+      "ordinalPosition": 16,
       "name": "REFERRING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the physician who referred the patient associated with the case."
     },
     {
-      "index": 86,
+      "ordinalPosition": 17,
       "name": "OR_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the room the case is scheduled to be performed. This column is frequently used to link to CLARITY_SER."
+      "description": "The unique ID of the room the case is scheduled to be performed. This column is frequently used to link to CLARITY_SER.",
+      "linksTo": "CLARITY_SER"
     },
     {
-      "index": 91,
+      "ordinalPosition": 18,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "The unique ID of the location where the procedure is scheduled to be performed. This column is frequently used to link to CLARITY_LOC."
+      "description": "The unique ID of the location where the procedure is scheduled to be performed. This column is frequently used to link to CLARITY_LOC.",
+      "linksTo": "CLARITY_LOC"
     },
     {
-      "index": 96,
+      "ordinalPosition": 19,
       "name": "PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the priority of the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLow\n\n\nNormal\n\n\nHigh"
+      "description": "The category value which represents the priority of the case.",
+      "entries": [
+        "Low",
+        "Normal",
+        "High"
+      ]
     },
     {
-      "index": 106,
+      "ordinalPosition": 20,
       "name": "ADD_ON_CASE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a case is an add-on. Y indicates that the add-on check box is checked, and this is done manually by the scheduler for cases that have been scheduled after the usual scheduling window is closed. N or null indicates that the case is not an add-on.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether a case is an add-on. Y indicates that the add-on check box is checked, and this is done manually by the scheduler for cases that have been scheduled after the usual scheduling window is closed. N or null indicates that the case is not an add-on.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 115,
+      "ordinalPosition": 21,
       "name": "SCHED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the case scheduling status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nScheduled\n\n\nCanceled\n\n\nNot Scheduled\n\n\nMissing Information\n\n\nVoided\n\n\nPending\n\n\nArrived\n\n\nCompleted\n\n\nNo Show\n\n\nPending Unscheduled"
+      "description": "The category number for the case scheduling status.",
+      "entries": [
+        "Scheduled",
+        "Canceled",
+        "Not Scheduled",
+        "Missing Information",
+        "Voided",
+        "Pending",
+        "Arrived",
+        "Completed",
+        "No Show",
+        "Pending Unscheduled"
+      ]
     },
     {
-      "index": 132,
+      "ordinalPosition": 22,
       "name": "CASE_PROGRESS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the current progress status of the case as it proceeds.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the current progress status of the case as it proceeds."
     },
     {
-      "index": 138,
+      "ordinalPosition": 23,
       "name": "CANCEL_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the most recent reason the case was canceled or removed from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to ZC_OR_CANCEL_RSN.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category number of the most recent reason the case was canceled or removed from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to ZC_OR_CANCEL_RSN.",
+      "linksTo": "ZC_OR_CANCEL_RSN"
     },
     {
-      "index": 144,
+      "ordinalPosition": 24,
       "name": "CANCEL_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the user who most recently canceled the case or removed it from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to CLARITY_EMP."
+      "description": "The unique ID of the user who most recently canceled the case or removed it from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to CLARITY_EMP.",
+      "linksTo": "CLARITY_EMP"
     },
     {
-      "index": 149,
+      "ordinalPosition": 25,
       "name": "TIME_SCHEDULED",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time at which the case is scheduled to be performed on the surgery date."
     },
     {
-      "index": 154,
+      "ordinalPosition": 26,
       "name": "VOID_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the reason the case was voided. This column is frequently used to link to ZC_OR_VOID_REASON.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category number for the reason the case was voided. This column is frequently used to link to ZC_OR_VOID_REASON.",
+      "linksTo": "ZC_OR_VOID_REASON"
     },
     {
-      "index": 160,
+      "ordinalPosition": 27,
       "name": "CANCEL_CHKIN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the reason the check-in was canceled.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the reason the check-in was canceled."
     },
     {
-      "index": 166,
+      "ordinalPosition": 28,
       "name": "PATIENT_ESCORT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The person escorting the patient for the surgery. This is a free text value."
     },
     {
-      "index": 171,
+      "ordinalPosition": 29,
       "name": "PANEL1_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 1 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "index": 176,
+      "ordinalPosition": 30,
       "name": "PANEL1_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 1 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "index": 181,
+      "ordinalPosition": 31,
       "name": "PANEL2_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 2 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "index": 186,
+      "ordinalPosition": 32,
       "name": "PANEL2_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 2 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "index": 191,
+      "ordinalPosition": 33,
       "name": "PANEL3_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 3 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "index": 196,
+      "ordinalPosition": 34,
       "name": "PANEL3_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 3 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "index": 201,
+      "ordinalPosition": 35,
       "name": "PANEL4_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 4 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "index": 206,
+      "ordinalPosition": 36,
       "name": "PANEL4_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 4 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "index": 211,
+      "ordinalPosition": 37,
       "name": "PANEL5_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 5 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "index": 216,
+      "ordinalPosition": 38,
       "name": "PANEL5_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 5 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "index": 221,
+      "ordinalPosition": 39,
       "name": "REC_CREATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who created the case."
     },
     {
-      "index": 226,
+      "ordinalPosition": 40,
       "name": "ADT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contact serial number for an Admission Discharge Transfer (ADT) admit contact."
     },
     {
-      "index": 231,
+      "ordinalPosition": 41,
       "name": "CASE_REQST_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who placed the web request."
     },
     {
-      "index": 236,
+      "ordinalPosition": 42,
       "name": "SHUFFLE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who placed the case in the shuffle depot."
     },
     {
-      "index": 241,
+      "ordinalPosition": 43,
       "name": "PAT_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value representing the patient level in the case.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value representing the patient level in the case."
     },
     {
-      "index": 247,
+      "ordinalPosition": 44,
       "name": "PAIN_MGMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the patient's participation in pain management.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the patient's participation in pain management."
     },
     {
-      "index": 253,
+      "ordinalPosition": 45,
       "name": "ADMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the patient was admitted."
     },
     {
-      "index": 258,
+      "ordinalPosition": 46,
       "name": "RESEARCH_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which represents the candidacy of the case for research.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which represents the candidacy of the case for research."
     },
     {
-      "index": 264,
+      "ordinalPosition": 47,
       "name": "ADMIT_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates the admit source for the patient's stay.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates the admit source for the patient's stay."
     },
     {
-      "index": 270,
+      "ordinalPosition": 48,
       "name": "ADMITTING_SRVC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates the admitting service for the patient's stay.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates the admitting service for the patient's stay."
     },
     {
-      "index": 276,
+      "ordinalPosition": 49,
       "name": "ADMITTING_PHYS_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the admitting physician."
     },
     {
-      "index": 281,
+      "ordinalPosition": 50,
       "name": "ADMIT_BED_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value which indicates the admitting bed type.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value which indicates the admitting bed type."
     },
     {
-      "index": 287,
+      "ordinalPosition": 51,
       "name": "ADD_ON_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the case first shows up as an add-on."
     },
     {
-      "index": 292,
+      "ordinalPosition": 52,
       "name": "MODIFIED_CASE_LEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The length of the case, in minutes, if it has been shortened or lengthened."
     },
     {
-      "index": 297,
+      "ordinalPosition": 53,
       "name": "PAT_TOTAL_TIME",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time in minutes for which the patient is present."
     },
     {
-      "index": 302,
+      "ordinalPosition": 54,
       "name": "BUMPED_CASE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Yes/No flag indicating whether or not the case has been bumped.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Yes/No flag indicating whether or not the case has been bumped."
     },
     {
-      "index": 308,
+      "ordinalPosition": 55,
       "name": "CASE_ACCEPTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Yes/No flag indicating whether or not the case was accepted in Case Entry.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Yes/No flag indicating whether or not the case was accepted in Case Entry.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 317,
+      "ordinalPosition": 56,
       "name": "PROJ_START_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The projected date and time for the start of this case."
     },
     {
-      "index": 322,
+      "ordinalPosition": 57,
       "name": "PROJ_END_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The projected date and time for the end of this case."
     },
     {
-      "index": 327,
+      "ordinalPosition": 58,
       "name": "REAL_TIME_OR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the surgery case's operating room according to the log."
     },
     {
-      "index": 332,
+      "ordinalPosition": 59,
       "name": "PANEL1_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the time for Panel 1 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the time for Panel 1 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "index": 338,
+      "ordinalPosition": 60,
       "name": "PANEL2_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the time for Panel 2 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the time for Panel 2 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "index": 344,
+      "ordinalPosition": 61,
       "name": "PANEL3_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the time for Panel 3 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the time for Panel 3 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "index": 350,
+      "ordinalPosition": 62,
       "name": "PANEL4_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the time for Panel 4 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the time for Panel 4 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "index": 356,
+      "ordinalPosition": 63,
       "name": "PANEL5_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the time for Panel 5 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the time for Panel 5 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "index": 362,
+      "ordinalPosition": 64,
       "name": "PANEL1_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 1."
     },
     {
-      "index": 367,
+      "ordinalPosition": 65,
       "name": "PANEL2_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 2."
     },
     {
-      "index": 372,
+      "ordinalPosition": 66,
       "name": "PANEL3_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 3."
     },
     {
-      "index": 377,
+      "ordinalPosition": 67,
       "name": "PANEL4_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 4."
     },
     {
-      "index": 382,
+      "ordinalPosition": 68,
       "name": "PANEL5_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 5."
     },
     {
-      "index": 387,
+      "ordinalPosition": 69,
       "name": "PANEL1_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the length of the panel 1 was modified by the user.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the length of the panel 1 was modified by the user."
     },
     {
-      "index": 393,
+      "ordinalPosition": 70,
       "name": "PANEL2_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the length of the panel 2 was modified by the user.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the length of the panel 2 was modified by the user."
     },
     {
-      "index": 399,
+      "ordinalPosition": 71,
       "name": "PANEL3_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the length of the panel 3 was modified by the user.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the length of the panel 3 was modified by the user."
     },
     {
-      "index": 405,
+      "ordinalPosition": 72,
       "name": "PANEL4_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the length of the panel 4 was modified by the user.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the length of the panel 4 was modified by the user."
     },
     {
-      "index": 411,
+      "ordinalPosition": 73,
       "name": "PANEL5_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the length of the panel 5 was modified by the user.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates whether the length of the panel 5 was modified by the user."
     },
     {
-      "index": 417,
+      "ordinalPosition": 74,
       "name": "REQUESTED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The preferred date requested for this case."
     },
     {
-      "index": 422,
+      "ordinalPosition": 75,
       "name": "REQUESTED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time (of the day) requested for this case."
     },
     {
-      "index": 427,
+      "ordinalPosition": 76,
       "name": "EXP_ADM_DTE_OFFSET",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the number of days prior to the day of surgery, the patient is expected to be admitted."
     },
     {
-      "index": 432,
+      "ordinalPosition": 77,
       "name": "CASE_VERIFIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Has the case been verified?\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Has the case been verified?",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 441,
+      "ordinalPosition": 78,
       "name": "PAT_ALLERGIES_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the patient has Allergies.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if the patient has Allergies."
     },
     {
-      "index": 447,
+      "ordinalPosition": 79,
       "name": "PAT_HEALTH_ISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if patient has health issues.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if patient has health issues."
     },
     {
-      "index": 453,
+      "ordinalPosition": 80,
       "name": "FILMS_FOR_SURGER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the patient is bringing films to surgery.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if the patient is bringing films to surgery."
     },
     {
-      "index": 459,
+      "ordinalPosition": 81,
       "name": "PREOP_VISIT_NEED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a PreOp Visit is needed.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if a PreOp Visit is needed."
     },
     {
-      "index": 465,
+      "ordinalPosition": 82,
       "name": "PREOP_VISIT_COMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if PreOp Visit has been completed.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if PreOp Visit has been completed."
     },
     {
-      "index": 471,
+      "ordinalPosition": 83,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This columns stores the log ID for this case."
     },
     {
-      "index": 476,
+      "ordinalPosition": 84,
       "name": "CASE_ACCEPT_NEED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the case accept programming point needs to be fired. Used when a case was created from a order to fire the accept programming points before the case can be scheduled.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Stores whether the case accept programming point needs to be fired. Used when a case was created from a order to fire the accept programming points before the case can be scheduled."
     },
     {
-      "index": 482,
+      "ordinalPosition": 85,
       "name": "IS_CLINICAL_TRL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the case is a clinical trial case.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "Indicates if the case is a clinical trial case."
     },
     {
-      "index": 488,
+      "ordinalPosition": 86,
       "name": "PEND_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of a pending web request.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApprove\n\n\nDeny\n\n\nMore Info Required"
+      "description": "The status of a pending web request.",
+      "entries": [
+        "Approve",
+        "Deny",
+        "More Info Required"
+      ]
     },
     {
-      "index": 498,
+      "ordinalPosition": 87,
       "name": "POSTOP_DEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's post-operative destination.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The patient's post-operative destination."
     },
     {
-      "index": 504,
+      "ordinalPosition": 88,
       "name": "TRANSLATOR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value of the language of the case translator.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value of the language of the case translator."
     },
     {
-      "index": 510,
+      "ordinalPosition": 89,
       "name": "PTA_LAST_UPD_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date the procedure time was last updated in the case"
     },
     {
-      "index": 515,
+      "ordinalPosition": 90,
       "name": "CASE_BEGIN_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the datetime instant in which the case began."
     },
     {
-      "index": 520,
+      "ordinalPosition": 91,
       "name": "CASE_END_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the datetime instant in which the case ended."
     },
     {
-      "index": 525,
+      "ordinalPosition": 92,
       "name": "MULT_PROC_COMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether there were multiple procedures used in calculation of procedure time for this case. \n\n\n The category values for this column were already listed for column: CASE_ACCEPTED_YN"
+      "description": "Indicates whether there were multiple procedures used in calculation of procedure time for this case."
     },
     {
-      "index": 531,
+      "ordinalPosition": 93,
       "name": "USING_EAP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item defines whether this case is using the Procedure master file (EAP) for scheduling procedures? Default value is 'No'.\n\n\n The category values for this column were already listed for column: ADD_ON_CASE_YN"
+      "description": "This item defines whether this case is using the Procedure master file (EAP) for scheduling procedures? Default value is 'No'."
     },
     {
-      "index": 537,
+      "ordinalPosition": 94,
       "name": "ANESTHESIA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The anesthesia type category number for the case.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The anesthesia type category number for the case."
     },
     {
-      "index": 543,
+      "ordinalPosition": 95,
       "name": "CASE_SOURCE_DEPL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the source deployment that created the case through cross deployment scheduling."
     },
     {
-      "index": 548,
+      "ordinalPosition": 96,
       "name": "PRIMARY_PHYSICIAN_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The primary surgeon from panel 1 of the case, as scheduled. This column is frequently used to link to CLARITY_SER."
+      "description": "The primary surgeon from panel 1 of the case, as scheduled. This column is frequently used to link to CLARITY_SER.",
+      "linksTo": "CLARITY_SER"
     }
   ]
 }

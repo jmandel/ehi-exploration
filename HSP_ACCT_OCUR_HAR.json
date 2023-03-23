@@ -1,34 +1,40 @@
 {
-  "table_name": "HSP_ACCT_OCUR_HAR",
+  "name": "HSP_ACCT_OCUR_HAR",
   "description": "This table contains the Occurrence Codes and Occurrence Dates for a Hospital Accounts Receivable (HAR) record.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column stores the line number in the results of a query. Because multiple occurrence codes can be stored in one hospital account, each code will have a unique line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OCCURRENCE_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "An occurrence code stored in the hospital account.\n\n\nMay contain organization-specific values: Yes"
+      "description": "An occurrence code stored in the hospital account."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "OCCURRENCE_DATE",
       "type": "DATETIME",
       "discontinued": false,

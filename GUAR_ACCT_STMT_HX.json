@@ -1,115 +1,134 @@
 {
-  "table_name": "GUAR_ACCT_STMT_HX",
+  "name": "GUAR_ACCT_STMT_HX",
   "description": "This table contains statement history information for the guarantor account.",
-  "primary_key": {
-    "column_name": "ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STMT_HX_STMT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which statement was generated."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "STMT_HX_INVOICE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The invoice number of the invoice that was sent to the guarantor on this date."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "STMT_HX_NEW_CHARGE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original amount of all new charges on this invoice. New charges are those that were not on the last invoice sent."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "STMT_HX_NEW_BALANCE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new balance on the statement."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "STMT_HX_TTL_PMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total payment amount on the statement."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "STMT_HX_TTL_DB_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total debit adjustment amount on the statement."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "STMT_HX_TTL_CR_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total credit adjustment amount on the statement."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "STMT_HX_TTL_AMT_HLD",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount held on the statement."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "STMT_HX_TTL_AMT_VD",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount voided since last statement."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "STMT_HX_DVRY_MTHD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The statement delivery method category ID for the guarantor.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaper, No Electronic Notification\n\n\nPaperless, No Electronic Notification\n\n\nPaper and Electronic Notification\n\n\nPaperless, Electronic Notification"
+      "description": "The statement delivery method category ID for the guarantor.",
+      "entries": [
+        "Paper, No Electronic Notification",
+        "Paperless, No Electronic Notification",
+        "Paper and Electronic Notification",
+        "Paperless, Electronic Notification"
+      ]
     },
     {
-      "index": 68,
+      "ordinalPosition": 13,
       "name": "STMT_HX_LST_VW_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Last date/time when the statement was most recently access from MyChart."
     },
     {
-      "index": 73,
+      "ordinalPosition": 14,
       "name": "STMT_HX_1ST_VW_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date/time when the statement was first accessed from MyChart."
     },
     {
-      "index": 78,
+      "ordinalPosition": 15,
       "name": "STMT_HX_WHY_2_PR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason type why the paperless statement is forced to paper statement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaperless statement disabled\n\n\nGuarantor type not included\n\n\nGuarantor excluded by rule\n\n\nLack of payments\n\n\nStatement not shown in MyChart"
+      "description": "Reason type why the paperless statement is forced to paper statement.",
+      "entries": [
+        "Paperless statement disabled",
+        "Guarantor type not included",
+        "Guarantor excluded by rule",
+        "Lack of payments",
+        "Statement not shown in MyChart"
+      ]
     }
   ]
 }

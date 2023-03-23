@@ -1,482 +1,583 @@
 {
-  "table_name": "COVERAGE_2",
+  "name": "COVERAGE_2",
   "description": "The COVERAGE_2 table contains high-level information on both managed care and indemnity coverage records in your system.",
-  "primary_key": {
-    "column_name": "CVG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CVG_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the coverage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the status for this coverage record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+      "description": "The category number of the status for this coverage record.",
+      "entries": [
+        "Active",
+        "Inactive",
+        "Deleted",
+        "Inactive and Deleted",
+        "Hidden",
+        "Inactive and Hidden",
+        "Deleted and Hidden",
+        "Inactive Deleted and Hidden"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 3,
       "name": "IS_DEDUCT_MET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the deductible has been met for this coverage. The deductible can be established on the guarantor account or patient level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDeductible Met\n\n\nNot Met"
+      "description": "Indicates whether the deductible has been met for this coverage. The deductible can be established on the guarantor account or patient level.",
+      "entries": [
+        "Deductible Met",
+        "Not Met"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 4,
       "name": "IS_ASGN_CVG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicated whether the provider's assignment status is set to Coverage Assignment for this coverage's payor.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccept Assignment\n\n\nDo Not Accept Assignment"
+      "description": "Indicated whether the provider's assignment status is set to Coverage Assignment for this coverage's payor.",
+      "entries": [
+        "Accept Assignment",
+        "Do Not Accept Assignment"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 5,
       "name": "SIG_ON_FILE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the signature was filed."
     },
     {
-      "index": 45,
+      "ordinalPosition": 6,
       "name": "SIG_ON_FILE_LOC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The location at which the signature was filed."
     },
     {
-      "index": 50,
+      "ordinalPosition": 7,
       "name": "MEDIGAP_AUTH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the payor for this coverage has Medigap authorization.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the payor for this coverage has Medigap authorization.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 8,
       "name": "TPL_RESOURCE_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column lists the Third Party Liability resource code for a specific plan. This code is either returned in the real-time eligibility response or found on the patient's insurance card."
     },
     {
-      "index": 64,
+      "ordinalPosition": 9,
       "name": "THIRD_PARTY_LIAB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there is third-party liability for this coverage.\n\n\n The category values for this column were already listed for column: MEDIGAP_AUTH_YN"
+      "description": "Indicates if there is third-party liability for this coverage."
     },
     {
-      "index": 70,
+      "ordinalPosition": 10,
       "name": "BENEFIT_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The benefit code for this coverage. This can contain any facility-specific benefit code."
     },
     {
-      "index": 75,
+      "ordinalPosition": 11,
       "name": "SCHEDULED_DISCON_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the coverage is scheduled to be discontinued."
     },
     {
-      "index": 80,
+      "ordinalPosition": 12,
       "name": "SCHEDULED_ACTV_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the coverage is scheduled to be activated."
     },
     {
-      "index": 85,
+      "ordinalPosition": 13,
       "name": "YR_ALLOW_DOL_TOT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The yearly dollar limit for payments against this coverage's payor."
     },
     {
-      "index": 90,
+      "ordinalPosition": 14,
       "name": "YR_ALLOW_DOL_USE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The year-to-date payments made against the coverage's payor."
     },
     {
-      "index": 95,
+      "ordinalPosition": 15,
       "name": "ORG_FOR_CLM_SUBMIT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The title or name of the organization to which submitted claims under this coverage will be sent."
     },
     {
-      "index": 100,
+      "ordinalPosition": 16,
       "name": "FINANCIAL_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The financial class for this coverage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+      "description": "The financial class for this coverage.",
+      "entries": [
+        "Commercial",
+        "Medicare",
+        "Medicaid",
+        "Self-Pay",
+        "Worker's Comp",
+        "Tricare",
+        "Champva",
+        "Group Health Plan",
+        "FECA Black Lung",
+        "Blue Shield",
+        "Medigap",
+        "Other",
+        "DK Regional",
+        "Client"
+      ]
     },
     {
-      "index": 121,
+      "ordinalPosition": 17,
       "name": "COVERAGE_FAX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The fax number for this coverage."
     },
     {
-      "index": 126,
+      "ordinalPosition": 18,
       "name": "FREE_TXT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free-text plan name for this coverage."
     },
     {
-      "index": 131,
+      "ordinalPosition": 19,
       "name": "FREE_TXT_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free-text payor name for this coverage."
     },
     {
-      "index": 136,
+      "ordinalPosition": 20,
       "name": "PLAN_FREE_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The format of the coverage's free-text plan."
     },
     {
-      "index": 141,
+      "ordinalPosition": 21,
       "name": "TEFRA_PAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is TEFRA. A patient is TEFRA if an eligible Medicare beneficiary is covered by a group health plan.\n\n\n The category values for this column were already listed for column: MEDIGAP_AUTH_YN"
+      "description": "Indicates whether the patient is TEFRA. A patient is TEFRA if an eligible Medicare beneficiary is covered by a group health plan."
     },
     {
-      "index": 147,
+      "ordinalPosition": 22,
       "name": "ADMISSION_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the admission source.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPhysician Referral\n\n\nClinic Referral\n\n\nHMO Referral\n\n\nTransfer from Hospital\n\n\nTransfer from a SNF\n\n\nTransfer from other Health Care Facility\n\n\nEmergency Room\n\n\nCourt/Law Enforcement"
+      "description": "The category number of the admission source.",
+      "entries": [
+        "Physician Referral",
+        "Clinic Referral",
+        "HMO Referral",
+        "Transfer from Hospital",
+        "Transfer from a SNF",
+        "Transfer from other Health Care Facility",
+        "Emergency Room",
+        "Court/Law Enforcement"
+      ]
     },
     {
-      "index": 162,
+      "ordinalPosition": 23,
       "name": "ENROLL_CODE_FBC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Federal Employment Program enrollment code."
     },
     {
-      "index": 167,
+      "ordinalPosition": 24,
       "name": "GRP_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The group number for the coverage."
     },
     {
-      "index": 172,
+      "ordinalPosition": 25,
       "name": "HMO_SITE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The site number for the coverage's HMO."
     },
     {
-      "index": 177,
+      "ordinalPosition": 26,
       "name": "HMO_SITE_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The phone number for the coverage's HMO."
     },
     {
-      "index": 182,
+      "ordinalPosition": 27,
       "name": "COPAY_AMOUNT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The copay amount for the coverage."
     },
     {
-      "index": 187,
+      "ordinalPosition": 28,
       "name": "CHAMP_SPON_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The CHAMPUS/Tricare sponsor's military status, obtained from the military identification card.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nActive Military\n\n\nRetired Military\n\n\nDeceased"
+      "description": "The CHAMPUS/Tricare sponsor's military status, obtained from the military identification card.",
+      "entries": [
+        "Active Military",
+        "Retired Military",
+        "Deceased"
+      ]
     },
     {
-      "index": 197,
+      "ordinalPosition": 29,
       "name": "SERVICE_BRANCH",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The military service branch for a CHAMPUS/Tricare coverage subscriber."
     },
     {
-      "index": 202,
+      "ordinalPosition": 30,
       "name": "CHAMP_SPON_BRANCH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A CHAMPUS/Tricare coverage sponsor's military service branch.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nArmy\n\n\nAir Force\n\n\nMarines\n\n\nNavy\n\n\nCoast Guard\n\n\nPublic Health Service\n\n\nNOAA (National Oceanic & Atmospheric Adm.)"
+      "description": "A CHAMPUS/Tricare coverage sponsor's military service branch.",
+      "entries": [
+        "Army",
+        "Air Force",
+        "Marines",
+        "Navy",
+        "Coast Guard",
+        "Public Health Service",
+        "NOAA (National Oceanic & Atmospheric Adm.)"
+      ]
     },
     {
-      "index": 216,
+      "ordinalPosition": 31,
       "name": "CHAMP_SPON_GRADE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A CHAMPUS/Tricare coverage sponsor's military pay grade.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nG1 Commissioned\n\n\n09 Commissioned\n\n\n08 Commissioned\n\n\n07 Commissioned\n\n\n06 Commissioned\n\n\n05 Commissioned\n\n\n04 Commissioned\n\n\n03 Commissioned\n\n\n02 Commissioned\n\n\n01 Commissioned\n\n\nW4 Warrant\n\n\nW3 Warrant\n\n\nW2 Warrant\n\n\nW1 Warrant\n\n\nE9 Enlisted\n\n\nE8 Enlisted\n\n\nE7 Enlisted\n\n\nE6 Enlisted\n\n\nE5 Enlisted\n\n\nE4 Enlisted\n\n\nE3 Enlisted\n\n\nE2 Enlisted\n\n\nE1 Enlisted\n\n\nSecurity\n\n\nNATO\n\n\nCHAMPVA"
+      "description": "A CHAMPUS/Tricare coverage sponsor's military pay grade.",
+      "entries": [
+        "G1 Commissioned",
+        "09 Commissioned",
+        "08 Commissioned",
+        "07 Commissioned",
+        "06 Commissioned",
+        "05 Commissioned",
+        "04 Commissioned",
+        "03 Commissioned",
+        "02 Commissioned",
+        "01 Commissioned",
+        "W4 Warrant",
+        "W3 Warrant",
+        "W2 Warrant",
+        "W1 Warrant",
+        "E9 Enlisted",
+        "E8 Enlisted",
+        "E7 Enlisted",
+        "E6 Enlisted",
+        "E5 Enlisted",
+        "E4 Enlisted",
+        "E3 Enlisted",
+        "E2 Enlisted",
+        "E1 Enlisted",
+        "Security",
+        "NATO",
+        "CHAMPVA"
+      ]
     },
     {
-      "index": 249,
+      "ordinalPosition": 32,
       "name": "MCARE_OTHER_INS_CO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "An additional insurance company providing coverage for a Medicare patient."
     },
     {
-      "index": 254,
+      "ordinalPosition": 33,
       "name": "MCARE_REC_DIS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a Medicare patient is receiving disability benefit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYES\n\n\nNO"
+      "description": "Indicates if a Medicare patient is receiving disability benefit.",
+      "entries": [
+        "YES",
+        "NO"
+      ]
     },
     {
-      "index": 263,
+      "ordinalPosition": 34,
       "name": "DIS_CVD_BY_EMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a Medicare patient is receiving disability coverage from their employer.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if a Medicare patient is receiving disability coverage from their employer."
     },
     {
-      "index": 269,
+      "ordinalPosition": 35,
       "name": "MCARE_100_EMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a Medicare employer has over 100 employees.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if a Medicare employer has over 100 employees."
     },
     {
-      "index": 275,
+      "ordinalPosition": 36,
       "name": "MCARE_AUTO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the illness or injury for this visit is due to an automobile accident.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if the illness or injury for this visit is due to an automobile accident."
     },
     {
-      "index": 281,
+      "ordinalPosition": 37,
       "name": "MCARE_LIAB_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the illness or injury for this visit is due to a liability accident.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if the illness or injury for this visit is due to a liability accident."
     },
     {
-      "index": 287,
+      "ordinalPosition": 38,
       "name": "MCARE_WK_COMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if a Medicare visit is covered by Workman's Compensation.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if a Medicare visit is covered by Workman's Compensation."
     },
     {
-      "index": 293,
+      "ordinalPosition": 39,
       "name": "MCARE_NON_AUTO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the patient's visit is due to an accident not involving automobiles.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if the patient's visit is due to an accident not involving automobiles."
     },
     {
-      "index": 299,
+      "ordinalPosition": 40,
       "name": "MCARE_BLACK_LUNG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the illness is covered by the Black Lung program.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the illness is covered by the Black Lung program."
     },
     {
-      "index": 305,
+      "ordinalPosition": 41,
       "name": "MCARE_VA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the illness is covered by a Veterans' Administration program.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if the illness is covered by a Veterans' Administration program."
     },
     {
-      "index": 311,
+      "ordinalPosition": 42,
       "name": "MCARE_PARENT_EMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's parents or guardians are employed.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the patient's parents or guardians are employed."
     },
     {
-      "index": 317,
+      "ordinalPosition": 43,
       "name": "MCARE_CVD_GD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "For large group health plans, indicates if the patient is covered by their parent or guardian.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "For large group health plans, indicates if the patient is covered by their parent or guardian."
     },
     {
-      "index": 323,
+      "ordinalPosition": 44,
       "name": "MCARE_GD_EMP_100_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the employer of this patient's parent or guardian employs over 100 people.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the employer of this patient's parent or guardian employs over 100 people."
     },
     {
-      "index": 329,
+      "ordinalPosition": 45,
       "name": "IS_MCARE_VET_ADMN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this coverage is for a Veterans' Administration program.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUNKNOWN"
+      "description": "Indicates whether this coverage is for a Veterans' Administration program.",
+      "entries": [
+        "Yes",
+        "No",
+        "UNKNOWN"
+      ]
     },
     {
-      "index": 339,
+      "ordinalPosition": 46,
       "name": "MCARE_EMPLOYED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the Medicare patient is employed.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the Medicare patient is employed."
     },
     {
-      "index": 345,
+      "ordinalPosition": 47,
       "name": "MCARE_ENRL_HMO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the Medicare patient is enrolled in an HMO.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates if the Medicare patient is enrolled in an HMO."
     },
     {
-      "index": 351,
+      "ordinalPosition": 48,
       "name": "MCARE_CVD_EGHP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is covered by an employer group health plan.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the patient is covered by an employer group health plan."
     },
     {
-      "index": 357,
+      "ordinalPosition": 49,
       "name": "MCARE_EMP_20_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the Medicare patient is employed by an employer with over 20 employees.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the Medicare patient is employed by an employer with over 20 employees."
     },
     {
-      "index": 363,
+      "ordinalPosition": 50,
       "name": "MCARE_REN_DIAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is a renal dialysis patient in the first 12 months of entitlement.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the patient is a renal dialysis patient in the first 12 months of entitlement."
     },
     {
-      "index": 369,
+      "ordinalPosition": 51,
       "name": "IS_MCARE_RENAL_DI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is a renal dialysis patient.\n\n\n The category values for this column were already listed for column: IS_MCARE_VET_ADMN_C_NAME"
+      "description": "Indicates whether the patient is a renal dialysis patient."
     },
     {
-      "index": 375,
+      "ordinalPosition": 52,
       "name": "MCARE_1ST_18MO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is in the first 18 months of entitlement for renal dialysis.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the patient is in the first 18 months of entitlement for renal dialysis."
     },
     {
-      "index": 381,
+      "ordinalPosition": 53,
       "name": "MCARE_HOME_DIAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is a home dialysis patient.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether the patient is a home dialysis patient."
     },
     {
-      "index": 387,
+      "ordinalPosition": 54,
       "name": "MCARE_SELF_EPO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this patient self-administers EPO.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether this patient self-administers EPO."
     },
     {
-      "index": 393,
+      "ordinalPosition": 55,
       "name": "MCARE_DISABLE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a patient's Medicare coverage is due to disability.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a patient's Medicare coverage is due to disability."
     },
     {
-      "index": 399,
+      "ordinalPosition": 56,
       "name": "MCARE_SPSE_RET_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient's spouse is retired.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient's spouse is retired."
     },
     {
-      "index": 405,
+      "ordinalPosition": 57,
       "name": "MCARE_SPOUSE_RET_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when a Medicare patient's spouse retired."
     },
     {
-      "index": 410,
+      "ordinalPosition": 58,
       "name": "MCARE_EMPR_INS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient is insured by their employer.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient is insured by their employer."
     },
     {
-      "index": 416,
+      "ordinalPosition": 59,
       "name": "MCARE_RETIRE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient is retired.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient is retired."
     },
     {
-      "index": 422,
+      "ordinalPosition": 60,
       "name": "MCARE_RETIRE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when a Medicare patient retired."
     },
     {
-      "index": 427,
+      "ordinalPosition": 61,
       "name": "MCARE_FAM_EMPY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient's spouse or another family member is employed.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient's spouse or another family member is employed."
     },
     {
-      "index": 433,
+      "ordinalPosition": 62,
       "name": "MCARE_OTHR_CVG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient is covered because of their spouse or other family member.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient is covered because of their spouse or other family member."
     },
     {
-      "index": 439,
+      "ordinalPosition": 63,
       "name": "MCARE_SPC_EMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient's spouse is employed.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient's spouse is employed."
     },
     {
-      "index": 445,
+      "ordinalPosition": 64,
       "name": "MCARE_CVG_FRM_SP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a Medicare patient is covered through their spouse's employer group health plan.\n\n\n The category values for this column were already listed for column: MCARE_REC_DIS_YN"
+      "description": "Indicates whether a Medicare patient is covered through their spouse's employer group health plan."
     },
     {
-      "index": 451,
+      "ordinalPosition": 65,
       "name": "VERIF_EVS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if verification is done through Eligibility Verification Systems (EVS).\n\n\n The category values for this column were already listed for column: MEDIGAP_AUTH_YN"
+      "description": "Indicates if verification is done through Eligibility Verification Systems (EVS)."
     },
     {
-      "index": 457,
+      "ordinalPosition": 66,
       "name": "EVS_VERIF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when eligibility was verified with Eligibility Verification Systems (EVS)."
     },
     {
-      "index": 462,
+      "ordinalPosition": 67,
       "name": "PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The coverage payor's name."
     },
     {
-      "index": 467,
+      "ordinalPosition": 68,
       "name": "PAYOR_CITY",
       "type": "VARCHAR",
       "discontinued": false,

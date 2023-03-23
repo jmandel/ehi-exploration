@@ -1,139 +1,231 @@
 {
-  "table_name": "CYCLE_CRYO_EMBRYO",
+  "name": "CYCLE_CRYO_EMBRYO",
   "description": "Embryos that were cryopreserved during a specific fertility treatment cycle.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the cycle record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CRYO_EMBRYO_ID_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A custom ID title for the cryopreservation. If not set, users will see a generated ID based on the line number, such as \"Embryo N.\""
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CRYO_EMBRYO_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the embryos were cryopreserved."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CRYO_EMBRYO_DAY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of days that an embryo has been in culture when it is cryopreserved."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CRYO_EMBRYO_STAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The embryo's stage when it's cryopreserved.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n1 Cell\n\n\n2 Cell\n\n\n3 Cell\n\n\n4 Cell\n\n\n5 Cell\n\n\n6 Cell\n\n\n7 Cell\n\n\n8 Cell\n\n\nMore than 8\n\n\nMorula\n\n\nEarly Blastocyst\n\n\nBlastocyst\n\n\nFull Blastocyst\n\n\nExpanded Blastocyst\n\n\nHatching Blastocyst\n\n\nHatched Blastocyst\n\n\nUnknown"
+      "description": "The embryo's stage when it's cryopreserved.",
+      "entries": [
+        "1 Cell",
+        "2 Cell",
+        "3 Cell",
+        "4 Cell",
+        "5 Cell",
+        "6 Cell",
+        "7 Cell",
+        "8 Cell",
+        "More than 8",
+        "Morula",
+        "Early Blastocyst",
+        "Blastocyst",
+        "Full Blastocyst",
+        "Expanded Blastocyst",
+        "Hatching Blastocyst",
+        "Hatched Blastocyst",
+        "Unknown"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 7,
       "name": "CRYO_EMBRYO_GRADE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The embryo's grade at cryopreservation.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGood\n\n\nFair\n\n\nPoor"
+      "description": "The embryo's grade at cryopreservation.",
+      "entries": [
+        "Good",
+        "Fair",
+        "Poor"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 8,
       "name": "CRYO_EMBRYO_FERT_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The fertilization method (e.g. conventional IVF or ICSI) used for the embryo.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Vitro Fertilization\n\n\nIn-Vitro Fertilization with Intra-Cytoplasmic Sperm Injection\n\n\nIntracytoplasmic Sperm Injection\n\n\nConventional IVF\n\n\nIntrauterine Insemination\n\n\nTimed Intercourse\n\n\nTherapeutic Donor Insemination\n\n\nNone"
+      "description": "The fertilization method (e.g. conventional IVF or ICSI) used for the embryo.",
+      "entries": [
+        "In Vitro Fertilization",
+        "In-Vitro Fertilization with Intra-Cytoplasmic Sperm Injection",
+        "Intracytoplasmic Sperm Injection",
+        "Conventional IVF",
+        "Intrauterine Insemination",
+        "Timed Intercourse",
+        "Therapeutic Donor Insemination",
+        "None"
+      ]
     },
     {
-      "index": 76,
+      "ordinalPosition": 9,
       "name": "CRYO_EMBRYO_PGT_A_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's PGT-A result.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEuploid\n\n\nAneuploid\n\n\nNot Tested\n\n\nNo Result\n\n\nPending\n\n\nMosaic, High Level\n\n\nMosaic, Low Level\n\n\nInconclusive"
+      "description": "The cryopreserved embryo's PGT-A result.",
+      "entries": [
+        "Euploid",
+        "Aneuploid",
+        "Not Tested",
+        "No Result",
+        "Pending",
+        "Mosaic, High Level",
+        "Mosaic, Low Level",
+        "Inconclusive"
+      ]
     },
     {
-      "index": 91,
+      "ordinalPosition": 10,
       "name": "CRYO_EMBRYO_PGT_M_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's PGT-M result.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Tested\n\n\nNo Result\n\n\nPending\n\n\nAffected\n\n\nUnaffected\n\n\nCarrier\n\n\nMultiple\n\n\nAt Risk\n\n\nLow Risk\n\n\nNo Risk\n\n\nInconclusive"
+      "description": "The cryopreserved embryo's PGT-M result.",
+      "entries": [
+        "Not Tested",
+        "No Result",
+        "Pending",
+        "Affected",
+        "Unaffected",
+        "Carrier",
+        "Multiple",
+        "At Risk",
+        "Low Risk",
+        "No Risk",
+        "Inconclusive"
+      ]
     },
     {
-      "index": 109,
+      "ordinalPosition": 11,
       "name": "CRYO_EMBRYO_PGT_SR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's PGT-SR result.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Tested\n\n\nNo Result\n\n\nPending\n\n\nAffected\n\n\nUnaffected\n\n\nBalanced\n\n\nUnbalanced\n\n\nInconclusive"
+      "description": "The cryopreserved embryo's PGT-SR result.",
+      "entries": [
+        "Not Tested",
+        "No Result",
+        "Pending",
+        "Affected",
+        "Unaffected",
+        "Balanced",
+        "Unbalanced",
+        "Inconclusive"
+      ]
     },
     {
-      "index": 124,
+      "ordinalPosition": 12,
       "name": "CRYO_EMBRYO_AH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether assisted hatching was performed on the cryopreserved embryo.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether assisted hatching was performed on the cryopreserved embryo.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 133,
+      "ordinalPosition": 13,
       "name": "EGG_EMBRYO_GAMETE_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's egg source, such as if it was autologous or came from a partner or donor.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAutologous\n\n\nPartner\n\n\nKnown Donor\n\n\nAnonymous Donor\n\n\nMixed\n\n\nEmbryo Donor\n\n\nOocyte Contributor and Intended Parent"
+      "description": "The cryopreserved embryo's egg source, such as if it was autologous or came from a partner or donor.",
+      "entries": [
+        "Autologous",
+        "Partner",
+        "Known Donor",
+        "Anonymous Donor",
+        "Mixed",
+        "Embryo Donor",
+        "Oocyte Contributor and Intended Parent"
+      ]
     },
     {
-      "index": 147,
+      "ordinalPosition": 14,
       "name": "SPERM_EMBRYO_GAMETE_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's sperm source, such as a partner or donor.\n\n\n The category values for this column were already listed for column: EGG_EMBRYO_GAMETE_SOURCE_C_NAME"
+      "description": "The cryopreserved embryo's sperm source, such as a partner or donor."
     },
     {
-      "index": 153,
+      "ordinalPosition": 15,
       "name": "EGG_EMBRYO_GAMETE_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's egg state (fresh or thawed) at the beginning of the treatment cycle.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFresh\n\n\nThawed\n\n\nFrozen Embryo\n\n\nNot Applicable"
+      "description": "The cryopreserved embryo's egg state (fresh or thawed) at the beginning of the treatment cycle.",
+      "entries": [
+        "Fresh",
+        "Thawed",
+        "Frozen Embryo",
+        "Not Applicable"
+      ]
     },
     {
-      "index": 164,
+      "ordinalPosition": 16,
       "name": "SPERM_EMBRYO_GAMETE_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The cryopreserved embryo's sperm state (fresh or thawed) at the start of the cycle.\n\n\n The category values for this column were already listed for column: EGG_EMBRYO_GAMETE_STATE_C_NAME"
+      "description": "The cryopreserved embryo's sperm state (fresh or thawed) at the start of the cycle."
     },
     {
-      "index": 170,
+      "ordinalPosition": 17,
       "name": "CRYO_EMBRYO_EGG_DONOR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The cryopreserved embryo's egg donor ID."
     },
     {
-      "index": 175,
+      "ordinalPosition": 18,
       "name": "CRYO_EMBRYO_SPERM_DONOR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The cryopreserved embryo's semen donor ID."
     },
     {
-      "index": 180,
+      "ordinalPosition": 19,
       "name": "CRYO_EMBRYO_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

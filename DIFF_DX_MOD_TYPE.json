@@ -1,52 +1,65 @@
 {
-  "table_name": "DIFF_DX_MOD_TYPE",
+  "name": "DIFF_DX_MOD_TYPE",
   "description": "This item stores the types of modifiers that have been applied to this diagnosis.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple modifiers associated with a specific diagnosis within this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DDX_MODIFIER_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the types of selected modifiers when a diagnosis is copied from the problem list, for example the laterality or chronicity of a problem.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPlaceholder Category"
+      "description": "Stores the types of selected modifiers when a diagnosis is copied from the problem list, for example the laterality or chronicity of a problem.",
+      "entries": [
+        "Placeholder Category"
+      ]
     }
   ]
 }

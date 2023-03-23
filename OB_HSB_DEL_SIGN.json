@@ -1,31 +1,41 @@
 {
-  "table_name": "OB_HSB_DEL_SIGN",
+  "name": "OB_HSB_DEL_SIGN",
   "description": "This table contains information about the users who signed the information entered in Stork's Delivery Summary activity for this pregnancy.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID assigned to the episode record (HSB .1)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The Line Count"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OBD_SIGNING_EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of signature that was recorded for this user.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSigned\n\n\nOpened for Addendum"
+      "description": "Stores the type of signature that was recorded for this user.",
+      "entries": [
+        "Signed",
+        "Opened for Addendum"
+      ]
     }
   ]
 }

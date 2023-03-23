@@ -1,38 +1,81 @@
 {
-  "table_name": "SNAPSHOT_ORDER_DATA",
+  "name": "SNAPSHOT_ORDER_DATA",
   "description": "This table has the identifiers for individual data elements that were stored at the time of discharge or when the patient's After Visit Summary was printed. The actual snapshot data is in the SNAPSHOT_ORD_INFO_VALUE table.",
-  "primary_key": {
-    "column_name": "EVENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EVENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EVENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the discharge reconciliation event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SNAPSHOT_ORDERS_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated snapshot information for this order. Together with EVENT_ID, this forms the foreign key to the SNAPSHOT_ORDERS table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SNAPSHOT_ORD_KEY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the orders' individual data element that was stored.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nQuantity\n\n\nRefills\n\n\nMedication Comment\n\n\nDiagnosis Associations\n\n\nDose\n\n\nFuture Start Date\n\n\nEnd Date\n\n\nGeneric Name\n\n\nAuthorizing Provider\n\n\nInstructions\n\n\nOrder ID\n\n\nOrder Name\n\n\nIndications of Use\n\n\nWhat Changed\n\n\nDiscontinue Date\n\n\nCommon Names\n\n\nAmount and time last given\n\n\nTime last given\n\n\nNon-adherence Warning\n\n\nReplaces order\n\n\nReplaced by order\n\n\nAsk reason\n\n\nPartial-stop warning\n\n\nMulti-stop warning\n\n\nCriticality Reason\n\n\nTranslated Sig\n\n\nTranslated Sig Language\n\n\nStart of Med Name\n\n\nEnd of Med Name\n\n\nPast or Future Start Date\n\n\nDuration\n\n\nRx Reference Number\n\n\nAnticoagulation Episode Warfarin Instructions\n\n\nAbbreviated Dosage\n\n\nAssistance Eligibility Indication"
+      "description": "The category ID for the orders' individual data element that was stored.",
+      "entries": [
+        "Quantity",
+        "Refills",
+        "Medication Comment",
+        "Diagnosis Associations",
+        "Dose",
+        "Future Start Date",
+        "End Date",
+        "Generic Name",
+        "Authorizing Provider",
+        "Instructions",
+        "Order ID",
+        "Order Name",
+        "Indications of Use",
+        "What Changed",
+        "Discontinue Date",
+        "Common Names",
+        "Amount and time last given",
+        "Time last given",
+        "Non-adherence Warning",
+        "Replaces order",
+        "Replaced by order",
+        "Ask reason",
+        "Partial-stop warning",
+        "Multi-stop warning",
+        "Criticality Reason",
+        "Translated Sig",
+        "Translated Sig Language",
+        "Start of Med Name",
+        "End of Med Name",
+        "Past or Future Start Date",
+        "Duration",
+        "Rx Reference Number",
+        "Anticoagulation Episode Warfarin Instructions",
+        "Abbreviated Dosage",
+        "Assistance Eligibility Indication"
+      ]
     }
   ]
 }

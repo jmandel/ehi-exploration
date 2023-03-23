@@ -1,41 +1,47 @@
 {
-  "table_name": "AP_CLAIM_PX_VAL_PROG_ADJ",
+  "name": "AP_CLAIM_PX_VAL_PROG_ADJ",
   "description": "This table contains the payment adjustments from value-based programs for AP Claim procedures.\n\n\n\n\n\nTo link this table�s service line information back to a claim header, join this table to AP_CLAIM_PROC_IDS on the TX_ID column.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "COMPUTED_PROGRAM_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The value-based program adjustment amount for the procedure, as computed by the system."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "OVERRIDE_PROGRAM_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The value-based program adjustment amount for the procedure, as overridden by the user."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PROGRAM_ADJ_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,34 +1,47 @@
 {
-  "table_name": "MLSIG_LEVEL_1",
+  "name": "MLSIG_LEVEL_1",
   "description": "This table is for periods/groups of sig lines for multiline sigs.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MLSIG_L1_INTERIOR_LINKAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The linkage type category ID for the order record which describes the relationship between multiple sets of medication instructions for specified periods of time.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTHEN\n\n\nAND\n\n\nOR\n\n\nTO\n\n\nNOT"
+      "description": "The linkage type category ID for the order record which describes the relationship between multiple sets of medication instructions for specified periods of time.",
+      "entries": [
+        "THEN",
+        "AND",
+        "OR",
+        "TO",
+        "NOT"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "MLSIG_L1_DURATION",
       "type": "INTEGER",
       "discontinued": false,

@@ -1,87 +1,115 @@
 {
-  "table_name": "AP_CLAIM_REVIEW",
+  "name": "AP_CLAIM_REVIEW",
   "description": "The AP_CLAIM_REVIEW table contains a row for each review on a claim.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim info record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AP_CLAIM_REVIEW_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The review type category ID for the review on the claim.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHigh Dollar\n\n\nMedical Necessity\n\n\nRandom Audit\n\n\nPre-Pay Audit (External)\n\n\nPre-Pay Audit Update (External)"
+      "description": "The review type category ID for the review on the claim.",
+      "entries": [
+        "High Dollar",
+        "Medical Necessity",
+        "Random Audit",
+        "Pre-Pay Audit (External)",
+        "Pre-Pay Audit Update (External)"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "ATTACH_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment associated with a review when it is attached to a claim."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "AP_CLAIM_REVIEW_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The review status category ID for the review on the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnder Review\n\n\nRejected\n\n\nNot Applicable\n\n\nApproved"
+      "description": "The review status category ID for the review on the claim.",
+      "entries": [
+        "Under Review",
+        "Rejected",
+        "Not Applicable",
+        "Approved"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 6,
       "name": "ATTACH_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the associated review was attached to the claim."
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "COMPLETION_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered by the user who completed the associated review."
     },
     {
-      "index": 50,
+      "ordinalPosition": 8,
       "name": "COMPLETION_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The completion date and time for the associated review."
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "REJECTION_EOB_CODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the processing code (EOB code) attached when a review is rejected."
     },
     {
-      "index": 60,
+      "ordinalPosition": 10,
       "name": "ADDED_MANUALLY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this review was added manually by an end user. 'Y' indicates that the review was added manually. 'N' or NULL indicate that the review was added by the system.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this review was added manually by an end user. 'Y' indicates that the review was added manually. 'N' or NULL indicate that the review was added by the system.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 69,
+      "ordinalPosition": 11,
       "name": "REVIEW_STATUS_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The review status reason category ID for the review on the claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClaim Pending\n\n\nRules No Longer Match\n\n\nAuto-Approve Rule Met"
+      "description": "The review status reason category ID for the review on the claim.",
+      "entries": [
+        "Claim Pending",
+        "Rules No Longer Match",
+        "Auto-Approve Rule Met"
+      ]
     }
   ]
 }

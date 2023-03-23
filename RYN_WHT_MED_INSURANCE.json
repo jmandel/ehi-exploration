@@ -1,31 +1,47 @@
 {
-  "table_name": "RYN_WHT_MED_INSURANCE",
+  "name": "RYN_WHT_MED_INSURANCE",
   "description": "Ryan White table for patient's medical insurance status.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RYN_WHT_MED_INSURANCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's current medical insurance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMedicare\n\n\nPrivate-Employer\n\n\nPrivate-Individual\n\n\nMedicaid, CHIP, or other public plan\n\n\nVeterans Health Administration (VA), military health care (TRICARE) and other military plans\n\n\nIndian Health Service (IHS)\n\n\nOther plan, not listed\n\n\nNo Insurance/Uninsured"
+      "description": "The patient's current medical insurance.",
+      "entries": [
+        "Medicare",
+        "Private-Employer",
+        "Private-Individual",
+        "Medicaid, CHIP, or other public plan",
+        "Veterans Health Administration (VA), military health care (TRICARE) and other military plans",
+        "Indian Health Service (IHS)",
+        "Other plan, not listed",
+        "No Insurance/Uninsured"
+      ]
     }
   ]
 }

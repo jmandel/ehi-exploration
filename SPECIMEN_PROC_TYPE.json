@@ -1,31 +1,43 @@
 {
-  "table_name": "SPECIMEN_PROC_TYPE",
+  "name": "SPECIMEN_PROC_TYPE",
   "description": "Stores the type of procedure being performed on the patient for a surgical specimen.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SPECIMEN_PROC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of procedure being performed on the patient for a surgical specimen.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStereotactic\n\n\nUltrasound\n\n\nMRI\n\n\nOther"
+      "description": "Stores the type of procedure being performed on the patient for a surgical specimen.",
+      "entries": [
+        "Stereotactic",
+        "Ultrasound",
+        "MRI",
+        "Other"
+      ]
     }
   ]
 }

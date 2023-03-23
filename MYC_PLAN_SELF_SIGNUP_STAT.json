@@ -1,48 +1,64 @@
 {
-  "table_name": "MYC_PLAN_SELF_SIGNUP_STAT",
+  "name": "MYC_PLAN_SELF_SIGNUP_STAT",
   "description": "Status for all MyChart users that are viewing an episode-related MyChart self-signup care plan.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MYC_PLAN_SIGNUP_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "MyChart User ID (WPR ID) to be associated with current line for self-signup care plan."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MYC_PLAN_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Current status of the self-signup plan for MyChart User.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nOffered\n\n\nDeclined\n\n\nEnrolled\n\n\nUnenrolled\n\n\nCompleted\n\n\nViewing\n\n\nStopped Viewing"
+      "description": "Current status of the self-signup plan for MyChart User.",
+      "entries": [
+        "None",
+        "Offered",
+        "Declined",
+        "Enrolled",
+        "Unenrolled",
+        "Completed",
+        "Viewing",
+        "Stopped Viewing"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "MYC_PLAN_CAREPLAN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Care plan ID for the MyChart self-signup plan"
     },
     {
-      "index": 37,
+      "ordinalPosition": 6,
       "name": "LAST_GEST_AGE_DISMISSED_DAYS",
       "type": "INTEGER",
       "discontinued": false,

@@ -1,87 +1,105 @@
 {
-  "table_name": "COMMUNITY_RESOURCE",
+  "name": "COMMUNITY_RESOURCE",
   "description": "This table stores details about the recommendation of a community resource for a patient. This table can be joined with the COMMUNITY_RESOURCE_CNCT table on COMMUNITY_RESOURCE__LAST_UPDATE_RECOM_CSN_ID and COMMUNITY_RESOURCE_CNCT__RECOMMENDATION_CSN_ID in order to form a resulting table that includes all current information about the community resource recommendation.",
-  "primary_key": {
-    "column_name": "RECOMMENDATION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECOMMENDATION_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECOMMENDATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the recommendation record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the record status (hidden, soft-deleted, or both)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "Stores the record status (hidden, soft-deleted, or both)",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "RECORD_TYPE_CRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of this community resource recommendation record, used to differentiate various implementations of the CRC masterfile.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRecommendation\n\n\nEncounter Level"
+      "description": "The type of this community resource recommendation record, used to differentiate various implementations of the CRC masterfile.",
+      "entries": [
+        "Recommendation",
+        "Encounter Level"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient this community resource recommendation is for."
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "CREATING_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient encounter in which this community resource recommendation was created."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "RESOURCE_FACILITY_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The community based organization to which the patient was recommended or referred."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "RECORD_CREATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date the record was created"
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "RESOURCE_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The department to which the patient was recommended or referred."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "RESOURCE_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider to which the patient was recommended or referred."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "RESOURCE_PROV_ADDRESS_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique address ID associated with the provider record to which the patient was recommended or referred."
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "DP_COORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The coordination type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDestination\n\n\nDurable Medical Equipment\n\n\nDialysis/Infusion\n\n\nHome Medical Care\n\n\nCommunity Resources"
+      "description": "The coordination type.",
+      "entries": [
+        "Destination",
+        "Durable Medical Equipment",
+        "Dialysis/Infusion",
+        "Home Medical Care",
+        "Community Resources"
+      ]
     }
   ]
 }

@@ -1,55 +1,65 @@
 {
-  "table_name": "HOME_INFUSION_EPSD_HX",
+  "name": "HOME_INFUSION_EPSD_HX",
   "description": "Home Infusion episode history.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the summary block record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RXHX_SVC_PAUSED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History of service pause flag\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "History of service pause flag",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "RXHX_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "History of Start Date"
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "RXHX_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "History of the end date"
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "RXHX_LINE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "History of Line Type\n\n\nMay contain organization-specific values: Yes"
+      "description": "History of Line Type"
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "RXHX_LUMENS_NUM",
       "type": "INTEGER",
       "discontinued": false,

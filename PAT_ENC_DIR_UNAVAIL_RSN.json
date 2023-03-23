@@ -1,31 +1,49 @@
 {
-  "table_name": "PAT_ENC_DIR_UNAVAIL_RSN",
+  "name": "PAT_ENC_DIR_UNAVAIL_RSN",
   "description": "Reasons why an appointment was unavailable for direct scheduling.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DIR_UNAVAIL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "List of reasons why this appointment could not have been scheduled online in Direct Scheduling.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProvider not enabled\n\n\nDepartment not enabled\n\n\nVisit type is not enabled\n\n\nProvider not available for patient\n\n\nWarnings overruled during scheduling\n\n\nNo patient scheduling access\n\n\nAppointment request not sent to patient\n\n\nSequential appointments are not supported\n\n\nPanel appointments are not supported\n\n\nUnsupported joint appointment"
+      "description": "List of reasons why this appointment could not have been scheduled online in Direct Scheduling.",
+      "entries": [
+        "Provider not enabled",
+        "Department not enabled",
+        "Visit type is not enabled",
+        "Provider not available for patient",
+        "Warnings overruled during scheduling",
+        "No patient scheduling access",
+        "Appointment request not sent to patient",
+        "Sequential appointments are not supported",
+        "Panel appointments are not supported",
+        "Unsupported joint appointment"
+      ]
     }
   ]
 }

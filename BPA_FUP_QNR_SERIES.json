@@ -1,38 +1,57 @@
 {
-  "table_name": "BPA_FUP_QNR_SERIES",
+  "name": "BPA_FUP_QNR_SERIES",
   "description": "This table contains the questionnaire series used in the BestPractice Advisory follow-up.",
-  "primary_key": {
-    "column_name": "ALERT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ALERT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ALERT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the med alert record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BPA_FUP_LQW_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item indicates how the questionnaire series assignment in an advisory was presented to the user (manually or automatically).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManually Once\n\n\nAlways Automatically\n\n\nOnce Automatically\n\n\nManually Unselected\n\n\nManually Selected\n\n\nAutomatically Based on Selected Research Status\n\n\nHidden"
+      "description": "This item indicates how the questionnaire series assignment in an advisory was presented to the user (manually or automatically).",
+      "entries": [
+        "Manually Once",
+        "Always Automatically",
+        "Once Automatically",
+        "Manually Unselected",
+        "Manually Selected",
+        "Automatically Based on Selected Research Status",
+        "Hidden"
+      ]
     }
   ]
 }

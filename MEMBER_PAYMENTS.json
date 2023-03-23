@@ -1,101 +1,125 @@
 {
-  "table_name": "MEMBER_PAYMENTS",
+  "name": "MEMBER_PAYMENTS",
   "description": "This table contains information about payments by the member",
-  "primary_key": {
-    "column_name": "BENEFIT_USAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BENEFIT_USAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BENEFIT_USAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the benefit usage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The date when a benefit usage was recorded."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAYMENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The payment type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCheck\n\n\nCredit Card\n\n\nCash\n\n\nNo Payment Due\n\n\nOther\n\n\nUnpaid"
+      "description": "The payment type.",
+      "entries": [
+        "Check",
+        "Credit Card",
+        "Cash",
+        "No Payment Due",
+        "Other",
+        "Unpaid"
+      ]
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "RECEIPT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The receipt number for the payment."
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "AMOUNT_PAID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount paid in the transaction."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "PAYMENT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name appearing on check/credit card."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "CHECK_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The check number."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "CHECK_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The check date."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "CC_NUMBER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The credit card number."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "CC_EXPIRE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The expiration date for credit card."
     },
     {
-      "index": 65,
+      "ordinalPosition": 12,
       "name": "CC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The credit card type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVisa\n\n\nDiscover\n\n\nAmerican Express\n\n\nMaster Card"
+      "description": "The credit card type.",
+      "entries": [
+        "Visa",
+        "Discover",
+        "American Express",
+        "Master Card"
+      ]
     },
     {
-      "index": 76,
+      "ordinalPosition": 13,
       "name": "OTHER_PAYMENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The other mode of payment.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The other mode of payment."
     }
   ]
 }

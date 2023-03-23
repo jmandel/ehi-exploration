@@ -1,83 +1,96 @@
 {
-  "table_name": "CASE_EVENT",
+  "name": "CASE_EVENT",
   "description": "The CASE_EVENT table allows you to report on events associated with case records.",
-  "primary_key": {
-    "column_name": "CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CASE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CASE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the events associated with this case record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number of the event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo-show\n\n\nNoncompliance\n\n\nTime off\n\n\nReturned to work\n\n\nOutside consultation"
+      "description": "The category number of the event.",
+      "entries": [
+        "No-show",
+        "Noncompliance",
+        "Time off",
+        "Returned to work",
+        "Outside consultation"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the event."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The end date of the event."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "WORK_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The work status in the event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The work status in the event."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the provider in the event."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the vendor in the event."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comments of the event."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

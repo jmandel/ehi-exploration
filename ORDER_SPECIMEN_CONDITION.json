@@ -1,38 +1,44 @@
 {
-  "table_name": "ORDER_SPECIMEN_CONDITION",
+  "name": "ORDER_SPECIMEN_CONDITION",
   "description": "Indicates the condition of the specimen that was collected.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SPEC_CONDITION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specimen condition category ID for the order.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The specimen condition category ID for the order."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "SPEC_CONDITION_CMT",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A free text comment associated with each specimen condition.\n\n\n The category values for this column were already listed for column: SPEC_CONDITION_C_NAME"
+      "description": "A free text comment associated with each specimen condition."
     }
   ]
 }

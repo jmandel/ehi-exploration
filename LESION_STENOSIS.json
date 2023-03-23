@@ -1,59 +1,73 @@
 {
-  "table_name": "LESION_STENOSIS",
+  "name": "LESION_STENOSIS",
   "description": "The stenosis values of a lesion.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STENOSIS_BRANCH_ID",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the lesion branch that the stenosis belongs to."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PRE_STENOSIS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the pre-intervention stenosis value."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "POST_STENOSIS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the post-intervention stenosis value."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PRE_STENOSIS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the pre-intervention stenosis grade.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal\n\n\nMinimal (1-24%)\n\n\nMild (25-49%)\n\n\nModerate (50-69%)\n\n\nSevere (70-99%)\n\n\nOccluded"
+      "description": "Stores the pre-intervention stenosis grade.",
+      "entries": [
+        "Normal",
+        "Minimal (1-24%)",
+        "Mild (25-49%)",
+        "Moderate (50-69%)",
+        "Severe (70-99%)",
+        "Occluded"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "POST_STENOSIS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the post-intervention stenosis grade.\n\n\n The category values for this column were already listed for column: PRE_STENOSIS_C_NAME"
+      "description": "Stores the post-intervention stenosis grade."
     }
   ]
 }

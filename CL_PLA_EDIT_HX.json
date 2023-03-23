@@ -1,69 +1,83 @@
 {
-  "table_name": "CL_PLA_EDIT_HX",
+  "name": "CL_PLA_EDIT_HX",
   "description": "Enterprise reporting table that contains the editing history of learning assessment contacts. It identifies the user who edited the assessment.",
-  "primary_key": {
-    "column_name": "LEARNING_ASSMT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LEARNING_ASSMT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LEARNING_ASSMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the patient learning assessment record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The Line Counter for the edit instance and editing user of the patient learning assessment record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The contact date in external format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EDIT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Record ID for the user who edited the patient learning assessment record contact. It is related to the Edit Instance and is stored in internal ID format. Points to EMP user record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "EDIT_INSTANCE",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Date/Time stamp for instance of editing the patient learning assessment record contact. It is related to the Edit User."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "END_CONT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of the last encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "EDIT_IS_DELETED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the learning assessment was deleted in this line in the learning assessment's edit history. Y indicates that the learning assessment was deleted; N or a null value indicates that the learning assessment was not deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the learning assessment was deleted in this line in the learning assessment's edit history. Y indicates that the learning assessment was deleted; N or a null value indicates that the learning assessment was not deleted.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "EDIT_DEL_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

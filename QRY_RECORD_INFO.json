@@ -1,85 +1,104 @@
 {
-  "table_name": "QRY_RECORD_INFO",
+  "name": "QRY_RECORD_INFO",
   "description": "The QRY_RECORD_INFO table contains information about the no-add single response data for query records (records in the QRY master file).",
-  "primary_key": {
-    "column_name": "QUERY_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "QUERY_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "QUERY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the query record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "EXTERNAL_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID received from a third party to uniquely identify the record in their system."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The overall status of the query.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResponse Received\n\n\nCompleted\n\n\nDeleted\n\n\nDeactivated"
+      "description": "The overall status of the query.",
+      "entries": [
+        "Active",
+        "Response Received",
+        "Completed",
+        "Deleted",
+        "Deactivated"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient ID the query refers to."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient contact (CSN) the query refers to."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "CREATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the query was created in UTC."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant the query record was updated in UTC."
     },
     {
-      "index": 44,
+      "ordinalPosition": 8,
       "name": "QUERY_WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The workflow this query is a part of (Computer Assisted Physician Documentation (CAPD), Clinical Documentation Improvement, etc.). This value is used to drive functionality and reporting.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoding Query\n\n\nCDI Query\n\n\nCoding Documentation Deficiency\n\n\nCAPD"
+      "description": "The workflow this query is a part of (Computer Assisted Physician Documentation (CAPD), Clinical Documentation Improvement, etc.). This value is used to drive functionality and reporting.",
+      "entries": [
+        "Coding Query",
+        "CDI Query",
+        "Coding Documentation Deficiency",
+        "CAPD"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "QRY_HIDE_PHYS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If this is set to 1-Yes, it will prevent physicians from seeing the query in the NoteReader Clinical Documentation Improvement (CDI) activity. If NoteReader CDI is in silent mode, all incoming queries will have this flag set automatically. CDI users can reset this flag by activating the query manually.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "If this is set to 1-Yes, it will prevent physicians from seeing the query in the NoteReader Clinical Documentation Improvement (CDI) activity. If NoteReader CDI is in silent mode, all incoming queries will have this flag set automatically. CDI users can reset this flag by activating the query manually.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 10,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date the record was created."
     },
     {
-      "index": 69,
+      "ordinalPosition": 11,
       "name": "INSTANT_OF_UPDATE_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant the record was last locked/unlocked."
     }

@@ -1,43 +1,49 @@
 {
-  "table_name": "EAR_ITM_UPD",
+  "name": "EAR_ITM_UPD",
   "description": "This table contains guarantor item update information for a particular guarantor account item's last update. Columns included are the guarantor item to which the update information relates, the user that last updated this item, and the instant that the last update occurred. Note that the actual guarantor account item value is not included in this table: only details of the last update to the item are included.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the guarantor account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "UPD_ITM_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item contains the guarantor item number to which the update information for User (I EAR 2032) and Instant (I EAR 2033) relates."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "UPD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the user (EMP) ID that entered the last update for the guarantor item number (I EAR 2031)."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "UPD_INSTANT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item contains the instant in UTC time that the last update was made to the guarantor item number (I EAR 2031)."
     }

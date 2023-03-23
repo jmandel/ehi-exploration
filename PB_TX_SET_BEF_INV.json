@@ -1,38 +1,51 @@
 {
-  "table_name": "PB_TX_SET_BEF_INV",
+  "name": "PB_TX_SET_BEF_INV",
   "description": "This table lists invoices associated with a premium billing payment transaction set prior being committed.",
-  "primary_key": {
-    "column_name": "TRANSACTION_SET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TRANSACTION_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TRANSACTION_SET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the set record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "BEF_INVOICE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Invoices associated with this transaction set prior being commited."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BEF_INV_PORTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The invoice portion covered by this transaction set prior being commited.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire Invoice\n\n\nCustom Portion of Invoice\n\n\nRemaining Invoice\n\n\nAll Outstanding Txs\n\n\nNone. Custom PTS Advice used in PBU"
+      "description": "The invoice portion covered by this transaction set prior being commited.",
+      "entries": [
+        "Entire Invoice",
+        "Custom Portion of Invoice",
+        "Remaining Invoice",
+        "All Outstanding Txs",
+        "None. Custom PTS Advice used in PBU"
+      ]
     }
   ]
 }

@@ -1,41 +1,47 @@
 {
-  "table_name": "PAT_ENC_REMINDER",
+  "name": "PAT_ENC_REMINDER",
   "description": "The PAT_ENC_REMINDER table contains information about follow up messages sent to users.  These include the number of days after the visit to send the message,  the text of the message, and a flag indicating whether the message has been sent or not.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_REMD_SEND_DAYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Contains the number of days after the visit that a reminder/follow up message should be sent to the user."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PATIENT_REMD_SENT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether or not a reminder message has been sent to the user. A 1 indicates that a reminder message has been sent.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column indicates whether or not a reminder message has been sent to the user. A 1 indicates that a reminder message has been sent.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "PAT_REMINDER_MSG",
       "type": "VARCHAR",
       "discontinued": false,

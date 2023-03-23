@@ -1,129 +1,152 @@
 {
-  "table_name": "ARPB_TX_SST",
+  "name": "ARPB_TX_SST",
   "description": "Sliding Scale Table Related Items for Transactions.  This table has information that is populated by sliding scale workflows and by self-pay discount workflows.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "SST_DISC",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field holds the percentage amount of the sliding scale discount."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SST_OVERRIDE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is a Yes/No flag that stores whether the system increases the self-pay amount due to the application of a minimum fee."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ORIGINAL_PAT_PORT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original self-pay portion before the amount was reduced according to the sliding scale."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SLIDING_MIN_FEE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the minimum fee that is associated with this transaction. This applies only to sliding scale and not self-pay discount."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "SST_WO",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the amount of the write-off that was applied."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "SST_DEFAULT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the sliding scale table system calculation was overridden by a user. Y indicates that the sliding scale table system calculation was overridden. N indicates that it was not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the sliding scale table system calculation was overridden by a user. Y indicates that the sliding scale table system calculation was overridden. N indicates that it was not.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "SST_DISC_OV_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the discount amount was overridden by a user. Y indicates that discount amount was overridden. N indicates that it was not.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the discount amount was overridden by a user. Y indicates that discount amount was overridden. N indicates that it was not.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "SST_DISC_APP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a sliding scale discount has been applied to this transaction.\n\n\n The category values for this column were already listed for column: SST_DISC_OV_YN"
+      "description": "Indicates whether a sliding scale discount has been applied to this transaction."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "SST_SELF_OVRD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the self-pay portion in the self-pay discount workflow was overridden by a user. Y indicates that self-pay portion was overridden. N indicates that it was not.\n\n\n The category values for this column were already listed for column: SST_DISC_OV_YN"
+      "description": "Indicates whether the self-pay portion in the self-pay discount workflow was overridden by a user. Y indicates that self-pay portion was overridden. N indicates that it was not."
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "SST_FF_APPLIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds a flag to determine if a flat fee discount was applied to this transaction.\n\n\n The category values for this column were already listed for column: SST_DISC_OV_YN"
+      "description": "This item holds a flag to determine if a flat fee discount was applied to this transaction."
     },
     {
-      "index": 68,
+      "ordinalPosition": 12,
       "name": "SST_FF_PROC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds a flag to determine if the procedure associated with this charge is a flat fee eligible procedure.\n\n\n The category values for this column were already listed for column: SST_DISC_OV_YN"
+      "description": "This item holds a flag to determine if the procedure associated with this charge is a flat fee eligible procedure."
     },
     {
-      "index": 74,
+      "ordinalPosition": 13,
       "name": "SST_WO_APPLIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is a flag that is set to Yes if a Sliding Scale Write off adjustment has been applied to this charge.\n\n\n The category values for this column were already listed for column: SST_DEFAULT_YN"
+      "description": "This item is a flag that is set to Yes if a Sliding Scale Write off adjustment has been applied to this charge."
     },
     {
-      "index": 80,
+      "ordinalPosition": 14,
       "name": "FF_WO_APPLIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds a flag to determine if a flat fee discount was applied to this transaction.\n\n\n The category values for this column were already listed for column: SST_DISC_OV_YN"
+      "description": "This item holds a flag to determine if a flat fee discount was applied to this transaction."
     },
     {
-      "index": 86,
+      "ordinalPosition": 15,
       "name": "DISCOUNT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates what kind of discount was used.  This item only applies to self-pay discount.  The choices are percentage or fee schedule.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNone\n\n\nPercentage\n\n\nFee Schedule\n\n\nExtension"
+      "description": "Indicates what kind of discount was used.  This item only applies to self-pay discount.  The choices are percentage or fee schedule.",
+      "entries": [
+        "None",
+        "Percentage",
+        "Fee Schedule",
+        "Extension"
+      ]
     },
     {
-      "index": 97,
+      "ordinalPosition": 16,
       "name": "SSCALE_PCT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field holds the sliding scale write-off percentage."
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "SP_DISC_EXCL_RS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the self-pay discount exclusion reason:  1 - Self-pay amount is manually overridden by user 2 - Procedure is excluded from self-pay discount 3 - Waiting for all charges on the visit to NRP to self-pay\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelf-pay amount overridden\n\n\nProcedure excluded\n\n\nPending NRP of visit to self-pay\n\n\nManually undistributed\n\n\nDeclined in adjustment review"
+      "description": "This item stores the self-pay discount exclusion reason:  1 - Self-pay amount is manually overridden by user 2 - Procedure is excluded from self-pay discount 3 - Waiting for all charges on the visit to NRP to self-pay",
+      "entries": [
+        "Self-pay amount overridden",
+        "Procedure excluded",
+        "Pending NRP of visit to self-pay",
+        "Manually undistributed",
+        "Declined in adjustment review"
+      ]
     }
   ]
 }

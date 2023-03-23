@@ -1,50 +1,56 @@
 {
-  "table_name": "ROSTER_FILE_PERIOD",
+  "name": "ROSTER_FILE_PERIOD",
   "description": "Contains a list of changes to a patient's roster status over time. The current values are also stored in the ROSTER_PERIOD table.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ROSTER_IDENTIFIER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The identifier of the roster file that included this patient.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The identifier of the roster file that included this patient."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "ROSTER_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the roster period as indicated by the roster file."
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "ROSTER_TERM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The termination date of the roster period as indicated by the roster file."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "ROSTER_UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant when this roster line was added/updated."
     }

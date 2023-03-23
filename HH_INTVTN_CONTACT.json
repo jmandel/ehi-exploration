@@ -1,66 +1,86 @@
 {
-  "table_name": "HH_INTVTN_CONTACT",
+  "name": "HH_INTVTN_CONTACT",
   "description": "Contains Home Health care plan intervention contact information.",
-  "primary_key": {
-    "column_name": "INTERVENTION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INTERVENTION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INTERVENTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the care plan intervention."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PERFORMED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact interventions performed.  Yes or no.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Care plan intervention contact interventions performed.  Yes or no.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "VARIANCE_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact variance code.  Links to category table ZC_VARIANCE_CODE.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+      "description": "Care plan intervention contact variance code.  Links to category table ZC_VARIANCE_CODE.",
+      "entries": [
+        "Other"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "CNCT_SEQUNCE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Care plan intervention contact sequence number."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "VISITS_DEFERRED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact visits deferred.  Yes or no.\n\n\n The category values for this column were already listed for column: PERFORMED_YN"
+      "description": "Care plan intervention contact visits deferred.  Yes or no."
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "CONTACT_NOTES_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Care plan intervention contact notes ID."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "DOC_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item tracks the source of intervention documentation among multiple platforms. The most recent documentation source will overwrite the previous one if two platforms are used for the same intervention.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMobile - Android\n\n\nMobile - iOS\n\n\nRemote Client\n\n\nHyperspace\n\n\nTelephony"
+      "description": "This item tracks the source of intervention documentation among multiple platforms. The most recent documentation source will overwrite the previous one if two platforms are used for the same intervention.",
+      "entries": [
+        "Mobile - Android",
+        "Mobile - iOS",
+        "Remote Client",
+        "Hyperspace",
+        "Telephony"
+      ]
     }
   ]
 }

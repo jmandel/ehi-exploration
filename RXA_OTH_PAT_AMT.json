@@ -1,55 +1,69 @@
 {
-  "table_name": "RXA_OTH_PAT_AMT",
+  "name": "RXA_OTH_PAT_AMT",
   "description": "This table extracts the related multiple-response Other Payer-Patient Responsibility Amount (I RXA 3625) item.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 3
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 4
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the adjudication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated other payer-patient responsibility amount in the adjudication's record. Together with adjudication RECORD_ID, this forms the foreign key to the RXA_OTH_PAT_AMT table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple other payer-patient responsibility amounts associated with the adjudication from the RXA_OTH_PAT_AMT table."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "O_OTH_PAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's cost share from a previous payer."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,

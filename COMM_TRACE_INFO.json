@@ -1,328 +1,363 @@
 {
-  "table_name": "COMM_TRACE_INFO",
+  "name": "COMM_TRACE_INFO",
   "description": "This table contains information about communication traces.",
-  "primary_key": {
-    "column_name": "COMM_TRACE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_TRACE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "CONTACT_SERIAL_NUM",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_TRACE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the outreach record record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_SERIAL_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number (CSN) of the contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TEMPLATE_SETTING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the base template that was sent for this trace."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TEMPLATE_SETTING_ID_SETTING_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Setting record name."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ROOT_TEMPLATE_SETTING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the root base template sent to start the conversation this trace is a part of."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "ROOT_TEMPLATE_SETTING_ID_SETTING_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Setting record name."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "COMM_DIRECTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The direction of this trace.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOutgoing\n\n\nIncoming"
+      "description": "The direction of this trace.",
+      "entries": [
+        "Outgoing",
+        "Incoming"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "SENDER_SETTING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sender record used to send this trace."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "SENDER_SETTING_ID_SETTING_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Setting record name."
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "SEGMENT_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of individual messages that the underlying gateway actually sent for this one message."
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "COMM_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of this trace.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nQueued\n\n\nSidetracked\n\n\nTo Interconnect\n\n\nTo Cloud\n\n\nPending\n\n\nSent\n\n\nDelivered\n\n\nCanceled\n\n\nExpired\n\n\nFailed\n\n\nUnknown\n\n\nAuto-Invite Tank\n\n\nAuto-Invite Queue\n\n\nECS Not In Use"
+      "description": "The status of this trace.",
+      "entries": [
+        "Created",
+        "Queued",
+        "Sidetracked",
+        "To Interconnect",
+        "To Cloud",
+        "Pending",
+        "Sent",
+        "Delivered",
+        "Canceled",
+        "Expired",
+        "Failed",
+        "Unknown",
+        "Auto-Invite Tank",
+        "Auto-Invite Queue",
+        "ECS Not In Use"
+      ]
     },
     {
-      "index": 83,
+      "ordinalPosition": 13,
       "name": "LEGACY_CONTENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If the content of this trace came from legacy content that was passed into the cache API, this flag should be set to indicate that this content DID NOT come from ECS build.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "If the content of this trace came from legacy content that was passed into the cache API, this flag should be set to indicate that this content DID NOT come from ECS build.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 92,
+      "ordinalPosition": 14,
       "name": "LANGUAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the language that was requested for this trace."
     },
     {
-      "index": 97,
+      "ordinalPosition": 15,
       "name": "LANGUAGE_ID_LANGUAGE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The language name. If the language is written and uses more than one script to represent it, the name will contain the script in parentheses after the language name."
     },
     {
-      "index": 102,
+      "ordinalPosition": 16,
       "name": "RECV_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If the recipient for the trace has an EPT, this should point to it."
     },
     {
-      "index": 107,
+      "ordinalPosition": 17,
       "name": "RECV_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If the recipient for the trace has an EAR, this should point to it."
     },
     {
-      "index": 112,
+      "ordinalPosition": 18,
       "name": "RECV_PAT_RELATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If the recipient for the trace has a RLA, this should point to it."
     },
     {
-      "index": 117,
+      "ordinalPosition": 19,
       "name": "RECV_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If the recipient for the trace has a WPR, this should point to it."
     },
     {
-      "index": 122,
+      "ordinalPosition": 20,
       "name": "ABOUT_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If this trace was about a specific patient, then this item should point to that patient. Note that the patient need not necessarily be a recipient."
     },
     {
-      "index": 127,
+      "ordinalPosition": 21,
       "name": "ABOUT_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If this trace was about a specific guarantor, then this item should point to that guarantor. Note that the guarantor need not necessarily be a recipient."
     },
     {
-      "index": 132,
+      "ordinalPosition": 22,
       "name": "COMM_CREATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC that this trace was created in the database."
     },
     {
-      "index": 137,
+      "ordinalPosition": 23,
       "name": "SEND_REQ_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC that this trace was requested be sent."
     },
     {
-      "index": 142,
+      "ordinalPosition": 24,
       "name": "TO_CLOUD_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC that this trace was actually sent."
     },
     {
-      "index": 147,
+      "ordinalPosition": 25,
       "name": "SEND_EXP_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC time after which this message should NOT be sent."
     },
     {
-      "index": 152,
+      "ordinalPosition": 26,
       "name": "DELIVERY_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant that that the message was delivered (or as close as we can detect it)."
     },
     {
-      "index": 157,
+      "ordinalPosition": 27,
       "name": "CLOUD_RECV_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant that cloud reports having received this message."
     },
     {
-      "index": 162,
+      "ordinalPosition": 28,
       "name": "DB_RECV_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC instant that cache received this message."
     },
     {
-      "index": 167,
+      "ordinalPosition": 29,
       "name": "COMM_EXT_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external number associated with this trace. Data should be stored in E.164 format. The external number is the \"to\" number when sending from Epic, and the \"from\" number when receiving a mobile-originated message."
     },
     {
-      "index": 172,
+      "ordinalPosition": 30,
       "name": "COMM_INT_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The internal number associated with this trace. Data should be stored in E.164 format. The internal number is the \"from\" number when sending from Epic, and the \"to\" number when receiving a mobile-originated message."
     },
     {
-      "index": 177,
+      "ordinalPosition": 31,
       "name": "CONTENT_UTF_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The content for the trace. This string should be UTF-8 encoded. The cloud foundation API limits characters to 1500. While not a perfect comparison using server logic, this item also uses 1500. A pure W1252 message is capped at 1500. With UTF8 characers taking various numbers of bytes, a UTF8 message may a lower limit, but that would be based on the characters used."
     },
     {
-      "index": 182,
+      "ordinalPosition": 32,
       "name": "CLOUD_MSG_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The message ID for this trace that was assigned from the cloud/gateway."
     },
     {
-      "index": 187,
+      "ordinalPosition": 33,
       "name": "FACILITY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the facility (EAF) record responsible for the message."
     },
     {
-      "index": 192,
+      "ordinalPosition": 34,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the service area (EAF) record responsible for the message."
     },
     {
-      "index": 197,
+      "ordinalPosition": 35,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the location (EAF) record responsible for the message."
     },
     {
-      "index": 202,
+      "ordinalPosition": 36,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the department (DEP) record responsible for the message."
     },
     {
-      "index": 207,
+      "ordinalPosition": 37,
       "name": "BUS_SEG_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the business segment (EAF) record responsible for the message."
     },
     {
-      "index": 212,
+      "ordinalPosition": 38,
       "name": "PRIORITY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The priority for this trace. A value from 1-99 (inclusive) where 1 is high and 99 is low. Code should not set arbitrary values, code should use one of the predefined priority buckets using constants, eg: $$ecsConstPriorityMedium()."
     },
     {
-      "index": 217,
+      "ordinalPosition": 39,
       "name": "PRE_COMM_WIN_SEND_REQ_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC instant that this trace was requested to be sent before applying communication window restrictions."
     },
     {
-      "index": 222,
+      "ordinalPosition": 40,
       "name": "TO_VENDOR_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC instant the status of this trace was updated to PENDING, indicating the message has been passed from cloud to the vendor."
     },
     {
-      "index": 227,
+      "ordinalPosition": 41,
       "name": "TO_NETWORK_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC instant the status of this trace was updated to Sent, indicating the message has been passed on to the network."
     },
     {
-      "index": 232,
+      "ordinalPosition": 42,
       "name": "FAILURE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC instant the status of this trace was updated to Failed, indicating the message delivery has failed."
     },
     {
-      "index": 237,
+      "ordinalPosition": 43,
       "name": "SORT_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "UTC instant that represents when the message was sent or received."
     },
     {
-      "index": 242,
+      "ordinalPosition": 44,
       "name": "RECV_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If the recipient for the trace has an EMP, this should point to it."
     },
     {
-      "index": 247,
+      "ordinalPosition": 45,
       "name": "ROOT_WORKFLOW_SETTING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the root base workflow associated with the template sent to start the conversation this trace is a part of."
     },
     {
-      "index": 252,
+      "ordinalPosition": 46,
       "name": "ROOT_WORKFLOW_SETTING_ID_SETTING_NAME",
       "type": "VARCHAR",
       "discontinued": false,

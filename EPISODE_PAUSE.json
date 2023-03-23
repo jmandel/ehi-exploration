@@ -1,69 +1,123 @@
 {
-  "table_name": "EPISODE_PAUSE",
+  "name": "EPISODE_PAUSE",
   "description": "This table contains data on past and present Social Care episode pause periods that currently exist in the system.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAUSE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The pause status category ID for the pause period.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n10 - First Activity\n\n\n11 - First Activity (Active Monitoring End)\n\n\n12 - First Activity (Referral from Consultant or Allied Health Professional)\n\n\n20 - Subsequent Activity (Further activities anticipated)\n\n\n21 - Transfer to another Health Care Provider\n\n\n30 - First Definitive Treatment\n\n\n31 - Start of Active Monitoring (Patient initiated)\n\n\n32 - Start of Active Monitoring (Care Professional initiated)\n\n\n33 - Did Not Attend\n\n\n34 - Decision Not To Treat\n\n\n35 - Patient Declined Offered Treatment\n\n\n36 - Patient Died Before Treatment\n\n\n90 - After Treatment\n\n\n91 - During Active Monitoring\n\n\n92 - Not Yet Referred\n\n\n98 - Not Applicable\n\n\n99 - Not Yet Known\n\n\n11 - Waiting for investigation\n\n\n12 - Waiting for treatment\n\n\n13 - Waiting, redirected from other department\n\n\n14 - Waiting for needed information\n\n\n15 - Waiting for assistance\n\n\n21 - Non waiting for investigation/treatment\n\n\n22 - Non waiting, at control\n\n\n23 - Non waiting, patient's wish\n\n\n24 - Non waiting, ongoing treatment/investigation in other department\n\n\n25 - Non waiting, ongoing investigation\n\n\n26 - Non waiting, ongoing treatment\n\n\n0 - No wait status\n\n\nActive\n\n\nCare plan / proposed treatment plan completed\n\n\nUnplanned patient admission to hospital\n\n\nPlanned patient admission to hospital\n\n\nAlteration in patient medical condition without hospital admission\n\n\nPatient died\n\n\nPatient has declined further services\n\n\nPatient has moved from area\n\n\nPatient is unable to be contacted\n\n\nPatient has been referred to another service\n\n\nNo measurable benefit from continuing the service\n\n\nPatient not complying with program\n\n\nRisk to patient or staff prevents service provision\n\n\nPatient/client death or bereavement phase end\n\n\nDischarged to speciality palliative care provider\n\n\nDischarged to other health care provider\n\n\nOther"
+      "description": "The pause status category ID for the pause period.",
+      "entries": [
+        "10 - First Activity",
+        "11 - First Activity (Active Monitoring End)",
+        "12 - First Activity (Referral from Consultant or Allied Health Professional)",
+        "20 - Subsequent Activity (Further activities anticipated)",
+        "21 - Transfer to another Health Care Provider",
+        "30 - First Definitive Treatment",
+        "31 - Start of Active Monitoring (Patient initiated)",
+        "32 - Start of Active Monitoring (Care Professional initiated)",
+        "33 - Did Not Attend",
+        "34 - Decision Not To Treat",
+        "35 - Patient Declined Offered Treatment",
+        "36 - Patient Died Before Treatment",
+        "90 - After Treatment",
+        "91 - During Active Monitoring",
+        "92 - Not Yet Referred",
+        "98 - Not Applicable",
+        "99 - Not Yet Known",
+        "11 - Waiting for investigation",
+        "12 - Waiting for treatment",
+        "13 - Waiting, redirected from other department",
+        "14 - Waiting for needed information",
+        "15 - Waiting for assistance",
+        "21 - Non waiting for investigation/treatment",
+        "22 - Non waiting, at control",
+        "23 - Non waiting, patient's wish",
+        "24 - Non waiting, ongoing treatment/investigation in other department",
+        "25 - Non waiting, ongoing investigation",
+        "26 - Non waiting, ongoing treatment",
+        "0 - No wait status",
+        "Active",
+        "Care plan / proposed treatment plan completed",
+        "Unplanned patient admission to hospital",
+        "Planned patient admission to hospital",
+        "Alteration in patient medical condition without hospital admission",
+        "Patient died",
+        "Patient has declined further services",
+        "Patient has moved from area",
+        "Patient is unable to be contacted",
+        "Patient has been referred to another service",
+        "No measurable benefit from continuing the service",
+        "Patient not complying with program",
+        "Risk to patient or staff prevents service provision",
+        "Patient/client death or bereavement phase end",
+        "Discharged to speciality palliative care provider",
+        "Discharged to other health care provider",
+        "Other"
+      ]
     },
     {
-      "index": 65,
+      "ordinalPosition": 4,
       "name": "PAUSE_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the pause was started."
     },
     {
-      "index": 70,
+      "ordinalPosition": 5,
       "name": "PAUSE_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the pause was ended."
     },
     {
-      "index": 75,
+      "ordinalPosition": 6,
       "name": "PAUSE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The pause reason category ID for the pause period.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The pause reason category ID for the pause period."
     },
     {
-      "index": 81,
+      "ordinalPosition": 7,
       "name": "UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who most recently updated the pause period."
     },
     {
-      "index": 86,
+      "ordinalPosition": 8,
       "name": "UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time that a pause period was last updated."
     },
     {
-      "index": 91,
+      "ordinalPosition": 9,
       "name": "PAUSE_KEY",
       "type": "VARCHAR",
       "discontinued": false,

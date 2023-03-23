@@ -1,104 +1,123 @@
 {
-  "table_name": "RESULT_TRACK_RECIP",
+  "name": "RESULT_TRACK_RECIP",
   "description": "Details of communication actions taken to deliver critical results to recipients and confirm receipt.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the order record for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RSLT_TRK_RECIP_ST_C",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "per-recipient status for result tracking\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRequired\n\n\nIn Progress\n\n\nCompleted"
+      "description": "per-recipient status for result tracking",
+      "entries": [
+        "Required",
+        "In Progress",
+        "Completed"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "RSLT_TRK_RECIP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "name of recipient (needed for ad hoc)"
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "RSLT_TRK_RCP_SER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "SER ID for recipient"
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "RSLT_TRK_RCP_EMP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "RSLT_TRK_RCP_POL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID associated with the reading pool record for this row."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "RSLT_TRK_RCP_POL_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the In Basket registry in the HIP master file."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "RSLT_TRK_RECIP_ADHO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ad hoc string for result tracking (see item 52016)"
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "RSLT_TRK_RECIP_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "instant when a followup action was performed"
     },
     {
-      "index": 57,
+      "ordinalPosition": 11,
       "name": "RSLT_TRK_RECIP_ME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "method used to contact this recipient\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Basket\n\n\nFax\n\n\nMail\n\n\nPhone\n\n\nPager\n\n\nEmail"
+      "description": "method used to contact this recipient",
+      "entries": [
+        "In Basket",
+        "Fax",
+        "Mail",
+        "Phone",
+        "Pager",
+        "Email"
+      ]
     },
     {
-      "index": 70,
+      "ordinalPosition": 12,
       "name": "RSLT_TRK_RECIP_COMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "user-entered free text comment about followup with recipient"
     },
     {
-      "index": 75,
+      "ordinalPosition": 13,
       "name": "RSLT_TRK_RCP_USR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "the user that performed the followup action from within epic"
     },
     {
-      "index": 80,
+      "ordinalPosition": 14,
       "name": "RSLTTRK_CMT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,

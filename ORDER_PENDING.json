@@ -1,129 +1,172 @@
 {
-  "table_name": "ORDER_PENDING",
+  "name": "ORDER_PENDING",
   "description": "This table contains information on pending orders.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the pended order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user pending the order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PENDED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time an order was pended."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PENDED_FOR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reason an order was pended."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RELEASED_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user releasing a pended medication."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "PENDING_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Order pending comments."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "PEND_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Order pending reason.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Order pending reason."
     },
     {
-      "index": 43,
+      "ordinalPosition": 9,
       "name": "SH_ORDR_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the ordering provider for a signed and held order."
     },
     {
-      "index": 48,
+      "ordinalPosition": 10,
       "name": "SH_AUTH_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the authorizing provider for this signed and held order record. A signed and held order is an order record that has been authorized but is intended for future use and is not yet active."
     },
     {
-      "index": 53,
+      "ordinalPosition": 11,
       "name": "SH_ORDER_MODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The verbal order mode category ID for the signed and held order, indicating the way the order was placed, e.g. telephone with readback.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVerbal\n\n\nStandard"
+      "description": "The verbal order mode category ID for the signed and held order, indicating the way the order was placed, e.g. telephone with readback.",
+      "entries": [
+        "Verbal",
+        "Standard"
+      ]
     },
     {
-      "index": 62,
+      "ordinalPosition": 12,
       "name": "SH_VERB_ORD_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered by a user when creating a signed and held order."
     },
     {
-      "index": 67,
+      "ordinalPosition": 13,
       "name": "SH_VRB_COMM_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the provider who verbally received the order and entered the order record in the system."
     },
     {
-      "index": 72,
+      "ordinalPosition": 14,
       "name": "SH_COSIGN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user responsible for providing a cosignature for the order."
     },
     {
-      "index": 77,
+      "ordinalPosition": 15,
       "name": "SH_COSIGN_REQ_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this order required a cosignature. 'Y' indicates that the order required a cosignature. 'N' or NULL indicates that the order did not require a cosignature.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this order required a cosignature. 'Y' indicates that the order required a cosignature. 'N' or NULL indicates that the order did not require a cosignature.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 86,
+      "ordinalPosition": 16,
       "name": "SH_VBL_CSN_NO_REQ_N",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates whether a rule was used to prevent generating a verbal signature requirement for the order record."
     },
     {
-      "index": 91,
+      "ordinalPosition": 17,
       "name": "SH_COS_REQ_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The signature requirement creation source category ID for the order, indicating the reason a cosignature is required for this signed and held order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAutomatically Created\n\n\nHIM\n\n\nCreate Signature Requirement Utility\n\n\nPatient Creator Utility\n\n\nBulk Orders Utility\n\n\nBeacon\n\n\nInactive User Attached to Ordering Provider\n\n\nInstant Orders\n\n\nCosign Checkbox\n\n\nCosign Rule\n\n\nLQL\n\n\nProfile Setting 8535 - Admission Orders\n\n\nProfile Setting 8536 - Code Status Orders\n\n\nProfile Setting 38800 - RW Bulk Orders\n\n\nHome Health Code Status Order\n\n\nAnesthesia Sedation Order\n\n\nRadiant Change Order LPP\n\n\nCadence Decision Tree\n\n\nSecurity EC36 - Rx Non-controlled\n\n\nSecurity EC37 - Rx Controlled w/o C-II\n\n\nSecurity EC90 - OP Procedures\n\n\nSecurity EC104 - Rx Schedule II\n\n\nSecurity EC235 - IP Non-controlled\n\n\nSecurity EC236 - IP Controlled w/o C-II\n\n\nSecurity EC237 - IP Schedule II\n\n\nSecurity EC238 - IP Procedure\n\n\nSecurity EC282 - DC Med"
+      "description": "The signature requirement creation source category ID for the order, indicating the reason a cosignature is required for this signed and held order.",
+      "entries": [
+        "Automatically Created",
+        "HIM",
+        "Create Signature Requirement Utility",
+        "Patient Creator Utility",
+        "Bulk Orders Utility",
+        "Beacon",
+        "Inactive User Attached to Ordering Provider",
+        "Instant Orders",
+        "Cosign Checkbox",
+        "Cosign Rule",
+        "LQL",
+        "Profile Setting 8535 - Admission Orders",
+        "Profile Setting 8536 - Code Status Orders",
+        "Profile Setting 38800 - RW Bulk Orders",
+        "Home Health Code Status Order",
+        "Anesthesia Sedation Order",
+        "Radiant Change Order LPP",
+        "Cadence Decision Tree",
+        "Security EC36 - Rx Non-controlled",
+        "Security EC37 - Rx Controlled w/o C-II",
+        "Security EC90 - OP Procedures",
+        "Security EC104 - Rx Schedule II",
+        "Security EC235 - IP Non-controlled",
+        "Security EC236 - IP Controlled w/o C-II",
+        "Security EC237 - IP Schedule II",
+        "Security EC238 - IP Procedure",
+        "Security EC282 - DC Med"
+      ]
     }
   ]
 }

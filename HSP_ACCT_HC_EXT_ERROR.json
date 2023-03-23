@@ -1,48 +1,65 @@
 {
-  "table_name": "HSP_ACCT_HC_EXT_ERROR",
+  "name": "HSP_ACCT_HC_EXT_ERROR",
   "description": "This table contains error information returned by an external system for hospital coding workflows.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EXT_ERROR_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The error code returned by an external system."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EXT_ERROR_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of error returned by an external system.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nError\n\n\nWarning"
+      "description": "The type of error returned by an external system.",
+      "entries": [
+        "Error",
+        "Warning"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "EXT_ERR_WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The hospital coding workflow associated with the external error code.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCoding\n\n\nAlternate Coding\n\n\nClinical Documentation Improvement\n\n\nAbstracting\n\n\nSpecialty Association"
+      "description": "The hospital coding workflow associated with the external error code.",
+      "entries": [
+        "Coding",
+        "Alternate Coding",
+        "Clinical Documentation Improvement",
+        "Abstracting",
+        "Specialty Association"
+      ]
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "EXT_ERROR_TEXT",
       "type": "VARCHAR",
       "discontinued": false,

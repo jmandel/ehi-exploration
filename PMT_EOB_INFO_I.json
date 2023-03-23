@@ -1,293 +1,326 @@
 {
-  "table_name": "PMT_EOB_INFO_I",
+  "name": "PMT_EOB_INFO_I",
   "description": "The PMT_EOB_INFO_I table contains the Explanation of Benefits information given a transaction ID. It contains data that is not multiple response given a transaction ID.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier associated with the transaction for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PEOB_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction ID of the matching charge."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CVD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The covered amount for that transaction."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "NONCVD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The non-covered amount for that transaction."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The deducted amount for that transaction."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "COPAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The copay amount for that transaction."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "COINS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coinsurance amount for that transaction."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "COB_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Coordination of�Benefits amount for that transaction."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The paid amount for that transaction."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "ICN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The internal control number for that transaction."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "DENIAL_CODES",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The denial code for the transaction."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "PEOB_ACTION_NAME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Explanation Of Benefits action category ID for�the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNext Responsible Party\n\n\nResubmit Insurance"
+      "description": "The Explanation Of Benefits action category ID for�the transaction.",
+      "entries": [
+        "Next Responsible Party",
+        "Resubmit Insurance"
+      ]
     },
     {
-      "index": 71,
+      "ordinalPosition": 14,
       "name": "ACTION_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The action amount for this transaction."
     },
     {
-      "index": 76,
+      "ordinalPosition": 15,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Account Id of the transfer to self-pay action or next responsible party to self-pay action performed in insurance payment posting."
     },
     {
-      "index": 81,
+      "ordinalPosition": 16,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Action Coverage of the next responsible party action or resubmit insurance action performed in insurance payment posting."
     },
     {
-      "index": 86,
+      "ordinalPosition": 17,
       "name": "ACTION_ASN_NAME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action assignment category ID for the transaction.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nYes, No Claim\n\n\nNo, Submit Claim\n\n\nYes, Cross Over"
+      "description": "The action assignment category ID for the transaction.",
+      "entries": [
+        "Yes",
+        "No",
+        "Yes, No Claim",
+        "No, Submit Claim",
+        "Yes, Cross Over"
+      ]
     },
     {
-      "index": 98,
+      "ordinalPosition": 18,
       "name": "COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comments associated the Explanation of Benefits for a transaction."
     },
     {
-      "index": 103,
+      "ordinalPosition": 19,
       "name": "INFO_LINES",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The info lines in PMT_EOB_INFO_II."
     },
     {
-      "index": 108,
+      "ordinalPosition": 20,
       "name": "WIN_DENIAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The winning denial remittance code."
     },
     {
-      "index": 113,
+      "ordinalPosition": 21,
       "name": "WIN_DENIAL_ID_REMIT_CODE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of each remittance code."
     },
     {
-      "index": 118,
+      "ordinalPosition": 22,
       "name": "ACTION_EOB",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Explanation of Benefits code for actions (next responsible party or resubmit) in payment posting associated with the transaction."
     },
     {
-      "index": 123,
+      "ordinalPosition": 23,
       "name": "INVOICE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The invoice number for the transaction."
     },
     {
-      "index": 128,
+      "ordinalPosition": 24,
       "name": "SUMMARY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains any paid, adjustment, copay, coinsurance, or allowed amount for a transaction."
     },
     {
-      "index": 133,
+      "ordinalPosition": 25,
       "name": "TX_MATCH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the charge was matched to the payment."
     },
     {
-      "index": 138,
+      "ordinalPosition": 26,
       "name": "CROSSOVER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the crossover scenario of this payment transaction at the time of payment posting. The crossover scenario value describes whether this payment transaction is a regular payment, a primary payment (and whether or not the crossover payor has paid), or a crossover payment (and whether or not the primary payor has paid).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRegular Payment\n\n\nPrimary payment, crossover not paid yet\n\n\nCrossover payment, primary already paid\n\n\nCrossover payment, primary not paid yet\n\n\nPrimary payment, crossover already paid"
+      "description": "Indicates the crossover scenario of this payment transaction at the time of payment posting. The crossover scenario value describes whether this payment transaction is a regular payment, a primary payment (and whether or not the crossover payor has paid), or a crossover payment (and whether or not the primary payor has paid).",
+      "entries": [
+        "Regular Payment",
+        "Primary payment, crossover not paid yet",
+        "Crossover payment, primary already paid",
+        "Crossover payment, primary not paid yet",
+        "Primary payment, crossover already paid"
+      ]
     },
     {
-      "index": 150,
+      "ordinalPosition": 27,
       "name": "NON_PRIMARY_SYS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the system determines this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.�Y indicates the system determines this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.�A null value indicates the system does not determine this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the system determines this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.�Y indicates the system determines this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.�A null value indicates the system does not determine this payment transaction as a non-primary payment at the time of payment posting based on crossover information, invoice information, and previous payments information.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 159,
+      "ordinalPosition": 28,
       "name": "NON_PRIMARY_USR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the user determines this payment transaction as a non-primary payment at the time of payment posting. The value of the Non-primary posting (user) is usually the same as the system determined non-primary posting value. However, users can override the system determined non-primary posting value based on the EOB information.  Y indicates the user determines this payment transaction as a non-primary payment at the time of payment posting.\n\n\n The category values for this column were already listed for column: NON_PRIMARY_SYS_YN"
+      "description": "Indicates whether the user determines this payment transaction as a non-primary payment at the time of payment posting. The value of the Non-primary posting (user) is usually the same as the system determined non-primary posting value. However, users can override the system determined non-primary posting value based on the EOB information.  Y indicates the user determines this payment transaction as a non-primary payment at the time of payment posting."
     },
     {
-      "index": 165,
+      "ordinalPosition": 29,
       "name": "PEOB_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the Next Responsible Party, Resubmit Insurance or Transfer to Self-Pay action taken on the charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNext Responsible Party\n\n\nResubmit Insurance\n\n\nTransfer to Self-Pay"
+      "description": "Indicates the Next Responsible Party, Resubmit Insurance or Transfer to Self-Pay action taken on the charge.",
+      "entries": [
+        "Next Responsible Party",
+        "Resubmit Insurance",
+        "Transfer to Self-Pay"
+      ]
     },
     {
-      "index": 175,
+      "ordinalPosition": 30,
       "name": "INV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Invoice ID that is associated with one payment Explanation  of Benefits line. Use this field along with INV_LINE to link to the proper record in the INV_CLM_LN_ADDL table."
     },
     {
-      "index": 180,
+      "ordinalPosition": 31,
       "name": "INV_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line count of one invoice record for internal calculation use. It is different from claim form line. Use this field along with INV_ID to link to the associated record in the INV_CLM_LN_ADDL table."
     },
     {
-      "index": 185,
+      "ordinalPosition": 32,
       "name": "NO_MATCHED_CHGS_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column is set to Y when all charges associated with this EOB line have been unmatched from the payment."
     },
     {
-      "index": 190,
+      "ordinalPosition": 33,
       "name": "PEOB_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the guarantor on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the guarantor from the charge."
     },
     {
-      "index": 195,
+      "ordinalPosition": 34,
       "name": "PEOB_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the revenue location on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the revenue location from the charge transaction."
     },
     {
-      "index": 200,
+      "ordinalPosition": 35,
       "name": "PEOB_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the Place of Service on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the Place of Service from the charge."
     },
     {
-      "index": 205,
+      "ordinalPosition": 36,
       "name": "PEOB_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the department on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the department from the charge."
     },
     {
-      "index": 210,
+      "ordinalPosition": 37,
       "name": "PEOB_BILL_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the billing provider on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the billing provider from the charge."
     },
     {
-      "index": 215,
+      "ordinalPosition": 38,
       "name": "PEOB_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the benefit plan on the invoice associated with the payment. If there is no associated invoice, this column will be blank."
     },
     {
-      "index": 220,
+      "ordinalPosition": 39,
       "name": "PEOB_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 225,
+      "ordinalPosition": 40,
       "name": "PEOB_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the procedure on the invoice associated with the payment. If there is no associated invoice, this column stores the ID of the procedure from the charge transaction."
     },
     {
-      "index": 230,
+      "ordinalPosition": 41,
       "name": "PEOB_MTCH_CHG_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,

@@ -1,48 +1,126 @@
 {
-  "table_name": "HL_JOB_ACTIONS",
+  "name": "HL_JOB_ACTIONS",
   "description": "Hospital Logistics Requests Actions.",
-  "primary_key": {
-    "column_name": "HLR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HLR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HLR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the request record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HL_ACTION_HL_REQ_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status that triggered the corresponding action.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnplanned\n\n\nPlanned\n\n\nAssigned\n\n\nAcknowledged\n\n\nAt Start Location\n\n\nIn Progress\n\n\nAt End Location\n\n\nCompleted\n\n\nCanceled"
+      "description": "The status that triggered the corresponding action.",
+      "entries": [
+        "Unplanned",
+        "Planned",
+        "Assigned",
+        "Acknowledged",
+        "At Start Location",
+        "In Progress",
+        "At End Location",
+        "Completed",
+        "Canceled"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "HL_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action that was triggered when this Request reached the corresponding status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUpdate Patient Location\n\n\nRequest Bed Clean for Patient's Bed\n\n\nUpdate Bed Status\n\n\nPrint Ticket To Ride\n\n\nComplete Pending Discharge\n\n\nComplete Pending Transfer\n\n\nCancel Linked Bed Clean\n\n\nUpdate Bed Blocks\n\n\nUpdate Bed Type"
+      "description": "The action that was triggered when this Request reached the corresponding status.",
+      "entries": [
+        "Update Patient Location",
+        "Request Bed Clean for Patient's Bed",
+        "Update Bed Status",
+        "Print Ticket To Ride",
+        "Complete Pending Discharge",
+        "Complete Pending Transfer",
+        "Cancel Linked Bed Clean",
+        "Update Bed Blocks",
+        "Update Bed Type"
+      ]
     },
     {
-      "index": 44,
+      "ordinalPosition": 5,
       "name": "HL_ACTION_RESULT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result of the corresponding action. If the action failed, this will include the reason for failure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSuccess\n\n\nNot Executed - Patient Bed Not Changing\n\n\nNot Executed - Patient Not Admitted\n\n\nNot Executed - Patient Does Not Have a Bed\n\n\nNot Executed - Back to Bed End Location Isn't Patient's Bed\n\n\nNot Executed - Patient Discharged and Readmitted\n\n\nNot Executed - Patient Admitted While on LOA\n\n\nNot Executed - Patient Location Update Not Required\n\n\nNot Executed - Feature Not Enabled\n\n\nNot Executed - No Linked Pending Event\n\n\nNot Executed - Missing Required Parameter\n\n\nNot Executed - No Bed Associated with Location\n\n\nNot Executed - Unknown Action\n\n\nNot Executed - Unknown Print TTR Location\n\n\nNot Executed - No Location\n\n\nNot Executed - No Patient\n\n\nNot Executed - Prevented By Exclusion Rule\n\n\nNot Executed - Patient Discharged or On LOA\n\n\nNot Executed - Linked Pending Event Canceled\n\n\nNot Executed - Linked Pending Event Completed\n\n\nNot Executed - Bed Already Dirty\n\n\nNot Executed - No Linked Bed Clean\n\n\nNot Executed - No Protocols on Bed Clean\n\n\nNot Executed - No Bed Block Types are Resolved by EVS\n\n\nNot Executed - No Bed Type Update\n\n\nNot Executed - Bed Not Valid for EVS\n\n\nNot Executed - Linked Bed Clean Linked to ADT Event\n\n\nNot Executed - Linked Bed Clean is Assigned\n\n\nNot Executed - Linked Bed Clean is Complete\n\n\nNot Executed - Skipped by System\n\n\nNot Executed - Prevented By Inclusion Rule\n\n\nNot Executed - Protocol Not in Mapping Table\n\n\nNot Executed - Action Hasn't Finished Running\n\n\nFailed - Unknown Bed Status\n\n\nFailed - Patient Record Locked\n\n\nFailed - Confirmation Errors\n\n\nFailed - Transported Patient Success, L&D Linked Patients Failed\n\n\nFailed - Transported Patient Failed, L&D Linked Patients Success\n\n\nFailed - Transported and L&D Linked Patients Failed\n\n\nFailed - Patient has Earlier Pending Transfers\n\n\nFailed - Unexpected Error\n\n\nFailed - Enqueuing Background Job Failed\n\n\nFailed - Request or Job Record Locked\n\n\nFailed - Request Already Completed\n\n\nFailed - Bed Record Locked\n\n\nFailed - Legacy Bed Clean Not Created\n\n\nFailed - Logistics Validation Error\n\n\nFailed - Action Not Yet Implemented"
+      "description": "The result of the corresponding action. If the action failed, this will include the reason for failure.",
+      "entries": [
+        "Success",
+        "Not Executed - Patient Bed Not Changing",
+        "Not Executed - Patient Not Admitted",
+        "Not Executed - Patient Does Not Have a Bed",
+        "Not Executed - Back to Bed End Location Isn't Patient's Bed",
+        "Not Executed - Patient Discharged and Readmitted",
+        "Not Executed - Patient Admitted While on LOA",
+        "Not Executed - Patient Location Update Not Required",
+        "Not Executed - Feature Not Enabled",
+        "Not Executed - No Linked Pending Event",
+        "Not Executed - Missing Required Parameter",
+        "Not Executed - No Bed Associated with Location",
+        "Not Executed - Unknown Action",
+        "Not Executed - Unknown Print TTR Location",
+        "Not Executed - No Location",
+        "Not Executed - No Patient",
+        "Not Executed - Prevented By Exclusion Rule",
+        "Not Executed - Patient Discharged or On LOA",
+        "Not Executed - Linked Pending Event Canceled",
+        "Not Executed - Linked Pending Event Completed",
+        "Not Executed - Bed Already Dirty",
+        "Not Executed - No Linked Bed Clean",
+        "Not Executed - No Protocols on Bed Clean",
+        "Not Executed - No Bed Block Types are Resolved by EVS",
+        "Not Executed - No Bed Type Update",
+        "Not Executed - Bed Not Valid for EVS",
+        "Not Executed - Linked Bed Clean Linked to ADT Event",
+        "Not Executed - Linked Bed Clean is Assigned",
+        "Not Executed - Linked Bed Clean is Complete",
+        "Not Executed - Skipped by System",
+        "Not Executed - Prevented By Inclusion Rule",
+        "Not Executed - Protocol Not in Mapping Table",
+        "Not Executed - Action Hasn't Finished Running",
+        "Failed - Unknown Bed Status",
+        "Failed - Patient Record Locked",
+        "Failed - Confirmation Errors",
+        "Failed - Transported Patient Success, L&D Linked Patients Failed",
+        "Failed - Transported Patient Failed, L&D Linked Patients Success",
+        "Failed - Transported and L&D Linked Patients Failed",
+        "Failed - Patient has Earlier Pending Transfers",
+        "Failed - Unexpected Error",
+        "Failed - Enqueuing Background Job Failed",
+        "Failed - Request or Job Record Locked",
+        "Failed - Request Already Completed",
+        "Failed - Bed Record Locked",
+        "Failed - Legacy Bed Clean Not Created",
+        "Failed - Logistics Validation Error",
+        "Failed - Action Not Yet Implemented"
+      ]
     },
     {
-      "index": 99,
+      "ordinalPosition": 6,
       "name": "HL_ACTION_SOURCE_HLR_ID",
       "type": "NUMERIC",
       "discontinued": false,

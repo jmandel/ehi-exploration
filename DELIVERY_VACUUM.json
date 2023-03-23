@@ -1,31 +1,37 @@
 {
-  "table_name": "DELIVERY_VACUUM",
+  "name": "DELIVERY_VACUUM",
   "description": "This table contains vacuum location and information. This table contains choices selected in Stork's Delivery Summary activity, and is populated in the delivery record. This information is also copied to the OB_EPT_BH_VACUUM table in the baby's Patient (EPT) record.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the summary block record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DEL_VACUUM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the delivery vacuum location. This information is stored in the Delivery Record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the delivery vacuum location. This information is stored in the Delivery Record."
     }
   ]
 }

@@ -1,612 +1,668 @@
 {
-  "table_name": "PR_EST_INFO",
+  "name": "PR_EST_INFO",
   "description": "General information about the price estimate, such as status, expected service date, patient, contact information, and various amount totals.",
-  "primary_key": {
-    "column_name": "ESTIMATE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ESTIMATE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the price estimate record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ESTIMATE_CREATE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the estimate was created."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User who created the estimate"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The service area associated with the price estimate."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The service date specified in the price estimate."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ESTIMATE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The price estimate's status within the estimate workflow.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPending\n\n\nFinalized\n\n\nCompleted\n\n\nVoided\n\n\nReplaced\n\n\nExpired"
+      "description": "The price estimate's status within the estimate workflow.",
+      "entries": [
+        "Pending",
+        "Finalized",
+        "Completed",
+        "Voided",
+        "Replaced",
+        "Expired"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient requesting the price estimate."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "CONTACT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The person requesting a price estimate, if they do not currently have a patient record (EPT).  If the person requesting the estimate does have a patient record, use PAT_ID to find their contact information."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "CONTACT_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The city of the contact person's address.  Used only if the person requesting the estimate does not currently have a patient record."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "CONTACT_ZIP_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The zip code of the contact person's address.  Used only if the person requesting the price estimate does not currently have a patient record (EPT)."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "CONTACT_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The state of the contact person's address.  Used only if the person requesting the price estimate does not currently have a patient record (EPT).\n\n\nMay contain organization-specific values: Yes"
+      "description": "The state of the contact person's address.  Used only if the person requesting the price estimate does not currently have a patient record (EPT)."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "CONTACT_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The country of the contact person's address.  Used only if the person requesting the estimate does not currently have a patient record (EPT).\n\n\nMay contain organization-specific values: Yes"
+      "description": "The country of the contact person's address.  Used only if the person requesting the estimate does not currently have a patient record (EPT)."
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "CONTACT_PHONE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The phone number of the person requesting the price estimate.  Used only if that person does not have a patient record (EPT)."
     },
     {
-      "index": 77,
+      "ordinalPosition": 14,
       "name": "CONTACT_ALT_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The alternate phone number of the person requesting the price estimate.  Used only if that person does not have a patient record (EPT)."
     },
     {
-      "index": 82,
+      "ordinalPosition": 15,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The primary coverage of the patient specified in the estimate."
     },
     {
-      "index": 87,
+      "ordinalPosition": 16,
       "name": "BENEFITS_INFO_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Benefit information record (BEN) that is linked to the estimate."
     },
     {
-      "index": 92,
+      "ordinalPosition": 17,
       "name": "PAYOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payor (EPM) associated with the patient's primary coverage.  This can be used to determine contracts and other pricing factors.  If the person requesting the estimate does not have a patient record (EPT), the user may still enter a payor for pricing purposes."
     },
     {
-      "index": 97,
+      "ordinalPosition": 18,
       "name": "PAYOR_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 102,
+      "ordinalPosition": 19,
       "name": "BENEFIT_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The benefit plan (EPP) associated with the patient's primary coverage. This can be used to determine contracts and other pricing factors in the price estimate.  If the person requesting the estimate does not have a patient record (EPT), the user may still enter the benefit plan for pricing purposes."
     },
     {
-      "index": 107,
+      "ordinalPosition": 20,
       "name": "BENEFIT_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 112,
+      "ordinalPosition": 21,
       "name": "REQUIRED_PREPAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Required patient prepayment amount."
     },
     {
-      "index": 117,
+      "ordinalPosition": 22,
       "name": "PARENT_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Reference to the record from which this record was created as a copy."
     },
     {
-      "index": 122,
+      "ordinalPosition": 23,
       "name": "CONTACT_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The county of the person requesting the price estimate.  Used only if that person does not have a patient record (EPT)\n\n\nMay contain organization-specific values: Yes"
+      "description": "The county of the person requesting the price estimate.  Used only if that person does not have a patient record (EPT)"
     },
     {
-      "index": 128,
+      "ordinalPosition": 24,
       "name": "EXTERNAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This items stores the external ID for the record."
     },
     {
-      "index": 133,
+      "ordinalPosition": 25,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the guarantor account associated with the estimate.�This can be populated if the patient has an existing guarantor account in the service area associated with the estimate, and will not be populated for prospective patients (when PAT_ID is blank)."
     },
     {
-      "index": 138,
+      "ordinalPosition": 26,
       "name": "OVERALL_PERCENT_DISCOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores percent discount for the entire estimate. If set, this overrides all system-calculated discounts."
     },
     {
-      "index": 143,
+      "ordinalPosition": 27,
       "name": "AMOUNT_DUE_OVERRIDE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores amount due for the entire estimate. If set, this overrides all system-calculated discounts."
     },
     {
-      "index": 148,
+      "ordinalPosition": 28,
       "name": "CONTACT_HOUSE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The house number of the contact person's address.  Used only if the value has been manually specified in the estimate."
     },
     {
-      "index": 153,
+      "ordinalPosition": 29,
       "name": "CONTACT_DISTRICT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The district of the contact person's address.  Used only if the value has been manually specified in the estimate.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The district of the contact person's address.  Used only if the value has been manually specified in the estimate."
     },
     {
-      "index": 159,
+      "ordinalPosition": 30,
       "name": "CREATE_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The original MyChart user that created this estimate."
     },
     {
-      "index": 164,
+      "ordinalPosition": 31,
       "name": "HB_TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB charge amounts on an estimate."
     },
     {
-      "index": 169,
+      "ordinalPosition": 32,
       "name": "PB_TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB charge amounts on an estimate."
     },
     {
-      "index": 174,
+      "ordinalPosition": 33,
       "name": "TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total charge amount on an estimate. On Resolute estimates, this does not include external provider charges."
     },
     {
-      "index": 179,
+      "ordinalPosition": 34,
       "name": "HB_SYS_TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of the HB system-calculated charge amounts on an estimate."
     },
     {
-      "index": 184,
+      "ordinalPosition": 35,
       "name": "PB_SYS_TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of the PB system-calculated charge amounts on an estimate."
     },
     {
-      "index": 189,
+      "ordinalPosition": 36,
       "name": "SYS_TTL_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all system-calculated charge amounts on an estimate."
     },
     {
-      "index": 194,
+      "ordinalPosition": 37,
       "name": "HB_TTL_ALLOW_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB allowed amounts on an estimate."
     },
     {
-      "index": 199,
+      "ordinalPosition": 38,
       "name": "PB_TTL_ALLOW_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB allowed amounts on an estimate."
     },
     {
-      "index": 204,
+      "ordinalPosition": 39,
       "name": "TTL_ALLOW_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all allowed amounts on an estimate."
     },
     {
-      "index": 209,
+      "ordinalPosition": 40,
       "name": "HB_SYS_TTL_ALLOW",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all Hospital Billing (HB)�system-calculated allowed amounts on an estimate."
     },
     {
-      "index": 214,
+      "ordinalPosition": 41,
       "name": "PB_SYS_TTL_ALLOW",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all Professional Billing system-calculated allowed amounts on an estimate."
     },
     {
-      "index": 219,
+      "ordinalPosition": 42,
       "name": "SYS_TTL_ALLOW_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all system-calculated allowed amounts on an estimate."
     },
     {
-      "index": 224,
+      "ordinalPosition": 43,
       "name": "HB_TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB self-pay amounts on an estimate."
     },
     {
-      "index": 229,
+      "ordinalPosition": 44,
       "name": "PB_TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB self-pay amounts on an estimate."
     },
     {
-      "index": 234,
+      "ordinalPosition": 45,
       "name": "TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total self-pay amount on an estimate. On Resolute estimates, this does not include external provider self-pay amounts."
     },
     {
-      "index": 239,
+      "ordinalPosition": 46,
       "name": "HB_SYS_TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB system-calculated self-pay amounts on an estimate."
     },
     {
-      "index": 244,
+      "ordinalPosition": 47,
       "name": "PB_SYS_TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB system-calculated self-pay amounts on an estimate."
     },
     {
-      "index": 249,
+      "ordinalPosition": 48,
       "name": "SYS_TTL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all system-calculated self-pay amounts on an estimate."
     },
     {
-      "index": 254,
+      "ordinalPosition": 49,
       "name": "HB_TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB discount amounts on an estimate."
     },
     {
-      "index": 259,
+      "ordinalPosition": 50,
       "name": "PB_TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB discount amounts on an estimate."
     },
     {
-      "index": 264,
+      "ordinalPosition": 51,
       "name": "TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all discount amounts on an estimate."
     },
     {
-      "index": 269,
+      "ordinalPosition": 52,
       "name": "HB_SYS_TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB system-calculated discount amounts on an estimate."
     },
     {
-      "index": 274,
+      "ordinalPosition": 53,
       "name": "PB_SYS_TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB system-calculated discount amounts on an estimate."
     },
     {
-      "index": 279,
+      "ordinalPosition": 54,
       "name": "SYS_TTL_DISCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all system-calculated discount amounts on an estimate."
     },
     {
-      "index": 284,
+      "ordinalPosition": 55,
       "name": "HB_TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB tax amounts on an estimate."
     },
     {
-      "index": 289,
+      "ordinalPosition": 56,
       "name": "PB_TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB tax amounts on an estimate."
     },
     {
-      "index": 294,
+      "ordinalPosition": 57,
       "name": "TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all tax amounts on an estimate."
     },
     {
-      "index": 299,
+      "ordinalPosition": 58,
       "name": "HB_SYS_TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all HB system-calculated tax amounts on an estimate."
     },
     {
-      "index": 304,
+      "ordinalPosition": 59,
       "name": "PB_SYS_TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all PB system-calculated tax amounts on an estimate."
     },
     {
-      "index": 309,
+      "ordinalPosition": 60,
       "name": "SYS_TTL_TAX_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all system-calculated tax amounts on an estimate."
     },
     {
-      "index": 314,
+      "ordinalPosition": 61,
       "name": "SOURCE_VISIT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the patient contact associated with the visit when the estimate was created, if applicable."
     },
     {
-      "index": 319,
+      "ordinalPosition": 62,
       "name": "FOLLOW_UP_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason this estimate requires follow-up.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNeeds billing review"
+      "description": "The reason this estimate requires follow-up.",
+      "entries": [
+        "Needs billing review"
+      ]
     },
     {
-      "index": 327,
+      "ordinalPosition": 63,
       "name": "SOURCE_DETAIL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates where the information on this estimate originated from. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nScheduled Order\n\n\nEmergency Visit\n\n\nSurgical Case\n\n\nTelehealth\n\n\nCoded Procedure - Hospital Encounter\n\n\nCoded Procedure - Appointment\n\n\nLab Requisition\n\n\nLab Visit\n\n\nOther Encounter\n\n\nAppointment\n\n\nDental Treatment Plan\n\n\nDental Visit\n\n\nDental Refresh\n\n\nDental Visit (HB)\n\n\nShopper - Patient\n\n\nShopper - Prospective Patient\n\n\nOrder Entry\n\n\nResidential Hospital Account\n\n\nManaged Care Staff\n\n\nMember"
+      "description": "Indicates where the information on this estimate originated from.",
+      "entries": [
+        "Scheduled Order",
+        "Emergency Visit",
+        "Surgical Case",
+        "Telehealth",
+        "Coded Procedure - Hospital Encounter",
+        "Coded Procedure - Appointment",
+        "Lab Requisition",
+        "Lab Visit",
+        "Other Encounter",
+        "Appointment",
+        "Dental Treatment Plan",
+        "Dental Visit",
+        "Dental Refresh",
+        "Dental Visit (HB)",
+        "Shopper - Patient",
+        "Shopper - Prospective Patient",
+        "Order Entry",
+        "Residential Hospital Account",
+        "Managed Care Staff",
+        "Member"
+      ]
     },
     {
-      "index": 354,
+      "ordinalPosition": 64,
       "name": "ADJUDICATION_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The adjudication source category ID for the estimate.  \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nResolute\n\n\nPayer - Tapestry"
+      "description": "The adjudication source category ID for the estimate.",
+      "entries": [
+        "Resolute",
+        "Payer - Tapestry"
+      ]
     },
     {
-      "index": 363,
+      "ordinalPosition": 65,
       "name": "CUR_ACTIVE_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the currently active estimate in a replacement chain for any given estimate. If the estimate is not in a replacement chain, this item will match the estimate ID."
     },
     {
-      "index": 368,
+      "ordinalPosition": 66,
       "name": "EMAIL_ADDRESS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the email address of the patient or guest (shopper)."
     },
     {
-      "index": 373,
+      "ordinalPosition": 67,
       "name": "ALTERNATES_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Link to the estimate that holds the alternate procedures."
     },
     {
-      "index": 378,
+      "ordinalPosition": 68,
       "name": "OUTSTANDING_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Link to the estimate that holds the outstanding procedures."
     },
     {
-      "index": 383,
+      "ordinalPosition": 69,
       "name": "HB_TTL_INS_PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all Hospital Billing (HB)�insurance paid amounts on an estimate."
     },
     {
-      "index": 388,
+      "ordinalPosition": 70,
       "name": "PB_TTL_INS_PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all Professional Billing (PB)�insurance paid amounts on an estimate."
     },
     {
-      "index": 393,
+      "ordinalPosition": 71,
       "name": "TTL_INS_PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all insurance paid amounts on an estimate."
     },
     {
-      "index": 398,
+      "ordinalPosition": 72,
       "name": "EST_SPAN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item defines an estimate as a single or multi-visit type record: 0 - single visit estimate, 1 - multiple visit, treatment (parent) level estimate, 2 - multiple visit, visit (child) level estimate, 3 - outstanding, holds outstanding procedures, 4 - alternate, holds alternate procedures.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSingle Visit\n\n\nVisit Grouper\n\n\nGrouped Visit\n\n\nOutstanding\n\n\nAlternate"
+      "description": "This item defines an estimate as a single or multi-visit type record: 0 - single visit estimate, 1 - multiple visit, treatment (parent) level estimate, 2 - multiple visit, visit (child) level estimate, 3 - outstanding, holds outstanding procedures, 4 - alternate, holds alternate procedures.",
+      "entries": [
+        "Single Visit",
+        "Visit Grouper",
+        "Grouped Visit",
+        "Outstanding",
+        "Alternate"
+      ]
     },
     {
-      "index": 410,
+      "ordinalPosition": 73,
       "name": "HB_TOTAL_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all estimated HB insurance and patient payment amounts."
     },
     {
-      "index": 415,
+      "ordinalPosition": 74,
       "name": "PB_TOTAL_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all estimated PB insurance and patient payment amounts."
     },
     {
-      "index": 420,
+      "ordinalPosition": 75,
       "name": "TOTAL_PAYMENT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all estimated insurance and patient payment amounts."
     },
     {
-      "index": 425,
+      "ordinalPosition": 76,
       "name": "TOTAL_COPAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total copay amount passed on to the patient. For treatment estimates, this is the total copay amount passed on to the patient for all visits within the treatment."
     },
     {
-      "index": 430,
+      "ordinalPosition": 77,
       "name": "TOTAL_COINS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total coinsurance amount passed on to the patient. For treatment estimates, this is the total coinsurance amount passed on to the patient for all visits within the treatment."
     },
     {
-      "index": 435,
+      "ordinalPosition": 78,
       "name": "TOTAL_DEDUCTIBLE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total deductible amount passed on to the patient. For treatment estimates, this is the total deductible amount passed on to the patient for all visits within the treatment."
     },
     {
-      "index": 440,
+      "ordinalPosition": 79,
       "name": "TOTAL_ADDL_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total self-pay passed on to the patient due to reaching the insurance maximum. For treatment estimates, this is the total excess self-pay due to reaching the insurance maximum for all visits within the treatment."
     },
     {
-      "index": 445,
+      "ordinalPosition": 80,
       "name": "TOTAL_UPGRADE_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total upgrade amount passed on to the patient. For treatment estimates, this is the total upgrade amount passed on to the patient for all visits within the treatment. This only shows a value for PB dental estimates."
     },
     {
-      "index": 450,
+      "ordinalPosition": 81,
       "name": "TOTAL_DOWNGRADE_SP_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total downgrade amount passed on to the patient. For treatment estimates, this is the total downgrade amount passed on to the patient for all visits within the treatment. This only shows a value for PB dental estimates."
     },
     {
-      "index": 455,
+      "ordinalPosition": 82,
       "name": "TOTAL_HMO_COPAY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total HMO copay amount passed on to the patient. For treatment estimates, this is the total HMO copay amount passed on to the patient for all visits within the treatment. This only shows a value for PB dental estimates."
     },
     {
-      "index": 460,
+      "ordinalPosition": 83,
       "name": "TOT_NON_COVERED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total noncovered amount passed on to the patient. For treatment estimates, this is the total noncovered amount passed on to the patient for all visits within the treatment."
     },
     {
-      "index": 465,
+      "ordinalPosition": 84,
       "name": "VISIT_GROUPER_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If this is a visit-level estimate record on a multi-visit estimate, this item stores the grouper estimate record containing this visit estimate."
     },
     {
-      "index": 470,
+      "ordinalPosition": 85,
       "name": "FINALIZED_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Returns the user who finalized the estimate."
     },
     {
-      "index": 475,
+      "ordinalPosition": 86,
       "name": "EST_REPLACE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the primary reason that this estimate's parent was automatically replaced. This item will only be set if this is an automatic replacement estimate. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVisits added or removed\n\n\nProcedure change\n\n\nCoverage change\n\n\nCharge amount change\n\n\nAllowed amount change\n\n\nBenefit change\n\n\nDiscount change\n\n\nOther patient portion change"
+      "description": "Stores the primary reason that this estimate's parent was automatically replaced. This item will only be set if this is an automatic replacement estimate.",
+      "entries": [
+        "Visits added or removed",
+        "Procedure change",
+        "Coverage change",
+        "Charge amount change",
+        "Allowed amount change",
+        "Benefit change",
+        "Discount change",
+        "Other patient portion change"
+      ]
     }
   ]
 }

@@ -1,48 +1,63 @@
 {
-  "table_name": "ARPB_TX_VENDOR_APPEAL",
+  "name": "ARPB_TX_VENDOR_APPEAL",
   "description": "Status of Vendor Appeals.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VENDOR_APPEAL_FLG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The APPEAL_FLAG category number for this row.  This determines the type of response represented by this row.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCorrect Claim\n\n\nClaim Needs Attention\n\n\nUnder Appeal\n\n\nSuccessful Appeal\n\n\nDenied Appeal\n\n\nPending Further Action\n\n\nPartial Recovery"
+      "description": "The APPEAL_FLAG category number for this row.  This determines the type of response represented by this row.",
+      "entries": [
+        "Correct Claim",
+        "Claim Needs Attention",
+        "Under Appeal",
+        "Successful Appeal",
+        "Denied Appeal",
+        "Pending Further Action",
+        "Partial Recovery"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 4,
       "name": "VENDOR_RESPONSE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when this response was received."
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "VENDOR_REIMB",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The reimbursement amount associated with the response."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "VENDOR_VARIANCE",
       "type": "NUMERIC",
       "discontinued": false,

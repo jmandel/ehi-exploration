@@ -1,31 +1,43 @@
 {
-  "table_name": "VESSEL_REPAIRS",
+  "name": "VESSEL_REPAIRS",
   "description": "Table for the Vessel Repairs (I ORG 3112) item.",
-  "primary_key": {
-    "column_name": "ORG_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORG_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORG_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the organ record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VESSEL_REPAIRS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the vessels that were repaired during the surgery.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNone\n\n\nLeft atrial repair\n\n\nPulmonary artery repair\n\n\nPulmonary artery embolectomy"
+      "description": "Indicate the vessels that were repaired during the surgery.",
+      "entries": [
+        "None",
+        "Left atrial repair",
+        "Pulmonary artery repair",
+        "Pulmonary artery embolectomy"
+      ]
     }
   ]
 }

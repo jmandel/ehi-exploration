@@ -1,27 +1,33 @@
 {
-  "table_name": "V_EHI_HQA_QUEST_ANSWER",
+  "name": "V_EHI_HQA_QUEST_ANSWER",
   "description": "This view converts the QUEST_ANSWER column in CL_QANSWER_QA into an external-facing format for EHI Export. This table should be used in tandem with CL_QANSWER_QA, using the ANSWER_ID and LINE columns to join the two together.",
-  "primary_key": {
-    "column_name": "ANSWER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ANSWER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ANSWER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the questionnaire answer record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line count of the answers in the questionnaire record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "QUEST_ANSWER_EXTERNAL",
       "type": "VARCHAR",
       "discontinued": false,

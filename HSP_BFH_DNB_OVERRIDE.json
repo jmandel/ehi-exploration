@@ -1,38 +1,52 @@
 {
-  "table_name": "HSP_BFH_DNB_OVERRIDE",
+  "name": "HSP_BFH_DNB_OVERRIDE",
   "description": "This table holds the history of whether the discharge-not-billed (DNB) check being acted on was overridden or undone.",
-  "primary_key": {
-    "column_name": "BFH_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BFH_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BFH_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the billing activity history record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DNB_OVERRIDE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether the discharged-not-billed check/request for anticipated payment (DNB/RAP) was overridden by the action (Yes), or had the override removed by the action (No).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column indicates whether the discharged-not-billed check/request for anticipated payment (DNB/RAP) was overridden by the action (Yes), or had the override removed by the action (No).",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

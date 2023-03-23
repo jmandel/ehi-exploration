@@ -1,83 +1,95 @@
 {
-  "table_name": "FIRST_CALL_AUDIT",
+  "name": "FIRST_CALL_AUDIT",
   "description": "Audit trail for the patient's first contact provider.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "FIRST_CALL_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item identifies the provider who was designated as the patient's first call following a change in coverage for the encounter treatment team. The item is only populated for assignments from the patient's encounter  care team."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "FIRST_CALL_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item identifies the user who was designated as the patient's first call following a change in coverage for the encounter treatment team. The item is only populated for assignments from the On-Call schedule."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "FIRST_CALL_TRTMNT_TEAM_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item identifies the role of the provider who was designated as the patient's first call following a change in coverage for the encounter treatment team.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This item identifies the role of the provider who was designated as the patient's first call following a change in coverage for the encounter treatment team."
     },
     {
-      "index": 43,
+      "ordinalPosition": 9,
       "name": "FIRST_CALL_UPDATE_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item identifies the update time of the provider who was designated as  the patient's first call following a change in coverage for the encounter  treatment team. This corresponds to the time the first call was  referenced for use (by the system or display to an end user) and not  necessarily the time at which the patient's first call provider's  assignment was updated."
     },
     {
-      "index": 48,
+      "ordinalPosition": 10,
       "name": "FIRST_CALL_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item identifies the update reason for the provider who was designated as the patient's first call following a change in coverage for the encounter treatment team.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual\n\n\nAutomatic - On-Call Covering\n\n\nAutomatic - Team Role\n\n\nAutomatic - Team Contact"
+      "description": "This item identifies the update reason for the provider who was designated as the patient's first call following a change in coverage for the encounter treatment team.",
+      "entries": [
+        "Manual",
+        "Automatic - On-Call Covering",
+        "Automatic - Team Role",
+        "Automatic - Team Contact"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 11,
       "name": "FIRST_CALL_CHNG_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,

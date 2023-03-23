@@ -1,90 +1,124 @@
 {
-  "table_name": "CL_PATEDU_CT_TOPIC",
+  "name": "CL_PATEDU_CT_TOPIC",
   "description": "Enterprise reporting table for contact specific topic items in Patient Education (PED) records.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Unique ID for the Patient Education Record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line count for the Patient education contact specific topic data."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The contact date in external format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_TOPIC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient education topic that this patient education contact addresses."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CNT_TOPIC_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category item that specifies the status of the topic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nN/A\n\n\nDone\n\n\nDeleted\n\n\nNot Started\n\n\nIn Progress"
+      "description": "Category item that specifies the status of the topic.",
+      "entries": [
+        "Active",
+        "N/A",
+        "Done",
+        "Deleted",
+        "Not Started",
+        "In Progress"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "CNT_TOPIC_TITLE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the tile under which this topic is listed."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "CNT_TOPIC_KEY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The topic key for the contact-specific topic. It is a string in the form of Title^Topic."
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "CNT_TOPIC_EDU_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the education detail record that contains additional details about this topic for this encounter."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "TOPIC_WAS_SUG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this topic was suggested by the EMR. Y indicates that this topic was suggested by the EMR. N or null indicates that this topic was not suggested by the EMR.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this topic was suggested by the EMR. Y indicates that this topic was suggested by the EMR. N or null indicates that this topic was not suggested by the EMR.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 64,
+      "ordinalPosition": 11,
       "name": "TOPIC_ADDED_FROM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for how this topic was added to the patient's chart. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient Education\n\n\nCare Plan\n\n\nDoc Flowsheet\n\n\nOrder\n\n\nOrder Set\n\n\nPathway\n\n\nTask Template\n\n\nInterface\n\n\nPatient Assigned Task\n\n\nUtility"
+      "description": "The category ID for how this topic was added to the patient's chart. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).",
+      "entries": [
+        "Patient Education",
+        "Care Plan",
+        "Doc Flowsheet",
+        "Order",
+        "Order Set",
+        "Pathway",
+        "Task Template",
+        "Interface",
+        "Patient Assigned Task",
+        "Utility"
+      ]
     },
     {
-      "index": 81,
+      "ordinalPosition": 12,
       "name": "TOPIC_ALT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

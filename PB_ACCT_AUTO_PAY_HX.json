@@ -1,66 +1,94 @@
 {
-  "table_name": "PB_ACCT_AUTO_PAY_HX",
+  "name": "PB_ACCT_AUTO_PAY_HX",
   "description": "The PB_AUTO_PAY_HX table stores the history of auto pay status for a premium billing account.",
-  "primary_key": {
-    "column_name": "PB_ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_ACCT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AUTO_PAY_HX_ACT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the auto pay action performed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnrolled\n\n\nCanceled\n\n\nEdited"
+      "description": "Stores the auto pay action performed.",
+      "entries": [
+        "Enrolled",
+        "Canceled",
+        "Edited"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "AUTO_PAY_HX_ACT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the source of the auto pay action performed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHyperspace\n\n\nMyChart\n\n\nBatch"
+      "description": "Stores the source of the auto pay action performed.",
+      "entries": [
+        "Hyperspace",
+        "MyChart",
+        "Batch"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "AUTO_PAY_HX_EDIT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "When a current auto pay setup is edited, this columns stores the thing that changed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayment Method\n\n\nPayment Day\n\n\nPayment Day and Method"
+      "description": "When a current auto pay setup is edited, this columns stores the thing that changed.",
+      "entries": [
+        "Payment Method",
+        "Payment Day",
+        "Payment Day and Method"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "AUTO_PAY_HX_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the MyChart ID of the member if the auto pay action was performed from MyChart"
     },
     {
-      "index": 47,
+      "ordinalPosition": 7,
       "name": "AUTO_PAY_HX_ACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date when a particular auto pay workflow was perfomed"
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "AUTO_PAY_HX_TERM_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason as to why auto pay was terminated\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser Canceled\n\n\nMember Canceled\n\n\nPayment Failed\n\n\nNo Current Coverages\n\n\nPayment Method Expired"
+      "description": "Stores the reason as to why auto pay was terminated",
+      "entries": [
+        "User Canceled",
+        "Member Canceled",
+        "Payment Failed",
+        "No Current Coverages",
+        "Payment Method Expired"
+      ]
     }
   ]
 }

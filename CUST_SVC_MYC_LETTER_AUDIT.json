@@ -1,50 +1,60 @@
 {
-  "table_name": "CUST_SVC_MYC_LETTER_AUDIT",
+  "name": "CUST_SVC_MYC_LETTER_AUDIT",
   "description": "This table contains the history of when Customer Relationship Management (CRM) letters were released to the patient portal or retracted from the patient portal.",
-  "primary_key": {
-    "column_name": "COMM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the communication record that the audit trail is for."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LETTER_AUD_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the note that was released or unreleased from the patient portal."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LETTER_AUD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user that released or unreleased the letter from the patient portal."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "LETTER_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for an action that indicates if the letter was released to or removed from the patient portal.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSent to Portal\n\n\nRetracted from Portal"
+      "description": "The category ID for an action that indicates if the letter was released to or removed from the patient portal.",
+      "entries": [
+        "Sent to Portal",
+        "Retracted from Portal"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "CHANGE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time when the letter was released or unreleased from the patient portal."
     }

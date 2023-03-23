@@ -1,57 +1,69 @@
 {
-  "table_name": "OR_LOG_VERIF",
+  "name": "OR_LOG_VERIF",
   "description": "The OR_LOG_VERIF table contains OR management system log verification information.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgical log the log verification refers to"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of the line of the log verification in the surgical log."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OR_VERIFY_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of verification performed.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nVerify\n\n\nLog Post\n\n\nLog Complete\n\n\nLog Addendum"
+      "description": "The type of verification performed.",
+      "entries": [
+        "Verify",
+        "Log Post",
+        "Log Complete",
+        "Log Addendum"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "VERIFY_ANSWER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The answer (HQA) record for the verification."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "ATTEST_FLT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds the flowsheet template (FLT) ID used for documenting flowsheet information for the current attestation."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "ATTEST_FLT_ID_DISPLAY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The display name associated with this template."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "ATTEST_FLOWSHT_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Holds the flowsheet instant at which the flowsheet documentation is stored for the current attestation."
     }

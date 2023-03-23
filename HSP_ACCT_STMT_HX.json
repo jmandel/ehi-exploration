@@ -1,202 +1,234 @@
 {
-  "table_name": "HSP_ACCT_STMT_HX",
+  "name": "HSP_ACCT_STMT_HX",
   "description": "This table contains hospital account statement history information from the Hospital Accounts Receivable (HAR) master file.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column stores the line number in the results of a query. Because multiple statements and detail bills can be sent for one hospital account, each statement or detail bill will have a unique line number. Note: This table includes information on demand statements and detail bills. Detail bills are sent at the hospital account level. Statements can be sent at the guarantor or hospital account level. When statements are sent at the guarantor level, a statement entry is made for each hospital account for which the guarantor is responsible."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STMT_HX_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which a statement or detail bill was sent."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TOTAL_PAYMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total payments that appeared on a statement or detail bill."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "NEW_PAYMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total new payments that appeared on a statement. This column does not apply to detail bills."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TOTAL_ADJUSTMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total adjustments that appeared on a statement or detail bill."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "TOTAL_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total due that appeared on a statement or detail bill."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ACCT_SLFPYST_HA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The self pay status of the hospital account.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFull Self-Pay Due\n\n\nReview\n\n\nPayment Plan\n\n\nPre-collection\n\n\nBad Debt\n\n\nProrated"
+      "description": "The self pay status of the hospital account.",
+      "entries": [
+        "Full Self-Pay Due",
+        "Review",
+        "Payment Plan",
+        "Pre-collection",
+        "Bad Debt",
+        "Prorated"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "TOTAL_BALANCE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total hospital account balance that appeared on this statement or detail bill."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "PREV_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the previous insurance balance for this hospital account shown on a statement."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "CUR_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item holds the current insurance balance for this hospital account shown on a statement."
     },
     {
-      "index": 65,
+      "ordinalPosition": 12,
       "name": "PB_PREV_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the previous professional patient balance that appeared on a statement. This column only applies if single billing office is enabled. This column does not apply to detail bills."
     },
     {
-      "index": 70,
+      "ordinalPosition": 13,
       "name": "PB_TOTAL_CHARGES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total professional charges that appeared on a statement or detail bill. This column only applies if single billing office is enabled."
     },
     {
-      "index": 75,
+      "ordinalPosition": 14,
       "name": "PB_NEW_CHARGES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total new professional charges that appeared on a statement. This column only applies if single billing office is enabled. This column does not apply to detail bills."
     },
     {
-      "index": 80,
+      "ordinalPosition": 15,
       "name": "PB_TOTAL_PAYMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total professional payments that appeared on a statement or detail bill. This column only applies if single billing office is enabled."
     },
     {
-      "index": 85,
+      "ordinalPosition": 16,
       "name": "PB_NEW_PAYMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total new professional payments that appeared on a statement. This column only applies if single billing office is enabled. This column does not apply to detail bills."
     },
     {
-      "index": 90,
+      "ordinalPosition": 17,
       "name": "PB_TOTAL_ADJSTMNTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total professional adjustments that appeared on a statement or detail bill. This column only applies if single billing office is enabled."
     },
     {
-      "index": 95,
+      "ordinalPosition": 18,
       "name": "PB_NEW_ADJUSTMENTS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total new professional adjustments that appeared on a statement. This column only applies if single billing office is enabled. This column does not apply to detail bills."
     },
     {
-      "index": 100,
+      "ordinalPosition": 19,
       "name": "PB_TOTAL_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total professional amount due that appeared on a statement or detail bill. This column only applies if single billing office is enabled."
     },
     {
-      "index": 105,
+      "ordinalPosition": 20,
       "name": "PB_TOTAL_BALANCE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the total professional patient balance that appeared on a statement or detail bill. This column only applies if single billing office is enabled."
     },
     {
-      "index": 110,
+      "ordinalPosition": 21,
       "name": "PB_PREV_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the previous professional insurance balance for this hospital account shown on a statement. This column only applies if single billing office is enabled."
     },
     {
-      "index": 115,
+      "ordinalPosition": 22,
       "name": "PB_CUR_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the current professional insurance balance for this hospital account shown on a statement. This column only applies if single billing office is enabled."
     },
     {
-      "index": 120,
+      "ordinalPosition": 23,
       "name": "STMT_DET_BILL_FLG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Denotes whether a document sent was a statement or a detail bill.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHospital Account Detail Bill\n\n\nStatement\n\n\nGuarantor Detail Bill\n\n\nClaim Detail Bill"
+      "description": "Denotes whether a document sent was a statement or a detail bill.",
+      "entries": [
+        "Hospital Account Detail Bill",
+        "Statement",
+        "Guarantor Detail Bill",
+        "Claim Detail Bill"
+      ]
     },
     {
-      "index": 131,
+      "ordinalPosition": 24,
       "name": "STMT_COLL_STS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the collection status of the hospital account on a particular statement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive AR\n\n\nExternal Agency AR\n\n\nBad Debt\n\n\nOutsourced"
+      "description": "Stores the collection status of the hospital account on a particular statement.",
+      "entries": [
+        "Active AR",
+        "External Agency AR",
+        "Bad Debt",
+        "Outsourced"
+      ]
     },
     {
-      "index": 142,
+      "ordinalPosition": 25,
       "name": "STMT_COLL_AGENCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the collection agency of the hospital account on a particular statement."
     },
     {
-      "index": 147,
+      "ordinalPosition": 26,
       "name": "STMT_COLL_AGENCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 152,
+      "ordinalPosition": 27,
       "name": "STMT_DVRY_MTD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores how the statement/detail bill was delivered.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPaper, No Electronic Notification\n\n\nPaperless, No Electronic Notification\n\n\nPaper and Electronic Notification\n\n\nPaperless, Electronic Notification"
+      "description": "Stores how the statement/detail bill was delivered.",
+      "entries": [
+        "Paper, No Electronic Notification",
+        "Paperless, No Electronic Notification",
+        "Paper and Electronic Notification",
+        "Paperless, Electronic Notification"
+      ]
     },
     {
-      "index": 163,
+      "ordinalPosition": 28,
       "name": "STMT_HX_CNTST_BAL",
       "type": "NUMERIC",
       "discontinued": false,

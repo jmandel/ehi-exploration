@@ -1,34 +1,40 @@
 {
-  "table_name": "V_EHI_PAX_PB_ACCT_TX_INV_NUM",
+  "name": "V_EHI_PAX_PB_ACCT_TX_INV_NUM",
   "description": "This view filters out premium billing transaction data that is not appropriate for member level EHI exports when group billing is used.",
-  "primary_key": {
-    "column_name": "PB_ACT_TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_ACT_TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_ACT_TX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium account transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line counter of the premium billing invoice history of the transaction."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing invoice."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "INVOICE_AMT",
       "type": "NUMERIC",
       "discontinued": false,

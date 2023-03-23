@@ -1,69 +1,101 @@
 {
-  "table_name": "CHAT_MESSAGE",
+  "name": "CHAT_MESSAGE",
   "description": "Table containing Secure Chat message info.",
-  "primary_key": {
-    "column_name": "CONVERSATION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CONVERSATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CONVERSATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the secure chat conversation record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "INST_SENT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the message was sent."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MESSAGE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This defines the type of message (for example, a normal message, a user joining the conversation, or a user leaving)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nChat Message\n\n\nParticipant Joined\n\n\nParticipant Left\n\n\nParticipant Auto Added\n\n\nParticipant Added From Group\n\n\nParticipant Turned Off Chat\n\n\nParticipant Removed From Group\n\n\nParticipant Added To Treatment Team\n\n\nParticipant Removed From Treatment Team\n\n\nGroup Detached\n\n\nTitle Changed\n\n\nImage Message\n\n\nLinked Content\n\n\nSystem Message"
+      "description": "This defines the type of message (for example, a normal message, a user joining the conversation, or a user leaving)",
+      "entries": [
+        "Chat Message",
+        "Participant Joined",
+        "Participant Left",
+        "Participant Auto Added",
+        "Participant Added From Group",
+        "Participant Turned Off Chat",
+        "Participant Removed From Group",
+        "Participant Added To Treatment Team",
+        "Participant Removed From Treatment Team",
+        "Group Detached",
+        "Title Changed",
+        "Image Message",
+        "Linked Content",
+        "System Message"
+      ]
     },
     {
-      "index": 43,
+      "ordinalPosition": 6,
       "name": "MESSAGE_PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the priority for the message\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified\n\n\nNormal\n\n\nImportant\n\n\nUrgent"
+      "description": "This item stores the priority for the message",
+      "entries": [
+        "Unspecified",
+        "Normal",
+        "Important",
+        "Urgent"
+      ]
     },
     {
-      "index": 54,
+      "ordinalPosition": 7,
       "name": "SENDER_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the user that sent the message."
     },
     {
-      "index": 59,
+      "ordinalPosition": 8,
       "name": "SENDER_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the MyChart user who sent a Secure Chat message."
     },
     {
-      "index": 64,
+      "ordinalPosition": 9,
       "name": "PAT_MESSAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,

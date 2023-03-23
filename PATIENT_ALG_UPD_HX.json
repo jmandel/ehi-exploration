@@ -1,69 +1,91 @@
 {
-  "table_name": "PATIENT_ALG_UPD_HX",
+  "name": "PATIENT_ALG_UPD_HX",
   "description": "The PATIENT_ALG_UPD_HX table contains one record for each update of a patient's allergy information.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID assigned to the patient record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of a specific allergy update in the patient's allergy update history. This is the second column in the primary key and, in addition to the patient ID, uniquely identifies a patient allergy update."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ALRG_UPDT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the patient's allergy history was updated."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ALRG_UPDT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who last updated the patient's allergy history."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ALRG_UPDT_TIME",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The time at which the patient's allergy history was updated."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ALRG_HX_REV_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the history of the status of the review of allergies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Used\n\n\nMark as Reviewed\n\n\nVerified\n\n\nViewed Only\n\n\nFully Reviewed\n\n\nPartially Reviewed\n\n\nUnable to Assess"
+      "description": "This item stores the history of the status of the review of allergies.",
+      "entries": [
+        "Not Used",
+        "Mark as Reviewed",
+        "Verified",
+        "Viewed Only",
+        "Fully Reviewed",
+        "Partially Reviewed",
+        "Unable to Assess"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "ALRG_HX_REV_REAS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the history of the review reason of allergies.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient unable to communicate\n\n\nPatient unreliable\n\n\nPatient not present\n\n\nLanguage barrier\n\n\nParent, guardian, or caregiver unavailable"
+      "description": "This item stores the history of the review reason of allergies.",
+      "entries": [
+        "Patient unable to communicate",
+        "Patient unreliable",
+        "Patient not present",
+        "Language barrier",
+        "Parent, guardian, or caregiver unavailable"
+      ]
     },
     {
-      "index": 53,
+      "ordinalPosition": 8,
       "name": "ALRG_UPDT_DTTM",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date and time at which the patient's allergy history was updated."
     },
     {
-      "index": 58,
+      "ordinalPosition": 9,
       "name": "ALRG_HX_REV_EPT_CSN",
       "type": "NUMERIC",
       "discontinued": false,

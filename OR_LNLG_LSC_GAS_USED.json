@@ -1,31 +1,42 @@
 {
-  "table_name": "OR_LNLG_LSC_GAS_USED",
+  "name": "OR_LNLG_LSC_GAS_USED",
   "description": "This table contains documentation regarding the gas used when using lasers.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LSC_GAS_USED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used to document whether anesthesia gases were in use during laser usage.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+      "description": "This item is used to document whether anesthesia gases were in use during laser usage.",
+      "entries": [
+        "Yes",
+        "No",
+        "N/A"
+      ]
     }
   ]
 }

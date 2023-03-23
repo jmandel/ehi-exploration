@@ -1,34 +1,44 @@
 {
-  "table_name": "SNAPSHOT_ORD_INFO_VALUE",
+  "name": "SNAPSHOT_ORD_INFO_VALUE",
   "description": "This table has the values for individual data elements that were stored at the time of discharge or when the patient's After Visit Summary was printed. The keys identifying the elements are in the SNAPSHOT_ORDER_DATA table.",
-  "primary_key": {
-    "column_name": "EVENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EVENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EVENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the discharge reconciliation event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated snapshot data key for this value. Together with EVENT_ID, this forms the foreign key to the SNAPSHOT_ORDER_DATA table."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the parts of the value that was stored in the snapshot."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SNAPSHOT_ORD_VALUE",
       "type": "VARCHAR",
       "discontinued": false,

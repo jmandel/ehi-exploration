@@ -1,48 +1,62 @@
 {
-  "table_name": "DOCS_RCVD_MEDS_CMT",
+  "name": "DOCS_RCVD_MEDS_CMT",
   "description": "This item stores medications received from outside sources.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 3
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 4
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the medication comment in the Received Document.  Together with DOCUMENT_ID and CONTACT_DATE_REAL, this forms the foreign key to the DOCS_RCVD_MEDS table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple medication comments associated with the received document and the medication from the DOCS_RCVD_MEDS table."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MED_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,251 +1,305 @@
 {
-  "table_name": "CUST_SERV_ATCHMENT",
+  "name": "CUST_SERV_ATCHMENT",
   "description": "Extracts the attachments for this NCS (customer service) record.",
-  "primary_key": {
-    "column_name": "COMM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the customer service communication record for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ATCHMENT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ATCHMENT_INSTANT",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant that this attachment line was added to the customer service communication record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ATCHMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The attachment type category ID for the customer service communication attachment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPatient\n\n\nAppointment\n\n\nProvider\n\n\nEmployer Group\n\n\nVendor\n\n\nCarrier\n\n\nReferral\n\n\nAP Claim\n\n\nNetwork\n\n\nLocation\n\n\nPlace of Service\n\n\nDepartment\n\n\nPremium Billing Account\n\n\nGuarantor Account\n\n\nCRM\n\n\nHospital Account\n\n\nClinical Call\n\n\nAdmission\n\n\nCoverage\n\n\nProgram\n\n\nTransfer Center Destination\n\n\nTransfer Center Intake\n\n\nOrder\n\n\nProspective Patient\n\n\nCampaign\n\n\nAppointment Request\n\n\nEstimate\n\n\nFile\n\n\nFile Import\n\n\nScan"
+      "description": "The attachment type category ID for the customer service communication attachment.",
+      "entries": [
+        "Patient",
+        "Appointment",
+        "Provider",
+        "Employer Group",
+        "Vendor",
+        "Carrier",
+        "Referral",
+        "AP Claim",
+        "Network",
+        "Location",
+        "Place of Service",
+        "Department",
+        "Premium Billing Account",
+        "Guarantor Account",
+        "CRM",
+        "Hospital Account",
+        "Clinical Call",
+        "Admission",
+        "Coverage",
+        "Program",
+        "Transfer Center Destination",
+        "Transfer Center Intake",
+        "Order",
+        "Prospective Patient",
+        "Campaign",
+        "Appointment Request",
+        "Estimate",
+        "File",
+        "File Import",
+        "Scan"
+      ]
     },
     {
-      "index": 59,
+      "ordinalPosition": 6,
       "name": "ATCHMENT_PT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for the patient encounter that is attached to the customer service communication.  This number is unique across all patient encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 64,
+      "ordinalPosition": 7,
       "name": "ATCHMENT_SER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the provider record that is attached to the customer service communication."
     },
     {
-      "index": 69,
+      "ordinalPosition": 8,
       "name": "ATCHMENT_EMP_GRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the employer group record that is attached to the customer service communication."
     },
     {
-      "index": 74,
+      "ordinalPosition": 9,
       "name": "ATCHMENT_EMP_GRP_ID_PLAN_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the employer group record"
     },
     {
-      "index": 79,
+      "ordinalPosition": 10,
       "name": "ATCHMENT_VEN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the vendor record that is attached to the customer service communication."
     },
     {
-      "index": 84,
+      "ordinalPosition": 11,
       "name": "ATCHMENT_VEN_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 89,
+      "ordinalPosition": 12,
       "name": "ATCHMENT_MCR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the carrier record that is attached to the customer service communication."
     },
     {
-      "index": 94,
+      "ordinalPosition": 13,
       "name": "ATCHMENT_MCR_ID_CARRIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the carrier record."
     },
     {
-      "index": 99,
+      "ordinalPosition": 14,
       "name": "ATCHMENT_REF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the referral record that is attached to the customer service communication."
     },
     {
-      "index": 104,
+      "ordinalPosition": 15,
       "name": "ATCHMENT_CLM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the AP Claim record that is attached to the customer service communication."
     },
     {
-      "index": 109,
+      "ordinalPosition": 16,
       "name": "ATCHMENT_NET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the network record that is attached to the customer service communication."
     },
     {
-      "index": 114,
+      "ordinalPosition": 17,
       "name": "ATCHMENT_NET_ID_NETWORK_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the network."
     },
     {
-      "index": 119,
+      "ordinalPosition": 18,
       "name": "ATCHMENT_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the location record that is attached to the customer service communication."
     },
     {
-      "index": 124,
+      "ordinalPosition": 19,
       "name": "ATCHMENT_POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the place of service record that is attached to the customer service communication."
     },
     {
-      "index": 129,
+      "ordinalPosition": 20,
       "name": "ATCHMENT_DEP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department record that is attached to the customer service communication."
     },
     {
-      "index": 134,
+      "ordinalPosition": 21,
       "name": "ATCHMENT_PBA_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing account record that is attached to the customer service communication."
     },
     {
-      "index": 139,
+      "ordinalPosition": 22,
       "name": "ATCHMENT_EAR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the account record that is attached to the customer service communication."
     },
     {
-      "index": 144,
+      "ordinalPosition": 23,
       "name": "ATCHMENT_NCS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the customer service communication record that is attached to the customer service communication."
     },
     {
-      "index": 149,
+      "ordinalPosition": 24,
       "name": "ATCHMENT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The attachment reason category ID for the customer service communication attachment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nCopied from CRM\n\n\nScheduled Appointment\n\n\nChanged Appointment\n\n\nCanceled Appointment\n\n\nRescheduled Appointment\n\n\nAdded to Waitlist\n\n\nCopied to CRM\n\n\nRecommended\n\n\nTransfer Initiated\n\n\nDestination Added\n\n\nTransfer Center Admission\n\n\nScheduled and Recommended\n\n\nTransfer Request Order Signed"
+      "description": "The attachment reason category ID for the customer service communication attachment.",
+      "entries": [
+        "Other",
+        "Copied from CRM",
+        "Scheduled Appointment",
+        "Changed Appointment",
+        "Canceled Appointment",
+        "Rescheduled Appointment",
+        "Added to Waitlist",
+        "Copied to CRM",
+        "Recommended",
+        "Transfer Initiated",
+        "Destination Added",
+        "Transfer Center Admission",
+        "Scheduled and Recommended",
+        "Transfer Request Order Signed"
+      ]
     },
     {
-      "index": 170,
+      "ordinalPosition": 25,
       "name": "ATCHMENT_RSN_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The attachment reason comment for the customer service communication attachment."
     },
     {
-      "index": 175,
+      "ordinalPosition": 26,
       "name": "ATCHMENT_HAR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the hospital account record that is attached to the customer service communication."
     },
     {
-      "index": 180,
+      "ordinalPosition": 27,
       "name": "ATCHMENT_CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the coverage record that is attached to the customer service communication."
     },
     {
-      "index": 185,
+      "ordinalPosition": 28,
       "name": "ATCHMENT_PROG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the program record that is attached to the customer service communication."
     },
     {
-      "index": 190,
+      "ordinalPosition": 29,
       "name": "ATCHMENT_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ZIP code that was associated with the attachment when it was added to the customer service communication."
     },
     {
-      "index": 195,
+      "ordinalPosition": 30,
       "name": "ATCHMENT_PROSPECT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the prospective patient record that is attached to the customer service communication."
     },
     {
-      "index": 200,
+      "ordinalPosition": 31,
       "name": "ATCHMENT_CAMPAIGN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the campaign record that is attached to a customer service communication."
     },
     {
-      "index": 205,
+      "ordinalPosition": 32,
       "name": "ATCHMENT_CAMPAIGN_ID_CAMPAIGN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the campaign record."
     },
     {
-      "index": 210,
+      "ordinalPosition": 33,
       "name": "ATCHMENT_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores relevant order records for this NCS record."
     },
     {
-      "index": 215,
+      "ordinalPosition": 34,
       "name": "ATCHMENT_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the estimate record that is attached to the customer service communication."
     },
     {
-      "index": 220,
+      "ordinalPosition": 35,
       "name": "ATCHMENT_DOCUMENT_ID",
       "type": "VARCHAR",
       "discontinued": false,

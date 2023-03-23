@@ -1,227 +1,265 @@
 {
-  "table_name": "BEREAVED_INFO",
+  "name": "BEREAVED_INFO",
   "description": "This table contains information about your bereaved records. These include name, address, phone numbers, and associated patients. The records included in this table are Bereavement Contact (LHB) records.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the bereavement contact record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bereavement contact record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status, such as active or soft-deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status, such as active or soft-deleted.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "BEREAVE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of the bereavement contact.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPre-death\n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "The status of the bereavement contact.",
+      "entries": [
+        "Pre-death",
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "BEREAVEMENT_HSB_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospice episode of care record associated with the bereaved."
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "BEREAVEMENT_EPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the patient record associated with the bereaved."
     },
     {
-      "index": 43,
+      "ordinalPosition": 7,
       "name": "BEREAVEMENT_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The city of the bereavement contact's address."
     },
     {
-      "index": 48,
+      "ordinalPosition": 8,
       "name": "BEREAVEMENT_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The state of the bereavement contact's address.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The state of the bereavement contact's address."
     },
     {
-      "index": 54,
+      "ordinalPosition": 9,
       "name": "BEREAVEMENT_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The zip code of the bereavement contact's address."
     },
     {
-      "index": 59,
+      "ordinalPosition": 10,
       "name": "BEREAVE_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The country of the bereavement contact's address.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The country of the bereavement contact's address."
     },
     {
-      "index": 65,
+      "ordinalPosition": 11,
       "name": "BEREAVEMENT_HPHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The home phone number for the bereavement contact."
     },
     {
-      "index": 70,
+      "ordinalPosition": 12,
       "name": "BEREAVEMENT_WPHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The work phone number for the bereavement contact."
     },
     {
-      "index": 75,
+      "ordinalPosition": 13,
       "name": "BEREAVEMENT_MPHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The mobile phone number for the bereavement contact."
     },
     {
-      "index": 80,
+      "ordinalPosition": 14,
       "name": "BEREAVED_RELATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The relationship of the bereavement contact to the patient.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The relationship of the bereavement contact to the patient."
     },
     {
-      "index": 86,
+      "ordinalPosition": 15,
       "name": "BEREAVEMENT_EMAIL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The email address for the bereavement contact."
     },
     {
-      "index": 91,
+      "ordinalPosition": 16,
       "name": "BEREAVEMENT_CMNTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Comments entered by the user to record miscellaneous information about the bereaved."
     },
     {
-      "index": 96,
+      "ordinalPosition": 17,
       "name": "SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The gender of the bereavement contact.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+      "description": "The gender of the bereavement contact.",
+      "entries": [
+        "Female",
+        "Male",
+        "Unknown",
+        "Nonbinary",
+        "X",
+        "Other"
+      ]
     },
     {
-      "index": 109,
+      "ordinalPosition": 18,
       "name": "BIRTH_DATE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of birth of the bereavement contact."
     },
     {
-      "index": 114,
+      "ordinalPosition": 19,
       "name": "PRIMARY_LANGUAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The primary language of the bereavement contact.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The primary language of the bereavement contact."
     },
     {
-      "index": 120,
+      "ordinalPosition": 20,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the bereavement contact record was created."
     },
     {
-      "index": 125,
+      "ordinalPosition": 21,
       "name": "INSTANT_OF_UPD_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the record was last locked or unlocked."
     },
     {
-      "index": 130,
+      "ordinalPosition": 22,
       "name": "RISK_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Risk level of the bereaved. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLow\n\n\nMedium\n\n\nHigh"
+      "description": "Risk level of the bereaved.",
+      "entries": [
+        "Low",
+        "Medium",
+        "High"
+      ]
     },
     {
-      "index": 140,
+      "ordinalPosition": 23,
       "name": "LAST_ADDRESS_LBL_PRINT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the bereaved address label was last printed."
     },
     {
-      "index": 145,
+      "ordinalPosition": 24,
       "name": "UNLINK_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The department to which the bereaved is linked when not associated with a Home Health or Hospice episode."
     },
     {
-      "index": 150,
+      "ordinalPosition": 25,
       "name": "GENDER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The gender identity of the bereaved.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nTransgender Female\n\n\nTransgender Male\n\n\nOther\n\n\nChoose not to disclose"
+      "description": "The gender identity of the bereaved.",
+      "entries": [
+        "Female",
+        "Male",
+        "Transgender Female",
+        "Transgender Male",
+        "Other",
+        "Choose not to disclose"
+      ]
     },
     {
-      "index": 163,
+      "ordinalPosition": 26,
       "name": "COMMBRV_PAT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records. In order to link to patients using non-Community Bereavement records, use the column BEREAVED_INFO.BEREAVEMENT_EPT_ID."
     },
     {
-      "index": 168,
+      "ordinalPosition": 27,
       "name": "COMMBRV_PAT_LEGAL_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The legal sex of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records.\n\n\n The category values for this column were already listed for column: SEX_C_NAME"
+      "description": "The legal sex of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records."
     },
     {
-      "index": 174,
+      "ordinalPosition": 28,
       "name": "COMMBRV_PAT_BIRTH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of birth of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records."
     },
     {
-      "index": 179,
+      "ordinalPosition": 29,
       "name": "COMMBRV_PAT_DEATH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of death of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records."
     },
     {
-      "index": 184,
+      "ordinalPosition": 30,
       "name": "COMMBRV_PAT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status (alive, deceased, etc) of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAlive\n\n\nDeceased"
+      "description": "The status (alive, deceased, etc) of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records.",
+      "entries": [
+        "Alive",
+        "Deceased"
+      ]
     },
     {
-      "index": 193,
+      "ordinalPosition": 31,
       "name": "COMMBRV_PAT_GENDER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The gender identity of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records.\n\n\n The category values for this column were already listed for column: GENDER_C_NAME"
+      "description": "The gender identity of the individual for whom the bereaved is grieving. This column is only populated for Community Bereavement records."
     }
   ]
 }

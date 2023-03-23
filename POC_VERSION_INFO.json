@@ -1,80 +1,90 @@
 {
-  "table_name": "POC_VERSION_INFO",
+  "name": "POC_VERSION_INFO",
   "description": "Overtime plan of care information.",
-  "primary_key": {
-    "column_name": "POC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "POC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "POC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the plan of care record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_SERIAL_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number (CSN) of the contact."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores contact number"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CONTACT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Describes the reason for creating the new contact"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "INSTANT_OF_ENTRY_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant of entry when a record is edited"
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "SPOC_EFF_FROM_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the plan of care is effective from."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "SPOC_EFF_TO_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the plan of care is effective until."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "END_AGE_MAJORITY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the effective to date for this plan is set to the patient's birthday when they achieve the age of majority.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the effective to date for this plan is set to the patient's birthday when they achieve the age of majority.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

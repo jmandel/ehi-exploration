@@ -1,80 +1,95 @@
 {
-  "table_name": "MEMBER_USAGE_HIST",
+  "name": "MEMBER_USAGE_HIST",
   "description": "This table contains the history of different activities associated with the member.",
-  "primary_key": {
-    "column_name": "BENEFIT_USAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "BENEFIT_USAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "BENEFIT_USAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the benefit usage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The date when benefit usage is recorded."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "BENEFIT_USG_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of usage record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNew Member\n\n\nRenew Member\n\n\nDeactivate Membership\n\n\nEvent\n\n\nBenefit Usage\n\n\nCard Request\n\n\nCard Issued"
+      "description": "The type of usage record.",
+      "entries": [
+        "New Member",
+        "Renew Member",
+        "Deactivate Membership",
+        "Event",
+        "Benefit Usage",
+        "Card Request",
+        "Card Issued"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 4,
       "name": "BENEFIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the benefit is used."
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "BENEFIT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the benefit record that is used."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The start date for the benefit usage."
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "EXP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The end date for the benefit usage."
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "EVENT_ATTENDEES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of benefits used."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "DEACT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for deactivating the membership/benefit.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The reason for deactivating the membership/benefit."
     },
     {
-      "index": 57,
+      "ordinalPosition": 10,
       "name": "CARD_REQ_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for requesting new card.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The reason for requesting new card."
     }
   ]
 }

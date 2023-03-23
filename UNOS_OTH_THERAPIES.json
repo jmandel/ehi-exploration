@@ -1,31 +1,42 @@
 {
-  "table_name": "UNOS_OTH_THERAPIES",
+  "name": "UNOS_OTH_THERAPIES",
   "description": "The specific other therapy undergone by the patient.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "UNOS_OTH_THERP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specific other therapy undergone by the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhotopheresis\n\n\nPlasmapheresis\n\n\nTotal Lymphoid Irradiation (TLI)"
+      "description": "The specific other therapy undergone by the patient.",
+      "entries": [
+        "Photopheresis",
+        "Plasmapheresis",
+        "Total Lymphoid Irradiation (TLI)"
+      ]
     }
   ]
 }

@@ -1,66 +1,93 @@
 {
-  "table_name": "DEMOG_AUTH_INFO",
+  "name": "DEMOG_AUTH_INFO",
   "description": "Demographic authentication tokens associated with specific patients. Active tokens allow users to login to MyChart without a normal account through unique URLs.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TOKEN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique token associating a demographic authentication URL with a patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "GENERATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date a specific token was created."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "EXPIRATION_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant a specific token will expire."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ASSOCIATED_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the MyChart account ID intended to log in with a specific token."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "FAILED_LOGIN_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the count of failed consecutive logins for a specific token. If this exceeds the max allowed failed logins, the token will no longer be valid."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "DEMOG_AUTH_WKFLW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of workflow a specific token was created for.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\neCheck-In\n\n\nScheduling Ticket Without Account\n\n\nAppt Cancel Without Account\n\n\nQuick Pay\n\n\nBilling Details\n\n\nAuto Pay\n\n\nBill Pay\n\n\nScheduling Ticket\n\n\nFinancial Assistance\n\n\nCommunication Preferences for Guarantors\n\n\nBilling Customer Service\n\n\nPrepayment\n\n\nCommunication Preferences for Patients\n\n\nE-Sign Documents\n\n\nAppointment Details and Updates Without Account\n\n\nAppointment Details and Updates\n\n\nEstimate Details\n\n\nLocationless Self Arrival\n\n\nVideo Visit"
+      "description": "Stores the type of workflow a specific token was created for.",
+      "entries": [
+        "eCheck-In",
+        "Scheduling Ticket Without Account",
+        "Appt Cancel Without Account",
+        "Quick Pay",
+        "Billing Details",
+        "Auto Pay",
+        "Bill Pay",
+        "Scheduling Ticket",
+        "Financial Assistance",
+        "Communication Preferences for Guarantors",
+        "Billing Customer Service",
+        "Prepayment",
+        "Communication Preferences for Patients",
+        "E-Sign Documents",
+        "Appointment Details and Updates Without Account",
+        "Appointment Details and Updates",
+        "Estimate Details",
+        "Locationless Self Arrival",
+        "Video Visit"
+      ]
     }
   ]
 }

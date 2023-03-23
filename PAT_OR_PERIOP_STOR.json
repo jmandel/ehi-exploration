@@ -1,45 +1,66 @@
 {
-  "table_name": "PAT_OR_PERIOP_STOR",
+  "name": "PAT_OR_PERIOP_STOR",
   "description": "The PAT_OR_PERIOP_STOR table stores the types of periop information that have been stored in the admission encounter for this surgery encounter.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the patient encounter."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The community ID (CID) of the owner of this encounter."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "OR_PERIOP_STORE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the types of periop data stored in the admission encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nIPNotes\n\n\nFlowSheet\n\n\nMAR\n\n\nOrderEntry\n\n\nResultEntry\n\n\nPatientEducation\n\n\nCarePlans\n\n\nInitalAssmnt\n\n\nDischargeWriter\n\n\nChargesTrigged\n\n\nMedication Activity\n\n\nData Validate Activity"
+      "description": "Stores the types of periop data stored in the admission encounter.",
+      "entries": [
+        "No",
+        "IPNotes",
+        "FlowSheet",
+        "MAR",
+        "OrderEntry",
+        "ResultEntry",
+        "PatientEducation",
+        "CarePlans",
+        "InitalAssmnt",
+        "DischargeWriter",
+        "ChargesTrigged",
+        "Medication Activity",
+        "Data Validate Activity"
+      ]
     }
   ]
 }

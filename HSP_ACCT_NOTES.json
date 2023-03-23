@@ -1,59 +1,78 @@
 {
-  "table_name": "HSP_ACCT_NOTES",
+  "name": "HSP_ACCT_NOTES",
   "description": "This table contains hospital account notes information from the Notes (HNO) master file. The table includes information about guarantor, patient, hospital account, and hospital liability bucket the note is associated with.",
-  "primary_key": {
-    "column_name": "NOTE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "NOTE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the note record associated with a hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account for which the account note was entered."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "GUARANTOR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the guarantor associated with the hospital account. Currently the guarantor ID is not populated in HNO 500 for hospital account notes, so this column will never return data."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "NOTE_ENTRY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user who entered an account note associated with the hospital account."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "NOTE_ENTRY_DT_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time an account note was entered for a hospital account."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "BUCKET_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Hospital Liability Bucket linked to this note"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "HNO_RECORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Record type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPB Guarantor Note\n\n\nPB Guarantor Letter\n\n\nPB Insurance Follow-up Letter\n\n\nPB Hospital Account Note\n\n\nHB Guarantor Note\n\n\nHB Hospital Account Note\n\n\nHB Guarantor Letter\n\n\nHB Hospital Account Letter\n\n\nHB Liability Bucket Letter\n\n\nHB Liability Bucket Note\n\n\nHB Contractual History Note\n\n\nEB Guarantor Note\n\n\nReg Financial Assistance Letter\n\n\nReg Financial Assistance Tracker Note\n\n\nReg Financial Assistance Case Note"
+      "description": "Record type.",
+      "entries": [
+        "PB Guarantor Note",
+        "PB Guarantor Letter",
+        "PB Insurance Follow-up Letter",
+        "PB Hospital Account Note",
+        "HB Guarantor Note",
+        "HB Hospital Account Note",
+        "HB Guarantor Letter",
+        "HB Hospital Account Letter",
+        "HB Liability Bucket Letter",
+        "HB Liability Bucket Note",
+        "HB Contractual History Note",
+        "EB Guarantor Note",
+        "Reg Financial Assistance Letter",
+        "Reg Financial Assistance Tracker Note",
+        "Reg Financial Assistance Case Note"
+      ]
     }
   ]
 }

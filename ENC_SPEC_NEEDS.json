@@ -1,38 +1,44 @@
 {
-  "table_name": "ENC_SPEC_NEEDS",
+  "name": "ENC_SPEC_NEEDS",
   "description": "This table contains the special needs of the patient for an encounter.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ENC_SPEC_NEEDS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The special requirements which the patient has for this encounter\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "The special requirements which the patient has for this encounter"
     }
   ]
 }

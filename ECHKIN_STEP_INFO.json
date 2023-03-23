@@ -1,80 +1,121 @@
 {
-  "table_name": "ECHKIN_STEP_INFO",
+  "name": "ECHKIN_STEP_INFO",
   "description": "This table contains eCheck-In information for a specific appointment.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "INCLUDED_STEP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The step of the eCheck-In workflow.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayments\n\n\nPersonal Information\n\n\nInsurance\n\n\nMedications\n\n\nAllergies\n\n\nHealth Issues\n\n\nQuestionnaires\n\n\nBarcode\n\n\nGuarantor\n\n\nGuarantor with Insurance\n\n\nESign Documents\n\n\nTravel History\n\n\nHardware Test\n\n\nPatient Location\n\n\nPatient Contacts\n\n\nPrimary Care Provider"
+      "description": "The step of the eCheck-In workflow.",
+      "entries": [
+        "Payments",
+        "Personal Information",
+        "Insurance",
+        "Medications",
+        "Allergies",
+        "Health Issues",
+        "Questionnaires",
+        "Barcode",
+        "Guarantor",
+        "Guarantor with Insurance",
+        "ESign Documents",
+        "Travel History",
+        "Hardware Test",
+        "Patient Location",
+        "Patient Contacts",
+        "Primary Care Provider"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 7,
       "name": "ECHKIN_STEP_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of the specific step mentioned in the eCheck-In workflow.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Offered\n\n\nNot Yet Available\n\n\nNot Started\n\n\nIn Progress\n\n\nCompleted\n\n\nNot Needed\n\n\nNot Completed\n\n\nFiltered"
+      "description": "The status of the specific step mentioned in the eCheck-In workflow.",
+      "entries": [
+        "Not Offered",
+        "Not Yet Available",
+        "Not Started",
+        "In Progress",
+        "Completed",
+        "Not Needed",
+        "Not Completed",
+        "Filtered"
+      ]
     },
     {
-      "index": 65,
+      "ordinalPosition": 8,
       "name": "STEP_COMPLETED_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant (in UTC) the step was completed in the eCheck-In workflow"
     },
     {
-      "index": 70,
+      "ordinalPosition": 9,
       "name": "MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the MyChart user ID that did the eCheck-In step."
     },
     {
-      "index": 75,
+      "ordinalPosition": 10,
       "name": "STEP_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the action taken on an eCheck-In step.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVerified\n\n\nUpdated\n\n\nSkipped\n\n\nCompleted\n\n\nUnverified"
+      "description": "The category ID for the action taken on an eCheck-In step.",
+      "entries": [
+        "Verified",
+        "Updated",
+        "Skipped",
+        "Completed",
+        "Unverified"
+      ]
     }
   ]
 }

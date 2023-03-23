@@ -1,83 +1,119 @@
 {
-  "table_name": "HH_VO_EVENTS",
+  "name": "HH_VO_EVENTS",
   "description": "Contains Home Health verbal order events information.",
-  "primary_key": {
-    "column_name": "VERBAL_ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "VERBAL_ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "VERBAL_ORDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the verbal order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Verbal order event type. Types are: submit, received signature, sent to physician, replied with changes. Links to category table ZC_LVO_EVENT_TYPES.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSubmit\n\n\nReceived Signature\n\n\nSent\n\n\nReplied With Changes\n\n\nPrinted\n\n\nFaxed to Provider\n\n\nRetract\n\n\nResent\n\n\nReceived Order\n\n\nAdmin Closed\n\n\nReviewed\n\n\nElectronically Signed\n\n\nAutomatically Canceled\n\n\nWaiting for Review\n\n\nFailed Fax\n\n\nPOC Update Sent - No Signature Required"
+      "description": "Verbal order event type. Types are: submit, received signature, sent to physician, replied with changes. Links to category table ZC_LVO_EVENT_TYPES.",
+      "entries": [
+        "Submit",
+        "Received Signature",
+        "Sent",
+        "Replied With Changes",
+        "Printed",
+        "Faxed to Provider",
+        "Retract",
+        "Resent",
+        "Received Order",
+        "Admin Closed",
+        "Reviewed",
+        "Electronically Signed",
+        "Automatically Canceled",
+        "Waiting for Review",
+        "Failed Fax",
+        "POC Update Sent - No Signature Required"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 4,
       "name": "EVENT_DATE",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Verbal order event date."
     },
     {
-      "index": 40,
+      "ordinalPosition": 5,
       "name": "EVENT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User ID of user who created verbal order event.  Links to table CLARITY_EMP."
     },
     {
-      "index": 45,
+      "ordinalPosition": 6,
       "name": "EVENT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Text of the verbal order event comment entered by the user."
     },
     {
-      "index": 50,
+      "ordinalPosition": 7,
       "name": "EVENT_PROVIDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Provider ID for the verbal order event.  Links to table CLARITY_SER."
     },
     {
-      "index": 55,
+      "ordinalPosition": 8,
       "name": "EVENTS_ORDER_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the order history for the verbal order."
     },
     {
-      "index": 60,
+      "ordinalPosition": 9,
       "name": "EVENT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the status that this order was changed to when this event occurred.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Submitted\n\n\nSubmitted\n\n\nSigned\n\n\nSent\n\n\nResponded\n\n\nEntered\n\n\nResubmitted\n\n\nWaiting for Review\n\n\nRetracted\n\n\nCanceled"
+      "description": "This item stores the status that this order was changed to when this event occurred.",
+      "entries": [
+        "Not Submitted",
+        "Submitted",
+        "Signed",
+        "Sent",
+        "Responded",
+        "Entered",
+        "Resubmitted",
+        "Waiting for Review",
+        "Retracted",
+        "Canceled"
+      ]
     },
     {
-      "index": 77,
+      "ordinalPosition": 10,
       "name": "EVENT_RCV_SIGN_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date on which signature was received from the provider."
     },
     {
-      "index": 82,
+      "ordinalPosition": 11,
       "name": "EVENT_NOTE_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

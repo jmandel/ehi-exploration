@@ -1,38 +1,77 @@
 {
-  "table_name": "HL_ASGN_INFO",
+  "name": "HL_ASGN_INFO",
   "description": "Hospital Logistics Assignment Information.",
-  "primary_key": {
-    "column_name": "HLR_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HLR_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "ASSIGNMENT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HLR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the request record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ASSIGNMENT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. Each represents an individual assignment of the Logistics request."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ASGN_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current status of each Assignment on this Logistics Request.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnplanned\n\n\nPlanned\n\n\nAssigned\n\n\nAcknowledged\n\n\nAt Start Location\n\n\nIn Progress\n\n\nAt End Location\n\n\nCompleted\n\n\nCanceled"
+      "description": "The current status of each Assignment on this Logistics Request.",
+      "entries": [
+        "Unplanned",
+        "Planned",
+        "Assigned",
+        "Acknowledged",
+        "At Start Location",
+        "In Progress",
+        "At End Location",
+        "Completed",
+        "Canceled"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "ASGN_CANCEL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "When an Assignment's status is Canceled, this item contains the Assignment's cancel reason.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAutomatically Canceled (Default) \n\n\nLinked Appointment Canceled\n\n\nLinked Admission PND Canceled\n\n\nLinked Discharge PND Canceled\n\n\nLinked Transfer PND Canceled\n\n\nLinked LOA Out PND Canceled\n\n\nLinked LOA Return PND Canceled\n\n\nPlanned Break Canceled\n\n\nReducing Required Technicians\n\n\nCanceled By Utility\n\n\nLinked Transport Request Canceled\n\n\nLinked ADT Event Canceled\n\n\nMaintenance Clean Replaced By Bed Clean\n\n\nLinked Bed Clean Canceled (Room Clean)\n\n\nLinked Appointment Time Changed\n\n\nCanceled by Contact Move\n\n\nLinked Appointment Department Changed\n\n\nLinking To Adjacent Appointment In Department\n\n\nLinked Appointment Patient No Show \n\n\nLinked Appointment Patient Left Without Being Seen"
+      "description": "When an Assignment's status is Canceled, this item contains the Assignment's cancel reason.",
+      "entries": [
+        "Automatically Canceled (Default)",
+        "Linked Appointment Canceled",
+        "Linked Admission PND Canceled",
+        "Linked Discharge PND Canceled",
+        "Linked Transfer PND Canceled",
+        "Linked LOA Out PND Canceled",
+        "Linked LOA Return PND Canceled",
+        "Planned Break Canceled",
+        "Reducing Required Technicians",
+        "Canceled By Utility",
+        "Linked Transport Request Canceled",
+        "Linked ADT Event Canceled",
+        "Maintenance Clean Replaced By Bed Clean",
+        "Linked Bed Clean Canceled (Room Clean)",
+        "Linked Appointment Time Changed",
+        "Canceled by Contact Move",
+        "Linked Appointment Department Changed",
+        "Linking To Adjacent Appointment In Department",
+        "Linked Appointment Patient No Show",
+        "Linked Appointment Patient Left Without Being Seen"
+      ]
     }
   ]
 }

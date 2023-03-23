@@ -1,59 +1,70 @@
 {
-  "table_name": "CLAIM_REFERRAL_LK_HX",
+  "name": "CLAIM_REFERRAL_LK_HX",
   "description": "This table contains the history of referrals linked to AP claims. Amounts and counts calculated during adjudication when these referrals were attached to the AP claim are also included.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim info record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the referral previously associated with this claim."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VISIT_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The visit count for this referral when it was linked to the AP claim."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ADJUD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The adjudicated dollar amount for this referral when it was linked to the AP claim."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The paid dollar amount for this referral when it was linked to the AP claim."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RFL_ATTACH_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The historical referral attachment source category ID for the AP claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdjudication Referral Matching\n\n\nManual\n\n\nEDI Claim File"
+      "description": "The historical referral attachment source category ID for the AP claim.",
+      "entries": [
+        "Adjudication Referral Matching",
+        "Manual",
+        "EDI Claim File"
+      ]
     }
   ]
 }

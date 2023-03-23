@@ -1,34 +1,40 @@
 {
-  "table_name": "PEND_PRED_SVC_GRP",
+  "name": "PEND_PRED_SVC_GRP",
   "description": "This table contains predicted next destination service groupers for pend (PND) records based on predictive models.",
-  "primary_key": {
-    "column_name": "PEND_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PEND_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PEND_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the pended entry record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PRED_SVC_GRP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The predicted next destination service groupers for pending event records based on predictive models.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The predicted next destination service groupers for pending event records based on predictive models."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "PRED_SVC_CONF_NUM",
       "type": "NUMERIC",
       "discontinued": false,

@@ -1,69 +1,99 @@
 {
-  "table_name": "SERIES_LOG_INFO",
+  "name": "SERIES_LOG_INFO",
   "description": "Table to store the audit log information for questionnaire series answer records. The audit log contains data such as the last update instant, date, action, questionnaire ID, User (EMP) ID, and Patient Access Account (WPR) ID.",
-  "primary_key": {
-    "column_name": "SERIES_ANS_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SERIES_ANS_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SERIES_ANS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the series answer record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SRS_ACTION_INS_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column is used to store the instant when there is a update on this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SRS_ACTION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This column is used to store the action date for this questionnaire series."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SRS_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column is used to store the actions taken for this questionnaire series.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nEnable Series - Provider\n\n\nEnable Series - Reporting Workbench\n\n\nEnable Series - BPA\n\n\nEnable Series - UnMerge\n\n\nEnable Series - Pending\n\n\nEnable Series - Procedure Pass\n\n\nEnable Series - Research Automatic Assignment\n\n\nEnable Series - Research Activity Assignment\n\n\nDisable Series - Provider\n\n\nDisable Series - Reporting Workbench\n\n\nDisable Series - Merge\n\n\nDisable Series - Contact Mover\n\n\nDisable Series - Batch Job\n\n\nDisable Series - Patient Opted Out\n\n\nDisable Series - Found New Treatment\n\n\nDisable Series - Procedure Pass\n\n\nDisable Series - Patient Expired\n\n\nDisable Series - Research Activity Retraction\n\n\nEnable Questionnaire\n\n\nDisable Questionnaire\n\n\nSend Questionnaire Reminder\n\n\nCompleted"
+      "description": "This column is used to store the actions taken for this questionnaire series.",
+      "entries": [
+        "Enable Series - Provider",
+        "Enable Series - Reporting Workbench",
+        "Enable Series - BPA",
+        "Enable Series - UnMerge",
+        "Enable Series - Pending",
+        "Enable Series - Procedure Pass",
+        "Enable Series - Research Automatic Assignment",
+        "Enable Series - Research Activity Assignment",
+        "Disable Series - Provider",
+        "Disable Series - Reporting Workbench",
+        "Disable Series - Merge",
+        "Disable Series - Contact Mover",
+        "Disable Series - Batch Job",
+        "Disable Series - Patient Opted Out",
+        "Disable Series - Found New Treatment",
+        "Disable Series - Procedure Pass",
+        "Disable Series - Patient Expired",
+        "Disable Series - Research Activity Retraction",
+        "Enable Questionnaire",
+        "Disable Questionnaire",
+        "Send Questionnaire Reminder",
+        "Completed"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 6,
       "name": "SRS_ACT_QUESR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column is used to store the questionnaire ID for the audit action"
     },
     {
-      "index": 56,
+      "ordinalPosition": 7,
       "name": "SRS_ACT_QUESR_ID_FORM_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the form associated with the questionnaire."
     },
     {
-      "index": 61,
+      "ordinalPosition": 8,
       "name": "SRS_ACT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column is used to store who made this action."
     },
     {
-      "index": 66,
+      "ordinalPosition": 9,
       "name": "SRS_ACT_WPR_ID",
       "type": "VARCHAR",
       "discontinued": false,

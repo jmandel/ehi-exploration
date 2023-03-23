@@ -1,521 +1,625 @@
 {
-  "table_name": "CLARITY_ADT",
+  "name": "CLARITY_ADT",
   "description": "The CLARITY_ADT table is the master table for ADT event history information. This table contains several foreign keys for other ADT tables.",
-  "primary_key": {
-    "column_name": "EVENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EVENT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID number of the ADT event record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the type of the event record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdmission\n\n\nDischarge\n\n\nTransfer In\n\n\nTransfer Out\n\n\nPatient Update\n\n\nCensus\n\n\nHospital Outpatient\n\n\nLeave of Absence Out\n\n\nLeave of Absence Return\n\n\nLeave of Absence Census"
+      "description": "The category value corresponding to the type of the event record.",
+      "entries": [
+        "Admission",
+        "Discharge",
+        "Transfer In",
+        "Transfer Out",
+        "Patient Update",
+        "Census",
+        "Hospital Outpatient",
+        "Leave of Absence Out",
+        "Leave of Absence Return",
+        "Leave of Absence Census"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 3,
       "name": "EVENT_SUBTYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value indicating whether the event record has been changed or deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOriginal\n\n\nCanceled\n\n\nUpdate"
+      "description": "The category value indicating whether the event record has been changed or deleted.",
+      "entries": [
+        "Original",
+        "Canceled",
+        "Update"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 4,
       "name": "DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the unit of the event record at the effective time."
     },
     {
-      "index": 39,
+      "ordinalPosition": 5,
       "name": "ROOM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the room of the event record at the effective time."
     },
     {
-      "index": 44,
+      "ordinalPosition": 6,
       "name": "ROOM_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The serial number for the room contact of the event record. This number is unique across all room contacts in the system."
     },
     {
-      "index": 49,
+      "ordinalPosition": 7,
       "name": "BED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the bed of the event record at the effective time."
     },
     {
-      "index": 54,
+      "ordinalPosition": 8,
       "name": "BED_ID_BED_LABEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the bed."
     },
     {
-      "index": 59,
+      "ordinalPosition": 9,
       "name": "BED_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The serial number for the bed contact of the event record. This number is unique across all bed contacts in the system."
     },
     {
-      "index": 64,
+      "ordinalPosition": 10,
       "name": "BED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the record state of the bed of the event record at the effective time.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden"
+      "description": "The category value corresponding to the record state of the bed of the event record at the effective time.",
+      "entries": [
+        "Active",
+        "Inactive",
+        "Deleted",
+        "Hidden",
+        "Inactive and Hidden",
+        "Deleted and Hidden"
+      ]
     },
     {
-      "index": 77,
+      "ordinalPosition": 11,
       "name": "EFFECTIVE_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the event was supposed to have happened."
     },
     {
-      "index": 82,
+      "ordinalPosition": 12,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the patient of the event record at the effective time."
     },
     {
-      "index": 87,
+      "ordinalPosition": 13,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 92,
+      "ordinalPosition": 14,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 97,
+      "ordinalPosition": 15,
       "name": "EVENT_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the event record was actually created."
     },
     {
-      "index": 102,
+      "ordinalPosition": 16,
       "name": "USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID number of the user who created the event record."
     },
     {
-      "index": 107,
+      "ordinalPosition": 17,
       "name": "PAT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the classification for the patient of the event record at the effective time.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the classification for the patient of the event record at the effective time."
     },
     {
-      "index": 113,
+      "ordinalPosition": 18,
       "name": "PAT_SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the hospital service for the patient of the event record at the effective time.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the hospital service for the patient of the event record at the effective time."
     },
     {
-      "index": 119,
+      "ordinalPosition": 19,
       "name": "PAT_LVL_OF_CARE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the level of care for the patient of the event record at the effective time.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the level of care for the patient of the event record at the effective time."
     },
     {
-      "index": 125,
+      "ordinalPosition": 20,
       "name": "DELETE_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the event record was actually deleted."
     },
     {
-      "index": 130,
+      "ordinalPosition": 21,
       "name": "CANC_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the canceled event record that this event record replaces."
     },
     {
-      "index": 135,
+      "ordinalPosition": 22,
       "name": "XFER_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the 'transfer out' event type event record which with this 'transfer in' event type event record corresponds to a transfer action for the patient of the event records."
     },
     {
-      "index": 140,
+      "ordinalPosition": 23,
       "name": "COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text comment associated with the event record. This is used to hold overridden confirmation warnings by the user for the event type event record action."
     },
     {
-      "index": 145,
+      "ordinalPosition": 24,
       "name": "REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the reason the event record was undone or corrected. \n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the reason the event record was undone or corrected."
     },
     {
-      "index": 151,
+      "ordinalPosition": 25,
       "name": "ACCOMMODATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The accommodation code of the event. This is extracted as the category title.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The accommodation code of the event. This is extracted as the category title."
     },
     {
-      "index": 157,
+      "ordinalPosition": 26,
       "name": "ACCOM_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the reason for the room accommodation for the patient of the event record at the effective time.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the reason for the room accommodation for the patient of the event record at the effective time."
     },
     {
-      "index": 163,
+      "ordinalPosition": 27,
       "name": "ALT_EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to an alternate type for the event record.  \n\n\n The category values for this column were already listed for column: EVENT_TYPE_C_NAME"
+      "description": "The category value corresponding to an alternate type for the event record."
     },
     {
-      "index": 169,
+      "ordinalPosition": 28,
       "name": "ORIG_EVENT_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the original subtype record for this event was actually created."
     },
     {
-      "index": 174,
+      "ordinalPosition": 29,
       "name": "PREV_UPD_EVNT_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the last previous update subtype record for this event was actually created."
     },
     {
-      "index": 179,
+      "ordinalPosition": 30,
       "name": "ORIG_EFF_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the original subtype record for this event was supposed to have happened."
     },
     {
-      "index": 184,
+      "ordinalPosition": 31,
       "name": "PREV_UPD_EFF_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the last previous update subtype record for this event was supposed to have happened."
     },
     {
-      "index": 189,
+      "ordinalPosition": 32,
       "name": "XFER_IN_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the 'transfer in' type record which with this 'transfer out' type record corresponds to a transfer action for the patient CSN of these records."
     },
     {
-      "index": 194,
+      "ordinalPosition": 33,
       "name": "NEXT_OUT_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the next 'transfer out' or 'discharge' type record for this bed for the patient CSN of these records."
     },
     {
-      "index": 199,
+      "ordinalPosition": 34,
       "name": "LAST_IN_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the last 'transfer in' or 'admission' type record for this bed for the patient CSN of these records."
     },
     {
-      "index": 204,
+      "ordinalPosition": 35,
       "name": "STATUS_OF_BED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the status of the bed of the event record at the event timestamp.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReady\n\n\nNot Available\n\n\nMaintenance\n\n\nDirty\n\n\nCleaning"
+      "description": "The category value corresponding to the status of the bed of the event record at the event timestamp.",
+      "entries": [
+        "Ready",
+        "Not Available",
+        "Maintenance",
+        "Dirty",
+        "Cleaning"
+      ]
     },
     {
-      "index": 216,
+      "ordinalPosition": 36,
       "name": "BASE_PAT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the base classification for the patient of the event record at the effective time.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nEmergency"
+      "description": "The category value corresponding to the base classification for the patient of the event record at the effective time.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Emergency"
+      ]
     },
     {
-      "index": 226,
+      "ordinalPosition": 37,
       "name": "OUT_EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the outgoing event type as it would currently be interpreted\n\n\n The category values for this column were already listed for column: EVENT_TYPE_C_NAME"
+      "description": "This column contains the outgoing event type as it would currently be interpreted"
     },
     {
-      "index": 232,
+      "ordinalPosition": 38,
       "name": "FROM_BASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the base patient class that the patient had prior to this event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDirect\n\n\nInpatient\n\n\nOutpatient\n\n\nEmergency\n\n\nObservation"
+      "description": "This column contains the base patient class that the patient had prior to this event.",
+      "entries": [
+        "Direct",
+        "Inpatient",
+        "Outpatient",
+        "Emergency",
+        "Observation"
+      ]
     },
     {
-      "index": 244,
+      "ordinalPosition": 39,
       "name": "TO_BASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the base patient class that the patient had after this event.\n\n\n The category values for this column were already listed for column: FROM_BASE_CLASS_C_NAME"
+      "description": "This column contains the base patient class that the patient had after this event."
     },
     {
-      "index": 250,
+      "ordinalPosition": 40,
       "name": "LABOR_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds the L&D status of the encounter at the time of the ADT event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nExpected\n\n\nAssessment\n\n\nAdmitted\n\n\nDelivered\n\n\nNewborn\n\n\nDischarged\n\n\nReserved\n\n\nUndo"
+      "description": "This item holds the L&D status of the encounter at the time of the ADT event.",
+      "entries": [
+        "Expected",
+        "Assessment",
+        "Admitted",
+        "Delivered",
+        "Newborn",
+        "Discharged",
+        "Reserved",
+        "Undo"
+      ]
     },
     {
-      "index": 265,
+      "ordinalPosition": 41,
       "name": "FIRST_IP_IN_IP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column indicates whether this event represents the first time a patient was admitted with an inpatient base class in an inpatient-type unit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column indicates whether this event represents the first time a patient was admitted with an inpatient base class in an inpatient-type unit.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 274,
+      "ordinalPosition": 42,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item is a link to the ORD record directly responsible for generating an ADT event."
     },
     {
-      "index": 279,
+      "ordinalPosition": 43,
       "name": "SOURCE_LOC_EVNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the Patient Location event that generated this Admission, Discharge, Transfer, or Leave of Absence (ADT) event. This signifies that this ADT event was created from a Patient Location update."
     },
     {
-      "index": 284,
+      "ordinalPosition": 44,
       "name": "EVNT_REVIEW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The review status category number for the event. If empty, then this event never needed review.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReviewed Through Event Management\n\n\nReviewed Manually\n\n\nNeeds Review"
+      "description": "The review status category number for the event. If empty, then this event never needed review.",
+      "entries": [
+        "Reviewed Through Event Management",
+        "Reviewed Manually",
+        "Needs Review"
+      ]
     },
     {
-      "index": 294,
+      "ordinalPosition": 45,
       "name": "REVIEW_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time when this event was reviewed by the user."
     },
     {
-      "index": 299,
+      "ordinalPosition": 46,
       "name": "REVIEW_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who reviewed this event."
     },
     {
-      "index": 304,
+      "ordinalPosition": 47,
       "name": "LOA_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The leave of absence reason category ID for the event.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The leave of absence reason category ID for the event."
     },
     {
-      "index": 310,
+      "ordinalPosition": 48,
       "name": "ORIGINAL_EVENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the original event that this event record replaces. If this event record has not been canceled or updated, this column will be equal to the EVENT_ID column. This column is not necessarily equal to the CANC_EVENT_ID column. If the original event has been updated multiple times, then this column will show the ID of the original event, not the ID of the event that was most recently replaced by this record."
     },
     {
-      "index": 315,
+      "ordinalPosition": 49,
       "name": "ACTION_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds the reason behind an auto-generated event (e.g. when the service is automatically updated due to an attending provider change).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAttending Provider Added\n\n\nAutomatic Leave of Absence\n\n\nTransport Completed\n\n\nRTLS\n\n\nOpTime Case Tracking Event"
+      "description": "This item holds the reason behind an auto-generated event (e.g. when the service is automatically updated due to an attending provider change).",
+      "entries": [
+        "Attending Provider Added",
+        "Automatic Leave of Absence",
+        "Transport Completed",
+        "RTLS",
+        "OpTime Case Tracking Event"
+      ]
     },
     {
-      "index": 327,
+      "ordinalPosition": 50,
       "name": "SPLIT_ACCT_HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the hospital account for the associated event. This column will only be set for admissions enabled for split accounts."
     },
     {
-      "index": 332,
+      "ordinalPosition": 51,
       "name": "SPLIT_ACCT_FINANCIAL_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the financial classification that corresponds to the primary payer for the associated event. This column will only be set for admissions enabled for split accounts.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCommercial\n\n\nMedicare\n\n\nMedicaid\n\n\nSelf-Pay\n\n\nWorker's Comp\n\n\nTricare\n\n\nChampva\n\n\nGroup Health Plan\n\n\nFECA Black Lung\n\n\nBlue Shield\n\n\nMedigap\n\n\nOther\n\n\nDK Regional\n\n\nClient"
+      "description": "The category ID of the financial classification that corresponds to the primary payer for the associated event. This column will only be set for admissions enabled for split accounts.",
+      "entries": [
+        "Commercial",
+        "Medicare",
+        "Medicaid",
+        "Self-Pay",
+        "Worker's Comp",
+        "Tricare",
+        "Champva",
+        "Group Health Plan",
+        "FECA Black Lung",
+        "Blue Shield",
+        "Medigap",
+        "Other",
+        "DK Regional",
+        "Client"
+      ]
     },
     {
-      "index": 353,
+      "ordinalPosition": 52,
       "name": "SPLIT_ACCT_PRIMARY_PAYER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the responsible primary payer for the associated event. This column will only be set for admissions enabled for split accounts."
     },
     {
-      "index": 358,
+      "ordinalPosition": 53,
       "name": "SPLIT_ACCT_PRIMARY_PAYER_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 363,
+      "ordinalPosition": 54,
       "name": "SPLIT_ACCT_PRIMARY_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the responsible primary plan for the associated event. This column will only be set for admissions enabled for split accounts."
     },
     {
-      "index": 368,
+      "ordinalPosition": 55,
       "name": "SPLIT_ACCT_PRIMARY_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 373,
+      "ordinalPosition": 56,
       "name": "SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The event type category ID of the outgoing financial class for this event.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAdmission\n\n\nDischarge\n\n\nIn\n\n\nOut\n\n\nPatient Update\n\n\nCensus\n\n\nLeave of Absence Out\n\n\nLeave of Absence Return\n\n\nLeave of Absence Census"
+      "description": "The event type category ID of the outgoing financial class for this event.",
+      "entries": [
+        "Admission",
+        "Discharge",
+        "In",
+        "Out",
+        "Patient Update",
+        "Census",
+        "Leave of Absence Out",
+        "Leave of Absence Return",
+        "Leave of Absence Census"
+      ]
     },
     {
-      "index": 389,
+      "ordinalPosition": 57,
       "name": "SPLIT_ACCT_IN_FIN_CL_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The event type category ID of the incoming financial class for this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME"
+      "description": "The event type category ID of the incoming financial class for this event."
     },
     {
-      "index": 395,
+      "ordinalPosition": 58,
       "name": "SPLIT_ACCT_FROM_FIN_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the financial class prior to this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_FINANCIAL_CLASS_C_NAME"
+      "description": "The category ID of the financial class prior to this event."
     },
     {
-      "index": 401,
+      "ordinalPosition": 59,
       "name": "SPLIT_ACCT_TO_FIN_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the financial class after this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_FINANCIAL_CLASS_C_NAME"
+      "description": "The category ID of the financial class after this event."
     },
     {
-      "index": 407,
+      "ordinalPosition": 60,
       "name": "SPLIT_ACCT_OUT_PAYER_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the outgoing payer for this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME"
+      "description": "The unique ID of the outgoing payer for this event."
     },
     {
-      "index": 413,
+      "ordinalPosition": 61,
       "name": "SPLIT_ACCT_IN_PAYER_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the incoming payer for this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME"
+      "description": "The unique ID of the incoming payer for this event."
     },
     {
-      "index": 419,
+      "ordinalPosition": 62,
       "name": "SPLIT_ACCT_FROM_PAYER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the payer prior this event."
     },
     {
-      "index": 424,
+      "ordinalPosition": 63,
       "name": "SPLIT_ACCT_FROM_PAYER_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 429,
+      "ordinalPosition": 64,
       "name": "SPLIT_ACCT_TO_PAYER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the payer after this event."
     },
     {
-      "index": 434,
+      "ordinalPosition": 65,
       "name": "SPLIT_ACCT_TO_PAYER_ID_PAYOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the payor."
     },
     {
-      "index": 439,
+      "ordinalPosition": 66,
       "name": "SPLIT_ACCT_OUT_PLAN_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the outgoing payer for this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME"
+      "description": "The unique ID of the outgoing payer for this event."
     },
     {
-      "index": 445,
+      "ordinalPosition": 67,
       "name": "SPLIT_ACCT_IN_PLAN_EV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the incoming payer for this event.\n\n\n The category values for this column were already listed for column: SPLIT_ACCT_OUT_FIN_CL_EV_TYP_C_NAME"
+      "description": "The unique ID of the incoming payer for this event."
     },
     {
-      "index": 451,
+      "ordinalPosition": 68,
       "name": "SPLIT_ACCT_FROM_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the plan prior to this event."
     },
     {
-      "index": 456,
+      "ordinalPosition": 69,
       "name": "SPLIT_ACCT_FROM_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 461,
+      "ordinalPosition": 70,
       "name": "SPLIT_ACCT_TO_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the plan after this event."
     },
     {
-      "index": 466,
+      "ordinalPosition": 71,
       "name": "SPLIT_ACCT_TO_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 471,
+      "ordinalPosition": 72,
       "name": "IS_LOA_UPDATE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this event is part of a leave of absence update. 'Y' indicates that the event is part of a leave of absence update, 'N' or NULL indicates it is not.\n\n\n The category values for this column were already listed for column: FIRST_IP_IN_IP_YN"
+      "description": "Indicates whether this event is part of a leave of absence update. 'Y' indicates that the event is part of a leave of absence update, 'N' or NULL indicates it is not."
     },
     {
-      "index": 477,
+      "ordinalPosition": 73,
       "name": "EVENT_CONVERTED_FLAG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates that this event has been converted to another event type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManually Converted to Discharge\n\n\nAuto Converted to Discharge\n\n\nConverted to LOA"
+      "description": "Indicates that this event has been converted to another event type.",
+      "entries": [
+        "Manually Converted to Discharge",
+        "Auto Converted to Discharge",
+        "Converted to LOA"
+      ]
     }
   ]
 }

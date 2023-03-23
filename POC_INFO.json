@@ -1,269 +1,330 @@
 {
-  "table_name": "POC_INFO",
+  "name": "POC_INFO",
   "description": "This table contains no-add single item information for the Plan of Care (POC) master file.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the plan of care record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status, such as active or soft-deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status, such as active or soft-deleted.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "POC_CREATED_IN_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item contains the instant at which the POC was created."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "POC_REFRESHED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item contains the instant at which the POC was last refreshed with up-to-date patient info."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "POC_LAST_SAVED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item contains the instant at which the POC was last saved with user-entered information."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "POC_COMPLETED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item contains the instant at which the POC was filed and/or sent."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "PLAN_OF_CARE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the POC type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlan Of Care\n\n\nPlan Of Care Update"
+      "description": "This item contains the POC type.",
+      "entries": [
+        "Plan Of Care",
+        "Plan Of Care Update"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "UPDATE_POC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item contains a pointer to the POC being updated."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "EPISODE_SEQ_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item contains the parent POC sequence number."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "UPDATE_SEQ_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item contains the child POC sequence number."
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item contains the link to the episode in which the POC was created."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "CARE_PLAN_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the care plan contact that contains the care plan information pulled into the POC."
     },
     {
-      "index": 71,
+      "ordinalPosition": 13,
       "name": "CARE_PLAN_INFO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If the POC contains care plan visit information, problems, or both.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVisit Data\n\n\nProblem Data\n\n\nBoth Visit and Problem Data"
+      "description": "If the POC contains care plan visit information, problems, or both.",
+      "entries": [
+        "Visit Data",
+        "Problem Data",
+        "Both Visit and Problem Data"
+      ]
     },
     {
-      "index": 81,
+      "ordinalPosition": 14,
       "name": "POC_MEDS_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the patient contact that contains the medications list for the POC."
     },
     {
-      "index": 86,
+      "ordinalPosition": 15,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the date the record was created."
     },
     {
-      "index": 91,
+      "ordinalPosition": 16,
       "name": "EPSD_ELECTION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of hospice election."
     },
     {
-      "index": 96,
+      "ordinalPosition": 17,
       "name": "EPSD_EFFECTIVE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the hospice agency began taking care of the patient."
     },
     {
-      "index": 101,
+      "ordinalPosition": 18,
       "name": "TRIAGE_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's triage code, as documented in the episode.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The patient's triage code, as documented in the episode."
     },
     {
-      "index": 107,
+      "ordinalPosition": 19,
       "name": "POC_START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Start date for a hospice plan of care.  The plan of care is effective until the next POC/POC update's start date."
     },
     {
-      "index": 112,
+      "ordinalPosition": 20,
       "name": "POC_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Virtual item which returns the end date of a hospice plan of care.  This is determined based on other plans of care (and, sometimes, the episode discharge date).  Typically a hospice plan of care will end whenever a subsequent plan of care is created.  A plan of care update will end when a subsequent plan of care update is created."
     },
     {
-      "index": 117,
+      "ordinalPosition": 21,
       "name": "POC_CODE_STATUS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient code status when the plan of care is completed."
     },
     {
-      "index": 122,
+      "ordinalPosition": 22,
       "name": "DISPLAY_NM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the display name for a plan of care."
     },
     {
-      "index": 127,
+      "ordinalPosition": 23,
       "name": "STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the current status of a plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDraft\n\n\nCompleted\n\n\nSigned\n\n\nRevising\n\n\nRevised\n\n\nAddending\n\n\nAddended\n\n\nDeleted"
+      "description": "This item contains the current status of a plan of care.",
+      "entries": [
+        "Draft",
+        "Completed",
+        "Signed",
+        "Revising",
+        "Revised",
+        "Addending",
+        "Addended",
+        "Deleted"
+      ]
     },
     {
-      "index": 142,
+      "ordinalPosition": 24,
       "name": "SPOC_WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the type for the current plan. This may be useful for classification and reporting upon different types of plans.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDialysis\n\n\nSocial Care Client and Service Plan\n\n\nOutpatient Rehab\n\n\nBehavioral Health Treatment Plan\n\n\nHospice Plan of Care\n\n\nRehab Team Conference\n\n\nCare Plan Meeting\n\n\nSkilled Nursing Certification\n\n\nHospice Non-Covered\n\n\nHome Health Plan of Care\n\n\nAgreements"
+      "description": "This item contains the type for the current plan. This may be useful for classification and reporting upon different types of plans.",
+      "entries": [
+        "Dialysis",
+        "Social Care Client and Service Plan",
+        "Outpatient Rehab",
+        "Behavioral Health Treatment Plan",
+        "Hospice Plan of Care",
+        "Rehab Team Conference",
+        "Care Plan Meeting",
+        "Skilled Nursing Certification",
+        "Hospice Non-Covered",
+        "Home Health Plan of Care",
+        "Agreements"
+      ]
     },
     {
-      "index": 160,
+      "ordinalPosition": 25,
       "name": "SPOC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the type of plan a POC represents within a given workflow\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nComprehensive\n\n\nUpdate\n\n\nClient Plan\n\n\nService Plan\n\n\nPlan of Care and IDG Update\n\n\nPlan of Care\n\n\nIDG Update\n\n\nCertified Home Health\n\n\nCertified Home Health - Resumption of Care\n\n\nCertified Home Health - Supplemental\n\n\nChild Custody\n\n\nChild Support"
+      "description": "Indicates the type of plan a POC represents within a given workflow",
+      "entries": [
+        "Comprehensive",
+        "Update",
+        "Client Plan",
+        "Service Plan",
+        "Plan of Care and IDG Update",
+        "Plan of Care",
+        "IDG Update",
+        "Certified Home Health",
+        "Certified Home Health - Resumption of Care",
+        "Certified Home Health - Supplemental",
+        "Child Custody",
+        "Child Support"
+      ]
     },
     {
-      "index": 179,
+      "ordinalPosition": 26,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the patient ID for whom the current plan has been created."
     },
     {
-      "index": 184,
+      "ordinalPosition": 27,
       "name": "SPOC_SIGNED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the last required participant signed the plan."
     },
     {
-      "index": 189,
+      "ordinalPosition": 28,
       "name": "TEMPLATE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is true if a plan is a template agreement.  Template agreements are not agreements for any particular patient, but are used, temporarily, to contain information used to create multiple agreements which may be on different patients.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item is true if a plan is a template agreement.  Template agreements are not agreements for any particular patient, but are used, temporarily, to contain information used to create multiple agreements which may be on different patients.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 198,
+      "ordinalPosition": 29,
       "name": "TEMPLATE_POC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item links an agreement to the template agreement from which it was copied."
     },
     {
-      "index": 203,
+      "ordinalPosition": 30,
       "name": "POC_RATIFIED_INST_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Contains the instant at which the POC was ratified."
     },
     {
-      "index": 208,
+      "ordinalPosition": 31,
       "name": "POC_RATIFIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item indicates if the agreement is ratified or not.  A blank value indicates that no decision has been made.  A value of 1 (true) indicates that the agreement is ratified.  A value of 2 (false) indicates that a decision was made to not ratify the agreement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This item indicates if the agreement is ratified or not.  A blank value indicates that no decision has been made.  A value of 1 (true) indicates that the agreement is ratified.  A value of 2 (false) indicates that a decision was made to not ratify the agreement.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 217,
+      "ordinalPosition": 32,
       "name": "PLAN_UNDER_REVIEW_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the hospice POC is under review. While under review the POC cannot be signed.\n\n\n The category values for this column were already listed for column: TEMPLATE_YN"
+      "description": "Whether the hospice POC is under review. While under review the POC cannot be signed."
     },
     {
-      "index": 223,
+      "ordinalPosition": 33,
       "name": "CODE_STATUS_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient code status comment when the plan of care is completed."
     },
     {
-      "index": 228,
+      "ordinalPosition": 34,
       "name": "HH_ASMNT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number of the assessment contact used to populate the home health Plan of Care."
     },
     {
-      "index": 233,
+      "ordinalPosition": 35,
       "name": "HH_CERT_PER_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number of the encounter that created the certification period associated with the home health Plan of Care."
     },
     {
-      "index": 238,
+      "ordinalPosition": 36,
       "name": "POC_AUTO_CREATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the Plan of Care has been automatically created. 'Y' Indicates that this Plan of Care was automatically created. 'N' or NULL indicate that it was manually created.\n\n\n The category values for this column were already listed for column: TEMPLATE_YN"
+      "description": "Indicates whether the Plan of Care has been automatically created. 'Y' Indicates that this Plan of Care was automatically created. 'N' or NULL indicate that it was manually created."
     },
     {
-      "index": 244,
+      "ordinalPosition": 37,
       "name": "HH_POC_CONVERTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the home health Specialty Plan of Care record corresponds to an old plan and was created out of the conversion.\n\n\n The category values for this column were already listed for column: TEMPLATE_YN"
+      "description": "Indicates whether the home health Specialty Plan of Care record corresponds to an old plan and was created out of the conversion."
     }
   ]
 }

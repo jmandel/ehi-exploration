@@ -1,78 +1,84 @@
 {
-  "table_name": "BEREAVED_OT",
+  "name": "BEREAVED_OT",
   "description": "This table contains information about your bereaved records. These include contact dates and times, name history, and instant of edit and entry. The records included in this table are Bereavement Contact (LHB) records.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the bereavement contact record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_SERIAL_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the bereavement contact contact. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_NUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The serial number of a contact on the bereavement contact record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "NAME_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The history of the record name"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "INSTANT_OF_ENT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of entry when a record is edited"
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who updated this bereaved record."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "UPDATE_INSTANT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of the update to the bereaved record."
     }

@@ -1,66 +1,76 @@
 {
-  "table_name": "INV_ATTACHMENTS",
+  "name": "INV_ATTACHMENTS",
   "description": "This table stores invoice-level attachment information.",
-  "primary_key": {
-    "column_name": "INVOICE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INVOICE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INVOICE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The invoice record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "INV_ATTACH_INV_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Invoice number for the related group."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "INV_ATTACH_ROI_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The request for information record for the invoice."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "INV_ATTACHMENT_CONTROL_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The attachment control number."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "INV_ATTACHMENT_GENERATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies if an attachment was generated.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Identifies if an attachment was generated.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "INV_ATTACH_EDITED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies if an attachment was edited.\n\n\n The category values for this column were already listed for column: INV_ATTACHMENT_GENERATED_YN"
+      "description": "Identifies if an attachment was edited."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "INV_ATTACH_REMOVED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies if a user removed the attachment from a workqueue.\n\n\n The category values for this column were already listed for column: INV_ATTACHMENT_GENERATED_YN"
+      "description": "Identifies if a user removed the attachment from a workqueue."
     }
   ]
 }

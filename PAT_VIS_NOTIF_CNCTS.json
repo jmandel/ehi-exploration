@@ -1,38 +1,48 @@
 {
-  "table_name": "PAT_VIS_NOTIF_CNCTS",
+  "name": "PAT_VIS_NOTIF_CNCTS",
   "description": "Visitor contact information for patient status updates.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "NOTIF_FOR_ED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Tracks whether the visit contact should be notified for ED events.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Tracks whether the visit contact should be notified for ED events.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "NOTIF_FOR_ADMSN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Tracks whether the visit contact should be notified for Admission events.\n\n\n The category values for this column were already listed for column: NOTIF_FOR_ED_YN"
+      "description": "Tracks whether the visit contact should be notified for Admission events."
     }
   ]
 }

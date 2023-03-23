@@ -1,31 +1,43 @@
 {
-  "table_name": "SPEC_IMAGING_CONCLUSIONS",
+  "name": "SPEC_IMAGING_CONCLUSIONS",
   "description": "This table stores the imaging study conclusions.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "IMAGING_CONCLUSIONS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the imaging study conclusions.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal\n\n\nSuspect\n\n\nMalignant\n\n\nUndisclosed"
+      "description": "The category ID for the imaging study conclusions.",
+      "entries": [
+        "Normal",
+        "Suspect",
+        "Malignant",
+        "Undisclosed"
+      ]
     }
   ]
 }

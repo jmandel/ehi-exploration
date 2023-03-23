@@ -1,38 +1,50 @@
 {
-  "table_name": "MCARE_PREMIUM_PMT_OPT",
+  "name": "MCARE_PREMIUM_PMT_OPT",
   "description": "Medicare Advantage premium payment option details.",
-  "primary_key": {
-    "column_name": "COVERAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COVERAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the coverage record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MA_PPO_EFF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the Premium Payment Option selected by the beneficiary is effective."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MA_PPO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The method selected by the beneficiary to pay the premium owed to the plan.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSocial Security Benefits\n\n\nRailroad Retirement Board Benefits\n\n\nNo Premium\n\n\nDirect Self-Pay"
+      "description": "The method selected by the beneficiary to pay the premium owed to the plan.",
+      "entries": [
+        "Social Security Benefits",
+        "Railroad Retirement Board Benefits",
+        "No Premium",
+        "Direct Self-Pay"
+      ]
     }
   ]
 }

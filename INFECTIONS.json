@@ -1,171 +1,208 @@
 {
-  "table_name": "INFECTIONS",
+  "name": "INFECTIONS",
   "description": "This table contains basic information about patient infections.",
-  "primary_key": {
-    "column_name": "INFECTION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INFECTION_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INFECTION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the infection record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record status category ID for the infection.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "INFECTION_RECORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record type category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEncounter Level\n\n\nPatient Level"
+      "description": "The record type category ID for the infection.",
+      "entries": [
+        "Encounter Level",
+        "Patient Level"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "INFECTION_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The infection type category ID for the infection.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The infection type category ID for the infection."
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "INF_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The infection status category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nInfection Expired\n\n\nDeleted\n\n\nRule-Out Test Resulted\n\n\nEncounter Ended\n\n\nRule-Out Test Canceled\n\n\nPatient Deceased"
+      "description": "The infection status category ID for the infection.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Infection Expired",
+        "Deleted",
+        "Rule-Out Test Resulted",
+        "Encounter Ended",
+        "Rule-Out Test Canceled",
+        "Patient Deceased"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 8,
       "name": "HOW_ADDED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The how added category ID for the infection. This indicates the method by which the infection was added to the patient chart.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nImport\n\n\nAuto-Update (Result)\n\n\nRule-Out (Order Placed)\n\n\nInterface\n\n\nConversion\n\n\nBPA Follow-Up (Manual)\n\n\nBPA Follow-Up (Automatic)\n\n\nBulk Action - Add Infection\n\n\nBulk Action - Contact Trace Add Infection"
+      "description": "The how added category ID for the infection. This indicates the method by which the infection was added to the patient chart.",
+      "entries": [
+        "User",
+        "Import",
+        "Auto-Update (Result)",
+        "Rule-Out (Order Placed)",
+        "Interface",
+        "Conversion",
+        "BPA Follow-Up (Manual)",
+        "BPA Follow-Up (Automatic)",
+        "Bulk Action - Add Infection",
+        "Bulk Action - Contact Trace Add Infection"
+      ]
     },
     {
-      "index": 74,
+      "ordinalPosition": 9,
       "name": "ADD_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time that the infection was added to the patient chart."
     },
     {
-      "index": 79,
+      "ordinalPosition": 10,
       "name": "ADD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user who added the infection. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 84,
+      "ordinalPosition": 11,
       "name": "RESOLVE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time that the infection was resolved in the patient chart."
     },
     {
-      "index": 89,
+      "ordinalPosition": 12,
       "name": "RESOLVE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user who resolved the infection. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 94,
+      "ordinalPosition": 13,
       "name": "EXPIRATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the infection is set to automatically expire."
     },
     {
-      "index": 99,
+      "ordinalPosition": 14,
       "name": "DOESNT_EXPIRE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the infection should not automatically expire. 'Y' indicates that the infection requires clinical judgement to be marked as resolved. 'N' or NULL indicates that it is safe for the infection to expire automatically if an expiration date is given.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the infection should not automatically expire. 'Y' indicates that the infection requires clinical judgement to be marked as resolved. 'N' or NULL indicates that it is safe for the infection to expire automatically if an expiration date is given.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 108,
+      "ordinalPosition": 15,
       "name": "REVIEW_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the infection should be reviewed."
     },
     {
-      "index": 113,
+      "ordinalPosition": 16,
       "name": "ONSET_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the infection began."
     },
     {
-      "index": 118,
+      "ordinalPosition": 17,
       "name": "COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User-entered comments associated with the infection."
     },
     {
-      "index": 123,
+      "ordinalPosition": 18,
       "name": "SPECIMEN_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specimen type category ID for the infection.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The specimen type category ID for the infection."
     },
     {
-      "index": 129,
+      "ordinalPosition": 19,
       "name": "SPECIMEN_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specimen source category ID for the infection.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The specimen source category ID for the infection."
     },
     {
-      "index": 135,
+      "ordinalPosition": 20,
       "name": "RECORD_CREATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the infection record was created."
     },
     {
-      "index": 140,
+      "ordinalPosition": 21,
       "name": "ADD_LOCAL_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The local date and time that the infection was added to the patient chart."
     },
     {
-      "index": 145,
+      "ordinalPosition": 22,
       "name": "RESOLVE_LOCAL_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The local date and time that the infection was resolved in the patient chart."
     },
     {
-      "index": 150,
+      "ordinalPosition": 23,
       "name": "ISOLATION_LINKS_CALCULATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether all linked isolations have been calculated. 'Y' indicates all linked isolations have been calculated. 'N' or NULL indicates that there may be isolations that would be considered linked to the infection, but that pre-date the linking calculation.\n\n\n The category values for this column were already listed for column: DOESNT_EXPIRE_YN"
+      "description": "Indicates whether all linked isolations have been calculated. 'Y' indicates all linked isolations have been calculated. 'N' or NULL indicates that there may be isolations that would be considered linked to the infection, but that pre-date the linking calculation."
     }
   ]
 }

@@ -1,55 +1,73 @@
 {
-  "table_name": "HM_HISTORICAL_STATUS",
+  "name": "HM_HISTORICAL_STATUS",
   "description": "Records Health Maintenance status over time.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HM_TOPIC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Health Maintenance topic that applied to the patient at the time the snapshot was taken."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HM_TOPIC_ID_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the health maintenance topic."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HM_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the patient's due status for the Health Maintenance topic at the time the snapshot was taken.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Due\n\n\nDue Soon\n\n\nDue On\n\n\nOverdue\n\n\nPostponed\n\n\nCompleted\n\n\nAddressed\n\n\nAged Out\n\n\nDiscontinued\n\n\nHidden"
+      "description": "Indicates the patient's due status for the Health Maintenance topic at the time the snapshot was taken.",
+      "entries": [
+        "Not Due",
+        "Due Soon",
+        "Due On",
+        "Overdue",
+        "Postponed",
+        "Completed",
+        "Addressed",
+        "Aged Out",
+        "Discontinued",
+        "Hidden"
+      ]
     },
     {
-      "index": 39,
+      "ordinalPosition": 6,
       "name": "NEXT_DUE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's next due date for this Health Maintenance topic at the time the snapshot was taken."
     },
     {
-      "index": 44,
+      "ordinalPosition": 7,
       "name": "LAST_COMPLETED_DATE",
       "type": "DATETIME",
       "discontinued": false,

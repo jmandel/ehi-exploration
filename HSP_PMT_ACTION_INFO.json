@@ -1,41 +1,63 @@
 {
-  "table_name": "HSP_PMT_ACTION_INFO",
+  "name": "HSP_PMT_ACTION_INFO",
   "description": "This table will hold the actions that were attempted to be performed for a payment.  There will also be a result and reason if the action was not performed.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital billing transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PMT_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the actions that were attempted to be performed on the payment\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Allowed Adjustment\n\n\nNext Responsible Party\n\n\nClaim Denied\n\n\nOther Adjustment\n\n\nTransfer To Self-Pay\n\n\nRemark\n\n\nAllowance Discrepancy\n\n\nInsurance Debit Adjustment\n\n\nInsurance Write-off"
+      "description": "Stores the actions that were attempted to be performed on the payment",
+      "entries": [
+        "Not Allowed Adjustment",
+        "Next Responsible Party",
+        "Claim Denied",
+        "Other Adjustment",
+        "Transfer To Self-Pay",
+        "Remark",
+        "Allowance Discrepancy",
+        "Insurance Debit Adjustment",
+        "Insurance Write-off"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "PMT_ACTION_DONE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the result of the action that was attempted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSkipped\n\n\nPerformed\n\n\nNot Performed"
+      "description": "Stores the result of the action that was attempted.",
+      "entries": [
+        "Skipped",
+        "Performed",
+        "Not Performed"
+      ]
     },
     {
-      "index": 38,
+      "ordinalPosition": 5,
       "name": "PMT_ACTION_CMT",
       "type": "VARCHAR",
       "discontinued": false,

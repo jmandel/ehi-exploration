@@ -1,71 +1,113 @@
 {
-  "table_name": "HSP_CLP_CLAIM_HX",
+  "name": "HSP_CLP_CLAIM_HX",
   "description": "This table contains the claim action histories for the claim print records associated with the hospital account/liability bucket.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID of the claim record associated with a single hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The contact date for the creation of the record in internal format. (There is only one contact date per claim print record.)"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CLM_ACTION_HIST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of claim action that was taken.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nViewed\n\n\nRefreshed\n\n\nComment Added\n\n\nSubmitted\n\n\nForce Submitted\n\n\nCreated\n\n\nProcessed\n\n\nAccepted\n\n\nResubmitted\n\n\nPrinted to Paper\n\n\nFiled Electronically\n\n\nEOB Printed\n\n\nRemoved From Queue\n\n\nEdited Claim\n\n\nForced to Paper\n\n\nCancel Claim Created\n\n\nSent to External Grouper\n\n\nReceived Update From External Grouper\n\n\nSent Claim to Claim Edit Workqueue\n\n\nAdded Late Charges\n\n\nAuto-processed by External Grouper\n\n\nReset Edited Values\n\n\nReplaced Corrected Charge\n\n\nRemoved Reversed Charge\n\n\nRapid Retest: Sent Claim\n\n\nRapid Retest: Received Update\n\n\nRapid Retest: Transmission Failed\n\n\nRapid Retest: Response Timed Out\n\n\nDemand Claim Print Failed\n\n\nChanged Bundled Episode"
+      "description": "The type of claim action that was taken.",
+      "entries": [
+        "Viewed",
+        "Refreshed",
+        "Comment Added",
+        "Submitted",
+        "Force Submitted",
+        "Created",
+        "Processed",
+        "Accepted",
+        "Resubmitted",
+        "Printed to Paper",
+        "Filed Electronically",
+        "EOB Printed",
+        "Removed From Queue",
+        "Edited Claim",
+        "Forced to Paper",
+        "Cancel Claim Created",
+        "Sent to External Grouper",
+        "Received Update From External Grouper",
+        "Sent Claim to Claim Edit Workqueue",
+        "Added Late Charges",
+        "Auto-processed by External Grouper",
+        "Reset Edited Values",
+        "Replaced Corrected Charge",
+        "Removed Reversed Charge",
+        "Rapid Retest: Sent Claim",
+        "Rapid Retest: Received Update",
+        "Rapid Retest: Transmission Failed",
+        "Rapid Retest: Response Timed Out",
+        "Demand Claim Print Failed",
+        "Changed Bundled Episode"
+      ]
     },
     {
-      "index": 54,
+      "ordinalPosition": 5,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the hospital account with which this claim record is associated."
     },
     {
-      "index": 59,
+      "ordinalPosition": 6,
       "name": "CM_PHY_OWN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the physical deployment owner for this record. Physical owners will be where the data is hosted, either on the cross-over server or the owner deployment."
     },
     {
-      "index": 64,
+      "ordinalPosition": 7,
       "name": "CLM_HIST_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user ID who performed claim action for the claim record."
     },
     {
-      "index": 69,
+      "ordinalPosition": 8,
       "name": "CLM_HIST_CMT_PTR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The pointer to the comments for the claim action for the claim record."
     },
     {
-      "index": 74,
+      "ordinalPosition": 9,
       "name": "CLM_HIST_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The date and time the claim action was performed."
     }

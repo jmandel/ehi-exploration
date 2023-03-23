@@ -1,395 +1,425 @@
 {
-  "table_name": "HSP_ACCOUNT_2",
+  "name": "HSP_ACCOUNT_2",
   "description": "This table contains hospital account information from the Hospital Accounts Receivable (HAR) master file. This second hospital account table has the same basic structure as HSP_ACCOUNT, but was created as a second table to prevent HSP_ACCOUNT from getting any larger. This table will exclude professional billing HARs created by visit filing order in non-single billing office service areas.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "HH_AGENCY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The home health agency associated with the hospital account.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The home health agency associated with the hospital account."
     },
     {
-      "index": 13,
+      "ordinalPosition": 3,
       "name": "EXPIRATION_REASON",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The reason for expiration (anesthesia, operation, etc.).  If the discharge disposition is not \"expired,\" this field will not be populated."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "DECEASED_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of patient's death."
     },
     {
-      "index": 23,
+      "ordinalPosition": 5,
       "name": "DECEASED_TIME",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date and time for the death of the patient that is associated with this hospital account."
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "DURATIONS_HYPERAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the number of days patient is on Hyperal. Hyperal is the same as Total Parenteral Nutrition (TPN) regarding diet and nutrition management."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "OPEN_DENIAL_BDC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores whether the hospital account has an open denial record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This column stores whether the hospital account has an open denial record.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "OPEN_RMK_BDC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores whether the hospital account has an open remark record.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "This column stores whether the hospital account has an open remark record."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "OPEN_COR_BDC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores whether the hospital account has an open correspondence record.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "This column stores whether the hospital account has an open correspondence record."
     },
     {
-      "index": 54,
+      "ordinalPosition": 10,
       "name": "ECMO",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the number of days the patient has been using the ECMO (extracorporeal membrane oxygenation) equipment."
     },
     {
-      "index": 59,
+      "ordinalPosition": 11,
       "name": "MECHANICAL_VENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of days the patient has been using the mechanical ventilator."
     },
     {
-      "index": 64,
+      "ordinalPosition": 12,
       "name": "ARCHIVE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the archive record of the hospital account."
     },
     {
-      "index": 69,
+      "ordinalPosition": 13,
       "name": "ARCHIVE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the hospital account was archived."
     },
     {
-      "index": 74,
+      "ordinalPosition": 14,
       "name": "REC_CREATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user who created the hospital account."
     },
     {
-      "index": 79,
+      "ordinalPosition": 15,
       "name": "REGIONAL_STUDY_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the Regional study 1, which is one of the coding info items."
     },
     {
-      "index": 84,
+      "ordinalPosition": 16,
       "name": "REGIONAL_STUDY_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the Regional study 2, which is one of the coding info items."
     },
     {
-      "index": 89,
+      "ordinalPosition": 17,
       "name": "FACILITY_STUDY_A",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Facility study A is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items."
     },
     {
-      "index": 94,
+      "ordinalPosition": 18,
       "name": "FACILITY_STUDY_B",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Facility study B is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items."
     },
     {
-      "index": 99,
+      "ordinalPosition": 19,
       "name": "DECUBITIS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Decubitis is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOne\n\n\nTwo\n\n\nThree\n\n\nFour"
+      "description": "Decubitis is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items.",
+      "entries": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ]
     },
     {
-      "index": 110,
+      "ordinalPosition": 20,
       "name": "TRAUMA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Trauma is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOne\n\n\nTwo\n\n\nThree\n\n\nFour\n\n\nFive\n\n\nSix\n\n\nSeven\n\n\nEight\n\n\nNine\n\n\nTen"
+      "description": "Trauma is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items.",
+      "entries": [
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six",
+        "Seven",
+        "Eight",
+        "Nine",
+        "Ten"
+      ]
     },
     {
-      "index": 127,
+      "ordinalPosition": 21,
       "name": "GEST_AGE_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Gestational age days is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items."
     },
     {
-      "index": 132,
+      "ordinalPosition": 22,
       "name": "GEST_AGE_BABY_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Gestational (baby) age days is one of the coding info items. The abstract info tab in account maintenance can be configured to display these items."
     },
     {
-      "index": 137,
+      "ordinalPosition": 23,
       "name": "ESOP_PAYOR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the expected source of payment payer, which is a coding info item that stores the payer that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display this item.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This column stores the expected source of payment payer, which is a coding info item that stores the payer that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display this item."
     },
     {
-      "index": 143,
+      "ordinalPosition": 24,
       "name": "ESOP_PLAN_NAME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Expected source of payment plan name is one of the coding info items. It stores the plan that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display coding items.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Expected source of payment plan name is one of the coding info items. It stores the plan that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display coding items."
     },
     {
-      "index": 149,
+      "ordinalPosition": 25,
       "name": "ESOP_PLAN_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Expected source of payment plan type is one of the coding info items. It stores the type of plan that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display coding items.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Expected source of payment plan type is one of the coding info items. It stores the type of plan that is expected to pay for the services. This item is necessary for regulatory reporting in some states. The abstract info tab in account maintenance can be configured to display coding items."
     },
     {
-      "index": 155,
+      "ordinalPosition": 26,
       "name": "CODING_USER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the unique identifier for the user who last changed the coding status of the hospital account. This is frequently used to join to the CLARITY_EMP table."
     },
     {
-      "index": 160,
+      "ordinalPosition": 27,
       "name": "APGAR_10_MIN",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The Apgar score at ten minutes for the newborn associated with the hospital account. This is an abstracting item."
     },
     {
-      "index": 165,
+      "ordinalPosition": 28,
       "name": "FRST_PRO_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first non-demand enterprise statement to be sent with a self-pay proration balance."
     },
     {
-      "index": 170,
+      "ordinalPosition": 29,
       "name": "LST_PRO_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent non-demand enterprise statement to be sent with a self-pay proration balance."
     },
     {
-      "index": 175,
+      "ordinalPosition": 30,
       "name": "NUM_PRO_STMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field contains the total number of non-demand enterprise statements sent with a self-pay proration balance."
     },
     {
-      "index": 180,
+      "ordinalPosition": 31,
       "name": "FRST_PRO_D_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first demand enterprise statement to be sent with a self-pay proration balance."
     },
     {
-      "index": 185,
+      "ordinalPosition": 32,
       "name": "LST_PRO_D_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent demand enterprise statement to be sent with a self-pay proration balance."
     },
     {
-      "index": 190,
+      "ordinalPosition": 33,
       "name": "NUM_PRO_D_STMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field contains the total number of demand enterprise statements sent with a self-pay proration balance."
     },
     {
-      "index": 195,
+      "ordinalPosition": 34,
       "name": "FRST_FULL_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first non-demand enterprise statement to be sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 200,
+      "ordinalPosition": 35,
       "name": "LST_FULL_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent non-demand enterprise statement to be sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 205,
+      "ordinalPosition": 36,
       "name": "NUM_FULL_STMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field contains the total number of non-demand enterprise statements sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 210,
+      "ordinalPosition": 37,
       "name": "FST_FULL_D_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first demand enterprise statement to be sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 215,
+      "ordinalPosition": 38,
       "name": "LST_FULL_D_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent demand enterprise statement to be sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 220,
+      "ordinalPosition": 39,
       "name": "NUM_FULL_D_STMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field contains the total number of demand enterprise statements sent where the remaining account balance is completely self-pay."
     },
     {
-      "index": 225,
+      "ordinalPosition": 40,
       "name": "FIRST_SELF_PAY_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first self-pay balance for this account."
     },
     {
-      "index": 230,
+      "ordinalPosition": 41,
       "name": "FIRST_FULL_SP_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the first date when the self-pay balance equaled the full account balance for this account."
     },
     {
-      "index": 235,
+      "ordinalPosition": 42,
       "name": "STILLBORN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a pregnancy resulted in a stillbirth. This is an abstracting item.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "Indicates whether a pregnancy resulted in a stillbirth. This is an abstracting item."
     },
     {
-      "index": 241,
+      "ordinalPosition": 43,
       "name": "NUM_LIVE_BIRTHS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column contains the abstracted number of children that were born alive for the hospital account encounter."
     },
     {
-      "index": 246,
+      "ordinalPosition": 44,
       "name": "FIRST_INFO_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the first non-demand enterprise statement to be sent with no self-pay balance (only insurance balance)."
     },
     {
-      "index": 251,
+      "ordinalPosition": 45,
       "name": "LAST_INFO_STMT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent non-demand enterprise statement to be sent with no self-pay balance (only insurance balance)."
     },
     {
-      "index": 256,
+      "ordinalPosition": 46,
       "name": "LAST_D_INFO_STM_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This field contains the date of the most recent demand enterprise statement to be sent with no self-pay balance (only insurance balance)."
     },
     {
-      "index": 261,
+      "ordinalPosition": 47,
       "name": "NUM_D_INFO_STMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This field contains the total number of demand enterprise statements sent with no self-pay balance (only insurance balance)."
     },
     {
-      "index": 266,
+      "ordinalPosition": 48,
       "name": "FARM_ACCIDENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores whether or not the hospital account was abstracted as a farm accident. 0-No or 1-Yes.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "This column stores whether or not the hospital account was abstracted as a farm accident. 0-No or 1-Yes."
     },
     {
-      "index": 272,
+      "ordinalPosition": 49,
       "name": "EXTERN_AR_FLAG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "External A/R Flag. This flag determines if an account's A/R is to be counted as belonging to an external agency (i.e., as bad debt). This flag is set by a collections action and can be unset by another action. This flag is only used if external agency A/R has been enabled.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive AR\n\n\nExternal Agency AR\n\n\nBad Debt\n\n\nOutsourced"
+      "description": "External A/R Flag. This flag determines if an account's A/R is to be counted as belonging to an external agency (i.e., as bad debt). This flag is set by a collections action and can be unset by another action. This flag is only used if external agency A/R has been enabled.",
+      "entries": [
+        "Active AR",
+        "External Agency AR",
+        "Bad Debt",
+        "Outsourced"
+      ]
     },
     {
-      "index": 283,
+      "ordinalPosition": 50,
       "name": "PRIMARY_CONTACT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the primary contact date (DAT) of the hospital account. It's used in many places, such as in determining the admission/discharge date of the account."
     },
     {
-      "index": 288,
+      "ordinalPosition": 51,
       "name": "NUM_STILLBORNS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column contains the abstracted number of stillborns for the hospital account."
     },
     {
-      "index": 293,
+      "ordinalPosition": 52,
       "name": "HOSP_INFECTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient developed a hospital infection during the hospital account encounter.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "Indicates whether the patient developed a hospital infection during the hospital account encounter."
     },
     {
-      "index": 299,
+      "ordinalPosition": 53,
       "name": "RAPID_RESP_TEAM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a rapid response team was needed during the hospital account encounter.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "Indicates whether a rapid response team was needed during the hospital account encounter."
     },
     {
-      "index": 305,
+      "ordinalPosition": 54,
       "name": "RETURN_TO_OR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was returned to operating room. This is an abstracting item.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "Indicates whether the patient was returned to operating room. This is an abstracting item."
     },
     {
-      "index": 311,
+      "ordinalPosition": 55,
       "name": "NONCVRD_SNF_STAY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores whether the Skilled Nursing Facility (SNF) stay billed on this account is non-covered due to not having a prior qualifying inpatient stay.\n\n\n The category values for this column were already listed for column: OPEN_DENIAL_BDC_YN"
+      "description": "This column stores whether the Skilled Nursing Facility (SNF) stay billed on this account is non-covered due to not having a prior qualifying inpatient stay."
     }
   ]
 }

@@ -1,45 +1,58 @@
 {
-  "table_name": "SOCIAL_HX_ALC_USE",
+  "name": "SOCIAL_HX_ALC_USE",
   "description": "The SOCIAL_HX_ALC_USE  table contains social alcohol history data entered in clinical system patient encounters. Note: Typically, only the most recent social history data for a patient is extracted. However, you may elect to extract all social history contacts if you wish. In this case, since one patient encounter may contain multiple social history contacts, each contact is uniquely identified by a combination of the patient encounter serial number and a line number.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The contact date on which the history information was collected."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ALCOHOL_DRINKS_WK",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the alcohol history of drinks per week."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HX_DRINK_TYPES_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of alcohol consumed for alcohol history.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGlasses of wine\n\n\nCans of beer\n\n\nShots of liquor\n\n\nDrinks containing 0.5 oz of alcohol\n\n\nStandard drinks or equivalent"
+      "description": "Stores the type of alcohol consumed for alcohol history.",
+      "entries": [
+        "Glasses of wine",
+        "Cans of beer",
+        "Shots of liquor",
+        "Drinks containing 0.5 oz of alcohol",
+        "Standard drinks or equivalent"
+      ]
     }
   ]
 }

@@ -1,31 +1,50 @@
 {
-  "table_name": "PERFUSION_SUPPORT",
+  "name": "PERFUSION_SUPPORT",
   "description": "Table for the multiple-response Perfusion Mechanical Circulatory Support (I ORG 3110) item.",
-  "primary_key": {
-    "column_name": "ORG_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORG_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORG_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the organ record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PERFUSION_SUPPORT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the mechanical circulatory support device used to aid perfusion during the transplant surgery.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCardiopulmonary bypass standby\n\n\nCardiopulmonary bypass\n\n\nVeno-venous ECMO\n\n\nVeno-arterial ECMO\n\n\nIntra-aortic balloon pump\n\n\nLVAD\n\n\nRVAD\n\n\nBiVAD\n\n\nNone\n\n\nTotal artificial heart\n\n\nOther"
+      "description": "Indicates the mechanical circulatory support device used to aid perfusion during the transplant surgery.",
+      "entries": [
+        "Cardiopulmonary bypass standby",
+        "Cardiopulmonary bypass",
+        "Veno-venous ECMO",
+        "Veno-arterial ECMO",
+        "Intra-aortic balloon pump",
+        "LVAD",
+        "RVAD",
+        "BiVAD",
+        "None",
+        "Total artificial heart",
+        "Other"
+      ]
     }
   ]
 }

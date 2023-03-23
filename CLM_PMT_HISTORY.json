@@ -1,34 +1,91 @@
 {
-  "table_name": "CLM_PMT_HISTORY",
+  "name": "CLM_PMT_HISTORY",
   "description": "The CLM_PMT_HISTORY table contains claim level history for how a payment was processed.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLM_PMT_HISTORY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains an action that was taken for the payment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelected procedure code cannot be used for this payment.\n\n\nBoth a takeback and a $0 denial are present for the invoice.\n\n\nThis payment has a corresponding forward balance PLB payment.\n\n\nThis payment has an unbalanced forward balance PLB payment.\n\n\nThe claim charge amount was increased due to charge not found extension.\n\n\nRemittance workqueue comment.\n\n\nUndistributed remittance workqueue error message.\n\n\nThis payment was automatically distributed.\n\n\nService line paid amounts may have change due to the payment distribution setting in the RMO.\n\n\nRemittance Note\n\n\nMA07 - The claim information has also been forwarded to Medicaid for review.\n\n\nMA18 - The claim information is also being forwarded to the patient's supplemental insurer.\n\n\nUpdated subscriber ID is identical to the current subscriber ID. No update necessary.\n\n\nNew subscriber ID missing from file. No update will occur.\n\n\nInsurance ID will be updated upon acceptance of the run.\n\n\nSupplemental Remittance Information\n\n\nThe invoice paid amount was updated as a result of the interest payment received in the AMT-I segment.\n\n\nInterest in the claim level AMT-I segment.\n\n\nPayor sent procedure.\n\n\nThe paid amount for this claim was calculated by the system successfully.\n\n\nCharge(s) not found during calculation of the paid amounts.\n\n\nThe claim paid amount can not be successfully distributed.\n\n\nRemittance file contains invalid invoice number or service date.\n\n\nSVC segments cannot be created when the remittance file charge amount does not match the invoice.\n\n\nAn extension has been configured to error out payments with a specific claim status code.\n\n\nA service level adjustment has been added by a remittance balancing extension.\n\n\nA claim level adjustment has been added by a remittance balancing extension.\n\n\nPre-payment comment\n\n\nCapitation adjustment removed from claim level and added to service line level.\n\n\nTax amount was removed from check.\n\n\nTax amount removed from invoice payment.\n\n\nClaim paid amount updated by supplemental payment programming point.\n\n\nService level paid amounts have been updated by a supplemental payment extension.\n\n\nPayment automatically generated from remittance image record.\n\n\nInvoice error message\n\n\nThis payment could not be distributed.\n\n\nSum of all invoices meeting the external invoice format.\n\n\nOverridden load error message\n\n\nOverridden load error comment\n\n\nRemittance run comment\n\n\nNo automatic distribution. Unmatched remittance amount does not equal unmatched claim amount.\n\n\nNo automatic distribution. A non-zero unmatched claim line is required.\n\n\nPayment received for rejected invoice will be posted to an accepted invoice.\n\n\nPayment made from a Consumer Spending Account\n\n\nInsurance ID format does not match defined payer/plan format. No update will occur.\n\n\nPayment was modified due to a discrepancy with the billed amount of the matched claim.\n\n\nPayment billed amount was modified due to a discrepancy with the matched claim without comparing to the primary payer's adjudication.\n\n\nPayer changed in payment posting.\n\n\nNAA and NRP suppressed due to contract variance."
+      "description": "Contains an action that was taken for the payment.",
+      "entries": [
+        "Selected procedure code cannot be used for this payment.",
+        "Both a takeback and a $0 denial are present for the invoice.",
+        "This payment has a corresponding forward balance PLB payment.",
+        "This payment has an unbalanced forward balance PLB payment.",
+        "The claim charge amount was increased due to charge not found extension.",
+        "Remittance workqueue comment.",
+        "Undistributed remittance workqueue error message.",
+        "This payment was automatically distributed.",
+        "Service line paid amounts may have change due to the payment distribution setting in the RMO.",
+        "Remittance Note",
+        "MA07 - The claim information has also been forwarded to Medicaid for review.",
+        "MA18 - The claim information is also being forwarded to the patient's supplemental insurer.",
+        "Updated subscriber ID is identical to the current subscriber ID. No update necessary.",
+        "New subscriber ID missing from file. No update will occur.",
+        "Insurance ID will be updated upon acceptance of the run.",
+        "Supplemental Remittance Information",
+        "The invoice paid amount was updated as a result of the interest payment received in the AMT-I segment.",
+        "Interest in the claim level AMT-I segment.",
+        "Payor sent procedure.",
+        "The paid amount for this claim was calculated by the system successfully.",
+        "Charge(s) not found during calculation of the paid amounts.",
+        "The claim paid amount can not be successfully distributed.",
+        "Remittance file contains invalid invoice number or service date.",
+        "SVC segments cannot be created when the remittance file charge amount does not match the invoice.",
+        "An extension has been configured to error out payments with a specific claim status code.",
+        "A service level adjustment has been added by a remittance balancing extension.",
+        "A claim level adjustment has been added by a remittance balancing extension.",
+        "Pre-payment comment",
+        "Capitation adjustment removed from claim level and added to service line level.",
+        "Tax amount was removed from check.",
+        "Tax amount removed from invoice payment.",
+        "Claim paid amount updated by supplemental payment programming point.",
+        "Service level paid amounts have been updated by a supplemental payment extension.",
+        "Payment automatically generated from remittance image record.",
+        "Invoice error message",
+        "This payment could not be distributed.",
+        "Sum of all invoices meeting the external invoice format.",
+        "Overridden load error message",
+        "Overridden load error comment",
+        "Remittance run comment",
+        "No automatic distribution. Unmatched remittance amount does not equal unmatched claim amount.",
+        "No automatic distribution. A non-zero unmatched claim line is required.",
+        "Payment received for rejected invoice will be posted to an accepted invoice.",
+        "Payment made from a Consumer Spending Account",
+        "Insurance ID format does not match defined payer/plan format. No update will occur.",
+        "Payment was modified due to a discrepancy with the billed amount of the matched claim.",
+        "Payment billed amount was modified due to a discrepancy with the matched claim without comparing to the primary payer's adjudication.",
+        "Payer changed in payment posting.",
+        "NAA and NRP suppressed due to contract variance."
+      ]
     },
     {
-      "index": 68,
+      "ordinalPosition": 4,
       "name": "CLM_PMT_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

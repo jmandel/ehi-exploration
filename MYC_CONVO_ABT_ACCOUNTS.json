@@ -1,38 +1,49 @@
 {
-  "table_name": "MYC_CONVO_ABT_ACCOUNTS",
+  "name": "MYC_CONVO_ABT_ACCOUNTS",
   "description": "Guarantor accounts associated with MyChart message conversation.",
-  "primary_key": {
-    "column_name": "THREAD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "THREAD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "THREAD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the thread record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the guarantor account that this conversation is about."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "GUAR_BILL_SYS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This the account type (PB, HB, SBO) for the guarantor account for this conversation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPhysician Billing\n\n\nHospital Billing\n\n\nSingle Billing Office"
+      "description": "This the account type (PB, HB, SBO) for the guarantor account for this conversation.",
+      "entries": [
+        "Physician Billing",
+        "Hospital Billing",
+        "Single Billing Office"
+      ]
     }
   ]
 }

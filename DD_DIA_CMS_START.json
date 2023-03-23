@@ -1,552 +1,888 @@
 {
-  "table_name": "DD_DIA_CMS_START",
+  "name": "DD_DIA_CMS_START",
   "description": "This table contains data elements submitted for CMS ESRD patient registration forms (CMS-2728).",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "FORM_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The CMS 2728 form identifier."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DLYS_REG_FORM_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The CMS 2728 form type, such as initial registration or reentitlement.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInitialDialysis\n\n\nReentitlementRestartDialysis\n\n\nReentitlementDialysisAfterTransplantFailed\n\n\nSupplementalTraining"
+      "description": "The CMS 2728 form type, such as initial registration or reentitlement.",
+      "entries": [
+        "InitialDialysis",
+        "ReentitlementRestartDialysis",
+        "ReentitlementDialysisAfterTransplantFailed",
+        "SupplementalTraining"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "ADMISSION_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's dialysis admission facility that is submitting this CMS 2728 form."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "PAT_FIRST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's first name."
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "PAT_MIDDLE_INITIAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's middle initial."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "PAT_LAST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's last name."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "DLYS_NAME_SUFFIX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's name suffix.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nJr\n\n\nSr\n\n\nII\n\n\nIII\n\n\nIV\n\n\nV\n\n\nVI"
+      "description": "The patient's name suffix.",
+      "entries": [
+        "Jr",
+        "Sr",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI"
+      ]
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "DLYS_PAT_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's sex assigned at birth.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nF\n\n\nM"
+      "description": "The patient's sex assigned at birth.",
+      "entries": [
+        "F",
+        "M"
+      ]
     },
     {
-      "index": 66,
+      "ordinalPosition": 10,
       "name": "PAT_BIRTH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's date of birth."
     },
     {
-      "index": 71,
+      "ordinalPosition": 11,
       "name": "PAT_HICNUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's Medicare health insurance claim number."
     },
     {
-      "index": 76,
+      "ordinalPosition": 12,
       "name": "PAT_MBI_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's Medicare Beneficiary Identifier number."
     },
     {
-      "index": 81,
+      "ordinalPosition": 13,
       "name": "PAT_SSN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's Social Security number."
     },
     {
-      "index": 86,
+      "ordinalPosition": 14,
       "name": "MAIL_ADDRESS_STREET_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The first line of the street address of the patient's mailing address."
     },
     {
-      "index": 91,
+      "ordinalPosition": 15,
       "name": "MAIL_ADDRESS_STREET_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The second line of the street address of the patient's mailing address."
     },
     {
-      "index": 96,
+      "ordinalPosition": 16,
       "name": "MAIL_ADDRESS_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The city of the patient's mailing address."
     },
     {
-      "index": 101,
+      "ordinalPosition": 17,
       "name": "MAIL_ADDRESS_TAX_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The state of the patient's mailing address.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The state of the patient's mailing address."
     },
     {
-      "index": 107,
+      "ordinalPosition": 18,
       "name": "MAIL_ADDRESS_COUNTY_2_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The county of the patient's mailing address.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The county of the patient's mailing address."
     },
     {
-      "index": 113,
+      "ordinalPosition": 19,
       "name": "MAIL_ADDRESS_ZIP_EXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ZIP code extension of the patient's mailing address."
     },
     {
-      "index": 118,
+      "ordinalPosition": 20,
       "name": "PHONE_AREA_CODE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The area code of the patient's phone number."
     },
     {
-      "index": 123,
+      "ordinalPosition": 21,
       "name": "PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's phone number, minus the area code."
     },
     {
-      "index": 128,
+      "ordinalPosition": 22,
       "name": "DLYS_PAT_CNTRY_OF_ORG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's country of origin.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAfghanistan\n\n\nAland Islands\n\n\nAlbania\n\n\nAlgeria\n\n\nAmerican Samoa\n\n\nAndorra\n\n\nAngola\n\n\nAnguilla\n\n\nAntarctica\n\n\nAntigua and Barbuda\n\n\nArgentina\n\n\nArmenia\n\n\nAruba\n\n\nAustralia\n\n\nAustria\n\n\nAzerbaijan\n\n\nBahamas\n\n\nBahrain\n\n\nBangladesh\n\n\nBarbados\n\n\nBelarus\n\n\nBelgium\n\n\nBelize\n\n\nBenin\n\n\nBermuda\n\n\nBhutan\n\n\nBolivia\n\n\nBosnia and Herzegovina\n\n\nBotswana\n\n\nBouvet Island\n\n\nBrazil\n\n\nBritish Indian Ocean Territory\n\n\nBrunei Darussalam\n\n\nBulgaria\n\n\nBurkina Faso\n\n\nBurundi\n\n\nCambodia\n\n\nCameroon\n\n\nCanada\n\n\nCape Verde\n\n\nCayman Islands\n\n\nCentral African Republic\n\n\nChad\n\n\nChile\n\n\nChina\n\n\nChristmas Island\n\n\nCocos (Keeling) Islands\n\n\nColombia\n\n\nComoros\n\n\nCongo\n\n\nCongo, The Democratic Republic of the \n\n\nCook Islands\n\n\nCosta Rica\n\n\nCote D'Ivoire\n\n\nCroatia\n\n\nCuba\n\n\nCyprus\n\n\nCzech Republic\n\n\nDenmark\n\n\nDjibouti\n\n\nDominica\n\n\nDominican Republic\n\n\nEcuador\n\n\nEgypt\n\n\nEl Salvador\n\n\nEquatorial Guinea\n\n\nEritrea\n\n\nEstonia\n\n\nEthiopia\n\n\nFalkland Islands (Malvinas)\n\n\nFaroe Islands\n\n\nFiji\n\n\nFinland\n\n\nFrance\n\n\nFrench Guiana\n\n\nFrench Polynesia\n\n\nFrench Southern Territories\n\n\nGabon\n\n\nGambia\n\n\nGeorgia\n\n\nGermany\n\n\nGhana\n\n\nGibraltar\n\n\nGreece\n\n\nGreenland\n\n\nGrenada\n\n\nGuadeloupe\n\n\nGuam\n\n\nGuatemala\n\n\nGuinea\n\n\nGuinea-Bissau\n\n\nGuyana\n\n\nHaiti\n\n\nHeard Island and McDonald Islands\n\n\nHoly See (Vatican City State)\n\n\nHonduras\n\n\nHong Kong\n\n\nHungary\n\n\nIceland\n\n\nIndia\n\n\nIndonesia\n\n\nIran, Islamic Republic of\n\n\nIraq\n\n\nIreland\n\n\nIsrael\n\n\nItaly\n\n\nJamaica\n\n\nJapan\n\n\nJordan\n\n\nKazakhstan\n\n\nKenya\n\n\nKiribati\n\n\nKorea, Democratic People's Republic of (North Korea)\n\n\nKorea, Republic of (South Korea)\n\n\nKuwait\n\n\nKyrgyzstan\n\n\nLao People's Democratic Republic (Laos)\n\n\nLatvia\n\n\nLebanon\n\n\nLesotho\n\n\nLiberia\n\n\nLibyan Arab Jamahiriya (Libya)\n\n\nLiechtenstein\n\n\nLithuania\n\n\nLuxembourg\n\n\nMacao\n\n\nMacedonia, The Former Yugoslav Republic of\n\n\nMadagascar\n\n\nMalawi\n\n\nMalaysia\n\n\nMaldives\n\n\nMali\n\n\nMalta\n\n\nMarshall Islands\n\n\nMartinique\n\n\nMauritania\n\n\nMauritius\n\n\nMayotte\n\n\nMexico\n\n\nMicronesia\n\n\nMoldova, Republic of\n\n\nMonaco\n\n\nMongolia\n\n\nMontserrat\n\n\nMorocco\n\n\nMozambique\n\n\nMyanmar\n\n\nNamibia\n\n\nNauru\n\n\nNepal\n\n\nNetherlands\n\n\nNetherlands Antilles\n\n\nNew Caledonia\n\n\nNew Zealand\n\n\nNicaragua\n\n\nNiger\n\n\nNigeria\n\n\nNiue\n\n\nNorfolk Island\n\n\nNorthern Mariana Islands\n\n\nNorway\n\n\nOman\n\n\nPakistan\n\n\nPalau\n\n\nPalestinian Territory, Occupied\n\n\nPanama\n\n\nPapua New Guinea\n\n\nParaguay\n\n\nPeru\n\n\nPhilippines\n\n\nPitcairn\n\n\nPoland\n\n\nPortugal\n\n\nPuerto Rico\n\n\nQatar\n\n\nReunion\n\n\nRomania\n\n\nRussian Federation\n\n\nRwanda\n\n\nSaint Helena\n\n\nSaint Kitts and Nevis\n\n\nSaint Lucia\n\n\nSaint Pierre and Miquelon\n\n\nSaint Vincent and The Grenadines\n\n\nSamoa\n\n\nSan Marino\n\n\nSao Tome and Principe\n\n\nSaudi Arabia\n\n\nSenegal\n\n\nSerbia and Montenegro\n\n\nSeychelles\n\n\nSierra Leone\n\n\nSingapore\n\n\nSlovakia\n\n\nSlovenia\n\n\nSolomon Islands\n\n\nSomalia\n\n\nSouth Africa\n\n\nSouth Georgia and South Sandwich Islands\n\n\nSpain\n\n\nSri Lanka\n\n\nSudan\n\n\nSuriname\n\n\nSvalbard and Jan Mayen\n\n\nSwaziland\n\n\nSweden\n\n\nSwitzerland\n\n\nSyrian Arab Republic\n\n\nTaiwan\n\n\nTajikistan\n\n\nTanzania, United Republic of\n\n\nThailand\n\n\nTimor-Leste\n\n\nTogo\n\n\nTokelau\n\n\nTonga\n\n\nTrinidad and Tobago\n\n\nTunisia\n\n\nTurkey\n\n\nTurkmenistan\n\n\nTurks and Caicos Islands\n\n\nTuvalu\n\n\nUganda\n\n\nUkraine\n\n\nUnited Arab Emirates\n\n\nGreat Britain\n\n\nUnited States\n\n\nUnited States Minor Outlying Islands\n\n\nUruguay\n\n\nUzbekistan\n\n\nVanuatu\n\n\nVenezuela\n\n\nVietnam\n\n\nVirgin Islands (British)\n\n\nVirgin Islands (U.S.)\n\n\nWallis and Futuna\n\n\nWestern Sahara\n\n\nYemen\n\n\nZambia\n\n\nZimbabwe"
+      "description": "The patient's country of origin.",
+      "entries": [
+        "Afghanistan",
+        "Aland Islands",
+        "Albania",
+        "Algeria",
+        "American Samoa",
+        "Andorra",
+        "Angola",
+        "Anguilla",
+        "Antarctica",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Aruba",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bermuda",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Bouvet Island",
+        "Brazil",
+        "British Indian Ocean Territory",
+        "Brunei Darussalam",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Cayman Islands",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Christmas Island",
+        "Cocos (Keeling) Islands",
+        "Colombia",
+        "Comoros",
+        "Congo",
+        "Congo, The Democratic Republic of the",
+        "Cook Islands",
+        "Costa Rica",
+        "Cote D'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Falkland Islands (Malvinas)",
+        "Faroe Islands",
+        "Fiji",
+        "Finland",
+        "France",
+        "French Guiana",
+        "French Polynesia",
+        "French Southern Territories",
+        "Gabon",
+        "Gambia",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Gibraltar",
+        "Greece",
+        "Greenland",
+        "Grenada",
+        "Guadeloupe",
+        "Guam",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Heard Island and McDonald Islands",
+        "Holy See (Vatican City State)",
+        "Honduras",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran, Islamic Republic of",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, Democratic People's Republic of (North Korea)",
+        "Korea, Republic of (South Korea)",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Lao People's Democratic Republic (Laos)",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libyan Arab Jamahiriya (Libya)",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macao",
+        "Macedonia, The Former Yugoslav Republic of",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Martinique",
+        "Mauritania",
+        "Mauritius",
+        "Mayotte",
+        "Mexico",
+        "Micronesia",
+        "Moldova, Republic of",
+        "Monaco",
+        "Mongolia",
+        "Montserrat",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "Netherlands Antilles",
+        "New Caledonia",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Niue",
+        "Norfolk Island",
+        "Northern Mariana Islands",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Palestinian Territory, Occupied",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Pitcairn",
+        "Poland",
+        "Portugal",
+        "Puerto Rico",
+        "Qatar",
+        "Reunion",
+        "Romania",
+        "Russian Federation",
+        "Rwanda",
+        "Saint Helena",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Pierre and Miquelon",
+        "Saint Vincent and The Grenadines",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "South Georgia and South Sandwich Islands",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Svalbard and Jan Mayen",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syrian Arab Republic",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania, United Republic of",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tokelau",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Turks and Caicos Islands",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "Great Britain",
+        "United States",
+        "United States Minor Outlying Islands",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Venezuela",
+        "Vietnam",
+        "Virgin Islands (British)",
+        "Virgin Islands (U.S.)",
+        "Wallis and Futuna",
+        "Western Sahara",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe"
+      ]
     },
     {
-      "index": 375,
+      "ordinalPosition": 23,
       "name": "DLYS_PAT_ETHNICITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's ethnicity.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNon-Hispanic or Latino\n\n\nHispanic or Latino"
+      "description": "The patient's ethnicity.",
+      "entries": [
+        "Non-Hispanic or Latino",
+        "Hispanic or Latino"
+      ]
     },
     {
-      "index": 384,
+      "ordinalPosition": 24,
       "name": "PAT_TRIBE_CODE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's tribe code."
     },
     {
-      "index": 389,
+      "ordinalPosition": 25,
       "name": "DLYS_ETH_SELF_REP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient's race and ethnicity were self-reported.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelfReported\n\n\nNotSelfReported\n\n\nFamilyReported\n\n\nPatientDeclined"
+      "description": "Whether the patient's race and ethnicity were self-reported.",
+      "entries": [
+        "SelfReported",
+        "NotSelfReported",
+        "FamilyReported",
+        "PatientDeclined"
+      ]
     },
     {
-      "index": 400,
+      "ordinalPosition": 26,
       "name": "ESRD_MEDICARE_APPLY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient is applying for end stage renal disease Medicare coverage.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether the patient is applying for end stage renal disease Medicare coverage.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 409,
+      "ordinalPosition": 27,
       "name": "PRIOR_DLYS_EMPY_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's employment status six months prior to renal failure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnemployed\n\n\nFullTime\n\n\nPartTime\n\n\nHomemaker\n\n\nRetiredAgePref\n\n\nRetiredDisability\n\n\nMedicalLeave\n\n\nStudent"
+      "description": "The patient's employment status six months prior to renal failure.",
+      "entries": [
+        "Unemployed",
+        "FullTime",
+        "PartTime",
+        "Homemaker",
+        "RetiredAgePref",
+        "RetiredDisability",
+        "MedicalLeave",
+        "Student"
+      ]
     },
     {
-      "index": 424,
+      "ordinalPosition": 28,
       "name": "CURRENT_DLYS_EMPY_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's current employment status.\n\n\n The category values for this column were already listed for column: PRIOR_DLYS_EMPY_STATUS_C_NAME"
+      "description": "The patient's current employment status."
     },
     {
-      "index": 430,
+      "ordinalPosition": 29,
       "name": "PAT_HEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's height."
     },
     {
-      "index": 435,
+      "ordinalPosition": 30,
       "name": "DLYS_HEIGHT_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unit used for the patient's height.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInch\n\n\nCentimeter"
+      "description": "The unit used for the patient's height.",
+      "entries": [
+        "Inch",
+        "Centimeter"
+      ]
     },
     {
-      "index": 444,
+      "ordinalPosition": 31,
       "name": "PAT_DRY_WEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's dry weight."
     },
     {
-      "index": 449,
+      "ordinalPosition": 32,
       "name": "DLYS_WEIGHT_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unit used for the patient's weight.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPound\n\n\nKilogram"
+      "description": "The unit used for the patient's weight.",
+      "entries": [
+        "Pound",
+        "Kilogram"
+      ]
     },
     {
-      "index": 458,
+      "ordinalPosition": 33,
       "name": "DIA_CMS_GFR_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The method used to calculate the patient's glomerular filtration rate (GFR).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMDRD\n\n\nIDMS\n\n\nOMDRD\n\n\nBIDMS"
+      "description": "The method used to calculate the patient's glomerular filtration rate (GFR).",
+      "entries": [
+        "MDRD",
+        "IDMS",
+        "OMDRD",
+        "BIDMS"
+      ]
     },
     {
-      "index": 469,
+      "ordinalPosition": 34,
       "name": "PRIM_CAUSE_RENAL_FAIL_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ICD-10 CM code of the patient's primary cause of renal failure."
     },
     {
-      "index": 474,
+      "ordinalPosition": 35,
       "name": "EPO_RECEIVED_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient received exogenous erythropoietin (EPO) or equivalent prior to end stage renal disease therapy.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "Whether the patient received exogenous erythropoietin (EPO) or equivalent prior to end stage renal disease therapy.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 484,
+      "ordinalPosition": 36,
       "name": "EPO_DIA_CMS_DATE_RANGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The time range in which exogenous erythropoietin (EPO) or equivalent was administered to the patient prior to end stage renal disease therapy.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLessThan6Months\n\n\n6-12Months\n\n\nGreaterThan12Months"
+      "description": "The time range in which exogenous erythropoietin (EPO) or equivalent was administered to the patient prior to end stage renal disease therapy.",
+      "entries": [
+        "LessThan6Months",
+        "6-12Months",
+        "GreaterThan12Months"
+      ]
     },
     {
-      "index": 494,
+      "ordinalPosition": 37,
       "name": "NEPH_CARE_RECV_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient was under nephrologist care before starting end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: EPO_RECEIVED_DIA_CMS_YNU_C_NAME"
+      "description": "Whether the patient was under nephrologist care before starting end stage renal disease therapy."
     },
     {
-      "index": 500,
+      "ordinalPosition": 38,
       "name": "NEPH_CARE_DIA_CMS_DATE_RANGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The time range in which the patient was under nephrologist care prior to end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: EPO_DIA_CMS_DATE_RANGE_C_NAME"
+      "description": "The time range in which the patient was under nephrologist care prior to end stage renal disease therapy."
     },
     {
-      "index": 506,
+      "ordinalPosition": 39,
       "name": "DIET_CARE_RECV_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient was under kidney dietician care prior to end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: EPO_RECEIVED_DIA_CMS_YNU_C_NAME"
+      "description": "Whether the patient was under kidney dietician care prior to end stage renal disease therapy."
     },
     {
-      "index": 512,
+      "ordinalPosition": 40,
       "name": "DIET_CARE_DIA_CMS_DATE_RANGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The time range in which the patient was under kidney dietician care prior to end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: EPO_DIA_CMS_DATE_RANGE_C_NAME"
+      "description": "The time range in which the patient was under kidney dietician care prior to end stage renal disease therapy."
     },
     {
-      "index": 518,
+      "ordinalPosition": 41,
       "name": "DIA_CMS_FIRST_ACCESS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of access used for the first outpatient dialysis treatment prior to end stage renal disease therapy.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAVF\n\n\nGraft\n\n\nCatheter\n\n\nOther"
+      "description": "The type of access used for the first outpatient dialysis treatment prior to end stage renal disease therapy.",
+      "entries": [
+        "AVF",
+        "Graft",
+        "Catheter",
+        "Other"
+      ]
     },
     {
-      "index": 529,
+      "ordinalPosition": 42,
       "name": "MATURE_AVF_PRESENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient had a maturing arteriovenous fistula (AVF) present prior to end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: ESRD_MEDICARE_APPLY_YN"
+      "description": "Whether the patient had a maturing arteriovenous fistula (AVF) present prior to end stage renal disease therapy."
     },
     {
-      "index": 535,
+      "ordinalPosition": 43,
       "name": "MATURE_AVG_PRESENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient had a maturing arteriovenous graft (AVG) present prior to end stage renal disease therapy.\n\n\n The category values for this column were already listed for column: ESRD_MEDICARE_APPLY_YN"
+      "description": "Whether the patient had a maturing arteriovenous graft (AVG) present prior to end stage renal disease therapy."
     },
     {
-      "index": 541,
+      "ordinalPosition": 44,
       "name": "DLYS_TRT_LOCATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The primary setting in which the patient receives dialysis treatment, such as the patient's home, a dialysis treatment center, skilled nursing facility, or long-term care facility.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHome\n\n\nDialysis Facility/ Center\n\n\nSNF/ Long Term Care Facility"
+      "description": "The primary setting in which the patient receives dialysis treatment, such as the patient's home, a dialysis treatment center, skilled nursing facility, or long-term care facility.",
+      "entries": [
+        "Home",
+        "Dialysis Facility/ Center",
+        "SNF/ Long Term Care Facility"
+      ]
     },
     {
-      "index": 551,
+      "ordinalPosition": 45,
       "name": "DLYS_TRT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of dialysis treatment the patient receives, e.g. hemodialysis or peritoneal dialysis.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHemodialysis\n\n\nCAPD\n\n\nCCPD\n\n\nOther"
+      "description": "The type of dialysis treatment the patient receives, e.g. hemodialysis or peritoneal dialysis.",
+      "entries": [
+        "Hemodialysis",
+        "CAPD",
+        "CCPD",
+        "Other"
+      ]
     },
     {
-      "index": 562,
+      "ordinalPosition": 46,
       "name": "DIALYSIS_SESSIONS_PER_WEEK",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of hemodialysis sessions per week prescribed for the patient."
     },
     {
-      "index": 567,
+      "ordinalPosition": 47,
       "name": "DIALYSIS_SESSION_LENGTH_HOURS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The duration, in hours, of hemodialysis sessions prescribed for the patient."
     },
     {
-      "index": 572,
+      "ordinalPosition": 48,
       "name": "CHRONIC_DIALYSIS_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient began a regular course of dialysis treatments."
     },
     {
-      "index": 577,
+      "ordinalPosition": 49,
       "name": "FACILITY_TREATMENT_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient began receiving dialysis treatments at the current facility."
     },
     {
-      "index": 582,
+      "ordinalPosition": 50,
       "name": "TXP_OPTIONS_PROVIDED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient has been informed of their options for receiving a kidney transplant.\n\n\n The category values for this column were already listed for column: ESRD_MEDICARE_APPLY_YN"
+      "description": "Whether the patient has been informed of their options for receiving a kidney transplant."
     },
     {
-      "index": 588,
+      "ordinalPosition": 51,
       "name": "ATTENDING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's attending provider for dialysis treatments."
     },
     {
-      "index": 593,
+      "ordinalPosition": 52,
       "name": "ATTENDING_PROV_REMARKS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Miscellaneous remarks entered by the patient's attending provider."
     },
     {
-      "index": 598,
+      "ordinalPosition": 53,
       "name": "LAB_ALBUMIN_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's serum albumin lab value."
     },
     {
-      "index": 603,
+      "ordinalPosition": 54,
       "name": "LAB_ALBUMIN_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's serum albumin lab collection date."
     },
     {
-      "index": 608,
+      "ordinalPosition": 55,
       "name": "LAB_ALBUMIN_LOWER_LIMIT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's serum albumin lab lower limit value."
     },
     {
-      "index": 613,
+      "ordinalPosition": 56,
       "name": "LAB_ALBUMIN_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's serum albumin lab method.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBCG\n\n\nBCP"
+      "description": "The patient's serum albumin lab method.",
+      "entries": [
+        "BCG",
+        "BCP"
+      ]
     },
     {
-      "index": 622,
+      "ordinalPosition": 57,
       "name": "LAB_CREATININE_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's serum creatinine lab value."
     },
     {
-      "index": 627,
+      "ordinalPosition": 58,
       "name": "LAB_CREATININE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's serum creatinine lab collection date."
     },
     {
-      "index": 632,
+      "ordinalPosition": 59,
       "name": "LAB_HEMOGLOBIN_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's hemoglobin lab value."
     },
     {
-      "index": 637,
+      "ordinalPosition": 60,
       "name": "LAB_HEMOGLOBIN_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's hemoglobin lab collection date."
     },
     {
-      "index": 642,
+      "ordinalPosition": 61,
       "name": "LAB_HBA1C_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's glycated hemoglobin (HbA1c) lab value that was collected within 45 days prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 647,
+      "ordinalPosition": 62,
       "name": "LAB_HBA1C_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's glycated hemoglobin (HbA1C) lab date that was collected within 45 days prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 652,
+      "ordinalPosition": 63,
       "name": "LAB_LIPID_TC_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's lipid profile total cholesterol lab value that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 657,
+      "ordinalPosition": 64,
       "name": "LAB_LIPID_TC_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's lipid profile total cholesterol lab date that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 662,
+      "ordinalPosition": 65,
       "name": "LAB_LIPID_LDL_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's lipid profile LDL cholesterol lab value that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 667,
+      "ordinalPosition": 66,
       "name": "LAB_LIPID_LDL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's lipid profile LDL cholesterol lab date that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 672,
+      "ordinalPosition": 67,
       "name": "LAB_LIPID_HDL_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's lipid profile HDL cholesterol lab value that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 677,
+      "ordinalPosition": 68,
       "name": "LAB_LIPID_HDL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's lipid profile HDL cholesterol lab date that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 682,
+      "ordinalPosition": 69,
       "name": "LAB_LIPID_TRIGLYCERIDES_VALUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's lipid profile triglyceride lab value that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 687,
+      "ordinalPosition": 70,
       "name": "LAB_LIPID_TRIGLYCERIDES_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's lipid profile triglyceride lab date that was collected within one year prior to the first dialysis treatment or kidney transplant (whichever is more recent)."
     },
     {
-      "index": 692,
+      "ordinalPosition": 71,
       "name": "TRAINING_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's dialysis training facility."
     },
     {
-      "index": 697,
+      "ordinalPosition": 72,
       "name": "TRAINING_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The start date for the patient's dialysis training."
     },
     {
-      "index": 702,
+      "ordinalPosition": 73,
       "name": "TRAINING_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The end date for the patient's dialysis training."
     },
     {
-      "index": 707,
+      "ordinalPosition": 74,
       "name": "TRAINING_DLYS_TRT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of training given to a patient in preparation for dialysis treatment.\n\n\n The category values for this column were already listed for column: DLYS_TRT_TYPE_C_NAME"
+      "description": "The type of training given to a patient in preparation for dialysis treatment."
     },
     {
-      "index": 713,
+      "ordinalPosition": 75,
       "name": "DLYS_SELFCARE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient is expected to perform self-care at home or in-center after dialysis training.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHome\n\n\nIncenter"
+      "description": "Whether the patient is expected to perform self-care at home or in-center after dialysis training.",
+      "entries": [
+        "Home",
+        "Incenter"
+      ]
     },
     {
-      "index": 722,
+      "ordinalPosition": 76,
       "name": "SELF_DIALYZE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient will self-dialyze after completing dialysis training.\n\n\n The category values for this column were already listed for column: ESRD_MEDICARE_APPLY_YN"
+      "description": "Whether the patient will self-dialyze after completing dialysis training."
     },
     {
-      "index": 728,
+      "ordinalPosition": 77,
       "name": "TRAINING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's provider for dialysis training."
     },
     {
-      "index": 733,
+      "ordinalPosition": 78,
       "name": "MAIL_ADDRESS_ZIP",
       "type": "VARCHAR",
       "discontinued": false,

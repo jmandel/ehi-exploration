@@ -1,38 +1,47 @@
 {
-  "table_name": "PAT_MCARE_PLAN_DOC_PREF",
+  "name": "PAT_MCARE_PLAN_DOC_PREF",
   "description": "Table for Medicare Plan Document preferences.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MCARE_PLAN_DOC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Medicare plan document.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Medicare plan document."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "MCARE_DOC_DELIV_MTHD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Delivery method type for Medicare plan documents.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPaper"
+      "description": "Delivery method type for Medicare plan documents.",
+      "entries": [
+        "Paper"
+      ]
     }
   ]
 }

@@ -1,34 +1,44 @@
 {
-  "table_name": "ENROLL_STAT_CHNG_DT_HX",
+  "name": "ENROLL_STAT_CHNG_DT_HX",
   "description": "This table contains the history of enrollment status change effective dates for a patient in a research study.",
-  "primary_key": {
-    "column_name": "ENROLL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ENROLL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the enrollment record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the enrollment status change date in the enrollment record. Together with ENROLL_ID, this forms the foreign key to the ENROLL_STAT_CHNG_DT_HX table"
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple enrollment status change dates associated with the enrollment record and the ENROLL_STAT_CHNG_HX_C from the ENROLL_STAT_CHNG_HX table"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_ENROLL_STAT_CHNG_DATE",
       "type": "DATETIME",
       "discontinued": false,

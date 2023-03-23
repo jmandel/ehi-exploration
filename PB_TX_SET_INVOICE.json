@@ -1,41 +1,54 @@
 {
-  "table_name": "PB_TX_SET_INVOICE",
+  "name": "PB_TX_SET_INVOICE",
   "description": "The PB_TX_SET_INVOICE table lists invoices associated with a premium billing payment transaction set.",
-  "primary_key": {
-    "column_name": "PB_TXSET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PB_TXSET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PB_TXSET_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the premium billing transaction set."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for the invoice on the transaction set."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PB_INVC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the invoice associated with the transaction set."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "INVOICE_PORTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The invoice portion covered by this transaction set.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntire Invoice\n\n\nCustom Portion of Invoice\n\n\nRemaining Invoice\n\n\nAll Outstanding Txs\n\n\nNone. Custom PTS Advice used in PBU"
+      "description": "The invoice portion covered by this transaction set.",
+      "entries": [
+        "Entire Invoice",
+        "Custom Portion of Invoice",
+        "Remaining Invoice",
+        "All Outstanding Txs",
+        "None. Custom PTS Advice used in PBU"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "INVOICE_BILL_DATE",
       "type": "DATETIME",
       "discontinued": false,

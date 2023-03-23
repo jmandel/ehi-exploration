@@ -1,38 +1,49 @@
 {
-  "table_name": "OR_PKLST_SUP_LIST",
+  "name": "OR_PKLST_SUP_LIST",
   "description": "The OR_PKLST_SUP_LIST table contains OR management system pick list supply list.",
-  "primary_key": {
-    "column_name": "PICK_LIST_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PICK_LIST_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PICK_LIST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique internal ID of the pick list record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total number of lines of supply information in the pick list."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "STATIC_UDI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Static device identifier"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "STATIC_UDI_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Static device identifier type \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGS1\n\n\nHIBC\n\n\nICCBBA"
+      "description": "Static device identifier type",
+      "entries": [
+        "GS1",
+        "HIBC",
+        "ICCBBA"
+      ]
     }
   ]
 }

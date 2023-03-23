@@ -1,34 +1,44 @@
 {
-  "table_name": "BLOOD_REQTS_ADD_INFO_AUDT",
+  "name": "BLOOD_REQTS_ADD_INFO_AUDT",
   "description": "This table extracts the related multiple response Blood Special Requirements - Additional Info - Audit (I EPT 18026) item, which stores the audit trail of additional information for blood special requirements for the patient. It contains the current values as well as all previous values for this patient.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the associated instance of editing blood special requirements in the patient's record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of multiple edited pieces of information associated with the patient and the editing instance."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "BLOOD_REQTS_ADD_INFO_CHANGES",
       "type": "VARCHAR",
       "discontinued": false,

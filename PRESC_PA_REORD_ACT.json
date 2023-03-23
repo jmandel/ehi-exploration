@@ -1,43 +1,55 @@
 {
-  "table_name": "PRESC_PA_REORD_ACT",
+  "name": "PRESC_PA_REORD_ACT",
   "description": "This table holds the history of actions taken after the medication being authorized was reordered.",
-  "primary_key": {
-    "column_name": "REFERRAL_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the referral record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REORD_ACT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds the history of decisions made about continuing with this prior authorization after a reorder of the associated order occurred.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrescription Reordered\n\n\nContinue with Prior Authorization Request\n\n\nCancel Prior Authorization Request\n\n\nSend a New Request"
+      "description": "This item holds the history of decisions made about continuing with this prior authorization after a reorder of the associated order occurred.",
+      "entries": [
+        "Prescription Reordered",
+        "Continue with Prior Authorization Request",
+        "Cancel Prior Authorization Request",
+        "Send a New Request"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "REORD_ACT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item holds the ID of the user who made the decision about the reorder status."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "REORD_ACT_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item holds the instant the decision was made about the reorder status."
     }

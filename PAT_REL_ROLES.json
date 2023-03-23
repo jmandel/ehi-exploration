@@ -1,31 +1,37 @@
 {
-  "table_name": "PAT_REL_ROLES",
+  "name": "PAT_REL_ROLES",
   "description": "This table contains patient contact roles toward the patient for patient-level relationships. The records included in this table are Patient Relationships (RLA) records.",
-  "primary_key": {
-    "column_name": "PAT_RELATIONSHIP_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_RELATIONSHIP_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_RELATIONSHIP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient contact record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ROLE_TOWARDS_PAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The role category ID of the patient contact at the patient-level.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The role category ID of the patient contact at the patient-level."
     }
   ]
 }

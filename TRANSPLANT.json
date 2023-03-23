@@ -1,80 +1,118 @@
 {
-  "table_name": "TRANSPLANT",
+  "name": "TRANSPLANT",
   "description": "This table contains the basic information about each transplant patient encounter in your system.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique system identifier for the patient encounter. Contact serial number is unique across all patients and all contacts."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "This is a numeric representation of the date of this encounter in your system. The integer portion of the number specifies the date of the encounter. The digits after the decimal point indicate multiple visits on one day."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the patient encounter took place."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ORGAN_TRANSPLAN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The organ which was transplanted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBone Marrow\n\n\nCornea\n\n\nHeart\n\n\nKidney\n\n\nLiver\n\n\nLung\n\n\nPancreas"
+      "description": "The organ which was transplanted.",
+      "entries": [
+        "Bone Marrow",
+        "Cornea",
+        "Heart",
+        "Kidney",
+        "Liver",
+        "Lung",
+        "Pancreas"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "ORGAN_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source of where the transplanted organ came from.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCadaver\n\n\nLiving related donor\n\n\nLiving non-related donor"
+      "description": "The source of where the transplanted organ came from.",
+      "entries": [
+        "Cadaver",
+        "Living related donor",
+        "Living non-related donor"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 7,
       "name": "TRANSPLANT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The actual date on which the operation took place."
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "PRIOR_REJECTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Set to Y  if the patient has had a prior rejection episode.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Set to Y  if the patient has had a prior rejection episode.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 60,
+      "ordinalPosition": 9,
       "name": "ANTIGEN_MATCH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Antigens encourage an immune response in the body. This column contains information about the patient's antigen match level. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOne\n\n\nTwo\n\n\nThree\n\n\nFour\n\n\nFive\n\n\nSix"
+      "description": "Antigens encourage an immune response in the body. This column contains information about the patient's antigen match level.",
+      "entries": [
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six"
+      ]
     },
     {
-      "index": 73,
+      "ordinalPosition": 10,
       "name": "TRANSPLANT_LOC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains information about the location of the transplanted organ. For example, \"bilateral\", \"center\", etc. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBilateral\n\n\nCenter\n\n\nLeft\n\n\nRight"
+      "description": "This column contains information about the location of the transplanted organ. For example, \"bilateral\", \"center\", etc.",
+      "entries": [
+        "Bilateral",
+        "Center",
+        "Left",
+        "Right"
+      ]
     }
   ]
 }

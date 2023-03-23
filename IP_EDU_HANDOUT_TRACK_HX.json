@@ -1,101 +1,115 @@
 {
-  "table_name": "IP_EDU_HANDOUT_TRACK_HX",
+  "name": "IP_EDU_HANDOUT_TRACK_HX",
   "description": "Stores a history of all educaation patient materials marked as given or viewed by the patient.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the education record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HANDOUT_LINK_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the handout link history for all patient handouts received by the patient."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "HANDOUT_NAME_HX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The handout name history for all patient handouts received."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "GIVEN_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user ID for all handouts that have been directly marked as given to the patient."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "VIEWED_HX_MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the history of all MyChart accounts that viewed the patient material."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "RECEVD_HX_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant history for any patient material that was received by the patient."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "SMARTTEXT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ETX ID history for all clinical references that have been viewed by the patient."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "SMARTTEXT_ID_SMARTTEXT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "FDI_HX_CLIENT_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the history of FDI Client IDs for all FDI handouts received by the patient"
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "DELETED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether this handout has been marked as given or if the given status has been deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether this handout has been marked as given or if the given status has been deleted.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

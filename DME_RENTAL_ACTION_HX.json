@@ -1,78 +1,97 @@
 {
-  "table_name": "DME_RENTAL_ACTION_HX",
+  "name": "DME_RENTAL_ACTION_HX",
   "description": "This table contains durable medical equipment (DME) rental record action history information, such as what action was taken, when, and by whom.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the rental record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACTION_HX_INSTANT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of the action in local time zone."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ACTION_HX_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action taken. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCreated\n\n\nClaim Modified\n\n\nClosed\n\n\nClaim Removed\n\n\nReopened\n\n\nInitial Amount Modified\n\n\nInitial Maintenance Amount Modified\n\n\nInitial Cycles Modified\n\n\nInitial Maintenance Cycles Modified\n\n\nRental Start Date Modified\n\n\nMaintenance Start Date Modified"
+      "description": "The action taken.",
+      "entries": [
+        "Created",
+        "Claim Modified",
+        "Closed",
+        "Claim Removed",
+        "Reopened",
+        "Initial Amount Modified",
+        "Initial Maintenance Amount Modified",
+        "Initial Cycles Modified",
+        "Initial Maintenance Cycles Modified",
+        "Rental Start Date Modified",
+        "Maintenance Start Date Modified"
+      ]
     },
     {
-      "index": 35,
+      "ordinalPosition": 5,
       "name": "ACTION_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the user performing the action."
     },
     {
-      "index": 40,
+      "ordinalPosition": 6,
       "name": "OLD_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Value before it was modified by an action."
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "NEW_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Value after it was modified by an action."
     },
     {
-      "index": 50,
+      "ordinalPosition": 8,
       "name": "ACTION_HX_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Comment for action taken."
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores claim record ID for claim actions."
     },
     {
-      "index": 60,
+      "ordinalPosition": 10,
       "name": "ACTION_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant of the action in UTC."
     }

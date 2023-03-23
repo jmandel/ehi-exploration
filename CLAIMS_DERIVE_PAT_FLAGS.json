@@ -1,24 +1,30 @@
 {
-  "table_name": "CLAIMS_DERIVE_PAT_FLAGS",
+  "name": "CLAIMS_DERIVE_PAT_FLAGS",
   "description": "Contains patient-level flags that impact claims derivation",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "DERIVE_TXP_PAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Determines whether the patient currently is known to have any claims marked as derivation transplant claims in CLM 18627.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Determines whether the patient currently is known to have any claims marked as derivation transplant claims in CLM 18627.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

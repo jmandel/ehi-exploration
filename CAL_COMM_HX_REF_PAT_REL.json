@@ -1,38 +1,80 @@
 {
-  "table_name": "CAL_COMM_HX_REF_PAT_REL",
+  "name": "CAL_COMM_HX_REF_PAT_REL",
   "description": "Stores the history of source relationships to patients referenced by a communication (i.e. the history of CAL_REFERENCE_PAT.REF_PAT_REL_C). Each GROUP_LINE corresponds to a line in CAL_COMM_HX for a COMM_ID.",
-  "primary_key": {
-    "column_name": "COMM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "COMM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "COMM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the communication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_REF_PAT_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the category identifier of the relationship a source has to the patient referenced (CAL_COMM_HX_REF_PAT).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther\n\n\nSelf\n\n\nSpouse\n\n\nSignificant Other\n\n\nChild\n\n\nParent\n\n\nGuardian\n\n\nGrandparent\n\n\nGrandchild\n\n\nNiece/Nephew\n\n\nAunt/Uncle\n\n\nBrother/Sister\n\n\nOther Relative\n\n\nCoworker/Associate\n\n\nFriend\n\n\nPCP\n\n\nOn Call Provider\n\n\nLab\n\n\nRadiology\n\n\nGuarantor\n\n\nCarrier\n\n\nEmployer Group\n\n\nNetwork\n\n\nProvider\n\n\nMother\n\n\nFather\n\n\nPharmacy\n\n\nPayer\n\n\nInterpreter\n\n\nEmergency Contact"
+      "description": "Stores the category identifier of the relationship a source has to the patient referenced (CAL_COMM_HX_REF_PAT).",
+      "entries": [
+        "Other",
+        "Self",
+        "Spouse",
+        "Significant Other",
+        "Child",
+        "Parent",
+        "Guardian",
+        "Grandparent",
+        "Grandchild",
+        "Niece/Nephew",
+        "Aunt/Uncle",
+        "Brother/Sister",
+        "Other Relative",
+        "Coworker/Associate",
+        "Friend",
+        "PCP",
+        "On Call Provider",
+        "Lab",
+        "Radiology",
+        "Guarantor",
+        "Carrier",
+        "Employer Group",
+        "Network",
+        "Provider",
+        "Mother",
+        "Father",
+        "Pharmacy",
+        "Payer",
+        "Interpreter",
+        "Emergency Contact"
+      ]
     }
   ]
 }

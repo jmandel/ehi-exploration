@@ -1,34 +1,46 @@
 {
-  "table_name": "CL_RMT_CLM_DT_INFO",
+  "name": "CL_RMT_CLM_DT_INFO",
   "description": "Contains claim level date information from the electronic remittance payment. This information is sent in the DTM segment in Loop 2100 of an ANSI 835 Health Care Claim Payment/Advice file. This segment is used to send specific dates associated with the claim being paid. This information is stored in the remittance image record.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record with related claim date information."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLAIM_DATE_QUAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The date qualifier code for the claim date information. This is a standard code that indicates what the date represents.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nExpiration\n\n\nReceived\n\n\nClaim statement period start\n\n\nClaim statement period end"
+      "description": "The date qualifier code for the claim date information. This is a standard code that indicates what the date represents.",
+      "entries": [
+        "Expiration",
+        "Received",
+        "Claim statement period start",
+        "Claim statement period end"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "CLAIM_DT",
       "type": "DATETIME",
       "discontinued": false,

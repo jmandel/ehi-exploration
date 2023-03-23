@@ -1,31 +1,42 @@
 {
-  "table_name": "SPEC_RESEC_OF_THE_VEIN",
+  "name": "SPEC_RESEC_OF_THE_VEIN",
   "description": "This table stores information about vein resection.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RESECTION_OF_THE_VEIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for whether the vein was resectioned.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNot Applicable"
+      "description": "The category ID for whether the vein was resectioned.",
+      "entries": [
+        "Yes",
+        "No",
+        "Not Applicable"
+      ]
     }
   ]
 }

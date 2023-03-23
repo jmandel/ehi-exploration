@@ -1,31 +1,42 @@
 {
-  "table_name": "OR_LNLG_LASER_REQ_LABELS",
+  "name": "OR_LNLG_LASER_REQ_LABELS",
   "description": "This table contains if the laser has the required labels for the laser safety checklist.",
-  "primary_key": {
-    "column_name": "LASER_SAFETY_CHECKLIST_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LASER_SAFETY_CHECKLIST_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LASER_SAFETY_CHECKLIST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the line record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LSC_HAS_REQUIRED_LABELS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Used to document that the laser has the required labels present.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nN/A"
+      "description": "Used to document that the laser has the required labels present.",
+      "entries": [
+        "Yes",
+        "No",
+        "N/A"
+      ]
     }
   ]
 }

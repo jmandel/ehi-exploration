@@ -1,48 +1,64 @@
 {
-  "table_name": "TXP_BILLING_PERIOD",
+  "name": "TXP_BILLING_PERIOD",
   "description": "Transplant billing period information. This is also used to represent Tapestry billing phase information.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the summary block record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TX_BILLING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Transplant billing period.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPre-Evaluation\n\n\nEvaluation\n\n\nWaitlist\n\n\nPre-Operative\n\n\nTransplant\n\n\nPost-Operative\n\n\nFollow-up\n\n\nMaturation"
+      "description": "Transplant billing period.",
+      "entries": [
+        "Pre-Evaluation",
+        "Evaluation",
+        "Waitlist",
+        "Pre-Operative",
+        "Transplant",
+        "Post-Operative",
+        "Follow-up",
+        "Maturation"
+      ]
     },
     {
-      "index": 27,
+      "ordinalPosition": 4,
       "name": "TX_BILLING_START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Transplant billing period start date."
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "TX_BILLING_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Transplant billing period end date."
     },
     {
-      "index": 37,
+      "ordinalPosition": 6,
       "name": "PHASE_TAP_PAID_AMT",
       "type": "NUMERIC",
       "discontinued": false,

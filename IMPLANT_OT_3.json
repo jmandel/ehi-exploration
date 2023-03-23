@@ -1,272 +1,313 @@
 {
-  "table_name": "IMPLANT_OT_3",
+  "name": "IMPLANT_OT_3",
   "description": "This table contains implant information that changes over time.",
-  "primary_key": {
-    "column_name": "IMPLANT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMPLANT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMPLANT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the implant record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PCMKR_PACE_MODE_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on the pacing mode of an implanted pacemaker"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PCMKR_PV_DELAY_MS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "P-V delay in milliseconds"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PCMKR_AV_DELAY_MS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "A-V delay in milliseconds"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PCMKR_LV_EARLY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate if the left ventricle contraction was early\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicate if the left ventricle contraction was early",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "PCMKR_RV_EARLY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate if the right ventricle contraction was early\n\n\n The category values for this column were already listed for column: PCMKR_LV_EARLY_YN"
+      "description": "Indicate if the right ventricle contraction was early"
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "PCMKR_VV_DELAY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "V-V delay in milliseconds"
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "PCMKR_VV_DELAY_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on the V-V delay"
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "PCMKR_HYST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate if hysteresis is active\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOn\n\n\nOff\n\n\nNot Applicable"
+      "description": "Indicate if hysteresis is active",
+      "entries": [
+        "On",
+        "Off",
+        "Not Applicable"
+      ]
     },
     {
-      "index": 62,
+      "ordinalPosition": 11,
       "name": "PCMKR_HYST_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on hysteresis"
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "PCMKR_HYST_A_RATE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicate the atrial rate for hysteresis"
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "PCMKR_HYST_RATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the rate-drop for hysteresis\n\n\n The category values for this column were already listed for column: PCMKR_HYST_C_NAME"
+      "description": "Indicate the rate-drop for hysteresis"
     },
     {
-      "index": 78,
+      "ordinalPosition": 14,
       "name": "PCMKR_HYST_RATE_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on rate-drop hysteresis"
     },
     {
-      "index": 83,
+      "ordinalPosition": 15,
       "name": "PCMKR_GEN_PACE_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on pacing parameters"
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "PCMKR_RV_SENSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the sensing polarity of the RV lead\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBipolar\n\n\nUnipolar"
+      "description": "Indicate the sensing polarity of the RV lead",
+      "entries": [
+        "Bipolar",
+        "Unipolar"
+      ]
     },
     {
-      "index": 97,
+      "ordinalPosition": 17,
       "name": "PCMKR_ATR_SENSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the sensing polarity of the atrial lead\n\n\n The category values for this column were already listed for column: PCMKR_RV_SENSE_C_NAME"
+      "description": "Indicate the sensing polarity of the atrial lead"
     },
     {
-      "index": 103,
+      "ordinalPosition": 18,
       "name": "PCMKR_LV_SENSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the sensing polarity of the LV lead\n\n\n The category values for this column were already listed for column: PCMKR_RV_SENSE_C_NAME"
+      "description": "Indicate the sensing polarity of the LV lead"
     },
     {
-      "index": 109,
+      "ordinalPosition": 19,
       "name": "PCMKR_RV_PACE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the pacing polarity of the RV lead\n\n\n The category values for this column were already listed for column: PCMKR_RV_SENSE_C_NAME"
+      "description": "Indicate the pacing polarity of the RV lead"
     },
     {
-      "index": 115,
+      "ordinalPosition": 20,
       "name": "PCMKR_ATR_PACE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the pacing polarity of the atrial lead\n\n\n The category values for this column were already listed for column: PCMKR_RV_SENSE_C_NAME"
+      "description": "Indicate the pacing polarity of the atrial lead"
     },
     {
-      "index": 121,
+      "ordinalPosition": 21,
       "name": "PCMKR_LV_PACE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate the pacing polarity of the LV lead\n\n\n The category values for this column were already listed for column: PCMKR_RV_SENSE_C_NAME"
+      "description": "Indicate the pacing polarity of the LV lead"
     },
     {
-      "index": 127,
+      "ordinalPosition": 22,
       "name": "PCMKR_POLARITY_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on lead polarities"
     },
     {
-      "index": 132,
+      "ordinalPosition": 23,
       "name": "PCMKR_PR_AMPLITUDE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicate the amplitude of the P/R wave in millivolts"
     },
     {
-      "index": 137,
+      "ordinalPosition": 24,
       "name": "PCMKR_MODE_SWTCH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicate if mode switching is active\n\n\n The category values for this column were already listed for column: PCMKR_HYST_C_NAME"
+      "description": "Indicate if mode switching is active"
     },
     {
-      "index": 143,
+      "ordinalPosition": 25,
       "name": "PCMKR_MD_SWTCH_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment on mode switching"
     },
     {
-      "index": 148,
+      "ordinalPosition": 26,
       "name": "PCMKR_A_RATE_SWTCH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicate the atrial rate for mode switching"
     },
     {
-      "index": 153,
+      "ordinalPosition": 27,
       "name": "DENT_PLATFRM_SIZE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental implant platform size.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRegular\n\n\nNarrow\n\n\nWide\n\n\nOther"
+      "description": "Dental implant platform size.",
+      "entries": [
+        "Regular",
+        "Narrow",
+        "Wide",
+        "Other"
+      ]
     },
     {
-      "index": 164,
+      "ordinalPosition": 28,
       "name": "DENT_DRILL_PROT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental implant drill protocol.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nConventional\n\n\nSimplified"
+      "description": "Dental implant drill protocol.",
+      "entries": [
+        "Conventional",
+        "Simplified"
+      ]
     },
     {
-      "index": 173,
+      "ordinalPosition": 29,
       "name": "DENT_CONNECT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental implant connection type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInternal\n\n\nExternal"
+      "description": "Dental implant connection type.",
+      "entries": [
+        "Internal",
+        "External"
+      ]
     },
     {
-      "index": 182,
+      "ordinalPosition": 30,
       "name": "DENT_COLLAR_SURF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental implant collar surface.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRough\n\n\nPolished"
+      "description": "Dental implant collar surface.",
+      "entries": [
+        "Rough",
+        "Polished"
+      ]
     },
     {
-      "index": 191,
+      "ordinalPosition": 31,
       "name": "DENT_IMP_TAPER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Dental implant taper.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nTapered\n\n\nStraight Wall"
+      "description": "Dental implant taper.",
+      "entries": [
+        "Tapered",
+        "Straight Wall"
+      ]
     },
     {
-      "index": 200,
+      "ordinalPosition": 32,
       "name": "DENT_DIAMETER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Dental implant diameter."
     },
     {
-      "index": 205,
+      "ordinalPosition": 33,
       "name": "DENT_IMP_INS_TORQUE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Dental implant insertion torque."
     },
     {
-      "index": 210,
+      "ordinalPosition": 34,
       "name": "DENT_IMP_SITE_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Dental implant site."
     },
     {
-      "index": 215,
+      "ordinalPosition": 35,
       "name": "DENT_IMP_SITE_RECORD_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores record name (.2)"
     },
     {
-      "index": 220,
+      "ordinalPosition": 36,
       "name": "DENT_IMP_CODE_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Dental implant code."
     },
     {
-      "index": 225,
+      "ordinalPosition": 37,
       "name": "DENT_IMP_BILL_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Billing provider for completed linked dental procedure."
     },
     {
-      "index": 230,
+      "ordinalPosition": 38,
       "name": "DENT_IMP_AUTH_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,55 +1,71 @@
 {
-  "table_name": "TRG_ADV_ORD_GROUPS",
+  "name": "TRG_ADV_ORD_GROUPS",
   "description": "This table stores information about the advanced order groups that are included in a treatment day of a treatment plan.",
-  "primary_key": {
-    "column_name": "TREATMENT_DAY_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TREATMENT_DAY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TREATMENT_DAY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient order group record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ADV_ORD_GRP_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number (CSN) of an advanced order group (OSQ) record that is included in this treatment day."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ADV_ORD_GRP_MODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The mode of this advanced order group, such as Single-Select, Multi-Select, or Select-All.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBasic\n\n\nSingle-Select\n\n\nMulti-Select\n\n\nSelect-All"
+      "description": "The mode of this advanced order group, such as Single-Select, Multi-Select, or Select-All.",
+      "entries": [
+        "Basic",
+        "Single-Select",
+        "Multi-Select",
+        "Select-All"
+      ]
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "ADV_ORD_GRP_TITLE",
       "type": "VARCHAR",
       "discontinued": false,

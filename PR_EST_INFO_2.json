@@ -1,157 +1,191 @@
 {
-  "table_name": "PR_EST_INFO_2",
+  "name": "PR_EST_INFO_2",
   "description": "General information about the price estimate. Split from PR_EST_INFO.",
-  "primary_key": {
-    "column_name": "ESTIMATE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ESTIMATE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient estimate record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "MATCHING_TREATMENT_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This items stores the treatment estimate matched to the associated visit grouper estimate. It is only populated for dental estimates."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PREPAY_UPDATE_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source of prepay amount for the estimate.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSystem Calculated\n\n\nUser Override\n\n\nCopy From Visit\n\n\nTemplate\n\n\nMatched Treatment Estimate\n\n\nParent Estimate\n\n\nCopy Amounts\n\n\nVideo Visit Maximum\n\n\nCalculated by Visit Auto Pay"
+      "description": "The source of prepay amount for the estimate.",
+      "entries": [
+        "System Calculated",
+        "User Override",
+        "Copy From Visit",
+        "Template",
+        "Matched Treatment Estimate",
+        "Parent Estimate",
+        "Copy Amounts",
+        "Video Visit Maximum",
+        "Calculated by Visit Auto Pay"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "PREPAY_UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that last updated the prepay amount."
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "PREPAY_UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant at which the prepay amount was last updated."
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "VAP_PROPOSED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The proposed consent amount for visit auto pay that should be applied to the encounter."
     },
     {
-      "index": 43,
+      "ordinalPosition": 7,
       "name": "VAP_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source of the visit auto pay proposed amount value. If the source is set to 1 - System Calculated - Visit, the visit auto pay amount is calculated based on configuration when the estimate is finalized. A user may override the visit auto pay amount at that point as well. If the source is set to 2 - User Override, a user specified an amount to use as the visit auto pay consent amount for the estimate's encounter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSystem Calculated - Visit\n\n\nUser Override"
+      "description": "The source of the visit auto pay proposed amount value. If the source is set to 1 - System Calculated - Visit, the visit auto pay amount is calculated based on configuration when the estimate is finalized. A user may override the visit auto pay amount at that point as well. If the source is set to 2 - User Override, a user specified an amount to use as the visit auto pay consent amount for the estimate's encounter.",
+      "entries": [
+        "System Calculated - Visit",
+        "User Override"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 8,
       "name": "VAP_PROPOSAL_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last user who updated the visit auto pay proposal on the estimate."
     },
     {
-      "index": 57,
+      "ordinalPosition": 9,
       "name": "VAP_PROPOSAL_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The last instant the visit auto pay proposal associated with the estimate was updated, formatted with time zone attached."
     },
     {
-      "index": 62,
+      "ordinalPosition": 10,
       "name": "GROUP_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The group number for the coverage associated with this estimate."
     },
     {
-      "index": 67,
+      "ordinalPosition": 11,
       "name": "PAT_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's legal sex.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+      "description": "The patient's legal sex.",
+      "entries": [
+        "Female",
+        "Male",
+        "Unknown",
+        "Nonbinary",
+        "X",
+        "Other"
+      ]
     },
     {
-      "index": 80,
+      "ordinalPosition": 12,
       "name": "PAT_BIRTH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date of birth of the patient."
     },
     {
-      "index": 85,
+      "ordinalPosition": 13,
       "name": "HB_SP_DSCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all hospital billing self-pay discount amounts on an estimate."
     },
     {
-      "index": 90,
+      "ordinalPosition": 14,
       "name": "PB_SP_DSCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all professional billing self-pay discount amounts on an estimate."
     },
     {
-      "index": 95,
+      "ordinalPosition": 15,
       "name": "TOT_SP_DSCNT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all self-pay discount amounts on an estimate."
     },
     {
-      "index": 100,
+      "ordinalPosition": 16,
       "name": "HB_FIN_ASST_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all hospital billing financial assistance discount amounts on an estimate."
     },
     {
-      "index": 105,
+      "ordinalPosition": 17,
       "name": "PB_FIN_ASST_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all professional billing financial assistance discount amounts on an estimate."
     },
     {
-      "index": 110,
+      "ordinalPosition": 18,
       "name": "TOT_FIN_ASST_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total of all financial assistance discount amounts on an estimate."
     },
     {
-      "index": 115,
+      "ordinalPosition": 19,
       "name": "MYCHART_REQ_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The location for this estimate selected from MyChart."
     },
     {
-      "index": 120,
+      "ordinalPosition": 20,
       "name": "MYCHART_REQ_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider for this estimate selected from MyChart."
     },
     {
-      "index": 125,
+      "ordinalPosition": 21,
       "name": "NOTIF_CONTENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores what notification content was available when they are sent after an estimate was finalized.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo notification sent\n\n\nNotification sent with no hyperlinks\n\n\nNotification sent with view estimate hyperlink only\n\n\nNotification sent with prepay hyperlink only\n\n\nNotification sent with both estimate and prepay hyperlinks\n\n\nNotification sent with letter hyperlink\n\n\nNotification sent with letter and prepay hyperlinks"
+      "description": "Stores what notification content was available when they are sent after an estimate was finalized.",
+      "entries": [
+        "No notification sent",
+        "Notification sent with no hyperlinks",
+        "Notification sent with view estimate hyperlink only",
+        "Notification sent with prepay hyperlink only",
+        "Notification sent with both estimate and prepay hyperlinks",
+        "Notification sent with letter hyperlink",
+        "Notification sent with letter and prepay hyperlinks"
+      ]
     }
   ]
 }

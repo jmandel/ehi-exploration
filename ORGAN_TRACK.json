@@ -1,122 +1,207 @@
 {
-  "table_name": "ORGAN_TRACK",
+  "name": "ORGAN_TRACK",
   "description": "Track changes to the organ record that occur as data is added and changed.  A table for audit trailing the changes.",
-  "primary_key": {
-    "column_name": "ORG_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORG_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORG_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the organ record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record.  Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TRACK_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant that item was changed."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TRACK_WHO_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the user who changed the item."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TRACK_ORG_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes in organ status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nInactive\n\n\nPre-Procurement\n\n\nProcured\n\n\nTransplanted\n\n\nFailed\n\n\nIn Rejection\n\n\nPartially Functioning"
+      "description": "Track changes in organ status.",
+      "entries": [
+        "Inactive",
+        "Pre-Procurement",
+        "Procured",
+        "Transplanted",
+        "Failed",
+        "In Rejection",
+        "Partially Functioning"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "TRACK_RELATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to the donor's relationship to the recipient.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMother - Biological\n\n\nFather - Biological\n\n\nBrother - Biological\n\n\nSister - Biological\n\n\nTwin Brother - Biological\n\n\nTwin Sister - Biological\n\n\nHalf Brother - Biological\n\n\nHalf Sister - Biological\n\n\nSon - Biological\n\n\nDaughter - Biological\n\n\nRelated Other - Biological\n\n\nDomino - Biological\n\n\nNon-Domino Therapeutic - Biological\n\n\nSpouse - Non-Biological\n\n\nLife Partner - Non-Biological\n\n\nPaired Donation - Non-Biological\n\n\nLiving/Deceased Donation - Non-Biological\n\n\nAnonymous - Non-Biological\n\n\nAnonymous Humanitarian - Non-Biological\n\n\nAnonymous Directed - Non-Biological\n\n\nDomino - Non-Biological\n\n\nNon-Domino Therapeutic - Non-Biological\n\n\nOther - Non-Biological"
+      "description": "Track changes to the donor's relationship to the recipient.",
+      "entries": [
+        "Mother - Biological",
+        "Father - Biological",
+        "Brother - Biological",
+        "Sister - Biological",
+        "Twin Brother - Biological",
+        "Twin Sister - Biological",
+        "Half Brother - Biological",
+        "Half Sister - Biological",
+        "Son - Biological",
+        "Daughter - Biological",
+        "Related Other - Biological",
+        "Domino - Biological",
+        "Non-Domino Therapeutic - Biological",
+        "Spouse - Non-Biological",
+        "Life Partner - Non-Biological",
+        "Paired Donation - Non-Biological",
+        "Living/Deceased Donation - Non-Biological",
+        "Anonymous - Non-Biological",
+        "Anonymous Humanitarian - Non-Biological",
+        "Anonymous Directed - Non-Biological",
+        "Domino - Non-Biological",
+        "Non-Domino Therapeutic - Non-Biological",
+        "Other - Non-Biological"
+      ]
     },
     {
-      "index": 66,
+      "ordinalPosition": 7,
       "name": "TRACK_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to the organ source.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLiving\n\n\nDonation after Brain Death\n\n\nDonation after Circulatory Death \n\n\nAuto"
+      "description": "Track changes to the organ source.",
+      "entries": [
+        "Living",
+        "Donation after Brain Death",
+        "Donation after Circulatory Death",
+        "Auto"
+      ]
     },
     {
-      "index": 77,
+      "ordinalPosition": 8,
       "name": "TRACK_HLA_MATCH_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to the human leukocyte antigen (HLA) match type.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIdentical\n\n\nHaplo\n\n\nNon Match"
+      "description": "Track changes to the human leukocyte antigen (HLA) match type.",
+      "entries": [
+        "Identical",
+        "Haplo",
+        "Non Match"
+      ]
     },
     {
-      "index": 87,
+      "ordinalPosition": 9,
       "name": "TRACK_DONOR_CRIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to the donation criteria.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nStandard Criteria Donor\n\n\nExpanded Criteria Donor"
+      "description": "Track changes to the donation criteria.",
+      "entries": [
+        "Standard Criteria Donor",
+        "Expanded Criteria Donor"
+      ]
     },
     {
-      "index": 96,
+      "ordinalPosition": 10,
       "name": "TRACK_AG_MATCHES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Track changes to the antigen matches."
     },
     {
-      "index": 101,
+      "ordinalPosition": 11,
       "name": "TRACK_CDC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to whether the donor had risk factors for blood-borne disease transmission.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Track changes to whether the donor had risk factors for blood-borne disease transmission.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 110,
+      "ordinalPosition": 12,
       "name": "TRACK_MATCH_RUN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Track changes to match run ID."
     },
     {
-      "index": 115,
+      "ordinalPosition": 13,
       "name": "TRACK_OPO_RISK_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to whether the donor is considered high risk by the organ procurement organization.\n\n\n The category values for this column were already listed for column: TRACK_CDC_YN"
+      "description": "Track changes to whether the donor is considered high risk by the organ procurement organization."
     },
     {
-      "index": 121,
+      "ordinalPosition": 14,
       "name": "TRACK_LINK_ORG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Track changes to the Organ ID to which the current organ is linked."
     },
     {
-      "index": 126,
+      "ordinalPosition": 15,
       "name": "TRACK_DNR_ID_UNOS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Track changes made to the donor ID from the United Network for Organ Sharing (UNOS)."
     },
     {
-      "index": 131,
+      "ordinalPosition": 16,
       "name": "TRACK_DNR_ABO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Track changes to the donor's blood type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nA+\n\n\nA-\n\n\nAB+\n\n\nAB-\n\n\nB+\n\n\nB-\n\n\nO+\n\n\nO-\n\n\nA\n\n\nB\n\n\nAB\n\n\nO\n\n\nA1\n\n\nA1B\n\n\nA2\n\n\nA2B\n\n\nA1+\n\n\nA1-\n\n\nA2+\n\n\nA2-\n\n\nA1B+\n\n\nA1B-\n\n\nA2B+\n\n\nA2B-"
+      "description": "Track changes to the donor's blood type.",
+      "entries": [
+        "A+",
+        "A-",
+        "AB+",
+        "AB-",
+        "B+",
+        "B-",
+        "O+",
+        "O-",
+        "A",
+        "B",
+        "AB",
+        "O",
+        "A1",
+        "A1B",
+        "A2",
+        "A2B",
+        "A1+",
+        "A1-",
+        "A2+",
+        "A2-",
+        "A1B+",
+        "A1B-",
+        "A2B+",
+        "A2B-"
+      ]
     }
   ]
 }

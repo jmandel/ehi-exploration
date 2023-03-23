@@ -1,43 +1,55 @@
 {
-  "table_name": "SCHEDULER_HX",
+  "name": "SCHEDULER_HX",
   "description": "Inpatient scheduler history table.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SCH_EXTRA_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores what special scheduler action, if any, was performed on scheduling.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSkip first occurence per off schedule occurrence\n\n\nExtra Occurrence Scheduled at Start Point\n\n\nSkip first occurrence per existing MAR time\n\n\nFirst occurrence elapsed, extra occurrence scheduled at start point"
+      "description": "This item stores what special scheduler action, if any, was performed on scheduling.",
+      "entries": [
+        "Skip first occurence per off schedule occurrence",
+        "Extra Occurrence Scheduled at Start Point",
+        "Skip first occurrence per existing MAR time",
+        "First occurrence elapsed, extra occurrence scheduled at start point"
+      ]
     },
     {
-      "index": 23,
+      "ordinalPosition": 4,
       "name": "SCH_SKIPPED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant an occurrence was skipped by the scheduler because an off schedule occurrence was too close to a standard time."
     },
     {
-      "index": 28,
+      "ordinalPosition": 5,
       "name": "SCHEDULE_EXTRA_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Time that an extra occurrence was scheduled since a standard specified time was just missed."
     }

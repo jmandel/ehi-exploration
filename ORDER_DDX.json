@@ -1,66 +1,82 @@
 {
-  "table_name": "ORDER_DDX",
+  "name": "ORDER_DDX",
   "description": "This table will allow reporting on the associated differential diagnosis entries for each medication on an encounter. Note that this is different than ORDER_DX_MED which contains the encounter diagnosis associations.",
-  "primary_key": {
-    "column_name": "ORDER_MED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_MED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_MED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the medication order (prescription) record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ASSOC_DDX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the diagnosis record associated with the medication order."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ASSOC_DDX_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the free text description for the associated differential diagnosis."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ASSOC_DDX_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the associated differential diagnosis comment."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ASSOC_DDX_QUAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the ID of the qualifier associated with the diagnosis.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Stores the ID of the qualifier associated with the diagnosis."
     },
     {
-      "index": 33,
+      "ordinalPosition": 7,
       "name": "ASSOC_DDX_CHRONI_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the associated diagnosis is chronic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the associated diagnosis is chronic.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "ASSOC_DDX_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the status of the associated differential diagnosis (e.g. In Progress, Final, etc.)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFinal\n\n\nIn Progress\n\n\nRuled Out\n\n\nInconclusive"
+      "description": "Stores the status of the associated differential diagnosis (e.g. In Progress, Final, etc.)",
+      "entries": [
+        "Final",
+        "In Progress",
+        "Ruled Out",
+        "Inconclusive"
+      ]
     }
   ]
 }

@@ -1,69 +1,93 @@
 {
-  "table_name": "DOCS_RCVD_RSLT_TEXTS",
+  "name": "DOCS_RCVD_RSLT_TEXTS",
   "description": "This table stores discrete textual information about results from outside sources.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the Received Document record ID."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "RESULT_TEXT_KEY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Key for looking up the order for this impression line"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RESULT_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Data line for the impression text"
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RESULT_TEXT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Type of result text\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nComponent Text\n\n\nResult Impression\n\n\nResult Narrative\n\n\nOther Result Text\n\n\nResult Transcription\n\n\nAddendum\n\n\nResult Comment\n\n\nProcedure Note\n\n\nSpecimen Comment\n\n\nResulting Agency Comment\n\n\nImage Note\n\n\nPathologist Signature"
+      "description": "Type of result text",
+      "entries": [
+        "Component Text",
+        "Result Impression",
+        "Result Narrative",
+        "Other Result Text",
+        "Result Transcription",
+        "Addendum",
+        "Result Comment",
+        "Procedure Note",
+        "Specimen Comment",
+        "Resulting Agency Comment",
+        "Image Note",
+        "Pathologist Signature"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 8,
       "name": "RSLT_TXT_INSTANCE_N",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Key when a text blob type occurs more than once in a result."
     },
     {
-      "index": 56,
+      "ordinalPosition": 9,
       "name": "PERFORMING_SITE_REF",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,76 +1,90 @@
 {
-  "table_name": "ODC_BASIC",
+  "name": "ODC_BASIC",
   "description": "The ODC_BASIC table contains the basic information for the order context record. These include record status, logical/physical owner, record type, status, etc.",
-  "primary_key": {
-    "column_name": "ORDER_CONTEXT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_CONTEXT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_CONTEXT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the order context record, which contains information about when orders are intended to be used."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ODC_RECORD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type category number for the order context record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser created context\n\n\nSurgical/Invasive\n\n\nProcedure order context"
+      "description": "The type category number for the order context record.",
+      "entries": [
+        "User created context",
+        "Surgical/Invasive",
+        "Procedure order context"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "ODC_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category number for the order context record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nActive-Completed\n\n\nAuto-Completed\n\n\nExpired\n\n\nCanceled"
+      "description": "The status category number for the order context record.",
+      "entries": [
+        "Active",
+        "Active-Completed",
+        "Auto-Completed",
+        "Expired",
+        "Canceled"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 4,
       "name": "ODC_PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 34,
+      "ordinalPosition": 5,
       "name": "PAT_VISIT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the contact serial number (CSN) of the visit that the order context is linked to."
     },
     {
-      "index": 39,
+      "ordinalPosition": 6,
       "name": "HOLDING_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The pend reason category ID for the order context record, which indicates the reason the record was created.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The pend reason category ID for the order context record, which indicates the reason the record was created."
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "LAST_ORDER_ADDED_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The most recent date when an order was associated with the order context record."
     },
     {
-      "index": 50,
+      "ordinalPosition": 8,
       "name": "LAST_ORDER_RLSD_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The most recent date when an order associated with this order context record was activated."
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "OVERRIDE_START_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the original surgical visit associated with this order context record was cancelled."
     },
     {
-      "index": 60,
+      "ordinalPosition": 10,
       "name": "INACTIVE_DT",
       "type": "DATETIME",
       "discontinued": false,

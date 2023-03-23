@@ -1,87 +1,93 @@
 {
-  "table_name": "MYC_PT_MED",
+  "name": "MYC_PT_MED",
   "description": "When a patient enters new data in the Medications section of Your Health Record in the web-based chart system, a new record is created in this table. NOTE: this is patient-entered data and is not part of the patient's official medical record.",
-  "primary_key": {
-    "column_name": "INFO_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INFO_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INFO_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the \"Your Health Record\" medication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the web-based chart system account that is associated with the \"Your Health Record\" medication record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MYC_MED_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the web-based chart system medication that the patient selected. NOTE: If the patient entered a custom medication, then this field will be blank."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MYC_MED_ID_MED_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the web based chart system medication."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "INSTRUCTIONS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The medication instructions, as entered by the web-based chart system patient."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MED_PROV",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider who prescribed the medication, as entered by the web-based chart system patient."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "MED_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Any text entered into the medication comments field by the web-based chart system patient."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "UPDATE_DATE",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time that this record was pulled into enterprise reporting"
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "MYC_MED_ID_OTHER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "If the web-based chart system patient entered a custom medication (meaning one that couldn't be matched to a record in the CL_MYC_MED table), then the name of the custom medication is stored in this field."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "MYC_MED_ID_OTHER_MED_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the web based chart system medication."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "MED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The medication status category number for the \"Your Health Record\" medication record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nDeleted"
+      "description": "The medication status category number for the \"Your Health Record\" medication record.",
+      "entries": [
+        "Active",
+        "Deleted"
+      ]
     }
   ]
 }

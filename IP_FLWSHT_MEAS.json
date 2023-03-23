@@ -1,244 +1,284 @@
 {
-  "table_name": "IP_FLWSHT_MEAS",
+  "name": "IP_FLWSHT_MEAS",
   "description": "This table contains the patient-specific measurements from flowsheets.",
-  "primary_key": {
-    "column_name": "FSD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FSD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FSD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID for the flowsheet data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for the item."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OCCURANCE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "If the flowsheet group/row appears multiple times, this will distinguish the occurrence."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RECORDED_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the reading was taken."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ENTRY_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the reading was entered."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TAKEN_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user taking the flowsheet readings."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "ENTRY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user entering the readings."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "MEAS_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text comments associated with the reading."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "EDITED_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the previous value of an edited record."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "ISACCEPTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Determines if this flowsheet record has been accepted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Determines if this flowsheet record has been accepted.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 56,
+      "ordinalPosition": 11,
       "name": "IP_SIGNIFICANT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This stores whether the flowsheet data is marked as significant. If a value is not marked as significant, this column returns NULL.\n\n\n The category values for this column were already listed for column: ISACCEPTED_YN"
+      "description": "This stores whether the flowsheet data is marked as significant. If a value is not marked as significant, this column returns NULL."
     },
     {
-      "index": 62,
+      "ordinalPosition": 12,
       "name": "CAPTURE_DEVICE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores information of the Device ID for the device from which data is captured from."
     },
     {
-      "index": 67,
+      "ordinalPosition": 13,
       "name": "CAPTURE_DEVICE_ID_DEVICE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name for this device."
     },
     {
-      "index": 72,
+      "ordinalPosition": 14,
       "name": "RECEIVED_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Instant at which value was received at the interface"
     },
     {
-      "index": 77,
+      "ordinalPosition": 15,
       "name": "NEEDS_COSIGN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If this item is blank or 0 (No), then this flowsheet data does not need a cosign.  If this item is 1 (Required Yes), then a cosign is required for this data and can only be pended.  If this item is 2 (Chosen Yes), then a cosign has been requested for this data but it is not required.  If this item is 3 (Required Yes Can File), then a cosign is required for the data and the data can be filed.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nRequired Yes\n\n\nChosen Yes\n\n\nRequired Yes Can File"
+      "description": "If this item is blank or 0 (No), then this flowsheet data does not need a cosign.  If this item is 1 (Required Yes), then a cosign is required for this data and can only be pended.  If this item is 2 (Chosen Yes), then a cosign has been requested for this data but it is not required.  If this item is 3 (Required Yes Can File), then a cosign is required for the data and the data can be filed.",
+      "entries": [
+        "No",
+        "Required Yes",
+        "Chosen Yes",
+        "Required Yes Can File"
+      ]
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "FLT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the flowsheet template (FLT) which was used to enter the data in this cell."
     },
     {
-      "index": 93,
+      "ordinalPosition": 17,
       "name": "FLT_ID_DISPLAY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The display name associated with this template."
     },
     {
-      "index": 98,
+      "ordinalPosition": 18,
       "name": "FLO_DAT_USED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the contact date (DAT) of the flowsheet row or group that is used to define the data."
     },
     {
-      "index": 103,
+      "ordinalPosition": 19,
       "name": "FLO_CNCT_DATE_REAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column converts the contact date (DAT) of the flowsheet group or row to DTE, based on the value in column FLO_DAT_USED."
     },
     {
-      "index": 108,
+      "ordinalPosition": 20,
       "name": "USER_PENDED_BY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User ID of the user who pended this flowsheet value."
     },
     {
-      "index": 113,
+      "ordinalPosition": 21,
       "name": "INSTANT_PENDED_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Date/time at which a flowsheet value is pended."
     },
     {
-      "index": 118,
+      "ordinalPosition": 22,
       "name": "ABNORMAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether or not the value is abnormal\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes"
+      "description": "Stores whether or not the value is abnormal",
+      "entries": [
+        "Yes"
+      ]
     },
     {
-      "index": 126,
+      "ordinalPosition": 23,
       "name": "THRDPRTY_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Identifies the third-party framework that a Flowsheets value originally came from, if applicable. Intended to be used to track values that are sourced from health/fitness frameworks (e.g. Apple's HealthKit) to provide additional context when examining attached metadata.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nApple HealthKit\n\n\nWithings\n\n\nFitbit\n\n\nGoogle Fit\n\n\nFHIR"
+      "description": "Identifies the third-party framework that a Flowsheets value originally came from, if applicable. Intended to be used to track values that are sourced from health/fitness frameworks (e.g. Apple's HealthKit) to provide additional context when examining attached metadata.",
+      "entries": [
+        "Apple HealthKit",
+        "Withings",
+        "Fitbit",
+        "Google Fit",
+        "FHIR"
+      ]
     },
     {
-      "index": 138,
+      "ordinalPosition": 24,
       "name": "PAT_REPORTED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the data was directly entered by the patient or a patient proxy and whether the data has been validated by a clinician\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Patient Reported\n\n\nPatient reported, not clinician validated\n\n\nPatient reported, clinician validated"
+      "description": "Indicates if the data was directly entered by the patient or a patient proxy and whether the data has been validated by a clinician",
+      "entries": [
+        "Not Patient Reported",
+        "Patient reported, not clinician validated",
+        "Patient reported, clinician validated"
+      ]
     },
     {
-      "index": 148,
+      "ordinalPosition": 25,
       "name": "MYPT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The MyChart account from which the data was entered."
     },
     {
-      "index": 153,
+      "ordinalPosition": 26,
       "name": "IS_FROM_SPEECH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a filed flowsheet value was entered using speech entry.\n\n\n The category values for this column were already listed for column: ISACCEPTED_YN"
+      "description": "Indicates whether a filed flowsheet value was entered using speech entry."
     },
     {
-      "index": 159,
+      "ordinalPosition": 27,
       "name": "ABNORMAL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores metadata for abnormal flowsheet values. It is only populated for data where ABNORMAL_C - Abnormal is set to 1-Yes. It is set to 1-Low for data that is below the minimum warning level and it is set to 2-High for data that is above the maximum warning level for flowsheet data of types: numeric, blood pressure, temperature, height, patient height, weight and patient weight. It is set to 0-Unspecified for data that is abnormal for other reasons. This is the only value that can be set for flowsheet data of type: custom list.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified\n\n\nLow\n\n\nHigh\n\n\nPatient-Entered Flowsheet Rule Abnormal"
+      "description": "This column stores metadata for abnormal flowsheet values. It is only populated for data where ABNORMAL_C - Abnormal is set to 1-Yes. It is set to 1-Low for data that is below the minimum warning level and it is set to 2-High for data that is above the maximum warning level for flowsheet data of types: numeric, blood pressure, temperature, height, patient height, weight and patient weight. It is set to 0-Unspecified for data that is abnormal for other reasons. This is the only value that can be set for flowsheet data of type: custom list.",
+      "entries": [
+        "Unspecified",
+        "Low",
+        "High",
+        "Patient-Entered Flowsheet Rule Abnormal"
+      ]
     },
     {
-      "index": 170,
+      "ordinalPosition": 28,
       "name": "FLO_NETWORKED_INI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The INI to which the value for this row is associated."
     },
     {
-      "index": 175,
+      "ordinalPosition": 29,
       "name": "FLO_CATEGORY_INI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The INI of a category flowsheet value"
     },
     {
-      "index": 180,
+      "ordinalPosition": 30,
       "name": "FLO_CATEGORY_ITEM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The item number of a category flowsheet value"
     },
     {
-      "index": 185,
+      "ordinalPosition": 31,
       "name": "FLO_CATEGORY_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value of a flowsheet row"
     },
     {
-      "index": 190,
+      "ordinalPosition": 32,
       "name": "DOC_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the method the user used to enter the line of flowsheet data.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nValue From Macro"
+      "description": "Indicates the method the user used to enter the line of flowsheet data.",
+      "entries": [
+        "Value From Macro"
+      ]
     },
     {
-      "index": 198,
+      "ordinalPosition": 33,
       "name": "MACRO_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When the documentation method in FSD-1360 is 1-Value From Macro this is the macro HGM record ID."
     },
     {
-      "index": 203,
+      "ordinalPosition": 34,
       "name": "MACRO_RECORD_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,

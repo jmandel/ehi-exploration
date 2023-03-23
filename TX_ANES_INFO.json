@@ -1,160 +1,189 @@
 {
-  "table_name": "TX_ANES_INFO",
+  "name": "TX_ANES_INFO",
   "description": "The TX_ANES_INFO table contains one record for each anesthesia transaction record in your system. The data contained in each record consists of no-add, single-response anesthesia information.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique key or identification number for a given transaction."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "SUP_UNIT_PX_TOT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total number of units of supplemental unit procedures for this procedure."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AGE_UNIT_PX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column holds the value of anesthesia age unit procedure ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EMERG_UNIT_PX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column holds the value of anesthesia emergency unit procedure ID."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "IS_INDPNDT_CRNA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this is an independent Certified Registered Nurse Anesthetist (CRNA) charge transaction. Y indicates it is an independent CRNA charge, and N or null indicate it is not an independent CRNA charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether this is an independent Certified Registered Nurse Anesthetist (CRNA) charge transaction. Y indicates it is an independent CRNA charge, and N or null indicate it is not an independent CRNA charge.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "ASA_CODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ASA code for this anesthesia procedure."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "AGE_UNT_PX_UNIT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column holds the value of the number of anesthesia age unit procedure units for this charge."
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "EMERG_UNIT_PX_UNIT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column holds the value of the number of anesthesia emergency unit procedure units for this charge."
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "SUP_PX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column specifies the special procedure type: 1) Age Unit 2) Emergency Unit\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAge Unit\n\n\nEmergency Unit"
+      "description": "If your Anesthesia Pricing master file is set up to use age and emergency unit procedures, this column specifies the special procedure type: 1) Age Unit 2) Emergency Unit",
+      "entries": [
+        "Age Unit",
+        "Emergency Unit"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "ANESTHESIA_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The anesthesia type category number for the anesthesia charge.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGeneral\n\n\nIV\n\n\nLocal\n\n\nMonitored Anesthesia Care\n\n\nRegional"
+      "description": "The anesthesia type category number for the anesthesia charge.",
+      "entries": [
+        "General",
+        "IV",
+        "Local",
+        "Monitored Anesthesia Care",
+        "Regional"
+      ]
     },
     {
-      "index": 67,
+      "ordinalPosition": 11,
       "name": "EMERGENCY_STATUS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the anesthesia charge has an emergency status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the anesthesia charge has an emergency status.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 76,
+      "ordinalPosition": 12,
       "name": "PHYSICAL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The physical status category number for the anesthesia charge.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNormal Healthy\n\n\nMild Systemic Disease\n\n\nSevere Systemic Disease\n\n\nSevere/Threat\n\n\nMoribund\n\n\nBrain Dead"
+      "description": "The physical status category number for the anesthesia charge.",
+      "entries": [
+        "Normal Healthy",
+        "Mild Systemic Disease",
+        "Severe Systemic Disease",
+        "Severe/Threat",
+        "Moribund",
+        "Brain Dead"
+      ]
     },
     {
-      "index": 89,
+      "ordinalPosition": 13,
       "name": "CONCURRENCY_OVERRID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The concurrency value that overrode the standard concurrency value that was calculated."
     },
     {
-      "index": 94,
+      "ordinalPosition": 14,
       "name": "BASE_UNITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The uniform factor applied for this anesthesia transaction regardless of the procedure�s length."
     },
     {
-      "index": 99,
+      "ordinalPosition": 15,
       "name": "TIMED_UNITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The time units for this anesthesia transaction as determined by the length of the procedure."
     },
     {
-      "index": 104,
+      "ordinalPosition": 16,
       "name": "PHYSICAL_ST_UNITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The physical status units for this anesthesia transaction."
     },
     {
-      "index": 109,
+      "ordinalPosition": 17,
       "name": "EMERGENCY_UNITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The emergency units for this anesthesia transaction."
     },
     {
-      "index": 114,
+      "ordinalPosition": 18,
       "name": "AGE_UNITS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The age units for this anesthesia transaction."
     },
     {
-      "index": 119,
+      "ordinalPosition": 19,
       "name": "CRNA_CHARGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the certified registered nurse anesthetist (CRNA) charge transaction that is associated with this anesthesia transaction."
     },
     {
-      "index": 124,
+      "ordinalPosition": 20,
       "name": "ORIG_ANES_CHG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the anesthesia charge transaction that is associated with this certified registered nurse anesthetist (CRNA) transaction."
     },
     {
-      "index": 129,
+      "ordinalPosition": 21,
       "name": "MED_SUP_MOD_OVR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not the modifier based on the concurrency calculation for this anesthesia transaction that is normally included on claims has been overridden with the modifier corresponding to a medically supervised case.\n\n\n The category values for this column were already listed for column: EMERGENCY_STATUS_YN"
+      "description": "Indicates whether or not the modifier based on the concurrency calculation for this anesthesia transaction that is normally included on claims has been overridden with the modifier corresponding to a medically supervised case."
     },
     {
-      "index": 135,
+      "ordinalPosition": 22,
       "name": "BASE_UNIT_OVERRIDE",
       "type": "INTEGER",
       "discontinued": false,

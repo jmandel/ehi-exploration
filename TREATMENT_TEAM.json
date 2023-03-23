@@ -1,139 +1,158 @@
 {
-  "table_name": "TREATMENT_TEAM",
+  "name": "TREATMENT_TEAM",
   "description": "This table stores information about patient treatment teams such as relationship, specialty, department, and start/end time. Each row represents a member of a patient's treatment team.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TR_TEAM_BILL_PR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the billing provider record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "TR_TEAM_EM_CODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The evaluation and management code for billing within the treatment team."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "TR_TEAM_EM_REQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Used to determine if the evaluation and management code is required or not for use in the treatment team.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRequired\n\n\nNot Applicable"
+      "description": "Used to determine if the evaluation and management code is required or not for use in the treatment team.",
+      "entries": [
+        "Required",
+        "Not Applicable"
+      ]
     },
     {
-      "index": 41,
+      "ordinalPosition": 8,
       "name": "TR_TEAM_SPEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the specialty of the treatment team member to the patient.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the specialty of the treatment team member to the patient."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "TR_TEAM_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment for the treatment team."
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "TR_TEAM_ISDE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not this provider was deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether or not this provider was deleted.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "TR_TEAM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the treatment team provider record."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "TR_TEAM_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value corresponding to the relationship of the treatment team member to the patient.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category value corresponding to the relationship of the treatment team member to the patient."
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "TR_TEAM_COMM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Relates to communication being sent to the treatment team members.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nSent"
+      "description": "Relates to communication being sent to the treatment team members.",
+      "entries": [
+        "Yes",
+        "No",
+        "Sent"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 14,
       "name": "TR_TEAM_INFO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Additional information related to the treatment team members.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Additional information related to the treatment team members."
     },
     {
-      "index": 89,
+      "ordinalPosition": 15,
       "name": "TR_TEAM_BEG_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the treatment team member started for the patient."
     },
     {
-      "index": 94,
+      "ordinalPosition": 16,
       "name": "TR_TEAM_END_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the treatment team member ended for the patient."
     },
     {
-      "index": 99,
+      "ordinalPosition": 17,
       "name": "TR_TEAM_ED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not this provider was on the treatment team in the ED.\n\n\n The category values for this column were already listed for column: TR_TEAM_ISDE_YN"
+      "description": "Indicates whether or not this provider was on the treatment team in the ED."
     },
     {
-      "index": 105,
+      "ordinalPosition": 18,
       "name": "TR_TEAM_TEAM_ADD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the assignment was added by the team.\n\n\n The category values for this column were already listed for column: TR_TEAM_ISDE_YN"
+      "description": "Indicates whether the assignment was added by the team."
     },
     {
-      "index": 111,
+      "ordinalPosition": 19,
       "name": "TR_TEAM_SRC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

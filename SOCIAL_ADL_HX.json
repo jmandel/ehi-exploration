@@ -1,48 +1,59 @@
 {
-  "table_name": "SOCIAL_ADL_HX",
+  "name": "SOCIAL_ADL_HX",
   "description": "This table contains data recorded in the activities of daily living section of social history contacts entered in the patient's chart during a clinical system encounter. Note: This table is designed to hold a patient's history over time; however, it is most typically implemented to only extract the latest patient history contact.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HX_ADL_QUESTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the link to the unique ID of the ADL question."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_ADL_QUESTION_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Visit Navigator (VN) History Template Definition (LQH) record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HX_ADL_RESPONSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the category value (1, 2 or 3) of the response to ADL questions. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNot Asked"
+      "description": "This column stores the category value (1, 2 or 3) of the response to ADL questions.",
+      "entries": [
+        "Yes",
+        "No",
+        "Not Asked"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "HX_ADL_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,

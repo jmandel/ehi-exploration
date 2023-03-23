@@ -1,710 +1,1353 @@
 {
-  "table_name": "NSQIP_INFO",
+  "name": "NSQIP_INFO",
   "description": "The NSQIP_INFO table contains NSQIP registry data for the surgeries that are selected for NSQIP submission.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "REGISTRY_DATA_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The registry record name."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the record status (hidden, soft-deleted, etc...).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The category ID for the record status (hidden, soft-deleted, etc...).",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "REGISTRY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the registry associated with this RDI record."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "REGISTRY_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the registry record."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "REGISTRY_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the type of registry. For this table the value will always be 20000 corresponding to ACS NSQIP.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCore Measures\n\n\nACC-NCDR CathPCI Version 3 and 4\n\n\nACC-NCDR EP Device Implant\n\n\nMeaningful Use Quality Measures\n\n\nACC-NCDR PINNACLE\n\n\nACC-NCDR AFib Ablation\n\n\nACC-NCDR CathPCI\n\n\nACC-NCDR CathPCI Follow-up\n\n\nUNOS Configuration\n\n\nVermont Oxford Network\n\n\nQuality Measure - Individual\n\n\nQuality Measure - Patient Details\n\n\nGeneric Attribution\n\n\nPhysician Quality Reporting Summary - Incremental\n\n\nMeaningful Use Summary - Incremental\n\n\nInternal QM Summary - Incremental\n\n\nPhysician Quality Reporting Registry Summary - Full Year\n\n\nMeaningful Use Summary - Final\n\n\nPhysician Quality Reporting Registry Summary - Half Year\n\n\nPhysician Quality Reporting EHR Summary - Full Year\n\n\nUniversal Data System Summary\n\n\nUniversal Data System Details\n\n\nQRDA-III XML Run Summary\n\n\nRegulatory Reporting Patient Metadata\n\n\nObjective Measures - Run Statistics\n\n\nObjective Measures - EP Fact\n\n\nObjective Measures - Patient Fact\n\n\nObjective Measures - Summary\n\n\nObjective Measures - EH Fact\n\n\nMy Panel Metrics - Patient\n\n\nPulse Information\n\n\nRDI Child Record\n\n\nHealth and Care Plan\n\n\nUNOS Kidney Recipient Follow-up\n\n\nUNOS Liver Recipient Follow-up\n\n\nUNOS Pancreas Recipient Follow-up\n\n\nUNOS Kidney/Pancreas Recipient Follow-up\n\n\nUNOS Thoracic Recipient Follow-up\n\n\nUNOS Kidney Living Donor Follow-up\n\n\nUNOS Kidney Pancreas Wait List\n\n\nUNOS Liver Intestine Wait List\n\n\nUNOS Thoracic Wait List\n\n\nUNOS Kidney Candidate Registration\n\n\nUNOS Liver Candidate Registration\n\n\nUNOS Heart/Lung Candidate Registration\n\n\nUNOS Heart Candidate Registration\n\n\nUNOS Lung Candidate Registration\n\n\nUNOS Pancreas and Pancreas Islets Candidate Registration\n\n\nUNOS Kidney/Pancreas Candidate Registration\n\n\nUNOS Kidney Recipient Registration\n\n\nUNOS Liver Recipient Registration\n\n\nUNOS Pancreas Recipient Registration\n\n\nUNOS Kidney/Pancreas Recipient Registration\n\n\nUNOS Thoracic Recipient Registration\n\n\nUNOS Kidney Living Donor Registration\n\n\nUNOS Deceased Donor Registration\n\n\nUNOS Deceased Donor Histocompatibility\n\n\nACS NSQIP\n\n\nTHL Implant\n\n\nSurgical Care Improvement Project\n\n\nHoitotahto\n\n\nElinluovutustahto\n\n\nHH Outcomes\n\n\nHH Adverse Events\n\n\nRyan White Services Reporting\n\n\nNationale Intensive Care Evaluatie\n\n\nPediatrische Intensive Care Evaluatie\n\n\nAustralian and New Zealand Pediatric Intensive Care Registry\n\n\nAustralian and New Zealand Neonatal Network\n\n\nSwiss MDSi\n\n\nMyChart\n\n\nFederal MCSA-5875\n\n\nState MCSA-5875\n\n\nCertificate MCSA-5876\n\n\nBelgium eBirth - Birth Notification\n\n\nBelgium eBirth - Medical Form\n\n\nF�dselsmelding Skatteetaten\n\n\nMedisinsk f�dselsregister (MFR)\n\n\nAbstraction\n\n\nSubabstraction\n\n\nMinimum Data Set\n\n\nInfection Case\n\n\nNHSN Lab Identified Organism\n\n\nProcedure Abstraction\n\n\nCOVID-19 Hospital Infections\n\n\nEQRS Submission\n\n\nCMS Registration Form 2728\n\n\nCMS Death Form 2746\n\n\nNephrology Configuration\n\n\nAmerican Heart Association Get With The Guidelines - Stroke\n\n\nCOVID-19 PUI Case Report\n\n\nLung Cancer Screening Registry\n\n\nASCO-QOPI\n\n\nPerined: Kernset Aanleverbericht\n\n\nTHL: Congenital Malformations\n\n\nFamily Planning Annual Report\n\n\nIRF-PAI\n\n\nCMG Data\n\n\n60% Rule Data\n\n\nCMG Score Config Data\n\n\nMap IGC Data\n\n\nIRF IGC Spotter\n\n\nInfection Control Regulatory Definitions\n\n\nInfection Control LDA-Based Metric Definition\n\n\nInfection Control Metric Details\n\n\nInfection Control Manual Metric Details\n\n\nConfiguration Template\n\n\nInfection Control Surveillance Abstraction\n\n\nInfection Control Search Parameters\n\n\nNHSN Antimicrobial Resistance Event\n\n\nExposure Case Abstraction\n\n\nOutbreak Definition\n\n\nNHSN CLIP Abstraction\n\n\nScoring System Deferral Configuration\n\n\nScoring System Deferral User Interface Configuration\n\n\nReporting Agency Configuration\n\n\nReportable Condition Configuration\n\n\nSyndromic Surveillance Event Type (BPA Trigger)\n\n\nSyndromic Surveillance Syndrome\n\n\nGIQuIC-Colonoscopy\n\n\nAnalytics Registry"
+      "description": "The category ID for the type of registry. For this table the value will always be 20000 corresponding to ACS NSQIP.",
+      "entries": [
+        "Core Measures",
+        "ACC-NCDR CathPCI Version 3 and 4",
+        "ACC-NCDR EP Device Implant",
+        "Meaningful Use Quality Measures",
+        "ACC-NCDR PINNACLE",
+        "ACC-NCDR AFib Ablation",
+        "ACC-NCDR CathPCI",
+        "ACC-NCDR CathPCI Follow-up",
+        "UNOS Configuration",
+        "Vermont Oxford Network",
+        "Quality Measure - Individual",
+        "Quality Measure - Patient Details",
+        "Generic Attribution",
+        "Physician Quality Reporting Summary - Incremental",
+        "Meaningful Use Summary - Incremental",
+        "Internal QM Summary - Incremental",
+        "Physician Quality Reporting Registry Summary - Full Year",
+        "Meaningful Use Summary - Final",
+        "Physician Quality Reporting Registry Summary - Half Year",
+        "Physician Quality Reporting EHR Summary - Full Year",
+        "Universal Data System Summary",
+        "Universal Data System Details",
+        "QRDA-III XML Run Summary",
+        "Regulatory Reporting Patient Metadata",
+        "Objective Measures - Run Statistics",
+        "Objective Measures - EP Fact",
+        "Objective Measures - Patient Fact",
+        "Objective Measures - Summary",
+        "Objective Measures - EH Fact",
+        "My Panel Metrics - Patient",
+        "Pulse Information",
+        "RDI Child Record",
+        "Health and Care Plan",
+        "UNOS Kidney Recipient Follow-up",
+        "UNOS Liver Recipient Follow-up",
+        "UNOS Pancreas Recipient Follow-up",
+        "UNOS Kidney/Pancreas Recipient Follow-up",
+        "UNOS Thoracic Recipient Follow-up",
+        "UNOS Kidney Living Donor Follow-up",
+        "UNOS Kidney Pancreas Wait List",
+        "UNOS Liver Intestine Wait List",
+        "UNOS Thoracic Wait List",
+        "UNOS Kidney Candidate Registration",
+        "UNOS Liver Candidate Registration",
+        "UNOS Heart/Lung Candidate Registration",
+        "UNOS Heart Candidate Registration",
+        "UNOS Lung Candidate Registration",
+        "UNOS Pancreas and Pancreas Islets Candidate Registration",
+        "UNOS Kidney/Pancreas Candidate Registration",
+        "UNOS Kidney Recipient Registration",
+        "UNOS Liver Recipient Registration",
+        "UNOS Pancreas Recipient Registration",
+        "UNOS Kidney/Pancreas Recipient Registration",
+        "UNOS Thoracic Recipient Registration",
+        "UNOS Kidney Living Donor Registration",
+        "UNOS Deceased Donor Registration",
+        "UNOS Deceased Donor Histocompatibility",
+        "ACS NSQIP",
+        "THL Implant",
+        "Surgical Care Improvement Project",
+        "Hoitotahto",
+        "Elinluovutustahto",
+        "HH Outcomes",
+        "HH Adverse Events",
+        "Ryan White Services Reporting",
+        "Nationale Intensive Care Evaluatie",
+        "Pediatrische Intensive Care Evaluatie",
+        "Australian and New Zealand Pediatric Intensive Care Registry",
+        "Australian and New Zealand Neonatal Network",
+        "Swiss MDSi",
+        "MyChart",
+        "Federal MCSA-5875",
+        "State MCSA-5875",
+        "Certificate MCSA-5876",
+        "Belgium eBirth - Birth Notification",
+        "Belgium eBirth - Medical Form",
+        "F�dselsmelding Skatteetaten",
+        "Medisinsk f�dselsregister (MFR)",
+        "Abstraction",
+        "Subabstraction",
+        "Minimum Data Set",
+        "Infection Case",
+        "NHSN Lab Identified Organism",
+        "Procedure Abstraction",
+        "COVID-19 Hospital Infections",
+        "EQRS Submission",
+        "CMS Registration Form 2728",
+        "CMS Death Form 2746",
+        "Nephrology Configuration",
+        "American Heart Association Get With The Guidelines - Stroke",
+        "COVID-19 PUI Case Report",
+        "Lung Cancer Screening Registry",
+        "ASCO-QOPI",
+        "Perined: Kernset Aanleverbericht",
+        "THL: Congenital Malformations",
+        "Family Planning Annual Report",
+        "IRF-PAI",
+        "CMG Data",
+        "60% Rule Data",
+        "CMG Score Config Data",
+        "Map IGC Data",
+        "IRF IGC Spotter",
+        "Infection Control Regulatory Definitions",
+        "Infection Control LDA-Based Metric Definition",
+        "Infection Control Metric Details",
+        "Infection Control Manual Metric Details",
+        "Configuration Template",
+        "Infection Control Surveillance Abstraction",
+        "Infection Control Search Parameters",
+        "NHSN Antimicrobial Resistance Event",
+        "Exposure Case Abstraction",
+        "Outbreak Definition",
+        "NHSN CLIP Abstraction",
+        "Scoring System Deferral Configuration",
+        "Scoring System Deferral User Interface Configuration",
+        "Reporting Agency Configuration",
+        "Reportable Condition Configuration",
+        "Syndromic Surveillance Event Type (BPA Trigger)",
+        "Syndromic Surveillance Syndrome",
+        "GIQuIC-Colonoscopy",
+        "Analytics Registry"
+      ]
     },
     {
-      "index": 160,
+      "ordinalPosition": 7,
       "name": "REG_OVRIDE_CONTEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The override context string to identify the correct override record for the registry settings record (HFR)."
     },
     {
-      "index": 165,
+      "ordinalPosition": 8,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient associated with this registry record."
     },
     {
-      "index": 170,
+      "ordinalPosition": 9,
       "name": "PAT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of patient encounter linked to the surgery."
     },
     {
-      "index": 175,
+      "ordinalPosition": 10,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgery associated with this registry record."
     },
     {
-      "index": 180,
+      "ordinalPosition": 11,
       "name": "NSQIP_CYCLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the cycle number assigned to the case. A cycle number is assigned to every eight consecutive days in a calendar year. It is automatically generated based on the operation date.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCycle 01\n\n\nCycle 02\n\n\nCycle 03\n\n\nCycle 04\n\n\nCycle 05\n\n\nCycle 06\n\n\nCycle 07\n\n\nCycle 08\n\n\nCycle 09\n\n\nCycle 10\n\n\nCycle 11\n\n\nCycle 12\n\n\nCycle 13\n\n\nCycle 14\n\n\nCycle 15\n\n\nCycle 16\n\n\nCycle 17\n\n\nCycle 18\n\n\nCycle 19\n\n\nCycle 20\n\n\nCycle 21\n\n\nCycle 22\n\n\nCycle 23\n\n\nCycle 24\n\n\nCycle 25\n\n\nCycle 26\n\n\nCycle 27\n\n\nCycle 28\n\n\nCycle 29\n\n\nCycle 30\n\n\nCycle 31\n\n\nCycle 32\n\n\nCycle 33\n\n\nCycle 34\n\n\nCycle 35\n\n\nCycle 36\n\n\nCycle 37\n\n\nCycle 38\n\n\nCycle 39\n\n\nCycle 40\n\n\nCycle 41\n\n\nCycle 42\n\n\nCycle 43\n\n\nCycle 44\n\n\nCycle 45\n\n\nCycle 46"
+      "description": "The category ID for the cycle number assigned to the case. A cycle number is assigned to every eight consecutive days in a calendar year. It is automatically generated based on the operation date.",
+      "entries": [
+        "Cycle 01",
+        "Cycle 02",
+        "Cycle 03",
+        "Cycle 04",
+        "Cycle 05",
+        "Cycle 06",
+        "Cycle 07",
+        "Cycle 08",
+        "Cycle 09",
+        "Cycle 10",
+        "Cycle 11",
+        "Cycle 12",
+        "Cycle 13",
+        "Cycle 14",
+        "Cycle 15",
+        "Cycle 16",
+        "Cycle 17",
+        "Cycle 18",
+        "Cycle 19",
+        "Cycle 20",
+        "Cycle 21",
+        "Cycle 22",
+        "Cycle 23",
+        "Cycle 24",
+        "Cycle 25",
+        "Cycle 26",
+        "Cycle 27",
+        "Cycle 28",
+        "Cycle 29",
+        "Cycle 30",
+        "Cycle 31",
+        "Cycle 32",
+        "Cycle 33",
+        "Cycle 34",
+        "Cycle 35",
+        "Cycle 36",
+        "Cycle 37",
+        "Cycle 38",
+        "Cycle 39",
+        "Cycle 40",
+        "Cycle 41",
+        "Cycle 42",
+        "Cycle 43",
+        "Cycle 44",
+        "Cycle 45",
+        "Cycle 46"
+      ]
     },
     {
-      "index": 233,
+      "ordinalPosition": 12,
       "name": "NSQIP_IDN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the patient in the ACS NSQIP database."
     },
     {
-      "index": 238,
+      "ordinalPosition": 13,
       "name": "NSQIP_LMRN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Medical Record Number (MRN) of the patient as assigned by the hospital."
     },
     {
-      "index": 243,
+      "ordinalPosition": 14,
       "name": "NSQIP_DOB_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient's date of birth."
     },
     {
-      "index": 248,
+      "ordinalPosition": 15,
       "name": "NSQIP_GENDER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the gender of the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMale\n\n\nFemale\n\n\nNon-binary"
+      "description": "The category ID for the gender of the patient.",
+      "entries": [
+        "Male",
+        "Female",
+        "Non-binary"
+      ]
     },
     {
-      "index": 258,
+      "ordinalPosition": 16,
       "name": "NSQIP_RACE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the race of the patient. Starting with the January 2021 specification updates, discrete race categories are now located in the column NSQIP_RACES.NSQIP_RACES_C.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWhite\n\n\nBlack or African American\n\n\nAmerican Indian or Alaska Native\n\n\nNative Hawaiian or Other Pacific Islander\n\n\nAsian\n\n\nUnknown / Not Reported\n\n\nSome Other Race"
+      "description": "The category ID for the race of the patient. Starting with the January 2021 specification updates, discrete race categories are now located in the column NSQIP_RACES.NSQIP_RACES_C.",
+      "entries": [
+        "White",
+        "Black or African American",
+        "American Indian or Alaska Native",
+        "Native Hawaiian or Other Pacific Islander",
+        "Asian",
+        "Unknown / Not Reported",
+        "Some Other Race"
+      ]
     },
     {
-      "index": 272,
+      "ordinalPosition": 17,
       "name": "NSQIP_HISPANIC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient is of Hispanic or Latino ethnicity.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes\n\n\nUnknown"
+      "description": "Indicates whether the patient is of Hispanic or Latino ethnicity.",
+      "entries": [
+        "No",
+        "Yes",
+        "Unknown"
+      ]
     },
     {
-      "index": 282,
+      "ordinalPosition": 18,
       "name": "NSQIP_NAME_FIRST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's first name."
     },
     {
-      "index": 287,
+      "ordinalPosition": 19,
       "name": "NSQIP_NAME_MI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's middle initial."
     },
     {
-      "index": 292,
+      "ordinalPosition": 20,
       "name": "NSQIP_NAME_LAST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's last name."
     },
     {
-      "index": 297,
+      "ordinalPosition": 21,
       "name": "NSQIP_ADDRESS_LINE_1",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Line 1 of the patient's address."
     },
     {
-      "index": 302,
+      "ordinalPosition": 22,
       "name": "NSQIP_ADDRESS_LINE_2",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Line 2 of the patient's address."
     },
     {
-      "index": 307,
+      "ordinalPosition": 23,
       "name": "NSQIP_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's city."
     },
     {
-      "index": 312,
+      "ordinalPosition": 24,
       "name": "NSQIP_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the state of the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAlabama\n\n\nAlaska\n\n\nAlberta\n\n\nAmerican Samoa\n\n\nAPO/FPO ADDRESS (AA)\n\n\nAPO/FPO ADDRESS (AE)\n\n\nAPO/FPO ADDRESS (AP)\n\n\nArizona\n\n\nArkansas\n\n\nBritish Columbia\n\n\nCalifornia\n\n\nColorado\n\n\nConnecticut\n\n\nDelaware\n\n\nDistrict of Columbia\n\n\nFederation of Micronesia\n\n\nFlorida\n\n\nGeorgia\n\n\nGuam\n\n\nHawaii\n\n\nIdaho\n\n\nIllinois\n\n\nIndiana\n\n\nIowa\n\n\nKansas\n\n\nKentucky\n\n\nLouisiana\n\n\nMaine\n\n\nManitoba\n\n\nMarshall Islands\n\n\nMaryland\n\n\nMassachusetts\n\n\nMichigan\n\n\nMinnesota\n\n\nMississippi\n\n\nMissouri\n\n\nMontana\n\n\nNebraska\n\n\nNevada\n\n\nNew Brunswick\n\n\nNew Hampshire\n\n\nNew Jersey\n\n\nNew Mexico\n\n\nNew York\n\n\nNewfoundland\n\n\nNorth Carolina\n\n\nNorth Dakota\n\n\nNorthern Mariana Islands\n\n\nNorthwest Territories\n\n\nNova Scotia\n\n\nNunavut\n\n\nOhio\n\n\nOklahoma\n\n\nOntario\n\n\nOregon\n\n\nPalau\n\n\nPennsylvania\n\n\nPrince Edward Island\n\n\nPuerto Rico\n\n\nQuebec\n\n\nRhode Island\n\n\nSaskatchewan\n\n\nSouth Carolina\n\n\nSouth Dakota\n\n\nTennessee\n\n\nTexas\n\n\nUtah\n\n\nVermont\n\n\nVirgin Islands\n\n\nVirginia\n\n\nWashington\n\n\nWest Virginia\n\n\nWisconsin\n\n\nWyoming\n\n\nYukon Territory"
+      "description": "The category ID for the state of the patient.",
+      "entries": [
+        "Alabama",
+        "Alaska",
+        "Alberta",
+        "American Samoa",
+        "APO/FPO ADDRESS (AA)",
+        "APO/FPO ADDRESS (AE)",
+        "APO/FPO ADDRESS (AP)",
+        "Arizona",
+        "Arkansas",
+        "British Columbia",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "District of Columbia",
+        "Federation of Micronesia",
+        "Florida",
+        "Georgia",
+        "Guam",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Manitoba",
+        "Marshall Islands",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Brunswick",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "Newfoundland",
+        "North Carolina",
+        "North Dakota",
+        "Northern Mariana Islands",
+        "Northwest Territories",
+        "Nova Scotia",
+        "Nunavut",
+        "Ohio",
+        "Oklahoma",
+        "Ontario",
+        "Oregon",
+        "Palau",
+        "Pennsylvania",
+        "Prince Edward Island",
+        "Puerto Rico",
+        "Quebec",
+        "Rhode Island",
+        "Saskatchewan",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virgin Islands",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming",
+        "Yukon Territory"
+      ]
     },
     {
-      "index": 394,
+      "ordinalPosition": 25,
       "name": "NSQIP_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's ZIP code."
     },
     {
-      "index": 399,
+      "ordinalPosition": 26,
       "name": "NSQIP_COUNTRY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the country of the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAfghanistan\n\n\nAland\n\n\nAlbania\n\n\nAlgeria\n\n\nAmerican Samoa\n\n\nAndorra\n\n\nAngola\n\n\nAnguilla\n\n\nAntarctica\n\n\nAntigua and Barbuda\n\n\nArgentina\n\n\nArmenia\n\n\nAruba\n\n\nAustralia\n\n\nAustria\n\n\nAzerbaijan\n\n\nBahamas\n\n\nBahrain\n\n\nBangladesh\n\n\nBarbados\n\n\nBelarus\n\n\nBelgium\n\n\nBelize\n\n\nBenin\n\n\nBermuda\n\n\nBhutan\n\n\nBolivia\n\n\nBosnia and Herzegovina\n\n\nBotswana\n\n\nBouvet Island\n\n\nBrazil\n\n\nBritish Indian Ocean Territory\n\n\nBrunei Darussalam\n\n\nBulgaria\n\n\nBurkina Faso\n\n\nBurundi\n\n\nCambodia\n\n\nCameroon\n\n\nCanada\n\n\nCape Verde\n\n\nCayman Islands\n\n\nCentral African Republic\n\n\nChad\n\n\nChile\n\n\nChina, Peoples Republic of\n\n\nChristmas Island\n\n\nCocos (Keeling) Islands\n\n\nColombia\n\n\nComoros\n\n\nCongo (Brazzaville)\n\n\nCongo, (Kinshasa)\n\n\nCook Islands\n\n\nCosta Rica\n\n\nCote D`ivoire\n\n\nCroatia\n\n\nCuba\n\n\nCyprus\n\n\nCzech Republic\n\n\nDenmark\n\n\nDjibouti\n\n\nDominica\n\n\nDominican Republic\n\n\nEcuador\n\n\nEgypt\n\n\nEl Salvador\n\n\nEquatorial Guinea\n\n\nEritrea\n\n\nEstonia\n\n\nEthiopia\n\n\nFalkland Islands\n\n\nFaroe Islands\n\n\nFiji\n\n\nFinland\n\n\nFrance\n\n\nFrench Guiana\n\n\nFrench Polynesia\n\n\nFrench Southern and Antartic Lands\n\n\nGabon\n\n\nGambia\n\n\nGeorgia, Republic of\n\n\nGermany\n\n\nGhana\n\n\nGibraltar\n\n\nGreece\n\n\nGreenland\n\n\nGrenada\n\n\nGuadeloupe\n\n\nGuam\n\n\nGuatemala\n\n\nGuinea\n\n\nGuinea-Bissau\n\n\nGuyana\n\n\nHaiti\n\n\nHeard Islands and McDonald Islands\n\n\nHonduras\n\n\nHong Kong\n\n\nHungary\n\n\nIceland\n\n\nIndia\n\n\nIndonesia\n\n\nIran\n\n\nIraq\n\n\nIreland\n\n\nIsrael\n\n\nItaly\n\n\nJamaica\n\n\nJapan\n\n\nJordan\n\n\nKazakhstan\n\n\nKenya\n\n\nKiribati\n\n\nKorea, North\n\n\nKorea, South\n\n\nKuwait\n\n\nKyrgyzstan\n\n\nLaos\n\n\nLatvia\n\n\nLebanon\n\n\nLesotho\n\n\nLiberia\n\n\nLibya\n\n\nLiechtenstein\n\n\nLithuania\n\n\nLuxembourg\n\n\nMacau\n\n\nNorth Macedonia\n\n\nMadagascar\n\n\nMalawi\n\n\nMalaysia\n\n\nMaldives\n\n\nMali\n\n\nMalta\n\n\nMarshall Islands\n\n\nMartinique\n\n\nMauritania\n\n\nMauritius\n\n\nMayotte\n\n\nMexico\n\n\nMicronesia\n\n\nMoldova\n\n\nMonaco\n\n\nMongolia\n\n\nMontserrat\n\n\nMorocco\n\n\nMozambique\n\n\nMyanmar\n\n\nNamibia\n\n\nNauru\n\n\nNepal\n\n\nNetherlands\n\n\nNetherlands Antilles\n\n\nNew Caledonia\n\n\nNew Zealand\n\n\nNicaragua\n\n\nNiger\n\n\nNigeria\n\n\nNiue\n\n\nNorfolk Island\n\n\nNorthern Mariana Islands\n\n\nNorway\n\n\nOman\n\n\nPakistan\n\n\nPalau\n\n\nPalestine\n\n\nPanama\n\n\nPapua New Guinea\n\n\nParaguay\n\n\nPeru\n\n\nPhilippines\n\n\nPitcairn Islands\n\n\nPoland\n\n\nPortugal\n\n\nPuerto Rico\n\n\nQatar\n\n\nReunion\n\n\nRomania\n\n\nRussia\n\n\nRwanda\n\n\nSaint Helena\n\n\nSaint Kitts and Nevis\n\n\nSaint Lucia\n\n\nSaint Pierre and Miquelon\n\n\nSaint Vincent and The Grenadines\n\n\nSamoa\n\n\nSan Marino\n\n\nSao Tome and Principe\n\n\nSaudi Arabia\n\n\nSenegal\n\n\nSerbia-Montenegro\n\n\nSeychelles\n\n\nSierra Leone\n\n\nSingapore,  Republic of\n\n\nSlovakia\n\n\nSlovenia\n\n\nSolomon Islands\n\n\nSomalia\n\n\nSouth Africa, Republic of\n\n\nSouth Georgia and South Sandwich Islands\n\n\nSpain\n\n\nSri Lanka\n\n\nSudan\n\n\nSuriname\n\n\nSvalbard and Jan Mayen Islands\n\n\nEswatini\n\n\nSweden\n\n\nSwitzerland\n\n\nSyria\n\n\nTaiwan\n\n\nTajikistan\n\n\nTanzania\n\n\nThailand\n\n\nTimor-Leste\n\n\nTogo\n\n\nTokelau\n\n\nTonga\n\n\nTrinidad and Tobago\n\n\nTunisia\n\n\nTurkey\n\n\nTurkmenistan\n\n\nTurks and Caicos Islands\n\n\nTuvalu\n\n\nUganda\n\n\nUkraine\n\n\nUnited Arab Emirates\n\n\nUnited Kingdom\n\n\nUnited States Minor Outlying Islands\n\n\nUruguay\n\n\nUzbekistan\n\n\nVanuatu\n\n\nVatican City\n\n\nVenezuela\n\n\nVietnam\n\n\nVirgin Islands, British\n\n\nVirgin Islands, US\n\n\nWallis and Futuna\n\n\nWestern Sahara\n\n\nYemen\n\n\nZambia\n\n\nZimbabwe\n\n\nUnited States"
+      "description": "The category ID for the country of the patient.",
+      "entries": [
+        "Afghanistan",
+        "Aland",
+        "Albania",
+        "Algeria",
+        "American Samoa",
+        "Andorra",
+        "Angola",
+        "Anguilla",
+        "Antarctica",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Aruba",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bermuda",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Bouvet Island",
+        "Brazil",
+        "British Indian Ocean Territory",
+        "Brunei Darussalam",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Cayman Islands",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China, Peoples Republic of",
+        "Christmas Island",
+        "Cocos (Keeling) Islands",
+        "Colombia",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo, (Kinshasa)",
+        "Cook Islands",
+        "Costa Rica",
+        "Cote D`ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Falkland Islands",
+        "Faroe Islands",
+        "Fiji",
+        "Finland",
+        "France",
+        "French Guiana",
+        "French Polynesia",
+        "French Southern and Antartic Lands",
+        "Gabon",
+        "Gambia",
+        "Georgia, Republic of",
+        "Germany",
+        "Ghana",
+        "Gibraltar",
+        "Greece",
+        "Greenland",
+        "Grenada",
+        "Guadeloupe",
+        "Guam",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Heard Islands and McDonald Islands",
+        "Honduras",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, North",
+        "Korea, South",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macau",
+        "North Macedonia",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Martinique",
+        "Mauritania",
+        "Mauritius",
+        "Mayotte",
+        "Mexico",
+        "Micronesia",
+        "Moldova",
+        "Monaco",
+        "Mongolia",
+        "Montserrat",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "Netherlands Antilles",
+        "New Caledonia",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Niue",
+        "Norfolk Island",
+        "Northern Mariana Islands",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Palestine",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Pitcairn Islands",
+        "Poland",
+        "Portugal",
+        "Puerto Rico",
+        "Qatar",
+        "Reunion",
+        "Romania",
+        "Russia",
+        "Rwanda",
+        "Saint Helena",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Pierre and Miquelon",
+        "Saint Vincent and The Grenadines",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia-Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore,  Republic of",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa, Republic of",
+        "South Georgia and South Sandwich Islands",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Svalbard and Jan Mayen Islands",
+        "Eswatini",
+        "Sweden",
+        "Switzerland",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tokelau",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Turks and Caicos Islands",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States Minor Outlying Islands",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Vatican City",
+        "Venezuela",
+        "Vietnam",
+        "Virgin Islands, British",
+        "Virgin Islands, US",
+        "Wallis and Futuna",
+        "Western Sahara",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+        "United States"
+      ]
     },
     {
-      "index": 646,
+      "ordinalPosition": 27,
       "name": "NSQIP_COUNTY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's county."
     },
     {
-      "index": 651,
+      "ordinalPosition": 28,
       "name": "NSQIP_HOME_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's home phone number."
     },
     {
-      "index": 656,
+      "ordinalPosition": 29,
       "name": "NSQIP_WORK_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's work phone number."
     },
     {
-      "index": 661,
+      "ordinalPosition": 30,
       "name": "NSQIP_CELL_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's cell phone number."
     },
     {
-      "index": 666,
+      "ordinalPosition": 31,
       "name": "NSQIP_PREF_LANG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the preferred language of the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEnglish\n\n\nSpanish"
+      "description": "The category ID for the preferred language of the patient.",
+      "entries": [
+        "English",
+        "Spanish"
+      ]
     },
     {
-      "index": 675,
+      "ordinalPosition": 32,
       "name": "NSQIP_PRIN_PROC_PANEL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The panel number corresponding to the NSQIP principal operative procedure. It is used along with procedure ID from NSQIP_PRIN_PROC_ID to identify the row in OR_LOG_ALL_PROC table corresponding to the NSQIP principal operative procedure."
     },
     {
-      "index": 680,
+      "ordinalPosition": 33,
       "name": "NSQIP_PRIN_PROC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the procedure record corresponding to the NSQIP principal operative procedure. It is used along with panel number from NSQIP_PRIN_PROC_PANEL to identify the row in OR_LOG_ALL_PROC table corresponding to the NSQIP principal operative procedure."
     },
     {
-      "index": 685,
+      "ordinalPosition": 34,
       "name": "NSQIP_PRIN_PROC_ID_PROC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the surgical procedure record."
     },
     {
-      "index": 690,
+      "ordinalPosition": 35,
       "name": "NSQIP_PRIN_PROC_CPT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The CPT code of the principal NSQIP procedure."
     },
     {
-      "index": 695,
+      "ordinalPosition": 36,
       "name": "NSQIP_PRIN_PROC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the principal operative procedure."
     },
     {
-      "index": 700,
+      "ordinalPosition": 37,
       "name": "NSQIP_ADMSN_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the admission status of the case (inpatient or outpatient).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOutpatient\n\n\nInpatient"
+      "description": "The category ID for the admission status of the case (inpatient or outpatient).",
+      "entries": [
+        "Outpatient",
+        "Inpatient"
+      ]
     },
     {
-      "index": 709,
+      "ordinalPosition": 38,
       "name": "NSQIP_ELECTIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the surgical case is considered an elective case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "Indicates whether the surgical case is considered an elective case.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 719,
+      "ordinalPosition": 39,
       "name": "NSQIP_ORIGIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the origin status of the case. It indicates whether the patient was admitted from their home or from another type of facility.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmitted directly from home\n\n\nAcute care hospital\n\n\nNursing home / Chronic care / Intermediate care\n\n\nTransfer from other\n\n\nOutside emergency department\n\n\nUnknown\n\n\nHome/Permanent residence\n\n\nAcute care hospital\n\n\nOther facility"
+      "description": "The category ID for the origin status of the case. It indicates whether the patient was admitted from their home or from another type of facility.",
+      "entries": [
+        "Admitted directly from home",
+        "Acute care hospital",
+        "Nursing home / Chronic care / Intermediate care",
+        "Transfer from other",
+        "Outside emergency department",
+        "Unknown",
+        "Home/Permanent residence",
+        "Acute care hospital",
+        "Other facility"
+      ]
     },
     {
-      "index": 735,
+      "ordinalPosition": 40,
       "name": "NSQIP_ADMSN_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was admitted to the hospital for the principal operative procedure."
     },
     {
-      "index": 740,
+      "ordinalPosition": 41,
       "name": "NSQIP_OPERATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient entered the surgical suite for the principal operative procedure."
     },
     {
-      "index": 745,
+      "ordinalPosition": 42,
       "name": "NSQIP_PRIN_ANES_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the principal anesthesia type of the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral\n\n\nEpidural\n\n\nSpinal\n\n\nRegional\n\n\nLocal\n\n\nMonitored Anesthesia Care (MAC) / IV Sedation\n\n\nOther\n\n\nUnknown\n\n\nNone"
+      "description": "The category ID for the principal anesthesia type of the case.",
+      "entries": [
+        "General",
+        "Epidural",
+        "Spinal",
+        "Regional",
+        "Local",
+        "Monitored Anesthesia Care (MAC) / IV Sedation",
+        "Other",
+        "Unknown",
+        "None"
+      ]
     },
     {
-      "index": 761,
+      "ordinalPosition": 43,
       "name": "NSQIP_SPECIALTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the surgical specialty of the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGeneral Surgery\n\n\nGynecology\n\n\nNeurosurgery\n\n\nOrthopedics\n\n\nOtolaryngology (ENT)\n\n\nPlastics\n\n\nCardiac\n\n\nThoracic\n\n\nUrology\n\n\nVascular\n\n\nInterventional Radiologist\n\n\nObstetrics"
+      "description": "The category ID for the surgical specialty of the case.",
+      "entries": [
+        "General Surgery",
+        "Gynecology",
+        "Neurosurgery",
+        "Orthopedics",
+        "Otolaryngology (ENT)",
+        "Plastics",
+        "Cardiac",
+        "Thoracic",
+        "Urology",
+        "Vascular",
+        "Interventional Radiologist",
+        "Obstetrics"
+      ]
     },
     {
-      "index": 780,
+      "ordinalPosition": 44,
       "name": "NSQIP_EMERG_CASE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the surgical case is considered an emergency case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the surgical case is considered an emergency case.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 789,
+      "ordinalPosition": 45,
       "name": "NSQIP_WOUND_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the wound classification of the surgical wound at the time of principal operative procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nClean\n\n\nClean/Contaminated\n\n\nContaminated\n\n\nDirty/Infected"
+      "description": "The category ID for the wound classification of the surgical wound at the time of principal operative procedure.",
+      "entries": [
+        "Clean",
+        "Clean/Contaminated",
+        "Contaminated",
+        "Dirty/Infected"
+      ]
     },
     {
-      "index": 800,
+      "ordinalPosition": 46,
       "name": "NSQIP_WOUND_CLOSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the wound closure associated with the surgical wound at the time of principal operative procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAll layers of incision (deep and superficial) fully closed\n\n\nOnly deep layers closed; superficial left open\n\n\nNo layers of incision are surgically closed"
+      "description": "The category ID for the wound closure associated with the surgical wound at the time of principal operative procedure.",
+      "entries": [
+        "All layers of incision (deep and superficial) fully closed",
+        "Only deep layers closed; superficial left open",
+        "No layers of incision are surgically closed"
+      ]
     },
     {
-      "index": 810,
+      "ordinalPosition": 47,
       "name": "NSQIP_ASA_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the ASA class associated with the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nASA not assigned\n\n\nASA 1 - Normal/Healthy\n\n\nASA 2 - Mild systemic disease\n\n\nASA 3 - Severe systemic disease\n\n\nASA 4 - Life threat\n\n\nASA 5 - Moribund"
+      "description": "The category ID for the ASA class associated with the case.",
+      "entries": [
+        "ASA not assigned",
+        "ASA 1 - Normal/Healthy",
+        "ASA 2 - Mild systemic disease",
+        "ASA 3 - Severe systemic disease",
+        "ASA 4 - Life threat",
+        "ASA 5 - Moribund"
+      ]
     },
     {
-      "index": 823,
+      "ordinalPosition": 48,
       "name": "NSQIP_PROC_START_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The time the principal operative procedure began."
     },
     {
-      "index": 828,
+      "ordinalPosition": 49,
       "name": "NSQIP_PROC_FINISH_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The time the principal operative procedure was completed."
     },
     {
-      "index": 833,
+      "ordinalPosition": 50,
       "name": "NSQIP_LABS_ALL_UNKNOWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether all preop labs are unknown.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether all preop labs are unknown.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 842,
+      "ordinalPosition": 51,
       "name": "NSQIP_HEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's height."
     },
     {
-      "index": 847,
+      "ordinalPosition": 52,
       "name": "NSQIP_HEIGHT_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the unit of the height entered in the height column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInches\n\n\nCentimeters"
+      "description": "The category ID for the unit of the height entered in the height column.",
+      "entries": [
+        "Inches",
+        "Centimeters"
+      ]
     },
     {
-      "index": 856,
+      "ordinalPosition": 53,
       "name": "NSQIP_HEIGHT_UNKNOWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's height is unknown.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the patient's height is unknown."
     },
     {
-      "index": 862,
+      "ordinalPosition": 54,
       "name": "NSQIP_WEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's weight."
     },
     {
-      "index": 867,
+      "ordinalPosition": 55,
       "name": "NSQIP_WEIGHT_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the unit of the weight entered in the weight column.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPounds\n\n\nKilograms"
+      "description": "The category ID for the unit of the weight entered in the weight column.",
+      "entries": [
+        "Pounds",
+        "Kilograms"
+      ]
     },
     {
-      "index": 876,
+      "ordinalPosition": 56,
       "name": "NSQIP_WEIGHT_UNKNOWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's weight is unknown.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the patient's weight is unknown."
     },
     {
-      "index": 882,
+      "ordinalPosition": 57,
       "name": "NSQIP_DIABETES_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the diabetes mellitus variable. It determines whether the patient had diabetes mellitus that required therapy with non-insulin agents or insulin.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nNon-insulin\n\n\nInsulin"
+      "description": "The category ID for the diabetes mellitus variable. It determines whether the patient had diabetes mellitus that required therapy with non-insulin agents or insulin.",
+      "entries": [
+        "No",
+        "Non-insulin",
+        "Insulin"
+      ]
     },
     {
-      "index": 892,
+      "ordinalPosition": 58,
       "name": "NSQIP_SMOKER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was a smoker within 12 months prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient was a smoker within 12 months prior to surgery."
     },
     {
-      "index": 898,
+      "ordinalPosition": 59,
       "name": "NSQIP_DYSPNEA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the dyspnea variable. It determines the usual and typical level of dyspnea.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nModerate exertion\n\n\nAt rest"
+      "description": "The category ID for the dyspnea variable. It determines the usual and typical level of dyspnea.",
+      "entries": [
+        "No",
+        "Moderate exertion",
+        "At rest"
+      ]
     },
     {
-      "index": 908,
+      "ordinalPosition": 60,
       "name": "NSQIP_FHS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the Functional Health Status variable. It determines the best functional status of self-care as demonstrated by the patient prior to the onset of acute illness.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIndependent\n\n\nPartially dependent\n\n\nTotally dependent\n\n\nUnknown"
+      "description": "The category ID for the Functional Health Status variable. It determines the best functional status of self-care as demonstrated by the patient prior to the onset of acute illness.",
+      "entries": [
+        "Independent",
+        "Partially dependent",
+        "Totally dependent",
+        "Unknown"
+      ]
     },
     {
-      "index": 919,
+      "ordinalPosition": 61,
       "name": "NSQIP_VENT_DEP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient required ventilator-assisted respirations within 48 hours prior to the principal operative procedure.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient required ventilator-assisted respirations within 48 hours prior to the principal operative procedure."
     },
     {
-      "index": 925,
+      "ordinalPosition": 62,
       "name": "NSQIP_COPD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient suffered from Chronic Obstructive Pulmonary Disease (COPD) prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient suffered from Chronic Obstructive Pulmonary Disease (COPD) prior to surgery."
     },
     {
-      "index": 931,
+      "ordinalPosition": 63,
       "name": "NSQIP_ASCITES_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had fluid accumulation in the abodmen due to advanced liver disease or malignancy prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had fluid accumulation in the abodmen due to advanced liver disease or malignancy prior to surgery."
     },
     {
-      "index": 937,
+      "ordinalPosition": 64,
       "name": "NSQIP_CHF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had newly diagnosed Congestive Heart Failure (CHF) or a diagnosis of chronic CHF prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had newly diagnosed Congestive Heart Failure (CHF) or a diagnosis of chronic CHF prior to surgery."
     },
     {
-      "index": 943,
+      "ordinalPosition": 65,
       "name": "NSQIP_HYPERTENSION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had hypertension that required medication prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had hypertension that required medication prior to surgery."
     },
     {
-      "index": 949,
+      "ordinalPosition": 66,
       "name": "NSQIP_ARF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had renal compromise within 24 hours prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had renal compromise within 24 hours prior to surgery."
     },
     {
-      "index": 955,
+      "ordinalPosition": 67,
       "name": "NSQIP_DIALYSIS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient required dialysis two weeks prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient required dialysis two weeks prior to surgery."
     },
     {
-      "index": 961,
+      "ordinalPosition": 68,
       "name": "NSQIP_CANCER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had advanced malignancy reflecting serious physiologic compromise.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had advanced malignancy reflecting serious physiologic compromise."
     },
     {
-      "index": 967,
+      "ordinalPosition": 69,
       "name": "NSQIP_OPEN_WOUND_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had an open wound prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had an open wound prior to surgery."
     },
     {
-      "index": 973,
+      "ordinalPosition": 70,
       "name": "NSQIP_STEROID_USE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was receiving long-term pharmaceutical immunosuppresants.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient was receiving long-term pharmaceutical immunosuppresants."
     },
     {
-      "index": 979,
+      "ordinalPosition": 71,
       "name": "NSQIP_WEIGHT_LOSS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had 10% decrease in body weight in the six month interval prior to surgery.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient had 10% decrease in body weight in the six month interval prior to surgery."
     },
     {
-      "index": 985,
+      "ordinalPosition": 72,
       "name": "NSQIP_BLEEDING_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was at an increased risk for bleeding prior to surgery due to a hematologic disorder or chronic anticoagulation.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient was at an increased risk for bleeding prior to surgery due to a hematologic disorder or chronic anticoagulation."
     },
     {
-      "index": 991,
+      "ordinalPosition": 73,
       "name": "NSQIP_PREOP_TRANSFUSION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient received a preop blood transfusion.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient received a preop blood transfusion."
     },
     {
-      "index": 997,
+      "ordinalPosition": 74,
       "name": "NSQIP_SEPSIS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the sepsis variable. It determines the most significant level of sepsis prior to surgery.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSepsis\n\n\nNone\n\n\nSeptic shock\n\n\nSIRS"
+      "description": "The category ID for the sepsis variable. It determines the most significant level of sepsis prior to surgery.",
+      "entries": [
+        "Sepsis",
+        "None",
+        "Septic shock",
+        "SIRS"
+      ]
     },
     {
-      "index": 1008,
+      "ordinalPosition": 75,
       "name": "NSQIP_WCN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Web Case Number (WCN) ID of the NSQIP case."
     },
     {
-      "index": 1013,
+      "ordinalPosition": 76,
       "name": "NSQIP_FOLLOW_UP_30_DAYS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the case was followed for the full 30 days.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the case was followed for the full 30 days."
     },
     {
-      "index": 1019,
+      "ordinalPosition": 77,
       "name": "NSQIP_FOLLOW_UP_NUM_DAYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of days the case was followed. It is used only if the case was not followed for full 30 days."
     },
     {
-      "index": 1024,
+      "ordinalPosition": 78,
       "name": "NSQIP_NUM_PHONE_ATTEMPTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of phone attempts that were done to follow the case. It is used only if the case was not followed for full 30 days."
     },
     {
-      "index": 1029,
+      "ordinalPosition": 79,
       "name": "NSQIP_NUM_LETTER_ATTEMPTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of letter attempts that were done to follow the case. It is used only if the case was not followed for full 30 days."
     },
     {
-      "index": 1034,
+      "ordinalPosition": 80,
       "name": "NSQIP_POST_OCCURRENCE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the postoperative occurrence was present.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the postoperative occurrence was present."
     },
     {
-      "index": 1040,
+      "ordinalPosition": 81,
       "name": "NSQIP_DISCHG_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The acute hospital discharge date."
     },
     {
-      "index": 1045,
+      "ordinalPosition": 82,
       "name": "NSQIP_DISCHG_DEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the discharge destination.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSkilled care, not home\n\n\nUnskilled facility, not home\n\n\nFacility which was home\n\n\nHome\n\n\nSeparate acute care\n\n\nUnknown\n\n\nRehab\n\n\nExpired\n\n\nMulti-level senior community\n\n\nHospice\n\n\nAgainst medical advice (AMA)\n\n\nHome/Permanent residence\n\n\nAcute care hospital\n\n\nOther facility"
+      "description": "The category ID for the discharge destination.",
+      "entries": [
+        "Skilled care, not home",
+        "Unskilled facility, not home",
+        "Facility which was home",
+        "Home",
+        "Separate acute care",
+        "Unknown",
+        "Rehab",
+        "Expired",
+        "Multi-level senior community",
+        "Hospice",
+        "Against medical advice (AMA)",
+        "Home/Permanent residence",
+        "Acute care hospital",
+        "Other facility"
+      ]
     },
     {
-      "index": 1066,
+      "ordinalPosition": 83,
       "name": "NSQIP_DISCHG_POSTOP_ICD9",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ICD-9 code associated with the postoperative discharge."
     },
     {
-      "index": 1071,
+      "ordinalPosition": 84,
       "name": "NSQIP_DISCHG_STILL_HOSP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was still in hospital 30 days after surgery.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the patient was still in hospital 30 days after surgery."
     },
     {
-      "index": 1077,
+      "ordinalPosition": 85,
       "name": "NSQIP_DISCHG_DEATH_LT_30_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the death occurred during operation or within 30 days of procedure.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the death occurred during operation or within 30 days of procedure."
     },
     {
-      "index": 1083,
+      "ordinalPosition": 86,
       "name": "NSQIP_DISCHG_DEATH_GT_30_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the postoperative death occurred more than 30 days after procedure.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the postoperative death occurred more than 30 days after procedure."
     },
     {
-      "index": 1089,
+      "ordinalPosition": 87,
       "name": "NSQIP_DISCHG_DEATH_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of death."
     },
     {
-      "index": 1094,
+      "ordinalPosition": 88,
       "name": "NSQIP_DISCHG_DEATH_UNKWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the date of death is unknown.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the date of death is unknown."
     },
     {
-      "index": 1100,
+      "ordinalPosition": 89,
       "name": "NSQIP_FST_REOP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient returned to the OR within 30 days after principal procedure for the first reoperation.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient returned to the OR within 30 days after principal procedure for the first reoperation."
     },
     {
-      "index": 1106,
+      "ordinalPosition": 90,
       "name": "NSQIP_FST_REOP_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient returned to the OR for the first reoperation."
     },
     {
-      "index": 1111,
+      "ordinalPosition": 91,
       "name": "NSQIP_FST_REOP_DT_UNKWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the date of the first return to the OR is not known.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the date of the first return to the OR is not known."
     },
     {
-      "index": 1117,
+      "ordinalPosition": 92,
       "name": "NSQIP_FST_REOP_RELATED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the value that indicates whether the first return to the OR was related to principal operative procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "The category ID of the value that indicates whether the first return to the OR was related to principal operative procedure.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 1127,
+      "ordinalPosition": 93,
       "name": "NSQIP_SEC_REOP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient returned to the OR within 30 days after principal procedure for the second reoperation.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient returned to the OR within 30 days after principal procedure for the second reoperation."
     },
     {
-      "index": 1133,
+      "ordinalPosition": 94,
       "name": "NSQIP_SEC_REOP_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient returned to the OR for the second reoperation."
     },
     {
-      "index": 1138,
+      "ordinalPosition": 95,
       "name": "NSQIP_SEC_REOP_DT_UNKWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the date of the second return to the OR is not known.\n\n\n The category values for this column were already listed for column: NSQIP_LABS_ALL_UNKNOWN_YN"
+      "description": "Indicates whether the date of the second return to the OR is not known."
     },
     {
-      "index": 1144,
+      "ordinalPosition": 96,
       "name": "NSQIP_SEC_REOP_RELATED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the value that indicates whether the second return to the OR was related to principal operative procedure.\n\n\n The category values for this column were already listed for column: NSQIP_FST_REOP_RELATED_C_NAME"
+      "description": "The category ID of the value that indicates whether the second return to the OR was related to principal operative procedure."
     },
     {
-      "index": 1150,
+      "ordinalPosition": 97,
       "name": "NSQIP_REOP_MORE_THAN_TWO_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if there were more than two unplanned returns to the OR.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates if there were more than two unplanned returns to the OR."
     },
     {
-      "index": 1156,
+      "ordinalPosition": 98,
       "name": "NSQIP_DISCHG_POSTOP_ICD10",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ICD-10 code associated with the postoperative discharge."
     },
     {
-      "index": 1161,
+      "ordinalPosition": 99,
       "name": "NSQIP_ENC_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The encounter number associated with the NSQIP case. It is an additional optional unique tracking number that hospitals can use for NSQIP cases."
     },
     {
-      "index": 1166,
+      "ordinalPosition": 100,
       "name": "NSQIP_READMISSION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was readmitted. 'Y' indicates that the patient was readmitted. 'N' indicates that the patient was not readmitted.\n\n\n The category values for this column were already listed for column: NSQIP_EMERG_CASE_YN"
+      "description": "Indicates whether the patient was readmitted. 'Y' indicates that the patient was readmitted. 'N' indicates that the patient was not readmitted."
     }
   ]
 }

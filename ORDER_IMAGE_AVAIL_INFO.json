@@ -1,43 +1,53 @@
 {
-  "table_name": "ORDER_IMAGE_AVAIL_INFO",
+  "name": "ORDER_IMAGE_AVAIL_INFO",
   "description": "This table has, for this imaging order, the image availability information for each of the image archives from which you receive Image Availability Notifications.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "IMAGE_LOCATION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The server name category ID that store images for the imaging order.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The server name category ID that store images for the imaging order."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "IMG_AVAIL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether images are available at this location. 'Y' indicates that images are available. 'N' or NULL indicates that images are not available.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether images are available at this location. 'Y' indicates that images are available. 'N' or NULL indicates that images are not available.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "IMG_AVAIL_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The updated date and time of the image availability information for the related image storage location."
     }

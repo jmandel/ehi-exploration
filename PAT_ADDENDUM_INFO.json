@@ -1,80 +1,109 @@
 {
-  "table_name": "PAT_ADDENDUM_INFO",
+  "name": "PAT_ADDENDUM_INFO",
   "description": "This table contains the encounter addendum information from the Addendum Added Date (I EPT 18123) and Addendum Added User (I EPT 18129) items.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "A unique serial number for this encounter. This number is unique across all patients and encounters in the system."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for the items."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ADDENDUM_DATE_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time when the addendum of the patient encounter is created."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ADDENDUM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the system user who has created the addendum for the patient encounter."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "ADDENDUM_STARTED_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This is the UTC instant when an addendum was started. If blank, then the Addendum Finished Date and Addendum Finished Time (ADDENDUM_DATE_TIME) is the started instant as well as the signed instant."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "ADDENDUM_STARTED_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique user identifier that started the addendum. If blank, then the Addendum Finished User (ADDENDUM_USER_ID) was the user that started the addendum as well as signed it."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "SOURCE_WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the current platform that is allowed to edit the open addendum. This is only set for open addenda started on Rover. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHyperspace\n\n\nText\n\n\nWeb Service\n\n\nClarity Console\n\n\nHome Health\n\n\nWillow Ambulatory\n\n\nEpic Studio\n\n\nWeb Suite\n\n\nCommand Builder\n\n\nScotty\n\n\nRover\n\n\nHaiku / Canto\n\n\nHyperspace Web Standalone / Hyperdrive\n\n\nCross Deployment Access Remote Launcher\n\n\nHSWeb OAuth 2.0 Workflow\n\n\nDynamic Data Comparison\n\n\nGrand Central IVR"
+      "description": "This is the current platform that is allowed to edit the open addendum. This is only set for open addenda started on Rover.",
+      "entries": [
+        "Hyperspace",
+        "Text",
+        "Web Service",
+        "Clarity Console",
+        "Home Health",
+        "Willow Ambulatory",
+        "Epic Studio",
+        "Web Suite",
+        "Command Builder",
+        "Scotty",
+        "Rover",
+        "Haiku / Canto",
+        "Hyperspace Web Standalone / Hyperdrive",
+        "Cross Deployment Access Remote Launcher",
+        "HSWeb OAuth 2.0 Workflow",
+        "Dynamic Data Comparison",
+        "Grand Central IVR"
+      ]
     },
     {
-      "index": 66,
+      "ordinalPosition": 10,
       "name": "ADDENDUM_OPEN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether the addendum is open and has not yet been signed. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Stores whether the addendum is open and has not yet been signed.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

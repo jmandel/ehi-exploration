@@ -1,48 +1,69 @@
 {
-  "table_name": "HH_PAT_PAYMNT_SRC",
+  "name": "HH_PAT_PAYMNT_SRC",
   "description": "Contains Home Health information on payment sources.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAYMENT_SOURCES_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Payment sources category list selections for the encounter.  Links to category table ZC_PAYMNT_SRC.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nMedicare (traditional fee-for-service)\n\n\nMedicare (HMO/managed care/Advantage plan)\n\n\nMedicaid (traditional fee-for-service)\n\n\nMedicaid (HMO/managed care)\n\n\nWorkers' compensation\n\n\nTitle programs\n\n\nOther government (e.g., TriCare, VA, etc.)\n\n\nPrivate Insurance\n\n\nPrivate HMO/managed care\n\n\nSelf-Pay\n\n\nOther\n\n\nUnknown"
+      "description": "Payment sources category list selections for the encounter.  Links to category table ZC_PAYMNT_SRC.",
+      "entries": [
+        "None",
+        "Medicare (traditional fee-for-service)",
+        "Medicare (HMO/managed care/Advantage plan)",
+        "Medicaid (traditional fee-for-service)",
+        "Medicaid (HMO/managed care)",
+        "Workers' compensation",
+        "Title programs",
+        "Other government (e.g., TriCare, VA, etc.)",
+        "Private Insurance",
+        "Private HMO/managed care",
+        "Self-Pay",
+        "Other",
+        "Unknown"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 37,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 42,
+      "ordinalPosition": 6,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,

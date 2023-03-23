@@ -1,174 +1,202 @@
 {
-  "table_name": "FIN_ASST_CASE",
+  "name": "FIN_ASST_CASE",
   "description": "This table contains basic information about a financial assistance case record.",
-  "primary_key": {
-    "column_name": "FIN_ASST_CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FIN_ASST_CASE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FIN_ASST_CASE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the financial assistance case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the record status (hidden, soft-deleted, etc...)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "Stores the record status (hidden, soft-deleted, etc...)",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "EXTERNAL_ID",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column stores the external unique identifier for a financial assistance case record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "SERV_AREA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the service area in which this financial assistance case record was created."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "APPL_PROVIDED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date a financial assistance application was provided to the patient."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "APPL_SIGNED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date a completed and signed financial assistance application was submitted by the patient."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "FAMILY_SIZE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The size of the patient's family when this case was created."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "PERCENT_FPL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The percentage of federal poverty level of the patient calculated using income details (stored in FIN_ASST_CASE_INCOME table)."
     },
     {
-      "index": 47,
+      "ordinalPosition": 9,
       "name": "PERCENT_FPL_AFTER_EXPENSES",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The percentage of federal poverty level of the patient calculated after subtracting expenses (stored in FIN_ASST_CASE_EXPENSE table) from income details (stored in FIN_ASST_CASE_INCOME table)."
     },
     {
-      "index": 52,
+      "ordinalPosition": 10,
       "name": "TOTAL_ANNUAL_INCOME_AFTER_EXP",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total income after expenses for the patient's household."
     },
     {
-      "index": 57,
+      "ordinalPosition": 11,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn Progress\n\n\nCompleted\n\n\nPatient Started"
+      "description": "The status category ID for the financial assistance case record.",
+      "entries": [
+        "In Progress",
+        "Completed",
+        "Patient Started"
+      ]
     },
     {
-      "index": 67,
+      "ordinalPosition": 12,
       "name": "TOTAL_ANNUAL_INCOME",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total annual income of the patient's household."
     },
     {
-      "index": 72,
+      "ordinalPosition": 13,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the guarantor record associated with the financial assistance case record."
     },
     {
-      "index": 77,
+      "ordinalPosition": 14,
       "name": "PROPENSITY_TO_PAY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The guarantor propensity to pay category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The guarantor propensity to pay category ID for the financial assistance case record."
     },
     {
-      "index": 83,
+      "ordinalPosition": 15,
       "name": "CREDIT_SCORE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The guarantor's credit score associated with the financial assistance case record."
     },
     {
-      "index": 88,
+      "ordinalPosition": 16,
       "name": "FIN_ASST_CASE_CRT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The way this case record was created.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser created\n\n\nMyChart\n\n\nSocial Care\n\n\nBatch\n\n\nBackground Process"
+      "description": "The way this case record was created.",
+      "entries": [
+        "User created",
+        "MyChart",
+        "Social Care",
+        "Batch",
+        "Background Process"
+      ]
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "MYCHART_USER_ENTERED_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the free-text additional information provided with the financial assistance application by patient/requestor through MyChart."
     },
     {
-      "index": 105,
+      "ordinalPosition": 18,
       "name": "CREATED_BY_WPR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the user ID of the MyChart user who created this case. Only populated when the case is created through MyChart."
     },
     {
-      "index": 110,
+      "ordinalPosition": 19,
       "name": "CASE_CONTACT_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the guarantor account who is the primary contact for this financial assistance case record."
     },
     {
-      "index": 115,
+      "ordinalPosition": 20,
       "name": "TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The case type category ID for the financial assistance case record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nParent\n\n\nChild"
+      "description": "The case type category ID for the financial assistance case record.",
+      "entries": [
+        "Parent",
+        "Child"
+      ]
     },
     {
-      "index": 124,
+      "ordinalPosition": 21,
       "name": "CASE_WORKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of the workflow the financial assistance case record is created in.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFinancial Assistance\n\n\nSocial Care\n\n\nReconciliation"
+      "description": "The category ID of the workflow the financial assistance case record is created in.",
+      "entries": [
+        "Financial Assistance",
+        "Social Care",
+        "Reconciliation"
+      ]
     },
     {
-      "index": 134,
+      "ordinalPosition": 22,
       "name": "FISCAL_YEAR",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The fiscal year the financial information in the case record belongs to."
     },
     {
-      "index": 139,
+      "ordinalPosition": 23,
       "name": "NUMBER_OF_DEPENDENTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Number of dependents the patient for whom this financial assistance case record is for has."
     },
     {
-      "index": 144,
+      "ordinalPosition": 24,
       "name": "FPL_CALCULATION_DATE",
       "type": "DATETIME",
       "discontinued": false,

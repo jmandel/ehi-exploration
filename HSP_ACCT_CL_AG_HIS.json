@@ -1,73 +1,108 @@
 {
-  "table_name": "HSP_ACCT_CL_AG_HIS",
+  "name": "HSP_ACCT_CL_AG_HIS",
   "description": "This table contains collection agency history information from the Hospital Accounts Receivable (HAR) master file.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the hospital account with associated collection agency information."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the results of a query. Each collection agency history will have its own line number."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AGNCY_HST_DT_OF_CH",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date hospital account was either assigned to or withdrawn from the collection agency."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "AGNC_HST_CHG_TP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Change in the collection agency status.  1-Assign to agency 2-Withdraw from agency\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAssign\n\n\nWithdraw"
+      "description": "Change in the collection agency status.  1-Assign to agency 2-Withdraw from agency",
+      "entries": [
+        "Assign",
+        "Withdraw"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "AGNCY_HST_AGNCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "ID of collection agency hospital account has been assigned to."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "AGNCY_HST_AGNCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "AGN_HST_COL_ACT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the type of collection action done on the hospital account: 1-Send Letter, 2-Pre-Collect, 3-Bad Debt, 4-Return to Self-Pay, 5-Write Off, 6-Create Billing Note, 7-Change Notification Date, 8-Add to Queue, 10- Outsource Account, 11- Return from Outsource, 12-Change Agency, 13-Set Billing Indicator, or 14-Send SmartText Letter.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSend Letter\n\n\nPre-Collect\n\n\nSend to Bad Debt\n\n\nReturn to Self-Pay\n\n\nWrite Off\n\n\nCreate Billing Note\n\n\nChange Notification Date\n\n\nAdd to Queue\n\n\nAccount Note\n\n\nOutsource Account\n\n\nReturn from Outsource Agency\n\n\nChange Agency\n\n\nModify Billing Indicator\n\n\nSend SmartText Letter\n\n\nChange Self-Pay Follow-up Date\n\n\nSend to External Agency A/R\n\n\nReturn from External Agency A/R\n\n\nSet Tickler\n\n\nPre-Collect to Bad Debt\n\n\nOutsource to Bad Debt\n\n\nOutsource to External Agency A/R\n\n\nExternal Agency A/R to Bad Debt\n\n\nBad Debt to External Agency A/R"
+      "description": "This column stores the type of collection action done on the hospital account: 1-Send Letter, 2-Pre-Collect, 3-Bad Debt, 4-Return to Self-Pay, 5-Write Off, 6-Create Billing Note, 7-Change Notification Date, 8-Add to Queue, 10- Outsource Account, 11- Return from Outsource, 12-Change Agency, 13-Set Billing Indicator, or 14-Send SmartText Letter.",
+      "entries": [
+        "Send Letter",
+        "Pre-Collect",
+        "Send to Bad Debt",
+        "Return to Self-Pay",
+        "Write Off",
+        "Create Billing Note",
+        "Change Notification Date",
+        "Add to Queue",
+        "Account Note",
+        "Outsource Account",
+        "Return from Outsource Agency",
+        "Change Agency",
+        "Modify Billing Indicator",
+        "Send SmartText Letter",
+        "Change Self-Pay Follow-up Date",
+        "Send to External Agency A/R",
+        "Return from External Agency A/R",
+        "Set Tickler",
+        "Pre-Collect to Bad Debt",
+        "Outsource to Bad Debt",
+        "Outsource to External Agency A/R",
+        "External Agency A/R to Bad Debt",
+        "Bad Debt to External Agency A/R"
+      ]
     },
     {
-      "index": 66,
+      "ordinalPosition": 8,
       "name": "AGNCY_HST_ACCT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Account balance on the hospital account that was sent to collections."
     },
     {
-      "index": 71,
+      "ordinalPosition": 9,
       "name": "AGNCY_HST_CHG_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the reason why the account was placed or withdrawn from the agency. Refer to the AGNC_HST_CHG_TP_C to know whether this was related to an assign or withdraw.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column contains the reason why the account was placed or withdrawn from the agency. Refer to the AGNC_HST_CHG_TP_C to know whether this was related to an assign or withdraw."
     }
   ]
 }

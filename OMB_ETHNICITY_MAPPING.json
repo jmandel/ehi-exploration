@@ -1,31 +1,43 @@
 {
-  "table_name": "OMB_ETHNICITY_MAPPING",
+  "name": "OMB_ETHNICITY_MAPPING",
   "description": "This table stores mappings from the Epic-defined ethnicity values to the Office of Management and Budget (OMB) defined ethnicity values as specified in the OMB Ethnicity Mapping Configuration of system definitions.",
-  "primary_key": {
-    "column_name": "FAC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FAC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FAC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the facility record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OMB_ETHNICITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Office of Management and Budget (OMB) ethnicity category ID for the OMB Ethnicity Mapping Configuration in system definitions.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHispanic/Latino\n\n\nNot Hispanic/Latino\n\n\nAsked but No Answer\n\n\nUnknown"
+      "description": "The Office of Management and Budget (OMB) ethnicity category ID for the OMB Ethnicity Mapping Configuration in system definitions.",
+      "entries": [
+        "Hispanic/Latino",
+        "Not Hispanic/Latino",
+        "Asked but No Answer",
+        "Unknown"
+      ]
     }
   ]
 }

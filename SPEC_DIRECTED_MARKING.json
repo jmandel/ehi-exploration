@@ -1,31 +1,42 @@
 {
-  "table_name": "SPEC_DIRECTED_MARKING",
+  "name": "SPEC_DIRECTED_MARKING",
   "description": "This table stores how the site was marked with the suture.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the specimen record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DIRECTED_MARKING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for how the site was marked with the suture (direction oriented).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLong suture lateral, short suture cranial, 4 very short sutures lateral/clips deep\n\n\nLong suture lateral, short suture cranial, 4 very short deep, 4 clips superficially\n\n\nDifferent marking (write in the comment field)"
+      "description": "The category ID for how the site was marked with the suture (direction oriented).",
+      "entries": [
+        "Long suture lateral, short suture cranial, 4 very short sutures lateral/clips deep",
+        "Long suture lateral, short suture cranial, 4 very short deep, 4 clips superficially",
+        "Different marking (write in the comment field)"
+      ]
     }
   ]
 }

@@ -1,444 +1,495 @@
 {
-  "table_name": "ORDER_PROC_4",
+  "name": "ORDER_PROC_4",
   "description": "The ORDER_PROC_4 table enables you to report on the procedures ordered in the clinical system. This procedure table has the same basic structure as ORDER_PROC, but was created as a fourth table to prevent ORDER_PROC_3 from getting any larger.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the order record for this row."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LAST_MAMMO_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The last breast procedure that was performed on this patient prior to this order."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LAST_MAMMO_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Where the last breast procedure was performed. If it was performed by the current organization, this field will be empty"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "LAST_MAMMO_PROC_NAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last breast procedure that was performed. This field allows you to freely specify a procedure name in case it was performed outside the organization."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "LAST_MAMMO_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the last breast procedure was performed."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "LAST_MAMMO_WEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's weight (oz.) at the last breast procedure."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "EXAM_MAMMO_WEIGHT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's weight (oz.) at the time of this procedure."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "LAST_MAM_WT_RECD_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the weight at last breast procedure was recorded."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "EXAM_MAM_WT_RECD_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when patient's current weight was recorded."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "MAM_HX_REVD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last person to review the last breast procedure information."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "MAMMO_BASELINE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether or not this is the patient's first breast procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether or not this is the patient's first breast procedure.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 12,
       "name": "LAST_MAMMO_EXT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the last breast procedure was done externally.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Whether the last breast procedure was done externally."
     },
     {
-      "index": 67,
+      "ordinalPosition": 13,
       "name": "MAMMO_WEIGHT_CHANGE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient's weight change (oz.)."
     },
     {
-      "index": 72,
+      "ordinalPosition": 14,
       "name": "MAM_WT_CHNG_RECD_DT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The date the patient's weight change was recorded."
     },
     {
-      "index": 77,
+      "ordinalPosition": 15,
       "name": "MAM_HORMONE_NONE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient has no mammography-relevant hormone history, documented by the tech in the visit navigator.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Whether the patient has no mammography-relevant hormone history, documented by the tech in the visit navigator."
     },
     {
-      "index": 83,
+      "ordinalPosition": 16,
       "name": "MAMMO_HX_REVD_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the last breast procedure information was reviewed."
     },
     {
-      "index": 88,
+      "ordinalPosition": 17,
       "name": "MAM_HORMNE_REV_U_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last user to review the hormone history."
     },
     {
-      "index": 93,
+      "ordinalPosition": 18,
       "name": "MAM_HORMNE_REV_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the hormone history was last reviewed."
     },
     {
-      "index": 98,
+      "ordinalPosition": 19,
       "name": "BREAST_SELF_EXAM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID that indicates whether or not a patient performs breast self-exams, which map to Yes, No, or N/A.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo (Old)\n\n\nYes (Old)\n\n\nN/A (Old)\n\n\nYes\n\n\nNo\n\n\nN/A"
+      "description": "The category ID that indicates whether or not a patient performs breast self-exams, which map to Yes, No, or N/A.",
+      "entries": [
+        "No (Old)",
+        "Yes (Old)",
+        "N/A (Old)",
+        "Yes",
+        "No",
+        "N/A"
+      ]
     },
     {
-      "index": 111,
+      "ordinalPosition": 20,
       "name": "RIS_LTR_NOT_NEED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a study is marked as not needing a mammography result letter. 'Y' indicates a study has been marked as not needing a result letter.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates whether a study is marked as not needing a mammography result letter. 'Y' indicates a study has been marked as not needing a result letter."
     },
     {
-      "index": 117,
+      "ordinalPosition": 21,
       "name": "REQ_PER_PERIOD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Requested units/visits per period.  This along with the Requested periods (REQ_PERIODS) determines the total 'requested units'."
     },
     {
-      "index": 122,
+      "ordinalPosition": 22,
       "name": "REQ_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the frequency of visits/units requested for the procedure (e.g. day, week, month, year).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDay\n\n\nWeek\n\n\nMonth\n\n\nYear"
+      "description": "The category ID for the frequency of visits/units requested for the procedure (e.g. day, week, month, year).",
+      "entries": [
+        "Day",
+        "Week",
+        "Month",
+        "Year"
+      ]
     },
     {
-      "index": 133,
+      "ordinalPosition": 23,
       "name": "REQ_PERIODS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Requested periods. Requested units per period (REQ_PER_PERIOD) along with the requested periods determines the total 'requested units'."
     },
     {
-      "index": 138,
+      "ordinalPosition": 24,
       "name": "APPR_PER_PERIOD",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Approved units/visits per period. This along with the approved periods (APPR_PERIODS) determines the total 'approved units'."
     },
     {
-      "index": 143,
+      "ordinalPosition": 25,
       "name": "APPR_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the frequency of visits/units approved for the procedure (e.g. day, week, month, year).\n\n\n The category values for this column were already listed for column: REQ_FREQ_C_NAME"
+      "description": "The category ID for the frequency of visits/units approved for the procedure (e.g. day, week, month, year)."
     },
     {
-      "index": 149,
+      "ordinalPosition": 26,
       "name": "APPR_PERIODS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Approved periods.  Also known as duration. Approved units per period (APPR_PER_PERIOD) along with the approved periods determines the total 'approved units'."
     },
     {
-      "index": 154,
+      "ordinalPosition": 27,
       "name": "PROC_LNC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "LOINC ID associated with the procedure."
     },
     {
-      "index": 159,
+      "ordinalPosition": 28,
       "name": "ABNORMAL_NOADD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the most recent result is abnormal. 'Y' indicates that the most recent update of the result was marked abnormal. 'N' indicates that the abnormal flag is not set, or marked as normal. This is set to 'N' when a result is in progress, and will be updated as result updates are filed.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates whether the most recent result is abnormal. 'Y' indicates that the most recent update of the result was marked abnormal. 'N' indicates that the abnormal flag is not set, or marked as normal. This is set to 'N' when a result is in progress, and will be updated as result updates are filed."
     },
     {
-      "index": 165,
+      "ordinalPosition": 29,
       "name": "NUM_IMGS_PERFORMED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of images performed by a tech during the imaging exam linked to this order. This number is a total for the exam and includes images done on other procedures linked to the same appointment."
     },
     {
-      "index": 170,
+      "ordinalPosition": 30,
       "name": "IPROC_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The imaging and procedure status category ID of an order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStatus Cleared\n\n\nOrdered\n\n\nArrived\n\n\nTesting Started\n\n\nTesting Completed\n\n\nPreliminary Result\n\n\nFinal Result"
+      "description": "The imaging and procedure status category ID of an order.",
+      "entries": [
+        "Status Cleared",
+        "Ordered",
+        "Arrived",
+        "Testing Started",
+        "Testing Completed",
+        "Preliminary Result",
+        "Final Result"
+      ]
     },
     {
-      "index": 184,
+      "ordinalPosition": 31,
       "name": "SPEC_DRAW_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The specimen draw type category ID for the order.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The specimen draw type category ID for the order."
     },
     {
-      "index": 190,
+      "ordinalPosition": 32,
       "name": "ANTICOAG_INR_GOAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The International Normalized Ratio (INR) goal category ID for a patient on anticoagulation therapy.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n1.5-2.0\n\n\n1.5-2.5\n\n\n2.0-3.0\n\n\n2.5-3.5\n\n\n3.0-4.0\n\n\n3.0-4.5\n\n\n3.5-4.5"
+      "description": "The International Normalized Ratio (INR) goal category ID for a patient on anticoagulation therapy.",
+      "entries": [
+        "1.5-2.0",
+        "1.5-2.5",
+        "2.0-3.0",
+        "2.5-3.5",
+        "3.0-4.0",
+        "3.0-4.5",
+        "3.5-4.5"
+      ]
     },
     {
-      "index": 204,
+      "ordinalPosition": 33,
       "name": "ANTICOAG_RESP_POOL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Pool of providers responsible for a patient on anticoagulation therapy."
     },
     {
-      "index": 209,
+      "ordinalPosition": 34,
       "name": "ANTICOAG_RESP_POOL_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the In Basket registry in the HIP master file."
     },
     {
-      "index": 214,
+      "ordinalPosition": 35,
       "name": "ANTICOAG_NEXT_INR_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the next International Normalized Ratio (INR) check for a patient on anticoagulation therapy."
     },
     {
-      "index": 219,
+      "ordinalPosition": 36,
       "name": "ANTICOAG_WEEKLY_MAX_DOSE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Weekly maximum dose of anticoagulant for a patient on anticoagulation therapy."
     },
     {
-      "index": 224,
+      "ordinalPosition": 37,
       "name": "ANTICOAG_TARGET_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Targeted end date for the patient's anticoagulation therapy."
     },
     {
-      "index": 229,
+      "ordinalPosition": 38,
       "name": "ANTICOAG_INDEFINITE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a patient is indefinitely on anticoagulation. 'Y' indicates anticoagulation is indefinite (no end date set for anticoagulation).\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates whether a patient is indefinitely on anticoagulation. 'Y' indicates anticoagulation is indefinite (no end date set for anticoagulation)."
     },
     {
-      "index": 235,
+      "ordinalPosition": 39,
       "name": "IPROC_STATUS_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of the last Imaging and Procedure (IProc) status update of an order."
     },
     {
-      "index": 240,
+      "ordinalPosition": 40,
       "name": "SCREENING_FORM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the screening form linked to the order."
     },
     {
-      "index": 245,
+      "ordinalPosition": 41,
       "name": "SUBMITTER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the external site (submitter) associated with the order. The submitter will typically be copied on results, and could also be billed (depending on configuration)."
     },
     {
-      "index": 250,
+      "ordinalPosition": 42,
       "name": "SUBMITTER_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the submitter record."
     },
     {
-      "index": 255,
+      "ordinalPosition": 43,
       "name": "INDICATION_COMMENTS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered for the indications of use for this order."
     },
     {
-      "index": 260,
+      "ordinalPosition": 44,
       "name": "COLL_END_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the end date for an observation. This typically equates to the end date of a specimen collection or the end date of a procedure."
     },
     {
-      "index": 265,
+      "ordinalPosition": 45,
       "name": "COLL_END_TM",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This is the end time for an observation. This typically equates to the end time of a specimen collection or the end time of a procedure."
     },
     {
-      "index": 270,
+      "ordinalPosition": 46,
       "name": "COLL_AMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The amount of specimen that was collected. The identifier for the units for this amount are in COLL_AMT_UNIT_ID."
     },
     {
-      "index": 275,
+      "ordinalPosition": 47,
       "name": "COLL_AMT_UNIT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for unit of the specimen collection amount (COLL_AMT) for this order."
     },
     {
-      "index": 280,
+      "ordinalPosition": 48,
       "name": "COLL_AMT_UNIT_ID_UNIT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Record name"
     },
     {
-      "index": 285,
+      "ordinalPosition": 49,
       "name": "DEST_ANCILLARY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ancillary category ID for the destination ancillary that is responsible for this order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLab"
+      "description": "The ancillary category ID for the destination ancillary that is responsible for this order.",
+      "entries": [
+        "Lab"
+      ]
     },
     {
-      "index": 293,
+      "ordinalPosition": 50,
       "name": "REF_TO_PROV_ADDR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Address selected for the referred-to provider. Format: {External provider ID}-{Address Line #}"
     },
     {
-      "index": 298,
+      "ordinalPosition": 51,
       "name": "REFLEX_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reflex source category ID for the order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIntegrated Laboratory System\n\n\nAncillary Orders\n\n\nInterface\n\n\nOther"
+      "description": "The reflex source category ID for the order.",
+      "entries": [
+        "Integrated Laboratory System",
+        "Ancillary Orders",
+        "Interface",
+        "Other"
+      ]
     },
     {
-      "index": 309,
+      "ordinalPosition": 52,
       "name": "BREAST_IMG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The imaging type category ID used to indicate whether standard imaging only, or standard plus additional imaging, was performed. Category values used for the NMD 3.0 extract.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nStandard imaging only\n\n\nStandard plus additional imaging"
+      "description": "The imaging type category ID used to indicate whether standard imaging only, or standard plus additional imaging, was performed. Category values used for the NMD 3.0 extract.",
+      "entries": [
+        "Standard imaging only",
+        "Standard plus additional imaging"
+      ]
     },
     {
-      "index": 318,
+      "ordinalPosition": 53,
       "name": "SCHED_DUR",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time (in minutes) the order will contribute to an appointment"
     },
     {
-      "index": 323,
+      "ordinalPosition": 54,
       "name": "SCHED_DUR_IS_CALC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the scheduling duration was calculated by the system. 'Y' indicates it was calculated by the system. 'N' or NULL indicate it was not.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates whether the scheduling duration was calculated by the system. 'Y' indicates it was calculated by the system. 'N' or NULL indicate it was not."
     },
     {
-      "index": 329,
+      "ordinalPosition": 55,
       "name": "SCHED_DUR_BUFFER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time (in minutes) that should be added to system calculated scheduling duration as a buffer."
     },
     {
-      "index": 334,
+      "ordinalPosition": 56,
       "name": "SCHED_TOL_BEF",
       "type": "INTEGER",
       "discontinued": false,
       "description": "How far before the expected date for the order the appointment can still be safely made."
     },
     {
-      "index": 339,
+      "ordinalPosition": 57,
       "name": "SCHED_TOL_AFTR",
       "type": "INTEGER",
       "discontinued": false,
       "description": "How long after the expected date for the order the appointment can still be safely made."
     },
     {
-      "index": 344,
+      "ordinalPosition": 58,
       "name": "SCHED_TOL_NO_RESTR_BEF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the No restriction checkbox is checked for scheduling tolerance before the expected treatment date for a schedulable procedure. 'Y' indicates there are no restrictions.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates if the No restriction checkbox is checked for scheduling tolerance before the expected treatment date for a schedulable procedure. 'Y' indicates there are no restrictions."
     },
     {
-      "index": 350,
+      "ordinalPosition": 59,
       "name": "SCHED_TOL_NO_RESTR_AFTR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates if the No restriction checkbox is checked for scheduling tolerance after the expected treatment date for a schedulable procedure. 'Y' indicates there are no restrictions.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Indicates if the No restriction checkbox is checked for scheduling tolerance after the expected treatment date for a schedulable procedure. 'Y' indicates there are no restrictions."
     },
     {
-      "index": 356,
+      "ordinalPosition": 60,
       "name": "PROTOCOLLED_ORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "For an order that was placed from an imaging protocol, this item contains the protocolled imaging procedure order from which the order was placed. This item can be used to help associate contrast, medication, and point-of-care lab test orders with the protocolled procedure orders for which they were placed."
     },
     {
-      "index": 361,
+      "ordinalPosition": 61,
       "name": "PROTOCOL_SOURCE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores a pointer to the last order record that had its protocol edited by a user. When a protocol is edited this item should be populated on the order record that was edited. When a protocol is copied forward to another order record, this item should be populated on the destination order."
     },
     {
-      "index": 366,
+      "ordinalPosition": 62,
       "name": "FINAL_APPROVAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether final approval has been received for a procedure. If Yes, more approval does not need to be obtained. This item is used primarily for reporting purposes.\n\n\n The category values for this column were already listed for column: MAMMO_BASELINE_YN"
+      "description": "Whether final approval has been received for a procedure. If Yes, more approval does not need to be obtained. This item is used primarily for reporting purposes."
     }
   ]
 }

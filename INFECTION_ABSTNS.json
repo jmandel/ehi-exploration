@@ -1,689 +1,1049 @@
 {
-  "table_name": "INFECTION_ABSTNS",
+  "name": "INFECTION_ABSTNS",
   "description": "This table contains basic information from infection abstractions.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ICON_CASE_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the HNO record associated with the infection case's case note."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "INF_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The determined source of an infection.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nHealthcare-Associated Infection\n\n\nNot Healthcare-Associated Infection\n\n\nMDRO - Internal\n\n\nMDRO - Hospital Onset\n\n\nMDRO - Community Onset"
+      "description": "The determined source of an infection.",
+      "entries": [
+        "Healthcare-Associated Infection",
+        "Not Healthcare-Associated Infection",
+        "MDRO - Internal",
+        "MDRO - Hospital Onset",
+        "MDRO - Community Onset"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "INF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The infection date associated with the case."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "PRIMARY_INF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The primary type of the infection.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nBloodstream Infection\n\n\nUrinary Tract Infection\n\n\nPneumonia\n\n\nSurgical Site Infection\n\n\nVentilator-Associated Event\n\n\nBone and Joint Infection\n\n\nCentral Line Insertion Practices\n\n\nCentral Nervous System\n\n\nCardiovascular\n\n\nEye, Ear, Nose and Throat\n\n\nInfluenza Vaccination\n\n\nGastrointestinal\n\n\nLower Respiratory Infection\n\n\nReproductive Tract\n\n\nSkin and Soft Tissue\n\n\nSystemic\n\n\nPediatric Ventilator-Associated Event\n\n\nClostridioides difficile\n\n\nMethicillin-Resistant Staphylococcus aureus\n\n\nCarbapenem-Resistant Enterobacteriaceae\n\n\nVancomycin-Resistant Enterococci\n\n\nVeriviljelypositiivinen infektio\n\n\nLeikkausalueen infektio\n\n\nClostridium difficile -infektio"
+      "description": "The primary type of the infection.",
+      "entries": [
+        "Bloodstream Infection",
+        "Urinary Tract Infection",
+        "Pneumonia",
+        "Surgical Site Infection",
+        "Ventilator-Associated Event",
+        "Bone and Joint Infection",
+        "Central Line Insertion Practices",
+        "Central Nervous System",
+        "Cardiovascular",
+        "Eye, Ear, Nose and Throat",
+        "Influenza Vaccination",
+        "Gastrointestinal",
+        "Lower Respiratory Infection",
+        "Reproductive Tract",
+        "Skin and Soft Tissue",
+        "Systemic",
+        "Pediatric Ventilator-Associated Event",
+        "Clostridioides difficile",
+        "Methicillin-Resistant Staphylococcus aureus",
+        "Carbapenem-Resistant Enterobacteriaceae",
+        "Vancomycin-Resistant Enterococci",
+        "Veriviljelypositiivinen infektio",
+        "Leikkausalueen infektio",
+        "Clostridium difficile -infektio"
+      ]
     },
     {
-      "index": 60,
+      "ordinalPosition": 6,
       "name": "SECONDARY_INF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The secondary infection type, if one was documented.\n\n\n The category values for this column were already listed for column: PRIMARY_INF_C_NAME"
+      "description": "The secondary infection type, if one was documented."
     },
     {
-      "index": 66,
+      "ordinalPosition": 7,
       "name": "LAB_IDENTIFIED_ORG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of organism the lab identified.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nClostridioides difficile\n\n\nMethicillin-Resistant Staphylococcus aureus\n\n\nCephalosporin-Resistant Klebsiella\n\n\nMethicillin-Sensitive Staphylococcus aureus\n\n\nVancomycin-Resistant Enterococcus\n\n\nCarbapenem-Resistant Enterobacteriaceae Escherichia coli\n\n\nCarbapenem-Resistant Enterobacteriaceae Klebsiella\n\n\nMultidrug Resistant Acinetobacter\n\n\nCarbapenem-Resistant Enterobacteriaceae Enterobacter"
+      "description": "The type of organism the lab identified.",
+      "entries": [
+        "Clostridioides difficile",
+        "Methicillin-Resistant Staphylococcus aureus",
+        "Cephalosporin-Resistant Klebsiella",
+        "Methicillin-Sensitive Staphylococcus aureus",
+        "Vancomycin-Resistant Enterococcus",
+        "Carbapenem-Resistant Enterobacteriaceae Escherichia coli",
+        "Carbapenem-Resistant Enterobacteriaceae Klebsiella",
+        "Multidrug Resistant Acinetobacter",
+        "Carbapenem-Resistant Enterobacteriaceae Enterobacter"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 8,
       "name": "SPEC_TYPE_CODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The SNOMED specimen code submitted to the CDC."
     },
     {
-      "index": 87,
+      "ordinalPosition": 9,
       "name": "NHSN_VERSION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the NHSN version to use for the abstraction. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIDM 7.1\n\n\nIDM 8.1\n\n\nIDM 8.3/8.4\n\n\nIDM 8.5\n\n\nIDM 8.6/8.7\n\n\nIDM 8.8-9.0\n\n\nIDM 9.2\n\n\nIDM 9.4\n\n\nIDM 9.5\n\n\nIDM 10.1\n\n\nIDM 11.1"
+      "description": "The category ID for the NHSN version to use for the abstraction. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).",
+      "entries": [
+        "IDM 7.1",
+        "IDM 8.1",
+        "IDM 8.3/8.4",
+        "IDM 8.5",
+        "IDM 8.6/8.7",
+        "IDM 8.8-9.0",
+        "IDM 9.2",
+        "IDM 9.4",
+        "IDM 9.5",
+        "IDM 10.1",
+        "IDM 11.1"
+      ]
     },
     {
-      "index": 105,
+      "ordinalPosition": 10,
       "name": "INF_TRANSFER_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was transfered into the unit in which the specimen was collected."
     },
     {
-      "index": 110,
+      "ordinalPosition": 11,
       "name": "INF_DISCHARGE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was discharged from the unit in which the specimen was collected."
     },
     {
-      "index": 115,
+      "ordinalPosition": 12,
       "name": "INF_PROC_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the procedure associated with this case."
     },
     {
-      "index": 120,
+      "ordinalPosition": 13,
       "name": "INF_PROC_CODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The NHSN procedure code for the procedure associated with infection case."
     },
     {
-      "index": 125,
+      "ordinalPosition": 14,
       "name": "OR_LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the surgical log (ORL .1) associated with the infection case."
     },
     {
-      "index": 130,
+      "ordinalPosition": 15,
       "name": "CUR_STAT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The internal ID of the user who set the current status."
     },
     {
-      "index": 135,
+      "ordinalPosition": 16,
       "name": "CUR_STAT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant at which the current status (RDI-10024) was set."
     },
     {
-      "index": 140,
+      "ordinalPosition": 17,
       "name": "INF_ADMISSION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The abstracted admission date for submission to the CDC."
     },
     {
-      "index": 145,
+      "ordinalPosition": 18,
       "name": "CUR_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current status of the case.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNew\n\n\nAssociated\n\n\nPopulated\n\n\nIn Progress\n\n\nEdited\n\n\nValidated\n\n\nNeeds Review\n\n\nReady for Export\n\n\nExported\n\n\nRestored\n\n\nSigned\n\n\nReady to Sign\n\n\nReady to Submit\n\n\nSubmitted\n\n\nAccepted\n\n\nRejected\n\n\nDone\n\n\nSubmit\n\n\nHistorical\n\n\nModified\n\n\nInactivated\n\n\nVoid\n\n\nSaved to EQRS\n\n\nDialysis Intra-Facility Transfer\n\n\nInvestigating\n\n\nClosed\n\n\nAbstracting\n\n\nCompleted\n\n\nReady for Nurse Review\n\n\nReady for Physician Review\n\n\nWaiting for Signoff\n\n\nCare Planning Complete\n\n\nWill Not Be Exported\n\n\nAccepted with Warnings\n\n\nA0410 Correction Requested\n\n\nWrong FAC_ID\n\n\nTest Record\n\n\nCorrected/Inactivated/Deleted\n\n\nAbandoned\n\n\nAdmission Complete\n\n\nDoc Complete\n\n\nFiled"
+      "description": "The current status of the case.",
+      "entries": [
+        "New",
+        "Associated",
+        "Populated",
+        "In Progress",
+        "Edited",
+        "Validated",
+        "Needs Review",
+        "Ready for Export",
+        "Exported",
+        "Restored",
+        "Signed",
+        "Ready to Sign",
+        "Ready to Submit",
+        "Submitted",
+        "Accepted",
+        "Rejected",
+        "Done",
+        "Submit",
+        "Historical",
+        "Modified",
+        "Inactivated",
+        "Void",
+        "Saved to EQRS",
+        "Dialysis Intra-Facility Transfer",
+        "Investigating",
+        "Closed",
+        "Abstracting",
+        "Completed",
+        "Ready for Nurse Review",
+        "Ready for Physician Review",
+        "Waiting for Signoff",
+        "Care Planning Complete",
+        "Will Not Be Exported",
+        "Accepted with Warnings",
+        "A0410 Correction Requested",
+        "Wrong FAC_ID",
+        "Test Record",
+        "Corrected/Inactivated/Deleted",
+        "Abandoned",
+        "Admission Complete",
+        "Doc Complete",
+        "Filed"
+      ]
     },
     {
-      "index": 194,
+      "ordinalPosition": 19,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the associated patient (EPT) record."
     },
     {
-      "index": 199,
+      "ordinalPosition": 20,
       "name": "PAT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of case creation."
     },
     {
-      "index": 204,
+      "ordinalPosition": 21,
       "name": "REGISTRY_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The registry type of the abstraction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCore Measures\n\n\nACC-NCDR CathPCI Version 3 and 4\n\n\nACC-NCDR EP Device Implant\n\n\nMeaningful Use Quality Measures\n\n\nACC-NCDR PINNACLE\n\n\nACC-NCDR AFib Ablation\n\n\nACC-NCDR CathPCI\n\n\nACC-NCDR CathPCI Follow-up\n\n\nUNOS Configuration\n\n\nVermont Oxford Network\n\n\nQuality Measure - Individual\n\n\nQuality Measure - Patient Details\n\n\nGeneric Attribution\n\n\nPhysician Quality Reporting Summary - Incremental\n\n\nMeaningful Use Summary - Incremental\n\n\nInternal QM Summary - Incremental\n\n\nPhysician Quality Reporting Registry Summary - Full Year\n\n\nMeaningful Use Summary - Final\n\n\nPhysician Quality Reporting Registry Summary - Half Year\n\n\nPhysician Quality Reporting EHR Summary - Full Year\n\n\nUniversal Data System Summary\n\n\nUniversal Data System Details\n\n\nQRDA-III XML Run Summary\n\n\nRegulatory Reporting Patient Metadata\n\n\nObjective Measures - Run Statistics\n\n\nObjective Measures - EP Fact\n\n\nObjective Measures - Patient Fact\n\n\nObjective Measures - Summary\n\n\nObjective Measures - EH Fact\n\n\nMy Panel Metrics - Patient\n\n\nPulse Information\n\n\nRDI Child Record\n\n\nHealth and Care Plan\n\n\nUNOS Kidney Recipient Follow-up\n\n\nUNOS Liver Recipient Follow-up\n\n\nUNOS Pancreas Recipient Follow-up\n\n\nUNOS Kidney/Pancreas Recipient Follow-up\n\n\nUNOS Thoracic Recipient Follow-up\n\n\nUNOS Kidney Living Donor Follow-up\n\n\nUNOS Kidney Pancreas Wait List\n\n\nUNOS Liver Intestine Wait List\n\n\nUNOS Thoracic Wait List\n\n\nUNOS Kidney Candidate Registration\n\n\nUNOS Liver Candidate Registration\n\n\nUNOS Heart/Lung Candidate Registration\n\n\nUNOS Heart Candidate Registration\n\n\nUNOS Lung Candidate Registration\n\n\nUNOS Pancreas and Pancreas Islets Candidate Registration\n\n\nUNOS Kidney/Pancreas Candidate Registration\n\n\nUNOS Kidney Recipient Registration\n\n\nUNOS Liver Recipient Registration\n\n\nUNOS Pancreas Recipient Registration\n\n\nUNOS Kidney/Pancreas Recipient Registration\n\n\nUNOS Thoracic Recipient Registration\n\n\nUNOS Kidney Living Donor Registration\n\n\nUNOS Deceased Donor Registration\n\n\nUNOS Deceased Donor Histocompatibility\n\n\nACS NSQIP\n\n\nTHL Implant\n\n\nSurgical Care Improvement Project\n\n\nHoitotahto\n\n\nElinluovutustahto\n\n\nHH Outcomes\n\n\nHH Adverse Events\n\n\nRyan White Services Reporting\n\n\nNationale Intensive Care Evaluatie\n\n\nPediatrische Intensive Care Evaluatie\n\n\nAustralian and New Zealand Pediatric Intensive Care Registry\n\n\nAustralian and New Zealand Neonatal Network\n\n\nSwiss MDSi\n\n\nMyChart\n\n\nFederal MCSA-5875\n\n\nState MCSA-5875\n\n\nCertificate MCSA-5876\n\n\nBelgium eBirth - Birth Notification\n\n\nBelgium eBirth - Medical Form\n\n\nF�dselsmelding Skatteetaten\n\n\nMedisinsk f�dselsregister (MFR)\n\n\nAbstraction\n\n\nSubabstraction\n\n\nMinimum Data Set\n\n\nInfection Case\n\n\nNHSN Lab Identified Organism\n\n\nProcedure Abstraction\n\n\nCOVID-19 Hospital Infections\n\n\nEQRS Submission\n\n\nCMS Registration Form 2728\n\n\nCMS Death Form 2746\n\n\nNephrology Configuration\n\n\nAmerican Heart Association Get With The Guidelines - Stroke\n\n\nCOVID-19 PUI Case Report\n\n\nLung Cancer Screening Registry\n\n\nASCO-QOPI\n\n\nPerined: Kernset Aanleverbericht\n\n\nTHL: Congenital Malformations\n\n\nFamily Planning Annual Report\n\n\nIRF-PAI\n\n\nCMG Data\n\n\n60% Rule Data\n\n\nCMG Score Config Data\n\n\nMap IGC Data\n\n\nIRF IGC Spotter\n\n\nInfection Control Regulatory Definitions\n\n\nInfection Control LDA-Based Metric Definition\n\n\nInfection Control Metric Details\n\n\nInfection Control Manual Metric Details\n\n\nConfiguration Template\n\n\nInfection Control Surveillance Abstraction\n\n\nInfection Control Search Parameters\n\n\nNHSN Antimicrobial Resistance Event\n\n\nExposure Case Abstraction\n\n\nOutbreak Definition\n\n\nNHSN CLIP Abstraction\n\n\nScoring System Deferral Configuration\n\n\nScoring System Deferral User Interface Configuration\n\n\nReporting Agency Configuration\n\n\nReportable Condition Configuration\n\n\nSyndromic Surveillance Event Type (BPA Trigger)\n\n\nSyndromic Surveillance Syndrome\n\n\nGIQuIC-Colonoscopy\n\n\nAnalytics Registry"
+      "description": "The registry type of the abstraction.",
+      "entries": [
+        "Core Measures",
+        "ACC-NCDR CathPCI Version 3 and 4",
+        "ACC-NCDR EP Device Implant",
+        "Meaningful Use Quality Measures",
+        "ACC-NCDR PINNACLE",
+        "ACC-NCDR AFib Ablation",
+        "ACC-NCDR CathPCI",
+        "ACC-NCDR CathPCI Follow-up",
+        "UNOS Configuration",
+        "Vermont Oxford Network",
+        "Quality Measure - Individual",
+        "Quality Measure - Patient Details",
+        "Generic Attribution",
+        "Physician Quality Reporting Summary - Incremental",
+        "Meaningful Use Summary - Incremental",
+        "Internal QM Summary - Incremental",
+        "Physician Quality Reporting Registry Summary - Full Year",
+        "Meaningful Use Summary - Final",
+        "Physician Quality Reporting Registry Summary - Half Year",
+        "Physician Quality Reporting EHR Summary - Full Year",
+        "Universal Data System Summary",
+        "Universal Data System Details",
+        "QRDA-III XML Run Summary",
+        "Regulatory Reporting Patient Metadata",
+        "Objective Measures - Run Statistics",
+        "Objective Measures - EP Fact",
+        "Objective Measures - Patient Fact",
+        "Objective Measures - Summary",
+        "Objective Measures - EH Fact",
+        "My Panel Metrics - Patient",
+        "Pulse Information",
+        "RDI Child Record",
+        "Health and Care Plan",
+        "UNOS Kidney Recipient Follow-up",
+        "UNOS Liver Recipient Follow-up",
+        "UNOS Pancreas Recipient Follow-up",
+        "UNOS Kidney/Pancreas Recipient Follow-up",
+        "UNOS Thoracic Recipient Follow-up",
+        "UNOS Kidney Living Donor Follow-up",
+        "UNOS Kidney Pancreas Wait List",
+        "UNOS Liver Intestine Wait List",
+        "UNOS Thoracic Wait List",
+        "UNOS Kidney Candidate Registration",
+        "UNOS Liver Candidate Registration",
+        "UNOS Heart/Lung Candidate Registration",
+        "UNOS Heart Candidate Registration",
+        "UNOS Lung Candidate Registration",
+        "UNOS Pancreas and Pancreas Islets Candidate Registration",
+        "UNOS Kidney/Pancreas Candidate Registration",
+        "UNOS Kidney Recipient Registration",
+        "UNOS Liver Recipient Registration",
+        "UNOS Pancreas Recipient Registration",
+        "UNOS Kidney/Pancreas Recipient Registration",
+        "UNOS Thoracic Recipient Registration",
+        "UNOS Kidney Living Donor Registration",
+        "UNOS Deceased Donor Registration",
+        "UNOS Deceased Donor Histocompatibility",
+        "ACS NSQIP",
+        "THL Implant",
+        "Surgical Care Improvement Project",
+        "Hoitotahto",
+        "Elinluovutustahto",
+        "HH Outcomes",
+        "HH Adverse Events",
+        "Ryan White Services Reporting",
+        "Nationale Intensive Care Evaluatie",
+        "Pediatrische Intensive Care Evaluatie",
+        "Australian and New Zealand Pediatric Intensive Care Registry",
+        "Australian and New Zealand Neonatal Network",
+        "Swiss MDSi",
+        "MyChart",
+        "Federal MCSA-5875",
+        "State MCSA-5875",
+        "Certificate MCSA-5876",
+        "Belgium eBirth - Birth Notification",
+        "Belgium eBirth - Medical Form",
+        "F�dselsmelding Skatteetaten",
+        "Medisinsk f�dselsregister (MFR)",
+        "Abstraction",
+        "Subabstraction",
+        "Minimum Data Set",
+        "Infection Case",
+        "NHSN Lab Identified Organism",
+        "Procedure Abstraction",
+        "COVID-19 Hospital Infections",
+        "EQRS Submission",
+        "CMS Registration Form 2728",
+        "CMS Death Form 2746",
+        "Nephrology Configuration",
+        "American Heart Association Get With The Guidelines - Stroke",
+        "COVID-19 PUI Case Report",
+        "Lung Cancer Screening Registry",
+        "ASCO-QOPI",
+        "Perined: Kernset Aanleverbericht",
+        "THL: Congenital Malformations",
+        "Family Planning Annual Report",
+        "IRF-PAI",
+        "CMG Data",
+        "60% Rule Data",
+        "CMG Score Config Data",
+        "Map IGC Data",
+        "IRF IGC Spotter",
+        "Infection Control Regulatory Definitions",
+        "Infection Control LDA-Based Metric Definition",
+        "Infection Control Metric Details",
+        "Infection Control Manual Metric Details",
+        "Configuration Template",
+        "Infection Control Surveillance Abstraction",
+        "Infection Control Search Parameters",
+        "NHSN Antimicrobial Resistance Event",
+        "Exposure Case Abstraction",
+        "Outbreak Definition",
+        "NHSN CLIP Abstraction",
+        "Scoring System Deferral Configuration",
+        "Scoring System Deferral User Interface Configuration",
+        "Reporting Agency Configuration",
+        "Reportable Condition Configuration",
+        "Syndromic Surveillance Event Type (BPA Trigger)",
+        "Syndromic Surveillance Syndrome",
+        "GIQuIC-Colonoscopy",
+        "Analytics Registry"
+      ]
     },
     {
-      "index": 332,
+      "ordinalPosition": 22,
       "name": "BSI_LAB_RESULT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The BSI lab result category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCommon Commensal Identified from Two or More Blood Specimens\n\n\nRecognized Pathogens Identified from One or More Blood Specimens"
+      "description": "The BSI lab result category ID for the infection.",
+      "entries": [
+        "Common Commensal Identified from Two or More Blood Specimens",
+        "Recognized Pathogens Identified from One or More Blood Specimens"
+      ]
     },
     {
-      "index": 341,
+      "ordinalPosition": 23,
       "name": "UTI_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The UTI type category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAsymptomatic Bacteremic\n\n\nSymptomatic\n\n\nUrinary System Infection"
+      "description": "The UTI type category ID for the infection.",
+      "entries": [
+        "Asymptomatic Bacteremic",
+        "Symptomatic",
+        "Urinary System Infection"
+      ]
     },
     {
-      "index": 351,
+      "ordinalPosition": 24,
       "name": "UTI_CATHETER_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The UTI catheter status category ID on the infection date. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIn place - Urinary catheter in place > 2 days on the date of event\n\n\nRemoved - Urinary catheter in place > 2 days but removed the day before the date of event\n\n\nNeither - Not catheter associated - Neither in place nor removed"
+      "description": "The UTI catheter status category ID on the infection date.",
+      "entries": [
+        "In place - Urinary catheter in place > 2 days on the date of event",
+        "Removed - Urinary catheter in place > 2 days but removed the day before the date of event",
+        "Neither - Not catheter associated - Neither in place nor removed"
+      ]
     },
     {
-      "index": 361,
+      "ordinalPosition": 25,
       "name": "SSI_EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The SSI event type category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nDeep Incisional Primary\n\n\nDeep Incisional Secondary\n\n\nSuperficial Incisional Primary\n\n\nSuperficial Incisional Secondary\n\n\nOsteomyelitis\n\n\nBreast Abscess or Mastitis\n\n\nMyocarditis or Pericarditis\n\n\nDisc Space\n\n\nEar, Mastoid\n\n\nEndometritis\n\n\nEndocarditis\n\n\nEye, Other than Conjunctivitis\n\n\nGI Tract\n\n\nHepatitis\n\n\nIntraabdominal, Not Specified\n\n\nIntracranial, Brain Abscess, or Dura\n\n\nJoint or Bursa\n\n\nOther Infections of the Respiratory Tract\n\n\nMediastinitis\n\n\nMeningitis or Ventriculitis\n\n\nOral Cavity (Mouth, Tongue, or Gums)\n\n\nOther Infections of the Male or Female Reproductive Tract\n\n\nUrinary System Infection\n\n\nPeriprosthetic Joint Infection\n\n\nSpinal Abscess/Infection\n\n\nSinusitis\n\n\nUpper Respiratory Tract\n\n\nArterial or Venous Infection\n\n\nVaginal Cuff\n\n\nConjunctivitis\n\n\nGastroenteritis\n\n\nNecrotizing Enterocolitis\n\n\nClostridioides difficile Infection\n\n\nEpisiotomy\n\n\nBurn\n\n\nNewborn Circumcision\n\n\nDecubitus ulcer\n\n\nSkin\n\n\nSoft Tissue, Muscle, Lymph Node, or Salivary Gland\n\n\nOmphalitis"
+      "description": "The SSI event type category ID for the infection.",
+      "entries": [
+        "Deep Incisional Primary",
+        "Deep Incisional Secondary",
+        "Superficial Incisional Primary",
+        "Superficial Incisional Secondary",
+        "Osteomyelitis",
+        "Breast Abscess or Mastitis",
+        "Myocarditis or Pericarditis",
+        "Disc Space",
+        "Ear, Mastoid",
+        "Endometritis",
+        "Endocarditis",
+        "Eye, Other than Conjunctivitis",
+        "GI Tract",
+        "Hepatitis",
+        "Intraabdominal, Not Specified",
+        "Intracranial, Brain Abscess, or Dura",
+        "Joint or Bursa",
+        "Other Infections of the Respiratory Tract",
+        "Mediastinitis",
+        "Meningitis or Ventriculitis",
+        "Oral Cavity (Mouth, Tongue, or Gums)",
+        "Other Infections of the Male or Female Reproductive Tract",
+        "Urinary System Infection",
+        "Periprosthetic Joint Infection",
+        "Spinal Abscess/Infection",
+        "Sinusitis",
+        "Upper Respiratory Tract",
+        "Arterial or Venous Infection",
+        "Vaginal Cuff",
+        "Conjunctivitis",
+        "Gastroenteritis",
+        "Necrotizing Enterocolitis",
+        "Clostridioides difficile Infection",
+        "Episiotomy",
+        "Burn",
+        "Newborn Circumcision",
+        "Decubitus ulcer",
+        "Skin",
+        "Soft Tissue, Muscle, Lymph Node, or Salivary Gland",
+        "Omphalitis"
+      ]
     },
     {
-      "index": 408,
+      "ordinalPosition": 26,
       "name": "SSI_DETECTED_DURING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The SSI detection event category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdmission\n\n\nPost-Discharge Surveillance\n\n\nReadmission to Other Facility\n\n\nReadmission to Facility of Procedure"
+      "description": "The SSI detection event category ID for the infection.",
+      "entries": [
+        "Admission",
+        "Post-Discharge Surveillance",
+        "Readmission to Other Facility",
+        "Readmission to Facility of Procedure"
+      ]
     },
     {
-      "index": 419,
+      "ordinalPosition": 27,
       "name": "VAE_SPECIFIC_EVENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The VAE specific event category ID for the infection.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVentilator-Associated Condition\n\n\nInfection-Related Ventilator-Associated Complication \n\n\nPossible Ventilator-Associated Pneumonia (IDM 8.1)\n\n\nProbable Ventilator-Associated Pneumonia (IDM 8.1)\n\n\nPossible Ventilator-Associated Pneumonia"
+      "description": "The VAE specific event category ID for the infection.",
+      "entries": [
+        "Ventilator-Associated Condition",
+        "Infection-Related Ventilator-Associated Complication",
+        "Possible Ventilator-Associated Pneumonia (IDM 8.1)",
+        "Probable Ventilator-Associated Pneumonia (IDM 8.1)",
+        "Possible Ventilator-Associated Pneumonia"
+      ]
     },
     {
-      "index": 431,
+      "ordinalPosition": 28,
       "name": "POST_PROC_INFECTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the infection happened after a surgical procedure.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the infection happened after a surgical procedure.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 440,
+      "ordinalPosition": 29,
       "name": "MDRO_INFECTION_SURVEILLANCE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the pathogen and location for this infection are in-plan for Infection Surveillance in the MDRO/CDI Module.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the pathogen and location for this infection are in-plan for Infection Surveillance in the MDRO/CDI Module."
     },
     {
-      "index": 446,
+      "ordinalPosition": 30,
       "name": "SECONDARY_BSI_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a secondary BSI resulted from this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a secondary BSI resulted from this infection."
     },
     {
-      "index": 452,
+      "ordinalPosition": 31,
       "name": "PATIENT_DIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient died. The patient's death does not need to be related to this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient died. The patient's death does not need to be related to this infection."
     },
     {
-      "index": 458,
+      "ordinalPosition": 32,
       "name": "INFECTION_CONTRIBUTED_DEATH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's death was related to this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient's death was related to this infection."
     },
     {
-      "index": 464,
+      "ordinalPosition": 33,
       "name": "OUTPAT_PROC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the procedure happened in an outpatient setting for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the procedure happened in an outpatient setting for this infection."
     },
     {
-      "index": 470,
+      "ordinalPosition": 34,
       "name": "DAILY_MIN_FIO2_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's daily minimum FiO2 value meets VAE criteria for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient's daily minimum FiO2 value meets VAE criteria for this infection."
     },
     {
-      "index": 476,
+      "ordinalPosition": 35,
       "name": "DAILY_MIN_PEEP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's daily minimum PEEP value meets VAE criteria for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient's daily minimum PEEP value meets VAE criteria for this infection."
     },
     {
-      "index": 482,
+      "ordinalPosition": 36,
       "name": "TEMPERATURE_OUTSIDE_RANGE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a temperature strictly outside of 36 to 38 degrees C was a symptom of this VAE.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a temperature strictly outside of 36 to 38 degrees C was a symptom of this VAE."
     },
     {
-      "index": 488,
+      "ordinalPosition": 37,
       "name": "WBC_OUTSIDE_RANGE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a WBC equal to or outside of 4000 to 12000 cells per cubic mm was a symptom of this VAE.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a WBC equal to or outside of 4000 to 12000 cells per cubic mm was a symptom of this VAE."
     },
     {
-      "index": 494,
+      "ordinalPosition": 38,
       "name": "NEW_ANTIMICROBIAL_AGENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was started on a new antimicrobial agent during this VAE.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient was started on a new antimicrobial agent during this VAE."
     },
     {
-      "index": 500,
+      "ordinalPosition": 39,
       "name": "PURULENT_RESP_SECRETIONS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether purulent respiratory secretions were a symptom of the infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether purulent respiratory secretions were a symptom of the infection."
     },
     {
-      "index": 506,
+      "ordinalPosition": 40,
       "name": "POSITIVE_CULTURE_SPUTUM_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive culture of sputum was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive culture of sputum was found for this infection."
     },
     {
-      "index": 512,
+      "ordinalPosition": 41,
       "name": "POS_CULTURE_ENDOTRACHEAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive culture of endotracheal aspirate was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive culture of endotracheal aspirate was found for this infection."
     },
     {
-      "index": 518,
+      "ordinalPosition": 42,
       "name": "POS_CULTURE_BRONCHOALVEOLAR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive culture of bronchoalveolar lavage was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive culture of bronchoalveolar lavage was found for this infection."
     },
     {
-      "index": 524,
+      "ordinalPosition": 43,
       "name": "POS_CULTURE_LUNG_TISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive culture of lung tissue was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive culture of lung tissue was found for this infection."
     },
     {
-      "index": 530,
+      "ordinalPosition": 44,
       "name": "POS_CULTURE_SPEC_BRUSHING_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive culture of protected specimen brushing was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive culture of protected specimen brushing was found for this infection."
     },
     {
-      "index": 536,
+      "ordinalPosition": 45,
       "name": "POSITIVE_PLEURAL_FLUID_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive pleural fluid culture was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive pleural fluid culture was found for this infection."
     },
     {
-      "index": 542,
+      "ordinalPosition": 46,
       "name": "POS_LUNG_HISTOPATHOLOGY_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a positive lung histopathology was found for this infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a positive lung histopathology was found for this infection."
     },
     {
-      "index": 548,
+      "ordinalPosition": 47,
       "name": "POSITIVE_LEGIONELLA_SPP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether legionella spp. was found for this VAE.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether legionella spp. was found for this VAE."
     },
     {
-      "index": 554,
+      "ordinalPosition": 48,
       "name": "POSITIVE_VIRAL_PATHOGENS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether viral pathogens were found for this VAE.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether viral pathogens were found for this VAE."
     },
     {
-      "index": 560,
+      "ordinalPosition": 49,
       "name": "NHSN_MEDICARE_BENEFICIARY_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Medicare Beneficiary Number for the patient at the time of the infection."
     },
     {
-      "index": 565,
+      "ordinalPosition": 50,
       "name": "VENT_INIT_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The internal ID of the department where mechanical ventilation was initiated on the patient."
     },
     {
-      "index": 570,
+      "ordinalPosition": 51,
       "name": "VENTILATOR_INITIATED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when mechanical ventilation was initiated on the patient."
     },
     {
-      "index": 575,
+      "ordinalPosition": 52,
       "name": "IS_APRV_VENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient was on APRV ventilation.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient was on APRV ventilation."
     },
     {
-      "index": 581,
+      "ordinalPosition": 53,
       "name": "PX_REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Links from a NHSN SSI numerator record to its procedure denominator."
     },
     {
-      "index": 586,
+      "ordinalPosition": 54,
       "name": "SSI_PRESENT_AT_SURG_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient's surgical site infection was present at the time of surgery.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient's surgical site infection was present at the time of surgery."
     },
     {
-      "index": 592,
+      "ordinalPosition": 55,
       "name": "LAB_POSVIBOLGCH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the criterion \"Positive culture of virus, Bordetella, Legionella, or Chlamydia\" for a VAP infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates the criterion \"Positive culture of virus, Bordetella, Legionella, or Chlamydia\" for a VAP infection."
     },
     {
-      "index": 598,
+      "ordinalPosition": 56,
       "name": "LAB_POSNONCULT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the criterion \"Positive non-culture diagnostic test of respiratory secretions or tissue for virus, Bordetella, Chlamydia, Mycoplasma, Legionella\" for a VAP infection.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates the criterion \"Positive non-culture diagnostic test of respiratory secretions or tissue for virus, Bordetella, Chlamydia, Mycoplasma, Legionella\" for a VAP infection."
     },
     {
-      "index": 604,
+      "ordinalPosition": 57,
       "name": "SYMPTOM_DIARRHEA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Diarrhea\" criterion on a GI case. RDI-66300.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Diarrhea\" criterion on a GI case. RDI-66300."
     },
     {
-      "index": 610,
+      "ordinalPosition": 58,
       "name": "SYMPTOM_BILASP_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Bilious aspirate\" criterion on a GI case. RDI-66301.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Bilious aspirate\" criterion on a GI case. RDI-66301."
     },
     {
-      "index": 616,
+      "ordinalPosition": 59,
       "name": "SYMPTOM_ABDDIST_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Abdominal distention\" criterion on a GI case. RDI-66302.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Abdominal distention\" criterion on a GI case. RDI-66302."
     },
     {
-      "index": 622,
+      "ordinalPosition": 60,
       "name": "SYMPTOM_STOOLBLD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Occult or gross blood in stools (with no rectal fissure)\" criterion on a GI case. RDI-66303.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Occult or gross blood in stools (with no rectal fissure)\" criterion on a GI case. RDI-66303."
     },
     {
-      "index": 628,
+      "ordinalPosition": 61,
       "name": "SYMPTOM_BOWELNEC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Surgical evidence of extensive bowel necrosis (>2 cm of bowel affected)\" criterion on a GI case. RDI-66304.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Surgical evidence of extensive bowel necrosis (>2 cm of bowel affected)\" criterion on a GI case. RDI-66304."
     },
     {
-      "index": 634,
+      "ordinalPosition": 62,
       "name": "SYMPTOM_PNEUMINT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Surgical evidence of pneumatosis intestinalis with or without intestinal perforation\" criterion on a GI case. RDI-66305.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Surgical evidence of pneumatosis intestinalis with or without intestinal perforation\" criterion on a GI case. RDI-66305."
     },
     {
-      "index": 640,
+      "ordinalPosition": 63,
       "name": "LAB_PNEUMINT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Pneumatosis intestinalis on radiograph\" criterion on a GI case. RDI-66306.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Pneumatosis intestinalis on radiograph\" criterion on a GI case. RDI-66306."
     },
     {
-      "index": 646,
+      "ordinalPosition": 64,
       "name": "LAB_PORTVENGAS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Portal venous gas (hepatobiliary gas) by radiograph\" criterion on a GI case. RDI-66307.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Portal venous gas (hepatobiliary gas) by radiograph\" criterion on a GI case. RDI-66307."
     },
     {
-      "index": 652,
+      "ordinalPosition": 65,
       "name": "LAB_15COLIV_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"> 15 colonies cultured from IV cannula tip using semiquantitative culture method\" criterion on a GI case. RDI-66308.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"> 15 colonies cultured from IV cannula tip using semiquantitative culture method\" criterion on a GI case. RDI-66308."
     },
     {
-      "index": 658,
+      "ordinalPosition": 66,
       "name": "LAB_PNEUMPER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Column for the \"Pneumoperitoneum by radiograph\" criterion on a CVS case. RDI-66309.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Column for the \"Pneumoperitoneum by radiograph\" criterion on a CVS case. RDI-66309."
     },
     {
-      "index": 664,
+      "ordinalPosition": 67,
       "name": "BRONCHOALVEOLAR_WITH_GROWTH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents the abbreviation lab_quanPosBal from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from bronchoalveolar lavage with sufficient growth. \n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Represents the abbreviation lab_quanPosBal from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from bronchoalveolar lavage with sufficient growth."
     },
     {
-      "index": 670,
+      "ordinalPosition": 68,
       "name": "ENDOTRACHEAL_WITH_GROWTH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents the abbreviation lab_quanPosEndo from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from endotracheal aspirate with sufficient growth. \n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Represents the abbreviation lab_quanPosEndo from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from endotracheal aspirate with sufficient growth."
     },
     {
-      "index": 676,
+      "ordinalPosition": 69,
       "name": "LUNG_TISSUE_WITH_GROWTH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents the abbreviation lab_quanPosLung from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from lung tissue with sufficient growth. \n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Represents the abbreviation lab_quanPosLung from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from lung tissue with sufficient growth."
     },
     {
-      "index": 682,
+      "ordinalPosition": 70,
       "name": "PROT_SPEC_BRUSH_WITH_GROWTH_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Represents the abbreviation lab_quanPosBrush from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from protected specimen brush with sufficient growth.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Represents the abbreviation lab_quanPosBrush from the NHSN specifications, known as the Infection Data Model. Indicates that an infection presented with a positive culture from protected specimen brush with sufficient growth."
     },
     {
-      "index": 688,
+      "ordinalPosition": 71,
       "name": "HOW_CREATED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the method used to create the case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nImported\n\n\nNHSN LabID-Quick Create\n\n\nNHSN LabID-Abstract\n\n\nNHSN LabID-Abstract All\n\n\nNHSN Procedure-Quick Create\n\n\nNHSN Procedure-Abstract\n\n\nNHSN Procedure-Manual\n\n\nNHSN Procedure-Surgical Print Group\n\n\nProcedure-Batch Job\n\n\nNHSN SSI-Create SSI\n\n\nSSI-Create SSI (From Surveillance Abstraction)\n\n\nNHSN VAE-Batch Job\n\n\nEvent-Create Case\n\n\nEvent-Manual\n\n\nNHSN AR-Abstract All\n\n\nNHSN AR-Abstract\n\n\nNHSN CLIP - Manual\n\n\nNHSN CLIP - Created from LDA\n\n\nNHSN CLIP - Quick Create\n\n\nNHSN CLIP - Abstract\n\n\nSurveillance Abstraction - Batch Job\n\n\nCase Reporting - Manual\n\n\nCase Reporting - Automated - Diagnosis\n\n\nCase Reporting - Automated - Reason for Visit\n\n\nCase Reporting - Automated - Lab Result\n\n\nCase Reporting - Automated - Hospital Census\n\n\nNHSN PedVAE - Criteria Print Group\n\n\nNHSN PedVAE-Batch Job"
+      "description": "The category ID for the method used to create the case.",
+      "entries": [
+        "Imported",
+        "NHSN LabID-Quick Create",
+        "NHSN LabID-Abstract",
+        "NHSN LabID-Abstract All",
+        "NHSN Procedure-Quick Create",
+        "NHSN Procedure-Abstract",
+        "NHSN Procedure-Manual",
+        "NHSN Procedure-Surgical Print Group",
+        "Procedure-Batch Job",
+        "NHSN SSI-Create SSI",
+        "SSI-Create SSI (From Surveillance Abstraction)",
+        "NHSN VAE-Batch Job",
+        "Event-Create Case",
+        "Event-Manual",
+        "NHSN AR-Abstract All",
+        "NHSN AR-Abstract",
+        "NHSN CLIP - Manual",
+        "NHSN CLIP - Created from LDA",
+        "NHSN CLIP - Quick Create",
+        "NHSN CLIP - Abstract",
+        "Surveillance Abstraction - Batch Job",
+        "Case Reporting - Manual",
+        "Case Reporting - Automated - Diagnosis",
+        "Case Reporting - Automated - Reason for Visit",
+        "Case Reporting - Automated - Lab Result",
+        "Case Reporting - Automated - Hospital Census",
+        "NHSN PedVAE - Criteria Print Group",
+        "NHSN PedVAE-Batch Job"
+      ]
     },
     {
-      "index": 723,
+      "ordinalPosition": 72,
       "name": "ASSOCIATED_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the location (hospital's EAF record) associated with the procedure."
     },
     {
-      "index": 728,
+      "ordinalPosition": 73,
       "name": "NHSN_DISCH_OTH_FAC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The discharged from other facility category ID for the registry data record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "The discharged from other facility category ID for the registry data record.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 738,
+      "ordinalPosition": 74,
       "name": "NHSN_PAT_LAST_OVERNIGHT_STAY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The last overnight physical location of the patient prior to hospitalization category ID for the registry data record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNursing Home/Skilled Nursing Facility\n\n\nOther Inpatient Healthcare Setting\n\n\nPersonal Residence/Residential Care\n\n\nUnknown"
+      "description": "The last overnight physical location of the patient prior to hospitalization category ID for the registry data record.",
+      "entries": [
+        "Nursing Home/Skilled Nursing Facility",
+        "Other Inpatient Healthcare Setting",
+        "Personal Residence/Residential Care",
+        "Unknown"
+      ]
     },
     {
-      "index": 749,
+      "ordinalPosition": 75,
       "name": "ASSOCIATED_LOC_NHSN_DEF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the NHSN Location (CMU record) associated with the infection case or LabID event."
     },
     {
-      "index": 754,
+      "ordinalPosition": 76,
       "name": "NHSN_LABID_ONSET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The onset category ID of the LabID event. This column distinguishes between MDRO and C. diff LabID events that are attributed to a healthcare setting and those attributed to the community.  This value is most reliable when only selecting records with a current status of Ready for Export (15) or Exported (20).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHealthcare Facility-Onset\n\n\nCommunity-Onset\n\n\nCommunity-Onset Healthcare Facility-Associated"
+      "description": "The onset category ID of the LabID event. This column distinguishes between MDRO and C. diff LabID events that are attributed to a healthcare setting and those attributed to the community.  This value is most reliable when only selecting records with a current status of Ready for Export (15) or Exported (20).",
+      "entries": [
+        "Healthcare Facility-Onset",
+        "Community-Onset",
+        "Community-Onset Healthcare Facility-Associated"
+      ]
     },
     {
-      "index": 764,
+      "ordinalPosition": 77,
       "name": "LINE_INSERTION_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the LDA was inserted."
     },
     {
-      "index": 769,
+      "ordinalPosition": 78,
       "name": "LINE_INSERTION_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department that is where the patient was located at the instant the LDA was inserted."
     },
     {
-      "index": 774,
+      "ordinalPosition": 79,
       "name": "PERM_LN_INSRT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the permanent LDA was inserted."
     },
     {
-      "index": 779,
+      "ordinalPosition": 80,
       "name": "PERM_LN_INSRT_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department that is where the patient was located at the instant the permanent LDA was inserted."
     },
     {
-      "index": 784,
+      "ordinalPosition": 81,
       "name": "TEMP_LN_INSRT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the temporary LDA was inserted."
     },
     {
-      "index": 789,
+      "ordinalPosition": 82,
       "name": "TEMP_LN_INSRT_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department that is where the patient was located at the instant the temporary LDA was inserted."
     },
     {
-      "index": 794,
+      "ordinalPosition": 83,
       "name": "NHSN_LABID_FACUNQ_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a LabID event is a facility-wide, non-duplicate event.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a LabID event is a facility-wide, non-duplicate event."
     },
     {
-      "index": 800,
+      "ordinalPosition": 84,
       "name": "NHSN_EVENT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the NHSN Event ID from the NHSN database. Storing these values makes matching RDI records in Epic to NHSN-returned events easier and makes imports safer."
     },
     {
-      "index": 805,
+      "ordinalPosition": 85,
       "name": "NHSN_ECMO_PRESENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether an extracorporeal life support device was present.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether an extracorporeal life support device was present."
     },
     {
-      "index": 811,
+      "ordinalPosition": 86,
       "name": "NHSN_VAD_PRESENT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a ventricular assist device was present.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a ventricular assist device was present."
     },
     {
-      "index": 817,
+      "ordinalPosition": 87,
       "name": "CARBAPENEMASE_TESTED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The carbapenemase tested category ID associated with the NHSN LabID Event registry record.\n\n\n The category values for this column were already listed for column: NHSN_DISCH_OTH_FAC_C_NAME"
+      "description": "The carbapenemase tested category ID associated with the NHSN LabID Event registry record."
     },
     {
-      "index": 823,
+      "ordinalPosition": 88,
       "name": "OTHER_CARBAPENEMASE_TEST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores a free text entry for other carbapenemase tests performed for the CRE LabID sample."
     },
     {
-      "index": 828,
+      "ordinalPosition": 89,
       "name": "POSITIVE_CARBAPENEMASE_TEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The positive carbapenemase found category ID for the NHSN LabID Event registry record.\n\n\n The category values for this column were already listed for column: NHSN_DISCH_OTH_FAC_C_NAME"
+      "description": "The positive carbapenemase found category ID for the NHSN LabID Event registry record."
     },
     {
-      "index": 834,
+      "ordinalPosition": 90,
       "name": "OTHER_POSITIVE_CARBAPENEMASE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores a free text entry for other positive carbapenemases for the CRE LabID sample."
     },
     {
-      "index": 839,
+      "ordinalPosition": 91,
       "name": "SURV_ABSTN_REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the surveillance abstraction (RDI) record associated with the infection case."
     },
     {
-      "index": 844,
+      "ordinalPosition": 92,
       "name": "NHSN_MUNCHAUSEN_SYNDROME_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient had known or suspected Munchausen Syndrome by Proxy during current admission.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether the patient had known or suspected Munchausen Syndrome by Proxy during current admission."
     },
     {
-      "index": 850,
+      "ordinalPosition": 93,
       "name": "NHSN_PATIENT_SELF_INJECTION_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates observed or suspected patient injection into vascular line(s) within the BSI infection window period.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates observed or suspected patient injection into vascular line(s) within the BSI infection window period."
     },
     {
-      "index": 856,
+      "ordinalPosition": 94,
       "name": "NHSN_EPIDERMOLYSIS_BULLOSA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates Epidermolysis bullosa during current admission.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates Epidermolysis bullosa during current admission."
     },
     {
-      "index": 862,
+      "ordinalPosition": 95,
       "name": "MATCHING_ORGANISM_SITE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Site which has a matching organism identified with a separate blood specimen, both collected within the infection window period and pus is present.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nArterial catheter\n\n\nArteriovenous fistula\n\n\nArteriovenous graft\n\n\nAtrial lines\n\n\nHemodialysis reliable outflow catheter\n\n\nIntra-aortic balloon pump device\n\n\nNon-accessed central line\n\n\nPeripheral IV or midline catheter"
+      "description": "Site which has a matching organism identified with a separate blood specimen, both collected within the infection window period and pus is present.",
+      "entries": [
+        "Arterial catheter",
+        "Arteriovenous fistula",
+        "Arteriovenous graft",
+        "Atrial lines",
+        "Hemodialysis reliable outflow catheter",
+        "Intra-aortic balloon pump device",
+        "Non-accessed central line",
+        "Peripheral IV or midline catheter"
+      ]
     },
     {
-      "index": 877,
+      "ordinalPosition": 96,
       "name": "BSI_HEMODIALYSIS_LINE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether a hemodialysis line was in place for the BSI registry record.\n\n\n The category values for this column were already listed for column: POST_PROC_INFECTION_YN"
+      "description": "Indicates whether a hemodialysis line was in place for the BSI registry record."
     },
     {
-      "index": 883,
+      "ordinalPosition": 97,
       "name": "NHSN_COVID19_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The COVID-19 status category ID for the associated infection case.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nSuspected\n\n\nNo"
+      "description": "The COVID-19 status category ID for the associated infection case.",
+      "entries": [
+        "Yes",
+        "Suspected",
+        "No"
+      ]
     }
   ]
 }

@@ -1,104 +1,120 @@
 {
-  "table_name": "DOCS_RCVD_MEDICAL_HX",
+  "name": "DOCS_RCVD_MEDICAL_HX",
   "description": "This table contains information about patients' medical history.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the document record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MED_HX_REF",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique reference identifier associated with the medical history."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "MED_HX_FREE_TXT_DT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text date for this medical history."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "MED_HX_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comments for the medical history."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "MED_HX_SRC_DXR_DOCUMENT_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the received document record that owns the instance of this medical history."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "MED_HX_LST_UPD_INST_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The last update instant of the medical history in UTC."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "MED_HX_PAT_HX_RESP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's response to the medical history question.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNo Response\n\n\nNo (Not Pertinent)"
+      "description": "The patient's response to the medical history question.",
+      "entries": [
+        "Yes",
+        "No",
+        "No Response",
+        "No (Not Pertinent)"
+      ]
     },
     {
-      "index": 58,
+      "ordinalPosition": 11,
       "name": "MED_HX_SRC_QUESTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The medical history question ID from a MyChart questionnaire."
     },
     {
-      "index": 63,
+      "ordinalPosition": 12,
       "name": "MED_HX_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The diagnosis identifier for the medical history."
     },
     {
-      "index": 68,
+      "ordinalPosition": 13,
       "name": "MED_HX_TEMPLATE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the ID of the medical history questionnaire."
     },
     {
-      "index": 73,
+      "ordinalPosition": 14,
       "name": "MED_HX_TEMPLATE_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,

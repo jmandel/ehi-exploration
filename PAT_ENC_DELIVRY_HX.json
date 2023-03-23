@@ -1,62 +1,78 @@
 {
-  "table_name": "PAT_ENC_DELIVRY_HX",
+  "name": "PAT_ENC_DELIVRY_HX",
   "description": "The PAT_ENC_DELIVRY_HX table contains information on inpatient ADT-related labor & delivery status history.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID for the patient whose labor & delivery history this is."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "The patient encounter contact date in internal format."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count field for the maternal delivery history related group."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number for the patient encounter."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The patient encounter contact date in external format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "DLVR_HX_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The labor & delivery history status (no released values).\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nExpected\n\n\nAssessment\n\n\nAdmitted\n\n\nDelivered\n\n\nNewborn\n\n\nDischarged\n\n\nReserved\n\n\nUndo"
+      "description": "The labor & delivery history status (no released values).",
+      "entries": [
+        "Expected",
+        "Assessment",
+        "Admitted",
+        "Delivered",
+        "Newborn",
+        "Discharged",
+        "Reserved",
+        "Undo"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 7,
       "name": "DLVR_HX_DATETIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time a patient's labor and delivery status changed."
     },
     {
-      "index": 47,
+      "ordinalPosition": 8,
       "name": "DLVR_HX_NOTES",
       "type": "VARCHAR",
       "discontinued": false,

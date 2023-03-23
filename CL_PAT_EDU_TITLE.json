@@ -1,38 +1,49 @@
 {
-  "table_name": "CL_PAT_EDU_TITLE",
+  "name": "CL_PAT_EDU_TITLE",
   "description": "Enterprise reporting table for patient education title and title status items.",
-  "primary_key": {
-    "column_name": "PED_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PED_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the patient education record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Line count for the Patient education title data."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_TITLE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the patient education title. It is stored in internal format and can be used to link to the teaching title (IED) master file."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_TITLE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "A category item that specifies each title's status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "A category item that specifies each title's status.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     }
   ]
 }

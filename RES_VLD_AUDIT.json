@@ -1,69 +1,85 @@
 {
-  "table_name": "RES_VLD_AUDIT",
+  "name": "RES_VLD_AUDIT",
   "description": "Result audit information for verification and unverification (result correction).",
-  "primary_key": {
-    "column_name": "RESULT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RESULT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the result record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RES_SPECIMEN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Internal specimen identifier associated with result"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RES_VLD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result validation status category number for the audit trail validation status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPreliminary\n\n\nFinal\n\n\nPrelim Pend\n\n\nFinal Pend\n\n\nUnverified\n\n\nCosign\n\n\nPrelim Wait\n\n\nFinal Wait"
+      "description": "The result validation status category number for the audit trail validation status.",
+      "entries": [
+        "Preliminary",
+        "Final",
+        "Prelim Pend",
+        "Final Pend",
+        "Unverified",
+        "Cosign",
+        "Prelim Wait",
+        "Final Wait"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 5,
       "name": "RES_UNVLD_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The result correction reason category number for the result correction.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The result correction reason category number for the result correction."
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "RES_VLD_USER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 43,
+      "ordinalPosition": 7,
       "name": "RES_VLD_INSTANT",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant when the result is validated."
     },
     {
-      "index": 48,
+      "ordinalPosition": 8,
       "name": "RES_UNVLD_RSN_COM",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Unvalidation reason comment\n\n\n The category values for this column were already listed for column: RES_UNVLD_RSN_C_NAME"
+      "description": "Unvalidation reason comment"
     },
     {
-      "index": 54,
+      "ordinalPosition": 9,
       "name": "RES_UNVLD_RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,

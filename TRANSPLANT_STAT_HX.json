@@ -1,69 +1,143 @@
 {
-  "table_name": "TRANSPLANT_STAT_HX",
+  "name": "TRANSPLANT_STAT_HX",
   "description": "This table contains information about a transplant episode's phase, status, and reason.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the episode of care record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Each line represents a change in status for this transplant episode."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TX_STAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The phase of the transplant episode, e.g. Pre-Evaluation, Evaluation, Transplanted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReferral\n\n\nEvaluation\n\n\nWaitlist\n\n\nAdmitted for Transplant\n\n\nTransplanted"
+      "description": "The phase of the transplant episode, e.g. Pre-Evaluation, Evaluation, Transplanted.",
+      "entries": [
+        "Referral",
+        "Evaluation",
+        "Waitlist",
+        "Admitted for Transplant",
+        "Transplanted"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "TX_STAT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Effective date associated with the patient's transplant phase, status, and reason."
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "TX_STATUS_OUT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Status associated with the patient's transplant phase and reason.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nActive\n\n\nInternal Hold\n\n\nDeclined\n\n\nApproved\n\n\nRemoved\n\n\nDenied Follow-up\n\n\nDenied Not Followed\n\n\nInactive\n\n\nDeferred\n\n\nDeferred Follow-up\n\n\nDeferred Not Followed\n\n\nIneligible\n\n\nReady for Committee\n\n\nReady for Listing\n\n\nApproved for Listing\n\n\nApproved for Live Donor Only\n\n\nActive Follow-up\n\n\nReporting Follow-up Only\n\n\nNot Followed"
+      "description": "Status associated with the patient's transplant phase and reason.",
+      "entries": [
+        "Active",
+        "Internal Hold",
+        "Declined",
+        "Approved",
+        "Removed",
+        "Denied Follow-up",
+        "Denied Not Followed",
+        "Inactive",
+        "Deferred",
+        "Deferred Follow-up",
+        "Deferred Not Followed",
+        "Ineligible",
+        "Ready for Committee",
+        "Ready for Listing",
+        "Approved for Listing",
+        "Approved for Live Donor Only",
+        "Active Follow-up",
+        "Reporting Follow-up Only",
+        "Not Followed"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 6,
       "name": "TX_STAT_UPD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who updated the transplant phase, status, or reason."
     },
     {
-      "index": 60,
+      "ordinalPosition": 7,
       "name": "TX_STAT_UPD_INST",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the transplant phase, status, or reason was updated."
     },
     {
-      "index": 65,
+      "ordinalPosition": 8,
       "name": "TX_STATUS_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason for the patient's transplant phase and status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient Died\n\n\nUnable to Contact Patient\n\n\nFinancial/Insurance Complications\n\n\nPatient Choice\n\n\nNot a Candidate\n\n\nGraft Lost\n\n\nOther\n\n\nCandidate Listed in Error\n\n\nProgram Inactive for 2+ Years\n\n\nTransplanted in Another Country\n\n\nCandidate Workup Incomplete\n\n\nSubstance Abuse\n\n\nMedical Non-Compliance\n\n\nRefused Transplant\n\n\nTemporarily too Sick\n\n\nTemporarily too Well\n\n\nTransplant Pending\n\n\nWeight Issues\n\n\nCandidate for Living Donor Transplant Only\n\n\nPhysician/Surgeon Unavailable\n\n\nTransferred to Another Center\n\n\nPatient Died During Transplant Procedure\n\n\nCandidate Condition Improved, Transplant Not Needed\n\n\nCandidate Condition Deteriorated, too Sick for Transplant\n\n\nTransplanted at Another Center\n\n\nCandidate Listed for Unacceptable Antigens Only\n\n\nPatient Lost to Follow-up\n\n\nReferred too Early\n\n\nPatient Cancellation\n\n\nPatient No Show\n\n\nDoes Not Meet Criteria\n\n\nPending Additional Tests\n\n\nPending Insurance Approval\n\n\nReady for Scheduling\n\n\nScheduled for Evaluation\n\n\nReady for Committee\n\n\nReady for Listing\n\n\nFollowed Up at Another Location"
+      "description": "Reason for the patient's transplant phase and status.",
+      "entries": [
+        "Patient Died",
+        "Unable to Contact Patient",
+        "Financial/Insurance Complications",
+        "Patient Choice",
+        "Not a Candidate",
+        "Graft Lost",
+        "Other",
+        "Candidate Listed in Error",
+        "Program Inactive for 2+ Years",
+        "Transplanted in Another Country",
+        "Candidate Workup Incomplete",
+        "Substance Abuse",
+        "Medical Non-Compliance",
+        "Refused Transplant",
+        "Temporarily too Sick",
+        "Temporarily too Well",
+        "Transplant Pending",
+        "Weight Issues",
+        "Candidate for Living Donor Transplant Only",
+        "Physician/Surgeon Unavailable",
+        "Transferred to Another Center",
+        "Patient Died During Transplant Procedure",
+        "Candidate Condition Improved, Transplant Not Needed",
+        "Candidate Condition Deteriorated, too Sick for Transplant",
+        "Transplanted at Another Center",
+        "Candidate Listed for Unacceptable Antigens Only",
+        "Patient Lost to Follow-up",
+        "Referred too Early",
+        "Patient Cancellation",
+        "Patient No Show",
+        "Does Not Meet Criteria",
+        "Pending Additional Tests",
+        "Pending Insurance Approval",
+        "Ready for Scheduling",
+        "Scheduled for Evaluation",
+        "Ready for Committee",
+        "Ready for Listing",
+        "Followed Up at Another Location"
+      ]
     },
     {
-      "index": 110,
+      "ordinalPosition": 9,
       "name": "TXP_PHASE_ENC_CSN",
       "type": "NUMERIC",
       "discontinued": false,

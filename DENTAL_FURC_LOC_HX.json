@@ -1,38 +1,56 @@
 {
-  "table_name": "DENTAL_FURC_LOC_HX",
+  "name": "DENTAL_FURC_LOC_HX",
   "description": "This table contains the history of locations where furcation is present on a tooth.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of the historical instant in the furcation finding record. Together with FINDING_ID, this forms the foreign key to the DENTAL_FINDING_HX table."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple furcation locations associated with the finding and the historical instant from the DENTAL_FINDING_HX table"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DENT_FURC_LOC_HX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The history of locations where furcation is present on a tooth.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nBuccal\n\n\nLingual\n\n\nMesial\n\n\nDistal\n\n\nMesiolingual\n\n\nDistolingual"
+      "description": "The history of locations where furcation is present on a tooth.",
+      "entries": [
+        "Buccal",
+        "Lingual",
+        "Mesial",
+        "Distal",
+        "Mesiolingual",
+        "Distolingual"
+      ]
     }
   ]
 }

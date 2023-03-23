@@ -1,50 +1,56 @@
 {
-  "table_name": "NOTES_ACCT",
+  "name": "NOTES_ACCT",
   "description": "This table contains summary information for billing system account notepad notes attached to accounts.",
-  "primary_key": {
-    "column_name": "NOTE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "NOTE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the Account Notepad note record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the account record to which the note is attached. This ID may be encrypted if you have implemented enterprise reporting�s encryption security function."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ACTIVE_STATUS",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of the note: active or inactive.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive"
+      "description": "The status of the note: active or inactive.",
+      "entries": [
+        "Active",
+        "Inactive"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "ENTRY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the user who manually created the note. If the note was automatically created by billing system, this is the person who executed the activity that triggered the note creation. This ID may be encrypted"
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "INVOICE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The invoice number associated with this note."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "NOTE_ENTRY_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the account note was created."
     }

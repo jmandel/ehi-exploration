@@ -1,559 +1,600 @@
 {
-  "table_name": "STMT_HSP_ACCT_DETAIL",
+  "name": "STMT_HSP_ACCT_DETAIL",
   "description": "This table contains information about hospital accounts that are associated with a given statement.",
-  "primary_key": {
-    "column_name": "PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the statement print or detail bill record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HB_PREV_PAT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account previous patient balance."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HB_NEW_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account new charge amount."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "HB_NEW_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account new payment amount."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "HB_NEW_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account new adjustment amount."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "HB_TOT_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account total charge amount."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "HB_TOT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account total payment amount."
     },
     {
-      "index": 47,
+      "ordinalPosition": 10,
       "name": "HB_TOT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account total adjustment amount."
     },
     {
-      "index": 52,
+      "ordinalPosition": 11,
       "name": "HB_CURR_PAT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing outstanding self-pay balance for the hospital account."
     },
     {
-      "index": 57,
+      "ordinalPosition": 12,
       "name": "HB_CURR_AMT_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing amount due for the hospital account. It is usually the self-pay outstanding balance, but will be zero for accounts on a payment plan (since the payment plan amount due is really at the guarantor level unless sending hospital account level statements)."
     },
     {
-      "index": 62,
+      "ordinalPosition": 13,
       "name": "HB_PAT_LIAB_SPLIT_UP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The hospital account patient liability split-up."
     },
     {
-      "index": 67,
+      "ordinalPosition": 14,
       "name": "HB_ADMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The hospital account admit date."
     },
     {
-      "index": 72,
+      "ordinalPosition": 15,
       "name": "HB_DISCHARGE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The hospital account discharge date."
     },
     {
-      "index": 77,
+      "ordinalPosition": 16,
       "name": "HB_PRIM_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account primary diagnosis."
     },
     {
-      "index": 82,
+      "ordinalPosition": 17,
       "name": "HB_SP_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The hospital account self-pay status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFull Self-Pay Due\n\n\nReview\n\n\nPayment Plan\n\n\nPre-collection\n\n\nBad Debt\n\n\nProrated"
+      "description": "The hospital account self-pay status.",
+      "entries": [
+        "Full Self-Pay Due",
+        "Review",
+        "Payment Plan",
+        "Pre-collection",
+        "Bad Debt",
+        "Prorated"
+      ]
     },
     {
-      "index": 95,
+      "ordinalPosition": 18,
       "name": "HB_FIRST_STMT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The hospital account first statement date."
     },
     {
-      "index": 100,
+      "ordinalPosition": 19,
       "name": "HB_PREV_STMT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The hospital account previous statement date."
     },
     {
-      "index": 105,
+      "ordinalPosition": 20,
       "name": "HB_SENT_STMT_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of statements sent for a hospital account."
     },
     {
-      "index": 110,
+      "ordinalPosition": 21,
       "name": "HB_IS_INFORMATIONAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The hospital account-level storage of whether this particular hospital account had a patient balance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "The hospital account-level storage of whether this particular hospital account had a patient balance.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 119,
+      "ordinalPosition": 22,
       "name": "HB_PREV_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The hospital account-level previous insurance balance."
     },
     {
-      "index": 124,
+      "ordinalPosition": 23,
       "name": "HB_NEW_INS_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new insurance charges at the hospital account level."
     },
     {
-      "index": 129,
+      "ordinalPosition": 24,
       "name": "HB_NEW_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new insurance payments for this hospital account."
     },
     {
-      "index": 134,
+      "ordinalPosition": 25,
       "name": "HB_NEW_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new insurance adjustments on this hospital account."
     },
     {
-      "index": 139,
+      "ordinalPosition": 26,
       "name": "HB_CURR_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The current insurance balance on this hospital account."
     },
     {
-      "index": 144,
+      "ordinalPosition": 27,
       "name": "PB_PREV_PAT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Previous professional patient balance on the hospital account."
     },
     {
-      "index": 149,
+      "ordinalPosition": 28,
       "name": "PB_NEW_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "New professional charges on the hospital account."
     },
     {
-      "index": 154,
+      "ordinalPosition": 29,
       "name": "PB_NEW_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "New professional payments on the hospital account."
     },
     {
-      "index": 159,
+      "ordinalPosition": 30,
       "name": "PB_NEW_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "New professional adjustments on the hospital account."
     },
     {
-      "index": 164,
+      "ordinalPosition": 31,
       "name": "PB_TOT_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total professional charges on the hospital account."
     },
     {
-      "index": 169,
+      "ordinalPosition": 32,
       "name": "PB_TOT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total professional payments on the hospital account."
     },
     {
-      "index": 174,
+      "ordinalPosition": 33,
       "name": "PB_TOT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total professional adjustments on the hospital account."
     },
     {
-      "index": 179,
+      "ordinalPosition": 34,
       "name": "PB_CURR_PAT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Professional Billing outstanding self-pay balance for the hospital account."
     },
     {
-      "index": 184,
+      "ordinalPosition": 35,
       "name": "PB_CURR_AMT_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Professional Billing amount due for the hospital account. It is usually the self-pay outstanding balance, but will be zero for accounts on a payment plan (since the payment plan amount due is really at the guarantor level unless sending hospital account level statements)."
     },
     {
-      "index": 189,
+      "ordinalPosition": 36,
       "name": "PB_PREV_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Previous professional insurance balance on the hospital account."
     },
     {
-      "index": 194,
+      "ordinalPosition": 37,
       "name": "PB_NEW_INS_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new professional charges for which an insurance payment is expected."
     },
     {
-      "index": 199,
+      "ordinalPosition": 38,
       "name": "PB_NEW_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The new professional payments that have been applied to the insurance portion of charges and debit adjustments."
     },
     {
-      "index": 204,
+      "ordinalPosition": 39,
       "name": "PB_NEW_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of new adjustment applied to the insurance portion of the hospital account."
     },
     {
-      "index": 209,
+      "ordinalPosition": 40,
       "name": "PB_CURR_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The current professional insurance balance."
     },
     {
-      "index": 214,
+      "ordinalPosition": 41,
       "name": "PB_TOT_PAT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Professional Billing patient payments for a hospital account."
     },
     {
-      "index": 219,
+      "ordinalPosition": 42,
       "name": "PB_TOT_PAT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Professional Billing patient adjustments for a hospital account."
     },
     {
-      "index": 224,
+      "ordinalPosition": 43,
       "name": "PB_TOT_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Professional Billing insurance payments for a hospital account."
     },
     {
-      "index": 229,
+      "ordinalPosition": 44,
       "name": "PB_TOT_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Professional Billing insurance adjustments for a hospital account."
     },
     {
-      "index": 234,
+      "ordinalPosition": 45,
       "name": "HB_NEW_PAT_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the new patient charges for a hospital account."
     },
     {
-      "index": 239,
+      "ordinalPosition": 46,
       "name": "HB_NEW_PAT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the new patient payments for a hospital account."
     },
     {
-      "index": 244,
+      "ordinalPosition": 47,
       "name": "HB_NEW_PAT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the new patient adjustments for a hospital account."
     },
     {
-      "index": 249,
+      "ordinalPosition": 48,
       "name": "HB_PMT_PLAN_INIT_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing hospital account-level initial payment plan balance."
     },
     {
-      "index": 254,
+      "ordinalPosition": 49,
       "name": "HB_PMT_PLAN_REMAIN_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing hospital account-level remaining payment plan balance."
     },
     {
-      "index": 259,
+      "ordinalPosition": 50,
       "name": "HB_COLLECTION_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the hospital account's collection status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive AR\n\n\nExternal Agency AR\n\n\nBad Debt\n\n\nOutsourced"
+      "description": "Stores the hospital account's collection status.",
+      "entries": [
+        "Active AR",
+        "External Agency AR",
+        "Bad Debt",
+        "Outsourced"
+      ]
     },
     {
-      "index": 270,
+      "ordinalPosition": 51,
       "name": "HB_COLL_AGENCY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the outsource agency for the hospital account."
     },
     {
-      "index": 275,
+      "ordinalPosition": 52,
       "name": "HB_COLL_AGENCY_ID_COLL_AGENCY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the collection agency."
     },
     {
-      "index": 280,
+      "ordinalPosition": 53,
       "name": "HB_IS_OUTSOURCED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores if the hospital account has been outsourced.\n\n\n The category values for this column were already listed for column: HB_IS_INFORMATIONAL_YN"
+      "description": "Stores if the hospital account has been outsourced."
     },
     {
-      "index": 286,
+      "ordinalPosition": 54,
       "name": "HB_FOLLOW_UP_CYCLE_LEVEL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Follow-up cycle level for this hospital account."
     },
     {
-      "index": 291,
+      "ordinalPosition": 55,
       "name": "HB_SP_FOLLOW_UP_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the hospital account self-pay follow-up level.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLevel 1\n\n\nLevel 2\n\n\nLevel 3\n\n\nLevel 4\n\n\nLevel 5\n\n\nLevel 6\n\n\nLevel 7\n\n\nLevel 8\n\n\nLevel 9\n\n\nLevel 10"
+      "description": "Stores the hospital account self-pay follow-up level.",
+      "entries": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5",
+        "Level 6",
+        "Level 7",
+        "Level 8",
+        "Level 9",
+        "Level 10"
+      ]
     },
     {
-      "index": 308,
+      "ordinalPosition": 56,
       "name": "HB_PMT_PLAN_DUE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing hospital account-level payment plan due."
     },
     {
-      "index": 313,
+      "ordinalPosition": 57,
       "name": "HB_PMT_PLAN_MONTHLY_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the Hospital Billing hospital account-level payment plan monthly amount."
     },
     {
-      "index": 318,
+      "ordinalPosition": 58,
       "name": "HB_STATEMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Hospital Billing hospital account statement type.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFull Self-pay\n\n\nProrated / Estimated Payment Plan\n\n\nInformational"
+      "description": "The Hospital Billing hospital account statement type.",
+      "entries": [
+        "Full Self-pay",
+        "Prorated / Estimated Payment Plan",
+        "Informational"
+      ]
     },
     {
-      "index": 328,
+      "ordinalPosition": 59,
       "name": "HB_SP_AGING_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the date for aging the self-pay balances."
     },
     {
-      "index": 333,
+      "ordinalPosition": 60,
       "name": "HB_PREV_STMT_END_BATCH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the end system batch date of the last statement generated for the hospital account."
     },
     {
-      "index": 338,
+      "ordinalPosition": 61,
       "name": "HB_PREV_STMT_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the previous statement generated for the hospital account."
     },
     {
-      "index": 343,
+      "ordinalPosition": 62,
       "name": "HB_TOT_PAT_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Hospital Billing patient payments for a hospital account."
     },
     {
-      "index": 348,
+      "ordinalPosition": 63,
       "name": "HB_TOT_PAT_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Hospital Billing patient adjustments for a hospital account."
     },
     {
-      "index": 353,
+      "ordinalPosition": 64,
       "name": "HB_TOT_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Hospital Billing insurance payments for a hospital account."
     },
     {
-      "index": 358,
+      "ordinalPosition": 65,
       "name": "HB_TOT_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total Hospital Billing insurance adjustments for a hospital account."
     },
     {
-      "index": 363,
+      "ordinalPosition": 66,
       "name": "HB_PMT_PLAN_OVERDUE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the hospital account-level payment plan overdue amount."
     },
     {
-      "index": 368,
+      "ordinalPosition": 67,
       "name": "HB_PMT_PLAN_PAID_AHEAD_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the hospital account-level payment plan paid ahead amount."
     },
     {
-      "index": 373,
+      "ordinalPosition": 68,
       "name": "HB_ADVBILL_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the advance bill estimate on the hospital account."
     },
     {
-      "index": 378,
+      "ordinalPosition": 69,
       "name": "HB_NEW_CONTESTED_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of new contested Hospital Billing charges for the hospital account."
     },
     {
-      "index": 383,
+      "ordinalPosition": 70,
       "name": "HB_NEW_CONTESTED_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of new contested Hospital Billing payments for the hospital account."
     },
     {
-      "index": 388,
+      "ordinalPosition": 71,
       "name": "HB_NEW_CONTESTED_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of new contested Hospital Billing adjustments for the hospital account."
     },
     {
-      "index": 393,
+      "ordinalPosition": 72,
       "name": "HB_NEW_CONTESTED_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of new contested Hospital Billing insurance payments for the hospital account."
     },
     {
-      "index": 398,
+      "ordinalPosition": 73,
       "name": "HB_NEW_CONTESTED_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of new contested Hospital Billing insurance adjustments for the hospital account."
     },
     {
-      "index": 403,
+      "ordinalPosition": 74,
       "name": "HB_CONTESTED_CHG_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of all contested Hospital Billing charges for the hospital account."
     },
     {
-      "index": 408,
+      "ordinalPosition": 75,
       "name": "HB_CONTESTED_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of all contested Hospital Billing payments for the hospital account."
     },
     {
-      "index": 413,
+      "ordinalPosition": 76,
       "name": "HB_CONTESTED_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of all contested Hospital Billing adjustments for the hospital account."
     },
     {
-      "index": 418,
+      "ordinalPosition": 77,
       "name": "HB_CONTESTED_INS_PMT_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of all contested Hospital Billing insurance payments for the hospital account."
     },
     {
-      "index": 423,
+      "ordinalPosition": 78,
       "name": "HB_CONTESTED_INS_ADJ_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Sum of all contested Hospital Billing insurance adjustments for the hospital account."
     },
     {
-      "index": 428,
+      "ordinalPosition": 79,
       "name": "HB_CONTESTED_BAL",
       "type": "NUMERIC",
       "discontinued": false,

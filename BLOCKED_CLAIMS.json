@@ -1,31 +1,40 @@
 {
-  "table_name": "BLOCKED_CLAIMS",
+  "name": "BLOCKED_CLAIMS",
   "description": "This table extracts data which is used to keep track of claims that were blocked from being added to the patient's external data. Links to BLOCKED_CLAIMS_LIST.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLAIM_BLOCK_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason a patient cannot have clinical data from claims in external data.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTransplant"
+      "description": "The reason a patient cannot have clinical data from claims in external data.",
+      "entries": [
+        "Transplant"
+      ]
     }
   ]
 }

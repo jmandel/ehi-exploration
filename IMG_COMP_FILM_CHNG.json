@@ -1,31 +1,43 @@
 {
-  "table_name": "IMG_COMP_FILM_CHNG",
+  "name": "IMG_COMP_FILM_CHNG",
   "description": "This stores comparison film change amounts.  It relates to table IMG_COMP_FILMS and they can be joined using the ORDER_ID and LINE columns.",
-  "primary_key": {
-    "column_name": "ORDER_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FILM_CHNG_AMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Contains the amount of change from a comparison film. The actual film or chart record can be obtained by joining this table to IMG_COMP_FILMS using the ORDER_ID and LINE columns.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNo Comparison\n\n\nNo Significant Change\n\n\nSignificant Change\n\n\nNot Otherwise Specified"
+      "description": "Contains the amount of change from a comparison film. The actual film or chart record can be obtained by joining this table to IMG_COMP_FILMS using the ORDER_ID and LINE columns.",
+      "entries": [
+        "No Comparison",
+        "No Significant Change",
+        "Significant Change",
+        "Not Otherwise Specified"
+      ]
     }
   ]
 }

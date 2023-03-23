@@ -1,69 +1,99 @@
 {
-  "table_name": "ARPB_TX_CHG_REV_HX",
+  "name": "ARPB_TX_CHG_REV_HX",
   "description": "Charge Review History Related Information.  This information is copied from the TAR (temporary transaction) record when a charge in charge review is filed to ETR (permanent transaction).",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CR_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Charge Review History User ID.  This is the user that performs the activity reflected in this line in the charge review history."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CR_HX_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The charge review history date."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CR_HX_TIME",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Displays the date the recall must be made by."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CR_HX_ACTIVITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The charge review history activity category ID for the transaction. Examples include Entry, Review, Resubmit, etc.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nEntry\n\n\nReview\n\n\nReentry\n\n\nForce Resubmit\n\n\nTransfer\n\n\nDeletion\n\n\nAutomatic Transfer\n\n\nAutomatic Reentry\n\n\nResubmit\n\n\nAutomatic Filing\n\n\nDefer\n\n\nActivate\n\n\nCharge Homed\n\n\nAutomatic Update\n\n\nRetroadjudication\n\n\nPre Charge Review Extension\n\n\nRequest for Billing Information\n\n\nSkip"
+      "description": "The charge review history activity category ID for the transaction. Examples include Entry, Review, Resubmit, etc.",
+      "entries": [
+        "Entry",
+        "Review",
+        "Reentry",
+        "Force Resubmit",
+        "Transfer",
+        "Deletion",
+        "Automatic Transfer",
+        "Automatic Reentry",
+        "Resubmit",
+        "Automatic Filing",
+        "Defer",
+        "Activate",
+        "Charge Homed",
+        "Automatic Update",
+        "Retroadjudication",
+        "Pre Charge Review Extension",
+        "Request for Billing Information",
+        "Skip"
+      ]
     },
     {
-      "index": 52,
+      "ordinalPosition": 7,
       "name": "CR_HX_CONT_LINE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Charge Review History Continuation Flag.  This flag is set to yes if this line is a continuation of the previous line\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Charge Review History Continuation Flag.  This flag is set to yes if this line is a continuation of the previous line",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 8,
       "name": "CR_HX_SYS_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Charge Review History System Comment"
     },
     {
-      "index": 66,
+      "ordinalPosition": 9,
       "name": "CR_HX_USER_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

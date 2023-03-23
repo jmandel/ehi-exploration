@@ -1,48 +1,55 @@
 {
-  "table_name": "EPISODE_ALL",
+  "name": "EPISODE_ALL",
   "description": "This table contains all episode records, regardless of the type and is intended for use with Organization Filter functionality. If used for Organization Filtering, users will be able to see an episode if they have authorization for the owning business segment on the episode or the patient associated with the episode.",
-  "primary_key": {
-    "column_name": "EPISODE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EPISODE_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of the episode record. An episode status might be Active, Resolved, or Deleted.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nResolved\n\n\nDeleted"
+      "description": "The status of the episode record. An episode status might be Active, Resolved, or Deleted.",
+      "entries": [
+        "Active",
+        "Resolved",
+        "Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "EPISODE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the episode."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the episode was initiated."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the episode was resolved."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "CARE_INTG_ID",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,38 +1,54 @@
 {
-  "table_name": "EXT_PHARM_TYPE_NONCVRD",
+  "name": "EXT_PHARM_TYPE_NONCVRD",
   "description": "The non-covered pharmacy coverage type returned from Surescripts eligibility response.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "GROUP_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VALUE_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "NONCVRD_EXTERNAL_PHARM_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores non-covered pharmacy coverage type for Surescripts\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRetail\n\n\nMail Order\n\n\nSpecialty\n\n\nLong-Term Care"
+      "description": "Stores non-covered pharmacy coverage type for Surescripts",
+      "entries": [
+        "Retail",
+        "Mail Order",
+        "Specialty",
+        "Long-Term Care"
+      ]
     }
   ]
 }

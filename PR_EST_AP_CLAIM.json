@@ -1,73 +1,93 @@
 {
-  "table_name": "PR_EST_AP_CLAIM",
+  "name": "PR_EST_AP_CLAIM",
   "description": "This table stores accounts payable claim context information for managed care estimates.",
-  "primary_key": {
-    "column_name": "ESTIMATE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ESTIMATE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the patient estimate record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VENDOR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The vendor associated with the estimate claim detail."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider associated with the estimate claim detail."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The place of service associated with the estimate claim detail."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CLAIM_FORMAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The claim format for the estimate claim detail.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCMS\n\n\nUB\n\n\nRx"
+      "description": "The claim format for the estimate claim detail.",
+      "entries": [
+        "CMS",
+        "UB",
+        "Rx"
+      ]
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "HISTORY_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of historical data used for this estimate claim detail.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIndividual Procedure\n\n\nHistorical Claim"
+      "description": "The type of historical data used for this estimate claim detail.",
+      "entries": [
+        "Individual Procedure",
+        "Historical Claim"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "HX_UB_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The historical UB claim classification to use for this estimate claim detail.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nInpatient\n\n\nOutpatient\n\n\nEmergency"
+      "description": "The historical UB claim classification to use for this estimate claim detail.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Emergency"
+      ]
     }
   ]
 }

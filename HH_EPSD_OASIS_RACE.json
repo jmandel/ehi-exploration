@@ -1,31 +1,46 @@
 {
-  "table_name": "HH_EPSD_OASIS_RACE",
+  "name": "HH_EPSD_OASIS_RACE",
   "description": "This table contains user-entered Outcome and Assessment Information Set (OASIS) race information for Home Health episodes.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Unique identifier for the episode."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OASIS_RACE_M0140_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "OASIS race category list selections for the episode.  Links to category table ZC_OASIS_RACE.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAmerican Indian or Alaska Native\n\n\nAsian\n\n\nBlack or African-American\n\n\nHispanic or Latino\n\n\nNative Hawaiian or Pacific Islander\n\n\nWhite\n\n\nUnknown"
+      "description": "OASIS race category list selections for the episode.  Links to category table ZC_OASIS_RACE.",
+      "entries": [
+        "American Indian or Alaska Native",
+        "Asian",
+        "Black or African-American",
+        "Hispanic or Latino",
+        "Native Hawaiian or Pacific Islander",
+        "White",
+        "Unknown"
+      ]
     }
   ]
 }

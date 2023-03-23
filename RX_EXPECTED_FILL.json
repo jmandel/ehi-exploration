@@ -1,31 +1,41 @@
 {
-  "table_name": "RX_EXPECTED_FILL",
+  "name": "RX_EXPECTED_FILL",
   "description": "A table of expected fill dates for prescriptions at integrated pharmacies.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "AUTO_REFILL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this clinical key is enrolled in auto refill with integrated pharmacies. 'N' or NULL indicate they key is not enrolled.  'Y' indicates the key is enrolled.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this clinical key is enrolled in auto refill with integrated pharmacies. 'N' or NULL indicate they key is not enrolled.  'Y' indicates the key is enrolled.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

@@ -1,34 +1,47 @@
 {
-  "table_name": "SSI_OUTSIDE_INDICATORS",
+  "name": "SSI_OUTSIDE_INDICATORS",
   "description": "This table contains Infection Control surgical site infection surveillance data that tracks readmissions, diagnoses, post-prophylaxis antibiotics, and lab results from outside sources through the surveillance period.",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the abstraction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "OUTSIDE_IND_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the outside SSI indicator type found by the SSI Surveillance batch job.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReadmissions\n\n\nDiagnoses\n\n\nAntibiotics\n\n\nLab Results\n\n\nAll"
+      "description": "The category number for the outside SSI indicator type found by the SSI Surveillance batch job.",
+      "entries": [
+        "Readmissions",
+        "Diagnoses",
+        "Antibiotics",
+        "Lab Results",
+        "All"
+      ]
     },
     {
-      "index": 24,
+      "ordinalPosition": 4,
       "name": "OUTSIDE_IND_VALUE",
       "type": "VARCHAR",
       "discontinued": false,

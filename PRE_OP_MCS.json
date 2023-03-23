@@ -1,31 +1,50 @@
 {
-  "table_name": "PRE_OP_MCS",
+  "name": "PRE_OP_MCS",
   "description": "Pre-operative mechanical circulatory support device in transplant recipients.",
-  "primary_key": {
-    "column_name": "ORG_RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORG_RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORG_RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the organ record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PREOP_MCS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the mechanical circulatory support devices that were used prior to transplant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCardiopulmonary bypass standby\n\n\nCardiopulmonary bypass\n\n\nVeno-venous ECMO\n\n\nVeno-arterial ECMO\n\n\nIntra-aortic balloon pump\n\n\nLVAD\n\n\nRVAD\n\n\nBiVAD\n\n\nNone\n\n\nTotal artificial heart\n\n\nOther"
+      "description": "Indicates the mechanical circulatory support devices that were used prior to transplant.",
+      "entries": [
+        "Cardiopulmonary bypass standby",
+        "Cardiopulmonary bypass",
+        "Veno-venous ECMO",
+        "Veno-arterial ECMO",
+        "Intra-aortic balloon pump",
+        "LVAD",
+        "RVAD",
+        "BiVAD",
+        "None",
+        "Total artificial heart",
+        "Other"
+      ]
     }
   ]
 }

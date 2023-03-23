@@ -1,31 +1,45 @@
 {
-  "table_name": "OB_DEL_VACUUM_RSN",
+  "name": "OB_DEL_VACUUM_RSN",
   "description": "This table contains the category values which correspond to indications for vacuum. This data comes from the Delivery Summary activity.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the summary block record. The delivery record ID on which the data is stored."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "VACUUM_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category values which correspond to indications for vacuum. This data comes from the Delivery Summary activity. You should link out to ZC_OB_DEL_OPERATIVE_RSN.OP_DEL_REASON_C to get the category name.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCongenital Cardiovascular Abnormality\n\n\nMaternal Fatigue\n\n\nFetal Heart Rate or Rhythm Abnormality\n\n\nBreech Presentation\n\n\nProlonged Labor\n\n\nProlapsed Cord"
+      "description": "The category values which correspond to indications for vacuum. This data comes from the Delivery Summary activity. You should link out to ZC_OB_DEL_OPERATIVE_RSN.OP_DEL_REASON_C to get the category name.",
+      "entries": [
+        "Congenital Cardiovascular Abnormality",
+        "Maternal Fatigue",
+        "Fetal Heart Rate or Rhythm Abnormality",
+        "Breech Presentation",
+        "Prolonged Labor",
+        "Prolapsed Cord"
+      ]
     }
   ]
 }

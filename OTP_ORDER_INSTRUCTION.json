@@ -1,31 +1,37 @@
 {
-  "table_name": "OTP_ORDER_INSTRUCTION",
+  "name": "OTP_ORDER_INSTRUCTION",
   "description": "This table contains special order instructions placed on Patient Order Template (OTP) records.",
-  "primary_key": {
-    "column_name": "OTP_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "OTP_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "OTP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the patient order template record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ORDER_INSTRUCTIONS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item typically stores special instructions that the lab should follow when processing this patient's lab orders. However, some organizations choose to store other information in this item.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This item typically stores special instructions that the lab should follow when processing this patient's lab orders. However, some organizations choose to store other information in this item."
     }
   ]
 }

@@ -1,76 +1,91 @@
 {
-  "table_name": "CL_RMT_ENTITY_INFO",
+  "name": "CL_RMT_ENTITY_INFO",
   "description": "This table contains the payor and payee information from the remittance file.",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ENTITY_ID_CD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Code identifying an organizational entity, a physical location, property or an individual.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPayer\n\n\nPayee"
+      "description": "Code identifying an organizational entity, a physical location, property or an individual.",
+      "entries": [
+        "Payer",
+        "Payee"
+      ]
     },
     {
-      "index": 16,
+      "ordinalPosition": 3,
       "name": "ENTITY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free-form name"
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "ENTITY_ID_QUAL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Code designating the system/method of code structure used for Identification Code\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHealth Care Financing Administration National PlanID\n\n\nFederal Taxpayer's Identification Number\n\n\nHealth Care Financing Administration National Provider Identifier"
+      "description": "Code designating the system/method of code structure used for Identification Code",
+      "entries": [
+        "Health Care Financing Administration National PlanID",
+        "Federal Taxpayer's Identification Number",
+        "Health Care Financing Administration National Provider Identifier"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "ENTITY_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Code identifying a party or other code"
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "ENTITY_ADDR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Entity's Address information"
     },
     {
-      "index": 41,
+      "ordinalPosition": 7,
       "name": "ENTITY_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Entity's city information"
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "ENTITY_STATE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Entity's Standard State/Province as defined by appropriate government agency"
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "ENTITY_ZIPCODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Entity's ZIP code defining international postal zone code excluding punctuation and blanks (ZIP code for United States)"
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,

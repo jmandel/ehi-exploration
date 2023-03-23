@@ -1,55 +1,61 @@
 {
-  "table_name": "CLM_PX",
+  "name": "CLM_PX",
   "description": "All values associated with a claim are stored in the Claim External Value record. The CLM_PX table holds the ICD procedures that document surgical procedures on inpatient claims.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID for the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLM_PX_QUAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The qualifier identifying the code set for the International Classification of Diseases (ICD) procedures."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CLM_PX",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The International Classification of Diseases (ICD) procedures for the claim. The principal procedure is stored on the first line and the other procedures are on subsequent lines."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CLM_PX_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the International Classification of Diseases (ICD) procedure."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CLM_PX_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The text description for an International Classification of Diseases (ICD) procedure."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "CLM_PX_RANK",
       "type": "INTEGER",
       "discontinued": false,

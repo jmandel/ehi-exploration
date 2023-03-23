@@ -1,55 +1,67 @@
 {
-  "table_name": "FIN_ASST_CASE_EXPENSE",
+  "name": "FIN_ASST_CASE_EXPENSE",
   "description": "This table contains expense information related to a financial assistance case record.",
-  "primary_key": {
-    "column_name": "FIN_ASST_CASE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FIN_ASST_CASE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FIN_ASST_CASE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the financial assistance case record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EXPENSE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The expense type category ID.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The expense type category ID."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "EXPENSE_FREQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID of frequency with which this expense occurs.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nWeekly\n\n\nBiweekly\n\n\nMonthly\n\n\nAnnually"
+      "description": "The category ID of frequency with which this expense occurs.",
+      "entries": [
+        "Weekly",
+        "Biweekly",
+        "Monthly",
+        "Annually"
+      ]
     },
     {
-      "index": 29,
+      "ordinalPosition": 5,
       "name": "EXPENSE_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The expense amount per frequency."
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "EXP_BLNG_PAT_RELATIONSHIP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient contact of one of the patients on the case for whom the expense information in the current row belongs to. If the information belongs to a patient on the case,  EXPENSE_BELONGS_TO_PAT_ID column will be set instead."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "EXPENSE_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,

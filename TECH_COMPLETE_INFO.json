@@ -1,43 +1,49 @@
 {
-  "table_name": "TECH_COMPLETE_INFO",
+  "name": "TECH_COMPLETE_INFO",
   "description": "This table stores tech complete information for imaging procedures.",
-  "primary_key": {
-    "column_name": "ORDER_PROC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_PROC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the procedure order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "TECH_COMPLETE_INST_LOC_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item calculates the instant that the user listed in I ORD 52674 marked the study as Tech Complete, local to the time zone of the user's client."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "TECH_COMPLETE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the users who have marked an imaging study as tech completed."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "TECH_COMPLETE_INST_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item captures the date and time in the Universal Time Coordinated (UTC) format that the user listed in I ORD 52674 marked the study as Tech Complete."
     }

@@ -1,111 +1,182 @@
 {
-  "table_name": "FILING_ORDER_HX",
+  "name": "FILING_ORDER_HX",
   "description": "This table stores the filing order changes for a member.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the Filing Order History record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "FO_EFF_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The effective date of the filing order for a coverage"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the coverage ID."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "MANUAL_FILING_ORDER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The manual filing order of the coverage."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "AUTO_FILING_ORDER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The automatic filing order of the coverage."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "CVG_EFF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Flag indicating if the coverage is effective\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Flag indicating if the coverage is effective",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "MANUAL_FO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the category of the manual filing order.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSpecial\n\n\nN/A\n\n\nN/A and Special"
+      "description": "This item stores the category of the manual filing order.",
+      "entries": [
+        "Special",
+        "N/A",
+        "N/A and Special"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "AFO_ASSIGNED_TIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the tier assigned to a coverage by based on the logic on the configuration table."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "COVERED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the covered status of the coverage. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nCovered\n\n\nNot Covered\n\n\nPending\n\n\nIn Question\n\n\nInvalid"
+      "description": "This item stores the covered status of the coverage.",
+      "entries": [
+        "Covered",
+        "Not Covered",
+        "Pending",
+        "In Question",
+        "Invalid"
+      ]
     },
     {
-      "index": 78,
+      "ordinalPosition": 13,
       "name": "AFO_TIEBREAKER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The tier of the Automatic Filing Order (AFO) tiebreaker that a coverage matched on.\"-\" (category value 30) indicates that the tiebreaker was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSpecial coverage\n\n\nPayor or Plan set to always first\n\n\nNon-dependent, through current employment\n\n\nNon-dependent, through retirement\n\n\nNon-dependent, through continuation of benefits\n\n\nNon-dependent, unknown if it is through employment\n\n\nNon-dependent, not through employment\n\n\nAdult dependent, through current employment\n\n\nAdult dependent, through retirement\n\n\nAdult dependent, through continuation of benefits\n\n\nAdult dependent, unknown if it is through employment\n\n\nAdult dependent, not through employment\n\n\nChild dependent, court decree makes subscriber responsible for cost\n\n\nChild dependent, court decree makes subscriber's spouse responsible\n\n\nChild dependent, court decree makes subscriber jointly responsible \n\n\nChild dependent, court decree makes subscriber's spouse jointly responsible\n\n\nChild dependent, no court decree, custody N/A\n\n\nChild dependent, no court decree, subscriber has more than 50% custody\n\n\nChild dependent, no court decree, subscriber has equal custody\n\n\nChild dependent, no court decree, subscriber's spouse has more than 50% custody\n\n\nChild dependent, no court decree, subscriber's spouse has equal custody\n\n\nChild dependent, no court decree, subscriber has less than 50% custody\n\n\nChild dependent, no court decree, subscriber's spouse has less than 50% custody\n\n\nChild dependent, court decree makes subscriber not responsible\n\n\nChild dependent, court decree makes subscriber's spouse not responsible\n\n\nSpouse or child relationship to subscriber, if coverages with both of these relationships to subscriber are present\n\n\nNot listed as a member yet\n\n\nPayor or Plan set to always last\n\n\nMedicaid\n\n\nN/A\n\n\n-"
+      "description": "The tier of the Automatic Filing Order (AFO) tiebreaker that a coverage matched on.\"-\" (category value 30) indicates that the tiebreaker was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker.",
+      "entries": [
+        "Special coverage",
+        "Payor or Plan set to always first",
+        "Non-dependent, through current employment",
+        "Non-dependent, through retirement",
+        "Non-dependent, through continuation of benefits",
+        "Non-dependent, unknown if it is through employment",
+        "Non-dependent, not through employment",
+        "Adult dependent, through current employment",
+        "Adult dependent, through retirement",
+        "Adult dependent, through continuation of benefits",
+        "Adult dependent, unknown if it is through employment",
+        "Adult dependent, not through employment",
+        "Child dependent, court decree makes subscriber responsible for cost",
+        "Child dependent, court decree makes subscriber's spouse responsible",
+        "Child dependent, court decree makes subscriber jointly responsible",
+        "Child dependent, court decree makes subscriber's spouse jointly responsible",
+        "Child dependent, no court decree, custody N/A",
+        "Child dependent, no court decree, subscriber has more than 50% custody",
+        "Child dependent, no court decree, subscriber has equal custody",
+        "Child dependent, no court decree, subscriber's spouse has more than 50% custody",
+        "Child dependent, no court decree, subscriber's spouse has equal custody",
+        "Child dependent, no court decree, subscriber has less than 50% custody",
+        "Child dependent, no court decree, subscriber's spouse has less than 50% custody",
+        "Child dependent, court decree makes subscriber not responsible",
+        "Child dependent, court decree makes subscriber's spouse not responsible",
+        "Spouse or child relationship to subscriber, if coverages with both of these relationships to subscriber are present",
+        "Not listed as a member yet",
+        "Payor or Plan set to always last",
+        "Medicaid",
+        "N/A",
+        "-"
+      ]
     },
     {
-      "index": 116,
+      "ordinalPosition": 14,
       "name": "AFO_TIEBREAKER_SORT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The sort order for coverages that match on the same tiebreaker line (AFO_TIEBREAKER_C). \"-\" (category value 30) represents that the tiebreaker sort order was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker sort order.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCovered through status, effective date, then creation instant\n\n\nBirthday rule\n\n\nEffective date, then birthday rule\n\n\nBirthday rule, covered through status, then effective date\n\n\nBirthday rule, then effective date\n\n\nEffective date, then creation instant\n\n\n-\n\n\nCreation instant\n\n\nCovered through status, then creation instant\n\n\nBirthday rule, then covered through status"
+      "description": "The sort order for coverages that match on the same tiebreaker line (AFO_TIEBREAKER_C). \"-\" (category value 30) represents that the tiebreaker sort order was calculated, but not present. An empty value means that the filing order history contact was saved before the system started saving the tiebreaker sort order.",
+      "entries": [
+        "Covered through status, effective date, then creation instant",
+        "Birthday rule",
+        "Effective date, then birthday rule",
+        "Birthday rule, covered through status, then effective date",
+        "Birthday rule, then effective date",
+        "Effective date, then creation instant",
+        "-",
+        "Creation instant",
+        "Covered through status, then creation instant",
+        "Birthday rule, then covered through status"
+      ]
     },
     {
-      "index": 133,
+      "ordinalPosition": 15,
       "name": "GROUP_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,

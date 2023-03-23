@@ -1,45 +1,55 @@
 {
-  "table_name": "OR_LOG_DIAG_CODES",
+  "name": "OR_LOG_DIAG_CODES",
   "description": "The OR_LOG_DIAG_CODES table contains OR management system log diagnosis codes.",
-  "primary_key": {
-    "column_name": "LOG_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "LOG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the surgical log of the surgery that the diagnosis refers to."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of the line of the diagnosis in the surgical log."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DIAGNOSIS_PROC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the diagnosis attached to the procedure in the log."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DIAGNOSIS_PROC_ID_PROC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the surgical procedure record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PRIMARY_DX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Yes/No flag indicating whether or not this diagnosis is the primary diagnosis.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Yes/No flag indicating whether or not this diagnosis is the primary diagnosis.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

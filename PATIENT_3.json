@@ -1,426 +1,644 @@
 {
-  "table_name": "PATIENT_3",
+  "name": "PATIENT_3",
   "description": "This table supplements the information contained in the PATIENT table. It contains basic information about patients, such as the patient's ID, occupation, English fluency, etc.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LACT_STAT_CUR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the patient's current lactation status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "The category number for the patient's current lactation status.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "LACT_STAT_INST_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when the patient's lactation status was updated."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "LACT_STAT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the encounter in which the lactation status updated. The contact serial number is the unique identifier for the encounter."
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "LACT_STAT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who last updated the patient's lactation status."
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "AMBULATORY_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Information regarding a patient's ambulatory status.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAmbulates with assistive device\n\n\nWheelchair/stretcher bound\n\n\nComatose; non-responsive\n\n\nDisoriented\n\n\nVision impaired\n\n\nHearing impaired\n\n\nSpeech impaired\n\n\nNon-English speaking\n\n\nFunctional level unknown\n\n\nOxygen Therapy\n\n\nSpecial Equipment\n\n\nAmputee\n\n\nMastectomy\n\n\nParaplegic\n\n\nPregnant"
+      "description": "Information regarding a patient's ambulatory status.",
+      "entries": [
+        "Ambulates with assistive device",
+        "Wheelchair/stretcher bound",
+        "Comatose; non-responsive",
+        "Disoriented",
+        "Vision impaired",
+        "Hearing impaired",
+        "Speech impaired",
+        "Non-English speaking",
+        "Functional level unknown",
+        "Oxygen Therapy",
+        "Special Equipment",
+        "Amputee",
+        "Mastectomy",
+        "Paraplegic",
+        "Pregnant"
+      ]
     },
     {
-      "index": 54,
+      "ordinalPosition": 7,
       "name": "OCCUPATION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A patient's occupation."
     },
     {
-      "index": 59,
+      "ordinalPosition": 8,
       "name": "ADVANCED_DIR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient has any advanced directives.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the patient has any advanced directives.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 68,
+      "ordinalPosition": 9,
       "name": "ABST_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of abstraction of the patient record."
     },
     {
-      "index": 73,
+      "ordinalPosition": 10,
       "name": "ALRGY_REV_REAS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason for the review status of allergy assessment.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPatient unable to communicate\n\n\nPatient unreliable\n\n\nPatient not present\n\n\nLanguage barrier\n\n\nParent, guardian, or caregiver unavailable"
+      "description": "Reason for the review status of allergy assessment.",
+      "entries": [
+        "Patient unable to communicate",
+        "Patient unreliable",
+        "Patient not present",
+        "Language barrier",
+        "Parent, guardian, or caregiver unavailable"
+      ]
     },
     {
-      "index": 85,
+      "ordinalPosition": 11,
       "name": "ALLOW_HALF_PILLS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the patient uses half pills\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the patient uses half pills",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 94,
+      "ordinalPosition": 12,
       "name": "L_GROWTH_CHART_USED",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Contains the last growth chart accessed by a user for a particular patient.  This allows the activity to display that same growth chart for that patient the next time the activity is accessed."
     },
     {
-      "index": 99,
+      "ordinalPosition": 13,
       "name": "ALRG_LAST_UPDA_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The latest instant in which allergies were updated."
     },
     {
-      "index": 104,
+      "ordinalPosition": 14,
       "name": "PED_BIRTH_LEN_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Newborn birth length stored in inches."
     },
     {
-      "index": 109,
+      "ordinalPosition": 15,
       "name": "PED_BIRTH_WT_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Newborn birth weight stored in ounces."
     },
     {
-      "index": 114,
+      "ordinalPosition": 16,
       "name": "PED_DISCHRG_WGT_NUM",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Newborn discharge weight stored in ounces."
     },
     {
-      "index": 119,
+      "ordinalPosition": 17,
       "name": "PED_APGAR_ONE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Newborn 1 minute Apgar.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\n0 \n\n\n1 \n\n\n2 \n\n\n3 \n\n\n4 \n\n\n5 \n\n\n6 \n\n\n7 \n\n\n8 \n\n\n9 \n\n\n10"
+      "description": "Newborn 1 minute Apgar.",
+      "entries": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
     },
     {
-      "index": 137,
+      "ordinalPosition": 18,
       "name": "PED_APGAR_FIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Newborn 5 minute Apgar.\n\n\n The category values for this column were already listed for column: PED_APGAR_ONE_C_NAME"
+      "description": "Newborn 5 minute Apgar."
     },
     {
-      "index": 143,
+      "ordinalPosition": 19,
       "name": "PED_APGAR_TEN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Newborn 10 minute Apgar.\n\n\n The category values for this column were already listed for column: PED_APGAR_ONE_C_NAME"
+      "description": "Newborn 10 minute Apgar."
     },
     {
-      "index": 149,
+      "ordinalPosition": 20,
       "name": "UNOS_PRIM_COD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The transplant patient's primary cause of death, as defined by UNOS (United Network for Organ Sharing).\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nAccidental\n\n\nAcid/Base Disorder\n\n\nAcute Pancreatitis\n\n\nAIDS\n\n\nAmyloidosis\n\n\nARDS\n\n\nBrain Dead: Never Recovered From Surgery\n\n\nCardiovascular\n\n\nCardiovascular: Aortic Aneurysm\n\n\nCardiovascular: Arrhythmia\n\n\nCardiovascular: Arterial Embolism\n\n\nCardiovascular: Arterial or Pulmonary Embolism\n\n\nCardiovascular: Atherosclerosis\n\n\nCardiovascular: Cardiac Arrest\n\n\nCardiovascular: Cardiogenic Shock\n\n\nCardiovascular: Carditis\n\n\nCardiovascular: Congestive Failure (CHF)\n\n\nCardiovascular: Coronary Artery Disease\n\n\nCardiovascular: Hyperkalemic Arrest\n\n\nCardiovascular: MF/CHF\n\n\nCardiovascular: Myocardial Infarction\n\n\nCardiovascular: Other, Specify\n\n\nCardiovascular: Pulmonary Embolism\n\n\nCardiovascular: Rhythm Disorder\n\n\nCardiovascular: Vascular Embolism\n\n\nCardiovascular: Ventricular Failure\n\n\nCerebrovascular: Brain Anoxia\n\n\nCerebrovascular: Degenerative Brain Disease\n\n\nCerebrovascular: Embolic Stroke\n\n\nCerebrovascular: Hemorrhage (Non-Stroke)\n\n\nCerebrovascular: Hemorrhagic Stroke\n\n\nCerebrovascular: Other, Specify\n\n\nCerebrovascular: Stroke\n\n\nCVA\n\n\nDiabetes Mellitus\n\n\nDiabetes Mellitus Complications\n\n\nDomino Liver Donor Transplant Related Death (Liver donors only)\n\n\nFluid/Electrolyte Disorder\n\n\nGraft vs. Host Disease\n\n\nHematologic Other, Specify\n\n\nHemorrhage\n\n\nHemorrhage: Disseminated Intravascular Coagulation (DIC)\n\n\nHemorrhage: Donation/Surgery Related\n\n\nHemorrhage: Gastrointestinal\n\n\nHemorrhage: Intraoperative\n\n\nHemorrhage: Lower Gastrointestinal\n\n\nHemorrhage: Neurological (Brain)\n\n\nHemorrhage: Not Donation/Surgery Related\n\n\nHemorrhage: Other, Specify\n\n\nHemorrhage: Post-Operative\n\n\nHemorrhage: Respiratory\n\n\nHemorrhage: Variceal\n\n\nHomicide\n\n\nImmunosuppressive Drug Related Hematologic\n\n\nImmunosuppressive Drug Related Non-Hematologic\n\n\nInfection\n\n\nInfection: Bacterial Other, Specify\n\n\nInfection: Bacterial Peritonitis\n\n\nInfection: Bacterial Pneumonia\n\n\nInfection: Bacterial Septicemia\n\n\nInfection: Donation/Surgery Related\n\n\nInfection: Fungal\n\n\nInfection: Fungal Aspergillus\n\n\nInfection: Fungal Other, Specify\n\n\nInfection: Fungal Aspergillus Cryptococcal\n\n\nInfection: Fungal Peritonitis\n\n\nInfection: Fungal Pneumonia\n\n\nInfection: Fungal Septicemia\n\n\nInfection: Generalized Sepsis\n\n\nInfection: Mixed Other, Specify\n\n\nInfection: Not Donation/Surgery Related\n\n\nInfection: Opportunistic\n\n\nInfection: Opportunistic Other, Specify\n\n\nInfection: Other, Specify\n\n\nInfection: Pneumonia Legionella Pneumocystosis\n\n\nInfection: Protozoal\n\n\nInfection: Urinary Tract\n\n\nInfection: Viral\n\n\nInfection: Viral Cytomegalovirus (CMV)\n\n\nInfection: Viral Hepatitis\n\n\nInfection: Viral Non-CMV\n\n\nInfection: Viral Other, Specify\n\n\nInfection: Viral Septicemia\n\n\nIntestine Graft Failure: Infection Other, Specify\n\n\nIntestine Graft Failure: Other, Specify\n\n\nIntestine Graft Failure: Primary\n\n\nIntestine Graft Failure: Recurrent Disease Other, Specify\n\n\nIntestine Graft Failure: Rejection\n\n\nIntestine Graft Failure: Vascular Thrombosis\n\n\nIntraoperative: Other, Specify\n\n\nIntraoperative: Not Hemorrhage Other, Specify\n\n\nKidney Graft Failure: Graft Infection\n\n\nKidney Graft Failure: Other, Specify\n\n\nKidney Graft Failure: Primary Failure\n\n\nKidney Graft Failure: Recurrent Disease\n\n\nKidney Graft Failure: Rejection\n\n\nKidney Graft Failure: Technical\n\n\nLiver Failure\n\n\nLiver Graft Failure: Biliary Tract Complication\n\n\nLiver Graft Failure: Hepatitis\n\n\nLiver Graft Failure: Infection (Non-Hepatitis)\n\n\nLiver Graft Failure: Other, Specify\n\n\nLiver Graft Failure: Primary Failure\n\n\nLiver Graft Failure: Recurrent Disease (Non-Hepatitis)\n\n\nLiver Graft Failure: Rejection\n\n\nLiver Graft Failure: Vascular Thrombosis\n\n\nMalignancy\n\n\nMalignancy: Lymphoma\n\n\nMalignancy: Metastatic Other, Specify\n\n\nMalignancy: Other, Specify\n\n\nMalignancy: Post-Txp Lymphoproliferative\n\n\nMalignancy: Primary Other, Specify\n\n\nMalignancy: Skin\n\n\nMultiple Organ System Failure\n\n\nNon-Compliance\n\n\nNon-Immunosuppressive Non-Hematologic, Specify Drug\n\n\nNon-Immunosuppressive Drug Related Hematologic\n\n\nOperative: Other, Specify\n\n\nPancreatitis\n\n\nPancreatitis (Graft)\n\n\nPancreatitis (Native)\n\n\nPost-Txp Lymphoproliferative Disorder\n\n\nPrimary Pulmonary Hypertension\n\n\nPulmonary Embolism\n\n\nPulmonary Insuff or Edema (Exc Pneumonia)\n\n\nPulmonary: Acute Respiratory Distress Disease\n\n\nPulmonary: Bronchiolitis\n\n\nPulmonary: Dehiscence\n\n\nPulmonary: Other, Specify\n\n\nPulmonary: Respiratory Failure\n\n\nRenal Failure\n\n\nRespiratory Failure\n\n\nRespiratory Failure (Non-Pneumonia)\n\n\nRespiratory Failure: Other, Specify\n\n\nSuicide\n\n\nSuicide: Attempted Suicide Died Later\n\n\nThoracic Graft Failure: Graft Infection\n\n\nThoracic Graft Failure: Non-Specific\n\n\nThoracic Graft Failure: Primary Failure\n\n\nThoracic Graft Failure: Recurrent Disease\n\n\nThoracic Graft Failure: Rejection Acute\n\n\nThoracic Graft Failure: Rejection Chronic\n\n\nThoracic Graft Failure: Rejection Hyperacute\n\n\nThoracic Graft Failure: Technical\n\n\nTrauma: Motor Vehicle\n\n\nTrauma: Other, Specify\n\n\nKidney Graft Failure: Primary Non-Function (Graft Never Functioned Post-Transplant)\n\n\nLiver Graft Failure: Primary Non-Function\n\n\nLiver Graft Failure: Hepatic Artery Thrombosis\n\n\nLiver Graft Failure: Other Vascular Thrombosis\n\n\nLiver Graft Failure: Diffuse Cholangiopathy\n\n\nInfection: Viral COVID-19\n\n\nUnknown\n\n\nOther, Specify"
+      "description": "The transplant patient's primary cause of death, as defined by UNOS (United Network for Organ Sharing).",
+      "entries": [
+        "Accidental",
+        "Acid/Base Disorder",
+        "Acute Pancreatitis",
+        "AIDS",
+        "Amyloidosis",
+        "ARDS",
+        "Brain Dead: Never Recovered From Surgery",
+        "Cardiovascular",
+        "Cardiovascular: Aortic Aneurysm",
+        "Cardiovascular: Arrhythmia",
+        "Cardiovascular: Arterial Embolism",
+        "Cardiovascular: Arterial or Pulmonary Embolism",
+        "Cardiovascular: Atherosclerosis",
+        "Cardiovascular: Cardiac Arrest",
+        "Cardiovascular: Cardiogenic Shock",
+        "Cardiovascular: Carditis",
+        "Cardiovascular: Congestive Failure (CHF)",
+        "Cardiovascular: Coronary Artery Disease",
+        "Cardiovascular: Hyperkalemic Arrest",
+        "Cardiovascular: MF/CHF",
+        "Cardiovascular: Myocardial Infarction",
+        "Cardiovascular: Other, Specify",
+        "Cardiovascular: Pulmonary Embolism",
+        "Cardiovascular: Rhythm Disorder",
+        "Cardiovascular: Vascular Embolism",
+        "Cardiovascular: Ventricular Failure",
+        "Cerebrovascular: Brain Anoxia",
+        "Cerebrovascular: Degenerative Brain Disease",
+        "Cerebrovascular: Embolic Stroke",
+        "Cerebrovascular: Hemorrhage (Non-Stroke)",
+        "Cerebrovascular: Hemorrhagic Stroke",
+        "Cerebrovascular: Other, Specify",
+        "Cerebrovascular: Stroke",
+        "CVA",
+        "Diabetes Mellitus",
+        "Diabetes Mellitus Complications",
+        "Domino Liver Donor Transplant Related Death (Liver donors only)",
+        "Fluid/Electrolyte Disorder",
+        "Graft vs. Host Disease",
+        "Hematologic Other, Specify",
+        "Hemorrhage",
+        "Hemorrhage: Disseminated Intravascular Coagulation (DIC)",
+        "Hemorrhage: Donation/Surgery Related",
+        "Hemorrhage: Gastrointestinal",
+        "Hemorrhage: Intraoperative",
+        "Hemorrhage: Lower Gastrointestinal",
+        "Hemorrhage: Neurological (Brain)",
+        "Hemorrhage: Not Donation/Surgery Related",
+        "Hemorrhage: Other, Specify",
+        "Hemorrhage: Post-Operative",
+        "Hemorrhage: Respiratory",
+        "Hemorrhage: Variceal",
+        "Homicide",
+        "Immunosuppressive Drug Related Hematologic",
+        "Immunosuppressive Drug Related Non-Hematologic",
+        "Infection",
+        "Infection: Bacterial Other, Specify",
+        "Infection: Bacterial Peritonitis",
+        "Infection: Bacterial Pneumonia",
+        "Infection: Bacterial Septicemia",
+        "Infection: Donation/Surgery Related",
+        "Infection: Fungal",
+        "Infection: Fungal Aspergillus",
+        "Infection: Fungal Other, Specify",
+        "Infection: Fungal Aspergillus Cryptococcal",
+        "Infection: Fungal Peritonitis",
+        "Infection: Fungal Pneumonia",
+        "Infection: Fungal Septicemia",
+        "Infection: Generalized Sepsis",
+        "Infection: Mixed Other, Specify",
+        "Infection: Not Donation/Surgery Related",
+        "Infection: Opportunistic",
+        "Infection: Opportunistic Other, Specify",
+        "Infection: Other, Specify",
+        "Infection: Pneumonia Legionella Pneumocystosis",
+        "Infection: Protozoal",
+        "Infection: Urinary Tract",
+        "Infection: Viral",
+        "Infection: Viral Cytomegalovirus (CMV)",
+        "Infection: Viral Hepatitis",
+        "Infection: Viral Non-CMV",
+        "Infection: Viral Other, Specify",
+        "Infection: Viral Septicemia",
+        "Intestine Graft Failure: Infection Other, Specify",
+        "Intestine Graft Failure: Other, Specify",
+        "Intestine Graft Failure: Primary",
+        "Intestine Graft Failure: Recurrent Disease Other, Specify",
+        "Intestine Graft Failure: Rejection",
+        "Intestine Graft Failure: Vascular Thrombosis",
+        "Intraoperative: Other, Specify",
+        "Intraoperative: Not Hemorrhage Other, Specify",
+        "Kidney Graft Failure: Graft Infection",
+        "Kidney Graft Failure: Other, Specify",
+        "Kidney Graft Failure: Primary Failure",
+        "Kidney Graft Failure: Recurrent Disease",
+        "Kidney Graft Failure: Rejection",
+        "Kidney Graft Failure: Technical",
+        "Liver Failure",
+        "Liver Graft Failure: Biliary Tract Complication",
+        "Liver Graft Failure: Hepatitis",
+        "Liver Graft Failure: Infection (Non-Hepatitis)",
+        "Liver Graft Failure: Other, Specify",
+        "Liver Graft Failure: Primary Failure",
+        "Liver Graft Failure: Recurrent Disease (Non-Hepatitis)",
+        "Liver Graft Failure: Rejection",
+        "Liver Graft Failure: Vascular Thrombosis",
+        "Malignancy",
+        "Malignancy: Lymphoma",
+        "Malignancy: Metastatic Other, Specify",
+        "Malignancy: Other, Specify",
+        "Malignancy: Post-Txp Lymphoproliferative",
+        "Malignancy: Primary Other, Specify",
+        "Malignancy: Skin",
+        "Multiple Organ System Failure",
+        "Non-Compliance",
+        "Non-Immunosuppressive Non-Hematologic, Specify Drug",
+        "Non-Immunosuppressive Drug Related Hematologic",
+        "Operative: Other, Specify",
+        "Pancreatitis",
+        "Pancreatitis (Graft)",
+        "Pancreatitis (Native)",
+        "Post-Txp Lymphoproliferative Disorder",
+        "Primary Pulmonary Hypertension",
+        "Pulmonary Embolism",
+        "Pulmonary Insuff or Edema (Exc Pneumonia)",
+        "Pulmonary: Acute Respiratory Distress Disease",
+        "Pulmonary: Bronchiolitis",
+        "Pulmonary: Dehiscence",
+        "Pulmonary: Other, Specify",
+        "Pulmonary: Respiratory Failure",
+        "Renal Failure",
+        "Respiratory Failure",
+        "Respiratory Failure (Non-Pneumonia)",
+        "Respiratory Failure: Other, Specify",
+        "Suicide",
+        "Suicide: Attempted Suicide Died Later",
+        "Thoracic Graft Failure: Graft Infection",
+        "Thoracic Graft Failure: Non-Specific",
+        "Thoracic Graft Failure: Primary Failure",
+        "Thoracic Graft Failure: Recurrent Disease",
+        "Thoracic Graft Failure: Rejection Acute",
+        "Thoracic Graft Failure: Rejection Chronic",
+        "Thoracic Graft Failure: Rejection Hyperacute",
+        "Thoracic Graft Failure: Technical",
+        "Trauma: Motor Vehicle",
+        "Trauma: Other, Specify",
+        "Kidney Graft Failure: Primary Non-Function (Graft Never Functioned Post-Transplant)",
+        "Liver Graft Failure: Primary Non-Function",
+        "Liver Graft Failure: Hepatic Artery Thrombosis",
+        "Liver Graft Failure: Other Vascular Thrombosis",
+        "Liver Graft Failure: Diffuse Cholangiopathy",
+        "Infection: Viral COVID-19",
+        "Unknown",
+        "Other, Specify"
+      ]
     },
     {
-      "index": 310,
+      "ordinalPosition": 21,
       "name": "UNOS_PRIM_COD_SP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text description of the transplant patient's primary cause of death."
     },
     {
-      "index": 315,
+      "ordinalPosition": 22,
       "name": "UNOS_CTRB_COD1_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The transplant patient's first contributory cause of death, as defined by UNOS (United Network for Organ Sharing).\n\n\n The category values for this column were already listed for column: UNOS_PRIM_COD_C_NAME"
+      "description": "The transplant patient's first contributory cause of death, as defined by UNOS (United Network for Organ Sharing)."
     },
     {
-      "index": 321,
+      "ordinalPosition": 23,
       "name": "UNOS_CNTB_COD1_SP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text description of the transplant patient's first contributory cause of death."
     },
     {
-      "index": 326,
+      "ordinalPosition": 24,
       "name": "UNOS_CTRB_COD2_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The transplant patient's second contributory cause of death, as defined by UNOS (United Network for Organ Sharing).\n\n\n The category values for this column were already listed for column: UNOS_PRIM_COD_C_NAME"
+      "description": "The transplant patient's second contributory cause of death, as defined by UNOS (United Network for Organ Sharing)."
     },
     {
-      "index": 332,
+      "ordinalPosition": 25,
       "name": "UNOS_CNTB_COD2_SP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text description of the transplant patient's second contributory cause of death."
     },
     {
-      "index": 337,
+      "ordinalPosition": 26,
       "name": "PREFERRED_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The preferred name for the patient."
     },
     {
-      "index": 342,
+      "ordinalPosition": 27,
       "name": "LAST_VERIFIED_BY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The last user who verified the patient."
     },
     {
-      "index": 347,
+      "ordinalPosition": 28,
       "name": "LEARN_ASSMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Learning assessment ID. This can be used to check that the learning assessments are being given to the appropriate patients at the appropriate times."
     },
     {
-      "index": 352,
+      "ordinalPosition": 29,
       "name": "CURR_LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the most recent confirmed patient location that is associated with the patient."
     },
     {
-      "index": 357,
+      "ordinalPosition": 30,
       "name": "PCOD_CAUSE_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the preliminary cause of death for the patient"
     },
     {
-      "index": 362,
+      "ordinalPosition": 31,
       "name": "PCOD_REC_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user that filed the preliminary cause of death"
     },
     {
-      "index": 367,
+      "ordinalPosition": 32,
       "name": "PCOD_INST_REC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant that the preliminary cause of death was recorded"
     },
     {
-      "index": 372,
+      "ordinalPosition": 33,
       "name": "EMPL_ID_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's employee identification number."
     },
     {
-      "index": 377,
+      "ordinalPosition": 34,
       "name": "SCHOOL_PHONE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's school phone number."
     },
     {
-      "index": 382,
+      "ordinalPosition": 35,
       "name": "CONTRACT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the pricing contract that is associated with the patient."
     },
     {
-      "index": 387,
+      "ordinalPosition": 36,
       "name": "SPOT_UPD_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item saves the user ID of the person who most recently updated the patient's Spotlight folder in the Synopsis activity by adding a row that previously had not been tracked by any other user."
     },
     {
-      "index": 392,
+      "ordinalPosition": 37,
       "name": "GYN_HX_CMT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of HNO (note) record for free-text gynecological information"
     },
     {
-      "index": 397,
+      "ordinalPosition": 38,
       "name": "GYN_HX_MENARCHE_AGE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The patient's age at menarche"
     },
     {
-      "index": 402,
+      "ordinalPosition": 39,
       "name": "GYN_HX_FST_PREG_AGE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The patient's age at first pregnancy"
     },
     {
-      "index": 407,
+      "ordinalPosition": 40,
       "name": "GYN_HX_MO_BRSTFDG",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of months the patient spent breastfeeding"
     },
     {
-      "index": 412,
+      "ordinalPosition": 41,
       "name": "GYN_HX_MENOPAUS_AGE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The patient's age at menopause"
     },
     {
-      "index": 417,
+      "ordinalPosition": 42,
       "name": "FAMILY_GROUPER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A family identifier that may be used to group family members together. Note that this is not guaranteed to be unique across deployments in IntraConnect."
     },
     {
-      "index": 422,
+      "ordinalPosition": 43,
       "name": "FETUS_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this row is a fetus record or a patient record. YES indicates that the row is a fetus record. NO indicates that the row is a patient record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this row is a fetus record or a patient record. YES indicates that the row is a fetus record. NO indicates that the row is a patient record.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 431,
+      "ordinalPosition": 44,
       "name": "DENT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item identifies the dental classification of the patient.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nI\n\n\nII\n\n\nIII\n\n\nIV"
+      "description": "This item identifies the dental classification of the patient.",
+      "entries": [
+        "I",
+        "II",
+        "III",
+        "IV"
+      ]
     },
     {
-      "index": 442,
+      "ordinalPosition": 45,
       "name": "DENT_LAST_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the last user who edited the dental classification of the patient."
     },
     {
-      "index": 447,
+      "ordinalPosition": 46,
       "name": "DENT_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item stores the instant when the dental classification of the patient was last edited."
     },
     {
-      "index": 452,
+      "ordinalPosition": 47,
       "name": "ENGLISH_FLUENCY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Record the patient's fluency in English.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Record the patient's fluency in English."
     },
     {
-      "index": 459,
+      "ordinalPosition": 48,
       "name": "FORM_CONFIDENCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Record the patient's confidence level in filling out medical forms.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Record the patient's confidence level in filling out medical forms."
     },
     {
-      "index": 466,
+      "ordinalPosition": 49,
       "name": "BRANCH_OF_SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the branch of service in which the patient serves.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column stores the branch of service in which the patient serves."
     },
     {
-      "index": 473,
+      "ordinalPosition": 50,
       "name": "MILITARY_RANK_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the patient's military rank.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column stores the patient's military rank."
     },
     {
-      "index": 480,
+      "ordinalPosition": 51,
       "name": "FMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the relationship between the patient and the patient's sponsor.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column stores the relationship between the patient and the patient's sponsor."
     },
     {
-      "index": 487,
+      "ordinalPosition": 52,
       "name": "PAT_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column, patient category, combines the branch of service and eligibility type into a three-character code, such as A14. This code affects billing and other downstream systems.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column, patient category, combines the branch of service and eligibility type into a three-character code, such as A14. This code affects billing and other downstream systems."
     },
     {
-      "index": 494,
+      "ordinalPosition": 53,
       "name": "MIL_COMPONENT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the patient's military component, which is used to distinguish between patients who are on regular active duty and those who are members of one of the augmenting support groups.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column stores the patient's military component, which is used to distinguish between patients who are on regular active duty and those who are members of one of the augmenting support groups."
     },
     {
-      "index": 501,
+      "ordinalPosition": 54,
       "name": "ASGN_MIL_UNIT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the military unit ID to which the patient is assigned."
     },
     {
-      "index": 506,
+      "ordinalPosition": 55,
       "name": "ASGN_MIL_UNIT_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the name of the military unit's record."
     },
     {
-      "index": 511,
+      "ordinalPosition": 56,
       "name": "MIL_PAY_GRADE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the patient's military pay grade.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "This column stores the patient's military pay grade."
     },
     {
-      "index": 518,
+      "ordinalPosition": 57,
       "name": "TEMP_MIL_UNIT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the patient's temporary military unit ID."
     },
     {
-      "index": 523,
+      "ordinalPosition": 58,
       "name": "TEMP_MIL_UNIT_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the name of the military unit's record."
     },
     {
-      "index": 528,
+      "ordinalPosition": 59,
       "name": "PED_GEST_AGE_DAYS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Newborn gestational age at birth in total number of days"
     },
     {
-      "index": 533,
+      "ordinalPosition": 60,
       "name": "PED_BIRTH_HD_CIRCUM",
       "type": "NUMERIC",
       "discontinued": false,

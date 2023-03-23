@@ -1,134 +1,158 @@
 {
-  "table_name": "RESERVATION_HISTORY",
+  "name": "RESERVATION_HISTORY",
   "description": "This table contains audit information on changes to admission reservations. Each row represents a change to the related encounter's reservation.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RES_HX_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the user record for this row. This column is frequently used to link to the CLARITY_EMP table."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "RES_HX_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The Reason for Change category ID for this row's change to a patient's reservation.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser Changed\n\n\nPatient Discharged\n\n\nSubtype Deleted\n\n\nDischarge Undone\n\n\nEncounter Canceled\n\n\nDischarge Readmit"
+      "description": "The Reason for Change category ID for this row's change to a patient's reservation.",
+      "entries": [
+        "User Changed",
+        "Patient Discharged",
+        "Subtype Deleted",
+        "Discharge Undone",
+        "Encounter Canceled",
+        "Discharge Readmit"
+      ]
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "RES_HX_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the reservation being changed that is associated with this contact. Multiple changes can be associated with this contact."
     },
     {
-      "index": 55,
+      "ordinalPosition": 10,
       "name": "RES_HX_RESRC_TYPE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the resource type record associated with this row's change to a patient's reservation."
     },
     {
-      "index": 60,
+      "ordinalPosition": 11,
       "name": "RES_HX_RESRC_SUBTYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID for the type of stay associated with this row's change to a patient's reservation.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The category ID for the type of stay associated with this row's change to a patient's reservation."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "RES_HX_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date this reservation started at the instant this row's change took effect on the patient's reservation."
     },
     {
-      "index": 71,
+      "ordinalPosition": 13,
       "name": "RES_HX_START_TIME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The approximate start time category ID that was applicable at the instant of this row's change to a patient's reservation.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMorning\n\n\nMidday\n\n\nAfternoon\n\n\nEvening"
+      "description": "The approximate start time category ID that was applicable at the instant of this row's change to a patient's reservation.",
+      "entries": [
+        "Morning",
+        "Midday",
+        "Afternoon",
+        "Evening"
+      ]
     },
     {
-      "index": 82,
+      "ordinalPosition": 14,
       "name": "RES_HX_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date this reservation ended at the instant this row's change took effect on the patient's reservation. If this is populated, then RES_HX_INDEF_YN will not be populated for this row."
     },
     {
-      "index": 87,
+      "ordinalPosition": 15,
       "name": "RES_HX_END_TIME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The approximate end time category ID that was applicable at the instant of this row's change to a patient's reservation. If this is populated, then RES_HX_INDEF_YN will not be populated for this row.\n\n\n The category values for this column were already listed for column: RES_HX_START_TIME_C_NAME"
+      "description": "The approximate end time category ID that was applicable at the instant of this row's change to a patient's reservation. If this is populated, then RES_HX_INDEF_YN will not be populated for this row."
     },
     {
-      "index": 93,
+      "ordinalPosition": 16,
       "name": "RES_HX_INDEF_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this row's reservation was indefinite at the instant of this change. If Y, then RES_HX_END_DATE and RES_HX_END_TIME_C will not be populated for this row.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this row's reservation was indefinite at the instant of this change. If Y, then RES_HX_END_DATE and RES_HX_END_TIME_C will not be populated for this row.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "RES_HX_CONFRMD_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this reservation was confirmed at the time of this change. Y indicates that this was scheduled and on the calendar.\n\n\n The category values for this column were already listed for column: RES_HX_INDEF_YN"
+      "description": "Indicates whether this reservation was confirmed at the time of this change. Y indicates that this was scheduled and on the calendar."
     },
     {
-      "index": 108,
+      "ordinalPosition": 18,
       "name": "RES_HX_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when this row's change took effect."
     }

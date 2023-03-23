@@ -1,34 +1,43 @@
 {
-  "table_name": "MYC_MESG_DRG_TYPES",
+  "name": "MYC_MESG_DRG_TYPES",
   "description": "This table contains patient answers to the \"drug types\" question submitted in a history questionnaire.",
-  "primary_key": {
-    "column_name": "MESSAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MESSAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MESSAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the message record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DRG_QUESN_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's response to the drug use drug types question.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nIV"
+      "description": "The patient's response to the drug use drug types question.",
+      "entries": [
+        "IV"
+      ]
     },
     {
-      "index": 20,
+      "ordinalPosition": 4,
       "name": "DRG_QUESN_IDX",
       "type": "INTEGER",
       "discontinued": false,

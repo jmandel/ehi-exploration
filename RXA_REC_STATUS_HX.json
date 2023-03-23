@@ -1,45 +1,57 @@
 {
-  "table_name": "RXA_REC_STATUS_HX",
+  "name": "RXA_REC_STATUS_HX",
   "description": "History of adjudication record status changes. Adjudication records are used by Ambulatory Pharmacy during prescription copay adjudication.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the adjudication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SDFL_EDIT_DATETIME",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Stores the date and time that the record status was changed."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SDFL_EDIT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the user who changed the record status"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SDFL_EDIT_ACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The action category ID that was applied to the record status\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Delete\n\n\nUndo Delete\n\n\nHide\n\n\nUnhide"
+      "description": "The action category ID that was applied to the record status",
+      "entries": [
+        "Soft Delete",
+        "Undo Delete",
+        "Hide",
+        "Unhide"
+      ]
     }
   ]
 }

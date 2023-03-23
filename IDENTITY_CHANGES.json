@@ -1,76 +1,94 @@
 {
-  "table_name": "IDENTITY_CHANGES",
+  "name": "IDENTITY_CHANGES",
   "description": "This table contains information regarding the identity (demographic) changes that are made to the guarantor. The identity changes include changes to a guarantor's name, sex, social security number and/or date of birth. Whenever user tries to change the identity information in Hyperspace this table will log the action.",
-  "primary_key": {
-    "column_name": "ACCT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ACCT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the guarantor account record for this row. This column is frequently used to link to the ACCOUNT table."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ID_CHANGE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "User that chose to change the guarantor's identity despite being warned by overlay detection."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "ID_CHANGE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Reason why the user chose to change the guarantor's identity.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nDemographic Linking\n\n\nIncoming Interface Demographic Change"
+      "description": "Reason why the user chose to change the guarantor's identity.",
+      "entries": [
+        "Demographic Linking",
+        "Incoming Interface Demographic Change"
+      ]
     },
     {
-      "index": 26,
+      "ordinalPosition": 5,
       "name": "ID_CHG_OLD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Guarantor name prior to the identity change."
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "ID_CHG_OLD_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Guarantor sex prior to the identity change.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nFemale\n\n\nMale\n\n\nUnknown\n\n\nNonbinary\n\n\nX\n\n\nOther"
+      "description": "Guarantor sex prior to the identity change.",
+      "entries": [
+        "Female",
+        "Male",
+        "Unknown",
+        "Nonbinary",
+        "X",
+        "Other"
+      ]
     },
     {
-      "index": 44,
+      "ordinalPosition": 7,
       "name": "ID_CHG_OLD_DOB_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Guarantor date of birth prior to the identity change."
     },
     {
-      "index": 49,
+      "ordinalPosition": 8,
       "name": "ID_CHG_NEW_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Guarantor name after the identity change."
     },
     {
-      "index": 54,
+      "ordinalPosition": 9,
       "name": "ID_CHG_NEW_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Guarantor sex after the identity change.\n\n\n The category values for this column were already listed for column: ID_CHG_OLD_SEX_C_NAME"
+      "description": "Guarantor sex after the identity change."
     },
     {
-      "index": 60,
+      "ordinalPosition": 10,
       "name": "ID_CHG_NEW_DOB_DT",
       "type": "DATETIME",
       "discontinued": false,

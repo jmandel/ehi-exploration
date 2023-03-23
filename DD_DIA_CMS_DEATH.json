@@ -1,230 +1,362 @@
 {
-  "table_name": "DD_DIA_CMS_DEATH",
+  "name": "DD_DIA_CMS_DEATH",
   "description": "This table contains data elements submitted for CMS ESRD death forms (CMS-2746).",
-  "primary_key": {
-    "column_name": "REGISTRY_DATA_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "REGISTRY_DATA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the registry data record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "FORM_IDENTIFIER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's form 2746 ID."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ADMISSION_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores the dialysis patient's admission facility ID."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_FIRST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's first name."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PAT_MIDDLE_INITIAL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's middle name initial."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "PAT_LAST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's last name."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "DLYS_NAME_SUFFIX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's name suffix.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nJr\n\n\nSr\n\n\nII\n\n\nIII\n\n\nIV\n\n\nV\n\n\nVI"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's name suffix.",
+      "entries": [
+        "Jr",
+        "Sr",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "DLYS_PAT_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's sex assigned at birth.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nF\n\n\nM"
+      "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's sex assigned at birth.",
+      "entries": [
+        "F",
+        "M"
+      ]
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "PAT_BIRTH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's date of birth."
     },
     {
-      "index": 60,
+      "ordinalPosition": 10,
       "name": "PAT_SSN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's Social Security Number."
     },
     {
-      "index": 65,
+      "ordinalPosition": 11,
       "name": "PAT_HICNUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in dialysis regulatory reporting. It stores a dialysis patient's Medicare health insurance claim number."
     },
     {
-      "index": 70,
+      "ordinalPosition": 12,
       "name": "PAT_MBI_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "It stores a dialysis patient's Medicare Beneficiary Identifier number for dialysis regulatory reporting."
     },
     {
-      "index": 75,
+      "ordinalPosition": 13,
       "name": "PHYSICAL_ADDRESS_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in dialysis regulatory reporting. It stores the state from a dialysis patient's physical address.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This item is used in dialysis regulatory reporting. It stores the state from a dialysis patient's physical address."
     },
     {
-      "index": 81,
+      "ordinalPosition": 14,
       "name": "DIA_CMS_DEATH_MODALITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's treatment modality at the time of death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncenterHemodialysis\n\n\nHomeHemodialysis\n\n\nCAPD\n\n\nCCPD\n\n\nTransplant\n\n\nOther"
+      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's treatment modality at the time of death.",
+      "entries": [
+        "IncenterHemodialysis",
+        "HomeHemodialysis",
+        "CAPD",
+        "CCPD",
+        "Transplant",
+        "Other"
+      ]
     },
     {
-      "index": 94,
+      "ordinalPosition": 15,
       "name": "DIA_CMS_DEATH_PLACE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's location at the time of death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHospital\n\n\nDialysisUnit\n\n\nHome\n\n\nOther\n\n\nNursingHome"
+      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's location at the time of death.",
+      "entries": [
+        "Hospital",
+        "DialysisUnit",
+        "Home",
+        "Other",
+        "NursingHome"
+      ]
     },
     {
-      "index": 106,
+      "ordinalPosition": 16,
       "name": "PRIMARY_DIA_CMS_DEATH_CAUSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's primary cause of death.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMyocardial infarction, acute\n\n\nHyperkalemia\n\n\nPericarditis, incl. Cardiac tamponade\n\n\nAtherosclerotic heart disease\n\n\nCardiomyopathy\n\n\nCardiac arrhythmia\n\n\nCardiac arrest, cause unknown\n\n\nValvular heart disease\n\n\nPulmonary edema due to exogenous fluid\n\n\nCongestive Heart Failure\n\n\nSepticemia due to internal vascular access\n\n\nSepticemia due to vascular access catheter\n\n\nPulmonary embolus\n\n\nCerebrovascular accident including intracranial hemorrhage\n\n\nIschemic brain damage/Anoxic encephalopathy\n\n\nHemorrhage from transplant site\n\n\nHemorrhage from vascular access\n\n\nHemorrhage from dialysis circuit\n\n\nHemorrhage from ruptured vascular aneurysm\n\n\nHemorrhage from surgery (not 38, 39, or 41)\n\n\nOther hemorrhage (not 38-42, 72)\n\n\nMesenteric infarction/ischemic bowel\n\n\nPeritoneal access infectious complication, bacterial\n\n\nPeritoneal access infectious complication, fungal\n\n\nPeritonitis (complication of peritoneal dialysis)\n\n\nCentral nervous system infection (brain abscess, meningitis, encephalitis, etc.)\n\n\nSepticemia due to peripheral vascular disease, gangrene\n\n\nSepticemia, other\n\n\nCardiac infection (endocarditis)\n\n\nPulmonary infection (pneumonia, influenza)\n\n\nAbdominal infection (peritonitis (not comp of PD), perforated bowel, diverticular disease, gallbladder)\n\n\nHepatitis B\n\n\nOther viral hepatitis\n\n\nLiver-drug toxicity\n\n\nCirrhosis\n\n\nPolycystic liver disease\n\n\nLiver failure, cause unknown or other\n\n\nGenito-urinary infection\n\n\nHepatitis C\n\n\nGastro-intestinal hemorrhage\n\n\nPancreatitis\n\n\nPerforation of peptic ulcer\n\n\nPerforation of bowel (not 75)\n\n\nHypokalemia\n\n\nHypernatremia\n\n\nHyponatremia\n\n\nBone marrow depression\n\n\nCachexia/failure to thrive\n\n\nMalignant disease, patient ever on Immunosuppressive therapy\n\n\nMalignant disease (not 82)\n\n\nDementia, incl. dialysis dementia, Alzheimer�s\n\n\nSeizures\n\n\nChronic obstructive lung disease (COPD)\n\n\nComplications of surgery\n\n\nAir embolism\n\n\nAccident related to treatment\n\n\nAccident unrelated to treatment\n\n\nSuicide\n\n\nDrug overdose (street drugs)\n\n\nDrug overdose (not 92 or 93)\n\n\nAcidosis\n\n\nAdrenal insufficiency\n\n\nHypothyroidism\n\n\nOther cause of death\n\n\nUnknown\n\n\nHypoglycemia\n\n\nHyperglycemia\n\n\nDiabetic coma\n\n\nHyperthyroidism\n\n\nWithdrawal from dialysis/uremia\n\n\nCOVID19\n\n\nCOVID19 Unconfirmed"
+      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's primary cause of death.",
+      "entries": [
+        "Myocardial infarction, acute",
+        "Hyperkalemia",
+        "Pericarditis, incl. Cardiac tamponade",
+        "Atherosclerotic heart disease",
+        "Cardiomyopathy",
+        "Cardiac arrhythmia",
+        "Cardiac arrest, cause unknown",
+        "Valvular heart disease",
+        "Pulmonary edema due to exogenous fluid",
+        "Congestive Heart Failure",
+        "Septicemia due to internal vascular access",
+        "Septicemia due to vascular access catheter",
+        "Pulmonary embolus",
+        "Cerebrovascular accident including intracranial hemorrhage",
+        "Ischemic brain damage/Anoxic encephalopathy",
+        "Hemorrhage from transplant site",
+        "Hemorrhage from vascular access",
+        "Hemorrhage from dialysis circuit",
+        "Hemorrhage from ruptured vascular aneurysm",
+        "Hemorrhage from surgery (not 38, 39, or 41)",
+        "Other hemorrhage (not 38-42, 72)",
+        "Mesenteric infarction/ischemic bowel",
+        "Peritoneal access infectious complication, bacterial",
+        "Peritoneal access infectious complication, fungal",
+        "Peritonitis (complication of peritoneal dialysis)",
+        "Central nervous system infection (brain abscess, meningitis, encephalitis, etc.)",
+        "Septicemia due to peripheral vascular disease, gangrene",
+        "Septicemia, other",
+        "Cardiac infection (endocarditis)",
+        "Pulmonary infection (pneumonia, influenza)",
+        "Abdominal infection (peritonitis (not comp of PD), perforated bowel, diverticular disease, gallbladder)",
+        "Hepatitis B",
+        "Other viral hepatitis",
+        "Liver-drug toxicity",
+        "Cirrhosis",
+        "Polycystic liver disease",
+        "Liver failure, cause unknown or other",
+        "Genito-urinary infection",
+        "Hepatitis C",
+        "Gastro-intestinal hemorrhage",
+        "Pancreatitis",
+        "Perforation of peptic ulcer",
+        "Perforation of bowel (not 75)",
+        "Hypokalemia",
+        "Hypernatremia",
+        "Hyponatremia",
+        "Bone marrow depression",
+        "Cachexia/failure to thrive",
+        "Malignant disease, patient ever on Immunosuppressive therapy",
+        "Malignant disease (not 82)",
+        "Dementia, incl. dialysis dementia, Alzheimer�s",
+        "Seizures",
+        "Chronic obstructive lung disease (COPD)",
+        "Complications of surgery",
+        "Air embolism",
+        "Accident related to treatment",
+        "Accident unrelated to treatment",
+        "Suicide",
+        "Drug overdose (street drugs)",
+        "Drug overdose (not 92 or 93)",
+        "Acidosis",
+        "Adrenal insufficiency",
+        "Hypothyroidism",
+        "Other cause of death",
+        "Unknown",
+        "Hypoglycemia",
+        "Hyperglycemia",
+        "Diabetic coma",
+        "Hyperthyroidism",
+        "Withdrawal from dialysis/uremia",
+        "COVID19",
+        "COVID19 Unconfirmed"
+      ]
     },
     {
-      "index": 185,
+      "ordinalPosition": 17,
       "name": "SEC_1_DIA_CMS_DEATH_CAUSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's secondary cause of death.\n\n\n The category values for this column were already listed for column: PRIMARY_DIA_CMS_DEATH_CAUSE_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's secondary cause of death."
     },
     {
-      "index": 191,
+      "ordinalPosition": 18,
       "name": "SEC_2_DIA_CMS_DEATH_CAUSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates the second secondary cause of death of an expired dialysis patient.\n\n\n The category values for this column were already listed for column: PRIMARY_DIA_CMS_DEATH_CAUSE_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates the second secondary cause of death of an expired dialysis patient."
     },
     {
-      "index": 197,
+      "ordinalPosition": 19,
       "name": "SEC_3_DIA_CMS_DEATH_CAUSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates the third secondary cause of death of an expired dialysis patient.\n\n\n The category values for this column were already listed for column: PRIMARY_DIA_CMS_DEATH_CAUSE_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates the third secondary cause of death of an expired dialysis patient."
     },
     {
-      "index": 203,
+      "ordinalPosition": 20,
       "name": "SEC_4_DIA_CMS_DEATH_CAUSE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates the fourth secondary cause of death of an expired dialysis patient.\n\n\n The category values for this column were already listed for column: PRIMARY_DIA_CMS_DEATH_CAUSE_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates the fourth secondary cause of death of an expired dialysis patient."
     },
     {
-      "index": 209,
+      "ordinalPosition": 21,
       "name": "OTHER_DEATH_CAUSE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's cause of death if primary or secondary cause of death indicates other cause of death."
     },
     {
-      "index": 214,
+      "ordinalPosition": 22,
       "name": "WAS_DIA_TREAT_DISCON_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not renal therapy was discontinued prior to a patient's death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not renal therapy was discontinued prior to a patient's death.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 223,
+      "ordinalPosition": 23,
       "name": "DLYS_TRT_DISCH_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores the reason for discontinuing renal therapy prior to a patient's death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAccessFailure\n\n\nTransplantFailure\n\n\nChronicFailure\n\n\nMedicalComplication\n\n\nOther"
+      "description": "This item is used in CMS death form 2746 reporting. It stores the reason for discontinuing renal therapy prior to a patient's death.",
+      "entries": [
+        "AccessFailure",
+        "TransplantFailure",
+        "ChronicFailure",
+        "MedicalComplication",
+        "Other"
+      ]
     },
     {
-      "index": 235,
+      "ordinalPosition": 24,
       "name": "LAST_TREATMENT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used in CMS death form 2746 reporting. It stores the date of last dialysis treatment if renal therapy was discontinued prior to a patient's death."
     },
     {
-      "index": 240,
+      "ordinalPosition": 25,
       "name": "DIA_CMS_DISC_REQUEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores whether or not the discontinuation of renal therapy occurred after patient or family request.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown\n\n\nNA"
+      "description": "This item is used in CMS death form 2746 reporting. It stores whether or not the discontinuation of renal therapy occurred after patient or family request.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown",
+        "NA"
+      ]
     },
     {
-      "index": 251,
+      "ordinalPosition": 26,
       "name": "TRANSPLANT_DATE_UKNWN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates whether the date of an expired patient's most recent kidney transplant is unknown.\n\n\n The category values for this column were already listed for column: WAS_DIA_TREAT_DISCON_YN"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates whether the date of an expired patient's most recent kidney transplant is unknown."
     },
     {
-      "index": 257,
+      "ordinalPosition": 27,
       "name": "LAST_KIDNEY_TRANSPLANT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item is used in CMS death form 2746 reporting. It stores an expired dialysis patient's most recent kidney transplant date."
     },
     {
-      "index": 262,
+      "ordinalPosition": 28,
       "name": "DIA_CMS_DEATH_TXP_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It stores the most recent kidney transplant type that a dialysis patient received before death.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nLivingRelated\n\n\nLivingUnrelated\n\n\nDeceased\n\n\nUnknown"
+      "description": "This item is used in CMS death form 2746 reporting. It stores the most recent kidney transplant type that a dialysis patient received before death.",
+      "entries": [
+        "LivingRelated",
+        "LivingUnrelated",
+        "Deceased",
+        "Unknown"
+      ]
     },
     {
-      "index": 273,
+      "ordinalPosition": 29,
       "name": "GRAFT_FUNC_DEATH_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not a functioning graft was present at the time of a patient's death.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nUnknown"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not a functioning graft was present at the time of a patient's death.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
     },
     {
-      "index": 283,
+      "ordinalPosition": 30,
       "name": "WAS_TRT_RESUMED_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates whether an expired patient, prior to death, resumed renal therapy after receiving a transplant.\n\n\n The category values for this column were already listed for column: GRAFT_FUNC_DEATH_DIA_CMS_YNU_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates whether an expired patient, prior to death, resumed renal therapy after receiving a transplant."
     },
     {
-      "index": 289,
+      "ordinalPosition": 31,
       "name": "RECV_HOSPIC_CARE_DIA_CMS_YNU_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not a dialysis patient was receiving hospice care prior to death.\n\n\n The category values for this column were already listed for column: GRAFT_FUNC_DEATH_DIA_CMS_YNU_C_NAME"
+      "description": "This item is used in CMS death form 2746 reporting. It indicates whether or not a dialysis patient was receiving hospice care prior to death."
     },
     {
-      "index": 295,
+      "ordinalPosition": 32,
       "name": "TREATMENT_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,

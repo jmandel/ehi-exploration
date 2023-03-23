@@ -1,50 +1,65 @@
 {
-  "table_name": "MOST_RECENT_CEV_ID",
+  "name": "MOST_RECENT_CEV_ID",
   "description": "This table contains data for the most recent claim external values (CEV) records for each CEV context.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim info record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MOST_RECENT_CEV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The most recent CEV ID for the given CEV context."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CEV_CONTEXT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the Claim External Values (CEV) context (direction of claim file, incoming or outgoing)\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nIncoming - Initial\n\n\nOutgoing\n\n\nIncoming - Repriced\n\n\nIncoming - Canceled\n\n\nOutgoing - External Pricing\n\n\nIncoming - External Pricing\n\n\nIncoming - Rejected"
+      "description": "This column contains the Claim External Values (CEV) context (direction of claim file, incoming or outgoing)",
+      "entries": [
+        "Incoming - Initial",
+        "Outgoing",
+        "Incoming - Repriced",
+        "Incoming - Canceled",
+        "Outgoing - External Pricing",
+        "Incoming - External Pricing",
+        "Incoming - Rejected"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "CEV_UPDATE_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the update instant (local time zone) for the most recent Claim External Values (CEV) for the given CEV context."
     },
     {
-      "index": 36,
+      "ordinalPosition": 6,
       "name": "CEV_UPDATE_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Update instant for the most recent CEV for the given CEV context."
     }

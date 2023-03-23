@@ -1,48 +1,65 @@
 {
-  "table_name": "HH_PAT_PRIOR_COND",
+  "name": "HH_PAT_PRIOR_COND",
   "description": "Contains category list selections for Home Health prior conditions.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "PRIOR_CONDITIONS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Prior conditions category list selections for the encounter.  Links to category table ZC_PRIOR_CONDITION.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUrinary Incontinence\n\n\nIndwelling/suprapubic catheter\n\n\nIntractable pain\n\n\nImpaired decision-making\n\n\nDisruptive or socially inappropriate behavior\n\n\nMemory loss to the extent that supervision required\n\n\nNone of the above\n\n\nNA\n\n\nUnknown"
+      "description": "Prior conditions category list selections for the encounter.  Links to category table ZC_PRIOR_CONDITION.",
+      "entries": [
+        "Urinary Incontinence",
+        "Indwelling/suprapubic catheter",
+        "Intractable pain",
+        "Impaired decision-making",
+        "Disruptive or socially inappropriate behavior",
+        "Memory loss to the extent that supervision required",
+        "None of the above",
+        "NA",
+        "Unknown"
+      ]
     },
     {
-      "index": 28,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 33,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 38,
+      "ordinalPosition": 6,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,

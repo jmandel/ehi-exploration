@@ -1,38 +1,47 @@
 {
-  "table_name": "DENTAL_PERIO_EXAM_CSNS",
+  "name": "DENTAL_PERIO_EXAM_CSNS",
   "description": "This table contains the list of encounter contact serial numbers (CSNs) in which a periodontal exam has been documented.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the finding record"
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "DENT_PERI_EPT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item contains the list of contact serial numbers (CSN) of encounters that have a periodontal exam documented."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "DENT_PERIO_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the special exam type of the associated periodontal contact serial number (CSN). If left blank, then the CSN is a regular periodontal exam.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPlaque-only"
+      "description": "This item contains the special exam type of the associated periodontal contact serial number (CSN). If left blank, then the CSN is a regular periodontal exam.",
+      "entries": [
+        "Plaque-only"
+      ]
     }
   ]
 }

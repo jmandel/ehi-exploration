@@ -1,62 +1,75 @@
 {
-  "table_name": "HH_INTVTN_HX_CONT",
+  "name": "HH_INTVTN_HX_CONT",
   "description": "Contains Home Health care plan intervention contact history information.",
-  "primary_key": {
-    "column_name": "INTERVENTION_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "INTERVENTION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "INTERVENTION_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for the care plan intervention."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "HX_CNCT_SQNCE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Care plan intervention history-contact serial number."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "HX_ADDND_LN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Care plan intervention history-addendum line."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HX_PERFORMED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact history-interventions performed. Yes or no.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Care plan intervention contact history-interventions performed. Yes or no.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 6,
       "name": "HX_VARIANCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact history-variance code. Links to category table ZC_VARIANCE_CODE.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nOther"
+      "description": "Care plan intervention contact history-variance code. Links to category table ZC_VARIANCE_CODE.",
+      "entries": [
+        "Other"
+      ]
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "HX_VISITS_DEFER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Care plan intervention contact history-visits deferred. Yes or no.\n\n\n The category values for this column were already listed for column: HX_PERFORMED_YN"
+      "description": "Care plan intervention contact history-visits deferred. Yes or no."
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "HX_NOTES_CONTACTS",
       "type": "VARCHAR",
       "discontinued": false,

@@ -1,398 +1,648 @@
 {
-  "table_name": "ARPB_TRANSACTIONS2",
+  "name": "ARPB_TRANSACTIONS2",
   "description": "This table contains information about professional billing transactions.",
-  "primary_key": {
-    "column_name": "TX_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "TX_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the transaction record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "EB_PMT_TOTAL_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Displays the enterprise payment total amount."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FIN_DIV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Financial Division for this transaction.  Taken from the ETR listed or from the associated Bill Area, as found in ARPB_TRANSACTIONS"
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "FIN_DIV_ID_BILL_AREA_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The record name of this bill area, financial subdivision, or financial division."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "FIN_SUBDIV_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The Financial Subdivision for this transaction.  Taken from the ETR listed or from the associated Bill Area, as found in ARPB_TRANSACTIONS"
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "FIN_SUBDIV_ID_BILL_AREA_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The record name of this bill area, financial subdivision, or financial division."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RESEARCH_STUDY_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The record ID for the research study or client associated with the charge."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "RSH_MOD_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The research billing modifier type for a research study related charge.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRoutine\n\n\nInvestigational/Device"
+      "description": "The research billing modifier type for a research study related charge.",
+      "entries": [
+        "Routine",
+        "Investigational/Device"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 9,
       "name": "RSH_ORIG_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the original patient account for charges billed to the guarantor account related to a research study."
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "OUTSTANDING_FLAG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of balance category ID for the transaction\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelf-Pay Balance Only\n\n\nInsurance Balance Only\n\n\nBoth Self-Pay and Insurance Balance"
+      "description": "The type of balance category ID for the transaction",
+      "entries": [
+        "Self-Pay Balance Only",
+        "Insurance Balance Only",
+        "Both Self-Pay and Insurance Balance"
+      ]
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "VST_DO_NOT_BIL_I_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item indicates whether the visit has been marked as do not bill insurance.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "This item indicates whether the visit has been marked as do not bill insurance.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 70,
+      "ordinalPosition": 12,
       "name": "TREATMENT_PLAN_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the treatment plan that generated the order, which generated this charge."
     },
     {
-      "index": 75,
+      "ordinalPosition": 13,
       "name": "TX_ENTERED_INSTANT_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The transaction entered instant (date and time in UTC) for manually posted payments. The transaction filing instant (date and time in UTC) for electronically posted payments."
     },
     {
-      "index": 80,
+      "ordinalPosition": 14,
       "name": "CVG_PLAN_ON_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the coverage plan associated with the invoice number stamped on an insurance payment or credit adjustment."
     },
     {
-      "index": 85,
+      "ordinalPosition": 15,
       "name": "CVG_PLAN_ON_PMT_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the benefit plan record."
     },
     {
-      "index": 90,
+      "ordinalPosition": 16,
       "name": "REVERSED_PMT_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "For the negation payment generated during a payment reversal, this item stores the transaction ID of the original payment."
     },
     {
-      "index": 95,
+      "ordinalPosition": 17,
       "name": "PMT_REVERSAL_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This virtual item returns the reversal transaction ID for a reversed payment."
     },
     {
-      "index": 100,
+      "ordinalPosition": 18,
       "name": "STMT_HOLD_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The most recent date on which the transaction was held from the Professional Billing statement processing."
     },
     {
-      "index": 105,
+      "ordinalPosition": 19,
       "name": "STMT_HOLD_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason why the transaction was held in PB statement processing. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nMinimum guarantor account balance not met\n\n\nCredit balance on the guarantor account\n\n\nGuarantor account already on another run\n\n\nGuarantor account status not to bill\n\n\nMinimum days between two statements not met\n\n\nGuarantor address has no ZIP code\n\n\nCharge Homing is turned on and guarantor account is not in its home\n\n\nSkip guarantor account extension\n\n\nNo professional balance and no hospital account to bill\n\n\nNo hospital account to bill\n\n\nGuarantor account has a hospital account with a self-pay payment/adjustment posted today\n\n\nGuarantor account has a hospital account on payment plan that did not qualify\n\n\nForm not found\n\n\nCannot demand if form requires importing images\n\n\nUndistributed non self-pay credits\n\n\nUndistributed self-pay payment\n\n\nZero Charge\n\n\nStatement already processed this month for payment plan\n\n\nSmartText and Classic forms cannot be included in the same run\n\n\nCannot send tickler to guarantor for paperless bill\n\n\nMinimum days between guarantor detail bill and statement not met\n\n\nPayment plan already paid for this month\n\n\nGuarantor has a balance notification scheduled or recently sent\n\n\nGuarantor billing status not to bill\n\n\nStatement intervention\n\n\nGuarantor does not have new activity\n\n\nGuarantor does not have transactions to bill\n\n\nExcluded during printing\n\n\nGuarantor special billing status set to hold statements\n\n\nVisit auto pay scheduled\n\n\nCannot send another statement before processing auto pay from the last statement\n\n\nVoided transactions\n\n\nPayor hold\n\n\nTransaction skip function\n\n\nContested\n\n\nDebit adjustments\n\n\nFully Paid Insurance Activity\n\n\nVisit is not discharged\n\n\nPosted Not Billed\n\n\nTransaction skip extension\n\n\nService date range\n\n\nSmall balance write off\n\n\nClient guarantor\n\n\nClient next statement date is not before end batch date"
+      "description": "The reason why the transaction was held in PB statement processing.",
+      "entries": [
+        "Minimum guarantor account balance not met",
+        "Credit balance on the guarantor account",
+        "Guarantor account already on another run",
+        "Guarantor account status not to bill",
+        "Minimum days between two statements not met",
+        "Guarantor address has no ZIP code",
+        "Charge Homing is turned on and guarantor account is not in its home",
+        "Skip guarantor account extension",
+        "No professional balance and no hospital account to bill",
+        "No hospital account to bill",
+        "Guarantor account has a hospital account with a self-pay payment/adjustment posted today",
+        "Guarantor account has a hospital account on payment plan that did not qualify",
+        "Form not found",
+        "Cannot demand if form requires importing images",
+        "Undistributed non self-pay credits",
+        "Undistributed self-pay payment",
+        "Zero Charge",
+        "Statement already processed this month for payment plan",
+        "SmartText and Classic forms cannot be included in the same run",
+        "Cannot send tickler to guarantor for paperless bill",
+        "Minimum days between guarantor detail bill and statement not met",
+        "Payment plan already paid for this month",
+        "Guarantor has a balance notification scheduled or recently sent",
+        "Guarantor billing status not to bill",
+        "Statement intervention",
+        "Guarantor does not have new activity",
+        "Guarantor does not have transactions to bill",
+        "Excluded during printing",
+        "Guarantor special billing status set to hold statements",
+        "Visit auto pay scheduled",
+        "Cannot send another statement before processing auto pay from the last statement",
+        "Voided transactions",
+        "Payor hold",
+        "Transaction skip function",
+        "Contested",
+        "Debit adjustments",
+        "Fully Paid Insurance Activity",
+        "Visit is not discharged",
+        "Posted Not Billed",
+        "Transaction skip extension",
+        "Service date range",
+        "Small balance write off",
+        "Client guarantor",
+        "Client next statement date is not before end batch date"
+      ]
     },
     {
-      "index": 156,
+      "ordinalPosition": 20,
       "name": "REPOST_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "If this transaction was reposted from another, this contains the category value of the reason the transaction was reposted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRetroadjudication\n\n\nTransfer\n\n\nReposted Payment\n\n\nCharge Correct\n\n\nCharge Router Repost\n\n\nPayment Reversal"
+      "description": "If this transaction was reposted from another, this contains the category value of the reason the transaction was reposted.",
+      "entries": [
+        "Retroadjudication",
+        "Transfer",
+        "Reposted Payment",
+        "Charge Correct",
+        "Charge Router Repost",
+        "Payment Reversal"
+      ]
     },
     {
-      "index": 169,
+      "ordinalPosition": 21,
       "name": "SUSP_NRP_INDICATOR_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item indicates whether NRP is currently suspended.\n\n\n The category values for this column were already listed for column: VST_DO_NOT_BIL_I_YN"
+      "description": "This item indicates whether NRP is currently suspended."
     },
     {
-      "index": 175,
+      "ordinalPosition": 22,
       "name": "SUSP_NRP_INST_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item stores the instant (date and time) when the next responsible party action was suspended."
     },
     {
-      "index": 180,
+      "ordinalPosition": 23,
       "name": "SUSP_NRP_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the suspended next responsible party user for the transaction."
     },
     {
-      "index": 185,
+      "ordinalPosition": 24,
       "name": "OUTST_CLM_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The status of an outstanding claim that is attached to a transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Outstanding\n\n\nOutstanding\n\n\nDenied\n\n\nSuspended NRP"
+      "description": "The status of an outstanding claim that is attached to a transaction.",
+      "entries": [
+        "Not Outstanding",
+        "Outstanding",
+        "Denied",
+        "Suspended NRP"
+      ]
     },
     {
-      "index": 196,
+      "ordinalPosition": 25,
       "name": "POS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Place of service type for a charge transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nTelehealth - Provided in Patient's Home\n\n\nOffice\n\n\nHome\n\n\nAssisted Living Facility\n\n\nGroup Home\n\n\nMobile Unit\n\n\nTemporary Lodging\n\n\nWalk-in Retail Health Clinic\n\n\nPlace of Employment - Worksite\n\n\nOff Campus - Outpatient Hospital\n\n\nUrgent Care Facility\n\n\nInpatient Hospital\n\n\nOn Campus - Outpatient Hospital\n\n\nEmergency Room - Hospital\n\n\nAmbulatory Surgical Center\n\n\nBirthing Center\n\n\nMilitary Treatment Facility\n\n\nSkilled Nursing Facility\n\n\nNursing Facility\n\n\nCustodial Care Facility\n\n\nHospice\n\n\nAdult Living Care Facility\n\n\nAmbulance - Land\n\n\nAmbulance - Air or Water\n\n\nIndependent Clinic\n\n\nFederally Qualified Health Center\n\n\nInpatient Psychiatric Facility\n\n\nPsychiatric Facility - Partial Hospitalization\n\n\nCommunity Mental Health Center\n\n\nIntermediate Care Facility/ Individuals with Intellectual Disabilities\n\n\nResidential Substance Abuse Treatment Facility\n\n\nPsychiatric Residential Treatment Center\n\n\nNon-residential Substance Abuse Treatment Facility\n\n\nNon-residential Opioid Treatment Facility\n\n\nMass Immunization Center\n\n\nComprehensive Inpatient Rehabilitation Facility\n\n\nComprehensive Outpatient Rehabilitation Facility\n\n\nEnd-Stage Renal Disease Treatment Facility\n\n\nPublic Health Clinic\n\n\nRural Health Clinic\n\n\nIndependent Laboratory\n\n\nOther Place of Service\n\n\nPharmacy\n\n\nTelehealth - Provided Other than in Patient's Home\n\n\nSchool\n\n\nHomeless Shelter\n\n\nIndian Health Service Free-standing Facility\n\n\nIndian Health Service Provider-based Facility\n\n\nTribal 638 Free-standing Facility\n\n\nTribal 638 Provider-based Facility\n\n\nPrison/Correctional Facility"
+      "description": "Place of service type for a charge transaction.",
+      "entries": [
+        "Telehealth - Provided in Patient's Home",
+        "Office",
+        "Home",
+        "Assisted Living Facility",
+        "Group Home",
+        "Mobile Unit",
+        "Temporary Lodging",
+        "Walk-in Retail Health Clinic",
+        "Place of Employment - Worksite",
+        "Off Campus - Outpatient Hospital",
+        "Urgent Care Facility",
+        "Inpatient Hospital",
+        "On Campus - Outpatient Hospital",
+        "Emergency Room - Hospital",
+        "Ambulatory Surgical Center",
+        "Birthing Center",
+        "Military Treatment Facility",
+        "Skilled Nursing Facility",
+        "Nursing Facility",
+        "Custodial Care Facility",
+        "Hospice",
+        "Adult Living Care Facility",
+        "Ambulance - Land",
+        "Ambulance - Air or Water",
+        "Independent Clinic",
+        "Federally Qualified Health Center",
+        "Inpatient Psychiatric Facility",
+        "Psychiatric Facility - Partial Hospitalization",
+        "Community Mental Health Center",
+        "Intermediate Care Facility/ Individuals with Intellectual Disabilities",
+        "Residential Substance Abuse Treatment Facility",
+        "Psychiatric Residential Treatment Center",
+        "Non-residential Substance Abuse Treatment Facility",
+        "Non-residential Opioid Treatment Facility",
+        "Mass Immunization Center",
+        "Comprehensive Inpatient Rehabilitation Facility",
+        "Comprehensive Outpatient Rehabilitation Facility",
+        "End-Stage Renal Disease Treatment Facility",
+        "Public Health Clinic",
+        "Rural Health Clinic",
+        "Independent Laboratory",
+        "Other Place of Service",
+        "Pharmacy",
+        "Telehealth - Provided Other than in Patient's Home",
+        "School",
+        "Homeless Shelter",
+        "Indian Health Service Free-standing Facility",
+        "Indian Health Service Provider-based Facility",
+        "Tribal 638 Free-standing Facility",
+        "Tribal 638 Provider-based Facility",
+        "Prison/Correctional Facility"
+      ]
     },
     {
-      "index": 254,
+      "ordinalPosition": 26,
       "name": "INACTIVE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column returns the type of an inactive transaction.  Inactive transactions are those involved in a void or reversal. This item subcategorizes the transaction's role in the void or reversal. This will be for both the actual voided/reversed credit and the associated negation payment or debit adjustment. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nVoided\n\n\nCredit Reversed Using Debit Adjustment\n\n\nPayment Reversed Using Negation Payment\n\n\nNegation Payment Used in Reversal\n\n\nDebit Adjustment Used to Reverse Credit\n\n\n$0 Debit Adjustment Used in Reversal By Negation"
+      "description": "This column returns the type of an inactive transaction.  Inactive transactions are those involved in a void or reversal. This item subcategorizes the transaction's role in the void or reversal. This will be for both the actual voided/reversed credit and the associated negation payment or debit adjustment.",
+      "entries": [
+        "Voided",
+        "Credit Reversed Using Debit Adjustment",
+        "Payment Reversed Using Negation Payment",
+        "Negation Payment Used in Reversal",
+        "Debit Adjustment Used to Reverse Credit",
+        "$0 Debit Adjustment Used in Reversal By Negation"
+      ]
     },
     {
-      "index": 267,
+      "ordinalPosition": 27,
       "name": "VOIDED_INS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount owed from insurance at the time a charge was voided. This includes previously applied payments and adjustments."
     },
     {
-      "index": 272,
+      "ordinalPosition": 28,
       "name": "PROV_NETWORK_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Basic indicator of whether a provider was in or out of network on the service date of a transaction\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nOut of Network\n\n\nIn Network\n\n\nSelf-Pay"
+      "description": "Basic indicator of whether a provider was in or out of network on the service date of a transaction",
+      "entries": [
+        "Out of Network",
+        "In Network",
+        "Self-Pay"
+      ]
     },
     {
-      "index": 282,
+      "ordinalPosition": 29,
       "name": "NETWORK_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The provider's level of network involvement category ID for the transaction.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nNot Leveled"
+      "description": "The provider's level of network involvement category ID for the transaction.",
+      "entries": [
+        "Not Leveled"
+      ]
     },
     {
-      "index": 290,
+      "ordinalPosition": 30,
       "name": "SPEC_CHG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The special type category ID for the charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nRadiation Therapy\n\n\nRollup\n\n\nDental Predetermination"
+      "description": "The special type category ID for the charge.",
+      "entries": [
+        "Radiation Therapy",
+        "Rollup",
+        "Dental Predetermination"
+      ]
     },
     {
-      "index": 300,
+      "ordinalPosition": 31,
       "name": "ORIG_BUNDPMT_ETR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original bundled payment transaction ID."
     },
     {
-      "index": 305,
+      "ordinalPosition": 32,
       "name": "ORIG_BUNDPMT_HTR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original bundled payment hospital transaction ID."
     },
     {
-      "index": 310,
+      "ordinalPosition": 33,
       "name": "REFERENCE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Holds the reference amount that is calculated based on the financial class for the charge. This is set by the system and is applicable only to charges."
     },
     {
-      "index": 315,
+      "ordinalPosition": 34,
       "name": "REFERENCE_AMT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the source of the reference amount that is used in the calculation of the reference amount. This is set by the system and is applicable only to charges.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReference Amount Fee Schedule\n\n\nCharge Price\n\n\nExternal Price\n\n\nReference Amount Override"
+      "description": "Holds the source of the reference amount that is used in the calculation of the reference amount. This is set by the system and is applicable only to charges.",
+      "entries": [
+        "Reference Amount Fee Schedule",
+        "Charge Price",
+        "External Price",
+        "Reference Amount Override"
+      ]
     },
     {
-      "index": 326,
+      "ordinalPosition": 35,
       "name": "CLM_RMV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason charge was removed from the claim queue.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnspecified\n\n\nNo coverage on charge\n\n\nNo payer on charge\n\n\nNo benefit plan on charge\n\n\nNo account on charge\n\n\nNo patient on charge\n\n\nTransaction is not a charge\n\n\nVoided charge\n\n\nRadiation therapy charge\n\n\nSBO default account\n\n\nInsurance balance is negative\n\n\nZero dollar charge\n\n\nBad debt charge\n\n\nInsurance balance is zero\n\n\nResubmitted charge with zero insurance balance\n\n\nPayer on charge does not match payer on claim\n\n\nCharge held for case rate billing\n\n\nInternal payer\n\n\nAdditional claim run restriction\n\n\nReject from claim edit WQ\n\n\nNo Claim flag set on temporary transaction\n\n\nAccept assignment flag set to No\n\n\nSecondary write-off\n\n\nPayer on pharmacy charge is adjudicated\n\n\nCharge on Posted Not Billed\n\n\nDemanded charge with non-positive insurance balance\n\n\nInitial charge with non-positive insurance balance\n\n\nResubmitted charge with non-positive insurance balance"
+      "description": "Stores the reason charge was removed from the claim queue.",
+      "entries": [
+        "Unspecified",
+        "No coverage on charge",
+        "No payer on charge",
+        "No benefit plan on charge",
+        "No account on charge",
+        "No patient on charge",
+        "Transaction is not a charge",
+        "Voided charge",
+        "Radiation therapy charge",
+        "SBO default account",
+        "Insurance balance is negative",
+        "Zero dollar charge",
+        "Bad debt charge",
+        "Insurance balance is zero",
+        "Resubmitted charge with zero insurance balance",
+        "Payer on charge does not match payer on claim",
+        "Charge held for case rate billing",
+        "Internal payer",
+        "Additional claim run restriction",
+        "Reject from claim edit WQ",
+        "No Claim flag set on temporary transaction",
+        "Accept assignment flag set to No",
+        "Secondary write-off",
+        "Payer on pharmacy charge is adjudicated",
+        "Charge on Posted Not Billed",
+        "Demanded charge with non-positive insurance balance",
+        "Initial charge with non-positive insurance balance",
+        "Resubmitted charge with non-positive insurance balance"
+      ]
     },
     {
-      "index": 361,
+      "ordinalPosition": 36,
       "name": "ADJUSTMENT_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the adjustment category of the associated adjustment code when the credit adjustment is posted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRefund\n\n\nNSF Adjustment/Fee\n\n\nContractual\n\n\nCharity\n\n\nCapitation\n\n\nDiscount\n\n\nLate Fee\n\n\nBad Debt Write Off\n\n\nPLB Adjustment\n\n\nEscheat\n\n\nAdministrative\n\n\nExternal AR Write Off\n\n\nPayment Reversal\n\n\nUnderpayment\n\n\nDenied - Timely Filing\n\n\nDenied - Medical Necessity\n\n\nDenied - Missing Documentation\n\n\nDenied - No Auth\n\n\nDenied - Registration\n\n\nDenied - Miscellaneous\n\n\nOther Allowance\n\n\nEstimate Accuracy Write Off\n\n\nResident Trust Account"
+      "description": "Stores the adjustment category of the associated adjustment code when the credit adjustment is posted.",
+      "entries": [
+        "Refund",
+        "NSF Adjustment/Fee",
+        "Contractual",
+        "Charity",
+        "Capitation",
+        "Discount",
+        "Late Fee",
+        "Bad Debt Write Off",
+        "PLB Adjustment",
+        "Escheat",
+        "Administrative",
+        "External AR Write Off",
+        "Payment Reversal",
+        "Underpayment",
+        "Denied - Timely Filing",
+        "Denied - Medical Necessity",
+        "Denied - Missing Documentation",
+        "Denied - No Auth",
+        "Denied - Registration",
+        "Denied - Miscellaneous",
+        "Other Allowance",
+        "Estimate Accuracy Write Off",
+        "Resident Trust Account"
+      ]
     },
     {
-      "index": 391,
+      "ordinalPosition": 37,
       "name": "WRITE_OFF_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason a credit adjustment was posted. This is determined programmatically when possible (e.g. contractual adjustments, self-pay discounts). Otherwise, this is the write-off reason associated with the adjustment category for this adjustment.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContractual\n\n\nSelf-Pay Discount/Charity\n\n\nOther Allowance\n\n\nBad Debt/External AR\n\n\nAdministrative\n\n\nUnderpayment\n\n\nDenied - Timely Filing\n\n\nDenied - Medical Necessity\n\n\nDenied - Missing Documentation\n\n\nDenied - No Auth\n\n\nDenied - Registration\n\n\nDenied - Miscellaneous\n\n\nPLB Adjustment\n\n\nEstimate Accuracy\n\n\nCapitation\n\n\nN/A - Payment Refund/Reversal\n\n\nN/A - Resident Trust Account"
+      "description": "The reason a credit adjustment was posted. This is determined programmatically when possible (e.g. contractual adjustments, self-pay discounts). Otherwise, this is the write-off reason associated with the adjustment category for this adjustment.",
+      "entries": [
+        "Contractual",
+        "Self-Pay Discount/Charity",
+        "Other Allowance",
+        "Bad Debt/External AR",
+        "Administrative",
+        "Underpayment",
+        "Denied - Timely Filing",
+        "Denied - Medical Necessity",
+        "Denied - Missing Documentation",
+        "Denied - No Auth",
+        "Denied - Registration",
+        "Denied - Miscellaneous",
+        "PLB Adjustment",
+        "Estimate Accuracy",
+        "Capitation",
+        "N/A - Payment Refund/Reversal",
+        "N/A - Resident Trust Account"
+      ]
     },
     {
-      "index": 415,
+      "ordinalPosition": 38,
       "name": "SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the scheduled payment record that resulted in this payment."
     },
     {
-      "index": 420,
+      "ordinalPosition": 39,
       "name": "TAX_CHARGE_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the source transaction for a tax charge"
     },
     {
-      "index": 425,
+      "ordinalPosition": 40,
       "name": "PATIENT_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the Patient Estimate (PES) record ID for a dental estimate that is finalized and is linked to this charge.  If the charge was triggered from dental and if there is a dental estimate associated with the encounter (in a status of \"Finalized\"), that estimate's record ID will be stored in ETR item 1801 and extracted in this column. The item and column are not updated if and when the original finalized estimate is replaced."
     },
     {
-      "index": 430,
+      "ordinalPosition": 41,
       "name": "PATIENT_WISDOM_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Patient dental procedure that was respected by the temporary transaction that filed into this transaction."
     },
     {
-      "index": 435,
+      "ordinalPosition": 42,
       "name": "RFL_OVRIDE_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the referral override source. The options are 1-User or 2-System.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUser\n\n\nSystem\n\n\nCharge Router Handler"
+      "description": "This item stores the referral override source. The options are 1-User or 2-System.",
+      "entries": [
+        "User",
+        "System",
+        "Charge Router Handler"
+      ]
     },
     {
-      "index": 445,
+      "ordinalPosition": 43,
       "name": "RFL_OVRIDE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the user who overrode the referral associated with this charge."
     },
     {
-      "index": 450,
+      "ordinalPosition": 44,
       "name": "PARENT_SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the parent scheduled payment record that resulted in this payment."
     },
     {
-      "index": 455,
+      "ordinalPosition": 45,
       "name": "MANUAL_PRICE_OVRIDE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Permanent transaction indicator used during repost/correct/retro to determine if the charge's price was originally overridden.\n\n\n The category values for this column were already listed for column: VST_DO_NOT_BIL_I_YN"
+      "description": "Permanent transaction indicator used during repost/correct/retro to determine if the charge's price was originally overridden."
     },
     {
-      "index": 461,
+      "ordinalPosition": 46,
       "name": "IS_PRE_SERVICE_PMT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not this is a pre-service payment, such as a co-pay. This item is only populated for self-pay payments. A payment is considered pre-service if it is a visit pre-pay or co-pay payment (such as during check-in).\n\n\n The category values for this column were already listed for column: VST_DO_NOT_BIL_I_YN"
+      "description": "Indicates whether or not this is a pre-service payment, such as a co-pay. This item is only populated for self-pay payments. A payment is considered pre-service if it is a visit pre-pay or co-pay payment (such as during check-in)."
     },
     {
-      "index": 467,
+      "ordinalPosition": 47,
       "name": "FIRST_HTR_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the hospital transaction ID of the first transaction in a chain of transactions. Note that this chain will include transactions from both Hospital Billing and Professional Billing, so this item will return the very first transaction. For a given transaction, either column ARPB_TRANSACTIONS2.FIRST_HTR_ID, or column ARPB_TRANSACTIONS2.FIRST_ETR_ID will be populated. This is different from column ARPB_TRANSACTIONS2.FIRST_TX_ID, which only chains back to the point that the transaction was transferred from Hospital Billing."
     },
     {
-      "index": 472,
+      "ordinalPosition": 48,
       "name": "FIRST_ETR_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the transaction ID of the first transaction in a chain of transactions. Note that this chain will include transactions from both Hospital Billing and Professional Billing, so this item will return the very first transaction. For a given transaction, either column ARPB_TRANSACTIONS2.FIRST_HTR_ID, or column ARPB_TRANSACTIONS2.FIRST_ETR_ID will be populated. This is different from column ARPB_TRANSACTIONS2.FIRST_TX_ID, which only chains back to the point that the transaction was transferred from Hospital Billing."
     },
     {
-      "index": 477,
+      "ordinalPosition": 49,
       "name": "POSTING_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The department where the transaction was posted."
     },
     {
-      "index": 482,
+      "ordinalPosition": 50,
       "name": "EXP_REIMB_SYS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The item stores the original reimbursement amount calculated by contract if the original reimbursement amount is overridden."
     },
     {
-      "index": 487,
+      "ordinalPosition": 51,
       "name": "EXP_REIMB_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The item stores how the reimbursement amount was calculated for the charge.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSystem Calculated\n\n\nContract Overridden\n\n\nExpected Amounts Overridden\n\n\nOverridden by Wisdom Estimate"
+      "description": "The item stores how the reimbursement amount was calculated for the charge.",
+      "entries": [
+        "System Calculated",
+        "Contract Overridden",
+        "Expected Amounts Overridden",
+        "Overridden by Wisdom Estimate"
+      ]
     },
     {
-      "index": 498,
+      "ordinalPosition": 52,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays the transaction record status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+      "description": "This column displays the transaction record status.",
+      "entries": [
+        "Active",
+        "Inactive",
+        "Deleted",
+        "Inactive and Deleted",
+        "Hidden",
+        "Inactive and Hidden",
+        "Deleted and Hidden",
+        "Inactive Deleted and Hidden"
+      ]
     },
     {
-      "index": 513,
+      "ordinalPosition": 53,
       "name": "RESEARCH_ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the research study association linked to this charge."
     },
     {
-      "index": 518,
+      "ordinalPosition": 54,
       "name": "STMT_HOLD_RSN_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text information related to the reason why the transaction was held in Professional Billing statement processing."
     },
     {
-      "index": 523,
+      "ordinalPosition": 55,
       "name": "E_PMT_RECEIPT_MSG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Saves the receipt message received from the gateway for an electronic payment transaction."
     },
     {
-      "index": 528,
+      "ordinalPosition": 56,
       "name": "PARENT_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,

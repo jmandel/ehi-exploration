@@ -1,27 +1,33 @@
 {
-  "table_name": "PAT_EPISODE",
+  "name": "PAT_EPISODE",
   "description": "The PAT_EPISODE table links patient ID numbers to Episodes of Care records. This is especially helpful for connecting patients to episodes of care when there are no linked encounters on an episode record. When this is the case, the PAT_ID column in the EPISODE table may be null.",
-  "primary_key": {
-    "column_name": "PAT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID assigned to the patient record. This ID may be encrypted if you have elected to use enterprise reporting�s encryption utility."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,

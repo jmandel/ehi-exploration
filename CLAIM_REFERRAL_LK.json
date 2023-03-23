@@ -1,52 +1,63 @@
 {
-  "table_name": "CLAIM_REFERRAL_LK",
+  "name": "CLAIM_REFERRAL_LK",
   "description": "This table contains the referrals linked to AP claims.",
-  "primary_key": {
-    "column_name": "CLAIM_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number indicating the order of referrals associated with this claim."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ID number of the referral associated with the claim."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RFL_NOT_USED",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores 1 if the referral was not used during adjudication and is blank otherwise."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PROC_LINES_ALLOWED",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores a list of service lines allowed to count against this referral as a comma-delimited list. The lines correspond to the values in AP_CLAIM_PROC_IDS.LINE for the claim."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "RFL_ATTACH_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The referral attachment source category ID for the AP claim.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdjudication Referral Matching\n\n\nManual\n\n\nEDI Claim File"
+      "description": "The referral attachment source category ID for the AP claim.",
+      "entries": [
+        "Adjudication Referral Matching",
+        "Manual",
+        "EDI Claim File"
+      ]
     }
   ]
 }

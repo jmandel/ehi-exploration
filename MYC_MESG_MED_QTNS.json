@@ -1,66 +1,81 @@
 {
-  "table_name": "MYC_MESG_MED_QTNS",
+  "name": "MYC_MESG_MED_QTNS",
   "description": "This table contains medical history information submitted by the patient in a history questionnaire.",
-  "primary_key": {
-    "column_name": "MESSAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "MESSAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "MESSAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the message record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "MED_QUESN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the medical history question answered by the patient."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "MED_QUESN_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the Visit Navigator (VN) History Template Definition (LQH) record."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "MED_QUESN_RESP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient's response to the medical history question.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo\n\n\nNo Response"
+      "description": "The patient's response to the medical history question.",
+      "entries": [
+        "Yes",
+        "No",
+        "No Response"
+      ]
     },
     {
-      "index": 32,
+      "ordinalPosition": 6,
       "name": "MED_QUESN_DT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The date entered by the patient for the medical history question."
     },
     {
-      "index": 37,
+      "ordinalPosition": 7,
       "name": "MED_QUESN_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The comment entered by the patient for the medical history question."
     },
     {
-      "index": 42,
+      "ordinalPosition": 8,
       "name": "MED_QUESN_FILED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The filed status of the medical history question--has the provider filed it to the patient's record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "The filed status of the medical history question--has the provider filed it to the patient's record.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }

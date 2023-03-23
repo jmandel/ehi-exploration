@@ -1,87 +1,109 @@
 {
-  "table_name": "CLAIM_SCRB_RESULT",
+  "name": "CLAIM_SCRB_RESULT",
   "description": "Store claim scrubber information.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the Claim Info record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CLM_SCRB_ERR_MSG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store claim scrubber error message."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CLM_SCRB_ADJ_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Store claim scrubber adjusted amount."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CLM_SCRB_FIX_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Store claim scrubber type of fix.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdd Procedure\n\n\nDelete Procedure\n\n\nChange Procedure\n\n\nAdd Modifier\n\n\nDelete Modifier"
+      "description": "Store claim scrubber type of fix.",
+      "entries": [
+        "Add Procedure",
+        "Delete Procedure",
+        "Change Procedure",
+        "Add Modifier",
+        "Delete Modifier"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 6,
       "name": "CLM_SCRB_FIX_VALUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store claim scrubber fixed value."
     },
     {
-      "index": 39,
+      "ordinalPosition": 7,
       "name": "CLM_SCRB_ATFIX_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Store whether this was an auto fix.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Store whether this was an auto fix.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 48,
+      "ordinalPosition": 8,
       "name": "CLM_SCRB_ERR_LEVEL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Store claim scrubber error level."
     },
     {
-      "index": 53,
+      "ordinalPosition": 9,
       "name": "CLM_SCRB_ACTION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store claim scrubber action performed."
     },
     {
-      "index": 58,
+      "ordinalPosition": 10,
       "name": "CLM_SCRB_GROUP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Store claim scrubber group information.\n\n\nMay contain organization-specific values: Yes"
+      "description": "Store claim scrubber group information."
     },
     {
-      "index": 64,
+      "ordinalPosition": 11,
       "name": "CLM_SCRB_EACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Store what action was performed by Epic.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo Action\n\n\nWarning\n\n\nError"
+      "description": "Store what action was performed by Epic.",
+      "entries": [
+        "No Action",
+        "Warning",
+        "Error"
+      ]
     }
   ]
 }

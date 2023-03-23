@@ -1,73 +1,96 @@
 {
-  "table_name": "BMT_DONOR_SUITABILITY_AUD",
+  "name": "BMT_DONOR_SUITABILITY_AUD",
   "description": "Audit history information for BMT donor selection, suitability, and availability information.",
-  "primary_key": {
-    "column_name": "EPISODE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "EPISODE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the episode record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "SUITABILITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Donor suitability audit item\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSuitable\n\n\nUnsuitable"
+      "description": "Donor suitability audit item",
+      "entries": [
+        "Suitable",
+        "Unsuitable"
+      ]
     },
     {
-      "index": 21,
+      "ordinalPosition": 4,
       "name": "AVAILABILITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Donor availability audit item\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAvailable\n\n\nUnavailable\n\n\nTemporarily Unavailable"
+      "description": "Donor availability audit item",
+      "entries": [
+        "Available",
+        "Unavailable",
+        "Temporarily Unavailable"
+      ]
     },
     {
-      "index": 31,
+      "ordinalPosition": 5,
       "name": "SELECTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Donor selection audit item\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSelected for Donation\n\n\nDeferred"
+      "description": "Donor selection audit item",
+      "entries": [
+        "Selected for Donation",
+        "Deferred"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 6,
       "name": "UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Donor suitability and selection audit user"
     },
     {
-      "index": 45,
+      "ordinalPosition": 7,
       "name": "START_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Donor suitability and selection audit instant"
     },
     {
-      "index": 50,
+      "ordinalPosition": 8,
       "name": "END_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The end instant for a given set of donor suitability, availability, and selection values"
     },
     {
-      "index": 55,
+      "ordinalPosition": 9,
       "name": "DNR_WRKP_AUD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Donor workup audit item\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nPrimary\n\n\nBackup"
+      "description": "Donor workup audit item",
+      "entries": [
+        "Primary",
+        "Backup"
+      ]
     }
   ]
 }

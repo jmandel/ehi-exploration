@@ -1,181 +1,200 @@
 {
-  "table_name": "DOCS_RCVD_OB_HX_PREG",
+  "name": "DOCS_RCVD_OB_HX_PREG",
   "description": "OB History table for pregnancy data.",
-  "primary_key": {
-    "column_name": "DOCUMENT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DOCUMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the document record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PREG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Unique identifier for an individual pregnancy. Used to link pregnancies to delivery lines."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "HISTORICAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether a pregnancy is historical.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether a pregnancy is historical.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 36,
+      "ordinalPosition": 7,
       "name": "OUTCM_DT_FUZINESS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The fuzziness/confidence of an outcome date in OB history. \n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYear\n\n\nMonth\n\n\nDate"
+      "description": "The fuzziness/confidence of an outcome date in OB history.",
+      "entries": [
+        "Year",
+        "Month",
+        "Date"
+      ]
     },
     {
-      "index": 46,
+      "ordinalPosition": 8,
       "name": "LAST_DEL_GA",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Gestational age in days for the last delivery for the pregnancy, based on OB History documentation."
     },
     {
-      "index": 51,
+      "ordinalPosition": 9,
       "name": "LAST_DEL_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Instant of the last delivery for the pregnancy."
     },
     {
-      "index": 56,
+      "ordinalPosition": 10,
       "name": "NUM_FETUSES",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Total number of fetuses involved in this pregnancy"
     },
     {
-      "index": 61,
+      "ordinalPosition": 11,
       "name": "ABORTION_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Abortion count prior to this pregnancy."
     },
     {
-      "index": 66,
+      "ordinalPosition": 12,
       "name": "ECTOPIC_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Ectopic count prior to this pregnancy."
     },
     {
-      "index": 71,
+      "ordinalPosition": 13,
       "name": "GRAVIDA_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Gravida count prior to this pregnancy."
     },
     {
-      "index": 76,
+      "ordinalPosition": 14,
       "name": "PARA_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Para count prior to this pregnancy."
     },
     {
-      "index": 81,
+      "ordinalPosition": 15,
       "name": "PRETERM_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Preterm count prior to this pregnancy."
     },
     {
-      "index": 86,
+      "ordinalPosition": 16,
       "name": "SPONT_ABORT_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Spontaneous abortion count prior to this pregnancy."
     },
     {
-      "index": 91,
+      "ordinalPosition": 17,
       "name": "TERM_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Term count prior to this pregnancy."
     },
     {
-      "index": 96,
+      "ordinalPosition": 18,
       "name": "INDUCED_ABORT_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Therapeutic abortion count prior to this pregnancy."
     },
     {
-      "index": 101,
+      "ordinalPosition": 19,
       "name": "LIVE_BIRTH_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Live birth count prior to this pregnancy."
     },
     {
-      "index": 106,
+      "ordinalPosition": 20,
       "name": "PREGRAVID_BMI",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Patient's body mass index prior to pregnancy."
     },
     {
-      "index": 111,
+      "ordinalPosition": 21,
       "name": "PRIOR_CESAREAN_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the patient had a cesarean delivery prior to this pregnancy. \n\n\n The category values for this column were already listed for column: HISTORICAL_YN"
+      "description": "Whether the patient had a cesarean delivery prior to this pregnancy."
     },
     {
-      "index": 117,
+      "ordinalPosition": 22,
       "name": "WORKING_EDD_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Working estimated date of delivery for the pregnancy."
     },
     {
-      "index": 122,
+      "ordinalPosition": 23,
       "name": "EP_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Start date of the pregnancy episode."
     },
     {
-      "index": 127,
+      "ordinalPosition": 24,
       "name": "EP_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "End date of the pregnancy episode."
     },
     {
-      "index": 132,
+      "ordinalPosition": 25,
       "name": "FETAL_DEMISE_COUNT",
       "type": "INTEGER",
       "discontinued": false,

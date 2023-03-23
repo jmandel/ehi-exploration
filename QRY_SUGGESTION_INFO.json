@@ -1,76 +1,86 @@
 {
-  "table_name": "QRY_SUGGESTION_INFO",
+  "name": "QRY_SUGGESTION_INFO",
   "description": "This table extracts the suggested diagnosis code and the text description of the diagnosis suggestion for a query.",
-  "primary_key": {
-    "column_name": "QUERY_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "QUERY_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "QUERY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the query record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "SUGGESTION_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The display name of the suggested code."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "SUGGESTION_SNOMED_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The SNOMED CT code associated with the suggestion."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "SUGGESTION_PRIM_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ICD diagnosis code associated with the suggestion for the primary code set."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "SUGGESTION_ALT_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The ICD diagnosis code associated with the suggestion for the alternate code set."
     },
     {
-      "index": 37,
+      "ordinalPosition": 8,
       "name": "SUGGESTION_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The text prompt of the suggestion."
     },
     {
-      "index": 42,
+      "ordinalPosition": 9,
       "name": "SUGGESTION_SELECT_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Whether the suggestion has been selected by the physician.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Whether the suggestion has been selected by the physician.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 51,
+      "ordinalPosition": 10,
       "name": "QUERY_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,

@@ -1,59 +1,66 @@
 {
-  "table_name": "BENEFITS",
+  "name": "BENEFITS",
   "description": "The BENEFITS table contains information specific to benefits collection (BEN) record.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the benefit record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "ENC_BENEFIT_VRX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The verification record for the encounter's benefits."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RECORD_CREATION_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the record was created."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Patient ID"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "VERIFICATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The most recent verification date of this BEN record. This will be used to facilitate easier BEN record searching in the future."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "ORIG_VERIFICATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The original verification date of the data on this BEN record when it was entered manually or by RTE and verified for the first time."
     },
     {
-      "index": 32,
+      "ordinalPosition": 7,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record's status.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "The record's status.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     }
   ]
 }

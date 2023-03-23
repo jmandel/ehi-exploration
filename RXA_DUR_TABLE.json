@@ -1,132 +1,307 @@
 {
-  "table_name": "RXA_DUR_TABLE",
+  "name": "RXA_DUR_TABLE",
   "description": "Contains information relating to Drug Utilization Review (DUR) conflicts in adjudication records. Adjudication records are used by Ambulatory Pharmacy during prescription copay adjudication.",
-  "primary_key": {
-    "column_name": "RECORD_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "RECORD_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "RECORD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the adjudication record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique, internal contact date in decimal format. The integer portion of the number indicates the date of the contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
     },
     {
-      "index": 27,
+      "ordinalPosition": 6,
       "name": "REASON_FOR_SERV_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code identifying the type of utilization conflict detected or the reason for the pharmacist's professional service.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nAdditional Drug Needed\n\n\nPrescription Authentication\n\n\nAdverse Drug Reaction\n\n\nAdditive Toxicity\n\n\nChronic Disease Management\n\n\nCall Help Desk\n\n\nPatient Complaint/Symptom\n\n\nDrug-Allergy\n\n\nDrug-Disease (Inferred)\n\n\nDrug-Drug Interaction\n\n\nDrug-Food Interaction\n\n\nDrug Incompatibility\n\n\nDrug-Lab Conflict\n\n\nApparent Drug Misuse\n\n\nTobacco Use\n\n\nPatient Education/Instruction\n\n\nOveruse\n\n\nExcessive Quantity\n\n\nHigh Dose\n\n\nIatrogenic Condition\n\n\nIngredient Duplication\n\n\nLow Dose\n\n\nLock In Recipient\n\n\nUnderuse\n\n\nDrug-Disease (Reported)\n\n\nInsufficient Duration\n\n\nMissing Information/Clarification\n\n\nExcessive Duration\n\n\nDrug Not Available\n\n\nNon-covered Drug Purchase\n\n\nNew Disease/Diagnosis\n\n\nNon-Formulary Drug\n\n\nUnnecessary Drug\n\n\nNew Patient Processing\n\n\nLactation/Nursing Interaction\n\n\nInsufficient Quantity\n\n\nAlcohol Conflict\n\n\nDrug-Age\n\n\nPatient Question/Concern\n\n\nDrug-Pregnancy\n\n\nPreventive Health Care\n\n\nPrescriber Consultation\n\n\nPlan Protocol\n\n\nPrior Adverse Reaction\n\n\nProduct Selection Opportunity\n\n\nSuspected Environmental Risk\n\n\nHealth Provider Referral\n\n\nSuboptimal Compliance\n\n\nSuboptimal Drug/Indication\n\n\nSide Effect\n\n\nSuboptimal Dosage Form\n\n\nSuboptimal Regimen\n\n\nDrug-Sex\n\n\nTherapeutic\n\n\nLaboratory Test Needed\n\n\nPayor/Processor Question"
+      "description": "NCPDP code identifying the type of utilization conflict detected or the reason for the pharmacist's professional service.",
+      "entries": [
+        "Additional Drug Needed",
+        "Prescription Authentication",
+        "Adverse Drug Reaction",
+        "Additive Toxicity",
+        "Chronic Disease Management",
+        "Call Help Desk",
+        "Patient Complaint/Symptom",
+        "Drug-Allergy",
+        "Drug-Disease (Inferred)",
+        "Drug-Drug Interaction",
+        "Drug-Food Interaction",
+        "Drug Incompatibility",
+        "Drug-Lab Conflict",
+        "Apparent Drug Misuse",
+        "Tobacco Use",
+        "Patient Education/Instruction",
+        "Overuse",
+        "Excessive Quantity",
+        "High Dose",
+        "Iatrogenic Condition",
+        "Ingredient Duplication",
+        "Low Dose",
+        "Lock In Recipient",
+        "Underuse",
+        "Drug-Disease (Reported)",
+        "Insufficient Duration",
+        "Missing Information/Clarification",
+        "Excessive Duration",
+        "Drug Not Available",
+        "Non-covered Drug Purchase",
+        "New Disease/Diagnosis",
+        "Non-Formulary Drug",
+        "Unnecessary Drug",
+        "New Patient Processing",
+        "Lactation/Nursing Interaction",
+        "Insufficient Quantity",
+        "Alcohol Conflict",
+        "Drug-Age",
+        "Patient Question/Concern",
+        "Drug-Pregnancy",
+        "Preventive Health Care",
+        "Prescriber Consultation",
+        "Plan Protocol",
+        "Prior Adverse Reaction",
+        "Product Selection Opportunity",
+        "Suspected Environmental Risk",
+        "Health Provider Referral",
+        "Suboptimal Compliance",
+        "Suboptimal Drug/Indication",
+        "Side Effect",
+        "Suboptimal Dosage Form",
+        "Suboptimal Regimen",
+        "Drug-Sex",
+        "Therapeutic",
+        "Laboratory Test Needed",
+        "Payor/Processor Question"
+      ]
     },
     {
-      "index": 90,
+      "ordinalPosition": 7,
       "name": "CLINICAL_SIGN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code identifying the significance or severity level of a clinical event.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMajor\n\n\nModerate\n\n\nMinor"
+      "description": "NCPDP code identifying the significance or severity level of a clinical event.",
+      "entries": [
+        "Major",
+        "Moderate",
+        "Minor"
+      ]
     },
     {
-      "index": 100,
+      "ordinalPosition": 8,
       "name": "OTHER_PHR_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code indicating the pharmacy responsible for the previous event involved in the DUR conflict.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nYour Pharmacy\n\n\nOther Pharmacy in Same Chain\n\n\nOther Pharmacy"
+      "description": "NCPDP code indicating the pharmacy responsible for the previous event involved in the DUR conflict.",
+      "entries": [
+        "Not Specified",
+        "Your Pharmacy",
+        "Other Pharmacy in Same Chain",
+        "Other Pharmacy"
+      ]
     },
     {
-      "index": 111,
+      "ordinalPosition": 9,
       "name": "PREV_FILL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the prescription was previously filled"
     },
     {
-      "index": 116,
+      "ordinalPosition": 10,
       "name": "QUANT_OF_PREV_FILL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Amount of the conflicting agent that was previously filled (in metric decimal units)."
     },
     {
-      "index": 121,
+      "ordinalPosition": 11,
       "name": "DATABASE_INDICAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code identifying the source of drug information used for DUR processing.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nFirst Databank\n\n\nMedi-Span\n\n\nMicromedix/Medical Economics\n\n\nProcessor Developed\n\n\nOther"
+      "description": "NCPDP code identifying the source of drug information used for DUR processing.",
+      "entries": [
+        "First Databank",
+        "Medi-Span",
+        "Micromedix/Medical Economics",
+        "Processor Developed",
+        "Other"
+      ]
     },
     {
-      "index": 133,
+      "ordinalPosition": 12,
       "name": "OTH_PRSCRBR_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code comparing the prescriber of the current prescription to the prescriber of the previously filled conflicting prescription.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nSame Prescriber\n\n\nOther Prescriber"
+      "description": "NCPDP code comparing the prescriber of the current prescription to the prescriber of the previously filled conflicting prescription.",
+      "entries": [
+        "Not Specified",
+        "Same Prescriber",
+        "Other Prescriber"
+      ]
     },
     {
-      "index": 143,
+      "ordinalPosition": 13,
       "name": "DUR_FREE_TXT_MSG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Text that provides additional detail regarding a DUR conflict."
     },
     {
-      "index": 148,
+      "ordinalPosition": 14,
       "name": "PROF_SERVICE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code identifying the type of utilization conflict detected or the reason for the pharmacist's professional service.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo intervention\n\n\nPatient assessment\n\n\nCoordination of care\n\n\nDosing evaluation/determination\n\n\nFormulary enforcement\n\n\nGeneric product selection\n\n\nMedication administration\n\n\nPrescriber consulted\n\n\nMedication review\n\n\nPatient education/instruction\n\n\nPatient medication history\n\n\nPatient monitoring\n\n\nPatient consulted\n\n\nPerform laboratory test\n\n\nPharmacist consulted other source\n\n\nRecommend laboratory test\n\n\nSelf-care consultation\n\n\nLiterature search/review\n\n\nPayor/processor consulted\n\n\nTherapeutic product interchange"
+      "description": "NCPDP code identifying the type of utilization conflict detected or the reason for the pharmacist's professional service.",
+      "entries": [
+        "No intervention",
+        "Patient assessment",
+        "Coordination of care",
+        "Dosing evaluation/determination",
+        "Formulary enforcement",
+        "Generic product selection",
+        "Medication administration",
+        "Prescriber consulted",
+        "Medication review",
+        "Patient education/instruction",
+        "Patient medication history",
+        "Patient monitoring",
+        "Patient consulted",
+        "Perform laboratory test",
+        "Pharmacist consulted other source",
+        "Recommend laboratory test",
+        "Self-care consultation",
+        "Literature search/review",
+        "Payor/processor consulted",
+        "Therapeutic product interchange"
+      ]
     },
     {
-      "index": 175,
+      "ordinalPosition": 15,
       "name": "SERVICE_RESULT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Action taken by a pharmacist in response to a conflict or the result of a pharmacist�s professional service.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nFilled As Is, False Positive\n\n\nFilled Prescription As Is\n\n\nFilled With Different Dose\n\n\nFilled With Different Directions\n\n\nFilled With Different Drug\n\n\nFilled With Different Quantity\n\n\nFilled With Prescriber Approval\n\n\nBrand-to-Generic Change\n\n\nRx-to-OTC Change\n\n\nFilled with Different Dosage Form\n\n\nPrescription Not Filled\n\n\nNot Filled, Directions Clarified\n\n\nRecommendation Accepted\n\n\nRecommendation Not Accepted\n\n\nDiscontinued Drug\n\n\nRegimen Changed\n\n\nTherapy Changed\n\n\nTherapy Changed-Cost Increased Acknowledged\n\n\nDrug Therapy Unchanged\n\n\nFollow-Up/Report\n\n\nPatient Referral\n\n\nInstructions Understood\n\n\nCompliance Aid Provided\n\n\nMedication Administered"
+      "description": "Action taken by a pharmacist in response to a conflict or the result of a pharmacist�s professional service.",
+      "entries": [
+        "Not Specified",
+        "Filled As Is, False Positive",
+        "Filled Prescription As Is",
+        "Filled With Different Dose",
+        "Filled With Different Directions",
+        "Filled With Different Drug",
+        "Filled With Different Quantity",
+        "Filled With Prescriber Approval",
+        "Brand-to-Generic Change",
+        "Rx-to-OTC Change",
+        "Filled with Different Dosage Form",
+        "Prescription Not Filled",
+        "Not Filled, Directions Clarified",
+        "Recommendation Accepted",
+        "Recommendation Not Accepted",
+        "Discontinued Drug",
+        "Regimen Changed",
+        "Therapy Changed",
+        "Therapy Changed-Cost Increased Acknowledged",
+        "Drug Therapy Unchanged",
+        "Follow-Up/Report",
+        "Patient Referral",
+        "Instructions Understood",
+        "Compliance Aid Provided",
+        "Medication Administered"
+      ]
     },
     {
-      "index": 207,
+      "ordinalPosition": 16,
       "name": "EFFORT_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The level of service for the DUR. Indicates how much effort and time was spent by the pharmacist dealing with the DUR or PPS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Specified\n\n\nLevel 1\n\n\nLevel 2\n\n\nLevel 3\n\n\nLevel 4\n\n\nLevel 5"
+      "description": "The level of service for the DUR. Indicates how much effort and time was spent by the pharmacist dealing with the DUR or PPS.",
+      "entries": [
+        "Not Specified",
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5"
+      ]
     },
     {
-      "index": 220,
+      "ordinalPosition": 17,
       "name": "COAGENT_QUALIFIER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "NCPDP code qualifying the value in �DUR Co-Agent ID� when a pharmacist when resolving an DUR when doing an Rx Adjudication.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUniversal Product Code\n\n\nHealth Related Item\n\n\nNational Drug Code\n\n\nUniversal Product Number\n\n\nDepartment of Defense\n\n\nCommon Procedure Terminology (CPT4)\n\n\nCommon Procedure Terminology (CPT5)\n\n\nHealth Care Financing Administration Common Procedural Coding System\n\n\nNational Pharmaceutical Product Interface Code\n\n\nInternational Article Numbering System\n\n\nDrug Identification Number\n\n\nMedi-Span GPI\n\n\nFirst DataBank GCN\n\n\nMedical Economics GPO\n\n\nMedi-Span DDID\n\n\nFirst DataBank SmartKey\n\n\nMedical Economics GM\n\n\nInternational Classification of Diseases (ICD9)\n\n\nInternational Classification of Diseases (ICD10)\n\n\nMedi-Span Diagnosis Code\n\n\nNational Criteria Care Institute\n\n\nThe Systematized Nomenclature of Human and Veterinary Medicine\n\n\nCommon Dental Terminology\n\n\nAmerican Psychiatric Association Diagnostic Statistical Manual of Mental Disorders\n\n\nOther"
+      "description": "NCPDP code qualifying the value in �DUR Co-Agent ID� when a pharmacist when resolving an DUR when doing an Rx Adjudication.",
+      "entries": [
+        "Universal Product Code",
+        "Health Related Item",
+        "National Drug Code",
+        "Universal Product Number",
+        "Department of Defense",
+        "Common Procedure Terminology (CPT4)",
+        "Common Procedure Terminology (CPT5)",
+        "Health Care Financing Administration Common Procedural Coding System",
+        "National Pharmaceutical Product Interface Code",
+        "International Article Numbering System",
+        "Drug Identification Number",
+        "Medi-Span GPI",
+        "First DataBank GCN",
+        "Medical Economics GPO",
+        "Medi-Span DDID",
+        "First DataBank SmartKey",
+        "Medical Economics GM",
+        "International Classification of Diseases (ICD9)",
+        "International Classification of Diseases (ICD10)",
+        "Medi-Span Diagnosis Code",
+        "National Criteria Care Institute",
+        "The Systematized Nomenclature of Human and Veterinary Medicine",
+        "Common Dental Terminology",
+        "American Psychiatric Association Diagnostic Statistical Manual of Mental Disorders",
+        "Other"
+      ]
     },
     {
-      "index": 252,
+      "ordinalPosition": 18,
       "name": "COAGENT_ID",
       "type": "VARCHAR",
       "discontinued": false,

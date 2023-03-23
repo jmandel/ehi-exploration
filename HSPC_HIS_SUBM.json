@@ -1,76 +1,92 @@
 {
-  "table_name": "HSPC_HIS_SUBM",
+  "name": "HSPC_HIS_SUBM",
   "description": "This table extracts information about the submissions of Hospice Item Set (HIS) dataset records.",
-  "primary_key": {
-    "column_name": "DATASET_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "DATASET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "DATASET_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the data set record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "HIS_SUBM_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the type of HIS submission in the submission history. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSubmission\n\n\nCorrection\n\n\nResubmission\n\n\nInactivation"
+      "description": "Stores the type of HIS submission in the submission history.",
+      "entries": [
+        "Submission",
+        "Correction",
+        "Resubmission",
+        "Inactivation"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "HIS_SUBM_INST_MRK_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "Instant that HIS submission was marked."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "HIS_SUBM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user who submitted the HIS data set. Links to table CLARITY_EMP."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "HIS_SUBM_FILE_DATE_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant of the HIS submission."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "HIS_SUBM_CORRCT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "HIS submission correction number."
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "HIS_SUBM_KEY_ITEMS",
       "type": "VARCHAR",
       "discontinued": false,

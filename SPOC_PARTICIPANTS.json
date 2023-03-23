@@ -1,202 +1,254 @@
 {
-  "table_name": "SPOC_PARTICIPANTS",
+  "name": "SPOC_PARTICIPANTS",
   "description": "List of participants on the plan of care tracked over versions as the plan is updated.",
-  "primary_key": {
-    "column_name": "POC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "POC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "POC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the plan of care record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "PART_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nProvider\n\n\nPatient\n\n\nRelation\n\n\nCommunity Member"
+      "description": "The type category ID for a plan of care participant.",
+      "entries": [
+        "Provider",
+        "Patient",
+        "Relation",
+        "Community Member"
+      ]
     },
     {
-      "index": 33,
+      "ordinalPosition": 6,
       "name": "PART_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the provider added as a plan of care participant."
     },
     {
-      "index": 38,
+      "ordinalPosition": 7,
       "name": "PART_COMM_MEM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the free text name of a community member participating in the creation of the plan of care."
     },
     {
-      "index": 43,
+      "ordinalPosition": 8,
       "name": "PART_COMM_MEM_CNCT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains user entered contact information about a community member participant."
     },
     {
-      "index": 48,
+      "ordinalPosition": 9,
       "name": "PART_COMM_MEM_REL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the relationship to the patient of a free text community member added to the plan of care."
     },
     {
-      "index": 53,
+      "ordinalPosition": 10,
       "name": "PART_DISCIPLINE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the discipline for the plan of care participant."
     },
     {
-      "index": 58,
+      "ordinalPosition": 11,
       "name": "PART_DISCIPLINE_ID_DISC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the discipline record."
     },
     {
-      "index": 63,
+      "ordinalPosition": 12,
       "name": "PART_ROLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The role category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nContributor\n\n\nReviewer\n\n\nOwner"
+      "description": "The role category ID for a plan of care participant.",
+      "entries": [
+        "Contributor",
+        "Reviewer",
+        "Owner"
+      ]
     },
     {
-      "index": 73,
+      "ordinalPosition": 13,
       "name": "PART_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains comments about the participants. Comments up to 100 characters are allowed."
     },
     {
-      "index": 78,
+      "ordinalPosition": 14,
       "name": "PART_SIGNER_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the participant in required to sign the plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether the participant in required to sign the plan of care.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 87,
+      "ordinalPosition": 15,
       "name": "PART_SIGNED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the participant has signed the plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNot Signed\n\n\nSigned\n\n\nDeclined"
+      "description": "Indicates whether the participant has signed the plan of care.",
+      "entries": [
+        "Not Signed",
+        "Signed",
+        "Declined"
+      ]
     },
     {
-      "index": 97,
+      "ordinalPosition": 16,
       "name": "PART_SIG_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the participant signed the plan of care."
     },
     {
-      "index": 102,
+      "ordinalPosition": 17,
       "name": "PART_SIG_MTHD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The signing method category ID for a plan of care participant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nMark as Signed\n\n\nRe-Authentication\n\n\nE-Signature"
+      "description": "The signing method category ID for a plan of care participant.",
+      "entries": [
+        "Mark as Signed",
+        "Re-Authentication",
+        "E-Signature"
+      ]
     },
     {
-      "index": 112,
+      "ordinalPosition": 18,
       "name": "PART_MK_SIG_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The mark as signed reason category ID for the plan of care participant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nParticipant Signed on Paper\n\n\nOther (See Comment)"
+      "description": "The mark as signed reason category ID for the plan of care participant.",
+      "entries": [
+        "Participant Signed on Paper",
+        "Other (See Comment)"
+      ]
     },
     {
-      "index": 121,
+      "ordinalPosition": 19,
       "name": "PART_MK_SIG_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains a comment for the reason a participant was marked as signed."
     },
     {
-      "index": 126,
+      "ordinalPosition": 20,
       "name": "PART_CONTACT_RLA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the patient contact added as a participant for a plan of care."
     },
     {
-      "index": 131,
+      "ordinalPosition": 21,
       "name": "PART_DECLN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The decline reason category ID for a plan of care participant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRefused to Sign\n\n\nUnable to Sign\n\n\nOther (See Comment)"
+      "description": "The decline reason category ID for a plan of care participant.",
+      "entries": [
+        "Refused to Sign",
+        "Unable to Sign",
+        "Other (See Comment)"
+      ]
     },
     {
-      "index": 141,
+      "ordinalPosition": 22,
       "name": "PART_DECLN_RSN_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the comment for the reason a participant declined to sign the plan."
     },
     {
-      "index": 146,
+      "ordinalPosition": 23,
       "name": "PART_EXTEND_ROLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The extended role category ID for the plan of care participant.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The extended role category ID for the plan of care participant."
     },
     {
-      "index": 152,
+      "ordinalPosition": 24,
       "name": "PART_AGRMNT_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The agreement participant type category ID for participants on an agreement.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSubject\n\n\nSigner"
+      "description": "The agreement participant type category ID for participants on an agreement.",
+      "entries": [
+        "Subject",
+        "Signer"
+      ]
     },
     {
-      "index": 161,
+      "ordinalPosition": 25,
       "name": "PART_CONT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the contribution status for the corresponding participant on a plan of care.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nHas Not Contributed\n\n\nHas Contributed"
+      "description": "This item stores the contribution status for the corresponding participant on a plan of care.",
+      "entries": [
+        "Has Not Contributed",
+        "Has Contributed"
+      ]
     },
     {
-      "index": 170,
+      "ordinalPosition": 26,
       "name": "PART_CONTRIBN_UTC_DTTM",
-      "type": "DATETIME (UTC)",
+      "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This item stores the instant the contribution for the corresponding participant was recorded on the plan of care."
     },
     {
-      "index": 175,
+      "ordinalPosition": 27,
       "name": "PART_COMM_MEM_PAT_FACING_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the free text patient-facing name of a community member participating in the creation of the plan of care."
     },
     {
-      "index": 180,
+      "ordinalPosition": 28,
       "name": "PART_SIG_DOCUMENT_ID",
       "type": "VARCHAR",
       "discontinued": false,

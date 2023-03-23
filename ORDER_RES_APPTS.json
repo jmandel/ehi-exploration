@@ -1,31 +1,41 @@
 {
-  "table_name": "ORDER_RES_APPTS",
+  "name": "ORDER_RES_APPTS",
   "description": "This table stores appointments scheduled for a recommendation.",
-  "primary_key": {
-    "column_name": "FINDING_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "FINDING_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the finding record corresponding to this result."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "APPT_LINK_MTHD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The method category ID for the method used to create the link between the recommendation and the appointment. A null value indicates that the link was created manually.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nManual\n\n\nAutomatic"
+      "description": "The method category ID for the method used to create the link between the recommendation and the appointment. A null value indicates that the link was created manually.",
+      "entries": [
+        "Manual",
+        "Automatic"
+      ]
     }
   ]
 }

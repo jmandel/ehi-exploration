@@ -1,34 +1,62 @@
 {
-  "table_name": "CL_RMT_REF_INFO",
+  "name": "CL_RMT_REF_INFO",
   "description": "This table contains the reference information from the remittance file when the receiver of the transaction is not\n\n\nthe payee (e.g., Clearing House or billing service ID).",
-  "primary_key": {
-    "column_name": "IMAGE_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMAGE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMAGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the ID for the remittance image record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "REF_ID_QUALIFIER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Code qualifying the Reference Identification\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nReceiver Identification Number\n\n\nVersion Code - Local\n\n\nPayer Identification Number\n\n\nSubmitter Identification Number\n\n\nHealth Industry Number\n\n\nNational Association of Insurance Commissioners(NAIC) Code\n\n\nState License Number\n\n\nBlue Cross Provider Number\n\n\nBlue Shield Provider Number\n\n\nMedicare Provider Number\n\n\nMedicaid Provider Number\n\n\nDentist License Number\n\n\nAnesthesia License Number\n\n\nProvider UPIN Number\n\n\nTricare Identification Number\n\n\nNational Association of Boards of Pharmacy Number\n\n\nProvider Commercial Number\n\n\nProvider Plan Network Identification Number\n\n\nPayee Identification\n\n\nFederal Taxpayer's Identification Number"
+      "description": "Code qualifying the Reference Identification",
+      "entries": [
+        "Receiver Identification Number",
+        "Version Code - Local",
+        "Payer Identification Number",
+        "Submitter Identification Number",
+        "Health Industry Number",
+        "National Association of Insurance Commissioners(NAIC) Code",
+        "State License Number",
+        "Blue Cross Provider Number",
+        "Blue Shield Provider Number",
+        "Medicare Provider Number",
+        "Medicaid Provider Number",
+        "Dentist License Number",
+        "Anesthesia License Number",
+        "Provider UPIN Number",
+        "Tricare Identification Number",
+        "National Association of Boards of Pharmacy Number",
+        "Provider Commercial Number",
+        "Provider Plan Network Identification Number",
+        "Payee Identification",
+        "Federal Taxpayer's Identification Number"
+      ]
     },
     {
-      "index": 34,
+      "ordinalPosition": 3,
       "name": "REFERENCE_INFO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier"
     },
     {
-      "index": 39,
+      "ordinalPosition": 4,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,

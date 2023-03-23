@@ -1,31 +1,43 @@
 {
-  "table_name": "HSP_ACCT_EBC_ONSET_LBR",
+  "name": "HSP_ACCT_EBC_ONSET_LBR",
   "description": "Onset of labor for electronic birth certificate extract.",
-  "primary_key": {
-    "column_name": "HSP_ACCOUNT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "HSP_ACCOUNT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the hospital account record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "ONSET_LBR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The onset of labor category ID for Electronic Birth Certificate information.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPremature Rupture of the Membranes (prolonged > 12 hrs)\n\n\nPrecipitous Labor (< 3 hrs.)\n\n\nProlonged Labor (> 20 hrs.)\n\n\nNone"
+      "description": "The onset of labor category ID for Electronic Birth Certificate information.",
+      "entries": [
+        "Premature Rupture of the Membranes (prolonged > 12 hrs)",
+        "Precipitous Labor (< 3 hrs.)",
+        "Prolonged Labor (> 20 hrs.)",
+        "None"
+      ]
     }
   ]
 }

@@ -1,41 +1,55 @@
 {
-  "table_name": "EDIT_CLM_LINES",
+  "name": "EDIT_CLM_LINES",
   "description": "Stores detailed information of the edited claim.",
-  "primary_key": {
-    "column_name": "CLAIM_PRINT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the claim record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number of one of the multiple values associated with a specific group of data within this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "EC_LINES_GEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the generation number of the audit for each line."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "EC_LINES_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the claim type for the claim being edited.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nCMS Claim\n\n\nUB Claim\n\n\nState Visit Data\n\n\nState Visit Provider Data\n\n\nVektis Claim\n\n\nPharmacy Claim"
+      "description": "Stores the claim type for the claim being edited.",
+      "entries": [
+        "CMS Claim",
+        "UB Claim",
+        "State Visit Data",
+        "State Visit Provider Data",
+        "Vektis Claim",
+        "Pharmacy Claim"
+      ]
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "EC_LINES_LN_NUM",
       "type": "NUMERIC",
       "discontinued": false,

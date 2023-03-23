@@ -1,41 +1,48 @@
 {
-  "table_name": "SERVICE_PLAN",
+  "name": "SERVICE_PLAN",
   "description": "The SERVICE_PLAN table contains high-level information about service plans. Most workflow-related information in PLN is overtime and found in the SERVICE_PLAN_VERSION table.",
-  "primary_key": {
-    "column_name": "SERVICE_PLAN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SERVICE_PLAN_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SERVICE_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier (.1 item) for the service plan record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the record status (hidden, soft-deleted, etc...). Category values are stored in table ZC_RECORD_STATUS_2.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nSoft Deleted\n\n\nHidden\n\n\nHidden and Soft Deleted"
+      "description": "Stores the record status (hidden, soft-deleted, etc...). Category values are stored in table ZC_RECORD_STATUS_2.",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
     },
     {
-      "index": 17,
+      "ordinalPosition": 3,
       "name": "COMMENT_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The note record that contains comments for all versions of the service plan."
     },
     {
-      "index": 22,
+      "ordinalPosition": 4,
       "name": "RECORD_CREATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date the record was created"
     },
     {
-      "index": 27,
+      "ordinalPosition": 5,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,

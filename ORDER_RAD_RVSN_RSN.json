@@ -1,27 +1,33 @@
 {
-  "table_name": "ORDER_RAD_RVSN_RSN",
+  "name": "ORDER_RAD_RVSN_RSN",
   "description": "ORDER_RAD_RVSN_RSN stores the comment associated with an order marked as \"needs revision\" in the imaging applications. Orders are generally marked as \"needs revision\" by the transcriptionist when he or she needs additional information or clarification from the physician.",
-  "primary_key": {
-    "column_name": "ORDER_PROC_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "ORDER_PROC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "ORDER_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the procedure order record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line count for this table as determined by the number of lines in the revision reason comment for an order."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "REVISION_CMT",
       "type": "VARCHAR",
       "discontinued": false,

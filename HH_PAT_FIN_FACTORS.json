@@ -1,48 +1,62 @@
 {
-  "table_name": "HH_PAT_FIN_FACTORS",
+  "name": "HH_PAT_FIN_FACTORS",
   "description": "Contains Home Health financial factors category list selections.",
-  "primary_key": {
-    "column_name": "PAT_ENC_CSN_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "CONTACT_DATE_REAL",
       "type": "FLOAT",
       "discontinued": false,
       "description": "Unique identifier for this contact for this patient."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "FIN_FACTORS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Financial factors category list selections for the encounter.  Links to category table ZC_FIN_FACTORS.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNone\n\n\nUnable to afford medicine or medical supplies\n\n\nUnable to afford medical expenese that are not covered by insurance\n\n\nUnable to afford rent/utility bills\n\n\nUnable to afford food\n\n\nOther"
+      "description": "Financial factors category list selections for the encounter.  Links to category table ZC_FIN_FACTORS.",
+      "entries": [
+        "None",
+        "Unable to afford medicine or medical supplies",
+        "Unable to afford medical expenese that are not covered by insurance",
+        "Unable to afford rent/utility bills",
+        "Unable to afford food",
+        "Other"
+      ]
     },
     {
-      "index": 25,
+      "ordinalPosition": 4,
       "name": "PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "index": 30,
+      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
     },
     {
-      "index": 35,
+      "ordinalPosition": 6,
       "name": "CM_CT_OWNER_ID",
       "type": "VARCHAR",
       "discontinued": false,

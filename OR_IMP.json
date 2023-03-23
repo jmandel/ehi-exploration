@@ -1,405 +1,505 @@
 {
-  "table_name": "OR_IMP",
+  "name": "OR_IMP",
   "description": "The OR_IMP table contains implant information.",
-  "primary_key": {
-    "column_name": "IMPLANT_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "IMPLANT_ID",
+      "ordinalPosition": 1
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "IMPLANT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the implant record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "IMPLANT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the implant record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "IMPLANT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The implant type category number for the implant record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The implant type category number for the implant record."
     },
     {
-      "index": 18,
+      "ordinalPosition": 4,
       "name": "MANUFACTURER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The manufacturer category number for the implant record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The manufacturer category number for the implant record."
     },
     {
-      "index": 24,
+      "ordinalPosition": 5,
       "name": "STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The implant status category number for the implant record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nReceived\n\n\nImplanted\n\n\nExplanted\n\n\nLoaned\n\n\nReturned\n\n\nDestroyed\n\n\nRecalled\n\n\nWasted\n\n\nImplanted - Out of Service"
+      "description": "The implant status category number for the implant record.",
+      "entries": [
+        "Received",
+        "Implanted",
+        "Explanted",
+        "Loaned",
+        "Returned",
+        "Destroyed",
+        "Recalled",
+        "Wasted",
+        "Implanted - Out of Service"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 6,
       "name": "SMDA_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the implant conforms to the Safe Medical Device Act (SMDA). Y indicates that the implant conforms to the SMDA. A null indicates that no value is documented. N indicates that the implant does not conform to the SMDA.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "Indicates whether the implant conforms to the Safe Medical Device Act (SMDA). Y indicates that the implant conforms to the SMDA. A null indicates that no value is documented. N indicates that the implant does not conform to the SMDA.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 49,
+      "ordinalPosition": 7,
       "name": "ACTIVE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether the implant record is active. Y indicates that the implant is active. A null indicates that no value is documented. N indicates that the implant is not active.\n\n\n The category values for this column were already listed for column: SMDA_YN"
+      "description": "Indicates whether the implant record is active. Y indicates that the implant is active. A null indicates that no value is documented. N indicates that the implant is not active."
     },
     {
-      "index": 55,
+      "ordinalPosition": 8,
       "name": "MODEL_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The model number of the implant."
     },
     {
-      "index": 60,
+      "ordinalPosition": 9,
       "name": "SERIAL_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The serial number of the implant."
     },
     {
-      "index": 65,
+      "ordinalPosition": 10,
       "name": "LOT_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The lot number of the implant."
     },
     {
-      "index": 70,
+      "ordinalPosition": 11,
       "name": "EXPIRATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The expiration date of the implant."
     },
     {
-      "index": 75,
+      "ordinalPosition": 12,
       "name": "RECEIVED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the implant was received."
     },
     {
-      "index": 80,
+      "ordinalPosition": 13,
       "name": "RECPT_NOTIFY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the manufacturer was notified of implant receipt."
     },
     {
-      "index": 85,
+      "ordinalPosition": 14,
       "name": "RECALLED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the implant was recalled."
     },
     {
-      "index": 90,
+      "ordinalPosition": 15,
       "name": "RECALLED_NOT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the manufacturer was notified of implant recall."
     },
     {
-      "index": 95,
+      "ordinalPosition": 16,
       "name": "PAT_EXPIRY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient with the implant expired."
     },
     {
-      "index": 100,
+      "ordinalPosition": 17,
       "name": "PAT_EXP_NOTIF_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the manufacturer was notified of the patient's expiration."
     },
     {
-      "index": 105,
+      "ordinalPosition": 18,
       "name": "INVENTORY_ITEM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the supply linked to the implant record."
     },
     {
-      "index": 110,
+      "ordinalPosition": 19,
       "name": "INVENTORY_ITEM_ID_SUPPLY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the inventory item."
     },
     {
-      "index": 115,
+      "ordinalPosition": 20,
       "name": "PACEMAKER_RATE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The pacemaker rate of the implant."
     },
     {
-      "index": 120,
+      "ordinalPosition": 21,
       "name": "IMPLANT_AREA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The implant area category number for the implant record.\n\n\nMay contain organization-specific values: Yes"
+      "description": "The implant area category number for the implant record."
     },
     {
-      "index": 126,
+      "ordinalPosition": 22,
       "name": "PASS_THROUGH_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The pass through code used for billing."
     },
     {
-      "index": 131,
+      "ordinalPosition": 23,
       "name": "CHARGE_CODE_EAP_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the charge code associated with the implant record."
     },
     {
-      "index": 136,
+      "ordinalPosition": 24,
       "name": "IMPLANT_SIZE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The size of the implant."
     },
     {
-      "index": 141,
+      "ordinalPosition": 25,
       "name": "TISSUE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The tissue type category number for the implant record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nSkin\n\n\nBone\n\n\nOther"
+      "description": "The tissue type category number for the implant record.",
+      "entries": [
+        "Skin",
+        "Bone",
+        "Other"
+      ]
     },
     {
-      "index": 151,
+      "ordinalPosition": 26,
       "name": "PREP_START_DTTM",
-      "type": "DATETIME (Attached)",
+      "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "The date and time when the tissue preparation was started."
     },
     {
-      "index": 156,
+      "ordinalPosition": 27,
       "name": "IMPLANT_TEMP",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Temperature at implantation of tissue."
     },
     {
-      "index": 161,
+      "ordinalPosition": 28,
       "name": "INFECTED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the tissue was infected."
     },
     {
-      "index": 166,
+      "ordinalPosition": 29,
       "name": "SURG_NOTIFIED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the surgeon was notified about the infection."
     },
     {
-      "index": 171,
+      "ordinalPosition": 30,
       "name": "TISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this is a tissue implant. Y indicates that this is a tissue implant. A null indicates that no value is documented. N indicates that this is not a tissue implant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo\n\n\nYes"
+      "description": "Indicates whether this is a tissue implant. Y indicates that this is a tissue implant. A null indicates that no value is documented. N indicates that this is not a tissue implant.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     },
     {
-      "index": 180,
+      "ordinalPosition": 31,
       "name": "PAT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the patient record for this implant. This column is frequently used to link to the PATIENT table."
     },
     {
-      "index": 185,
+      "ordinalPosition": 32,
       "name": "IMPLANT_LAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The laterality category number for the implant record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nLeft\n\n\nRight\n\n\nBilateral\n\n\nN/A\n\n\nDefault"
+      "description": "The laterality category number for the implant record.",
+      "entries": [
+        "Left",
+        "Right",
+        "Bilateral",
+        "N/A",
+        "Default"
+      ]
     },
     {
-      "index": 197,
+      "ordinalPosition": 33,
       "name": "PACE_INITIAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this pacemaker is the initial device implanted in a patient. Y indicates that this is the initial device. A null indicates that no value is documented. N indicates that this is not the initial device.\n\n\n The category values for this column were already listed for column: TISSUE_YN"
+      "description": "Indicates whether this pacemaker is the initial device implanted in a patient. Y indicates that this is the initial device. A null indicates that no value is documented. N indicates that this is not the initial device."
     },
     {
-      "index": 203,
+      "ordinalPosition": 34,
       "name": "PACE_POCKET_LOC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category number for the pocket location in which this pacemaker is implanted.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPre-pectoral \n\n\nPre-pectoral (below fascia)\n\n\nSub-pectoral\n\n\nSubcuticular\n\n\nPre-rectus \n\n\nPre-rectus (below sheath)\n\n\nSub-rectus/abdominal\n\n\nNo pocket present"
+      "description": "The category number for the pocket location in which this pacemaker is implanted.",
+      "entries": [
+        "Pre-pectoral",
+        "Pre-pectoral (below fascia)",
+        "Sub-pectoral",
+        "Subcuticular",
+        "Pre-rectus",
+        "Pre-rectus (below sheath)",
+        "Sub-rectus/abdominal",
+        "No pocket present"
+      ]
     },
     {
-      "index": 218,
+      "ordinalPosition": 35,
       "name": "TEMP_PACE_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether this is a temporary pacemaker. Y indicates that this is a temporary pacemaker. A null indicates that no value is documented. N indicates that this is not a temporary pacemaker.\n\n\n The category values for this column were already listed for column: TISSUE_YN"
+      "description": "Indicates whether this is a temporary pacemaker. Y indicates that this is a temporary pacemaker. A null indicates that no value is documented. N indicates that this is not a temporary pacemaker."
     },
     {
-      "index": 224,
+      "ordinalPosition": 36,
       "name": "PACE_PREVENTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The prevention type category number for the implant record. Only stores the prevention type if the implant type is pacemaker.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nPrimary prevention\n\n\nSecondary prevention"
+      "description": "The prevention type category number for the implant record. Only stores the prevention type if the implant type is pacemaker.",
+      "entries": [
+        "Primary prevention",
+        "Secondary prevention"
+      ]
     },
     {
-      "index": 233,
+      "ordinalPosition": 37,
       "name": "TEMP_PACE_CHAMBER_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The temporary pacemaker chamber category number for the implant record.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nRA\n\n\nRV\n\n\nLA\n\n\nLV\n\n\nSubQ\n\n\nPatch\n\n\nLateral cardiac vein"
+      "description": "The temporary pacemaker chamber category number for the implant record.",
+      "entries": [
+        "RA",
+        "RV",
+        "LA",
+        "LV",
+        "SubQ",
+        "Patch",
+        "Lateral cardiac vein"
+      ]
     },
     {
-      "index": 247,
+      "ordinalPosition": 38,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status category number for the implant record.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nActive\n\n\nInactive\n\n\nDeleted\n\n\nInactive and Deleted\n\n\nHidden\n\n\nInactive and Hidden\n\n\nDeleted and Hidden\n\n\nInactive Deleted and Hidden"
+      "description": "The record status category number for the implant record.",
+      "entries": [
+        "Active",
+        "Inactive",
+        "Deleted",
+        "Inactive and Deleted",
+        "Hidden",
+        "Inactive and Hidden",
+        "Deleted and Hidden",
+        "Inactive Deleted and Hidden"
+      ]
     },
     {
-      "index": 262,
+      "ordinalPosition": 39,
       "name": "MANUF_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The manufacturer number of the supply linked to the implant record."
     },
     {
-      "index": 267,
+      "ordinalPosition": 40,
       "name": "SUP_CAT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The supplier catalog number of the supply linked to the implant record."
     },
     {
-      "index": 272,
+      "ordinalPosition": 41,
       "name": "PREP_INSTR_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The \"source of tissue preparation instructions\" category number for the tissue implant.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nManufacturer\n\n\nSurgeon\n\n\nOther\n\n\nN/A"
+      "description": "The \"source of tissue preparation instructions\" category number for the tissue implant.",
+      "entries": [
+        "Manufacturer",
+        "Surgeon",
+        "Other",
+        "N/A"
+      ]
     },
     {
-      "index": 283,
+      "ordinalPosition": 42,
       "name": "STATIC_UDI",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The static piece of the unique device identifier, obtained from the implant barcode.  This is the Global Trade Item Number (GTIN) for General Specifications (GS1) barcodes and the combination of the labeler identification code and the catalog number for Health Industry Bar Code (HIBC) barcodes."
     },
     {
-      "index": 288,
+      "ordinalPosition": 43,
       "name": "STATIC_UDI_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The type of the static unique device identifier, based on the format of the barcode it was obtained from.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nGS1\n\n\nHIBC\n\n\nICCBBA"
+      "description": "The type of the static unique device identifier, based on the format of the barcode it was obtained from.",
+      "entries": [
+        "GS1",
+        "HIBC",
+        "ICCBBA"
+      ]
     },
     {
-      "index": 298,
+      "ordinalPosition": 44,
       "name": "TISSUE_AUTOLOGOU_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores whether a tissue implant was taken from the patient.\n\n\n The category values for this column were already listed for column: TISSUE_YN"
+      "description": "Stores whether a tissue implant was taken from the patient."
     },
     {
-      "index": 304,
+      "ordinalPosition": 45,
       "name": "EXPLANT_DISPOSITN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the where the implant was sent after being explanted. \n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nsent to pathology/lab\n\n\nsent to lab\n\n\ndiscarded\n\n\ngiven to patient\n\n\nreturned to manufacturer"
+      "description": "This item stores the where the implant was sent after being explanted.",
+      "entries": [
+        "sent to pathology/lab",
+        "sent to lab",
+        "discarded",
+        "given to patient",
+        "returned to manufacturer"
+      ]
     },
     {
-      "index": 316,
+      "ordinalPosition": 46,
       "name": "SKIN_SUB_USAGE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Document how the skin substitute was used.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nGraft\n\n\nTissue"
+      "description": "Document how the skin substitute was used.",
+      "entries": [
+        "Graft",
+        "Tissue"
+      ]
     },
     {
-      "index": 325,
+      "ordinalPosition": 47,
       "name": "SKIN_SUB_AREA_USED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Document the area of the skin substitute used."
     },
     {
-      "index": 330,
+      "ordinalPosition": 48,
       "name": "SKIN_SUB_AREA_WASTE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Document the area of the skin substitute wasted."
     },
     {
-      "index": 335,
+      "ordinalPosition": 49,
       "name": "TISSUE_INSPC_RSLT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Document result of inspecting the tissue\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Document result of inspecting the tissue"
     },
     {
-      "index": 342,
+      "ordinalPosition": 50,
       "name": "RADIOACTIVE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This field will be used by the nurse to document when an implant is radioactive.\n\n\nMay contain organization-specific values: Yes\n\n\n Category Entries: \n\n\nYes\n\n\nNo"
+      "description": "This field will be used by the nurse to document when an implant is radioactive.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
     },
     {
-      "index": 351,
+      "ordinalPosition": 51,
       "name": "REPLACE_EXISTING_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column displays whether the given implant is replacing an existing implant.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nNo (Old)\n\n\nYes (Old)\n\n\nN/A (Old)\n\n\nYes\n\n\nNo\n\n\nN/A"
+      "description": "This column displays whether the given implant is replacing an existing implant.",
+      "entries": [
+        "No (Old)",
+        "Yes (Old)",
+        "N/A (Old)",
+        "Yes",
+        "No",
+        "N/A"
+      ]
     },
     {
-      "index": 364,
+      "ordinalPosition": 52,
       "name": "TISSUE_EXPANDER_VOLUME",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The volume (mL) the tissue expander was inflated."
     },
     {
-      "index": 369,
+      "ordinalPosition": 53,
       "name": "REMOVE_BY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date implant needs to be removed from patient."
     },
     {
-      "index": 374,
+      "ordinalPosition": 54,
       "name": "IMPLANT_VOLUME",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This documents the volume of the implant."
     },
     {
-      "index": 379,
+      "ordinalPosition": 55,
       "name": "IMP_VOLUME_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Choose which unit to use for volume measurements.\n\n\nMay contain organization-specific values: Yes\n\n\n No Entries Defined"
+      "description": "Choose which unit to use for volume measurements."
     },
     {
-      "index": 386,
+      "ordinalPosition": 56,
       "name": "SUPPLY_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the type of inventory item for the implant. This is used for one-time implants, which do not have an inventory item, to determine what markup table to use for charging.\n\n\nMay contain organization-specific values: Yes"
+      "description": "This is the type of inventory item for the implant. This is used for one-time implants, which do not have an inventory item, to determine what markup table to use for charging."
     },
     {
-      "index": 392,
+      "ordinalPosition": 57,
       "name": "EXPLANT_WARRANTY_COMPLETION_DT",
       "type": "DATETIME",
       "discontinued": false,

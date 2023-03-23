@@ -1,69 +1,82 @@
 {
-  "table_name": "RX_ENROLLMENTS_HX",
+  "name": "RX_ENROLLMENTS_HX",
   "description": "This table contains an audit trail history for edits made to a pharmacy enrollment.",
-  "primary_key": {
-    "column_name": "SUMMARY_BLOCK_ID",
-    "ordinal_position": "1"
-  },
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
   "columns": [
     {
-      "index": 2,
+      "ordinalPosition": 1,
       "name": "SUMMARY_BLOCK_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier for the summary block record."
     },
     {
-      "index": 7,
+      "ordinalPosition": 2,
       "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
     },
     {
-      "index": 12,
+      "ordinalPosition": 3,
       "name": "RXENROLL_EDIT_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier for the user record who updated the pharmacy enrollment for a given edit."
     },
     {
-      "index": 17,
+      "ordinalPosition": 4,
       "name": "RXENROLL_EDIT_DTTM",
-      "type": "DATETIME (Local)",
+      "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the pharmacy enrollment was updated on this edit"
     },
     {
-      "index": 22,
+      "ordinalPosition": 5,
       "name": "ENROLL_PROG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The enrollment program category ID for the pharmacy enrollment on this edit\n\n\nMay contain organization-specific values: Yes"
+      "description": "The enrollment program category ID for the pharmacy enrollment on this edit"
     },
     {
-      "index": 28,
+      "ordinalPosition": 6,
       "name": "RXENROLL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The enrollment status category ID for this enrollment on this edit.\n\n\nMay contain organization-specific values: No\n\n\n Category Entries: \n\n\nUnder Review\n\n\nEnrolled\n\n\nDisenrolled\n\n\nDeclined\n\n\nDeleted"
+      "description": "The enrollment status category ID for this enrollment on this edit.",
+      "entries": [
+        "Under Review",
+        "Enrolled",
+        "Disenrolled",
+        "Declined",
+        "Deleted"
+      ]
     },
     {
-      "index": 40,
+      "ordinalPosition": 7,
       "name": "RXENROLL_ENROLLMENT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The enrollment start date documented for this enrollment on this edit"
     },
     {
-      "index": 45,
+      "ordinalPosition": 8,
       "name": "RXENROLL_DISENROLL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The disenrollment date documented on the enrollment on this edit"
     },
     {
-      "index": 50,
+      "ordinalPosition": 9,
       "name": "RXENROLL_DECLINE_DATE",
       "type": "DATETIME",
       "discontinued": false,
