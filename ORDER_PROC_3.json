@@ -21,6 +21,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the outcome (e.g. FP/FN/TP/FN/etc) for a mammography study. This column is used to link to the ZC_MAMMO_OUTCOME table.",
+      "linksTo": "ZC_MAMMO_OUTCOME",
       "entries": [
         "True Negative",
         "False Negative",
@@ -39,6 +40,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This stores the category ID for the imaging study status (e.g. technician ended the exam, reading physician finalized the exam) before the order was canceled. This will only be populated for canceled imaging orders. This column is used to link to the ZC_RADIOLOGY_STS table.",
+      "linksTo": "ZC_RADIOLOGY_STS",
       "entries": [
         "Ordered",
         "No Show",
@@ -82,6 +84,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This indicates whether an order is an inpatient or outpatient order. Note that Outpatient orders can be placed from an Inpatient encounter as discharge orders. This column might be blank for Outpatient orders placed prior to the creation of the IP module. This column is used to link to the ZC_ORDERING_MODE table.",
+      "linksTo": "ZC_ORDERING_MODE",
       "entries": [
         "Outpatient",
         "Inpatient"
@@ -93,6 +96,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider status category number for the order at the time of the extract. This item reflects the providers' viewed status of the order result message.  The amount, frequency and type of data stored in this item depends on the programming point records entered into the results message type definition in use at each facility. This column is used to link to the ZC_PROV_STATUS table.",
+      "linksTo": "ZC_PROV_STATUS",
       "entries": [
         "Ordered",
         "Open",
@@ -106,6 +110,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The result type category number for the order, if noted. A null value indicates that it is normal order results. This column is used to link to the ZC_ORD_RESULT_TYPE table.",
+      "linksTo": "ZC_ORD_RESULT_TYPE",
       "entries": [
         "Table",
         "Text",
@@ -119,6 +124,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The priority level category number of a referral order, which is used to specify whether a referral order is routine, urgent, emergency or elective. This column is used to link to the ZC_RFL_PRIORITY table.",
+      "linksTo": "ZC_RFL_PRIORITY",
       "entries": [
         "Routine",
         "Urgent",
@@ -284,6 +290,7 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The most recent overall mammography assessment for the order. This should be the same as the most recent value for ORDER_RAD_ASMT.ASSESSMENT_C. This column is used to link to the ZC_ASSESSMENT table.",
+      "linksTo": "ZC_ASSESSMENT",
       "entries": [
         "Need Additional Imaging Evaluation",
         "Negative",
