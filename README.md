@@ -1,1 +1,3 @@
-# ehi-exploration: logs from a first look at https://open.epic.com/EHITables
+# EHI Format Fun
+
+For generated metadata see https://github.com/jmandel/ehi-exploration/releases
