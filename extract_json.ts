@@ -44,7 +44,7 @@ for (const c of colRows) {
   const entriesCells = colDescComponents.querySelectorAll(
     ":scope > tbody > tr:nth-child(n+5)"
   );
-  const linksTo = colDesc.match(/links? to ([A-Z_]+)/);
+  const linksTo = colDesc.match(/links? to (?:the )([A-Z_]+)/);
   const entries = Array.from(entriesCells).map((e) => e.innerText.trim());
   cols.push({
     ordinalPosition: parseInt(ordinalPosition),
