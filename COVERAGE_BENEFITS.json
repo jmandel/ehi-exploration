@@ -319,21 +319,21 @@
       "name": "CVG_UPDATE_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
-      "description": "This item contains the last instant in which data for this line's coverage was updated."
+      "description": "This item contains the last instant that data related to this coverage was written to the record. This includes changes to general benefits, changes to service type specific benefits, and copying from another benefits record."
     },
     {
       "ordinalPosition": 43,
       "name": "CVG_UPDATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the ID of the user who last updated the data for this line's coverage."
+      "description": "This item contains the ID of the user who last saved data related to this coverage to the record, or whose actions caused the system to save that data. Updates when general benefits or service type specific benefits are saved or when benefits are copied from one benefit record to this one."
     },
     {
       "ordinalPosition": 44,
       "name": "CVG_UPDATE_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item contains the source that made the last update to this line's coverage.",
+      "description": "The method that was last used to make changes to the general benefits values. This reflects the original entry of the benefits, even if the entry was made on a different benefits record and the benefits were later copied to the current one. This only tracks changes to the general benefits, not to service type benefits.",
       "entries": [
         "Manual Update",
         "Eligibility Query",
@@ -343,7 +343,8 @@
         "Previous Eligibility Query",
         "Automatic population from benefits engine",
         "Reference BEN for Estimates",
-        "Automatic copy from related estimate"
+        "Automatic copy from related estimate",
+        "Sync from coverage level benefit tracking"
       ]
     },
     {
@@ -560,6 +561,34 @@
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage level maximum patient out-of-pocket for a visit."
+    },
+    {
+      "ordinalPosition": 73,
+      "name": "BENEFITS_LAST_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC) ",
+      "discontinued": false,
+      "description": "The instant that general benefits data was last collected. This instant reflects the time that these benefits were entered originally, even if that entry was made on a different benefits record and the benefits were later copied to the current one. This only tracks changes to the general benefits, not to service type benefits."
+    },
+    {
+      "ordinalPosition": 74,
+      "name": "BENEFITS_LAST_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who last made changes to the general benefits values. This reflects the time that these benefits were entered originally, even if that entry was made on a different benefits record and the benefits were later copied to the current one. This only tracks changes to the general benefits, not to service type benefits."
+    },
+    {
+      "ordinalPosition": 75,
+      "name": "BENEFITS_LAST_UPDATE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The method that was last used to make changes to the general benefits values. This reflects the original entry of the benefits, even if the entry was made on a different benefits record and the benefits were later copied to the current one. This only tracks changes to the general benefits, not to service type benefits.",
+      "entries": [
+        "Manual Update",
+        "Eligibility Query",
+        "Previous Eligibility Query",
+        "Automatic population from benefits engine",
+        "Reference BEN for Estimates"
+      ]
     }
   ]
 }

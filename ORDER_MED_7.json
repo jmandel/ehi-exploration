@@ -104,13 +104,30 @@
     },
     {
       "ordinalPosition": 13,
+      "name": "MED_PROV_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Links to the shadow order containing provisional verify data"
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "TAPER_TRIMMING_INCOMPLETE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Set to Yes if the taper trimming UI's decision hasn't been made yet",
+      "entries": [
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
       "name": "STARTED_TAKING_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient reports they started taking a medication"
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 16,
       "name": "RX_REQ_SUBTYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -234,6 +251,7 @@
         "Multidose - Failed PLL Update",
         "Multidose - New Responsible Provider",
         "Community Resource Broadcast Message",
+        "New Account Broadcast Message",
         "Treatment Complete",
         "Treatment Resumed",
         "Death Notification",
@@ -243,6 +261,7 @@
         "Municipal Summary of Care Report",
         "SLV Application Refused",
         "Outpatient Visit from External Hospital",
+        "CCSC Selection Notification",
         "Medication Management",
         "Genomic Indicator Added",
         "Genomic Variant BPA",
@@ -267,16 +286,43 @@
       ]
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 17,
+      "name": "RESCARE_REORDER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Response to a question that a user is shown when reordering or modifying an outpatient order while the patient is admitted to a residential care facility.",
+      "entries": [
+        "Start After Original Order Ends",
+        "Discontinue Original and Start Now",
+        "Discontinue Original and Specify Start Date",
+        "Prompt Shown But No Response"
+      ]
+    },
+    {
+      "ordinalPosition": 18,
       "name": "DISCRETE_SIG_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores source of discrete sig details on medication",
+      "description": "The discrete sig source category ID for the order.",
       "entries": [
         "Codified Sig",
         "Copied from Source Order",
         "Sig Mapping Table"
       ]
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "SCHED_FIRST_DOSE_DTTM",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "Stores the date and time that the first dose in an admission should be scheduled"
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "LAST_REFILL_REQUEST_UTC_DTTM",
+      "type": "DATETIME (UTC) ",
+      "discontinued": false,
+      "description": "The datetime of when the patient last requested a refill for this medication order through MyChart. Used to determine when another refill can be requested for medications filled through non-integrated pharmacies."
     }
   ]
 }

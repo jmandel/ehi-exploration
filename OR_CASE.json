@@ -108,34 +108,73 @@
     },
     {
       "ordinalPosition": 15,
+      "name": "START_AT_OR_AFTER",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "The time of day before which the case cannot begin."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "START_AT_OR_BEFORE",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "The time of day after which the case cannot begin."
+    },
+    {
+      "ordinalPosition": 17,
       "name": "TOTAL_TIME_NEEDED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required to perform the case."
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 18,
       "name": "REFERRING_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the physician who referred the patient associated with the case."
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 19,
+      "name": "PREOP_XRAYS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag which indicates whether or not x-rays were taken before the surgery was performed.",
+      "entries": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "PREOP_VISIT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag which indicates whether or not the patient completed a pre-op clinic visit."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "LATEX_ALLERGIC_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag which indicates whether or not the patient has a latex allergy."
+    },
+    {
+      "ordinalPosition": 22,
       "name": "OR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the room the case is scheduled to be performed. This column is frequently used to link to CLARITY_SER."
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 23,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the location where the procedure is scheduled to be performed. This column is frequently used to link to CLARITY_LOC."
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 24,
       "name": "PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -147,7 +186,7 @@
       ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 25,
       "name": "ADD_ON_CASE_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -158,7 +197,7 @@
       ]
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 26,
       "name": "SCHED_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -177,396 +216,462 @@
       ]
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 27,
       "name": "CASE_PROGRESS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which represents the current progress status of the case as it proceeds."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 28,
       "name": "CANCEL_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category number of the most recent reason the case was canceled or removed from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to ZC_OR_CANCEL_RSN."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 29,
       "name": "CANCEL_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who most recently canceled the case or removed it from the schedule. This column will remain populated even if the case is put back on the schedule. This column is frequently used to link to CLARITY_EMP."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 30,
+      "name": "CANCEL_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The comments entered by the user that canceled the case."
+    },
+    {
+      "ordinalPosition": 31,
       "name": "TIME_SCHEDULED",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time at which the case is scheduled to be performed on the surgery date."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 32,
       "name": "VOID_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category number for the reason the case was voided. This column is frequently used to link to ZC_OR_VOID_REASON."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 33,
       "name": "CANCEL_CHKIN_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which represents the reason the check-in was canceled."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 34,
+      "name": "CHECKIN_INSTANT",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "The date and time at which the case was checked-in."
+    },
+    {
+      "ordinalPosition": 35,
       "name": "PATIENT_ESCORT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The person escorting the patient for the surgery. This is a free text value."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 36,
       "name": "PANEL1_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 1 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 37,
       "name": "PANEL1_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 1 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 38,
       "name": "PANEL2_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 2 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 39,
       "name": "PANEL2_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 2 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 40,
       "name": "PANEL3_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 3 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 41,
       "name": "PANEL3_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 3 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 42,
       "name": "PANEL4_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 4 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 43,
       "name": "PANEL4_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 4 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 44,
       "name": "PANEL5_START_AT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates at what time within the case panel 5 should begin. This is measured in minutes relative to the beginning of the case."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 45,
       "name": "PANEL5_LENGTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The total amount of time required for panel 5 to be performed. This includes the times of all the procedures within the panel."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 46,
+      "name": "RECORD_CREATE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date on which the case was created."
+    },
+    {
+      "ordinalPosition": 47,
       "name": "REC_CREATE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who created the case."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 48,
       "name": "ADT_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contact serial number for an Admission Discharge Transfer (ADT) admit contact."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 49,
       "name": "CASE_REQST_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who placed the web request."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 50,
       "name": "SHUFFLE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the user who placed the case in the shuffle depot."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 51,
+      "name": "FORMS_PRINTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag indicating whether or not forms have been printed."
+    },
+    {
+      "ordinalPosition": 52,
+      "name": "CONFIDENTIAL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag indicating whether or not the case is confidential."
+    },
+    {
+      "ordinalPosition": 53,
       "name": "PAT_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value representing the patient level in the case."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 54,
+      "name": "INTL_PATIENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Yes/No flag which indicates whether or not the patient is international."
+    },
+    {
+      "ordinalPosition": 55,
       "name": "PAIN_MGMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which represents the patient's participation in pain management."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 56,
       "name": "ADMIT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which the patient was admitted."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 57,
+      "name": "LENGTH_OF_STAY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The length of the patient's stay while admitted."
+    },
+    {
+      "ordinalPosition": 58,
       "name": "RESEARCH_IND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which represents the candidacy of the case for research."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 59,
+      "name": "WEIGHT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The approximate weight of the patient in pounds."
+    },
+    {
+      "ordinalPosition": 60,
       "name": "ADMIT_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which indicates the admit source for the patient's stay."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 61,
       "name": "ADMITTING_SRVC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which indicates the admitting service for the patient's stay."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 62,
       "name": "ADMITTING_PHYS_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the admitting physician."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 63,
       "name": "ADMIT_BED_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value which indicates the admitting bed type."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 64,
       "name": "ADD_ON_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the case first shows up as an add-on."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 65,
       "name": "MODIFIED_CASE_LEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The length of the case, in minutes, if it has been shortened or lengthened."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 66,
       "name": "PAT_TOTAL_TIME",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The amount of time in minutes for which the patient is present."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 67,
       "name": "BUMPED_CASE_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Yes/No flag indicating whether or not the case has been bumped."
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 68,
+      "name": "BUMPED_INSTANT",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "The date and time at which the case was bumped."
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "VOID_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free text comments entered when the case was voided."
+    },
+    {
+      "ordinalPosition": 70,
       "name": "CASE_ACCEPTED_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Yes/No flag indicating whether or not the case was accepted in Case Entry.",
-      "entries": [
-        "Yes",
-        "No"
-      ]
+      "description": "Yes/No flag indicating whether or not the case was accepted in Case Entry."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 71,
       "name": "PROJ_START_INST",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The projected date and time for the start of this case."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 72,
       "name": "PROJ_END_INST",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The projected date and time for the end of this case."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 73,
       "name": "REAL_TIME_OR_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the surgery case's operating room according to the log."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 74,
       "name": "PANEL1_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the time for Panel 1 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 75,
       "name": "PANEL2_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the time for Panel 2 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 76,
       "name": "PANEL3_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the time for Panel 3 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 77,
       "name": "PANEL4_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the time for Panel 4 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 78,
       "name": "PANEL5_IS_COMB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the time for Panel 5 is the procedures' combination time from procedure time averaging. Y indicates that the time is from the procedures' combination procedure time average; N indicates it is not. A null value indicates the panel was not added in the case."
     },
     {
-      "ordinalPosition": 64,
+      "ordinalPosition": 79,
       "name": "PANEL1_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 1."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 80,
       "name": "PANEL2_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 2."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 81,
       "name": "PANEL3_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 3."
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 82,
       "name": "PANEL4_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 4."
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 83,
       "name": "PANEL5_DEF_LEN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The panel length defaulted by the system for Panel 5."
     },
     {
-      "ordinalPosition": 69,
+      "ordinalPosition": 84,
       "name": "PANEL1_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the length of the panel 1 was modified by the user."
     },
     {
-      "ordinalPosition": 70,
+      "ordinalPosition": 85,
       "name": "PANEL2_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the length of the panel 2 was modified by the user."
     },
     {
-      "ordinalPosition": 71,
+      "ordinalPosition": 86,
       "name": "PANEL3_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the length of the panel 3 was modified by the user."
     },
     {
-      "ordinalPosition": 72,
+      "ordinalPosition": 87,
       "name": "PANEL4_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the length of the panel 4 was modified by the user."
     },
     {
-      "ordinalPosition": 73,
+      "ordinalPosition": 88,
       "name": "PANEL5_LEN_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the length of the panel 5 was modified by the user."
     },
     {
-      "ordinalPosition": 74,
+      "ordinalPosition": 89,
       "name": "REQUESTED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The preferred date requested for this case."
     },
     {
-      "ordinalPosition": 75,
+      "ordinalPosition": 90,
       "name": "REQUESTED_TIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The time (of the day) requested for this case."
     },
     {
-      "ordinalPosition": 76,
+      "ordinalPosition": 91,
       "name": "EXP_ADM_DTE_OFFSET",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the number of days prior to the day of surgery, the patient is expected to be admitted."
     },
     {
-      "ordinalPosition": 77,
+      "ordinalPosition": 92,
       "name": "CASE_VERIFIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -577,63 +682,63 @@
       ]
     },
     {
-      "ordinalPosition": 78,
+      "ordinalPosition": 93,
       "name": "PAT_ALLERGIES_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if the patient has Allergies."
     },
     {
-      "ordinalPosition": 79,
+      "ordinalPosition": 94,
       "name": "PAT_HEALTH_ISSUE_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if patient has health issues."
     },
     {
-      "ordinalPosition": 80,
+      "ordinalPosition": 95,
       "name": "FILMS_FOR_SURGER_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if the patient is bringing films to surgery."
     },
     {
-      "ordinalPosition": 81,
+      "ordinalPosition": 96,
       "name": "PREOP_VISIT_NEED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if a PreOp Visit is needed."
     },
     {
-      "ordinalPosition": 82,
+      "ordinalPosition": 97,
       "name": "PREOP_VISIT_COMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if PreOp Visit has been completed."
     },
     {
-      "ordinalPosition": 83,
+      "ordinalPosition": 98,
       "name": "LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This columns stores the log ID for this case."
     },
     {
-      "ordinalPosition": 84,
+      "ordinalPosition": 99,
       "name": "CASE_ACCEPT_NEED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores whether the case accept programming point needs to be fired. Used when a case was created from a order to fire the accept programming points before the case can be scheduled."
     },
     {
-      "ordinalPosition": 85,
+      "ordinalPosition": 100,
       "name": "IS_CLINICAL_TRL_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if the case is a clinical trial case."
     },
     {
-      "ordinalPosition": 86,
+      "ordinalPosition": 101,
       "name": "PEND_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -645,70 +750,70 @@
       ]
     },
     {
-      "ordinalPosition": 87,
+      "ordinalPosition": 102,
       "name": "POSTOP_DEST_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The patient's post-operative destination."
     },
     {
-      "ordinalPosition": 88,
+      "ordinalPosition": 103,
       "name": "TRANSLATOR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category value of the language of the case translator."
     },
     {
-      "ordinalPosition": 89,
+      "ordinalPosition": 104,
       "name": "PTA_LAST_UPD_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date the procedure time was last updated in the case"
     },
     {
-      "ordinalPosition": 90,
+      "ordinalPosition": 105,
       "name": "CASE_BEGIN_INSTANT",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the datetime instant in which the case began."
     },
     {
-      "ordinalPosition": 91,
+      "ordinalPosition": 106,
       "name": "CASE_END_INSTANT",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the datetime instant in which the case ended."
     },
     {
-      "ordinalPosition": 92,
+      "ordinalPosition": 107,
       "name": "MULT_PROC_COMP_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether there were multiple procedures used in calculation of procedure time for this case."
     },
     {
-      "ordinalPosition": 93,
+      "ordinalPosition": 108,
       "name": "USING_EAP_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item defines whether this case is using the Procedure master file (EAP) for scheduling procedures? Default value is 'No'."
     },
     {
-      "ordinalPosition": 94,
+      "ordinalPosition": 109,
       "name": "ANESTHESIA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The anesthesia type category number for the case."
     },
     {
-      "ordinalPosition": 95,
+      "ordinalPosition": 110,
       "name": "CASE_SOURCE_DEPL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "ID of the source deployment that created the case through cross deployment scheduling."
     },
     {
-      "ordinalPosition": 96,
+      "ordinalPosition": 111,
       "name": "PRIMARY_PHYSICIAN_ID",
       "type": "VARCHAR",
       "discontinued": false,

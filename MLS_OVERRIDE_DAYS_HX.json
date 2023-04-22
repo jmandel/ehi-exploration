@@ -1,9 +1,9 @@
 {
-  "name": "HSP_BFH_LATE_REPL_BUCKETS",
-  "description": "This table holds the history of the liability buckets that were affected by the Process Late Charges action.",
+  "name": "MLS_OVERRIDE_DAYS_HX",
+  "description": "Holds override days information for multiline sig frequency",
   "primaryKey": [
     {
-      "columnName": "BFH_ID",
+      "columnName": "ORDER_ID",
       "ordinalPosition": 1
     },
     {
@@ -18,10 +18,10 @@
   "columns": [
     {
       "ordinalPosition": 1,
-      "name": "BFH_ID",
+      "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the billing activity history record."
+      "description": "The unique identifier (.1 item) for the order record."
     },
     {
       "ordinalPosition": 2,
@@ -39,10 +39,10 @@
     },
     {
       "ordinalPosition": 4,
-      "name": "LATE_REPL_BUCKET_ID",
-      "type": "NUMERIC",
+      "name": "MLS_OVERRIDE_DAYS",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the bucket associated with the Process Late Charges action."
+      "description": "Holds indices that will serve as guide to find override information associated with specific multiline sig period & part. Each index corresponds to a line in SI ORD 34630."
     }
   ]
 }

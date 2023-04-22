@@ -362,21 +362,21 @@
       "name": "SOURCE_ADMISSION_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
-      "description": "The date and time of the patient's source admission at the referring location of a Transfer Center request."
+      "description": "The date and time of a request's source encounter. For manually entered encounters.  For linked hospital encounters, use PAT_ENC_HSP__INP_ADM_DATE, for the inpatient admission date/time, and/or PAT_ENC_HSP__HOSP_ADMSN_TIME, for the date and time that the patient was first admitted to the facility, bedded in the ED, or confirmed for an HOV for this contact, regardless of patient's base patient class.  For appointment encounters, use  PAT_ENC_APPT__CONTACT_DATE for the date and PAT_ENC_APPT__PROV_START_TIME for the time."
     },
     {
       "ordinalPosition": 46,
       "name": "SOURCE_ADMSN_LVL_OF_CARE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The source admission's level of care at the referring location of a Transfer Center request."
+      "description": "The level of care of a request's source encounter. For manually entered encounters.  For linked hospital encounters, use PAT_ENC_HSP__LEVEL_OF_CARE_C instead."
     },
     {
       "ordinalPosition": 47,
       "name": "TRANS_BACK_TO_REFERRING_LOC_YN",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates whether or not the referring location of a Transfer Center request was willing to accept the patient to be transferred back."
+      "description": "Indicates whether a source encounter location is willing to accept a transfer back. 'Y' indicates that they are. 'N' or NULL indicates that they are not."
     },
     {
       "ordinalPosition": 48,
@@ -439,6 +439,20 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This provides a link to the address of the referring provider. To obtain the address information, join to the table CLARITY_SER_ADDR on the ADDR_UNIQUE_ID column. If you use IntraConnect, you also need to join the REFERRING_PROV_ID column to CLARITY_SER_ADDR.PROV_ID."
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "SOURCE_ENC_DEPT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The department where a source encounter on a request occurred. For manually entered encounters.  For linked hospital encounters, use PAT_ENC_HSP__DEPARTMENT_ID. For linked appointment encounters, use PAT_ENC_APPT__DEPARTMENT_ID."
+    },
+    {
+      "ordinalPosition": 57,
+      "name": "SOURCE_ENC_ROOM_AND_BED",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The bed (and room, if applicable) that a patient was assigned to in a manually entered source encounter.  For linked hospital encounters, use  PAT_ENC_HSP__ROOM_ID and PAT_ENC_HSP__BED_ID instead."
     }
   ]
 }

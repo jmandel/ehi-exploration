@@ -285,7 +285,7 @@
       "name": "EVENT_DOC_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Document Type category ID linked to this event.",
+      "description": "The CDA type category ID for the document.",
       "entries": [
         "Clinical Summary",
         "Document List",
@@ -357,7 +357,8 @@
         "Genomics Summary",
         "Health Plan Sourced Clinical Summary",
         "Patient Dialysis Summary",
-        "Patient Oncology Summary"
+        "Patient Oncology Summary",
+        "Research Restricted Data Exchange"
       ]
     },
     {
@@ -760,7 +761,11 @@
         "Filtered or Missing Source Note",
         "DocumentReference Status not Current",
         "Claim Derivation: Excluded Linked Diagnoses",
-        "Claim Derivation: Missing Encounter Start Date"
+        "Claim Derivation: Missing Encounter Start Date",
+        "Entered In Error",
+        "Condition is no longer a problem list item",
+        "Condition verification status is no longer confirmed",
+        "Condition is no longer valid for this patient due to age or sex"
       ]
     },
     {
@@ -800,6 +805,20 @@
     },
     {
       "ordinalPosition": 53,
+      "name": "EVENT_AUTH_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Authorization Number of the encounter"
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "EVENT_PRE_CERT_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Pre-admit Certification Number of the encounter"
+    },
+    {
+      "ordinalPosition": 55,
       "name": "EVENT_ADMSN_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -815,7 +834,7 @@
       ]
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 56,
       "name": "EVENT_ADMIT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -833,46 +852,39 @@
       ]
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 57,
       "name": "EVENT_TITLE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Title of a document associated with an event."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 58,
       "name": "EXPECT_LEN_OF_STAY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The expected length of the stay in days."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 59,
       "name": "EXPECT_DISCH_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Expected discharge date for the encounter"
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 60,
       "name": "EXPECT_DISCH_TM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Expected discharge time for the encounter"
     },
     {
-      "ordinalPosition": 59,
-      "name": "EVENT_AUTH_NUM",
+      "ordinalPosition": 61,
+      "name": "EVENT_LINK_RSH_PROTOCOL_VISIT",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Authorization Number of the encounter"
-    },
-    {
-      "ordinalPosition": 60,
-      "name": "EVENT_PRE_CERT_NUM",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "Pre-admit Certification Number of the encounter"
+      "description": "The linked protocol visit for a Research Study linked encounter."
     }
   ]
 }

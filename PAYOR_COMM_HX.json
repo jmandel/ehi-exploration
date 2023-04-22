@@ -1,6 +1,6 @@
 {
   "name": "PAYOR_COMM_HX",
-  "description": "The PAYOR_COMM_HX table contains a history of communications sent to payers by inpatient case managers. This data is from the Payer Communication navigator section. Each row represents a communication that was sent to a payer.\n\n\n\n\n\nIf no communication was sent to a specific payer, a row will appear for that payer with the current fax and phone number. In addition, a row will also be displayed for any fax and/or phone number updates, if the update happened after sending the last communication. Therefore, the last row for a given payer contains the most current fax and phone number for them.",
+  "description": "The PAYOR_COMM_HX table contains a history of communications sent to payers by inpatient case managers. This data is from the Payer Communication navigator section. Each row represents a communication that was sent to a payer.\n\n\n\n\n\nIf no communication was sent to a specific payer, a row will appear for that payer with the current fax, phone number, and contact name. In addition, a row will also be displayed for any fax, phone number, and/or contact name updates, if the update happened after sending the last communication. Therefore, the last row for a given payer contains the most current contact information for them.",
   "primaryKey": [
     {
       "columnName": "PAT_ENC_CSN_ID",
@@ -66,7 +66,7 @@
       "name": "LRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the report that was sent to the payor. This column is always populated when a report is sent, but should only be used as a fallback if no Release of Information (ROI) is available in ROI_ID (such as in an IntraConnect scenario)."
+      "description": "The unique ID of the report that was sent to the payor. This column is always populated when a report is sent, but should only be used as a fallback if no Release of Information (ROI) is available in ROI_ID (such as in an IntraConnect scenario). Starting in the May 2023 version, this item extracted by this column will no longer be populated."
     },
     {
       "ordinalPosition": 9,
@@ -127,6 +127,17 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the note ID of a note containing user comments about the related communication sent to the payer."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "IS_CUSTOM_DOCUMENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This indicates whether the communication included a custom document generated using document builder.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
     }
   ]
 }
