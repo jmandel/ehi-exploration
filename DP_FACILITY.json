@@ -1,6 +1,6 @@
 {
   "name": "DP_FACILITY",
-  "description": "This table contains information regarding Continued Care and Services Coordination, where each row represents a service considered for the patient's care. All services populated in a Continued Care and Services Coordination navigator section will be included in the table. The services can be user (SER), facility (EAF), or department (DEP) records.",
+  "description": "This table contains information regarding Continued Care and Services Coordination, where each row represents a service considered for the patient's care. All services populated in a Continued Care and Services Coordination navigator section will be included in the table. The services can be provider (SER), facility (EAF), or department (DEP) records.",
   "primaryKey": [
     {
       "columnName": "PAT_ENC_CSN_ID",
@@ -234,6 +234,13 @@
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of business days between the accepted and end dates. Business days exclude weekends and holidays."
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "COMP_BY_THIRD_PARTY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag that is set when a third party marks a CCSC request as complete in a context that doesn't support archiving requests. This is not used for recommendation type requests or requests sent in a Compass Rose episode."
     }
   ]
 }
