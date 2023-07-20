@@ -35,55 +35,48 @@
     },
     {
       "ordinalPosition": 4,
-      "name": "FILL_PHR_ID_PHARMACY_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the pharmacy."
-    },
-    {
-      "ordinalPosition": 5,
       "name": "FILL_AUTHPHRMCST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This item saves the pharmacist who will take responsibility of the fill when sending an adjudication message."
     },
     {
-      "ordinalPosition": 6,
+      "ordinalPosition": 5,
       "name": "FILL_SERVICE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of service for a prescription fill.   The date of service can be entered by a user during the filling process. If no service date was entered by the user, then the date of service is the date of the first successful adjudication. If the prescription fill was not adjudicated, then the date of service is the date the fill was dispensed."
     },
     {
-      "ordinalPosition": 7,
+      "ordinalPosition": 6,
       "name": "FILL_NUMBER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  The value is used in adjudication to indicate what fill we are adjudicating. The fill numbers are sequential with the first fill set to 0 and all refills numbered 1-99."
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 7,
       "name": "FILL_SUPPLY_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the number of days this fill will supply. For example, this fill dispensed enough to cover a 30-day supply."
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 8,
       "name": "FILL_DISP_QTY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the actual amount the pharmacy is dispensing. This may be different from the intended quantity, which is what the prescriber intended the patient to receive. The two numbers may be different if the patient can only pay for a smaller days supply, or the pharmacy may only have a small amount of the medication left to dispense."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 9,
       "name": "FILL_INT_SUP_DAYS",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  If the fill is a partial fill, this is the number of days the supply that is dispensed will cover. For example, I have a partial fill of 15 tabs for a Daily medication. The intended days supply would be 15."
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 10,
       "name": "FILL_IS_PARTIAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -94,7 +87,7 @@
       ]
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 11,
       "name": "FILL_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -127,7 +120,7 @@
       ]
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 12,
       "name": "FILL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -141,7 +134,7 @@
       ]
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 13,
       "name": "FILL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -165,7 +158,7 @@
         "Received",
         "Waiting for Filling Pharmacies",
         "Ready to Dispense",
-        "Forced Dispense Approved",
+        "Dispense Documented",
         "Dispense Received from External System",
         "Dispensed",
         "Shipped",
@@ -213,6 +206,7 @@
         "IP Dispense Checked",
         "IP Dispense Prep Partial Check",
         "IP Dispense Prep Revise",
+        "IP Dispense Prep Requeued",
         "IP Dispense Rejected",
         "IP Dispense Check Removed",
         "IP Dispense Check Started",
@@ -237,6 +231,7 @@
         "Sale Price Override Approved",
         "Sale Pending",
         "Fee Sold in POS",
+        "Waiting on Third Party",
         "Tax Exemption Applied",
         "Tax Exemption Removed",
         "Tax Charge",
@@ -266,7 +261,7 @@
       ]
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 14,
       "name": "FILL_DISP_QTYUNT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1044,25 +1039,68 @@
         "1e14 Vector Genomes",
         "1e15 Vector Genomes",
         "Cells",
-        "None / Other"
+        "None / Other",
+        "zzz",
+        "Half-Tab",
+        "Gummy",
+        "mSvOLD",
+        "split tablet",
+        "ML OF ELEMENT",
+        "mL/hr of element",
+        "split tablet",
+        "LEPE HALF-TAB",
+        "LEPE QUARTER-TAB",
+        "mg of piperacillin",
+        "mg/day of piperacillin",
+        "mg/kg of piperacillin",
+        "mg/kg/day of piperacillin",
+        "BTH Capitalization Abbreviation",
+        "<b>one;two;three</b>",
+        "HTML <i>mg</i>",
+        "HTML <i>tablet</i>",
+        "mg of opioid",
+        "tmk ~!@P$%&*()-_+={}\\",
+        "NDK <i><b>mL/hr/kg</b></i>",
+        "mg of ampicillin",
+        "mg/day of ampicillin",
+        "mg/kg of ampicillin",
+        "mg/kg/day of ampicillin",
+        "mg of ticarcillin",
+        "mg/day of ticarcillin",
+        "mg/kg of ticarcillin",
+        "mg/kg/day of ticarcillin",
+        "mg of trimethoprim",
+        "mg/day of trimethoprim",
+        "mg/kg of trimethoprim",
+        "mg/kg/day of trimethoprim",
+        "mg of iron",
+        "mg/day of iron",
+        "mg/kg of iron",
+        "mg/kg/day of iron",
+        "RECON <B>MG</B>",
+        "RECON <SCRIPT>ALERT(\"TABLETS\");</SCRIPT>",
+        "hab mg <b onclick=\"for(var x=1;x<10;x++){alert('HA');}\">Click Me</b>",
+        "hab mg/kg/hr <b onclick=\"for(var x=1;x<10;x++){alert('HA');}\">Click Me</b>",
+        "hab <b>mg</b>/hr",
+        "HAB <b>mg</b>/kg"
       ]
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 15,
       "name": "FILL_INT_QTY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the amount the prescriber intended the patient to receive. In the case of a partial fill, the patient can only pay for a smaller supply or the pharmacy may only have a small amount of the medication left to dispense, and this actual dispense amount is saved in the dispense quantity."
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 16,
       "name": "FILL_INT_QTYUNT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "When a prescription is filled in an integrated pharmacy, a fill contact is created in the order and all fill information is saved to this fill contact. A prescription can have multiple fills.  This is the amount unit the prescriber intended the patient to receive. In the case of a partial fill, the patient can only pay for a smaller supply or the pharmacy may only have a small amount of the medication left to dispense, and this actual dispense amount is saved in the dispense quantity."
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 17,
       "name": "CHG_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1078,112 +1116,105 @@
       ]
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 18,
       "name": "CASH_PRICE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cash price for this order."
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 19,
       "name": "RX_TO_PHRM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the user that authorized the incoming prescription transfer (typically a pharmacist) when the user exists in the User (EMP) master file."
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 20,
       "name": "RX_TO_PHRM_USERNAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the user that authorized the incoming prescription transfer (typically a pharmacist) when the user does not exist in the User (EMP) master file."
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 21,
       "name": "RX_FRM_PHRM_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the user that authorized the outgoing prescription transfer (typically a pharmacist) when the user exists in the User (EMP) master file."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 22,
       "name": "RX_FRM_PHRM_USERNAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the user that authorized the outgoing prescription transfer (typically a pharmacist) when the user does not exist in the User (EMP) master file."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 23,
       "name": "RX_FRM_PHRM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the pharmacy from which the prescription was transferred when the pharmacy exists in the Pharmacy (PHR) master file."
     },
     {
-      "ordinalPosition": 25,
-      "name": "RX_FRM_PHRM_ID_PHARMACY_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the pharmacy."
-    },
-    {
-      "ordinalPosition": 26,
+      "ordinalPosition": 24,
       "name": "RX_FRM_PHRM_NAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the pharmacy from which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 25,
       "name": "RX_FRM_PHRM_PHNUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the phone number of the pharmacy from which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 26,
       "name": "RX_TO_PHRM_NAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the pharmacy to which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 27,
       "name": "RX_TO_PHRM_PHNUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the phone number of the pharmacy to which the prescription was transferred when the pharmacy does not exist in the Pharmacy (PHR) master file."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 28,
       "name": "RX_TRANSFER_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "These are the comments that are entered along with the prescription transfer."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 29,
       "name": "PAT_PAY_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This is the expected payment amount for this order. This can be calculated by the system and optionally overridden by the user. If the patient pay amount was overridden, then the override amount is stored here."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 30,
       "name": "FILL_PKG_DISPQTY",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The number of packages dispensed for this fill."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 31,
       "name": "FILL_NDC_CSN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the package (NDC) contact serial number (CSN) for the dispensed medication."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 32,
       "name": "DISP_WHOLE_PKG_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1194,14 +1225,14 @@
       ]
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 33,
       "name": "HAS_RX_FLAGS_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This indicates whether the fill request currently has any flags. Fill requests with flags appear in the flagged orders queue in Ambulatory Pharmacy."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 34,
       "name": "DAW_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
