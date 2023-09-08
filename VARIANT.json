@@ -43247,7 +43247,7 @@
       "name": "CLINICAL_SIGNIF_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category ID corresponding to the clinical significance of the variant.",
+      "description": "The category ID corresponding to the variant's classification. The name of this item was changed from clinical significance to variant classification. It appears as variant classification in end-user facing locations, but the column name remains CLINICAL_SIGNIF_C for backwards compatibility.",
       "entries": [
         "Pathogenic",
         "Likely pathogenic",
@@ -43274,6 +43274,67 @@
     },
     {
       "ordinalPosition": 43,
+      "name": "GENOTYPE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Genotype Name, used in combination with the column GENE (VAR 1210) to describe a Pharmacogenomic Variant."
+    },
+    {
+      "ordinalPosition": 44,
+      "name": "PGX_DRUG_METAB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores effect on drug metabolism for a pharmacogenomic variant.",
+      "entries": [
+        "Ultrarapid metabolizer",
+        "Rapid metabolizer",
+        "Normal metabolizer",
+        "Intermediate metabolizer",
+        "Poor metabolizer",
+        "Likely ultrarapid metabolizer",
+        "Likely rapid metabolizer",
+        "Likely normal metabolizer",
+        "Likely intermediate metabolizer",
+        "Likely poor metabolizer",
+        "Possible ultrarapid metabolizer",
+        "Possible rapid metabolizer",
+        "Possible normal metabolizer",
+        "Possible intermediate metabolizer",
+        "Possible poor metabolizer",
+        "Indeterminate"
+      ]
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "PGX_DRUG_EFFICACY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Predicted phenotype for ability of drug to bind to intended site in order to deliver intended effect.",
+      "entries": [
+        "Resistant",
+        "Responsive",
+        "Presumed resistant",
+        "Presumed responsive",
+        "Unknown significance",
+        "Benign",
+        "Presumed benign",
+        "Presumed non-responsive"
+      ]
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "PGX_HIGH_RISK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Predicted phenotype for risk of adverse drug reaction.",
+      "entries": [
+        "Low risk",
+        "High risk",
+        "Typical risk"
+      ]
+    },
+    {
+      "ordinalPosition": 47,
       "name": "VARIANT_FUNC_EFFECT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -43293,7 +43354,7 @@
       ]
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 48,
       "name": "VARIANT_MOLEC_CONSEQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -43346,7 +43407,7 @@
       ]
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 49,
       "name": "MOSAICISM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -43358,14 +43419,14 @@
       ]
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 50,
       "name": "FRACTIONAL_COPY_NUMBER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Genomic structural variant copy number with two decimal places of precision. To prepare for the future deprecation of this column, your content should use either the COPY_NUMBER_LOWER or the COPY_NUMBER_UPPER columns or both."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 51,
       "name": "IS_AMPLIFICATION_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -43376,74 +43437,106 @@
       ]
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 52,
       "name": "GENE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Gene where the variant is located."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 53,
       "name": "GENE_ID_RECORD_SYMBOL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The current symbol for this gene. In cases of disagreement, the current HGNC symbol will be used."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 54,
       "name": "IS_EXTERNAL_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the variant should be considered external, such as auto-reconciliation by Happy Together using data from an external organization."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 55,
+      "name": "PGX_DRUG_TXPORT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Predicted phenotype for drug efficacy through drug transport mechanism.",
+      "entries": [
+        "Increased Function",
+        "Normal Function",
+        "Decreased Function",
+        "Poor Function",
+        "Likely Increased Function",
+        "Likely Normal Function",
+        "Likely Decreased Function",
+        "Likely Poor Function",
+        "Possible Increased Function",
+        "Possible Normal Function",
+        "Possible Decreased Function",
+        "Possible Poor Function",
+        "Indeterminate"
+      ]
+    },
+    {
+      "ordinalPosition": 56,
       "name": "TOTAL_REPEAT_NUMBER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Total repeat number is the sum of all repeat numbers for one repeat expansion variant."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 57,
       "name": "PGX_ACT_SCORE_LOWER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The lower bound of the activity score on the pharmacogenomic variant. If the activity score is a value and not a range, this will have the same value as PGX_ACT_SCORE_UPPER. If the activity score is a range without a lower bound specified, this column will contain 0."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 58,
       "name": "PGX_ACT_SCORE_UPPER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The upper bound of the activity score on the pharmacogenomic variant. If the activity score is a value and not a range, this will have the same value as PGX_ACT_SCORE_LOWER. If the activity score is a range without an upper bound specified, this column will contain 99999."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 59,
       "name": "DISPLAY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name used when the variant is displayed"
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 60,
       "name": "ISCN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ISCN name assigned to the variant."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 61,
       "name": "COPY_NUMBER_LOWER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Lower bound for the copy number of a variant."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 62,
       "name": "COPY_NUMBER_UPPER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Upper bound for the copy number of a variant."
+    },
+    {
+      "ordinalPosition": 63,
+      "name": "VARIANT_FINDING_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the variant represents an incidental finding.",
+      "entries": [
+        "Incidental"
+      ]
     }
   ]
 }
