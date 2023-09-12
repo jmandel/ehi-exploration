@@ -1,0 +1,119 @@
+{
+  "name": "V_EHI_ICF_FILTER_PAT",
+  "description": "This view is used to filter the data from the Linked Patients section from the Reproductive Endocrinology and Infertility (REI) Cycles activity for EHI Export. There are no Primary Keys for this view because there is no way to identify each row uniquely; the PAT_ID column represents a patient requesting access, with rows for each patient on the cycle. This allows a patient requesting data to see all data for the cycle, but not identify the other participants.",
+  "primaryKey": [],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the patient (EPT) whose data is being requested.  This is the primary filter column for ICF masterfile."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CYCLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the fertility treatment cycle record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "IS_EXTRACT_PAT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When extracting a patient's cycles, rows marked with 'Y' represent their roles on the cycle. Else if marked 'N' then that row represents another patient attached to the cycle."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "INTENDED_PARENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains 'Y' if patient has the role of intended parent from PAT_ROLE_C (I ICF 86000) in INFERTILITY_CYCLES_LINK for this particular cycle. Otherwise, it stores 'N'.  If set to 'Y', then this patient can view the external donor details if there are any."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "EGG_PROV_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains 'Y' if patient has the role of egg provider from PAT_ROLE_C (I ICF 86000) in INFERTILITY_CYCLES_LINK for this particular cycle. Otherwise, it stores 'N'."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SPERM_PROV_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains 'Y' if patient has the role of sperm provider from PAT_ROLE_C (I ICF 86000) in INFERTILITY_CYCLES_LINK for this particular cycle. Otherwise, it stores 'N'."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PREGNANCY_CARRIER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains 'Y' if patient is pregnant (i.e., the pregnancy carrier). This is stored in column PAT_ROLE_C (I ICF 86000) in INFERTILITY_CYCLES_LINK for this particular cycle. Otherwise, it stores 'N'.  If set to 'Y', then this patient can view the pregnancy details if there are any."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PAT_ANON_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column contains 'Y' if the patient should be anonymous from other patients in this fertility treatment cycle (ex. egg donor), otherwise 'N'."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "DONOR_AGE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The age of the donor at the time of donation of the specimen (sperm or egg)."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "DONOR_DONATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of donation of the specimen (sperm or egg)."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "DONOR_BANK_C",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The name of the donation bank."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "DONOR_BANK_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A free text comment for the name of the donation bank."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "DONOR_GAMETE_TAG",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The gamete donor ID (may be assigned by the donation bank)."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "DONOR_RACE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A patient's race. Multiple races may be associated with this patient.  This is represented by a semicolon (;) delimited string.  The values in this column come from the TITLE column of the ZC_PATIENT_RACE table."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "PREGNANCY_EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the pregnancy episode (HSB) that resulted from this fertility treatment cycle."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "DONOR_REI_DIRECTED_DONOR_C",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This column indicates the type of relationship of the external donor to the patient."
+    }
+  ]
+}

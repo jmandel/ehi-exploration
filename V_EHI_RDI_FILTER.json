@@ -1,0 +1,34 @@
+{
+  "name": "V_EHI_RDI_FILTER",
+  "description": "EHI filter view for the RDI masterfile. This view only contains abstraction RDI records as other types do not contain EHI.",
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the registry data record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The main patient CSNs that are associated with the record."
+    }
+  ]
+}

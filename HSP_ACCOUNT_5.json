@@ -1,0 +1,35 @@
+{
+  "name": "HSP_ACCOUNT_5",
+  "description": "This table contains hospital account information from the Hospital Accounts Receivable (HAR) master file. It excludes Professional Billing HARs created by visit filing order in non-single billing office service areas. This fourth hospital account table has the same basic structure as HSP_ACCOUNT, HSP_ACCOUNT_2, HSP_ACCOUNT_3, and HSP_ACCOUNT_4.",
+  "primaryKey": [
+    {
+      "columnName": "HSP_ACCOUNT_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the hospital account record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "AR_CLASSIFICATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the A/R classification of this account.",
+      "entries": [
+        "Active AR",
+        "External Agency AR",
+        "Bad Debt",
+        "Outsourced",
+        "Received Self-Pay Active AR",
+        "Received Self-Pay External Agency AR",
+        "Received Self-Pay Bad Debt"
+      ]
+    }
+  ]
+}

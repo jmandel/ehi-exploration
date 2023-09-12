@@ -1,0 +1,42 @@
+{
+  "name": "V_EHI_ORD_FILTER",
+  "description": "This view returns all orders that are suitable for Electronic Health Information Export (EHIE). The columns returned by this view are used for subsquent filtering based on what is configured in the Release of Information request.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Order ID"
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this line. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient contact associated with this order. This number is unique across patients and encounters in your system. If you use IntraConnect this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "RQG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the RQG record attached to this order. If this is filled in, then PAT_ID and related columns in the ORDER_PROC table will not be filled in for this order. This column is frequently used to link to the RQG_DB_MAIN table.",
+      "linksTo": "RQG_DB_MAIN"
+    }
+  ]
+}
