@@ -1,0 +1,85 @@
+{
+  "name": "HH_OASIS_SNAPSHOT_STAT_HX",
+  "description": "This table stores the history of the status of a data set.",
+  "primaryKey": [
+    {
+      "columnName": "OASIS_SET_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "OASIS_SET_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the data set record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PREV_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the initial value of LHO 105 in a status change action.",
+      "entries": [
+        "New",
+        "Visit Complete",
+        "Marked for Submission",
+        "Submitted",
+        "Accepted",
+        "Rejected",
+        "Voided",
+        "In Progress",
+        "Ready for 3rd Party",
+        "Sent to 3rd Party"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "NEW_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the value of LHO 105 after a status change action."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "STAT_CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains a link to the EMP record of the user associated with the status change action.",
+      "linksTo": "EMP"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "STAT_CHANGE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC) ",
+      "discontinued": false,
+      "description": "This item houses the instant associated with the status change action."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "STAT_CHANGE_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the HNO of the comment added and relevant audit information."
+    }
+  ]
+}
