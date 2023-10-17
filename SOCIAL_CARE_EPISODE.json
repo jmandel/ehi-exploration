@@ -1,6 +1,6 @@
 {
   "name": "SOCIAL_CARE_EPISODE",
-  "description": "This table stores episode information for Compass Rose episodes.",
+  "description": "This table stores episode information for Coordinated Care Management episodes.",
   "primaryKey": [
     {
       "columnName": "EPISODE_ID",
@@ -71,27 +71,20 @@
     },
     {
       "ordinalPosition": 9,
-      "name": "RESPONSIBLE_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 10,
       "name": "INIT_REFERRAL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the referral that initiated the episode."
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 10,
       "name": "PROGRAM_EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the program episode for a service episode. If the episode is voided, it will contain a link to the parent record at the time the episode was voided."
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 11,
       "name": "TRACKING_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -142,57 +135,56 @@
         "Patient/client death or bereavement phase end",
         "Discharged to speciality palliative care provider",
         "Discharged to other health care provider",
-        "Other"
+        "Other",
+        "Under Review",
+        "Enrolled",
+        "Disenrolled",
+        "Declined",
+        "Episode Complete",
+        "Waiting for Client",
+        "Active",
+        "Paused",
+        "ESC's <b>B�ld</b> S�ci�l & C�re St�tus",
+        "Waiting for Assessment",
+        "Waiting for Decision",
+        "Ongoing",
+        "<b>P�used</b>",
+        "Declined",
+        "Enrolling",
+        "Inactivated",
+        "step <b>bold</b>",
+        "s lineCount = -55;",
+        "Not Specified",
+        "Identified"
       ]
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 12,
       "name": "EPISODE_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department responsible for managing the episode."
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 13,
       "name": "EPISODE_SUMMARY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "An overview of a Social Care episode."
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 14,
       "name": "CMGMT_ENROLL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date when the episode became active. Refer to CMGMT_CALC_ENROLL_DATE for more robust reporting."
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 15,
       "name": "CMGMT_ENROLL_CALC_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that the user documented as the enrollment date or the date the status was originally changed to Active if no enrollment date is documented. If the overall episode status is Enrolling, the value will be blank."
-    },
-    {
-      "ordinalPosition": 17,
-      "name": "SOURCE_EVENT_TRIGGER_C_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The source event category ID for an automatically created Compass Rose episode.",
-      "entries": [
-        "Hospital Admission",
-        "Undo Hospital Admission",
-        "External Hospital Admission",
-        "Hospital Discharge",
-        "Undo Hospital Discharge",
-        "External Hospital Discharge",
-        "Emergency Department Arrival",
-        "Undo Emergency Department Arrival",
-        "Emergency Department Dismissal",
-        "Undo Emergency Department Dismissal",
-        "External Emergency Department Visit",
-        "External Emergency Department Visit End"
-      ]
     }
   ]
 }

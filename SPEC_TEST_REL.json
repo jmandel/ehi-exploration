@@ -31,7 +31,11 @@
       "name": "SPEC_TEST_PRI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The test priority category number for the specimen."
+      "description": "The test priority category number for the specimen.",
+      "entries": [
+        "Routine",
+        "STAT"
+      ]
     },
     {
       "ordinalPosition": 4,
@@ -45,7 +49,28 @@
       "name": "SPEC_TST_CANC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason for cancelation category number for a canceled specimen."
+      "description": "The reason for cancelation category number for a canceled specimen.",
+      "entries": [
+        "Allergy",
+        "Changed order",
+        "Cost of procedure",
+        "Duplicate",
+        "Error",
+        "No show",
+        "Discharged",
+        "Patient declined",
+        "Pregnancy",
+        "Specimen contaminated",
+        "Unable to obtain specimen",
+        "Radiologist Protocol",
+        "Transfer",
+        "the Dr. said so!",
+        "Dun Goofed",
+        "Never received into lab",
+        "Never received into lab -- Backlog specimens",
+        "Interface ordered cancellation",
+        "Retract External Order"
+      ]
     },
     {
       "ordinalPosition": 6,
@@ -163,55 +188,48 @@
     },
     {
       "ordinalPosition": 19,
-      "name": "TEST_STATUS_PERSON_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 20,
       "name": "TEST_STATUS_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant associated with the validation status of the test. In the case of multiple tests on a specimen, this column will store the validation status of each test in the corresponding row.  There are two other columns in the SPEC_TEST_REL table that store the status and user ID associated with the instant that is stored in this column.  Those columns are TEST_VAL_STATUS_C and TEST_STATUS_PERSON."
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 20,
       "name": "TST_CANCEL_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The UTC date and time when the test was canceled or redrawn."
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 21,
       "name": "TEST_VER_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the verification instant of the test in the UTC format. The item is set/updated when the test is either prelim verified or final verified and is cleared when a result correction is done."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 22,
       "name": "ORDERED_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This stores the date the test was associated with the specimen in UTC."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 23,
       "name": "ORDER_INST_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the order associated with this test was placed or released. If this test is associated with the performable procedure of a panel, the instant is returned from the orderable procedure."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 24,
       "name": "ORDER_INST_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the order associated with this test was placed or released in UTC. If this test is associated with the performable procedure of a panel, the instant is returned from the orderable procedure."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "MISSING_REQ_DATA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -223,7 +241,7 @@
       ]
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "REPORTABLE_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -234,7 +252,7 @@
       ]
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 27,
       "name": "LEVEL_INTERACTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -247,157 +265,189 @@
       ]
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 28,
       "name": "AUTO_VERIFIED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if this test was ever auto-verified."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 29,
       "name": "DELTA_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if this test includes a component flagged as a delta."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 30,
       "name": "INSTRUMENT_ERROR_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates if this test includes any component or isolate that is flagged with an instrument error."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 31,
       "name": "TEST_RESULT_TYPE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the result type that is assigned to this test."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 32,
       "name": "TEST_RESULT_TYPE_ID_RESULT_TYPE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the Result Type record - item OVG .2."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 33,
       "name": "CHARGE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the charge associated with the test."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 34,
       "name": "TST_STAT_ABNORMS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The category number for the overall test abnormality. This is usually the same as the internal ID. If you use IntraConnect, this is the Community ID (CID).",
       "entries": [
-        "Normal"
+        "Normal",
+        "Abnormal",
+        "Critical",
+        "Watch",
+        "Low",
+        "High",
+        "Low Critical",
+        "High Critical",
+        "Critical Low"
       ]
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 35,
       "name": "GEN_WORKCARD_RESULT_TYPE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the workcard result type which is associated with the test."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 36,
       "name": "GEN_WORKCARD_RESULT_TYPE_ID_RESULT_TYPE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the name of the Result Type record - item OVG .2."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 37,
       "name": "LNK_SPEC_TST_TOGETHER_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "May only be populated in legacy records. Indicates whether linked specimens are tested together with this test. 'Y' indicates that a linked specimen should be tested with this test. 'N' or NULL indicate that linked specimens are not tested with this test."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 38,
       "name": "CHRG_METHOD_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID associated with the previous charge method used for this test."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 39,
       "name": "CHRG_METHOD_ID_CHRG_METHOD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the charge trigger method."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 40,
       "name": "CHG_UPD_FLAG",
       "type": "INTEGER",
       "discontinued": false,
       "description": "May only be populated for legacy records. A value in this column means the charges associated with the test require updating."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 41,
       "name": "EXTRA_RESULT_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of extra results remaining."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 42,
       "name": "RESULT_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of results needing to be performed for this test."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 43,
       "name": "BATCH_QUEUE_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The position of this test in the batch queue."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 44,
       "name": "VALIDATED_RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the finalized result for the test."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 45,
       "name": "REPEAT_CNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of repeats required for this test."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 46,
       "name": "DEL_FROM_BATCH_QUEUE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "May only be populated for legacy records. When a value is present in this column, this test was removed from the Batch Queue."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 47,
       "name": "ORDER_PRIORITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": true,
-      "description": "The order priority categroy ID for the test."
+      "description": "The order priority categroy ID for the test.",
+      "entries": [
+        "STAT",
+        "After office visit",
+        "After X-Ray",
+        "Today",
+        "Routine",
+        "Timed",
+        "Low",
+        "Early AM",
+        "Add-On",
+        "Extended TAT",
+        "STAT Add-on",
+        "1-Critical (Critical Test, Trauma, Stroke Alert, Code)",
+        "2-ED Urgent (ED Non-Trauma, Inpatient Trauma Spine Clearance)",
+        "3-IP Urgent (Acutely Ill patient, ICU, Discharge Pending Today)",
+        "4-OP Urgent (Clinic Appt <2 Hours Away, MD Awaiting Call, Tech Concerned)",
+        "5-Clinic Visit Today (Clinic Appt >2 Hours Away)",
+        "6-IP Routine (Patient Not Acutely Ill, No Pending Discharge Today)",
+        "7-Clinic Visit Tomorrow (Outpatient Appointment Tomorrow)",
+        "8-OP Routine",
+        "PQA WL PRIORITY (MAPPED)",
+        "PQA WL PRIORITY (UNMAPPED)",
+        "D<MARQUEE>OYL</MARQUEE>E, D<MARQUEE>ANIE</MARQUEE>L"
+      ]
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 48,
       "name": "SHIPPING_NUMBER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Represents a unique ID associated with transferring this test to another lab."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 49,
       "name": "PREV_RSLT_DISP_FLAG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -409,28 +459,28 @@
       ]
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 50,
       "name": "RR_EXCEPT_LIST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "May only be populated for legacy records. Contains flags for not reporting or sending result reports for this test to specific recipients."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 51,
       "name": "CANCEL_RESULT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of a canceled result, if one exists, for each test on the specimen."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 52,
       "name": "REFLEX_TRIGGERED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether reflex testing has executed on the result for each test on the specimen. 'Y' indicates that reflex testing has executed. 'N' or NULL indicate that reflex testing has not executed."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 53,
       "name": "SOURCE_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,

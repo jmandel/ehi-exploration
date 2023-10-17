@@ -153,13 +153,6 @@
     },
     {
       "ordinalPosition": 6,
-      "name": "USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 7,
       "name": "AUDIT_ORDER_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -195,35 +188,21 @@
       ]
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 7,
       "name": "AUD_TECH_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user that was the technologist user related to the audit action. The source item is located at ORDER_PROC.TECHNOLOGIST_ID."
     },
     {
-      "ordinalPosition": 9,
-      "name": "AUD_TECH_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 10,
+      "ordinalPosition": 8,
       "name": "AUD_TRANS_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the user that is the transcriptionist related to the audit action. The source item is located at ORDER_PROC.RIS_TRANS_ID."
     },
     {
-      "ordinalPosition": 11,
-      "name": "AUD_TRANS_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 12,
+      "ordinalPosition": 9,
       "name": "AUD_CHG_STAT_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -234,77 +213,101 @@
       ]
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 10,
       "name": "AUD_EXAM_BG_DTTM",
       "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This column contains the audited information about the begin exam date and time. The source item is located at ORDER_PROC.PROC_BGN_TIME."
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 11,
       "name": "AUD_EXAM_END_DTTM",
       "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This column contains the audited information about the end exam date and time. The source item is located at ORDER_PROC.PROC_END_TIME."
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 12,
       "name": "AUD_PROC_BEG_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the audited information about the begin date and time for the procedure. The source item is located at ORDER_PROC_2.MOD_BEGIN_TM."
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 13,
       "name": "AUD_PROC_END_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the audited information about the end date and time for the procedure. The source item is located at ORDER_PROC_2.MOD_END_TM."
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 14,
       "name": "AUD_OVRD_BGNEND_HS_DTTM",
       "type": "DATETIME (Attached) ",
       "discontinued": false,
       "description": "This column contains the audit information for the last time a user overrode a hard stop at begin/end. The source item is located at ORDER_PROC_2.OVERRIDE_TM."
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 15,
       "name": "AUD_CHG_STAT_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains comments about the change status reason. The source item is located at ORDER_PROC_2.CHANGE_CMT."
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 16,
       "name": "AUD_RSLT_PRTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The priority category ID of the result priority of the audited order. The source item is located at ORDER_PROC_2.ORDER_PRIORITY_C."
+      "description": "The priority category ID of the result priority of the audited order. The source item is located at ORDER_PROC_2.ORDER_PRIORITY_C.",
+      "entries": [
+        "STAT",
+        "After office visit",
+        "After X-Ray",
+        "Today",
+        "Routine",
+        "Timed",
+        "Low",
+        "Early AM",
+        "Add-On",
+        "Extended TAT",
+        "STAT Add-on",
+        "1-Critical (Critical Test, Trauma, Stroke Alert, Code)",
+        "2-ED Urgent (ED Non-Trauma, Inpatient Trauma Spine Clearance)",
+        "3-IP Urgent (Acutely Ill patient, ICU, Discharge Pending Today)",
+        "4-OP Urgent (Clinic Appt <2 Hours Away, MD Awaiting Call, Tech Concerned)",
+        "5-Clinic Visit Today (Clinic Appt >2 Hours Away)",
+        "6-IP Routine (Patient Not Acutely Ill, No Pending Discharge Today)",
+        "7-Clinic Visit Tomorrow (Outpatient Appointment Tomorrow)",
+        "8-OP Routine",
+        "PQA WL PRIORITY (MAPPED)",
+        "PQA WL PRIORITY (UNMAPPED)",
+        "D<MARQUEE>OYL</MARQUEE>E, D<MARQUEE>ANIE</MARQUEE>L"
+      ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 17,
       "name": "AUD_RELEASED_ORD",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the audited information about the future/standing order released child instant. The source item is located at ORDER_PROC.INSTANTIATED_TIME."
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 18,
       "name": "AUD_NUM_SIG_REQ",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This column contains the audited information about the number of signatures required for the study. The source item is located at ORDER_PROC_3.NUM_SIG_REQ."
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 19,
       "name": "AUD_GROUPER_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the order that represents the MOPS (Multiple Orders Per Study) Order ID. The source item is located at ORDER_PROC_2.GRP_ORDER_PROC_ID."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 20,
       "name": "AUD_OVERALL_BRST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -318,21 +321,21 @@
       ]
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 21,
       "name": "AUD_RIGHT_BRST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The right breast density category ID for the audited order. The source item is located at ORDER_STATUS.RIGHT_BREAST_DENS_C."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 22,
       "name": "AUD_LEFT_BRST_DENS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The left breast density category ID for the audited order. The source item is located at ORDER_STATUS.LEFT_BREAST_DENS_C."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 23,
       "name": "AUD_OVERALL_ASMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -347,46 +350,47 @@
         "Known Biopsy-Proven Malignancy",
         "Low Suspicion for Malignancy",
         "Moderate Suspicion for Malignancy",
-        "High Suspicion for Malignancy"
+        "High Suspicion for Malignancy",
+        "Waiting for Pathology"
       ]
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 24,
       "name": "AUD_RIGHT_ASMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The right assessment category ID for the audited order. The source item is located at ORDER_RAD_ASMT.RIGHT_ASMT_C."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 25,
       "name": "AUD_LEFT_ASMT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The left assessment category ID for the audited order. The source item is located at ORDER_RAD_ASMT.LEFT_ASMT_C."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 26,
       "name": "AUD_READING_PRI_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The priority category ID of the imaging reading priority for the audited order. The source item is located at ORDER_PROC_2.READING_PRIORITY_C."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 27,
       "name": "AUD_MAM_LTR_TMPLT_SMARTTEXT_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the audited information about the result letter template. The source item is located at ORDER_STATUS.RIS_LET_TEMPLT_ID."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 28,
       "name": "AUD_MAM_LTR_TMPLT_SMARTTEXT_ID_SMARTTEXT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 29,
       "name": "AUD_OVRL_TC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -398,21 +402,21 @@
       ]
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 30,
       "name": "AUD_RIGHT_TC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The right tissue composition category ID for the audited order. The source item is located at ORDER_STATUS.RIGHT_TISSUE_COMP_C."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 31,
       "name": "AUD_LEFT_TC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The left tissue composition category ID for the audited order.The source item is located at ORDER_STATUS.LEFT_TISSUE_COMP_C."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 32,
       "name": "AUD_OVRL_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -425,21 +429,21 @@
       ]
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 33,
       "name": "AUD_RIGHT_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The right amount of fibroglandular tissue category ID for the audited order. The source item is located at ORDER_STATUS.RIGHT_FGT_C."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 34,
       "name": "AUD_LEFT_FGT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The left amount of fibroglandular tissue category ID for the audited order. The source item is located at ORDER_STATUS.LEFT_FGT_C."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 35,
       "name": "AUD_OVRL_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -452,21 +456,21 @@
       ]
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 36,
       "name": "AUD_RIGHT_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The right background parenchymal enhancement category ID for the audited order. The source item is located at ORDER_STATUS.RIGHT_BPE_C."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 37,
       "name": "AUD_LEFT_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The left background parenchymal enhancement category ID for the audited order. The source item is located at ORDER_STATUS.LEFT_BPE_C."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 38,
       "name": "AUD_SYMMETRIC_BPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -477,14 +481,14 @@
       ]
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 39,
       "name": "AUD_IL_PRI_ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the order that is the image linked primary order. The source item is located at ORDER_PROC_4.IMG_PRIMARY_ORD_ID."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 40,
       "name": "AUD_HORMONES_NO_HISTORY",
       "type": "VARCHAR",
       "discontinued": false,

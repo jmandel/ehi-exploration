@@ -48,21 +48,88 @@
       "name": "ROUTE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value associated with the route of the immunization, such as oral, intramuscular, or intradermal."
+      "description": "The category value associated with the route of the immunization, such as oral, intramuscular, or intradermal.",
+      "entries": [
+        "Intramuscular",
+        "Intradermal",
+        "Sublingual",
+        "Subcutaneous",
+        "Intravenous",
+        "Intranasal",
+        "*",
+        "Percutaneous",
+        "Transdermal"
+      ]
     },
     {
       "ordinalPosition": 7,
       "name": "SITE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value associated with the location of the injection, if appropriate. For example, left gluteus or right deltoid."
+      "description": "The category value associated with the location of the injection, if appropriate. For example, left gluteus or right deltoid.",
+      "entries": [
+        "Right vastus lateralis",
+        "Left lower quad. abdomen",
+        "Right lower quad. abdomen",
+        "Right deltoid",
+        "Left deltoid",
+        "Right upper quad. gluteus",
+        "Left upper quad. gluteus",
+        "Right quadriceps",
+        "Left quadriceps",
+        "Left upper quad. abdomen",
+        "Right upper quad. abdomen",
+        "Left arm",
+        "Right arm",
+        "<MARQUEE>ImmRx Site",
+        "PLJ TEST"
+      ]
     },
     {
       "ordinalPosition": 8,
       "name": "MFG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The category value associated with the manufacturer of this vaccine."
+      "description": "The category value associated with the manufacturer of this vaccine.",
+      "entries": [
+        "Adams",
+        "ALK Labs",
+        "Alpha Therapeutic Corp",
+        "American Cyanamid Co.",
+        "American Red Cross",
+        "Armour Pharmaceutical Co.",
+        "Berlex",
+        "Berna",
+        "Biocine/Sclavo",
+        "Connaught",
+        "Cutter",
+        "Delmont Laboratories",
+        "Genetech",
+        "Glaxo Wellcome Co",
+        "Hollister-Stier",
+        "Hyland",
+        "Iatric",
+        "Immuno-U.S. Inc",
+        "Lederle/Praxis",
+        "MA Public Health Biologic Labs",
+        "Merck, Sharp, Dohme",
+        "Merieux",
+        "MI Dept of Public Health",
+        "Miles Inc Cutter Biological",
+        "Organon Inc",
+        "Ortho Diagnostic Systems",
+        "Parke-Davis",
+        "Roche Laboratories",
+        "Sandoz",
+        "Schering Corp",
+        "SmithKline Beecham Pharm",
+        "Univax",
+        "Upjohn",
+        "Wyeth-Ayerst Laboratories",
+        "Aventis",
+        "PLJ TEST",
+        "<B>HTML Manufacturer</B>"
+      ]
     },
     {
       "ordinalPosition": 9,
@@ -87,41 +154,27 @@
     },
     {
       "ordinalPosition": 12,
-      "name": "GIVEN_BY_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 13,
       "name": "ENTRY_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the system user who ordered the immunization. This ID may be encrypted.  NOTE: If an immunization record is edited/updated, this will show the most recent change user ID."
     },
     {
-      "ordinalPosition": 14,
-      "name": "ENTRY_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 15,
+      "ordinalPosition": 13,
       "name": "ENTRY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the immunization was recorded in the patient�s chart in calendar format. NOTE: If an immunization record is edited/updated, this will show the most recent change date."
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 14,
       "name": "EXPIRATION_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date upon which this immunization expires"
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 15,
       "name": "EXTERNAL_ADMIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -130,92 +183,97 @@
         "Patient reported",
         "Confirmed",
         "MyChart Entered",
-        "Auto Reconciled From Outside Source"
+        "Auto Reconciled From Outside Source",
+        "A caring organization"
       ]
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 16,
       "name": "VIS_DATE_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The date on the vaccine information statement. Note that this is a free text field in the application, so data will not be in standard datetime format."
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 17,
       "name": "DEFER_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Category value indicating the reason for deferring the immunization, e.g. patient refused, contraindication, etc.",
       "entries": [
         "Patient Refused",
-        "Contraindication"
+        "Contraindication",
+        "Contaminated Dose",
+        "Other",
+        "ImmRx <b>Reason</b>",
+        "CM Vaccine out of Stock"
       ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 18,
       "name": "MED_ADMIN_COMMENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Free text comment regarding the administration of this immunization"
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 19,
       "name": "PHYSICAL_SITE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Item that stores the physical location where the immunization was administered like some specific hospital"
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 20,
       "name": "IMM_PRODUCT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Item which stores the product of the immunization. Products are usually related to the lot number."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 21,
       "name": "IMMUNIZATION_TIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Column that stores the time when a given immunization was administered."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 22,
       "name": "NDC_NUM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the NDC number ID associated with the administration"
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 23,
       "name": "NDC_NUM_ID_NDC_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external code for the National Drug Code (NDC). An NDC represents packages of medications."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 24,
       "name": "DOCUMENT_DCS_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Document ID for the immunization. This is the information stored when the e-sign information is selected."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 25,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Order ID for immunization ordered."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 26,
       "name": "IMM_ANSWER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores answers for immunization questions."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 27,
       "name": "IMMNZTN_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -231,49 +289,49 @@
       ]
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 28,
       "name": "IMM_MAR_ADMIN_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The line number in the linked order record's immunization link item (I ORD 11270) which references this immunization record ID."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 29,
       "name": "IMM_CHARGE_REC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the UCL (Universal Charge Line) record ID for the immunization charge."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 30,
       "name": "IMM_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the CSN (contact serial number) for the immunization."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 31,
       "name": "EXTERNAL_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the immunization's external ID, which is populated by the interface.  The external ID is the external system's identifier for the immunization."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 32,
       "name": "EXTERNAL_SYSTEM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column contains the name or ID of the third party system that the immunization data came from.  This item is only populated by custom import specifications."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 33,
       "name": "INSTANT_OF_ENT_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This column contains the last instant of update of the immunization problem list (LPL) record."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 34,
       "name": "IMM_HISTORIC_ADM_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -284,35 +342,28 @@
       ]
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 35,
       "name": "IMMNZTN_DUALSIGN_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user who performed the second user verification on the immunization."
     },
     {
-      "ordinalPosition": 38,
-      "name": "IMMNZTN_DUALSIGN_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 39,
+      "ordinalPosition": 36,
       "name": "IMM_DUALSIGNINSTANT_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant at which this immunization was verified by the second user."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 37,
       "name": "IMMNZTN_DOSE_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Immunization dose amount."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 38,
       "name": "IMMNZTN_DOSE_UNIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1096,46 +1147,110 @@
         "EIN",
         "Million EIN",
         "EIN/kg/day",
-        "None / Other"
+        "None / Other",
+        "zzz",
+        "Half-Tab",
+        "Gummy",
+        "mSvOLD",
+        "split tablet",
+        "ML OF ELEMENT",
+        "mL/hr of element",
+        "split tablet",
+        "LEPE HALF-TAB",
+        "LEPE QUARTER-TAB",
+        "mg of piperacillin",
+        "mg/day of piperacillin",
+        "mg/kg of piperacillin",
+        "mg/kg/day of piperacillin",
+        "BTH Capitalization Abbreviation",
+        "<b>one;two;three</b>",
+        "HTML <i>mg</i>",
+        "HTML <i>tablet</i>",
+        "mg of opioid",
+        "tmk ~!@P$%&*()-_+={}\\",
+        "NDK <i><b>mL/hr/kg</b></i>",
+        "mg of ampicillin",
+        "mg/day of ampicillin",
+        "mg/kg of ampicillin",
+        "mg/kg/day of ampicillin",
+        "mg of ticarcillin",
+        "mg/day of ticarcillin",
+        "mg/kg of ticarcillin",
+        "mg/kg/day of ticarcillin",
+        "mg of trimethoprim",
+        "mg/day of trimethoprim",
+        "mg/kg of trimethoprim",
+        "mg/kg/day of trimethoprim",
+        "mg of iron",
+        "mg/day of iron",
+        "mg/kg of iron",
+        "mg/kg/day of iron",
+        "RECON <B>MG</B>",
+        "RECON <SCRIPT>ALERT(\"TABLETS\");</SCRIPT>",
+        "hab mg <b onclick=\"for(var x=1;x<10;x++){alert('HA');}\">Click Me</b>",
+        "hab mg/kg/hr <b onclick=\"for(var x=1;x<10;x++){alert('HA');}\">Click Me</b>",
+        "hab <b>mg</b>/hr",
+        "HAB <b>mg</b>/kg"
       ]
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 39,
       "name": "IMM_DEL_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Category value indicating the reason for deleting or canceling the immunization."
+      "description": "Category value indicating the reason for deleting or canceling the immunization.",
+      "entries": [
+        "Allergy",
+        "Changed order",
+        "Cost of procedure",
+        "Duplicate",
+        "Error",
+        "No show",
+        "Discharged",
+        "Patient declined",
+        "Pregnancy",
+        "Specimen contaminated",
+        "Unable to obtain specimen",
+        "Radiologist Protocol",
+        "Transfer",
+        "the Dr. said so!",
+        "Dun Goofed",
+        "Never received into lab",
+        "Never received into lab -- Backlog specimens",
+        "Interface ordered cancellation",
+        "Retract External Order"
+      ]
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 40,
       "name": "IMM_SCANNED_BARCODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The raw data captured during immunization barcode scanning."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 41,
       "name": "ENTRY_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Contains the date and time that the immunization administration data was last updated. If the exact time is not known, a date may be contained in ENTRY_DATE instead."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 42,
       "name": "IMM_PRODUCT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The brand name associated with the vaccination administration, stored as a category value from a defined set of products."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 43,
       "name": "IMM_DEFER_DUR_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Each category value represents a different time scale of deferral for a vaccine administration deferral (e.g. \"brief\", \"permanent\", etc...). This item does NOT store the specific length of time the vaccine was deferred."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 44,
       "name": "IMM_REG_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1153,21 +1268,21 @@
       ]
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 45,
       "name": "IMM_LST_REGINST_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Last instant in which the overall registry status from an Immunization Registry was updated for a vaccine administration problem list  (LPL)record."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 46,
       "name": "IMM_MAR_ADM_INPATIENT_DATA_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Link to the INP record that may hold the administrations data."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 47,
       "name": "IMM_LOT_NUM_ID",
       "type": "NUMERIC",
       "discontinued": false,

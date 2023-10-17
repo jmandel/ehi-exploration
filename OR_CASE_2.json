@@ -83,7 +83,10 @@
       "name": "OB_CSECT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The c-section type category ID for the surgical case."
+      "description": "The c-section type category ID for the surgical case.",
+      "entries": [
+        "Unscheduled - Not Urgent"
+      ]
     },
     {
       "ordinalPosition": 12,
@@ -232,7 +235,18 @@
       "name": "REVISD_CASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The revised case classification category ID for the surgical case."
+      "description": "The revised case classification category ID for the surgical case.",
+      "entries": [
+        "Minor",
+        "Elective",
+        "Emergent",
+        "Trauma",
+        "Urgent",
+        "Request to room < 30 min",
+        "Request to room 30-60 min",
+        "Request to room 60-120 min",
+        "Request to room 120+"
+      ]
     },
     {
       "ordinalPosition": 31,
@@ -246,7 +260,18 @@
       "name": "ADMIT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The admit type category ID for the surgical case."
+      "description": "The admit type category ID for the surgical case.",
+      "entries": [
+        "Outpatient",
+        "Emergency",
+        "Preoperative",
+        "Routine",
+        "Labor & Delivery",
+        "Accident",
+        "Urgent",
+        "Post-Op",
+        "<marquee>I Hear That Alot</marquee>"
+      ]
     },
     {
       "ordinalPosition": 33,
@@ -289,279 +314,293 @@
     },
     {
       "ordinalPosition": 38,
-      "name": "TARGET_IGNORE_SET_BY_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 39,
       "name": "LAST_MIN_CANC_ORIGINAL_SURG_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the original surgery date associated with the last minute canceled case. Original surgery date is the scheduled surgery date when the case is canceled at the last minute for the first time."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 39,
       "name": "IN_OR_TO_PROC_LEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Records the estimated time to prep the patient from the time wheeled into the room until the procedure starts."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 40,
       "name": "CLOSE_TO_OUT_OR_LEN",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Records the estimated time between the procedure ending and the patient being wheeled out of the room."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 41,
       "name": "POSTOP_BED1_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The first post-op bed category ID for the surgical case."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 42,
       "name": "POSTOP_BED1_DAYS_NEEDED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The length in days the first post-op bed will be needed."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 43,
       "name": "POSTOP_BED1_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the record used for availability checking of the first post-op bed requested at the time of scheduling."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 44,
       "name": "POSTOP_BED2_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The second post-op bed category ID for the surgical case."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 45,
       "name": "POSTOP_BED2_DAYS_NEEDED",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The length in days the second post-op bed will be needed."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 46,
       "name": "POSTOP_BED2_PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the record used for availability checking of the second post-op bed requested at the time of scheduling."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 47,
       "name": "CUSTOM_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The custom status category ID for the surgical case."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 48,
       "name": "FOLLOWUP_APPT_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item stores the time and date of a patient's post surgical follow-up appointment."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 49,
       "name": "WTIS_DX_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The WTIS diagnosis category ID for the surgical case."
+      "description": "The WTIS diagnosis category ID for the surgical case.",
+      "entries": [
+        "BLAH <b>blah</b> <u>blah</u>",
+        "SPECIALcodez",
+        "Four44444!!!!!!"
+      ]
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 50,
       "name": "WTIS_INTENT_SURGERY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The WTIS intent of surgery category ID for the surgical case."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 51,
       "name": "WTIS_PEDIATRIC_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item determines whether or not a case is considered pediatric for WTIS purposes. This item is only respected if the patient's age is between 18 and 23 as of the Decision to Treat Date (I ORC 8001). If a patient is under 18 the case will always be considered pediatric. If the patient is over 23 the case will never be considered pediatric."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 52,
       "name": "WTIS_SERVICE_AREA_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The WTIS service area category ID for the surgical case."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 53,
       "name": "WTIS_SERVICE_DETAIL_1_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The WTIS service detail 1 category ID for the surgical case."
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 54,
       "name": "WTIS_SERVICE_DETAIL_2_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The WTIS service detail 2 category ID for the surgical case."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 55,
       "name": "WTIS_PROC_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the full WTIS procedure code for a case."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 56,
       "name": "WTIS_WAIT_LIST_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the wait list ID of the WTIS wait list for the case. This item is automatically generated by the system based on the case ID. The wait list ID is in the format <case ID> or <case ID>.<unique number>."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 57,
       "name": "WTIS_WAIT_LIST_CREATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores whether the WTIS create wait list message was already sent for the case. This is used by interfaces to suppress sending other update messages for the case, if the create message has not been sent yet."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 58,
       "name": "PREOP_REQUESTED_VISIT_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "This column stores the date/time for the requested pre-op visit."
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 59,
       "name": "GRAVIDITY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of times the patient has been pregnant."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 60,
       "name": "PARITY",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of pregnancies the patient has carried to viable gestational age."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 61,
       "name": "DESIRED_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The desired date and time to schedule the patient's planned C-section."
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 62,
       "name": "EST_DUE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The expected date of delivery/estimated date of confinement."
     },
     {
-      "ordinalPosition": 64,
+      "ordinalPosition": 63,
       "name": "DESIRED_DATE_GEST_AGE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The gestational age, in weeks, of the baby at the time of the desired date of the patient's planned C-section."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 64,
       "name": "WTIS_CODE_PROC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Wait Time Information System (WTIS) procedure code category ID for the surgical case."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 65,
       "name": "SERVICE_TARGET_EFFORT_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flag to indicate that additional effort was needed on behalf of staff to work this encounter in order to meet service targets."
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 66,
       "name": "P_CATS_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Pediatric Canadian Access Targets for Surgery (P-CATS) diagnosis code category ID for the surgical case."
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 67,
       "name": "EXPECTED_ADMISSION_TIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "This item stores the time the patient is expected to be admitted for surgery, as documented in the surgical case in I ORC 7617 - EXPECTED ADMISSION TIME. Column PAT_ENC_HSP__EXP_ADMISSION_TIME should be used to report on the expected admission date and time for the admission linked to the surgery (I EPT 10301 - EXPECTED ADMISSION DATE and I EPT 10300 - EXPECTED ADMISSION TIME).  If a time is set in I ORC 7617, the expected admission time in the linked admission is set to that time. If I ORC 7617 is not set, the expected admission time in the linked admission is calculated as the scheduled surgery time (OR_CASE__TIME_SCHEDULED) minus the number of hours in OR_CASE_2__EXPECTED_ADMISSION_TIME_OFFSET. If multiple cases are linked to the same admission, the earliest time from the list of linked cases will be set as the expected admission time on the linked admission."
     },
     {
-      "ordinalPosition": 69,
+      "ordinalPosition": 68,
       "name": "OPERATION_INTENTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The operation intention category ID for the surgical case."
     },
     {
-      "ordinalPosition": 70,
+      "ordinalPosition": 69,
       "name": "TRIAGE_SCORE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores a triage score for the case. This information would be obtained from a third-party."
     },
     {
-      "ordinalPosition": 71,
+      "ordinalPosition": 70,
       "name": "REGISTRY_SCORE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores a registry score for the case. This information would be obtained from a third-party."
     },
     {
-      "ordinalPosition": 72,
+      "ordinalPosition": 71,
       "name": "ACATS_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Adult Coding Access Targets for Surgery (ACATS) code diagnosis category ID for the surgical case."
     },
     {
-      "ordinalPosition": 73,
+      "ordinalPosition": 72,
       "name": "EXTERNAL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external systems case status category ID for the surgical case."
     },
     {
-      "ordinalPosition": 74,
+      "ordinalPosition": 73,
       "name": "PREP_TIME_MOD_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Has patient prep time been modified by user"
     },
     {
-      "ordinalPosition": 75,
+      "ordinalPosition": 74,
       "name": "POSTOP_LEVEL_OF_CARE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The planned post-op level of care category ID for the surgical case."
+      "description": "The planned post-op level of care category ID for the surgical case.",
+      "entries": [
+        "Subacute",
+        "Waitlisted ICF",
+        "Waitlisted SNF",
+        "Skilled",
+        "Non-skilled",
+        "ICU",
+        "SNF",
+        "<i>Care Bear Stare</i>",
+        "Absolute Lowest Level of Caring",
+        "ADTQA Deleted LOC",
+        "RPA Level of Care",
+        "'I care. A lot.'",
+        "\"Lightly Fried Fish Fillets",
+        "<marquee>Tried to type with monster claws from Godzilla costume on</marquee>"
+      ]
     },
     {
-      "ordinalPosition": 76,
+      "ordinalPosition": 75,
       "name": "CASE_ACCESS_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Date and time of the last time case entry was opened."
     },
     {
-      "ordinalPosition": 77,
+      "ordinalPosition": 76,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -570,17 +609,6 @@
         "Soft Deleted",
         "Hidden",
         "Hidden and Soft Deleted"
-      ]
-    },
-    {
-      "ordinalPosition": 78,
-      "name": "CASE_VERIFIED_C_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "Whether the case has been verified.",
-      "entries": [
-        "No",
-        "Yes"
       ]
     }
   ]

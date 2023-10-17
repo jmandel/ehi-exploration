@@ -1,6 +1,6 @@
 {
   "name": "DP_FACILITY",
-  "description": "This table contains information regarding Continued Care and Services Coordination, where each row represents a service considered for the patient's care. All services populated in a Continued Care and Services Coordination navigator section will be included in the table. The services can be provider (SER), facility (EAF), or department (DEP) records.",
+  "description": "This table contains information regarding Continued Care and Services Coordination, where each row represents a service considered for the patient's care. All services populated in a Continued Care and Services Coordination navigator section will be included in the table. The services can be user (SER), facility (EAF), or department (DEP) records.",
   "primaryKey": [
     {
       "columnName": "PAT_ENC_CSN_ID",
@@ -123,7 +123,12 @@
         "Durable Medical Equipment",
         "Dialysis/Infusion",
         "Home Medical Care",
-        "Community Resources"
+        "Community Resources",
+        "ESC Outsourced Services",
+        "JMB Single Select",
+        "JMB Multi Select",
+        "SJH <b>bold cust</b> Nav",
+        "ctk custom coordination type"
       ]
     },
     {
@@ -149,13 +154,6 @@
     },
     {
       "ordinalPosition": 18,
-      "name": "ARCHIVE_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 19,
       "name": "ENC_LOC_HAS_FIN_INTEREST_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -166,88 +164,60 @@
       ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 19,
       "name": "DECISION_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the latest instant when the service provider decided whether they would accept the patient. This value will be cleared if the status is changed to pending."
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 20,
       "name": "SELECTION_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the latest instant when the service provider was selected. This value will be cleared if the service provider is unselected."
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 21,
       "name": "ACCEPTED_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant when the patient's request for this service was accepted."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 22,
       "name": "ARCHIVE_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant when the patient's request for this service was archived."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 23,
       "name": "DECLINED_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores by instant when the patient's request for this service was declined."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 24,
       "name": "SELECTION_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "Stores the instant when a service was selected from the patient's request for the service."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "ENC_SPECIFIC_FAX_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the value of the case manager inputted encounter-specific fax number, and this fax number is used to contact the targeted provider during this patient encounter."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "RECOMMENDATION_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The community resource recommendation record associated with this request."
-    },
-    {
-      "ordinalPosition": 28,
-      "name": "ACCEPTED_SELECTED_BUS_DAYS",
-      "type": "INTEGER",
-      "discontinued": false,
-      "description": "The number of business days between the accepted and selected dates. Business days exclude weekends and holidays."
-    },
-    {
-      "ordinalPosition": 29,
-      "name": "SELECTED_ENDED_BUS_DAYS",
-      "type": "INTEGER",
-      "discontinued": false,
-      "description": "The number of business days between the selected and end dates. Business days exclude weekends and holidays."
-    },
-    {
-      "ordinalPosition": 30,
-      "name": "ACCEPTED_ENDED_BUS_DAYS",
-      "type": "INTEGER",
-      "discontinued": false,
-      "description": "The number of business days between the accepted and end dates. Business days exclude weekends and holidays."
-    },
-    {
-      "ordinalPosition": 31,
-      "name": "COMP_BY_THIRD_PARTY_YN",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "A flag that is set when a third party marks a CCSC request as complete in a context that doesn't support archiving requests. This is not used for recommendation type requests or requests sent in a Compass Rose episode."
     }
   ]
 }

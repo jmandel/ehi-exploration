@@ -198,7 +198,8 @@
         "Service date range",
         "Small balance write off",
         "Client guarantor",
-        "Client next statement date is not before or equal to end batch date"
+        "Client next statement date is not before or equal to end batch date",
+        "JBR Skip EAR"
       ]
     },
     {
@@ -239,13 +240,6 @@
     },
     {
       "ordinalPosition": 24,
-      "name": "SUSP_NRP_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 25,
       "name": "OUTST_CLM_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -258,7 +252,7 @@
       ]
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "POS_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -315,11 +309,12 @@
         "Indian Health Service Provider-based Facility",
         "Tribal 638 Free-standing Facility",
         "Tribal 638 Provider-based Facility",
-        "Prison/Correctional Facility"
+        "Prison/Correctional Facility",
+        "Municipality"
       ]
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "INACTIVE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -334,14 +329,14 @@
       ]
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 27,
       "name": "VOIDED_INS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The total amount owed from insurance at the time a charge was voided. This includes previously applied payments and adjustments."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 28,
       "name": "PROV_NETWORK_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -353,17 +348,41 @@
       ]
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 29,
       "name": "NETWORK_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The provider's level of network involvement category ID for the transaction.",
       "entries": [
-        "Not Leveled"
+        "Not Leveled",
+        "MLW Level one",
+        "MLW Level Two",
+        "MC Level 1",
+        "MC Level 2",
+        "MC Level 3",
+        "Gray Cat A",
+        "Gray Cat B",
+        "Gray Cat C",
+        "Gray Cat D",
+        "Gray Cat E",
+        "Gray Cat F",
+        "Gray Cat G",
+        "RFL Preferred",
+        "RFL Outgoing Preferred",
+        "RFL Affiliated",
+        "RFL Outgoing Affiliated",
+        "WJH Level",
+        "Pick Me!",
+        "TML RFL Level 1",
+        "TML RFL Level 2",
+        "TML RFL Level 3",
+        "Emerald",
+        "Sunflower",
+        "Ruby"
       ]
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 30,
       "name": "SPEC_CHG_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -375,28 +394,28 @@
       ]
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 31,
       "name": "ORIG_BUNDPMT_ETR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original bundled payment transaction ID."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 32,
       "name": "ORIG_BUNDPMT_HTR_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The original bundled payment hospital transaction ID."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 33,
       "name": "REFERENCE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Holds the reference amount that is calculated based on the financial class for the charge. This is set by the system and is applicable only to charges."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 34,
       "name": "REFERENCE_AMT_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -409,7 +428,7 @@
       ]
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 35,
       "name": "CLM_RMV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -446,7 +465,7 @@
       ]
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 36,
       "name": "ADJUSTMENT_CAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -478,7 +497,7 @@
       ]
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 37,
       "name": "WRITE_OFF_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -504,35 +523,35 @@
       ]
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 38,
       "name": "SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the scheduled payment record that resulted in this payment."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 39,
       "name": "TAX_CHARGE_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the source transaction for a tax charge"
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 40,
       "name": "PATIENT_ESTIMATE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column contains the Patient Estimate (PES) record ID for a dental estimate that is finalized and is linked to this charge.  If the charge was triggered from dental and if there is a dental estimate associated with the encounter (in a status of \"Finalized\"), that estimate's record ID will be stored in ETR item 1801 and extracted in this column. The item and column are not updated if and when the original finalized estimate is replaced."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 41,
       "name": "PATIENT_WISDOM_PROC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Patient dental procedure that was respected by the temporary transaction that filed into this transaction."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 42,
       "name": "RFL_OVRIDE_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -544,70 +563,63 @@
       ]
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 43,
       "name": "RFL_OVRIDE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the user who overrode the referral associated with this charge."
     },
     {
-      "ordinalPosition": 45,
-      "name": "RFL_OVRIDE_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 46,
+      "ordinalPosition": 44,
       "name": "PARENT_SCHED_PMT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the parent scheduled payment record that resulted in this payment."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 45,
       "name": "MANUAL_PRICE_OVRIDE_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Permanent transaction indicator used during repost/correct/retro to determine if the charge's price was originally overridden."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 46,
       "name": "IS_PRE_SERVICE_PMT_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether or not this is a pre-service payment, such as a co-pay. This item is only populated for self-pay payments. A payment is considered pre-service if it is a visit pre-pay or co-pay payment (such as during check-in)."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 47,
       "name": "FIRST_HTR_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the hospital transaction ID of the first transaction in a chain of transactions. Note that this chain will include transactions from both Hospital Billing and Professional Billing, so this item will return the very first transaction. For a given transaction, either column ARPB_TRANSACTIONS2.FIRST_HTR_ID, or column ARPB_TRANSACTIONS2.FIRST_ETR_ID will be populated. This is different from column ARPB_TRANSACTIONS2.FIRST_TX_ID, which only chains back to the point that the transaction was transferred from Hospital Billing."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 48,
       "name": "FIRST_ETR_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the transaction ID of the first transaction in a chain of transactions. Note that this chain will include transactions from both Hospital Billing and Professional Billing, so this item will return the very first transaction. For a given transaction, either column ARPB_TRANSACTIONS2.FIRST_HTR_ID, or column ARPB_TRANSACTIONS2.FIRST_ETR_ID will be populated. This is different from column ARPB_TRANSACTIONS2.FIRST_TX_ID, which only chains back to the point that the transaction was transferred from Hospital Billing."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 49,
       "name": "POSTING_DEPARTMENT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The department where the transaction was posted."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 50,
       "name": "EXP_REIMB_SYS_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The item stores the original reimbursement amount calculated by contract if the original reimbursement amount is overridden."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 51,
       "name": "EXP_REIMB_SRC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -620,7 +632,7 @@
       ]
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 52,
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -637,28 +649,28 @@
       ]
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 53,
       "name": "RESEARCH_ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the research study association linked to this charge."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 54,
       "name": "STMT_HOLD_RSN_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The free text information related to the reason why the transaction was held in Professional Billing statement processing."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 55,
       "name": "E_PMT_RECEIPT_MSG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Saves the receipt message received from the gateway for an electronic payment transaction."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 56,
       "name": "PARENT_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,

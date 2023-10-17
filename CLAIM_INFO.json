@@ -49,69 +49,127 @@
     },
     {
       "ordinalPosition": 6,
-      "name": "USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 7,
       "name": "ENTRY_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date on which this claim was entered into the system."
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 7,
       "name": "COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The coverage ID of the coverage used for this claim.  This column can be used to report on coverages that are associated with a hospital account."
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 8,
       "name": "ADMIT_DATETIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The admission date and time for the patient encounter associated with the claim."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 9,
       "name": "CLM_PAT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The patient status category ID for the patient for whom this claim was filed."
+      "description": "The patient status category ID for the patient for whom this claim was filed.",
+      "entries": [
+        "Discharged/transferred to Court/Law Enforcement",
+        "Still a Patient",
+        "Expired at Home",
+        "Expired in a Medical Facility (e.g. hospital, SNF, ICF, or free standing hospice)",
+        "Expired - Place Unknown",
+        "Discharged/transferred to a Federal Health Care Facility",
+        "Hospice - Home",
+        "Hospice - Medical Facility (Certified) Providing Hospice Level of Care",
+        "Discharged/transferred to a Hospital-Based Medicare Approved Swing Bed",
+        "Discharged/transferred to an Inpatient Rehab Facility (IRF)",
+        "Discharged/transferred to a Medicare Certified Long Term Care Hospital (LTCH)",
+        "Discharged/transferred to a Nursing Fac Certified under Medicaid but not Medicare",
+        "Discharged/transferred to a Psychiatric Hospital or Psychiatric Hospital Unit",
+        "Discharged/transferred to a Critical Access Hospital (CAH)",
+        "Disch/trans to Another Type of Health Care Inst not Defined Elsewhere in this List",
+        "Disch/transfer/referral to another inst for outpat services (discontinued 4/1/2003)",
+        "Disch/transfer/referral to this inst for outpatient services (discontinued 4/1/2003)",
+        "Discharged to Home or Self Care (Routine Discharge)",
+        "Discharged/transferred to a Short-Term General Hospital for Inpatient Care",
+        "Discharged/transferred to Skilled Nursing Facility (SNF) with Medicare Certification",
+        "Discharged/transferred to a Facility that Provides Custodial or Supportive Care",
+        "Discharged/transferred to a Designated Cancer Center or Children's Hospital",
+        "Discharged/transferred to Home Under Care of Organized Home Health Service Org",
+        "Left Against Medical Advice or Discontinued Care",
+        "Discharged/transferred to home under care of home IV therapy provider (disc 10/1/05)",
+        "Admitted as an Inpatient to this Hospital"
+      ]
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 10,
       "name": "PROV_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the provider for the encounter associated with this claim."
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 11,
       "name": "ADMISSION_SOURCE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The admission source (e.g., physician referral, clinic referral, Health Maintenance Organization (HMO) referral, transfer from a hospital, transfer from a skilled nursing facility, emergency room, court/law enforcement, information not available) for the encounter associated with this claim."
+      "description": "The admission source (e.g., physician referral, clinic referral, Health Maintenance Organization (HMO) referral, transfer from a hospital, transfer from a skilled nursing facility, emergency room, court/law enforcement, information not available) for the encounter associated with this claim.",
+      "entries": [
+        "Clinic or Physician's Office",
+        "HMO Referral",
+        "Transfer from a Hospital (Different Facility)",
+        "Transfer from Skilled Nursing (SNF), Intermediate Care (ICF) or Assisted Living (ALF)",
+        "Transfer from Another Health Care Facility",
+        "Emergency Room",
+        "Court/Law Enforcement",
+        "Information Not Available",
+        "Transfer from Psych, Substance Abuse, or Rehab Hospital",
+        "Normal Delivery",
+        "Premature Delivery",
+        "Sick Baby",
+        "Extramural Birth",
+        "Transfer from Another Home Health Agency",
+        "Readmission to Same Home Health Agency",
+        "Transfer from Critical Access Hospital",
+        "Transfer from One Distinct Unit to another Distinct Unit in Same Hospital",
+        "Transfer from Critical Access Hospital",
+        "Transfer from another Home Health Agency",
+        "Readmission to same Home Health Agency",
+        "Transfer from Ambulatory Surgery Center",
+        "Transfer from a Hospice Facility",
+        "Born Inside this Hospital",
+        "Born Outside of this Hospital"
+      ]
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 12,
       "name": "ADMISSION_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The admission type for the patient encounter associated with this claim (e.g., emergency, urgent, elective, newborn, trauma center, information not available)."
+      "description": "The admission type for the patient encounter associated with this claim (e.g., emergency, urgent, elective, newborn, trauma center, information not available).",
+      "entries": [
+        "Urgent",
+        "Elective",
+        "Newborn",
+        "Trauma Center",
+        "Information Not Available",
+        "Inpatient",
+        "Outpatient",
+        "Pre-Operative",
+        "Post-Operative"
+      ]
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 13,
       "name": "ADMIT_DX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The diagnosis ID for the admitting diagnosis of the encounter associated with this claim."
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 14,
       "name": "ILL_INJ_LMP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -123,7 +181,7 @@
       ]
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 15,
       "name": "REL_CONDITION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -137,28 +195,35 @@
       ]
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 16,
       "name": "DOC_CTRL_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The document control number (DCN) for the claim record."
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 17,
       "name": "INJURY_DATETIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time on which the injury resulting in the claim occurred."
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 18,
       "name": "ACCIDENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The accident type for the injury resulting in the claim (e.g., Workers' Compensation, Automobile)."
+      "description": "The accident type for the injury resulting in the claim (e.g., Workers' Compensation, Automobile).",
+      "entries": [
+        "Automobile",
+        "No-fault insurance involved",
+        "Tort Liability",
+        "Other",
+        "Crime Victim"
+      ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 19,
       "name": "IS_EPSDT_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -169,35 +234,44 @@
       ]
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 20,
       "name": "EPSDT_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Early Periodic Screening and Diagnosis Treatment (EPSDT) program value."
+      "description": "Early Periodic Screening and Diagnosis Treatment (EPSDT) program value.",
+      "entries": [
+        "Not Used",
+        "top",
+        "New Services Requested",
+        "Pt refused referal",
+        "Refered to another provider",
+        "No Referal Made",
+        "Currently under treatment"
+      ]
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 21,
       "name": "WC_CLAIM_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Workers' Comp Claim Number for the claim record."
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 22,
       "name": "WC_EMPLOYER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the employer associated with a Workers' Comp claim."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 23,
       "name": "WC_EMPLOYER_ID_EMPLOYER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the employer."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 24,
       "name": "TRAN_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -210,7 +284,7 @@
       ]
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "TRAN_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -224,94 +298,257 @@
       ]
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "TRAN_DIST",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Ambulance transport distance."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 27,
       "name": "CLM_LOGIN_SA_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The user's login service area at the time of the creation of the claim information record."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 28,
       "name": "ILL_INJ_LMP_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of the onset of illness, the occurrence of the injury, or the patient's last menstrual period (related to pregnancy)."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 29,
       "name": "AUTO_ACDNT_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Auto accident State."
+      "description": "Auto accident State.",
+      "entries": [
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "District of Columbia",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming",
+        "ALBERTA",
+        "BRITISH COLUMBIA",
+        "MANITOBA",
+        "NEWFOUNDLAND AND LABRADOR",
+        "NEW BRUNSWICK",
+        "NOVA SCOTIA",
+        "Ontario",
+        "PRINCE EDWARD ISLAND",
+        "QUEBEC",
+        "SASKATCHEWAN",
+        "NORTHWEST TERRITORIES",
+        "YUKON",
+        "Aguascalientes",
+        "Baja California Norte",
+        "Baja California Sur",
+        "Campeche",
+        "Chiapas",
+        "Chihuahua",
+        "Cohuila",
+        "Colima",
+        "Distrito Federal",
+        "Durango",
+        "Guanajuato",
+        "Guerrero",
+        "Hildalgo",
+        "Jalisco",
+        "Mexico",
+        "Michoacan",
+        "Morelos",
+        "Nayarit",
+        "Nuevo Leon",
+        "Oaxaco",
+        "Puebla",
+        "Queretaro",
+        "Quintano Roo",
+        "San Luis Potosi",
+        "Sinaloa",
+        "Sonora",
+        "Tabasco",
+        "Tamaulipas",
+        "Tlaxcala",
+        "Veracruz",
+        "Yucatan",
+        "Zacates",
+        "NUNAVUT",
+        "American Samoa, South Pacific",
+        "Marshall Islands",
+        "Palau",
+        "Federated States of Micronesia",
+        "Guam",
+        "Northern Mariana Islands",
+        "Puerto Rico",
+        "Virgin Islands",
+        "FEDERATED STATES OF",
+        "Armed Forces Africa",
+        "Armed Forces Americas",
+        "Armed Forces Pacific",
+        "Ile-de-France",
+        "Champagne-Ardenne",
+        "Picardie",
+        "Haute-Normandie",
+        "Centre",
+        "Basse-Normandie",
+        "Bourgogne",
+        "Nord-Pas-de-Calais",
+        "Lorraine",
+        "Alsace",
+        "Franche-Comte",
+        "Pays de la Loire",
+        "Bretagne",
+        "Poitou-Charentes",
+        "Aquitaine",
+        "Midi-Pyrenees",
+        "Limousin",
+        "Rhone-Alpes",
+        "Auvergne",
+        "Languedoc-Roussillon",
+        "Provence-Alpes-Cote d'Azur",
+        "Corse",
+        "Aartselaar",
+        "Anvers",
+        "Boechout",
+        "Boom",
+        "Borsbeek",
+        "Brasschaat",
+        "Brecht",
+        "Edegem",
+        "Essen",
+        "Hemiksem",
+        "Hove",
+        "Kalmthout",
+        "Kapellen",
+        "Kontich",
+        "Lint",
+        "Mortsel",
+        "Niel",
+        "Ranst",
+        "Rumst",
+        "Schelle",
+        "Schilde",
+        "Schoten",
+        "Stabroek",
+        "Wijnegem",
+        "Wommelgem",
+        "Wuustwezel",
+        "Zandhoven",
+        "Zoersel",
+        "Zwijndrecht",
+        "Lothl�rien",
+        "Romulan Senate District 1"
+      ]
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 30,
       "name": "EMPY_RELATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether patient's condition is related to employment."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 31,
       "name": "FIRST_CONSULT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "First consult date."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 32,
       "name": "PAT_CHIEF_COMPLAINT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Patients chief complaint."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 33,
       "name": "EMERG_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the procedure is related to an emergency."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 34,
       "name": "LAST_WORKED_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Date last worked."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 35,
       "name": "RETURN_TO_WORK_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Return to work date."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 36,
       "name": "DISCHARGE_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Discharge date."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 37,
       "name": "OUTSIDE_LAB_NAME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Outside lab name.",
       "entries": [
-        "Other"
+        "Other",
+        "Smith Kline Beechum"
       ]
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 38,
       "name": "HLTH_APPR_SCRN_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -322,42 +559,42 @@
       ]
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 39,
       "name": "SIG_ON_FILE_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Signature on file?"
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 40,
       "name": "WK_COMP_CLAIM_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Workers' Comp claim number."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 41,
       "name": "WK_COMP_INJ_DESC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Workers' Comp injury description."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 42,
       "name": "WK_COMP_APRV_CODE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Workers' Comp approval code."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 43,
       "name": "WK_COMP_MED_RLS_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Workers' Comp medical release date."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 44,
       "name": "DF_DELAY_RSN_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -378,7 +615,7 @@
       ]
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 45,
       "name": "FIRST_NEXT_VISIT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -389,35 +626,35 @@
       ]
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 46,
       "name": "MED_HX_SOC_WORKER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Social worker associated with this visit."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 47,
       "name": "MED_HX_PSYCHOLOGIST",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Psychologist associated with this visit."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 48,
       "name": "MED_HX_SUP_PROV",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Supervising medical doctor for this visit."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 49,
       "name": "MED_HX_COUNSELOR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Counselor associated with this visit."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 50,
       "name": "HDH_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -434,7 +671,7 @@
       ]
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 51,
       "name": "PHY_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -448,112 +685,112 @@
       ]
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 52,
       "name": "PHY_EXAM_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the physical assessment."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 53,
       "name": "VISION_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the vision assessment."
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 54,
       "name": "VISION_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the vision assessment."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 55,
       "name": "HEARING_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the hearing assessment."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 56,
       "name": "HEARING_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the hearing assessment."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 57,
       "name": "DEV_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the developmental assessment."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 58,
       "name": "DEV_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the developmental assessment."
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 59,
       "name": "NUTRI_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the nutritional assessment."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 60,
       "name": "NUTRI_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the nutritional assessment."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 61,
       "name": "OTHER_TREATMNT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores date of other treatment."
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 62,
       "name": "HOSPITAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Name of the hospital where the patient was admitted."
     },
     {
-      "ordinalPosition": 64,
+      "ordinalPosition": 63,
       "name": "HOSPITAL_ADDRESS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The street address of the hospital where the patient was admitted."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 64,
       "name": "HOSPITAL_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The city where the hospital to which the patient was admitted is located."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 65,
       "name": "HOSPITAL_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The state where the hospital to which the patient was admitted is located."
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 66,
       "name": "HOSPITAL_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ZIP of the hospital to which the patient was admitted."
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 67,
       "name": "HOSP_REQ_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -564,63 +801,265 @@
       ]
     },
     {
-      "ordinalPosition": 69,
+      "ordinalPosition": 68,
       "name": "ADV_RET_WORK_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flag to indicate whether a patient was advised to return to work."
     },
     {
-      "ordinalPosition": 70,
+      "ordinalPosition": 69,
       "name": "ADV_RET_WORK_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date that patient was advised to return to work."
     },
     {
-      "ordinalPosition": 71,
+      "ordinalPosition": 70,
       "name": "REF_PHYS_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the referring physician's name."
     },
     {
-      "ordinalPosition": 72,
+      "ordinalPosition": 71,
       "name": "REF_PHYS_ADDR",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the referring physician's address."
     },
     {
-      "ordinalPosition": 73,
+      "ordinalPosition": 72,
       "name": "REF_PHYS_CITY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the referring physician's city."
     },
     {
-      "ordinalPosition": 74,
+      "ordinalPosition": 73,
       "name": "REF_PHYS_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the referring physician's state."
     },
     {
-      "ordinalPosition": 75,
+      "ordinalPosition": 74,
       "name": "REF_PHYS_ZIP",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the referring physician's ZIP code."
     },
     {
-      "ordinalPosition": 76,
+      "ordinalPosition": 75,
       "name": "REF_PHYS_SPEC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores referring physician's specialty."
+      "description": "Stores referring physician's specialty.",
+      "entries": [
+        "Allergy",
+        "Anesthesiology",
+        "Audiology",
+        "Cardiology",
+        "Colon and Rectal Surgery",
+        "Dermatology",
+        "Endocrinology",
+        "Ent-Otolaryngology",
+        "Family Practice",
+        "Gastroenterology",
+        "General Surgery",
+        "Gerontology",
+        "Gynecology",
+        "Hematology",
+        "Immunology",
+        "Infectious Diseases",
+        "Internal Medicine",
+        "Nephrology",
+        "Neurology",
+        "Neurosurgery",
+        "Nutrition",
+        "OB/Gyn",
+        "Obstetrics",
+        "Oncology",
+        "Ophthalmology",
+        "Optometry",
+        "Orthopedics",
+        "Pediatric Allergy",
+        "Pediatric Cardiology",
+        "Pediatric Hematology/Oncology",
+        "Pediatric Neurology",
+        "Pediatrics",
+        "Physical Medicine and Rehab",
+        "Physical Therapy",
+        "Plastic Surgery",
+        "Podiatry",
+        "Psychiatry",
+        "Psychology",
+        "Radiation Oncology",
+        "Radiology",
+        "Rheumatology",
+        "Thoracic Diseases",
+        "Urology",
+        "Vascular Surgery",
+        "Addiction Medicine",
+        "Cardiac Surgery",
+        "Chiropractic",
+        "Diagnostic Radiology",
+        "Emergency Medicine",
+        "General Practice",
+        "Medical Oncology",
+        "Nuclear Medicine",
+        "Otolaryngology",
+        "Oral Surgery",
+        "Pathology",
+        "Peripheral Vascular Disease",
+        "Preventative Medicine",
+        "Radiation Therapy",
+        "Surgical Oncology",
+        "Certified Clinical Nurse Specialist",
+        "Certified Nurse Midwife",
+        "Certified Registered Nurse Anesthetist",
+        "Licensed Clinical Social Worker",
+        "Nurse Practitioner",
+        "Physician Assistant",
+        "Occupational Therapy",
+        "Dental General Practice",
+        "Orthodontics",
+        "Pedodontics",
+        "Periodontics",
+        "Pulmonology",
+        "Physical Therapist Assistant",
+        "Occupational Therapy Assistant",
+        "Speech Therapy Assistant",
+        "Interventional Radiology",
+        "Lab",
+        "Unknown Physician Specialty",
+        "Home Health",
+        "Hospice",
+        "Genetics",
+        "dentist",
+        "podiatrist",
+        "Maternal/Fetal Medicine",
+        "Pediatric Urology",
+        "Urogynecology",
+        "Taylor",
+        "Transitional Care Unit",
+        "Assisted Living Facility",
+        "Group Home",
+        "Intensive Residential Treatment Services",
+        "Intermediate Care Facility",
+        "CCM Addiction Medicine",
+        "CCM Physical Medicine and Rehab",
+        "Acute Care Hospital",
+        "Child/Adolescent Psychiatry",
+        "Rehabilitation",
+        "Behavioral Health",
+        "In-Home Clinical Assessments",
+        "Infusion Therapy",
+        "CCM Geriatric Psychiatry",
+        "Lactation Services",
+        "CCM Marriage and Family Therapy",
+        "CCM Pediatric Psychiatry",
+        "CCM Pediatric Psychology",
+        "Pediatric Social Services",
+        "Wound Care",
+        "Dialysis Clinic",
+        "DME Services",
+        "Elder Care Services",
+        "Family Nutrition Services",
+        "Food Delivery Services",
+        "Home Dialysis",
+        "Home Infusion and Injection Services",
+        "Home Hospice",
+        "Home Maintenance Services",
+        "Home Therapy Services",
+        "Infusion Clinic",
+        "Dialysis",
+        "In-Home Lab Specimen Collection",
+        "Inpatient Hospice",
+        "Lines, Drains and Airways",
+        "Personal Care Services",
+        "Respite Care",
+        "Tube Feeding",
+        "Ventilator Services",
+        "CCM Housing Assistance and Shelter Services",
+        "CCM Financial Counseling and Assistance Services",
+        "CCM Employment Assistance Services",
+        "CCM Education and Literacy Services",
+        "CCM Language and Communication Assistance Services",
+        "CCM Disability Services",
+        "CCM Childcare Services",
+        "CCM Youth Community Services",
+        "CCM Social and Spiritual Support",
+        "CCM Home Living Aide Services",
+        "CCM Food Pantry and Kitchen",
+        "CCM Addiction Support Services",
+        "CCM Domestic Abuse Support Services",
+        "CCM Post-Trauma Therapy and Support",
+        "CCM Memory Care",
+        "CCM Long Term Care Facility",
+        "CCM Medical Transportation Services",
+        "CCM Non-Medical Transportation Services",
+        "Hogtying",
+        "Tractor Driving",
+        "Milking Machine",
+        "Sowing and Reaping",
+        "Self Destruction",
+        "Social Services",
+        "Transplant",
+        "Skilled Nursing Facility",
+        "SILENCE",
+        "Archaeology",
+        "Horcruxes",
+        "Transfiguration",
+        "Ancient Runes",
+        "General Magic",
+        "Herbology",
+        "Dark Arts (and Defence Against Thereof)",
+        "Fireballs",
+        "Superhero",
+        "ADHD",
+        "Jingles",
+        "Bikini Bottom",
+        "Social Work",
+        "Pharmacy",
+        "Hepatology",
+        "Infertility",
+        "Infernal Medicine",
+        "Long Term Acute Care Hospital",
+        "SRT PYSCH",
+        "12-TONE",
+        "Repetition",
+        "MC SMART SPECIALTY",
+        "Skilled Nursing Facility",
+        "jjcharle local history",
+        "Cryogenics",
+        "Show Choir",
+        "Musical Theater",
+        "Network Core Spec",
+        "Network Preferred Spec",
+        "Network Contracted Spec",
+        "Network Out Spec",
+        "Network Level Three Only Spec",
+        "jk special specialty",
+        "SC Provder",
+        "Batten's Disease",
+        "GWW SPECIALTY A",
+        "GWW SPECIALTY B",
+        "GWW SPECIALTY C",
+        "GWW SPECIALTY D",
+        "Transplant Coordinator",
+        "ReCS <script>alert(\"This should not show up in a popup!!!\");</script>",
+        "Speech-Language Pathology",
+        "SC speciality provider",
+        "EEP Por",
+        "EEP Cardiology",
+        "<b>HTML</b>",
+        "HTML<\\script><script>\\'\\\"\\n&amp;test\"\"<><b>hello!</b>",
+        "XenoMedicine"
+      ]
     },
     {
-      "ordinalPosition": 77,
+      "ordinalPosition": 76,
       "name": "REF_PHYS_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -631,14 +1070,14 @@
       ]
     },
     {
-      "ordinalPosition": 78,
+      "ordinalPosition": 77,
       "name": "FIRST_TREAT_HOUR_TM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "First treatment hour. Some extensions add a value code to your claim if this item has a value."
     },
     {
-      "ordinalPosition": 79,
+      "ordinalPosition": 78,
       "name": "PAT_PREV_TREATED_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -649,42 +1088,42 @@
       ]
     },
     {
-      "ordinalPosition": 80,
+      "ordinalPosition": 79,
       "name": "IDE_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Investigational Device Exemption Number."
     },
     {
-      "ordinalPosition": 81,
+      "ordinalPosition": 80,
       "name": "EST_DOB_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The estimated date of delivery for the pregnancy."
     },
     {
-      "ordinalPosition": 82,
+      "ordinalPosition": 81,
       "name": "RESPONSIBLE_IND_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate if the patient's condition is due to an accident or illness caused by another party."
     },
     {
-      "ordinalPosition": 83,
+      "ordinalPosition": 82,
       "name": "REFERRAL_SOURCE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral source for the visit."
     },
     {
-      "ordinalPosition": 84,
+      "ordinalPosition": 83,
       "name": "REFERRAL_SOURCE_ID_REFERRING_PROV_NAM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the referral source."
     },
     {
-      "ordinalPosition": 85,
+      "ordinalPosition": 84,
       "name": "EMERGENCY_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -707,7 +1146,7 @@
       ]
     },
     {
-      "ordinalPosition": 86,
+      "ordinalPosition": 85,
       "name": "DISABILITY_LEVEL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -720,42 +1159,42 @@
       ]
     },
     {
-      "ordinalPosition": 87,
+      "ordinalPosition": 86,
       "name": "DISABILITY_FROM_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the disability started."
     },
     {
-      "ordinalPosition": 88,
+      "ordinalPosition": 87,
       "name": "DISABILITY_TO_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the disability ended."
     },
     {
-      "ordinalPosition": 89,
+      "ordinalPosition": 88,
       "name": "OUTSIDE_LAB_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate if lab services outside the provider's office are involved."
     },
     {
-      "ordinalPosition": 90,
+      "ordinalPosition": 89,
       "name": "OUTSIDE_LAB_CHARGE",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The cost of services performed at the outside lab."
     },
     {
-      "ordinalPosition": 91,
+      "ordinalPosition": 90,
       "name": "FAM_PLANNING_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate whether the patient is being seen for family planning care."
     },
     {
-      "ordinalPosition": 92,
+      "ordinalPosition": 91,
       "name": "SPECIAL_PROGRAM_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -773,7 +1212,7 @@
       ]
     },
     {
-      "ordinalPosition": 93,
+      "ordinalPosition": 92,
       "name": "PGM_FOR_HANDICAP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -795,42 +1234,42 @@
       ]
     },
     {
-      "ordinalPosition": 94,
+      "ordinalPosition": 93,
       "name": "EMPLOYER_LOB",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "A free text nature/line of business for the employer."
     },
     {
-      "ordinalPosition": 95,
+      "ordinalPosition": 94,
       "name": "OTH_INFO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Any additional free text information that should be recorded in conjunction with the claim."
     },
     {
-      "ordinalPosition": 96,
+      "ordinalPosition": 95,
       "name": "AUTH_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Authorization date."
     },
     {
-      "ordinalPosition": 97,
+      "ordinalPosition": 96,
       "name": "CHIR_FIRST_TREAT_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The initiation date of the course of treatment for chiropractic services."
     },
     {
-      "ordinalPosition": 98,
+      "ordinalPosition": 97,
       "name": "CHIR_X_RAY_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The X-ray date for chiropractic services."
     },
     {
-      "ordinalPosition": 99,
+      "ordinalPosition": 98,
       "name": "NAT_OF_COND_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -846,14 +1285,14 @@
       ]
     },
     {
-      "ordinalPosition": 100,
+      "ordinalPosition": 99,
       "name": "CHIR_ACUTE_MANI_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the acute manifestation date for the spinal manipulation therapy."
     },
     {
-      "ordinalPosition": 101,
+      "ordinalPosition": 100,
       "name": "HBG_HCT_TEST_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -870,147 +1309,147 @@
       ]
     },
     {
-      "ordinalPosition": 102,
+      "ordinalPosition": 101,
       "name": "URINALYSIS_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate whether Urinalysis test is included."
     },
     {
-      "ordinalPosition": 103,
+      "ordinalPosition": 102,
       "name": "TUBERCULOSIS_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate whether tuberculosis test is included."
     },
     {
-      "ordinalPosition": 104,
+      "ordinalPosition": 103,
       "name": "LEAD_TEST_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate whether lead test is included."
     },
     {
-      "ordinalPosition": 105,
+      "ordinalPosition": 104,
       "name": "SICKLE_CELL_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate whether sickle-cell test is included."
     },
     {
-      "ordinalPosition": 106,
+      "ordinalPosition": 105,
       "name": "IMMNZTN_INCL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the immunizations."
     },
     {
-      "ordinalPosition": 107,
+      "ordinalPosition": 106,
       "name": "CARDIO_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the cardiovascular assessment."
     },
     {
-      "ordinalPosition": 108,
+      "ordinalPosition": 107,
       "name": "CARDIO_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the cardiovascular assessment."
     },
     {
-      "ordinalPosition": 109,
+      "ordinalPosition": 108,
       "name": "URINARY_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the genital/urinary tract assessment."
     },
     {
-      "ordinalPosition": 110,
+      "ordinalPosition": 109,
       "name": "URINARY_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the genital/urinary tract assessment."
     },
     {
-      "ordinalPosition": 111,
+      "ordinalPosition": 110,
       "name": "DIABETE_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the diabetes assessment."
     },
     {
-      "ordinalPosition": 112,
+      "ordinalPosition": 111,
       "name": "DIABETE_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the diabetes assessment."
     },
     {
-      "ordinalPosition": 113,
+      "ordinalPosition": 112,
       "name": "DENTAL_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for the dental assessment."
     },
     {
-      "ordinalPosition": 114,
+      "ordinalPosition": 113,
       "name": "DENTAL_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the dental assessment."
     },
     {
-      "ordinalPosition": 115,
+      "ordinalPosition": 114,
       "name": "IMMNZTN_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for the immunizations."
     },
     {
-      "ordinalPosition": 116,
+      "ordinalPosition": 115,
       "name": "EDU_EXAM_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The exam code for health education."
     },
     {
-      "ordinalPosition": 117,
+      "ordinalPosition": 116,
       "name": "EDU_RFL_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The referral code for health education."
     },
     {
-      "ordinalPosition": 118,
+      "ordinalPosition": 117,
       "name": "ONLY_CAUSE_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flag to distinguish whether or not this injury is the only cause of the patient's condition."
     },
     {
-      "ordinalPosition": 119,
+      "ordinalPosition": 118,
       "name": "PAT_BURNED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flag to determine whether or not patient has been burned."
     },
     {
-      "ordinalPosition": 120,
+      "ordinalPosition": 119,
       "name": "XRAY_BY_WHOM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the person or entity that performed x-rays."
     },
     {
-      "ordinalPosition": 121,
+      "ordinalPosition": 120,
       "name": "WC_XRAY_DT",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date comparative x-rays were taken."
     },
     {
-      "ordinalPosition": 122,
+      "ordinalPosition": 121,
       "name": "POLIO_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1024,91 +1463,91 @@
       ]
     },
     {
-      "ordinalPosition": 123,
+      "ordinalPosition": 122,
       "name": "DPT_TD_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The immunization status for Diphtheria, pertussis, and tetanus (DPT)/tetanus and diphtheria (DT)."
     },
     {
-      "ordinalPosition": 124,
+      "ordinalPosition": 123,
       "name": "MEASLES_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The immunization status for Measles."
     },
     {
-      "ordinalPosition": 125,
+      "ordinalPosition": 124,
       "name": "MUMPS_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The immunization status for Mumps."
     },
     {
-      "ordinalPosition": 126,
+      "ordinalPosition": 125,
       "name": "RUBELLA_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The immunization status for Rubella."
     },
     {
-      "ordinalPosition": 127,
+      "ordinalPosition": 126,
       "name": "HIB_IMMNZTN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The immunization status for Haemophilus influenzae type B (HIB)."
     },
     {
-      "ordinalPosition": 128,
+      "ordinalPosition": 127,
       "name": "CHAMP_NONAVAIL_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate if the provider has a signed Tricare statement of non-availability on file indicating that the services associated with this claim were not available at a military treatment facility."
     },
     {
-      "ordinalPosition": 129,
+      "ordinalPosition": 128,
       "name": "CHAMP_NONAV_STMT_NO",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The number of the Tricare non-availability statement."
     },
     {
-      "ordinalPosition": 130,
+      "ordinalPosition": 129,
       "name": "CHAMPUS_ORG",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Tricare Organization."
     },
     {
-      "ordinalPosition": 131,
+      "ordinalPosition": 130,
       "name": "CHAMPUS_STATION",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Tricare Station."
     },
     {
-      "ordinalPosition": 132,
+      "ordinalPosition": 131,
       "name": "CHAMP_MILIT_ACC_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicate if the services performed were treatment as a result of a military accident."
     },
     {
-      "ordinalPosition": 133,
+      "ordinalPosition": 132,
       "name": "ALTERNATE_CLM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Alternate Claim ID."
     },
     {
-      "ordinalPosition": 134,
+      "ordinalPosition": 133,
       "name": "REF_PROVIDER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ID of the referring provider."
     },
     {
-      "ordinalPosition": 135,
+      "ordinalPosition": 134,
       "name": "MC_CLAIMS_WKFLOW_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -1126,21 +1565,28 @@
       ]
     },
     {
-      "ordinalPosition": 136,
+      "ordinalPosition": 135,
       "name": "CLM_SENSITIVITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Indicates the sensitivity type of the claim."
+      "description": "Indicates the sensitivity type of the claim.",
+      "entries": [
+        "HIV",
+        "AODA",
+        "MXK BEHAVIORAL HEALTH SENSITIVITY",
+        "JTL A",
+        "JTL B"
+      ]
     },
     {
-      "ordinalPosition": 137,
+      "ordinalPosition": 136,
       "name": "PLACE_OF_SERVICE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the place of service associated with the claim."
     },
     {
-      "ordinalPosition": 138,
+      "ordinalPosition": 137,
       "name": "LOC_ID",
       "type": "NUMERIC",
       "discontinued": false,

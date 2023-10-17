@@ -31,55 +31,58 @@
     },
     {
       "ordinalPosition": 4,
-      "name": "RXENROLL_LAST_EDIT_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 5,
       "name": "RXENROLL_LAST_EDIT_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The date and time the pharmacy enrollment was last updated."
     },
     {
-      "ordinalPosition": 6,
+      "ordinalPosition": 5,
       "name": "ENROLL_PROG_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The current enrollment program for the pharmacy."
+      "description": "The current enrollment program for the pharmacy.",
+      "entries": [
+        "Hepatitis C",
+        "HIV",
+        "Oncology",
+        "Transplant",
+        "antibiotics",
+        "chemotherapy",
+        "TPN",
+        "Other"
+      ]
     },
     {
-      "ordinalPosition": 7,
+      "ordinalPosition": 6,
       "name": "RXENROLL_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Summary note documented on this episode"
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 7,
       "name": "RXENROLL_ENROLLMENT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was enrolled in the program"
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 8,
       "name": "RXENROLL_DISENROLL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was unenrolled from the program."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 9,
       "name": "RXENROLL_DECLINE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the patient was declined enrollment (or declined to enroll) in the program"
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 10,
       "name": "RXENROLL_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -93,14 +96,14 @@
       ]
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 11,
       "name": "CRT_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The patient contact serial number that auto created this episode."
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 12,
       "name": "CMGMT_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -114,14 +117,14 @@
       ]
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 13,
       "name": "CMGMT_SENSITIVITY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Store the sensitivity flag for security restricted case episodes. If your organization has implemented break-the-glass, this sensitivity flag can be used to restrict access to the case episode."
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 14,
       "name": "CMGMT_ENROLLMENT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -134,22 +137,26 @@
         "Identified using hospital discharge data",
         "Identified using pharmacy data",
         "Identified using UM data",
-        "Identified using referral data"
+        "Identified using referral data",
+        "Identified from a specialty prescription"
       ]
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 15,
       "name": "CMGMT_ENROLLING_STEP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the enrolling step that specifies the current step of enrollment for the case episode.",
       "entries": [
         "Not specified",
-        "Identified"
+        "Identified",
+        "JRS Enrolling",
+        "step <b>bold</b>",
+        "s lineCount = -55;"
       ]
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 16,
       "name": "CMGMT_CLOSED_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -158,18 +165,23 @@
         "Not specified",
         "Patient declined case management",
         "Patient graduated",
-        "Unable to reach patient"
+        "Unable to reach patient",
+        "Therapy completed",
+        "Insurance changed",
+        "Insurance no longer covers",
+        "Transfer to external pharmacy",
+        "Patient deceased"
       ]
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 17,
       "name": "ENROLL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The research study-patient association (LAR) record ID for this episode."
     },
     {
-      "ordinalPosition": 19,
+      "ordinalPosition": 18,
       "name": "PREG_CHORIONIC_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -185,7 +197,7 @@
       ]
     },
     {
-      "ordinalPosition": 20,
+      "ordinalPosition": 19,
       "name": "PLAN_ADOPT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -201,7 +213,7 @@
       ]
     },
     {
-      "ordinalPosition": 21,
+      "ordinalPosition": 20,
       "name": "SUSPECTED_FD_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -212,7 +224,7 @@
       ]
     },
     {
-      "ordinalPosition": 22,
+      "ordinalPosition": 21,
       "name": "PLAN_CIRCUMCISION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -224,14 +236,14 @@
       ]
     },
     {
-      "ordinalPosition": 23,
+      "ordinalPosition": 22,
       "name": "PLAN_DELIVER_BY_GA",
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item represents the gestational age (in weeks of pregnancy) at when the patient and provider expect the delivery to occur."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 23,
       "name": "PLAN_DEL_METHOD_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -243,28 +255,34 @@
       ]
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 24,
       "name": "CMGMT_DECLINE_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Documents the reason a patient/client refused coordinated case management services."
+      "description": "Documents the reason a patient/client refused coordinated case management services.",
+      "entries": [
+        "Patient not interested",
+        "<b> Declined Reason </b>",
+        "Patient declined",
+        "Patient request"
+      ]
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "HSPC_ADD_DISCUSSED_WITH_PAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item indicates whether or not a hospice election addendum was discussed with the patient for this episode."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "HSPC_ADD_REQUESTED_WITH_PAT_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item indicates whether or not a hospice election addendum was requested for this episode."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 27,
       "name": "HSPC_ADD_DISCUSSED_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
@@ -272,56 +290,49 @@
       "linksTo": "CLARITY_EMP"
     },
     {
-      "ordinalPosition": 29,
-      "name": "HSPC_ADD_DISCUSSED_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 30,
+      "ordinalPosition": 28,
       "name": "HSPC_ADD_DISCUSSED_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the addendum was discussed with the patient."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 29,
       "name": "CMGMT_ENROLL_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Documents the enrollment date, which is the date on which a patient or client's status becomes active and the patient or client starts receiving Coordinated Care Management services. Refer to CMGMT_CALC_ENROLL_DATE for more robust reporting."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 30,
       "name": "CMGMT_ENROLL_CALC_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "This virtual item contains a calculated enrollment date determined from the user- documented enrollment date (CMGMT_ENROLL_DATE, HSB-18030) or the Case Management History related group (I HSB 18400).  If the overall episode status (CMGMT_STATUS_C, I HSB 18010) is 1-Enrolling, the value will be blank.  If the overall status is anything besides 1-Enrolling, the value will be set to the user- documented Enrollment Date, if it exists. Otherwise, the value will be set to the date (ACTION_UTC_DTTM) the status (ASSOC_CMGMT_STATUS_C) originally changed to 2-Active, unless the status was changed to 1-Enrolling more recently."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 31,
       "name": "CMGMT_TRIGGERING_CLASSIFIER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The classifier (CFR record) that triggered the creation of this case."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 32,
       "name": "CMGMT_TRIGGERING_CLASSIFIER_ID_CLASSIFIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The title of the classifier record."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 33,
       "name": "CMGMT_TRIGGERING_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The claim that caused the creation of this case."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 34,
       "name": "PREG_CORD_BLOOD_PLANS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -337,7 +348,7 @@
       ]
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 35,
       "name": "LINKED_SERVICE_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,

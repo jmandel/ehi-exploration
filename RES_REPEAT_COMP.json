@@ -79,7 +79,15 @@
       "discontinued": false,
       "description": "Repeat component abnormal value",
       "entries": [
-        "Normal"
+        "Normal",
+        "Abnormal",
+        "Critical",
+        "Watch",
+        "Low",
+        "High",
+        "Low Critical",
+        "High Critical",
+        "Critical Low"
       ]
     },
     {
@@ -202,76 +210,87 @@
     },
     {
       "ordinalPosition": 24,
-      "name": "RPT_VER_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 25,
       "name": "IS_RPT_REPORTD_YN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flags whether or not repeat component is reported"
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 25,
       "name": "RPT_INTERPRET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component interpretation"
+      "description": "Repeat component interpretation",
+      "entries": [
+        "Moderately sensitive",
+        "Intermediate",
+        "Sensitive",
+        "Very sensitive",
+        "Non-susceptible",
+        "Susceptible-Dose Dependant",
+        "TGP Susc2"
+      ]
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 26,
       "name": "RPT_AB_UNITS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Repeat component antibiotic units"
+      "description": "Repeat component antibiotic units",
+      "entries": [
+        "U",
+        "MIC",
+        "MCT Unit"
+      ]
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 27,
       "name": "RPT_AB_COMMENTS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The antibiotic comment category number for the repeat antibiotic component."
+      "description": "The antibiotic comment category number for the repeat antibiotic component.",
+      "entries": [
+        "Nasty?",
+        "Positive for something bad"
+      ]
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 28,
       "name": "RPT_RFLX_ACTIONS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component reflex actions fired"
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 29,
       "name": "RPT_CAL_COM_RFLX_R",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat calculated component reflex reasons"
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 30,
       "name": "RPT_COMP_RESULT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Repeat component result"
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 31,
       "name": "REPEAT_COMP_DILUTE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The factor by which the value is diluted for each component repeat."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 32,
       "name": "REPEAT_LINEARITY_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The linearity flag for this component repeat."
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 33,
       "name": "REPEAT_RPT_SET_BY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -288,7 +307,7 @@
       ]
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 34,
       "name": "REP_CMP_REV_TYP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -300,21 +319,14 @@
       ]
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 35,
       "name": "RPT_EDITING_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The user that resulted the related repeat component."
     },
     {
-      "ordinalPosition": 37,
-      "name": "RPT_EDITING_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 38,
+      "ordinalPosition": 36,
       "name": "REPEAT_INTERP_SET_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -328,7 +340,7 @@
       ]
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 37,
       "name": "USR_OVRD_ABNL_ID",
       "type": "VARCHAR",
       "discontinued": false,
@@ -336,14 +348,7 @@
       "linksTo": "CLARITY_EMP"
     },
     {
-      "ordinalPosition": 40,
-      "name": "USR_OVRD_ABNL_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 41,
+      "ordinalPosition": 38,
       "name": "USR_OVRD_RPT_FLG_ID",
       "type": "VARCHAR",
       "discontinued": false,
@@ -351,28 +356,21 @@
       "linksTo": "CLARITY_EMP"
     },
     {
-      "ordinalPosition": 42,
-      "name": "USR_OVRD_RPT_FLG_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 43,
+      "ordinalPosition": 39,
       "name": "REPEAT_RES_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant when the repeat was resulted in UTC."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 40,
       "name": "RPT_VERIF_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "Stores the instant in UTC at which the component repeat on the corresponding line was verified."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 41,
       "name": "REPEAT_REPORTABLE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -383,21 +381,21 @@
       ]
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 42,
       "name": "RPT_LNC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the LOINC record as reported by the external resulting agency for a specific repeat of the component associated with this result."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 43,
       "name": "RPT_SUSC_MTD_LNC_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the LOINC record associated with the susceptibility method for the specific repeat of the component on this result as reported by the external resulting agency."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 44,
       "name": "REPEAT_COMP_ACCR_YN",
       "type": "VARCHAR",
       "discontinued": false,

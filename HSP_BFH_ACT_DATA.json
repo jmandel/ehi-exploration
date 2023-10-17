@@ -306,7 +306,10 @@
       "name": "ACTION_PAPRLS_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Stores the reason the paperless billing status was changed for the associated action"
+      "description": "Stores the reason the paperless billing status was changed for the associated action",
+      "entries": [
+        "Disable paperless"
+      ]
     },
     {
       "ordinalPosition": 13,
@@ -365,7 +368,9 @@
         "Home Infusion Medical Benefits",
         "Received Self-Pay",
         "Shadow Billing",
-        "Other"
+        "Other",
+        "LTC Part B Svcs",
+        "LTC CarveOut"
       ]
     },
     {
@@ -428,14 +433,115 @@
       "name": "ACT_HH_DISCHRG_DISP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the patient status (I CLM 1021) value entered for the Override Home Health Discharge Disposition action in an account activity."
+      "description": "This column stores the patient status (I CLM 1021) value entered for the Override Home Health Discharge Disposition action in an account activity.",
+      "entries": [
+        "Discharged/transferred to Court/Law Enforcement",
+        "Still a Patient",
+        "Expired at Home",
+        "Expired in a Medical Facility (e.g. hospital, SNF, ICF, or free standing hospice)",
+        "Expired - Place Unknown",
+        "Discharged/transferred to a Federal Health Care Facility",
+        "Hospice - Home",
+        "Hospice - Medical Facility (Certified) Providing Hospice Level of Care",
+        "Discharged/transferred to a Hospital-Based Medicare Approved Swing Bed",
+        "Discharged/transferred to an Inpatient Rehab Facility (IRF)",
+        "Discharged/transferred to a Medicare Certified Long Term Care Hospital (LTCH)",
+        "Discharged/transferred to a Nursing Fac Certified under Medicaid but not Medicare",
+        "Discharged/transferred to a Psychiatric Hospital or Psychiatric Hospital Unit",
+        "Discharged/transferred to a Critical Access Hospital (CAH)",
+        "Disch/trans to Another Type of Health Care Inst not Defined Elsewhere in this List",
+        "Disch/transfer/referral to another inst for outpat services (discontinued 4/1/2003)",
+        "Disch/transfer/referral to this inst for outpatient services (discontinued 4/1/2003)",
+        "Discharged to Home or Self Care (Routine Discharge)",
+        "Discharged/transferred to a Short-Term General Hospital for Inpatient Care",
+        "Discharged/transferred to Skilled Nursing Facility (SNF) with Medicare Certification",
+        "Discharged/transferred to a Facility that Provides Custodial or Supportive Care",
+        "Discharged/transferred to a Designated Cancer Center or Children's Hospital",
+        "Discharged/transferred to Home Under Care of Organized Home Health Service Org",
+        "Left Against Medical Advice or Discontinued Care",
+        "Discharged/transferred to home under care of home IV therapy provider (disc 10/1/05)",
+        "Admitted as an Inpatient to this Hospital"
+      ]
     },
     {
       "ordinalPosition": 27,
       "name": "ACTION_ACCT_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The account class this action changed the account to."
+      "description": "The account class this action changed the account to.",
+      "entries": [
+        "Outpatient",
+        "Emergency",
+        "Home Health",
+        "Observation",
+        "Surgery Admit",
+        "CMM Contract",
+        "Hospice",
+        "Preadmit",
+        "Recurring Patient",
+        "Obstetrics",
+        "Commercial Account",
+        "Not Applicable",
+        "Day Surgery",
+        "JT PT",
+        "Yo Mary, I'm sick!",
+        "Newborn",
+        "am admissions",
+        "dialysis",
+        "Inpatient Skilled Nursing",
+        "Long Term Care",
+        "Long Term Acute Care",
+        "Leave of Absence",
+        "*",
+        "Contact",
+        "Long Stay",
+        "MCCM",
+        "bmw non patient",
+        "ADTQA Deleted Patient Class",
+        "Denmark Emergency",
+        "Inpatient SNF",
+        "RMM LTC",
+        "DBC",
+        "HH Alternate Billing",
+        "HIM QA No Episode",
+        "Day Surgery Extended",
+        "Life Flight",
+        "Sleep Study",
+        "Day Surgery",
+        "NLT Emergency",
+        "CMM Contract Registration",
+        "SNF No Split",
+        "SNF Short Stay",
+        "Social Care Account",
+        "JHBC Clearing Account Class",
+        "JHBC Trust Account Class",
+        "Reg QA Recurring",
+        "Reg QA Non-Recurring",
+        "Reg QA Inpatient",
+        "Reg QA Outpatient",
+        "Reg QA Emergency",
+        "Therapy Series",
+        "Physical Therapy",
+        "Occupational Therapy",
+        "Speech Therapy",
+        "Recovery Room",
+        "Resident Trust Account",
+        "IP Psych",
+        "IP Rehab",
+        "Infusion Series",
+        "Medical Oncology",
+        "Radiation Oncology",
+        "Nuclear Medicine",
+        "Dialysis Series",
+        "Sleep Study",
+        "Clearing Account",
+        "Clearing Account",
+        "JT Pt Class",
+        "BAR TEST",
+        "Trust Account",
+        "<marquee>I Hear That Alot</marquee>",
+        "LRR Alphanumeric Class"
+      ]
     },
     {
       "ordinalPosition": 28,
@@ -463,7 +569,10 @@
         "Waiting",
         "Completed",
         "Ready To Start",
-        "On Hold"
+        "On Hold",
+        "In Review",
+        "Re-Coded Complete",
+        "Code Capture Validation Failed"
       ]
     },
     {
@@ -495,27 +604,20 @@
     },
     {
       "ordinalPosition": 34,
-      "name": "ACT_ASGN_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
-    },
-    {
-      "ordinalPosition": 35,
       "name": "ACTION_DAY_OF_MONTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The day of month that was selected when the action was performed."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 35,
       "name": "ACTION_CARD_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The payment method that was selected when the action was performed."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 36,
       "name": "ACT_BILL_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -528,7 +630,7 @@
       ]
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 37,
       "name": "ACT_CONTEST_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -547,7 +649,7 @@
       ]
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 38,
       "name": "ACT_CONTEST_RESOLUTION_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -563,35 +665,35 @@
       ]
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 39,
       "name": "ACTION_COVERAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the unique identifier for the new coverage for the Professional Billing Next Responsible Party (PB NRP) action and the unique identifier for the current coverage for the PB Transfer to Insurance action."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 40,
       "name": "ACTION_NAA_WRITE_OFF_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the code that is used to write-off not allowed amount."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 41,
       "name": "ACTION_BASE_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the base amount set through by a billing activity (ATM) action (for actions with a second, calculated amount)."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 42,
       "name": "ACTION_PERCENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the percent used by a billing activity (ATM) action."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 43,
       "name": "ACT_LATE_CHG_OPTION_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -604,21 +706,21 @@
       ]
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 44,
       "name": "ACTION_NUM_OF_PMTS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of payments entered into the billing activity."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 45,
       "name": "ACTION_STMT_DAY_OF_MONTH",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The statement day of the month entered into the billing activity."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 46,
       "name": "ACT_ACCT_MAN_SPLIT_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -634,31 +736,32 @@
       ]
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 47,
       "name": "ACTION_RESEARCH_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The study associated with this action."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 48,
       "name": "ACTION_NUM_OF_CHGS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of charges associated with the action."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 49,
       "name": "ACTION_SP_DSCNT_OV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column stores the billing follow-up history item for tracking the self-pay discount override reason if the account is not insured.",
       "entries": [
-        "Other"
+        "Other",
+        "User Error"
       ]
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 50,
       "name": "ACTION_SP_DSNT_IOV_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -668,7 +771,7 @@
       ]
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 51,
       "name": "ACT_WRITE_OFF_BALANCE_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -679,28 +782,28 @@
       ]
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 52,
       "name": "ACT_REFERENCE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the reference number"
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 53,
       "name": "ACTION_EMAIL",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the email from the activity when the notification was sent."
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 54,
       "name": "ACTION_PHONE_NUMBER",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the phone number from the activity when the notification was sent."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 55,
       "name": "ACT_DATE_FLTR_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -712,30 +815,11 @@
       ]
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 56,
       "name": "ACTION_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The statement or detail bill ID created by the action. For example, for Send Statement this is the statement that was printed. For Send Detail Bill, this is the detail bill that was printed. If the user chooses to print later, then this will be blank until the statement/detail bill run is accepted. This may never be set if the statement/detail bill is removed from the queue before it is printed."
-    },
-    {
-      "ordinalPosition": 58,
-      "name": "ACT_SELF_PAY_EXEMPT_RSN_C_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The self-pay charge exemption reason category ID for the hospital account."
-    },
-    {
-      "ordinalPosition": 59,
-      "name": "ACT_CONS_SP_WITHDRAWAL_RSN_C_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The consolidated self-pay account withdrawal reason that is set as the result of this action.",
-      "entries": [
-        "Created in Error",
-        "Account Combine",
-        "Sent to PB bad debt in non-SBO AR Service Area."
-      ]
     }
   ]
 }
