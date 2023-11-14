@@ -1,6 +1,6 @@
 {
   "name": "BILL_SCHED_PMT",
-  "description": "This table contains information about scheduled payments. This can include payment plan auto pay agreements and payments, Visit Auto Pay payment plans and payments, and trust transfers and payments.",
+  "description": "This table contains information about scheduled payments. This can include payment plan agreements and payments, Visit Auto Pay payment plans and payments, and trust transfers and payments.",
   "primaryKey": [
     {
       "columnName": "SCHED_PMT_ID",
@@ -585,6 +585,118 @@
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the previous record that was replaced with the current scheduled payment record."
+    },
+    {
+      "ordinalPosition": 65,
+      "name": "PMT_TRACKER_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the expected payment tracker record associated with this scheduled payment. This is currently only used for payment plans to track each month's Auto Pay."
+    },
+    {
+      "ordinalPosition": 66,
+      "name": "REPLACEMENT_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason a BSP was replaced. For example, if a payment plan had new balances added, the Agreement BSP will be replaced with one representing the new terms. The previous BSP will be marked as \"Replaced\" and have a replacement reason of \"Principal Edit\".",
+      "entries": [
+        "Principal Edit",
+        "Monthly Amount Edit",
+        "Administrative Edit",
+        "One Time Date Override",
+        "Discrepancy Resolution",
+        "Account Disqualified",
+        "Account Combined",
+        "Payment Plan Tracker BSP Conversion"
+      ]
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "REMAINING_NUMBER_PAYMENTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of payments remaining if this agreement has a recurring payment cycle."
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "PP_INITIAL_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total initial balance on the payment plan agreement."
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "PP_MONTHLY_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The amount agreed to be paid each month on the payment plan."
+    },
+    {
+      "ordinalPosition": 70,
+      "name": "PP_INITIAL_NUMBER_PAYMENTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The initial number of payments on a payment plan agreement."
+    },
+    {
+      "ordinalPosition": 71,
+      "name": "PP_DUE_DAY_OF_MONTH",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The recurring day of month on which payment will be due for this payment plan."
+    },
+    {
+      "ordinalPosition": 72,
+      "name": "PP_NEXT_DUE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The upcoming due date for this month's payment."
+    },
+    {
+      "ordinalPosition": 73,
+      "name": "PP_TOTAL_DEFER_MONTHS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of payments that have been delayed as a result of a deferral over the course of the plan. This is only incremented if the deferred months have elapsed."
+    },
+    {
+      "ordinalPosition": 74,
+      "name": "PP_CURRENT_DEFER_MONTHS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of months that a payment plan is currently deferred."
+    },
+    {
+      "ordinalPosition": 75,
+      "name": "PP_IS_AUTO_PAY_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the payment plan is set up as an Auto Pay agreement. 'Y' indicates that the payment plan is Auto Pay. 'N' indicates that the payment plan does not have a payment method attached and therefore isn't Auto Pay. NULL indicates that this agreement is not a payment plan.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 76,
+      "name": "PP_IS_OVERDUE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the payment plan has a balance overdue from the previous cycle. 'Y' indicates that the payment plan has an overdue balance. 'N' indicates that the payment plan does not have an overdue balance. NULL indicates that this agreement is not a payment plan."
+    },
+    {
+      "ordinalPosition": 77,
+      "name": "PP_AUTO_PAY_SUSPENDED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the payment plan's Auto Pay is suspended due to a payment error or declined payment. 'Y' indicates that the payment plan has suspended Auto Pay. 'N' indicates the payment plan's Auto Pay is not suspended. NULL indicates that this is not a payment plan agreement or does not have Auto Pay."
+    },
+    {
+      "ordinalPosition": 78,
+      "name": "ORIGINAL_PARENT_SCHED_PMT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the original agreement record in a replacement chain of agreement records."
     }
   ]
 }

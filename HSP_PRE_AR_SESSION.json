@@ -22,7 +22,7 @@
       "discontinued": false,
       "description": "This item indicates the type of temporary transaction record. This is used by the Hospital Billing filer to determine how to process the record.",
       "entries": [
-        "CHARGE",
+        "Charge",
         "Payment",
         "Debit Adjustment",
         "Credit Adjustment",
@@ -55,7 +55,8 @@
         "Action - DBC Ignore Partial Denial",
         "Action - Evaluate Bad Debt/External AR for Bucket",
         "Action - Automate Coverage Change",
-        "Action - Undo Billing and Sync Guarantor Coverages"
+        "Action - Undo Billing and Sync Guarantor Coverages",
+        "Action - Undo Billing and Refresh Guarantor Coverages"
       ]
     },
     {
@@ -269,7 +270,8 @@
         "Other",
         "DK Regional",
         "Client",
-        "Received Self-Pay"
+        "Received Self-Pay",
+        "Sent to Consolidated Self-Pay Service Area"
       ]
     },
     {
@@ -288,62 +290,48 @@
     },
     {
       "ordinalPosition": 20,
-      "name": "PRIMARY_PAYER_ID_PAYOR_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the payor."
-    },
-    {
-      "ordinalPosition": 21,
       "name": "PRIMARY_PLAN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Holds the primary plan of the account when offsetting system adjustments are created."
     },
     {
-      "ordinalPosition": 22,
-      "name": "PRIMARY_PLAN_ID_BENEFIT_PLAN_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the benefit plan record."
-    },
-    {
-      "ordinalPosition": 23,
+      "ordinalPosition": 21,
       "name": "TOTAL_CHARGE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total price amount for the charges in this session."
     },
     {
-      "ordinalPosition": 24,
+      "ordinalPosition": 22,
       "name": "ORDER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the ID of the order associated with the charge."
     },
     {
-      "ordinalPosition": 25,
+      "ordinalPosition": 23,
       "name": "TREATMENT_PLAN_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the treatment plan that generated this charge session and order."
     },
     {
-      "ordinalPosition": 26,
+      "ordinalPosition": 24,
       "name": "TREATMENT_DAY_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The contact serial number of the treatment day that generated this charge session's order."
     },
     {
-      "ordinalPosition": 27,
+      "ordinalPosition": 25,
       "name": "OPTIME_LOG_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the identifier of the OpTime Log associated with this charge."
     },
     {
-      "ordinalPosition": 28,
+      "ordinalPosition": 26,
       "name": "SYS_RECLASS_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -363,7 +351,7 @@
       ]
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 27,
       "name": "REVERSAL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -382,7 +370,7 @@
       ]
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 28,
       "name": "CONTEST_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -401,7 +389,7 @@
       ]
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 29,
       "name": "CONTEST_RESOLUTION_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -417,7 +405,7 @@
       ]
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 30,
       "name": "NO_PAY_CLAIM_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -430,7 +418,7 @@
       ]
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 31,
       "name": "BAD_DEBT_FLAG_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -446,105 +434,105 @@
       ]
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 32,
       "name": "POS_SESSION_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Point of Sale session ID."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 33,
       "name": "POS_TX_IDENT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Point of Sale transaction ID."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 34,
       "name": "POS_TX_LINENUM",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Point of Sale transaction line number."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 35,
       "name": "DISCOUNT_PERCENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the discount percentage applied to the self-pay balance."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 36,
       "name": "DISCOUNT_PROGRAM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This item stores the financial assistance program that the hospital account qualified for which caused the financial assistance adjustment to be applied."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 37,
       "name": "DISCOUNT_PROGRAM_ID_PROGRAM_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the financial assistance program record."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 38,
       "name": "TAX_EFFECTIVE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date used in the system that determine when this tax line went into effect."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 39,
       "name": "TAXABLE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the amount that the tax is applied to."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 40,
       "name": "TAX_PERCENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Percent used to calculate the tax amount."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 41,
       "name": "TAX_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the amount used for the tax."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 42,
       "name": "SURCHARGE_CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the claim print record associated with the surcharge amount of this transaction."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 43,
       "name": "TAX_RATE_DEF_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The tax rate definition CSN used in the tax calculation."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 44,
       "name": "DEFAULT_DEPT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the department that was defaulted in for the transaction."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 45,
       "name": "POS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The place of service ID associated with this transaction."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 46,
       "name": "EXTERN_AR_FLAG_YN",
       "type": "VARCHAR",
       "discontinued": false,

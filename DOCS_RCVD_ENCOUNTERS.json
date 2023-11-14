@@ -135,6 +135,7 @@
         "Ophth Exam",
         "Recurring Billing Documentation",
         "Pre-Admission Testing",
+        "Episode Documentation Update",
         "Hospice Admission",
         "Home Infusion",
         "Home Infusion Billing",
@@ -333,6 +334,7 @@
         "Decision Support Request",
         "Cosmos Document Patient Level",
         "Cosmos Document Encounter Level",
+        "Cosmos Document Unreconciled Encounter",
         "Treatment Document - eArchive",
         "Forms - eArchive",
         "Service Event - eArchive",
@@ -469,6 +471,7 @@
         "Ophth Exam",
         "Recurring Billing Documentation",
         "Pre-Admission Testing",
+        "Episode Documentation Update",
         "Hospice Admission",
         "Home Infusion",
         "Home Infusion BIlling",
@@ -779,18 +782,22 @@
         "Condition is no longer valid for this patient due to age or sex",
         "FHIR resource has an invalid start date",
         "Encounter FHIR resource is missing the type element",
-        "Encounter FHIR resource is missing the status element",
+        "FHIR resource is missing the status element",
         "Encounter FHIR resource is missing the class element",
         "Encounter FHIR resource contained an unrecognized status code",
         "Encounter FHIR resource contained a status code for a future encounter",
         "Encounter FHIR resource contained a class code for a future encounter",
         "FHIR resource has a future start date",
         "FHIR resource does not have a status of completed",
-        "Procedure FHIR resource is missing the code element",
+        "FHIR resource is missing the code element",
         "Diagnosis is missing a link to an encounter",
         "FHIR resource contains a reference to encounter not in the system",
         "FHIR resource contained a patient reference not matching the searched for patient",
-        "Immunization FHIR Resource is missing the vaccineCode element or did not contain a CVX code"
+        "Immunization FHIR Resource is missing the vaccineCode element or did not contain a CVX code",
+        "FHIR Resource is missing an effective date/time",
+        "FHIR resource contained an invalid status",
+        "Observation FHIR resource is linked to a filtered Condition FHIR resource",
+        "SDOH Assessment contains no questions"
       ]
     },
     {
@@ -910,6 +917,39 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The linked protocol visit for a Research Study linked encounter."
+    },
+    {
+      "ordinalPosition": 62,
+      "name": "EVENT_STUDY_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the study code of the research study associated with this event."
+    },
+    {
+      "ordinalPosition": 63,
+      "name": "EVENT_EXTERNAL_TO_SEND_ORG_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks whether the event occurred at the organization that sent the received document, or if it occurred elsewhere. If it occurred elsewhere, this item will be set to 1. Otherwise, this item will be null."
+    },
+    {
+      "ordinalPosition": 64,
+      "name": "EVENT_PAT_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Patient Class of the encounter.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Emergency",
+        "Preadmit",
+        "Recurring patient",
+        "Obstetrics",
+        "Commercial account",
+        "Not applicable",
+        "Unknown",
+        "Observation"
+      ]
     }
   ]
 }

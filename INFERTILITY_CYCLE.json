@@ -27,7 +27,7 @@
       "name": "RECORD_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The record status (hidden, soft-deleted, etc.)",
+      "description": "Stores the status (hidden, soft-deleted, etc.) of the Fertility cycle record.",
       "entries": [
         "Soft Deleted",
         "Hidden",
@@ -39,7 +39,7 @@
       "name": "TREATMENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The fertility treatment cycle planned treatment of assisted reproductive technology (ART) or non-ART. ART treatments are those where oocytes are removed from the body and/or later returned as part of the attempt to get pregnant.",
+      "description": "The type of REI (Reproductive Endocrinology and Infertility) treatment the patient underwent. Options include ART (Assisted Reproductive Technology) and non-ART.",
       "entries": [
         "Assisted Reproductive Technologies",
         "Non-Assisted Reproductive Technologies"
@@ -279,14 +279,14 @@
       "name": "EMBRYO_CRYO_NUM",
       "type": "INTEGER",
       "discontinued": false,
-      "description": "The number of embryos cryopreserved for a fertility cycle"
+      "description": "The number of embryos cryopreserved for a fertility cycle."
     },
     {
       "ordinalPosition": 31,
       "name": "EGG_CRYO_NUM",
       "type": "INTEGER",
       "discontinued": false,
-      "description": "The number of eggs cryopreserved for a fertility cycle"
+      "description": "The number of eggs cryopreserved for a fertility cycle."
     },
     {
       "ordinalPosition": 32,
@@ -301,6 +301,20 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This tracks whether the cycle had a status of planning at the time that the cycle was finished or deleted. This is relevant for identifying cycles that were never started and were completed while still in a planning status."
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "TRIGGER_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This item stores the planned trigger date for this cycle."
+    },
+    {
+      "ordinalPosition": 35,
+      "name": "CYCLE_TRIGGER_TM",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "This item stores the planned ovulation trigger time for this cycle."
     }
   ]
 }
