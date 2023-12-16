@@ -122,6 +122,7 @@
         "VOICE",
         "ANNOTATION",
         "VIDEO",
+        "RAW DEPTH MAP",
         "ECG",
         "SPIRO",
         "HOLTER RESULT",
@@ -365,6 +366,48 @@
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The date and time the document was indexed."
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "DEPTH_CAPT_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether depth information was captured on an image, or why depth was unable to be obtained. Only applies to images.",
+      "entries": [
+        "None",
+        "Not depth capable",
+        "Depth captured",
+        "No depth, but depth capable device"
+      ]
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "LINK_DEPTH_DCS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ID for the DCS record of the depth map taken with the image."
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "DEPTH_ACCURACY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Depth map accuracy measured on mobile when taking a wound image.",
+      "entries": [
+        "Relative",
+        "Absolute"
+      ]
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "DEPTH_QUALITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Depth map quality measured on mobile when taking a wound image.",
+      "entries": [
+        "Low",
+        "High"
+      ]
     }
   ]
 }
