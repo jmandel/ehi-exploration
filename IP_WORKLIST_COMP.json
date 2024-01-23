@@ -1,6 +1,6 @@
 {
   "name": "IP_WORKLIST_COMP",
-  "description": "This table provides information on completed work list tasks.",
+  "description": "This table provides information on work list tasks.",
   "primaryKey": [
     {
       "columnName": "TASK_ID",
@@ -35,13 +35,41 @@
     },
     {
       "ordinalPosition": 4,
+      "name": "COMP_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user completing a work list task. For automatically completed episode tasks, this will be blank."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "COMP_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 6,
       "name": "SCHED_TIME",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "The instant the work list task was scheduled."
     },
     {
-      "ordinalPosition": 5,
+      "ordinalPosition": 7,
+      "name": "CANC_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user canceling a work list task."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "CANC_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 9,
       "name": "INSTANCE_STATUS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -56,14 +84,14 @@
       ]
     },
     {
-      "ordinalPosition": 6,
+      "ordinalPosition": 10,
       "name": "ANCHOR_SCHED_I_DTTM",
       "type": "DATETIME (Local) ",
       "discontinued": false,
       "description": "If this task was created from an anchored order, this is the due time of the anchor order related to this task due time"
     },
     {
-      "ordinalPosition": 7,
+      "ordinalPosition": 11,
       "name": "NOTIFICATION_GRP_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -80,28 +108,28 @@
       ]
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 12,
       "name": "SCHED_TIME_UTC_DTTM",
       "type": "DATETIME (UTC) ",
       "discontinued": false,
       "description": "The instant the work list task was scheduled in UTC."
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 13,
       "name": "COMPLETED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact in which the task was completed. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 14,
       "name": "TASK_COMP_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date the user indicates the task was completed"
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 15,
       "name": "OUTCOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -113,53 +141,67 @@
       ]
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 16,
       "name": "REMOVED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact from which a user removed the task. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "ordinalPosition": 13,
+      "ordinalPosition": 17,
       "name": "UNCOMPLETED_IN_PAT_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique contact serial number (CSN) of the patient contact from which a user undid the completion action for the task. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
     },
     {
-      "ordinalPosition": 14,
+      "ordinalPosition": 18,
       "name": "TASK_NOTE_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique identifier of the note record for the comment associated with a specific task instance."
     },
     {
-      "ordinalPosition": 15,
+      "ordinalPosition": 19,
       "name": "TASK_RESPONSIBLE_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The responsible user assigned to an instance of a care plan task."
     },
     {
-      "ordinalPosition": 16,
+      "ordinalPosition": 20,
       "name": "TASK_RESPONSIBLE_USER_ID_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the user record. This name may be hidden."
     },
     {
-      "ordinalPosition": 17,
+      "ordinalPosition": 21,
       "name": "TASK_RESPONSIBLE_IB_POOL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The responsible pool assigned to an instance of a care plan task."
     },
     {
-      "ordinalPosition": 18,
+      "ordinalPosition": 22,
       "name": "TASK_RESPONSIBLE_IB_POOL_ID_REGISTRY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "EDIT_SOURCE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If this task instance was created by editing an existing instance, this value is the line number of the previous version of this task instance."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "EDIT_NEXT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "If this task instance was subsequently edited, this line is the location of the next version of this task instance."
     }
   ]
 }

@@ -205,6 +205,7 @@
         "System Automatic Action",
         "Advance Bill",
         "Two-Way SMS",
+        "Consolidated Balances Conversion",
         "System"
       ]
     },
@@ -439,7 +440,8 @@
         "Changed Mind",
         "Disputed Terms",
         "Patient Canceled",
-        "Legal"
+        "Legal",
+        "Consolidated Balances Conversion"
       ]
     },
     {
@@ -496,7 +498,7 @@
       "name": "FINAL_RESOLUTION_DATE",
       "type": "DATETIME",
       "discontinued": false,
-      "description": "This column contains the date when the agreement was resolved and all charges were in full self-pay for all accounts.  - If the agreement is not resolved, this column will be empty. - If the agreement has any visit where all charges are not in full self-pay, this column will be empty - If both the agreement is resolved and all charges on all visits are in full self-pay, this column will contain the last of these two dates (using RESOLUTION_DATE and ALL_HAR_BAL_IN_FULL_SP_DATE)"
+      "description": "This column contains the date when the agreement was resolved and all charges were in full self-pay for all accounts.  - If the agreement is not resolved, this column will be empty. - If the agreement has not ever been in a state where all charges were in full self-pay, this column will be empty - If both the agreement is resolved and all charges on all visits were in full self-pay at least once in the agreement's lifetime, this column will contain the later of Resolution Date (I BSP 155) and All Hospital Account Balances in Full Self-Pay Date (I BSP 1752).  By comparing this item with the Resolution Date, reports can find cases where VAP-eligible balances are dropping to self pay after the agreement was completed."
     },
     {
       "ordinalPosition": 56,
@@ -697,6 +699,20 @@
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the original agreement record in a replacement chain of agreement records."
+    },
+    {
+      "ordinalPosition": 79,
+      "name": "VAP_RESOLUTION_SP_AMT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The difference between the remaining self-pay balance of all accounts on a Visit Auto Pay agreement on its resolution date (BSP-155) and posted payments from the agreement (BSP-161)."
+    },
+    {
+      "ordinalPosition": 80,
+      "name": "VAP_RESOLUTION_SP_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The latest date on which all accounts associated with the Visit Auto Pay agreement reached full self-pay, as of the Visit Auto Pay's resolution date (BSP-155). This date can be any time before or equal to the agreement's resolution date. If all of the accounts on the agreement were not fully in self-pay by the resolution date of the agreement, this column is blank."
     }
   ]
 }

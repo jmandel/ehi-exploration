@@ -22,13 +22,41 @@
       "discontinued": false,
       "description": "The type of balance for a self-pay target account.",
       "entries": [
-        "Technical",
-        "Professional",
-        "Both"
+        "Hospital",
+        "Professional"
       ]
     },
     {
       "ordinalPosition": 3,
+      "name": "CONS_SP_VISIT_LOC",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a string description of the visit location or department for display in patient facing communication. Typically this will be a department for outpatient encounters and a location for inpatient or emergency encounters."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONS_SP_VISIT_DESC_OVRIDE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a string description of the visit for display in patient facing communication."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CONS_SP_VISIT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of visit for the self-pay target account.",
+      "entries": [
+        "Admission",
+        "Appointment",
+        "Emergency Visit",
+        "Surgery",
+        "Hospital Outpatient Visit",
+        "Hospital Visit"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
       "name": "CONS_SP_BAL_WTHDRW_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -36,11 +64,12 @@
       "entries": [
         "Created in Error",
         "Account Combine",
-        "Sent to PB bad debt in non-SBO AR Service Area."
+        "Sent to PB bad debt in non-SBO AR Service Area.",
+        "Conversion Utility"
       ]
     },
     {
-      "ordinalPosition": 4,
+      "ordinalPosition": 7,
       "name": "CONS_SP_BAL_WTHDRW_STS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -51,60 +80,75 @@
       ]
     },
     {
-      "ordinalPosition": 5,
+      "ordinalPosition": 8,
       "name": "CONS_SP_TOT_CHG",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of self-pay charges on this self-pay target account."
     },
     {
-      "ordinalPosition": 6,
+      "ordinalPosition": 9,
       "name": "CONS_SP_TOT_INS_PMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of insurance payments on this self-pay target account."
     },
     {
-      "ordinalPosition": 7,
+      "ordinalPosition": 10,
       "name": "CONS_SP_TOT_INS_RFND",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of insurance refunds on this self-pay target account."
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 11,
       "name": "CONS_SP_TOT_INS_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of insurance adjustments on this self-pay target account."
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 12,
       "name": "CONS_SP_TOT_SP_PMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of payments on this self-pay target account."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 13,
       "name": "CONS_SP_TOT_SP_RFND",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of self-pay refunds on this self-pay target account."
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 14,
       "name": "CONS_SP_TOT_SP_ADJ",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Total amount of self-pay adjustments on this self-pay target account."
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 15,
       "name": "CONS_SP_TOT_INS_BAL",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The outstanding insurance amount on this self-pay target account."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "CONS_SP_VISIT_SETTING_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The visit setting for the consolidated self-pay target account.",
+      "entries": [
+        "In Person",
+        "Video",
+        "Telephone",
+        "Clinic to Clinic Video",
+        "E-Visit",
+        "Patient Not Present"
+      ]
     }
   ]
 }

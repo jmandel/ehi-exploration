@@ -168,8 +168,8 @@
         "Process Visit Auto Pay Payment Now",
         "Process Recurring Payment Now",
         "Update Self-pay Charge Exemption Reason",
-        "Send Self-Pay to Consolidated Service Area",
-        "Return from Consolidated Service Area",
+        "Send Self-Pay to Consolidated Service Area / External Billing",
+        "Return from Consolidated Service Area / External Billing",
         "Resubmit Charge",
         "Perform Workqueue Action",
         "Resubmit Claim",
@@ -203,7 +203,7 @@
         "Update Variance",
         "Void Variance",
         "Reopen Variance",
-        "Generate Release",
+        "Create Release",
         "Reset Self-Pay Aging Date",
         "Reset Insurance Aging Date",
         "Replace Claim",
@@ -237,7 +237,7 @@
         "Update Payment Plan",
         "Terminate Payment Plan",
         "Set Reminder",
-        "Send Balance Notification",
+        "Send Billing Notification",
         "Update PB Billing Status",
         "Demand Claim",
         "Remove From Claim Queue",
@@ -255,6 +255,9 @@
       "entries": [
         "Created",
         "Transferred",
+        "Documents Need Review",
+        "Documents Created",
+        "Documents Sent",
         "Reopened",
         "Completed",
         "Voided"
@@ -471,6 +474,80 @@
         "Level 1",
         "Level 2",
         "Level 3"
+      ]
+    },
+    {
+      "ordinalPosition": 28,
+      "name": "ACT_BDC_ROI_RECIPIENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the recipient or organization (AGY record) specified when generating the Release of Information (ROI) documentation created from this action."
+    },
+    {
+      "ordinalPosition": 29,
+      "name": "ACT_BDC_ROI_RECIPIENT_ID_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the agency."
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "ACT_BDC_ROI_SUB_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the submission method specified when generating the Release of Information (ROI) documentation created from this action.",
+      "entries": [
+        "CCD",
+        "Print",
+        "Save to File",
+        "Fax",
+        "Inspector",
+        "EpicCare Link",
+        "Patient Portal",
+        "Chart Gateway",
+        "In Basket",
+        "Claims Delivery",
+        "Interface",
+        "Payer Platform",
+        "Email",
+        "ANSI 275"
+      ]
+    },
+    {
+      "ordinalPosition": 31,
+      "name": "ACT_BDC_ROI_RELEASE_TMPLT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This column stores the release template (RTM record) specified when generating the Release of Information (ROI) documentation created from this action."
+    },
+    {
+      "ordinalPosition": 32,
+      "name": "ACT_BDC_ROI_RELEASE_TMPLT_ID_ROI_TEMPLT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the release template."
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "ACT_BDC_PAYER_DOWNGRADE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The BDC Payer Downgrade Type that is set as a result of this action.",
+      "entries": [
+        "No Downgrade",
+        "Inpatient to Observation"
+      ]
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "ACT_PAYER_DOWNGRADE_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The BDC Payer Downgrade Outcome that is set as a result of this action.",
+      "entries": [
+        "Appropriate & Downgraded",
+        "Inappropriate & Overturned",
+        "Inappropriate & Downgraded"
       ]
     }
   ]

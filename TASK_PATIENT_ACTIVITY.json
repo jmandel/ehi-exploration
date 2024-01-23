@@ -38,6 +38,7 @@
       "entries": [
         "General",
         "Checklist",
+        "Willow Inventory Shortage",
         "Staff Activity",
         "Homecare Patient Encounter"
       ]
@@ -127,7 +128,7 @@
       "name": "CASE_ID",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Surgical case linked to this task."
+      "description": "If this task is anchored to an anchor target of type Surgery, then this item stores the surgical case associated with the surgery."
     },
     {
       "ordinalPosition": 11,
@@ -148,7 +149,7 @@
       "name": "PREGNANCY_EPISODE_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Pregnancy Episode linked to this task."
+      "description": "If this task is anchored to an anchor target of type Pregnancy, then this item stores the episode associated with the pregnancy."
     },
     {
       "ordinalPosition": 14,
@@ -228,12 +229,14 @@
       "name": "ANCHOR_EVENT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "When an anchor event is linked to this task, this stores the type of the anchor event.",
+      "description": "The type of anchor target this task is configured for.",
       "entries": [
         "Surgery",
         "Pregnancy",
-        "Procedural Appointment",
-        "Hospital Discharge"
+        "Appointment",
+        "Hospital Discharge",
+        "Rule Defined Date - Encounter Level",
+        "Rule Defined Date - Patient Level"
       ]
     },
     {
@@ -241,7 +244,7 @@
       "name": "ANCHOR_EVENT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Name of the anchor event to display to the provider in Patient To Do List activity."
+      "description": "The display name of the anchor target this task is configured for. This display name appears within the details of this task in the Patient To Do List activity."
     },
     {
       "ordinalPosition": 25,
@@ -262,11 +265,12 @@
       "name": "ENSURE_DELIVERY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Determines whether task will be delivered if scheduled start date has passed.",
+      "description": "Determines the scheduling behavior of this anchored task when its start date falls in the past.",
       "entries": [
-        "Always",
-        "Ignore Past Instances",
-        "Never"
+        "Start immediately",
+        "Skip in-between occurrences",
+        "Don't start",
+        "Resolve task as discontinued"
       ]
     },
     {
@@ -274,14 +278,14 @@
       "name": "APPT_SERIAL_NUM",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Appointment serial number for the appointment linked to this task."
+      "description": "If this task is anchored to an anchor target of type Procedural Appointment, then this item stores the appointment serial number associated with the procedural appointment."
     },
     {
       "ordinalPosition": 29,
       "name": "ADMISSION_ENC_CSN_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Admission contact serial number for the admission linked to this task."
+      "description": "If this task is anchored to an anchor target of type Hospital Discharge, then this item stores the contact serial number associated with the admission."
     },
     {
       "ordinalPosition": 30,
@@ -455,6 +459,40 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "UNANC_BEHAV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The behavior when this task is unanchored from its anchor target.",
+      "entries": [
+        "Unschedule",
+        "Immediately find new anchor target",
+        "Resolve if no longer actionable",
+        "Always resolve"
+      ]
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "AE_EVENT_UTC_DTTM",
+      "type": "DATETIME (UTC) ",
+      "discontinued": false,
+      "description": "The instant in UTC of the event associated with an anchored task."
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "AE_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The CSN of the encounter associated with this anchored task. Only applies to if the anchor target is of type rule defined date (encounter level)."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "AE_EVENT_DTTM",
+      "type": "DATETIME (Local) ",
+      "discontinued": false,
+      "description": "The instant in local of the event associated with an anchored task."
     }
   ]
 }

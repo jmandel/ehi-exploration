@@ -52,6 +52,9 @@
       "entries": [
         "Created",
         "Transferred",
+        "Documents Need Review",
+        "Documents Created",
+        "Documents Sent",
         "Reopened",
         "Completed",
         "Voided"
@@ -352,6 +355,29 @@
       "type": "DATETIME",
       "discontinued": false,
       "description": "This item stores the initial appeal deadline at the moment the BDC is created."
+    },
+    {
+      "ordinalPosition": 44,
+      "name": "PAYER_DOWNGRADE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of downgrade requested via this BDC when the primary payer tries to dispute the level of care of the HAR.",
+      "entries": [
+        "No Downgrade",
+        "Inpatient to Observation"
+      ]
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "PAYER_DOWNGRADE_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the primary payer's attempt to lower the level of care of the account via this BDC was appropriate and whether it was overturned or led to a downgrade. This item is null if no such attempt was made by the Primary Payer.",
+      "entries": [
+        "Appropriate & Downgraded",
+        "Inappropriate & Overturned",
+        "Inappropriate & Downgraded"
+      ]
     }
   ]
 }
