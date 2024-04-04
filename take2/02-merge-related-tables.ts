@@ -1,3 +1,4 @@
+import { table } from "console";
 import _ from "lodash";
 
 interface Occurrence {
@@ -36,7 +37,8 @@ interface Table {
 }
 
 interface DiscoveredMapping {
-  type: "one-to-one" | "one-to-many" | "many-to-one";
+  type: "one-to-one" | "one-to-many" | "many-to-one" | "many-to-many" | "child" /*specialization of one-to-many*/| "parent" /*specialization of many-to-one */;
+  primaryKeys: 0 | 1 | 2;
   target: string;
   joinOn: { source: string; target: string }[];
 }
@@ -270,7 +272,7 @@ function findBestColumnSet(
 
   if (
     !bestCorrespondence ||
-    currentBestCorrespondence.efficiency < bestCorrespondence.efficiency
+    currentBestCorrespondence.efficiency <= bestCorrespondence.efficiency
   ) {
     return currentBestCorrespondence;
   }
@@ -299,6 +301,17 @@ function findClosestToOne(correspondences: CorrespondenceWithEfficiency[]) {
     _.filter(correspondences, (result) => result.efficiency >= 1),
     (result) => Math.abs(1 - result.efficiency)
   );
+}
+
+function findClosestToOneWithTies(correspondences: CorrespondenceWithEfficiency[]) {
+  // Filter correspondences with efficiency >= 1
+  const filtered = _.filter(correspondences, (result) => result.efficiency >= 1);
+
+  // Find the minimum difference from 1
+  const minDiff = _.minBy(filtered, (result) => Math.abs(1 - result.efficiency))!;
+
+  // Return all correspondences with the minimum difference
+  return _.filter(filtered, (result) => result.efficiency === minDiff.efficiency);
 }
 
 function identifyEfficientColumnCorrespondence(
@@ -332,47 +345,94 @@ function identifyEfficientColumnCorrespondence(
           ...calculateEfficiency(tables, correspondence, relationshipType),
         })
       );
-      const bestSingleColumnCorrespondence = findClosestToOne(
+      const bestSingleColumnCorrespondence = findClosestToOneWithTies(
         singleColumnEfficiencies
       );
+      return bestSingleColumnCorrespondence.flatMap((bestSingleColumnCorrespondence) => {
       if (!bestSingleColumnCorrespondence) {
         return [];
       }
+      const bestFullCorrespondence = findBestColumnSet(
+        tables,
+        candidateCorrespondences,
+        bestSingleColumnCorrespondence,
+        relationshipType
+      );
+
+      if (bestFullCorrespondence.efficiency !== 1) {
+        return [];
+      }
+
       return [
         {
           relationshipType,
-          ...findBestColumnSet(
-            tables,
-            candidateCorrespondences,
-            bestSingleColumnCorrespondence,
-            relationshipType
-          ),
+          ...bestFullCorrespondence,
         },
       ];
+      })
     }
   );
 
-  const best = findClosestToOne(bestCorrespondences);
+  const best = findClosestToOneWithTies(bestCorrespondences);
   if (!best) {
     return null;
   }
 
-  const { table1, table2, column1, column2 } = best.correspondence;
-  const joinOn = column1.map((source, index) => ({
-    source,
-    target: column2[index],
-  }));
+    const bestDiscoveries: DiscoveredMapping[] = best.flatMap((best) => {
 
-  return {
-    type:
-      best.correspondenceType === "left-parent-of-right"
-        ? "one-to-many"
-        : best.correspondenceType === "left-child-of-right"
-        ? "many-to-one"
-        : "one-to-one",
-    target: table2,
-    joinOn,
+      const { table1, table2, column1, column2 } = best.correspondence;
+      const joinOn = column1.map((source, index) => ({
+        source,
+        target: column2[index],
+      }));
+
+      function usesAll(primaryKeyNames: string[], usedKeyNames: string[]) {
+        return primaryKeyNames.every(pk => usedKeyNames.includes(pk)) ? 1  : 0;
+      }
+
+      function usesSome(primaryKeyNames: string[], usedKeyNames: string[]) {
+        return _.takeWhile(primaryKeyNames, pk => usedKeyNames.includes(pk)).length > 0
+      }
+
+
+      const leftUsesAllPrimaryKeys: 0 | 1 = usesAll(schemas[table1].primaryKey.map(pk => pk.columnName), joinOn.map(j => j.source));
+      const rightUsesAllPrimaryKeys: 0 | 1 = usesAll(schemas[table2].primaryKey.map(pk => pk.columnName), joinOn.map(j => j.target));
+      const leftUsesSomePrimaryKeys: 0 | 1 = usesSome(schemas[table1].primaryKey.map(pk => pk.columnName), joinOn.map(j => j.source)) ? 1 : 0;
+      const rightUsesSomePrimaryKeys: 0 | 1 = usesSome(schemas[table2].primaryKey.map(pk => pk.columnName), joinOn.map(j => j.target)) ? 1 : 0;
+
+      const allPrimaryKeys = (
+        best.correspondenceType === "left-child-of-right" ?
+          leftUsesSomePrimaryKeys + rightUsesAllPrimaryKeys :
+        "left-parent-of-right" ?
+          leftUsesAllPrimaryKeys + rightUsesSomePrimaryKeys :
+          leftUsesAllPrimaryKeys + rightUsesAllPrimaryKeys);
+
+
+
+      return {
+        type:
+          best.efficiency > 1 ? "many-to-many" : 
+          best.correspondenceType === "left-parent-of-right" ? "one-to-many" :
+          best.correspondenceType === "left-child-of-right" ? "many-to-one" :
+          allPrimaryKeys ? "one-to-one" : "one-to-many",
+        primaryKeys: allPrimaryKeys as 0 | 1 | 2,
+        target: table2,
+        joinOn,
+      };
+  });
+  const typeScores = {
+    "one-to-one": 3,
+    "one-to-many": 2,
+    "many-to-one": 2,
+    "many-to-many": 1,
+    // TODO one-to-optional, optional-to-one
   };
+  const ret =  _.maxBy(bestDiscoveries, (d) => [d.primaryKeys, typeScores[d.type]]) as DiscoveredMapping;
+    if (tables["PAT_ENC"] && tables["SOCIAL_HX"]) {
+    console.log("social and enc Best correspondence", relationshipTypes,  bestDiscoveries, ret);
+  }
+
+  return ret;
 }
 
 function mergeTables(
@@ -487,49 +547,6 @@ function mergeTables(
   return { mergedTable, mergedSchema };
 }
 
-function decorateSchemaWithNameBasedMappings(schemas: SchemasMap): SchemasMap {
-  const decoratedSchemas: SchemasMap = _.cloneDeep(schemas);
-
-  const normalize = (tableName: string) => tableName.replace(/[_\d]/g, "");
-
-  for (const [normalizedName, tableNames] of Object.entries(
-    _.groupBy(Object.keys(schemas), normalize)
-  )) {
-    if (tableNames.length > 1) {
-      for (let i = 0; i < tableNames.length; i++) {
-        for (let j = i + 1; j < tableNames.length; j++) {
-          const table1 = tableNames[i];
-          const table2 = tableNames[j];
-
-          const joinOn = schemas[table1].primaryKey.map((key) => ({
-            source: key.columnName,
-            target:
-              schemas[table2].columns.find((col) => col.name === key.columnName)
-                ?.name || key.columnName,
-          }));
-
-          decoratedSchemas[table1].discoveredMappings = [
-            ...(decoratedSchemas[table1].discoveredMappings || []),
-            { type: "one-to-one", target: table2, joinOn },
-          ];
-          decoratedSchemas[table2].discoveredMappings = [
-            ...(decoratedSchemas[table2].discoveredMappings || []),
-            {
-              type: "one-to-one",
-              target: table1,
-              joinOn: joinOn.map(({ source, target }) => ({
-                source: target,
-                target: source,
-              })),
-            },
-          ];
-        }
-      }
-    }
-  }
-
-  return decoratedSchemas;
-}
 
 function decorateSchemaWithHeuristicMappings(
   tables: TablesMap,
@@ -556,17 +573,10 @@ function decorateSchemaWithHeuristicMappings(
         );
 
       if (efficientColumnCorrespondence) {
-        const { type, target, joinOn } = efficientColumnCorrespondence;
-
-        // Check if the mapping already exists in table1's discoveredMappings
-        // const existingMapping1 = (decoratedSchemas[table1].discoveredMappings || []).find(
-        //   (mapping) => mapping.target === table2 && _.isEqual(mapping.joinOn, joinOn)
-        // );
-
-        // if (!existingMapping1) {
+        const { type, target, joinOn, primaryKeys } = efficientColumnCorrespondence;
         decoratedSchemas[table1].discoveredMappings = [
           ...(decoratedSchemas[table1].discoveredMappings || []),
-          { type, target: table2, joinOn },
+          { type, target: table2, joinOn, primaryKeys},
         ];
         decoratedSchemas[table2].discoveredMappings = [
           ...(decoratedSchemas[table2].discoveredMappings || []),
@@ -577,25 +587,15 @@ function decorateSchemaWithHeuristicMappings(
                 : type === "many-to-one"
                 ? "one-to-many"
                 : "one-to-one",
+            primaryKeys,
             target: table1,
-            joinOn: joinOn.map(({ source, target }) => ({ source: target, target: source }))
+            joinOn: joinOn.map(({ source, target }) => ({
+              source: target,
+              target: source,
+            })),
           },
         ];
 
-        // }
-
-        // Check if the mapping already exists in table2's discoveredMappings
-        // const existingMapping2 = (decoratedSchemas[table2].discoveredMappings || []).find(
-        //   (mapping) =>
-        //     mapping.target === table1 &&
-        //     _.isEqual(
-        //       mapping.joinOn,
-        //       joinOn.map(({ source, target }) => ({ source: target, target: source }))
-        //     )
-        // );
-
-        // if (!existingMapping2) {
-        // }
       }
     }
   }
@@ -633,7 +633,7 @@ function mergeTablesWithDiscoveredMappings(
     for (const schema of sortedSchemas) {
       const oneToOneMappings = _.sortBy(
         (schema.discoveredMappings || []).filter(
-          (mapping) => mapping.type === "one-to-one"
+          (mapping) => mapping.type === "one-to-one" && mapping.primaryKeys == 2
         ),
         (m) => m.target
       );
@@ -769,19 +769,60 @@ async function main({ inputFilename, outputFilename }) {
   );
   console.log("Decorated");
 
+  // await Bun.write(
+  //   outputFilename,
+  //   JSON.stringify(
+  //     { $meta: { schemas: heuristicDecoratedSchemas }, ...tables },
+  //     null,
+  //     2
+  //   )
+  // );
+
   const { mergedTables, mergedSchemas } = mergeTablesWithDiscoveredMappings(
     tables,
     heuristicDecoratedSchemas
   );
+
+  console.log("FAM Mappings", JSON.stringify(mergedSchemas["FAMILY_HX"].discoveredMappings, null, 2));
   Object.values(mergedSchemas).forEach((schema) => {
     schema.discoveredMappings = schema.discoveredMappings || [];
-    schema.discoveredMappings = _.uniqBy(schema.discoveredMappings, (m) =>
-      JSON.stringify(m)
+    schema.discoveredMappings = _.sortBy(schema.discoveredMappings, (m) => m.primaryKeys * -1);
+    schema.discoveredMappings = _.uniqBy(schema.discoveredMappings, (m: DiscoveredMapping) =>
+      JSON.stringify({target: m.target, type: m.type})
     );
-    schema.discoveredMappings = _.sortBy(schema.discoveredMappings, (m) =>
-      [m.target, m.type]
-    );
+    schema.discoveredMappings = _.filter(schema.discoveredMappings, (m: DiscoveredMapping) => m.primaryKeys >= 1)
+    schema.discoveredMappings = _.sortBy(schema.discoveredMappings, (m) => [
+      m.target,
+      m.type,
+    ]);
+    // look for one-to-many, primary keys < 2 -->  X, and if we find this, remove X from this level
+    for (const cm of schema.discoveredMappings) {
+      if (cm.primaryKeys < 2) {
+        // Find a mapping that covers the current mapping
+        const cmTargets = cm.joinOn.map(j => j.target);
+        const covered = schema.discoveredMappings.filter(m => m.primaryKeys === 2).some(m => {
+          const remoteSchema = mergedSchemas[m.target];
+          return remoteSchema.discoveredMappings?.filter(m => m.primaryKeys === 2).some(covering => {
+            
+            const coveringTargets = covering.joinOn.map(j => j.target);
+            const ret =  cm.target === covering.target && cmTargets.every(col => coveringTargets.includes(col))
+            if (ret) {
+              console.log("Covering", cm.target, "by", covering.target, "on", cm.joinOn.map(j => j.target), "by", covering.joinOn.map(j => j.target), "in", schema.name, "by", remoteSchema.name)
+            }
+            return ret;
+          })
+        })
+        // If a covering mapping is found, remove the current mapping
+        if (covered) {
+          console.log("Removing", cm.target, "from", schema.name, "as it is covered by a primary key mapping")
+          _.remove(schema.discoveredMappings, cm);
+        }
+      }
+    }
+    // look for one-to-many, primary keys = 2 -->  X, and if we find this, remove X from this level
+    // for (const r of schema.discoveredMappings) {
 
+    // }
   });
 
   await Bun.write(
@@ -814,3 +855,25 @@ main(argv);
 
 // TODO populate discovered mappings into both sides of the rel.
 // TODO de-duplicate the discovered mappings before output
+
+/* If a table has a one-to-one mapping that uses *all of its columns*, the table can be deleted.
+   (this is handled already if we go with the merging plan)
+
+            "type": "one-to-one",
+            "target": "HOMUNCULUS_PAT_DATA",
+            "joinOn": [
+              {
+                "source": "PAT_ENC_CSN_ID",
+                "target": "PAT_ENC_CSN_ID"
+              },
+              {
+                "source": "CONTACT_DATE",
+                "target": "CONTACT_DATE"
+              },
+              {
+                "source": "PAT_ENC_DATE_REAL",
+                "target": "PAT_ENC_DATE_REAL"
+              }
+            ]
+ 
+*/
