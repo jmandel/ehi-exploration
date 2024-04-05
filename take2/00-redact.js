@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import minimist from 'minimist';
 
 function generateRedactionRegex(term) {
-  const chars = term.split('');
-  const pattern = chars.join("[-_()\\[\\]\\{\\}\\s]{0,5}");
+  const chars = term.replace(/\s+/g, "").split('');
+  const pattern = chars.join("[\-_()\\[\\]\\{\\}\\s]{0,5}");
   return new RegExp(pattern, 'gi');
 }
 
@@ -22,8 +22,8 @@ async function redactTsv(tsvFile, redactionTerms) {
 async function main() {
   const args = minimist(process.argv.slice(2));
 
-  const directory = args.directory || 'path/to/default/directory'; 
-  const termsFile = args.terms;
+  const directory = args.directory || 'tsv_files'; 
+  const termsFile = args.terms || '.redaction-terms.json';
   const inlineTerms = args.inline;
 
   let redactionTerms = [];

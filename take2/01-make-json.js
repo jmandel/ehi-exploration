@@ -105,11 +105,12 @@ const main = async () => {
   const { schemaFolder, tsvFolder, outputFile } = argv;
   const database = { $meta: { schemas: {} } };
 
-  const files = await readdir(schemaFolder);
+  const errors = [];
+  const files = await readdir(tsvFolder);
   for (const fileName of files) {
-    if (fileName.endsWith('.json')) {
-      const typeName = fileName.slice(0, -5);
-      const schemaPath = join(schemaFolder, fileName);
+    if (fileName.endsWith('.tsv')) {
+      const typeName = fileName.slice(0, -4);
+      const schemaPath = join(schemaFolder, `${typeName}.json`);
       const tsvFilePath = join(tsvFolder, `${typeName}.tsv`);
 
       try {
@@ -118,6 +119,7 @@ const main = async () => {
         if (schema) {
           database.$meta.schemas[typeName] = schema;
           database[typeName] = [];
+
           await processTsvData(schema, tsvFilePath, typeName, database);
 
           const cols = new Set(database[typeName].flatMap(Object.keys));
@@ -126,15 +128,15 @@ const main = async () => {
           );
         }
       } catch (e) {
-        if (e.code !== 'ENOENT') {
-          console.error(`Error processing file ${tsvFilePath}: ${e}`);
-        }
+        errors.push(e)
+        console.error(`Error processing file ${tsvFilePath}: ${e}`);
       }
     }
   }
 
   const jsonData = JSON.stringify(database, null, 2);
   await writeFile(outputFile, jsonData, 'utf-8');
+  console.error("Errors", errors);
 };
 
 main();
