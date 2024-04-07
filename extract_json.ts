@@ -36,7 +36,7 @@ const cols = [];
 for (const c of colRows) {
   const [ordinalPosition, name, type, discontinuedText] = Array.from(
     c.querySelectorAll(":scope > td")
-  ).map((c) => c.innerText);
+  ).map((c) => c.innerText.trim());
   const colDescComponents = c.nextElementSibling.querySelector("table.SubList");
   const colDesc: string = colDescComponents
     .querySelector(":scope > tbody > tr:nth-child(2)")
