@@ -1,0 +1,118 @@
+{
+  "name": "CRITERIA_REVIEW_GEN_TRACK",
+  "description": "This table contains information for reviews created with the Generated Drafts for Utilization Review feature in the Manual Review activity.",
+  "primaryKey": [
+    {
+      "columnName": "CRITERIA_REVIEW_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CRITERIA_REVIEW_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the criteria review record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "GEN_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that the user started this generation."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "GEN_RESP_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the draft or error was returned to the user for this generated draft."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "GEN_DECISN_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time a user accepts or discards the generated review draft."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "GEN_DECISN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The decision category ID for the generated review draft.",
+      "entries": [
+        "Used",
+        "Discarded",
+        "Ignored"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "GEN_STYLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The style category ID for the generated review draft.",
+      "entries": [
+        "Bulleted List",
+        "Paragraph"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "LOOKBACK_START_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time of the start of the lookback time period for this generated draft."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "LOOKBACK_END_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time of the end of the lookback time period for this generated draft."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "GEN_FEEDBACK_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The feedback category ID for the generated review draft.",
+      "entries": [
+        "Ignored",
+        "Positive",
+        "Negative"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "GEN_ERR_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether an error occured during the review draft generation. 'Y' indicates that an error was logged. 'N' or NULL indicates that no error was logged.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "GEN_PROMPT_VERS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The version of the prompt used to generate the draft."
+    }
+  ]
+}

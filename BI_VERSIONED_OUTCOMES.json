@@ -1,0 +1,66 @@
+{
+  "name": "BI_VERSIONED_OUTCOMES",
+  "description": "This table contains information about the Breast Imaging outcomes. This includes the outcome version, the final outcome, and the preliminary outcome. The rows in this table are order (ORD) records that are exams with a breast imaging outcome.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "BI_OUTCOME_VER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The version of MQSA outcomes that are being calculated.",
+      "entries": [
+        "US FDA MQSA",
+        "ACR BI-RADS 5th Edition"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "BI_VER_MAMMO_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores versioned FP/FN/TP/TN/etc info for a mammo study. May not contain the most current data until the MQSA report has been run.",
+      "entries": [
+        "True Negative",
+        "False Negative",
+        "True Positive",
+        "False Positive 1",
+        "False Positive 2",
+        "False Positive 1 & 2",
+        "False Positive 2 & 3",
+        "False Positive 1 & 2 & 3",
+        "N/A"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "BI_VER_PRELIM_MAMMO_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores versioned preliminary FP/FN/TP/TN/etc. info for a breast imaging study. May not contain the most current data until the MQSA report has been run."
+    }
+  ]
+}

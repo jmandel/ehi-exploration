@@ -1,0 +1,76 @@
+{
+  "name": "AI_INTRCT_INFO",
+  "description": "Tracks basic LLM items.",
+  "primaryKey": [
+    {
+      "columnName": "AI_INTRCT_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AI_INTRCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the interaction record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A pointer to the ID of the user who is interacting with the AI agents in this session"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AI_INTRCT_SESS_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A status indicating where we are in the life cycle of this session",
+      "entries": [
+        "Executing",
+        "Ready",
+        "Error",
+        "Active",
+        "Discard",
+        "Done"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "STAT_CHNG_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Tracks the UTC instant when the last status change was made."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Pointer to the patient encounter associated with the workflow"
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Pointer to the patient record"
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "MSG_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A pointer to the patient message associated with the session"
+    }
+  ]
+}

@@ -1,0 +1,705 @@
+{
+  "name": "OR_CASE_3",
+  "description": "The OR_CASE_3 table enables you to report on surgical and procedural case data. This table has the same basic structure as OR_CASE and OR_CASE_2, but was created as a second table to prevent OR_CASE and OR_CASE_2 from getting any larger.",
+  "primaryKey": [
+    {
+      "columnName": "CASE_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the case request record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "SETUP_TIME_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks whether the setup time for a case has been modified by the user.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "DFLT_SETUP_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item stores the setup time defaulted by the system."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "DFLT_CLEANUP_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item stores the clean up time defaulted by the system."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "DFLT_PREP_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item stores the patient prep time defaulted by the system."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "DFLT_WRAPUP_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item stores the wrap-up time defaulted by the system."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CLEANUP_TIME_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks whether the clean up time for a case has been modified by the user."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "WRAPUP_TIME_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks whether the wrap-up time for a case has been modified by the user."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "CASE_LEN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the length of a procedure or panel has been modified by a user."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "LEN_MOD_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item tracks the last user to modify a length of a procedure or panel such that a length doesn't use the defaulted length."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "LEN_MOD_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "PAN1_PAN_DLFT_SNG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there is only a single procedure in this panel.",
+      "entries": [
+        "Match procedure, provider, and location.",
+        "Match procedure and provider; all locations.",
+        "Match procedure and location; all providers.",
+        "Match procedure; all locations and providers.",
+        "Match procedure, provider, and location. Include multiple procedure cases.",
+        "Match procedure and provider; all locations. Include multiple procedure cases.",
+        "Match procedure and location; all providers. Include multiple procedure cases.",
+        "Match procedure; all locations and providers. Include multiple procedure cases.",
+        "Use time when performed with other procedures from preference card.",
+        "Use time when performed as a single procedure from preference card."
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "PAN1_PAN_DLFT_MLT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple procedures on this panel.",
+      "entries": [
+        "Match procedure combination, provider, and location.",
+        "Match procedure combination and provider; all locations.",
+        "Match procedure combination and location; all providers.",
+        "Match procedure combination; All locations and providers.",
+        "Match procedure combination, provider, and location. Include multi-panel cases.",
+        "Match procedure combination and provider; all locations. Include multi-panel cases.",
+        "Match procedure combination and location; all providers. Include multi-panel cases.",
+        "Match procedure combination; All locations and providers. Include multi-panel cases.",
+        "Use individual procedures. Match provider and location.",
+        "Use individual procedures. Match provider; all locations.",
+        "Use individual procedures. Match location; all providers.",
+        "Use individual procedures. All locations and providers.",
+        "Individual procedures. Match provider and location. Include single procedure cases.",
+        "Individual procedures. Match provider; all locations. Include single procedure cases.",
+        "Individual procedures. Match location; all providers. Include single procedure cases.",
+        "Individual procedures. All locations and providers. Include single procedure cases.",
+        "Use times when performed with other procedures from preference cards.",
+        "Use times when performed as single procedures from preference cards."
+      ]
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "PAN1_PAN_DLFT_PAN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple panels on this case.",
+      "entries": [
+        "Match procedure combination, provider, and location.",
+        "Match procedure combination and provider; all locations.",
+        "Match procedure combination and location; all providers.",
+        "Match procedure combination; All locations and providers.",
+        "Match procedure combination, provider, and location. Include single panel cases.",
+        "Match procedure combination and provider; all locations. Include single panel cases.",
+        "Match procedure combination and location; all providers. Include single panel cases.",
+        "Match procedure combination; All locations and providers. Include single panel cases.",
+        "Use individual procedures. Match provider and location.",
+        "Use individual procedures. Match provider; all locations.",
+        "Use individual procedures. Match location; all providers.",
+        "Use individual procedures. All locations and providers.",
+        "Individual procedures. Match provider and location. Include single procedure cases.",
+        "Individual procedures. Match provider; all locations. Include single procedure cases.",
+        "Individual procedures. Match location; all providers. Include single procedure cases.",
+        "Individual procedures. All locations and providers. Include single procedure cases.",
+        "Use times when performed with other procedures from preference cards.",
+        "Use times when performed as single procedures from preference cards."
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "PAN2_PAN_DLFT_SNG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there is only a single procedure in this panel."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "PAN2_PAN_DLFT_MLT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple procedures on this panel."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "PAN2_PAN_DLFT_PAN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple panels on this case."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "PAN3_PAN_DLFT_SNG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there is only a single procedure in this panel."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "PAN3_PAN_DLFT_MLT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple procedures on this panel."
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "PAN3_PAN_DLFT_PAN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple panels on this case."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "PAN4_PAN_DLFT_SNG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there is only a single procedure in this panel."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "PAN4_PAN_DLFT_MLT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple procedures on this panel."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "PAN4_PAN_DLFT_PAN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple panels on this case."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "PAN5_PAN_DLFT_SNG_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there is only a single procedure in this panel."
+    },
+    {
+      "ordinalPosition": 25,
+      "name": "PAN5_PAN_DLFT_MLT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple procedures on this panel."
+    },
+    {
+      "ordinalPosition": 26,
+      "name": "PAN5_PAN_DLFT_PAN_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the defaulting method used for generating procedure time estimates for this panel when there are multiple panels on this case."
+    },
+    {
+      "ordinalPosition": 27,
+      "name": "PAN1_REQ_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the requested total number of minutes for all the procedures in a panel."
+    },
+    {
+      "ordinalPosition": 28,
+      "name": "PAN2_REQ_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the requested total number of minutes for all the procedures in a panel."
+    },
+    {
+      "ordinalPosition": 29,
+      "name": "PAN3_REQ_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the requested total number of minutes for all the procedures in a panel."
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "PAN4_REQ_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the requested total number of minutes for all the procedures in a panel."
+    },
+    {
+      "ordinalPosition": 31,
+      "name": "PAN5_REQ_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "This item holds the requested total number of minutes for all the procedures in a panel."
+    },
+    {
+      "ordinalPosition": 32,
+      "name": "PAN1_REQ_PROC_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the comments regarding the requested total procedure length in minutes."
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "PAN2_REQ_PROC_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the comments regarding the requested total procedure length in minutes."
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "PAN3_REQ_PROC_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the comments regarding the requested total procedure length in minutes."
+    },
+    {
+      "ordinalPosition": 35,
+      "name": "PAN4_REQ_PROC_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the comments regarding the requested total procedure length in minutes."
+    },
+    {
+      "ordinalPosition": 36,
+      "name": "PAN5_REQ_PROC_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the comments regarding the requested total procedure length in minutes."
+    },
+    {
+      "ordinalPosition": 37,
+      "name": "PAN1_REQ_PROC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the action taken in regards to the requested total procedure length in minutes for this panel.",
+      "entries": [
+        "No Action",
+        "Accepted",
+        "Rejected",
+        "Automatically Used"
+      ]
+    },
+    {
+      "ordinalPosition": 38,
+      "name": "PAN2_REQ_PROC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the action taken in regards to the requested total procedure length in minutes for this panel."
+    },
+    {
+      "ordinalPosition": 39,
+      "name": "PAN3_REQ_PROC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the action taken in regards to the requested total procedure length in minutes for this panel."
+    },
+    {
+      "ordinalPosition": 40,
+      "name": "PAN4_REQ_PROC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the action taken in regards to the requested total procedure length in minutes for this panel."
+    },
+    {
+      "ordinalPosition": 41,
+      "name": "PAN5_REQ_PROC_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the action taken in regards to the requested total procedure length in minutes for this panel."
+    },
+    {
+      "ordinalPosition": 42,
+      "name": "PAN1_PANEL_CONFIDENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence in Epic's estimated panel length for panel 1",
+      "entries": [
+        "No Data",
+        "Modified",
+        "Low Confidence",
+        "Medium Confidence",
+        "High Confidence",
+        "Low - Preference Card",
+        "Low - Individual Procedures",
+        "Low - No Cases",
+        "Low - High Variability",
+        "Low - Few Stored Cases",
+        "Low - Possible Procedures",
+        "Medium - Moderate Variability",
+        "High - Low Variability"
+      ]
+    },
+    {
+      "ordinalPosition": 43,
+      "name": "PAN2_PANEL_CONFIDENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence in Epic's estimated panel length for panel 2"
+    },
+    {
+      "ordinalPosition": 44,
+      "name": "PAN3_PANEL_CONFIDENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence in Epic's estimated panel length for panel 3"
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "PAN4_PANEL_CONFIDENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence in Epic's estimated panel length for panel 4"
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "PAN5_PANEL_CONFIDENCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the confidence in Epic's estimated panel length for panel 5"
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "PAT_CONF_CASE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the patient confirmed their case or not. Set to Yes by 2-way text confirmation or by OR staff."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "CASE_CONF_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The most recent instant of a patient's case confirmation. Part of the patient case confirmation workflow. Updated each time the patient confirms and reset to null when case is rescheduled to different date or OR location."
+    },
+    {
+      "ordinalPosition": 49,
+      "name": "CASE_CONF_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient ID of the patient if they texted to confirm their own case."
+    },
+    {
+      "ordinalPosition": 50,
+      "name": "CONF_PAT_RELATIONSHIP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The Guardian (RLA networked ID) that confirmed the patient's case through text."
+    },
+    {
+      "ordinalPosition": 51,
+      "name": "CASE_CONF_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The employee ID (EMP networked) that confirmed the patient's case."
+    },
+    {
+      "ordinalPosition": 52,
+      "name": "CASE_CONF_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 53,
+      "name": "PAN1_TOTAL_PROC_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel."
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "PAN1_DFLT_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel as calculated by the system using procedure length estimates, preference cards, and procedure records."
+    },
+    {
+      "ordinalPosition": 55,
+      "name": "PAN1_PROC_MIN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the total number of minutes required for all of the procedures on this panel has been modified from the defaulted value calculated by the system. This does not track whether the lengths of any of the individual procedures on the panel have been modified."
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "PAN1_PROC_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The time at which this panel's procedures should begin. This is measured in minutes relative to the beginning of the case."
+    },
+    {
+      "ordinalPosition": 57,
+      "name": "PAN1_PRC_STRT_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the time at which this panel's procedures should begin has been manually edited by a user."
+    },
+    {
+      "ordinalPosition": 58,
+      "name": "PAN1_REQ_MINS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The id of the user who requested a total procedure length for this panel in minutes."
+    },
+    {
+      "ordinalPosition": 59,
+      "name": "PAN1_REQ_MINS_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 60,
+      "name": "PAN2_TOTAL_PROC_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel."
+    },
+    {
+      "ordinalPosition": 61,
+      "name": "PAN2_DFLT_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel as calculated by the system using procedure length estimates, preference cards, and procedure records."
+    },
+    {
+      "ordinalPosition": 62,
+      "name": "PAN2_PROC_MIN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the total number of minutes required for all of the procedures on this panel has been modified from the defaulted value calculated by the system. This does not track whether the lengths of any of the individual procedures on the panel have been modified."
+    },
+    {
+      "ordinalPosition": 63,
+      "name": "PAN2_PROC_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The time at which this panel's procedures should begin. This is measured in minutes relative to the beginning of the case."
+    },
+    {
+      "ordinalPosition": 64,
+      "name": "PAN2_PRC_STRT_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the time at which this panel's procedures should begin has been manually edited by a user."
+    },
+    {
+      "ordinalPosition": 65,
+      "name": "PAN2_REQ_MINS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The id of the user who requested a total procedure length for this panel in minutes."
+    },
+    {
+      "ordinalPosition": 66,
+      "name": "PAN2_REQ_MINS_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "PAN3_TOTAL_PROC_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel."
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "PAN3_DFLT_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel as calculated by the system using procedure length estimates, preference cards, and procedure records."
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "PAN3_PROC_MIN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the total number of minutes required for all of the procedures on this panel has been modified from the defaulted value calculated by the system. This does not track whether the lengths of any of the individual procedures on the panel have been modified."
+    },
+    {
+      "ordinalPosition": 70,
+      "name": "PAN3_PROC_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The time at which this panel's procedures should begin. This is measured in minutes relative to the beginning of the case."
+    },
+    {
+      "ordinalPosition": 71,
+      "name": "PAN3_PRC_STRT_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the time at which this panel's procedures should begin has been manually edited by a user."
+    },
+    {
+      "ordinalPosition": 72,
+      "name": "PAN3_REQ_MINS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The id of the user who requested a total procedure length for this panel in minutes."
+    },
+    {
+      "ordinalPosition": 73,
+      "name": "PAN3_REQ_MINS_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 74,
+      "name": "PAN4_TOTAL_PROC_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel."
+    },
+    {
+      "ordinalPosition": 75,
+      "name": "PAN4_DFLT_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel as calculated by the system using procedure length estimates, preference cards, and procedure records."
+    },
+    {
+      "ordinalPosition": 76,
+      "name": "PAN4_PROC_MIN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the total number of minutes required for all of the procedures on this panel has been modified from the defaulted value calculated by the system. This does not track whether the lengths of any of the individual procedures on the panel have been modified."
+    },
+    {
+      "ordinalPosition": 77,
+      "name": "PAN4_PROC_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The time at which this panel's procedures should begin. This is measured in minutes relative to the beginning of the case."
+    },
+    {
+      "ordinalPosition": 78,
+      "name": "PAN4_PRC_STRT_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the time at which this panel's procedures should begin has been manually edited by a user."
+    },
+    {
+      "ordinalPosition": 79,
+      "name": "PAN4_REQ_MINS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The id of the user who requested a total procedure length for this panel in minutes."
+    },
+    {
+      "ordinalPosition": 80,
+      "name": "PAN4_REQ_MINS_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 81,
+      "name": "PAN5_TOTAL_PROC_MIN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel."
+    },
+    {
+      "ordinalPosition": 82,
+      "name": "PAN5_DFLT_PROC_MINS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The total number of minutes required for all of the procedures on this panel as calculated by the system using procedure length estimates, preference cards, and procedure records."
+    },
+    {
+      "ordinalPosition": 83,
+      "name": "PAN5_PROC_MIN_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the total number of minutes required for all of the procedures on this panel has been modified from the defaulted value calculated by the system. This does not track whether the lengths of any of the individual procedures on the panel have been modified."
+    },
+    {
+      "ordinalPosition": 84,
+      "name": "PAN5_PROC_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The time at which this panel's procedures should begin. This is measured in minutes relative to the beginning of the case."
+    },
+    {
+      "ordinalPosition": 85,
+      "name": "PAN5_PRC_STRT_MOD_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the time at which this panel's procedures should begin has been manually edited by a user."
+    },
+    {
+      "ordinalPosition": 86,
+      "name": "PAN5_REQ_MINS_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The id of the user who requested a total procedure length for this panel in minutes."
+    },
+    {
+      "ordinalPosition": 87,
+      "name": "PAN5_REQ_MINS_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 88,
+      "name": "CASE_CONF_MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The MyChart user (WPR networked ID) that confirmed the patient's case through text."
+    }
+  ]
+}

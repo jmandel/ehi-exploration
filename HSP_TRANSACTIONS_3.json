@@ -1,6 +1,6 @@
 {
   "name": "HSP_TRANSACTIONS_3",
-  "description": "This table contains hospital account transaction details from the Hospital Permanent Transactions (HTR) master file.",
+  "description": "This table contains hospital account transaction details from Hospital Permanent Transaction (HTR) records.",
   "primaryKey": [
     {
       "columnName": "TX_ID",
@@ -362,6 +362,36 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether this payment was made toward a hospital account on a payment plan that was added by an estimate ('Y'). 'N' or NULL indicates that the transaction is not a payment or the payment was not made toward a hospital account on a payment plan that was added by an estimate."
+    },
+    {
+      "ordinalPosition": 37,
+      "name": "EST_VARIANCE_WO_ESTIMATE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If this transaction is part of an automatic estimate variance write-off, this item stores the estimate that this is a write off towards."
+    },
+    {
+      "ordinalPosition": 38,
+      "name": "AR_CLASSIFICATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the AR classification of this transaction.",
+      "entries": [
+        "Active AR",
+        "External AR",
+        "Bad Debt",
+        "Outsourced",
+        "Received Self-Pay Active AR",
+        "Received Self-Pay External AR",
+        "Received Self-Pay Bad Debt"
+      ]
+    },
+    {
+      "ordinalPosition": 39,
+      "name": "DISCOUNT_FIN_ASST_TRACKER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of the financial assistance tracker that generated this discount transaction."
     }
   ]
 }

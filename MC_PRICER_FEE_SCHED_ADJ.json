@@ -1,0 +1,80 @@
+{
+  "name": "MC_PRICER_FEE_SCHED_ADJ",
+  "description": "Adjustments to CMS Fee Schedule rates determined by the Epic Pricer. Each row indicates one adjustment made to the fee schedule rate for a service.",
+  "primaryKey": [
+    {
+      "columnName": "PRICER_MSG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PRICER_MSG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the pricer message record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "FEE_SCHEDULE_ADJ_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of adjustment applied to the CMS fee schedule rate.",
+      "entries": [
+        "Encountered Error",
+        "Non-Physician Rate",
+        "Bilateral",
+        "Standard MPPR",
+        "Endoscopic MPPR",
+        "Diagnostic MPPR - Technical Component",
+        "Diagnostic MPPR - Professional Component",
+        "Therapy MPPR",
+        "Assistant at Surgery",
+        "Co-Surgeon",
+        "Team Surgeon",
+        "Bundled Injection Service",
+        "Nonparticipating Physician",
+        "Not Used For Medicare",
+        "ASC - Wage Index",
+        "ASC - Code Pair",
+        "ASC - Device Credit",
+        "ASC - Reduced Service",
+        "Anesthesia - Qualified Nonphysician Anesthetist with Direction by Physician",
+        "Anesthesia - Medical Direction by Physician",
+        "Anesthesia - Medical Supervision by Physician",
+        "Ambulance - ESRD Transport",
+        "Ambulance - Super-rural",
+        "Ambulance - Rural, First 17 Miles",
+        "CAH - Method II Payment",
+        "Lab Travel Multiple Patients",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "FEE_SCHEDULE_ADJ_PERCENT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Percentage adjustment to the CMS fee schedule rate for a service."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "FEE_SCHEDULE_ADJ_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Adjustment to the CMS fee schedule rate for a service."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "name": "CLIN_WORKSPC_ACCS",
-  "description": "This table displays user access information for the Unified Clinical Workspace (UCW).",
+  "name": "SMARTFORMS_ACCESSED",
+  "description": "This table contains information pertaining to how specific users are accessing specific SmartForms, such as how long a user has spent in a given SmartForm.",
   "primaryKey": [
     {
       "columnName": "PAT_ENC_CSN_ID",
@@ -28,10 +28,11 @@
     },
     {
       "ordinalPosition": 3,
-      "name": "PAT_ENC_DATE_REAL",
-      "type": "FLOAT",
+      "name": "PAT_ID",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
     },
     {
       "ordinalPosition": 4,
@@ -46,20 +47,6 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
-    },
-    {
-      "ordinalPosition": 6,
-      "name": "UCW_USER_ID",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The ID of the user who accessed the clinical workspace."
-    },
-    {
-      "ordinalPosition": 7,
-      "name": "UCW_USER_ID_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the user record. This name may be hidden."
     }
   ]
 }

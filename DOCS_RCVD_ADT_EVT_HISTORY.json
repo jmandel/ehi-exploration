@@ -1,0 +1,128 @@
+{
+  "name": "DOCS_RCVD_ADT_EVT_HISTORY",
+  "description": "This table contains event history information from external ADT encounters.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "This item stores the Received Document record ID."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "EVT_HX_REF_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique identifier for the ADT event history data."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "EVT_HX_ENC_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Reference ID of the associated encounter."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "EVT_HX_EVENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The event type category ID for the ADT event.",
+      "entries": [
+        "Admission",
+        "Discharge",
+        "Transfer In",
+        "Transfer Out",
+        "Patient Update",
+        "Census",
+        "Hospital Outpatient",
+        "Leave of Absence Out",
+        "Leave of Absence Return",
+        "Leave of Absence Census"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "EVT_HX_EVENT_PAT_CLASS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient class category ID for the ADT event.",
+      "entries": [
+        "Inpatient",
+        "Outpatient",
+        "Emergency",
+        "Preadmit",
+        "Recurring patient",
+        "Obstetrics",
+        "Commercial account",
+        "Not applicable",
+        "Unknown",
+        "Observation"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "EVT_HX_FAC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Facility name of the ADT event."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "EVT_HX_DEPT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Department name of the ADT event."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "EVT_HX_EVT_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Start instant for the ADT event in UTC."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "EVT_HX_SPECIALTY_DEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specialty category ID for the ADT event."
+    }
+  ]
+}

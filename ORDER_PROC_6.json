@@ -324,7 +324,9 @@
         "Opt Out",
         "E-mail",
         "FHIR",
-        "Save to File"
+        "Save to File",
+        "Outside Authorization Message",
+        "Suppress Result Routing"
       ]
     },
     {
@@ -494,20 +496,34 @@
     },
     {
       "ordinalPosition": 64,
+      "name": "SELF_REFERRED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether an order is self-referred. 'Y' indicates that an order is self-referred. 'N' indicates that an order was manually marked as not self-referred. NULL indicates that an order was not automatically marked as self-referred and not manually marked as being either self-referred or not self-referred."
+    },
+    {
+      "ordinalPosition": 65,
       "name": "UPD_ASMT_RECOM_TIME",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Stores the total number of seconds spent by clinicians updating discrete data in the Update Assessment/Recommendations activity."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 66,
       "name": "NO_RFL_PROV_TEAM_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores whether the \"No Group\" checkbox to allow placing a referral without an associated provider team has been checked."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 67,
+      "name": "RIS_RSLT_RPT_PRNT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that a result report for a self-referred order should print."
+    },
+    {
+      "ordinalPosition": 68,
       "name": "NLP_AFM_LINK_OUTCOME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -522,18 +538,47 @@
       ]
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 69,
       "name": "ORD_OR_GEN_SUBMITTER_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique ID of the external site (submitter) associated with the order. The submitter will typically be copied on results, and could also be billed (depending on configuration). This will include a generic submitter that is placed on orders that were placed at your organization and collected at an EpicCare Link site."
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 70,
       "name": "ORD_OR_GEN_SUBMITTER_ID_RECORD_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the submitter record."
+    },
+    {
+      "ordinalPosition": 71,
+      "name": "MYC_CUSTOM_FILTERED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item determines if the result should be filtered from results release metrics based on a custom rule. 'Y' indicates that it should be filtered, whereas 'N' and NULL indicate that the row does not need to be filtered."
+    },
+    {
+      "ordinalPosition": 72,
+      "name": "RIS_SELF_REF_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason why the self-referred item is set to its current value.",
+      "entries": [
+        "N/A - Cleared",
+        "Visit type",
+        "Authorizing provider",
+        "Procedure",
+        "Rule",
+        "Question"
+      ]
+    },
+    {
+      "ordinalPosition": 73,
+      "name": "RIS_SELF_REF_RSN_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the record that caused the self-referred item to be populated."
     }
   ]
 }

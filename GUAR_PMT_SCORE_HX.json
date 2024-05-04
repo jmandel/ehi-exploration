@@ -1,0 +1,150 @@
+{
+  "name": "GUAR_PMT_SCORE_HX",
+  "description": "Contains information on the guarantor Payment History Score. Each line contains factors that contributed to the score for one billing system for one guarantor.",
+  "primaryKey": [
+    {
+      "columnName": "ACCOUNT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the guarantor record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LAST_CALCULATED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The last instant at which this payment history score was updated."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "BILLING_SYSTEM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The billing system of the payment history score in this line.",
+      "entries": [
+        "Professional Billing",
+        "Hospital Billing",
+        "Hospital & Professional Billing",
+        "External"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "SCORE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The payment history score for a guarantor based on their self-pay history (PB, HB or EB score)."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NUM_ACCTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of accounts used to calculate the guarantor's payment history score."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NUM_BAD_DEBT_ACCTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of accounts sent to bad debt in the history range for the guarantor's payment history score."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "BAD_DEBT_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total balance sent to bad debt for this guarantor in the payment history score's history window."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NUM_UNCOLL_ACCTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number of accounts with uncollectable balance for the guarantor in the payment history score history window."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "UNCOLL_BALANCE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total uncollectable balance for this guarantor in the payment history score history window."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "AVG_SP_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The guarantor's average self-pay level in the PB payment history score history window.",
+      "entries": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5",
+        "Level 6",
+        "Level 7",
+        "Level 8",
+        "Level 9",
+        "Level 10"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "MAX_SP_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The highest self-pay level at account close (or bad debt outsource) for the guarantor in the payment history score history window."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "NUM_MISSED_PAYMENTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of missed payments by the guarantor in the payment history score history range."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "NUM_MISSED_PP_PAYMENTS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of missed payment plan payments by the guarantor in the payment history score history window."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "HAS_PAID_ONLINE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the guarantor has paid online to this billing system in the payment history score history window.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "LAST_CALCULATED_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The last instant at which this payment history score was updated."
+    }
+  ]
+}

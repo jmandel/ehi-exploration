@@ -39,7 +39,7 @@
         "Return from Agency",
         "Write-Off Self-Pay",
         "Update Billing/Statement Note",
-        "Change Notification Date",
+        "Change Review Notification Date",
         "Add to Workqueue",
         "Add Note",
         "Outsource Account",
@@ -121,6 +121,7 @@
         "Transfer",
         "Skip",
         "Route",
+        "Stamp Epic Settlement Numbers",
         "Reevaluate Expected Reimbursement",
         "Reevaluate APC Grouping",
         "Undo Informational Bucket",
@@ -168,8 +169,14 @@
         "Process Visit Auto Pay Payment Now",
         "Process Recurring Payment Now",
         "Update Self-pay Charge Exemption Reason",
+        "Redistribute Self-Pay Credits",
+        "Send Eligibility Query",
+        "Update Follow-up Records By Rule",
         "Send Self-Pay to Consolidated Service Area / External Billing",
         "Return from Consolidated Service Area / External Billing",
+        "Undo NRP Back to Selected Bucket",
+        "Distribute Bundled Payments",
+        "Consecutive Account Merge",
         "Resubmit Charge",
         "Perform Workqueue Action",
         "Resubmit Claim",
@@ -204,6 +211,9 @@
         "Void Variance",
         "Reopen Variance",
         "Create Release",
+        "Update Payer Notice",
+        "Void Payer Notice",
+        "Reopen Payer Notice",
         "Reset Self-Pay Aging Date",
         "Reset Insurance Aging Date",
         "Replace Claim",
@@ -238,6 +248,7 @@
         "Terminate Payment Plan",
         "Set Reminder",
         "Send Billing Notification",
+        "Execute Extension",
         "Update PB Billing Status",
         "Demand Claim",
         "Remove From Claim Queue",
@@ -526,7 +537,10 @@
         "Date Range Billing",
         "Cumulative Billing",
         "Part A Final Billing",
-        "Default System Billing"
+        "Default System Billing",
+        "Selective Billing",
+        "Rebill Unbilled Date Ranges",
+        "Days to Bill Extension"
       ]
     },
     {
@@ -739,6 +753,92 @@
         "Sent to PB bad debt in non-SBO AR Service Area.",
         "Conversion Utility"
       ]
+    },
+    {
+      "ordinalPosition": 60,
+      "name": "ACT_SP_LEVEL_CHANGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the self-pay follow-up level change (increment/decrement) for the associated action.",
+      "entries": [
+        "Increment",
+        "Decrement",
+        "Specific Level"
+      ]
+    },
+    {
+      "ordinalPosition": 61,
+      "name": "ACT_INTERIM_START_DT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The start date category used for interim billing",
+      "entries": [
+        "Admit Date",
+        "Last Interim Bill Date",
+        "Part B Only Begin Date (Part A Exhausted)"
+      ]
+    },
+    {
+      "ordinalPosition": 62,
+      "name": "ACT_INTERIM_END_DT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The end date category used for interim billing",
+      "entries": [
+        "Discharge Date",
+        "Number of Days",
+        "Part A Exhaust Date/Number of Days",
+        "Recent End of Month",
+        "Recent Fiscal Year End",
+        "Recent End of Year",
+        "Recent End of Week",
+        "Latest Billable Date (Today - Min Days - 1)",
+        "Monthly Last Day of Month",
+        "Part A Exhaust Date",
+        "Number of Days Since Inpatient Admission"
+      ]
+    },
+    {
+      "ordinalPosition": 63,
+      "name": "ACT_INTERIM_DAYS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of days used for interim billing"
+    },
+    {
+      "ordinalPosition": 64,
+      "name": "ACT_INTERIM_CATCHUP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not catch up was performed for interim billing"
+    },
+    {
+      "ordinalPosition": 65,
+      "name": "ACT_SELECTIVE_BILLING_RULE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Hospital Transaction rule used for Selective Billing"
+    },
+    {
+      "ordinalPosition": 66,
+      "name": "ACT_SELECTIVE_BILLING_RULE_ID_RULE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the rule."
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "ACT_PAYER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the record ID of the payer used in billing actions"
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "ACT_NUM_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of days used in the billing action"
     }
   ]
 }

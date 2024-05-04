@@ -1,0 +1,49 @@
+{
+  "name": "AI_INTRCT_CONTACT_INFO",
+  "description": "Tracks overtime single response LLM items.",
+  "primaryKey": [
+    {
+      "columnName": "AI_INTRCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AI_INTRCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the interaction record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AI_INTRCT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AI_INTRCT_SESS_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the type of workflow that the agent(s) are assisting with.",
+      "entries": [
+        "IB Assistant",
+        "Risk Adjustment Coding Assistant",
+        "Professional Billing Coding Assistant"
+      ]
+    }
+  ]
+}

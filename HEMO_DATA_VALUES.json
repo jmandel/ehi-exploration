@@ -1,0 +1,115 @@
+{
+  "name": "HEMO_DATA_VALUES",
+  "description": "This table contains the hemodynamic measurement values collected during an invasive procedure performed in a catheterization lab. The table only includes the values selected by the performing physician in Study Review for the result report.",
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the finding record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "HEMO_FIELD_FORM_COMP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the field definition for this hemodynamic measurement value."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "HEMO_DISPLAY_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a string representation of the hemodynamic data value including all components."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "HEMO_PHASE_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Identifies the phase of the procedure when this value was measured. The value in this phase key item corresponds to the HEMO_PHASES_KEY column in the HEMO_DATA_PHASES table."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "HEMO_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates how the value was entered.",
+      "entries": [
+        "Default from hemo system",
+        "User selected from hemo system",
+        "User entered",
+        "Calculated",
+        "User selected mean",
+        "User selected median"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "HEMO_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Numeric item for the value for simple numeric fields."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "HEMO_SYSTOLIC",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Numeric item for the systolic portion of a pressure field."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "HEMO_DIASTOLIC",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Numeric item for the diastolic portion of a pressure field."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "HEMO_MEAN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Numeric item for the mean portion of a pressure field."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "HEMO_END_DIASTOLIC",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Numeric item for the end diastolic portion of a pressure field."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "HEMO_FIELD_DAT",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "Stores the contact for the field definition of this hemodynamic measurement value."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "HEMO_FIELD_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "Stores the unique contact date in decimal format for the field definition of this hemodynamic measurement value in this row. This corresponds to the CONTACT_DATE_REAL column in the NESTED_FORM_COMPONENT_VER table.  The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    }
+  ]
+}

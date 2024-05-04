@@ -479,7 +479,8 @@
         "RetiredAgePref",
         "RetiredDisability",
         "MedicalLeave",
-        "Student"
+        "Student",
+        "Volunteer"
       ]
     },
     {
@@ -607,7 +608,9 @@
         "AVF",
         "Graft",
         "Catheter",
-        "Other"
+        "Other",
+        "PD Catheter",
+        "Central Venous Catheter"
       ]
     },
     {
@@ -887,6 +890,64 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ZIP code of the patient's mailing address."
+    },
+    {
+      "ordinalPosition": 79,
+      "name": "PAT_NO_SIGN_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The dialysis patient unable to sign reasons category ID for the CMS Form 2728 abstraction.",
+      "entries": [
+        "LostToFollowUp",
+        "MoveOut",
+        "Expired"
+      ]
+    },
+    {
+      "ordinalPosition": 80,
+      "name": "PAT_DEATH_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when a dialysis patient died."
+    },
+    {
+      "ordinalPosition": 81,
+      "name": "PRIOR_LAB_VALUES_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The time period when labs were collected for CMS Form 2728 for the abstraction.",
+      "entries": [
+        "Prior Lab Values (Within 45 days prior to the date chronic dialysis began)",
+        "Admission Lab Values (Within 15 days before or after the facility treatment start date)"
+      ]
+    },
+    {
+      "ordinalPosition": 82,
+      "name": "LAB_CYSTATIN_C_VALUE",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient's Cystatin C lab value."
+    },
+    {
+      "ordinalPosition": 83,
+      "name": "LAB_CYSTATIN_C_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The patient's Cystatin C lab collection date."
+    },
+    {
+      "ordinalPosition": 84,
+      "name": "FIRST_ACSS_CVC_USED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether one lumen of the central venous catheter was used and one needle was placed in an AVF or graft. 'Y' indicates that one lumen of the central venous catheter was used and one needle was placed in an AVF or graft. 'N' or NULL indicates that a central venous catheter is not present or was not used."
+    },
+    {
+      "ordinalPosition": 85,
+      "name": "FIRST_ACSS_PD_CATH_USED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the peritoneal dialysis catheter was present during the patient's first chronic dialysis treatment. 'Y' indicates that the peritoneal dialysis catheter was present. 'N' or NULL indicates that a peritoneal dialysis catheter was not present."
     }
   ]
 }

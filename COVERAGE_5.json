@@ -1,0 +1,39 @@
+{
+  "name": "COVERAGE_5",
+  "description": "The COVERAGE_5 table contains high-level information on both managed care and indemnity coverage records in your system.",
+  "primaryKey": [
+    {
+      "columnName": "CVG_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the coverage record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "COBA_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Coordination of Benefits Agreement (COBA) status for E01 file generation.",
+      "entries": [
+        "Add",
+        "Change",
+        "Delete",
+        "Add + Delete"
+      ]
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "COBA_DELETE_EFF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "When the Coordination of Benefits Agreement (COBA) status in COBA_STATUS_C is DELETE or ADD+DELETE, this holds the effective date that is to be marked as deleted on the E01 file."
+    }
+  ]
+}

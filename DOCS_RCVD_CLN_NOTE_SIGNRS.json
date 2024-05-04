@@ -1,0 +1,89 @@
+{
+  "name": "DOCS_RCVD_CLN_NOTE_SIGNRS",
+  "description": "Clinical note signer information for notes recieved externally.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NOTE_REFERENCE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reference ID of a clinical note, which uniquely identifies a note sent through C-CDA."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NOTE_LOCAL_UNIQUE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The locally-assigned unique identifier to identify clinical notes sent through FHIR."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NOTE_SIGNER_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A clinical note signer's name."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "NOTE_SIGNED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC instant when a clinical note was signed."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NOTE_SIGNER_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A note signer's role in authenticating the content of a clinical note.",
+      "entries": [
+        "Signer",
+        "Cosigner",
+        "Attesting Cosigner",
+        "Addendum/Transcription Authenticator"
+      ]
+    }
+  ]
+}

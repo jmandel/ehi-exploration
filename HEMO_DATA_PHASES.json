@@ -1,0 +1,69 @@
+{
+  "name": "HEMO_DATA_PHASES",
+  "description": "This table contains the phases of an invasive procedure performed in a catheterization lab. It is used to group hemodynamic pressure measurements together by phase.",
+  "primaryKey": [
+    {
+      "columnName": "FINDING_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "FINDING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the finding record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "HEMO_PHASES_KEY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A unique string to identify the phase."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "HEMO_PHASE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phase description that the user chose from the preconfigured options, example: resting.",
+      "entries": [
+        "Other",
+        "Resting"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "USER_ENTERED_PHASE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the phase description that a user typed in instead of choosing from the preconfigured options."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "PHASE_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the phase began (UTC)."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PHASE_END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the phase ended (UTC)."
+    }
+  ]
+}

@@ -23,51 +23,44 @@
       "description": "This column stores the A/R classification of this account.",
       "entries": [
         "Active AR",
-        "External Agency AR",
+        "External AR",
         "Bad Debt",
         "Outsourced",
         "Received Self-Pay Active AR",
-        "Received Self-Pay External Agency AR",
+        "Received Self-Pay External AR",
         "Received Self-Pay Bad Debt"
       ]
     },
     {
       "ordinalPosition": 3,
-      "name": "LAST_SP_LEVEL_UPDATE_DATE",
-      "type": "DATETIME",
-      "discontinued": false,
-      "description": "Retrieves the last date when the self-pay follow-up cycle was updated."
-    },
-    {
-      "ordinalPosition": 4,
       "name": "INITIAL_EXPECTED_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sum of the expected allowed amounts for the primary claims initially sent."
     },
     {
-      "ordinalPosition": 5,
+      "ordinalPosition": 4,
       "name": "CURRENT_EXPECTED_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The sum of the expected allowed amounts for the primary claims last sent."
     },
     {
-      "ordinalPosition": 6,
+      "ordinalPosition": 5,
       "name": "CHANGE_IN_EXPECTED_ALLOWED_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The difference between the sums of the expected allowed amounts of the primary claims initially sent and of the primary claims last sent."
     },
     {
-      "ordinalPosition": 7,
+      "ordinalPosition": 6,
       "name": "INITIAL_CLM_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The claim class used when sending the initial primary claims. Represented with a patient class category ID for the hospital account."
     },
     {
-      "ordinalPosition": 8,
+      "ordinalPosition": 7,
       "name": "INITIAL_CLM_BASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -79,28 +72,28 @@
       ]
     },
     {
-      "ordinalPosition": 9,
+      "ordinalPosition": 8,
       "name": "CUR_CLM_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The claim class used for currently sent or closed primary claims. Represented with a patient class category ID for the hospital account."
     },
     {
-      "ordinalPosition": 10,
+      "ordinalPosition": 9,
       "name": "CUR_CLM_BASE_CLASS_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The claim base class used for currently sent or closed primary claims. Represented with an account base class category ID for the hospital account."
     },
     {
-      "ordinalPosition": 11,
+      "ordinalPosition": 10,
       "name": "DAYS_FROM_INIT_TO_CUR_CLM_ACPT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The maximum of the number of days between the accept dates for the first and last claim sent on each payer billing thread for this hospital account. Null for any account without multiple claims sent on the same payer billing thread."
     },
     {
-      "ordinalPosition": 12,
+      "ordinalPosition": 11,
       "name": "PAYER_DOWNGRADE_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -108,6 +101,18 @@
       "entries": [
         "No Downgrade",
         "Inpatient to Observation"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "PAYER_DOWNGRADE_OUTCOME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the primary payer's attempt to lower the level of care of the account was appropriate and whether it was overturned or led to a downgrade. NULL if no such attempt was made by the Primary Payer.",
+      "entries": [
+        "Appropriate & Downgraded",
+        "Inappropriate & Overturned",
+        "Inappropriate & Downgraded"
       ]
     },
     {
@@ -120,15 +125,10 @@
     },
     {
       "ordinalPosition": 14,
-      "name": "PAYER_DOWNGRADE_OUTCOME_C_NAME",
-      "type": "VARCHAR",
+      "name": "LAST_SP_LEVEL_UPDATE_DATE",
+      "type": "DATETIME",
       "discontinued": false,
-      "description": "Whether the primary payer's attempt to lower the level of care of the account was appropriate and whether it was overturned or led to a downgrade. NULL if no such attempt was made by the Primary Payer.",
-      "entries": [
-        "Appropriate & Downgraded",
-        "Inappropriate & Overturned",
-        "Inappropriate & Downgraded"
-      ]
+      "description": "Retrieves the last date when the self-pay follow-up cycle was updated."
     }
   ]
 }

@@ -42929,7 +42929,7 @@
       "name": "GENE",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The gene name."
+      "description": "The gene name. This column will be deprecated in the February 2027 release. It is being replaced by column REPORTED_GENE_NAME in table VARIANT_GENES."
     },
     {
       "ordinalPosition": 12,
@@ -43447,7 +43447,7 @@
       "name": "GENE_ID",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Gene where the variant is located."
+      "description": "Gene where the variant is located. This column will be deprecated in the February 2027 release. It is being replaced by column GENE_ID in table VARIANT_GENES."
     },
     {
       "ordinalPosition": 53,
@@ -43465,77 +43465,92 @@
     },
     {
       "ordinalPosition": 55,
+      "name": "PERSISTENT_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table. While the ID in the PAT_ID column will get cleared out when its variant record is superseded, the value in this column will continue to indicate the patient.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "PERSISTENT_RQG_GROUPER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The historically maintained requisition grouper ID. While the requisition grouper ID in item 99 will be cleared out of a VAR record when a new VAR superscedes it, this will retain the grouper link."
+    },
+    {
+      "ordinalPosition": 57,
       "name": "PGX_DRUG_TXPORT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Predicted phenotype for drug efficacy through drug transport mechanism.",
       "entries": [
-        "Increased Function",
-        "Normal Function",
-        "Decreased Function",
-        "Poor Function",
-        "Likely Increased Function",
-        "Likely Normal Function",
-        "Likely Decreased Function",
-        "Likely Poor Function",
-        "Possible Increased Function",
-        "Possible Normal Function",
-        "Possible Decreased Function",
-        "Possible Poor Function",
+        "Increased function",
+        "Normal function",
+        "Decreased function",
+        "Poor function",
+        "Likely increased function",
+        "Likely normal function",
+        "Likely decreased function",
+        "Likely poor function",
+        "Possible increased function",
+        "Possible normal function",
+        "Possible decreased function",
+        "Possible poor function",
         "Indeterminate"
       ]
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 58,
       "name": "TOTAL_REPEAT_NUMBER",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Total repeat number is the sum of all repeat numbers for one repeat expansion variant."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 59,
       "name": "PGX_ACT_SCORE_LOWER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The lower bound of the activity score on the pharmacogenomic variant. If the activity score is a value and not a range, this will have the same value as PGX_ACT_SCORE_UPPER. If the activity score is a range without a lower bound specified, this column will contain 0."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 60,
       "name": "PGX_ACT_SCORE_UPPER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The upper bound of the activity score on the pharmacogenomic variant. If the activity score is a value and not a range, this will have the same value as PGX_ACT_SCORE_LOWER. If the activity score is a range without an upper bound specified, this column will contain 99999."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 61,
       "name": "DISPLAY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name used when the variant is displayed"
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 62,
       "name": "ISCN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The ISCN name assigned to the variant."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 63,
       "name": "COPY_NUMBER_LOWER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Lower bound for the copy number of a variant."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 64,
       "name": "COPY_NUMBER_UPPER",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Upper bound for the copy number of a variant."
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 65,
       "name": "VARIANT_FINDING_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
