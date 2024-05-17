@@ -1,0 +1,99 @@
+{
+  "name": "AUTH_REQ_HX_NOTIF_OVRIDE",
+  "description": "This table contains overrides to authorization request notification milestones. The values in this table override system computer values for turnaround time.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_REQUEST_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the authorization request record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "COMM_PURPOSE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The communication purpose category ID of the notification override.",
+      "entries": [
+        "Notification of Decision",
+        "Request for Additional Information",
+        "Notification of Extension",
+        "Request to Expedite",
+        "Request for Authorization",
+        "Receipt of Additional Information",
+        "Denial of Request to Expedite",
+        "P2P Review Offer",
+        "P2P Review Completed",
+        "Notification of Approval",
+        "Notification of Denial",
+        "Notification of Dismissal"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NOTIF_RECPNT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipient type category ID of the notification override.",
+      "entries": [
+        "Member",
+        "Provider",
+        "Authorized Representative"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NOTIF_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The notification method category ID of the notification override.",
+      "entries": [
+        "Oral",
+        "Written"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "OVERRIDE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time (local) of the notification override."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "OVERRIDE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time (UTC) of the notification override."
+    }
+  ]
+}
