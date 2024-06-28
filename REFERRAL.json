@@ -31,10 +31,10 @@
     },
     {
       "ordinalPosition": 4,
-      "name": "PCP_PROV_ID",
+      "name": "PCP_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the patient's primary care provider at the time the referral was created."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 5,
@@ -91,11 +91,10 @@
     },
     {
       "ordinalPosition": 11,
-      "name": "REFERRAL_PROV_ID",
+      "name": "REFERRAL_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider (SER) being referred to. This column is frequently used to link to the CLARITY_SER table.",
-      "linksTo": "CLARITY_SER"
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 12,
@@ -223,10 +222,10 @@
     },
     {
       "ordinalPosition": 28,
-      "name": "SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the service area associated with the referral."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 29,
@@ -265,17 +264,17 @@
     },
     {
       "ordinalPosition": 34,
-      "name": "PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the payor associated with the referral."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 35,
-      "name": "PLAN_ID",
-      "type": "NUMERIC",
+      "name": "PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the plan associated with the referral."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 36,
@@ -318,24 +317,24 @@
     },
     {
       "ordinalPosition": 41,
-      "name": "REFD_BY_LOC_POS_ID",
-      "type": "NUMERIC",
+      "name": "REFD_BY_LOC_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the place of service the referral was referred from."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 42,
-      "name": "REFD_TO_LOC_POS_ID",
-      "type": "NUMERIC",
+      "name": "REFD_TO_LOC_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the place of service the referral was referred to."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 43,
-      "name": "REFD_TO_DEPT_ID",
-      "type": "NUMERIC",
+      "name": "REFD_TO_DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the department the referral was referred to."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 44,
@@ -407,10 +406,10 @@
     },
     {
       "ordinalPosition": 52,
-      "name": "PRIM_LOC_ID",
-      "type": "NUMERIC",
+      "name": "PRIM_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the member's primary location at the time the referral was entered."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 53,
@@ -525,17 +524,17 @@
     },
     {
       "ordinalPosition": 67,
-      "name": "DISP_EAF_ID",
-      "type": "NUMERIC",
+      "name": "DISP_EAF_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique id of the facility to which the referral was forwarded."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 68,
-      "name": "REFD_BY_DEPT_ID",
-      "type": "NUMERIC",
+      "name": "REFD_BY_DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The ID number of the department the referral was referred by."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 69,
@@ -757,10 +756,10 @@
     },
     {
       "ordinalPosition": 97,
-      "name": "ADJ_MEMBER_GROUP_ID",
+      "name": "ADJ_MEMBER_GROUP_ID_MEM_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Adjudication member group."
+      "description": "The name of the member group"
     },
     {
       "ordinalPosition": 98,
@@ -783,10 +782,10 @@
     },
     {
       "ordinalPosition": 100,
-      "name": "ADJUD_SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "ADJUD_SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "Service area used in referral pricing and adjudication."
+      "description": "The name of the revenue location."
     }
   ]
 }

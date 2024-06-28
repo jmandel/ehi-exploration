@@ -35,31 +35,31 @@
     },
     {
       "ordinalPosition": 4,
-      "name": "PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the payer ID for the payer on the claim."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 5,
-      "name": "BENEFIT_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "BENEFIT_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the benefit plan ID for the benefit plan on the claim."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 6,
-      "name": "LOC_ID",
-      "type": "NUMERIC",
+      "name": "LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the location ID for the location of the claim."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 7,
-      "name": "DEPARTMENT_ID",
-      "type": "NUMERIC",
+      "name": "DEPARTMENT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This is the department ID for the department of the claim."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 8,
@@ -77,10 +77,10 @@
     },
     {
       "ordinalPosition": 10,
-      "name": "SERVICE_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERVICE_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the service area ID from the claim that created the reconciliation record."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 11,
@@ -208,10 +208,10 @@
     },
     {
       "ordinalPosition": 25,
-      "name": "SOURCE_GROUP_ID",
-      "type": "NUMERIC",
+      "name": "SOURCE_GROUP_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The EAF record representing the Medical Group that sent the imported claim."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 26,
@@ -250,17 +250,17 @@
     },
     {
       "ordinalPosition": 31,
-      "name": "REJ_CLM_PROV_ID",
+      "name": "REJ_CLM_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the matched provider of the rejected claim, if a one was identified during claim load."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 32,
-      "name": "REJ_CLM_POS_ID",
-      "type": "NUMERIC",
+      "name": "REJ_CLM_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item stores the matched place of service (EAF) of the rejected claim, if a one was identified during claim load."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 33,

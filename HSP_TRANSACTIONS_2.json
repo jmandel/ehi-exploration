@@ -976,10 +976,10 @@
     },
     {
       "ordinalPosition": 14,
-      "name": "PLAN_ID",
-      "type": "NUMERIC",
+      "name": "PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the benefit plan entered in Hospital Insurance Payment Posting. The payment poster can manually enter this item as a configurable column (configured in HSD settings) in Insurance Payment Posting. In this case, the payment poster can select only from the plans associated with the payer on the bucket that the payment is being posted onto. Adjustments posted during payment posting also are populated with the plan selected by the payment poster."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 15,
@@ -1019,10 +1019,10 @@
     },
     {
       "ordinalPosition": 19,
-      "name": "SUP_INV_LOC_ID",
-      "type": "NUMERIC",
+      "name": "SUP_INV_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "Supply inventory location"
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 20,
@@ -1198,10 +1198,10 @@
     },
     {
       "ordinalPosition": 38,
-      "name": "PRIMARY_PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PRIMARY_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the primary payer of the account when the transaction filed. This is set for all transaction types."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 39,

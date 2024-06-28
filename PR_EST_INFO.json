@@ -38,10 +38,10 @@
     },
     {
       "ordinalPosition": 5,
-      "name": "SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The service area associated with the price estimate."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 6,
@@ -137,17 +137,17 @@
     },
     {
       "ordinalPosition": 18,
-      "name": "PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The payor (EPM) associated with the patient's primary coverage.  This can be used to determine contracts and other pricing factors.  If the person requesting the estimate does not have a patient record (EPT), the user may still enter a payor for pricing purposes."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 19,
-      "name": "BENEFIT_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "BENEFIT_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The benefit plan (EPP) associated with the patient's primary coverage. This can be used to determine contracts and other pricing factors in the price estimate.  If the person requesting the estimate does not have a patient record (EPT), the user may still enter the benefit plan for pricing purposes."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 20,

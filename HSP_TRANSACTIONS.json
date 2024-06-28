@@ -52,10 +52,10 @@
     },
     {
       "ordinalPosition": 7,
-      "name": "BILLING_PROV_ID",
+      "name": "BILLING_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the billing provider stored in the hospital billing transaction."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 8,
@@ -87,10 +87,10 @@
     },
     {
       "ordinalPosition": 12,
-      "name": "DEPARTMENT",
-      "type": "NUMERIC",
+      "name": "DEPARTMENT_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the department associated with the hospital billing transaction."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 13,
@@ -129,10 +129,10 @@
     },
     {
       "ordinalPosition": 18,
-      "name": "FACILITY_ID",
-      "type": "NUMERIC",
+      "name": "FACILITY_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the facility associated with the hospital billing transaction."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 19,
@@ -319,17 +319,17 @@
     },
     {
       "ordinalPosition": 39,
-      "name": "PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the payer associated with each payment or adjustment. This is not populated for charge transactions or when the payment or adjustment is posted to the self-pay bucket. Payments are assigned to the payer specified in payment posting. Adjustments made using adjustment posting are assigned to the payer specified in adjustment posting. Adjustments made using bucket actions are assigned to the payer on the liability bucket to which the adjustment was posted. Refund bucket actions can override the bucket payer with a user entered payer. Users can override any adjustment's payer in adjustment workqueues. Adjustments posted to the undistributed bucket have no payer unless overridden."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 40,
-      "name": "PERFORMING_PROV_ID",
+      "name": "PERFORMING_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the performing provider associated with a charge transaction."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 41,
@@ -361,10 +361,10 @@
     },
     {
       "ordinalPosition": 45,
-      "name": "PROC_ID",
-      "type": "NUMERIC",
+      "name": "PROC_ID_PROC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the procedure associated with the hospital billing transaction."
+      "description": "The name of each procedure."
     },
     {
       "ordinalPosition": 46,
@@ -396,17 +396,17 @@
     },
     {
       "ordinalPosition": 50,
-      "name": "REVENUE_LOC_ID",
-      "type": "NUMERIC",
+      "name": "REVENUE_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the revenue location stored in the hospital billing transaction. It is only set when hospital account identifiers are assigned by location instead of service area."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 51,
-      "name": "SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the service area associated with the hospital billing transaction."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 52,
@@ -678,10 +678,10 @@
     },
     {
       "ordinalPosition": 71,
-      "name": "PLACE_OF_SVC_ID",
-      "type": "NUMERIC",
+      "name": "PLACE_OF_SVC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the place of service associated with the hospital billing transaction."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 72,
@@ -755,10 +755,10 @@
     },
     {
       "ordinalPosition": 81,
-      "name": "PRIMARY_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "PRIMARY_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the primary plan of the account when the transaction filed. This is set for all transaction types."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 82,
@@ -841,10 +841,10 @@
     },
     {
       "ordinalPosition": 91,
-      "name": "REFUND_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "REFUND_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the benefit plan associated with the refund code on the hospital billing transaction."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 92,
@@ -934,10 +934,10 @@
     },
     {
       "ordinalPosition": 103,
-      "name": "ERX_ID",
-      "type": "NUMERIC",
+      "name": "ERX_ID_MEDICATION_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the medication record on the hospital billing transaction. This column will have relevant data for any pharmacy charges. It can be used to link to CLARITY_MEDICATION and other pharmacy tables."
+      "description": "The name of this medication record."
     },
     {
       "ordinalPosition": 104,
@@ -1050,10 +1050,10 @@
     },
     {
       "ordinalPosition": 119,
-      "name": "RESEARCH_STUDY_ID",
+      "name": "RESEARCH_STUDY_ID_RESEARCH_STUDY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the research study or client associated with this hospital billing transaction."
+      "description": "The name of the research study record."
     },
     {
       "ordinalPosition": 120,

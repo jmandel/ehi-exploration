@@ -41,10 +41,10 @@
     },
     {
       "ordinalPosition": 5,
-      "name": "SUP_PROV_ID",
+      "name": "SUP_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the provider ID of the supervising provider for this patient encounter."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 6,
@@ -180,10 +180,10 @@
     },
     {
       "ordinalPosition": 21,
-      "name": "SYS_GEN_LOS_ID",
-      "type": "NUMERIC",
+      "name": "SYS_GEN_LOS_ID_PROC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column contains the system generated Level of Service information to link to the procedures tables."
+      "description": "The name of each procedure."
     },
     {
       "ordinalPosition": 22,
@@ -332,10 +332,10 @@
     },
     {
       "ordinalPosition": 39,
-      "name": "PRIMARY_PROCONT_ID",
+      "name": "PRIMARY_PROCONT_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider that is the primary contact for this patient encounter."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 40,
@@ -360,10 +360,10 @@
     },
     {
       "ordinalPosition": 43,
-      "name": "VISIT_POS_ID",
-      "type": "NUMERIC",
+      "name": "VISIT_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the facility that was the place of service for this encounter."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 44,
@@ -520,17 +520,17 @@
     },
     {
       "ordinalPosition": 64,
-      "name": "VISIT_PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "VISIT_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the payor that is associated with this encounter."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 65,
-      "name": "VISIT_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "VISIT_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the plan that is associated with this encounter."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 66,

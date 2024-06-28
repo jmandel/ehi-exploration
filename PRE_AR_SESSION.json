@@ -197,17 +197,17 @@
     },
     {
       "ordinalPosition": 16,
-      "name": "PERF_PROV_ID",
+      "name": "PERF_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the performing provider on the charge session."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 17,
-      "name": "BILL_PROV_ID",
+      "name": "BILL_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the billing provider on the charge session."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 18,
@@ -225,24 +225,24 @@
     },
     {
       "ordinalPosition": 20,
-      "name": "DEPT_ID",
-      "type": "NUMERIC",
+      "name": "DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the department on the charge session."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 21,
-      "name": "POS_ID",
-      "type": "NUMERIC",
+      "name": "POS_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the place of service on the charge session."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 22,
-      "name": "SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the service area on the charge session."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 23,
@@ -309,17 +309,17 @@
     },
     {
       "ordinalPosition": 30,
-      "name": "OVERRIDE_PAYER_ID",
-      "type": "NUMERIC",
+      "name": "OVERRIDE_PAYER_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The payer that overrides the payer on a charge session. If this item is set, the system uses this payer instead of the payer from the coverage on the charge session. If this item is left blank, the payer from the coverage on the charge session is used."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 31,
-      "name": "OVERRIDE_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "OVERRIDE_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The plan that overrides the plan on a charge session. If this item is set, the system uses this plan instead of the plan from the coverage on the charge session. If this item is left blank, the plan from the coverage on the charge session is used."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 32,
@@ -344,10 +344,10 @@
     },
     {
       "ordinalPosition": 35,
-      "name": "TEST_ID",
+      "name": "TEST_ID_TEST_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The test ID associated with the temporary charge session."
+      "description": "The name of the test record."
     },
     {
       "ordinalPosition": 36,

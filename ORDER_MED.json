@@ -85,10 +85,10 @@
     },
     {
       "ordinalPosition": 11,
-      "name": "MEDICATION_ID",
-      "type": "NUMERIC",
+      "name": "MEDICATION_ID_MEDICATION_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the medication record that is associated with this order. In some circumstances, for example when Intelligent Medication Selection selects an IMS mixture, this column may contain template records that do not represent real medications. For this reason, it is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders."
+      "description": "The name of this medication record."
     },
     {
       "ordinalPosition": 12,
@@ -152,10 +152,10 @@
     },
     {
       "ordinalPosition": 20,
-      "name": "MED_PRESC_PROV_ID",
+      "name": "MED_PRESC_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider who has prescribed or authorized the medication order. The value in this column matches the value in the AUTHRZING_PROV_ID column."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 21,
@@ -166,10 +166,10 @@
     },
     {
       "ordinalPosition": 22,
-      "name": "PANEL_MED_ID",
-      "type": "NUMERIC",
+      "name": "PANEL_MED_ID_MEDICATION_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the medication panel that is associated with this medication order. This column is only populated if the medication order was originally placed as part of a panel."
+      "description": "The name of this medication record."
     },
     {
       "ordinalPosition": 23,
@@ -194,10 +194,10 @@
     },
     {
       "ordinalPosition": 26,
-      "name": "AS_MEDICATION_ID",
-      "type": "NUMERIC",
+      "name": "AS_MEDICATION_ID_MEDICATION_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the brand name medication originally chosen by the ordering user. This column is blank if the user did not chose a brand name record.  It is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders. Use AS_MEDICATION_ID if specifically searching for orders that were originally selected from a preference list as a brand name medication."
+      "description": "The name of this medication record."
     },
     {
       "ordinalPosition": 27,
@@ -1131,17 +1131,17 @@
     },
     {
       "ordinalPosition": 46,
-      "name": "AUTHRZING_PROV_ID",
+      "name": "AUTHRZING_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider who has prescribed or authorized the medication order. The value in this column matches the value in the MED_PRESC_PROV_ID column."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 47,
-      "name": "ORD_PROV_ID",
+      "name": "ORD_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider listed as the ordering provider."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 48,
@@ -1255,10 +1255,10 @@
     },
     {
       "ordinalPosition": 61,
-      "name": "USER_SEL_MED_ID",
-      "type": "NUMERIC",
+      "name": "USER_SEL_MED_ID_MEDICATION_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the orderable medication that is evaluated for Intelligent Medication Selection (IMS). This item is blank if the order is not evaluated for IMS.  It is recommended to use the Clarity column ORDER_MEDINFO.DISPENSABLE_MED_ID when reporting on medication orders. Use USER_SEL_MED_ID if searching for medication orders that were evaluated by IMS."
+      "description": "The name of this medication record."
     },
     {
       "ordinalPosition": 62,
@@ -1358,10 +1358,10 @@
     },
     {
       "ordinalPosition": 75,
-      "name": "MED_REFILL_PROV_ID",
+      "name": "MED_REFILL_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The unique ID of the provider who authorized the medication refill order."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 76,

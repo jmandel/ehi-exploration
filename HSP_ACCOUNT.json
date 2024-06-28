@@ -103,17 +103,17 @@
     },
     {
       "ordinalPosition": 9,
-      "name": "ADM_DEPARMENT_ID",
-      "type": "NUMERIC",
+      "name": "ADM_DEPARMENT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The department of the account's admission event."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 10,
-      "name": "ADM_LOC_ID",
-      "type": "NUMERIC",
+      "name": "ADM_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The location of the account's admission event."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 11,
@@ -124,17 +124,17 @@
     },
     {
       "ordinalPosition": 12,
-      "name": "ADM_PROV_ID",
+      "name": "ADM_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the admitting provider stored on the hospital account."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 13,
-      "name": "ATTENDING_PROV_ID",
+      "name": "ATTENDING_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the attending provider stored on the hospital account. See column PROV_ID in table HSP_ATND_PROV if coding has not been performed on this hospital account. Alternatively, see V_ARHB_HSP_ACCOUNT_ADDL_INFO for the calculated value for this column based on both hospital account and encounter data. This view should be used to maintain backwards compatibility with reports created before upgrading to the Summer 2009 release."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 14,
@@ -235,10 +235,10 @@
     },
     {
       "ordinalPosition": 26,
-      "name": "DISCH_DEPT_ID",
-      "type": "NUMERIC",
+      "name": "DISCH_DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the discharge department on the hospital account."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 27,
@@ -249,10 +249,10 @@
     },
     {
       "ordinalPosition": 28,
-      "name": "DISCH_LOC_ID",
-      "type": "NUMERIC",
+      "name": "DISCH_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The discharge location stored in the hospital account."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 29,
@@ -291,10 +291,10 @@
     },
     {
       "ordinalPosition": 34,
-      "name": "EXPIRATION_UNIT_ID",
-      "type": "NUMERIC",
+      "name": "EXPIRATION_UNIT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "The expiration unit stored in the hospital account."
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
       "ordinalPosition": 35,
@@ -522,10 +522,10 @@
     },
     {
       "ordinalPosition": 67,
-      "name": "SERV_AREA_ID",
-      "type": "NUMERIC",
+      "name": "SERV_AREA_ID_LOC_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the service area stored on the hospital account."
+      "description": "The name of the revenue location."
     },
     {
       "ordinalPosition": 68,
@@ -620,17 +620,17 @@
     },
     {
       "ordinalPosition": 81,
-      "name": "PRIMARY_PAYOR_ID",
-      "type": "NUMERIC",
+      "name": "PRIMARY_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the primary payer associated with the hospital account."
+      "description": "The name of the payor."
     },
     {
       "ordinalPosition": 82,
-      "name": "PRIMARY_PLAN_ID",
-      "type": "NUMERIC",
+      "name": "PRIMARY_PLAN_ID_BEN_PACKAGE_NAME",
+      "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the primary benefit plan associated with the hospital account."
+      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
       "ordinalPosition": 83,
@@ -927,10 +927,10 @@
     },
     {
       "ordinalPosition": 121,
-      "name": "RESEARCH_ID",
+      "name": "RESEARCH_ID_RESEARCH_STUDY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the research study or client record."
+      "description": "The name of the research study record."
     },
     {
       "ordinalPosition": 122,
@@ -1011,17 +1011,17 @@
     },
     {
       "ordinalPosition": 133,
-      "name": "PRENATAL_PROV_ID",
+      "name": "PRENATAL_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the prenatal physician. This is an abstracting item."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 134,
-      "name": "DELIVER_PROV_ID",
+      "name": "DELIVER_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This column stores the unique identifier for the delivering physician associated with the hospital account. This is an abstracting item."
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
       "ordinalPosition": 135,
