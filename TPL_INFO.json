@@ -57,7 +57,7 @@
       "name": "PLAN_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
-      "description": "The start date in external format of the treatment plan in this row."
+      "description": "The start date in external format of the treatment plan in this row.  For treatment plans this is the date of the first cycle within the plan."
     },
     {
       "ordinalPosition": 6,
@@ -531,6 +531,13 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Virtual item that determines if a treatment plan (TPL) has been deleted or not. A treatment plan is considered deleted if it has a discontinued reason (I TPL 120) that's defined as entered in error (I LSD 77800), or if it's a BMT plan and its associated HSB record is deleted (I HSB 50).  A dental treatment plan is never considered deleted."
+    },
+    {
+      "ordinalPosition": 65,
+      "name": "TREATMENT_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the first treatment cycle in a treatment plan."
     }
   ]
 }

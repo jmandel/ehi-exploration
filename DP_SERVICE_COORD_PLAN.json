@@ -1,0 +1,84 @@
+{
+  "name": "DP_SERVICE_COORD_PLAN",
+  "description": "Table for CCSC services to coordinate discharge plan.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SVC_COORD_PLAN_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID of services to coordinate plan for the patient post-discharge. This column can be used to link to DP_SVC_TO_COORDINATE table, using SERVICE_COOR_PLAN_IDENT column from that table."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of a plan to coordinate for the patient's post-acute care."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PLAN_IS_DISCARDED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicator of whether this service coordination plan is discarded.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PLAN_IS_SENSITIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item indicates whether the coordination plan should be considered sensitive for EHI export. Sensitive data is removed from the export when the sensitive filter is applied."
+    }
+  ]
+}

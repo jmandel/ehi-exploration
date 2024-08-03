@@ -1,0 +1,93 @@
+{
+  "name": "SDD_WANTS_ASSISTANCE",
+  "description": "Stores information about whether the patient would like resource recommendations for SDOH domains.",
+  "primaryKey": [
+    {
+      "columnName": "SDOH_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SDOH_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the social driver data record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "WANTS_ASSISTANCE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tracks whether the patient was documented as wanting assistance with needs in an SDOH domain.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "WANTS_ASST_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant a patient was documented as wanting or not wanting assistance. This instant stores when the data was written to SDD. If the data was filed via a flowsheet, it may not match the taken or recorded instant. The intent of this item is to indicate when a user could have first viewed this status in SDOH views for the patient. To find when the flowsheet was filed, items 904 and 905 can be used to find the linked flowsheet data."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "WANTS_ASST_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who documented a patient as wanting assistance"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "WANTS_ASST_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "WANTS_ASST_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "How a patients decision on whether they want assistance was documented",
+      "entries": [
+        "Flowsheet"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "WANTS_ASST_FSD_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The FSD record where flowsheet data that indicated a patient would or would not like assistance was documented"
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "WANTS_ASST_FSD_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The FSD line where flowsheet data that indicated a patient would or would not like assistance was documented"
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "WANTS_ASST_PAT_REP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether documentation that a patient would like assistance was patient reported. This item tracks whether the information was collected via MyChart."
+    }
+  ]
+}

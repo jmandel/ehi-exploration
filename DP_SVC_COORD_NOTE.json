@@ -1,0 +1,70 @@
+{
+  "name": "DP_SVC_COORD_NOTE",
+  "description": "Coordination notes from the Services to Coordinate section of the current patient encounter--used to leave care coordination notes specific to this patient to a user, or to other users coordinating care for the patient.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "COORD_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the HNO (unified clinical notes master file) IDs of any coordination notes that have been created for the current patient encounter. Coordination notes exist to document any additional context surrounding current service coordination plans that cannot be documented in the plan itself."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NOTE_IS_PINNED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Matches with an HNO ID stored in I EPT 97118, and documents if that coordination note is \"pinned.\" Pinned coordination notes will show up in the Services to Coordinate navigator section, and any users accessing that patient's chart will be able to see that note during service coordination.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "name": "CYCLE_PLAN_STATUS",
+  "description": "This table contains data for what cycle plans have been finalized and by whom.",
+  "primaryKey": [
+    {
+      "columnName": "CYCLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CYCLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the cycle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PLAN_CARD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The cycle plan card. This item is the key for each line.",
+      "entries": [
+        "Cycle Details",
+        "Cycle Information"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PLAN_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The state of the plan, whether it has been finalized or amended",
+      "entries": [
+        "Finalized",
+        "Amended"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PLAN_UPDATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user that signed or amended the plan"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "PLAN_UPDATE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PLAN_UPDATE_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant a plan was signed/amended"
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "AMENDMENT_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason the user is amending the plan",
+      "entries": [
+        "System Update - Forced Amend",
+        "Other",
+        "Patient Request",
+        "Provider Request",
+        "New Clinical Information",
+        "Financial/Insurance",
+        "User Error"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "AMENDMENT_REASON_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The free-text reason for amending the plan"
+    }
+  ]
+}

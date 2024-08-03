@@ -1,0 +1,57 @@
+{
+  "name": "SEPSIS_INPATIENT_STATUS",
+  "description": "This table contains a patient's sepsis early detection and protocol status.",
+  "primaryKey": [
+    {
+      "columnName": "INPATIENT_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "INPATIENT_DATA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the inpatient record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SEPSIS_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores a history of the patient's sepsis early detection and protocol status, as determined by GetSepsisStatus^JSEPSIS.",
+      "entries": [
+        "No status",
+        "Sepsis alerts stopped for remaining encounter",
+        "Sepsis alerts temporarily suspended",
+        "Screen for sepsis",
+        "Monitor and reevaluate",
+        "Diagnostic workup",
+        "Consider starting protocol (WATCH)",
+        "Consider starting protocol (ALERT)",
+        "Consider starting protocol (WARNING)",
+        "Sepsis protocol active",
+        "Sepsis protocol ongoing"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "SEPSIS_STATUS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the UTC instant when a patient's sepsis status changed, as determined by GetSepsisStatus^JSEPSIS."
+    }
+  ]
+}

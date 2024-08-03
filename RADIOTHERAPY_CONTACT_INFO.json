@@ -1,0 +1,290 @@
+{
+  "name": "RADIOTHERAPY_CONTACT_INFO",
+  "description": "This table contains general contact specific information for external radiation therapy treatment records.",
+  "primaryKey": [
+    {
+      "columnName": "RT_SUMMARY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the radiotherapy summary record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ERT_SUMMARY_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number (CSN) of the contact."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CONTACT_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores contact number"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NAME_HX",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of the record name"
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "RADIOTHERAPY_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the mode of the contact, indicating if the contact represents the prescription, plan, or treatment summary.",
+      "entries": [
+        "Prescribed",
+        "Planned",
+        "Treated"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PARENT_RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the parent record for the summary. For a phase, the parent ID will be a course. For a plan, the parent ID will be a phase."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "PARENT_RT_SUMMARY_DAT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the DAT of the parent ID at the time this record was created."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "ANTECEDENT_RT_SUMMARY_DAT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the DAT of the antecedent ID at the time this record was created."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "RADIOTHERAPY_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the status of the contact of the record.",
+      "entries": [
+        "Preparation",
+        "In progress",
+        "Not done",
+        "On hold",
+        "Stopped",
+        "Completed",
+        "Entered in error",
+        "Unknown",
+        "Draft",
+        "Active",
+        "Revoked"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "RT_STATUS_REASON_INTERNAL_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartData element name, such as \"A Family History of Sickle Cell Anemia\"."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "TREATMENT_INTENT_INTERNAL_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartData element name, such as \"A Family History of Sickle Cell Anemia\"."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "CHANGE_REASON_INTERNAL_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The SmartData element name, such as \"A Family History of Sickle Cell Anemia\"."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "REQUESTER_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the EMP record of the requester of the plan or prescription."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "REQUESTER_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "REQUESTER_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "REQUESTER_ROLE_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "REQUESTER_DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "REQUESTER_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "REQUESTER_LAB_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the LLB record of the requester of the plan or prescription."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "REQUESTER_LAB_ID_LLB_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Interface laboratory name."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "REQUESTER_REGISTRY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the HIP record of the requester of the plan or prescription."
+    },
+    {
+      "ordinalPosition": 25,
+      "name": "REQUESTER_REGISTRY_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "ordinalPosition": 26,
+      "name": "REQUESTER_PAYOR_ID_PAYOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the payor."
+    },
+    {
+      "ordinalPosition": 27,
+      "name": "START_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Contains the expected start or actual start instant for a radiotherapy course, phase, or plan."
+    },
+    {
+      "ordinalPosition": 28,
+      "name": "END_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Contains the expected end or actual end instant for a radiotherapy course, phase, or plan."
+    },
+    {
+      "ordinalPosition": 29,
+      "name": "CONTACT_LAST_UPD_VERSION_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the FHIR version ID of the most recent version of the contact."
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "INVOLVES_REIRRADIATION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag indicating if the course involves reirradiation of targets or organs at risk that were already irradiated in previous courses.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 31,
+      "name": "NUMBER_OF_FRACTIONS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of  planned or delivered fractions in a phase or plan."
+    },
+    {
+      "ordinalPosition": 32,
+      "name": "NUMBER_OF_SESSIONS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of sessions in a course."
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "ANTECEDENT_RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Contains the plan or prescription the summary is based on. For a treatment summary, this will reference a plan. For a planned treatment, this will reference a prescription."
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "CONTACT_VERSION_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item stores the last update instant of the contact, which is the instant the version in ERT 260 was created."
+    },
+    {
+      "ordinalPosition": 35,
+      "name": "TREATMENT_INTENT_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the text element for the treatment intent that is to be used when the treatment intent code (I ERT 215) does not contain a coded concept."
+    },
+    {
+      "ordinalPosition": 36,
+      "name": "RT_STATUS_REASON_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a free text representation of the status reason when no coded value is stored in ERT item 210."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "UB_AUTH_NUM_SOURCE",
+  "description": "This table holds the authorization number source category indicating where the prior authorization or referral number for the UB (or institutional) claim service line was found.",
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CLAIM_PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the claim print record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this record."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "UB_AUTH_NUM_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The auth number search precedence category ID identifying where the authorization number was found.",
+      "entries": [
+        "None",
+        "Claim Info - Authorization Number (PB:CLM-341; HB:HAR-7053)",
+        "Referral - Effective Coverages Authorization Number (RFL-18062)",
+        "Referral - Default Authorization Number (RFL-60)",
+        "Referral - Effective Coverages Pre-Certification Number (RFL-18064)",
+        "Referral - Default Pre-Certification Number (RFL-18010)",
+        "Episode Authorization Code",
+        "Bed Days Table - Authorization Number (RFL-8513/8527)",
+        "Dental Plan - Authorization Number (DTP-302)",
+        "Referral - SAR/TAR (RFL-210/250/269)",
+        "Referral - Service Level Auths (ETR-118; AUT-18062)"
+      ]
+    }
+  ]
+}

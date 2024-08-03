@@ -211,9 +211,11 @@
         "Void Variance",
         "Reopen Variance",
         "Create Release",
-        "Update Payer Notice",
-        "Void Payer Notice",
-        "Reopen Payer Notice",
+        "Update Claim Status Follow-Up",
+        "Void Claim Status Follow-Up",
+        "Reopen Claim Status Follow-Up",
+        "Start Appeal",
+        "Void Appeal",
         "Reset Self-Pay Aging Date",
         "Reset Insurance Aging Date",
         "Replace Claim",
@@ -250,11 +252,18 @@
         "Send Billing Notification",
         "Execute Extension",
         "Update PB Billing Status",
+        "Evaluate for Financial Assistance Case Creation",
         "Demand Claim",
         "Remove From Claim Queue",
         "Rehome",
         "Add to Credit Workqueue",
-        "Send Tapestry Letter"
+        "Send Tapestry Letter",
+        "Add Tapestry Note",
+        "Set Up Auto Pay",
+        "Make One-Time Payment",
+        "Update Delinquency Status",
+        "Reinvoice Account",
+        "Ad Hoc Adjustment"
       ]
     },
     {
@@ -269,6 +278,7 @@
         "Documents Need Review",
         "Documents Created",
         "Documents Sent",
+        "Appeal Started",
         "Reopened",
         "Completed",
         "Voided"
@@ -289,7 +299,9 @@
         "PB Payment Undistributed",
         "PB Original Follow-up Completed",
         "Variance Type Changed",
-        "Documents Sent"
+        "Documents Sent",
+        "Subsequent Payer Follow-Up",
+        "Appeal Submitted"
       ]
     },
     {
@@ -515,7 +527,7 @@
         "Fax",
         "Inspector",
         "EpicCare Link",
-        "Patient Portal",
+        "Electronic Delivery",
         "Chart Gateway",
         "In Basket",
         "Claims Delivery",
@@ -576,6 +588,49 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the rule."
+    },
+    {
+      "ordinalPosition": 37,
+      "name": "ACT_BDC_FOLLOW_UP_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The follow-up context (I BDC 32) set on a follow-up BDC.",
+      "entries": [
+        "Additional Documentation Request"
+      ]
+    },
+    {
+      "ordinalPosition": 38,
+      "name": "ACT_BDC_ICN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Internal Control Number (ICN) to provide a payer in relation to a follow-up."
+    },
+    {
+      "ordinalPosition": 39,
+      "name": "ACT_BDC_FOL_UP_RESP_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The response type (I BDC 10507) set on a follow-up record.",
+      "entries": [
+        "Appeal",
+        "Reconsideration",
+        "Documentation Submission"
+      ]
+    },
+    {
+      "ordinalPosition": 40,
+      "name": "ACT_BDC_TRACKING_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The submission tracking ID (BDC-10502) set on a follow-up record."
+    },
+    {
+      "ordinalPosition": 41,
+      "name": "ACT_BDC_INCLUDE_AI_REFS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not the user chose to include the automatically AI generated references in the release of information when starting a new appeal."
     }
   ]
 }

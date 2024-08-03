@@ -1,0 +1,175 @@
+{
+  "name": "VOIP_AUDIT_ACTIONS",
+  "description": "The audited actions for VoIP call logs.",
+  "primaryKey": [
+    {
+      "columnName": "VIDEO_VISIT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "VIDEO_VISIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the video visit record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VOIP_AUDIT_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The single audit action for a VoIP call log.",
+      "entries": [
+        "Unknown",
+        "Connection",
+        "Disconnection",
+        "Participant Added",
+        "Did Not Connect",
+        "Call Initiated",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PARTICIPANT_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the participant GUIDs of each participant connected to the call."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "VOIP_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the EMP ID associated with the participant in the call."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "VOIP_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "VOIP_ACTION_INST_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of the audit action."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "DID_NOT_CONN_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason the participant did not connect to the call.",
+      "entries": [
+        "None",
+        "Busy",
+        "No Answer",
+        "Canceled",
+        "No Device Registrations",
+        "Emergency Call Misdial",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "ADD_BY_PARTICIPANT_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The participant GUID of the participant that added the participant to the call."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "VOIP_CLIENT_APP_TARGET_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the Epic application used to make/receive the call for the participant.",
+      "entries": [
+        "Hyperspace",
+        "Canto",
+        "Haiku",
+        "Rover",
+        "Epic Monitor",
+        "MyChart Mobile",
+        "MyChart Bedside Tablet",
+        "MyChart Bedside TV",
+        "Limerick",
+        "MyChart",
+        "EpicCare Link",
+        "Home Health",
+        "FMK Administration Reconciliation",
+        "BCA Web",
+        "Video Visit Direct Join Link",
+        "Video Visit Direct Join Link - SMS",
+        "Video Visit Direct Join Link - Email"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "VOIP_PHONE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The phone number associated with the participant in the call."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "AVB_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Availability status for VoIP audit actions.",
+      "entries": [
+        "Available",
+        "Busy",
+        "Unavailable",
+        "Do Not Disturb",
+        "Offline"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "IS_USER_FORWARDING_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Call forwarding flag for VoIP audit actions.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "ACTION_LOCAL_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The instant of the audit action in local time."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "CALL_RESULT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Call result for VoIP audit actions.",
+      "entries": [
+        "Answered",
+        "Declined",
+        "Missed",
+        "Dropped"
+      ]
+    }
+  ]
+}

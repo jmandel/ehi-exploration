@@ -45,7 +45,8 @@
         "Calculated",
         "AP Batched",
         "Paid",
-        "Void"
+        "Void",
+        "New"
       ]
     },
     {
@@ -235,48 +236,41 @@
     },
     {
       "ordinalPosition": 27,
-      "name": "VENDOR_ID",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The vendor ID of the transaction."
-    },
-    {
-      "ordinalPosition": 28,
       "name": "VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "ordinalPosition": 29,
+      "ordinalPosition": 28,
       "name": "TX_CANC_TX_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction ID which cancels this transaction."
     },
     {
-      "ordinalPosition": 30,
+      "ordinalPosition": 29,
       "name": "REPLACES_DTX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction that this transaction replaces."
     },
     {
-      "ordinalPosition": 31,
+      "ordinalPosition": 30,
       "name": "REPLACED_BY_DTX",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The transaction which replaced this transaction."
     },
     {
-      "ordinalPosition": 32,
+      "ordinalPosition": 31,
       "name": "RTRO_CNCL_BY_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The retro transaction ID that canceled this transaction."
     },
     {
-      "ordinalPosition": 33,
+      "ordinalPosition": 32,
       "name": "RTRO_CNCL_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -288,182 +282,175 @@
       ]
     },
     {
-      "ordinalPosition": 34,
+      "ordinalPosition": 33,
       "name": "SPEC_MEMBER_MONTHS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The specialty member months of the transaction."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 34,
       "name": "ADJ_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount of the adjustment transaction."
     },
     {
-      "ordinalPosition": 36,
-      "name": "ADJ_VENDOR_ID",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The vendor ID of this adjustment transaction."
-    },
-    {
-      "ordinalPosition": 37,
+      "ordinalPosition": 35,
       "name": "ADJ_VENDOR_ID_VENDOR_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the vendor."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 36,
       "name": "ADJ_CLAIM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The claim ID of this adjustment transaction."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 37,
       "name": "ADJU_CLAIM_LINE",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The claim line number of this adjustment transaction."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 38,
       "name": "ADJ_MEM_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The member ID associated with this adjustment transaction."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 39,
       "name": "ADJ_MEM_DOB",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of birth of the member in this adjustment transaction."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 40,
       "name": "ADJ_MEM_SEX_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The sex of the member in this adjustment transaction."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 41,
       "name": "ADJ_MEM_LIST_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The member list ID of this adjustment transaction."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 42,
       "name": "ADJ_PCP_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 43,
       "name": "ADJ_SPECIALTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The specialty of this adjustment transaction."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 44,
       "name": "ADJ_SERV_AREA_ID_LOC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the revenue location."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 45,
       "name": "ADJ_CARRIER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The carrier ID of this adjustment transaction."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 46,
       "name": "ADJ_CARRIER_ID_CARRIER_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the carrier record."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 47,
       "name": "ADJ_NETWORK_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The network ID of this adjustment transaction."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 48,
       "name": "ADJ_NETWORK_ID_NETWORK_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the network."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 49,
       "name": "ADJ_BEN_PLAN_ID_BEN_PACKAGE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 50,
       "name": "DIST_LOB_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The capitation payment line of business."
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 51,
       "name": "DIST_LOB_ID_LOB_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the line of business record."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 52,
       "name": "DIST_RKP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the risk panel for capitation distribution."
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 53,
       "name": "DIST_RKP_ID_RISK_PANEL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the risk panel."
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 54,
       "name": "DIST_MGRP_ID_MEM_GRP_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the member group"
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 55,
       "name": "CAP_RETRO_LEVEL",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Retro level capitation transactions."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 56,
       "name": "MEM_COUNT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The number of members listed in the associated member list of the transaction. This data is only populated for Specialty Capitation transactions."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 57,
       "name": "RELEASED_TO_AP_YN",
       "type": "VARCHAR",
       "discontinued": false,
@@ -474,28 +461,28 @@
       ]
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 58,
       "name": "CAP_COUNTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The member's county used in outgoing capitation."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 59,
       "name": "PCP_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The amount for this transaction. This is only populated for PCP capitation transactions."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 60,
       "name": "MCARE_CONTRACT_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The medicare advantage contract number that matches the Member Group's medicare advantage contract number."
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 61,
       "name": "WITHHOLD_REASON_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -507,28 +494,28 @@
       ]
     },
     {
-      "ordinalPosition": 64,
+      "ordinalPosition": 62,
       "name": "CAPITATION_CODE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The capitation code associated with the transaction."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 63,
       "name": "REGION_ID_LOC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the revenue location."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 64,
       "name": "MEDICAL_GROUP_ID_LOC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the revenue location."
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 65,
       "name": "PRODUCT_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,

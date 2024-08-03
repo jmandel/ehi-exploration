@@ -1,0 +1,48 @@
+{
+  "name": "AUTH_REF_FULL_REFERRAL",
+  "description": "This table holds the full list of referral and authorization records available for consideration when determining the referral number for the claim. This may include records that were not referenced in the lookup because the authorization number was found earlier in the list or from another source.",
+  "primaryKey": [
+    {
+      "columnName": "INVOICE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "INVOICE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the invoice record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this record."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AUTH_REF_NUM_FULL_REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of each referral record considered in the referral number lookup, whether we read the referral number from the record or not."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "MED_DISPENSE_BARCODE",
+  "description": "This table contains external barcodes received as part of prescription fills from a third party interface if the fill is not accepted automatically.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 3
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 4
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of a single medication/ingredient in the overall dispense. Together with DOCUMENT_ID and CONTACT_DATE_REAL, this forms the foreign key to the MED_DISPENSE table."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple external barcode IDs associated with the overall dispense and the single medication/ingredient from the MED_DISPENSE table."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "DISP_BARCODE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item records the medication barcode IDs received as part of an external dispense."
+    }
+  ]
+}

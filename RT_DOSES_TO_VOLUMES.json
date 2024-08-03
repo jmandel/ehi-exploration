@@ -1,0 +1,114 @@
+{
+  "name": "RT_DOSES_TO_VOLUMES",
+  "description": "This table contains the body volumes being treated with radiation therapy, how many fractions planned/received, and the dose per fraction.",
+  "primaryKey": [
+    {
+      "columnName": "RT_SUMMARY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the radiotherapy summary record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ORG_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores a referenced to a volume that is planned to receive or has received radiation therapy."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "TOTAL_DOSE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the total dose that was delivered or is planned to be delivered to the associated volume."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "TOTAL_RAD_THERAPY_DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unit of the associated total dose.",
+      "entries": [
+        "cGy",
+        "Gy",
+        "CGE",
+        "GE"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "FRACTION_DOSE_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the dose delivered or planned to be delivered to the associated volume in each fraction."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "FRAC_RAD_THERAPY_DOSE_UNIT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the unit of the associated fraction dose."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NUM_FRACTIONS_TO_VOLUME",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of fractions delivered or planned to be delivered to the associated volume."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "IS_UNIFORM_FRACTIONATION_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag indicating if the correspondence between the physical and biologically effective dose can be determined at the course level. If fractionation is not uniform, then the correspondence has to be determined at the phase level.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "IS_POINT_DOSE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag indicating if the dose is determined at a single point."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "IS_PRIMARY_DOSE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A flag indicating if the dose is the primary plan dose in a radiotherapy treatment plan. For a single treatment plan, the primary plan dose serves as the main dose value for tracking delviered vs. planned dose. In summaries over multiple treatment plans, the flag indicates that the dose is a primary plan dose in any of the summarized plans."
+    }
+  ]
+}

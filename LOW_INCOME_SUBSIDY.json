@@ -1,0 +1,54 @@
+{
+  "name": "LOW_INCOME_SUBSIDY",
+  "description": "Medicare Part D Low Income Subsidy (LIS) eligibility information.",
+  "primaryKey": [
+    {
+      "columnName": "REGISTRY_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "REGISTRY_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the registry data record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "IS_DEEMED_LIS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the patient was deemed Low Income Subsidy (LIS). Patients who qualify for LIS receive financial support for Medicare Part D related expenses, such as reduced medication copays.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "LIS_COPAY_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Copayment Level for Part D Low Income Subsidy (LIS). Determines how much patients in Medicare Part D plans pay for their medication copays.",
+      "entries": [
+        "None",
+        "Level 1",
+        "Level 2",
+        "Level 3"
+      ]
+    }
+  ]
+}

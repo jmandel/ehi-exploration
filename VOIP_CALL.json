@@ -1,0 +1,86 @@
+{
+  "name": "VOIP_CALL",
+  "description": "This table contains information associated with Unified Communications VoIP Calls.",
+  "primaryKey": [
+    {
+      "columnName": "VIDEO_VISIT_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "VIDEO_VISIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the VoIP call record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CALL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This virtual item returns the date of the interaction. The returned date is handled differently depending on the contact type of the encounter. If there is no encounter associated with the interaction, then the interaction record creation date (I LVV 90090) is returned. If there is an encounter associated and it is not an admission, then the encounter contact date (I EPT 30) is returned. If there is an encounter associated and it is an admission, then the date of the first connect action logged in (SI LVV 100) is returned. If there is no first connect action, then the interaction record creation date is returned."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The end instant of the VoIP call in UTC."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CALL_END_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The end reason of the VoIP call. This is intended to capture why call workflows ended earlier, before reaching the Nebula service.",
+      "entries": [
+        "Communication Error",
+        "Caller Cancelled",
+        "Caller Offline",
+        "Caller Lacks Security",
+        "Recipient Offline",
+        "Recipient Lacks Security",
+        "Recipient EMP Inactive",
+        "Recipient No Recent Login",
+        "Recipient Not Registered"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "END_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The end instant of the VoIP call in local time."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The start instant of the VoIP call in UTC."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "START_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The start instant of the VoIP call in local time."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient associated with the VoIP call."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The patient encounter associated with the VoIP call."
+    }
+  ]
+}

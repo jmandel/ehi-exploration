@@ -47,9 +47,95 @@
       "discontinued": false,
       "description": "Store the authorization type for the corresponding coverage.",
       "entries": [
-        "REFERRAL NUMBER",
-        "PRIOR AUTHORIZATION NUMBER"
+        "Referral Number",
+        "Prior Authorization Number"
       ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "AUTH_SOURCE_REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the referral or auth/cert record when the authorization number on the row was found in the referral or auth/cert."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "AUTH_SOURCE_AUTH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the service level authorization record when the authorization number on the row was found in the authorization record."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "AUTH_SOURCE_HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the hospital account when the authorization number on the row was found in the account."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "AUTH_SOURCE_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the hospital account when the authorization number on the row was found in the account."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "AUTH_NUM_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The auth number search precedence category ID identifying where the authorization number was found.",
+      "entries": [
+        "None",
+        "Claim Info - Authorization Number (PB:CLM-341; HB:HAR-7053)",
+        "Referral - Effective Coverages Authorization Number (RFL-18062)",
+        "Referral - Default Authorization Number (RFL-60)",
+        "Referral - Effective Coverages Pre-Certification Number (RFL-18064)",
+        "Referral - Default Pre-Certification Number (RFL-18010)",
+        "Episode Authorization Code",
+        "Bed Days Table - Authorization Number (RFL-8513/8527)",
+        "Dental Plan - Authorization Number (DTP-302)",
+        "Referral - SAR/TAR (RFL-210/250/269)",
+        "Referral - Service Level Auths (ETR-118; AUT-18062)"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "AUTH_PB_RFL_RECORD_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Professional Billing referral source search precedence category ID identifying where the source referral or auth/cert record was found.",
+      "entries": [
+        "Referral assigned to the charge (ETR 116)",
+        "Authorization assigned to the charge (AUT 105)",
+        "Order associated with the charge (ORD 3300)",
+        "Encounter associated with the charge (EPT 23015)"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "AUTH_HB_RFL_RECORD_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Hospital Billing referral source search precedence category ID identifying where the source referral or auth/cert record was found.",
+      "entries": [
+        "Hospital account (HAR 130)",
+        "Authorization assigned to the charge (AUT 105)",
+        "Order associated with the charge (ORD 3300)",
+        "Authorization associated with the encounter of the charge (EPT 23017)",
+        "Technical referral associated with the encounter of the charge (EPT 23019)",
+        "Primary referral associated with the encounter of the charge (EPT 23015)",
+        "Authorization associated with the primary contact on the hospital account (EPT 23017)",
+        "Technical referral associated with the primary contact on the hospital account (EPT 23019)",
+        "Primary referral associated with the primary contact on the hospital account (EPT 23015)"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "AUTH_SOURCE_TREATMENT_PLAN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the dental treatment plan record when the authorization number on the row was found in the treatment plan."
     }
   ]
 }

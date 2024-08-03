@@ -1,0 +1,55 @@
+{
+  "name": "PATH_SEC_DESCENDANT_SG",
+  "description": "This table contains the descendant SmartGroups and panels for sections in pathways.",
+  "primaryKey": [
+    {
+      "columnName": "REGIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "REGIMEN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the pathway section record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "DESCENDANT_REGIMEN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier of a SmartGroup or panel that is a descendant of the section in this row. This column can be used to link to tables like TRG_INFO and TRG_BLOCK_INFO."
+    }
+  ]
+}

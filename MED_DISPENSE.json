@@ -1028,7 +1028,8 @@
       "entries": [
         "Claim History",
         "Fill History",
-        "Payer Claim"
+        "Payer Claim",
+        "Willow Dispense History"
       ]
     },
     {
@@ -1148,7 +1149,8 @@
         "FHIR Resource is missing an effective date/time",
         "FHIR resource contained an invalid status",
         "Observation FHIR resource is linked to a filtered Condition FHIR resource",
-        "SDOH Assessment contains no questions"
+        "SDOH Assessment contains no questions",
+        "Claim Derivation: Missing face-to-face services"
       ]
     },
     {
@@ -1160,6 +1162,7 @@
       "entries": [
         "New",
         "Pending Rx Entry",
+        "Pending E-Transfer",
         "Scheduled Fill",
         "Pending Fill",
         "Fill Rejected",
@@ -1226,6 +1229,9 @@
         "IP Dispense Prep Revise",
         "IP Dispense Prep Requeued",
         "IP Dispense Rejected",
+        "IP Dispense Prep Reuse Started",
+        "IP Dispense Prep Reuse Stopped",
+        "IP Queued For Dispense Check Without Prep",
         "IP Dispense Check Removed",
         "IP Dispense Check Started",
         "IP Second Dispense Check",
@@ -1247,6 +1253,23 @@
         "Download Request Canceled",
         "Download Error",
         "Download Not Attempted",
+        "E-Transfer Request Pending Send",
+        "E-Transfer Request Sent",
+        "E-Transfer Request Sent Successfully",
+        "E-Transfer Request Sending Error",
+        "E-Transfer Request Approved",
+        "E-Transfer Request Denied",
+        "E-Transfer Pending Reconciliation",
+        "E-Transfer Reconciled",
+        "E-Transfer Confirmation Sent",
+        "E-Transfer Confirmation Success",
+        "E-Transfer Confirmation Error",
+        "E-Transfer Request Received",
+        "E-Transfer Response Pending Send",
+        "E-Transfer Response Sent",
+        "E-Transfer Response Sent Successfully",
+        "E-Transfer Response Sending Error",
+        "E-Transfer Confirmation Received",
         "Sale Completed",
         "Sale Updated",
         "Sale Canceled",
@@ -1323,6 +1346,20 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the PRN comment for a PRN dispense"
+    },
+    {
+      "ordinalPosition": 50,
+      "name": "EXT_DRUG_DSPPROV_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the postal code of the pharmacy or provider that dispensed the medication. This item is only populated in Cosmos host environments."
+    },
+    {
+      "ordinalPosition": 51,
+      "name": "EXT_DRUG_DISP_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the dispense instant in UTC. Assumes system local time if dispense does not have timezone."
     }
   ]
 }

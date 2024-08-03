@@ -1,0 +1,137 @@
+{
+  "name": "DP_SVC_COORD_PLAN_AUDIT",
+  "description": "This table contains the audit trail data for the Services to Coordinate workflow.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "AUDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the user who edited the coordination plan for this audit event."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "AUDIT_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "AUDIT_EVENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This column stores the UTC instant at which the audit event occurred."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "COORD_PLAN_AUD_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the action that was taken for this audit event. The possible actions are adding a coordination plan, modifying a coordination plan, or deleting a coordination plan.",
+      "entries": [
+        "Add Coordination Plan",
+        "Modify Coordination Plan",
+        "Delete Coordination Plan",
+        "Add Then Delete Coordination Plan"
+      ]
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "SVC_COORD_PLAN_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the unique identifier for the coordination plan that was affected by this change. It can be used to join audit trail events to the coordination plan data in DP_SERVICE_COORD_PLAN."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "AUDIT_COORD_PLAN_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the audit history of the plan name for each audit event."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "AUDIT_PLAN_IS_INACTIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the audit history of the whether the coordination plan was active or inactive for each event.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "COORD_PLAN_AUD_DEL_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the reason why a coordination plan was deleted from the patient's chart.",
+      "entries": [
+        "Other (Comment)",
+        "Created in Error",
+        "Testing"
+      ]
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "SVC_COORD_DEL_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the comment provided by the user when deleting a coordination plan from the patient's chart."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "AUDIT_PLAN_IS_SENSITIVE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the audit history of whether the coordination plan was sensitive for each audit event."
+    }
+  ]
+}

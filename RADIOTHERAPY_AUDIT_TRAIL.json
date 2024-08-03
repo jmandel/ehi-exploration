@@ -1,0 +1,90 @@
+{
+  "name": "RADIOTHERAPY_AUDIT_TRAIL",
+  "description": "This table contains audit information for each contact of an ERT record.",
+  "primaryKey": [
+    {
+      "columnName": "RT_SUMMARY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the radiotherapy summary record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_OLD_VERSION_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the FHIR version ID the old value was associated with."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ITEM_NUMBER",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the changed item number for an audit trail entry."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the instant the change being audited was applied to the contact."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "ITEM_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the line number of the old value in the associated item."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "ITEM_PIECE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "For related-multi items, stores the piece number of the old value in the associated item on the associated line."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "OLD_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the old value for the associated item on the associated line and piece number."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "NEW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item contains the new value of the item stored in related item 5001 when the value changes."
+    }
+  ]
+}

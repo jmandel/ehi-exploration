@@ -1,0 +1,73 @@
+{
+  "name": "IMG_LOAD_BALANCE_AUDIT",
+  "description": "This table holds information about the actions the Radiant Load Balancer took on studies at each instant in time.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LD_BALANCE_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specific action taken on an order by the Load Balancer at a given instant in time.",
+      "entries": [
+        "Processed by Load Balancer",
+        "Assigned by Load Balancer",
+        "Returned for Redistribution",
+        "Manually Reassigned by User",
+        "Escalated as High Priority Order",
+        "Signed by User"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "LD_BALANCE_STDY_PRI",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The priority score of the study at a given instant in time."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "LD_BALANCE_ACN_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant in time at which a load balancing event took place."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "LD_BALANCE_ADT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The user who initiated a load balancing action such as reassigning a study to another provider, returning a study for redistribution, or signing a study."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "LD_BALANCE_ADT_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    }
+  ]
+}

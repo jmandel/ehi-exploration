@@ -1,0 +1,87 @@
+{
+  "name": "RADIOTHERAPY_DICOM_INFO",
+  "description": "This table contains identifiers to DICOM files used in the radiotherapy plan.",
+  "primaryKey": [
+    {
+      "columnName": "RT_SUMMARY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "RT_SUMMARY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the radiotherapy summary record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "INSTANCE_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "UID for a DICOM image."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "SOP_CLASS_SYSTEM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the system for the associated SOP class."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SOP_CLASS_SYSTEM_VERSION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the version of the associated system."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "SOP_CLASS_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the SOP class code for the associated DICOM instance UID."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "SOP_CLASS_USER_SELECTED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the user manually selected the SOP class code was chosen directly by the user.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "SOP_CLASS_DISPLAY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the display name for the associated SOP class code."
+    }
+  ]
+}

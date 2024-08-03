@@ -1,0 +1,81 @@
+{
+  "name": "BDC_CLAIM_STATUS",
+  "description": "This table contains information about the claim status for claim status follow-up (BDC) records, including claim status reason codes and claim status codes.",
+  "primaryKey": [
+    {
+      "columnName": "BDC_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "BDC_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the den/corr rec record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CLAIM_STAT_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status reason code of the claim status message linked to the claim status follow-up record.",
+      "entries": [
+        "Bundling",
+        "Capitation",
+        "Claim Error",
+        "Coding Issue",
+        "Contract/Benefit Related",
+        "Coordination of Benefits",
+        "Correspondence",
+        "Coverage Issue",
+        "Credentialing",
+        "Duplicate Claim",
+        "Medical Necessity",
+        "Missing Claim",
+        "Patient Responsibility",
+        "Payer Review",
+        "Payment Deferred",
+        "Remittance Expected",
+        "Pending Adjudication",
+        "Referral/Authorization Issue",
+        "Registration Issue",
+        "Additional Documentation Request",
+        "Submission Error",
+        "Timely Filing",
+        "Other",
+        "Third Party Liability",
+        "Non-Covered"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CLM_STATUS_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status code loaded from a ANSI 277 message from the payer that indicates the status of the claim.",
+      "entries": [
+        "Unmapped code received"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CLM_STATUS_DATA",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Status code string for when the status code is unmapped."
+    }
+  ]
+}

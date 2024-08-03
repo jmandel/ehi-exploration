@@ -1,6 +1,6 @@
 {
   "name": "BDC_INFO",
-  "description": "This table contains Denial/Remark/Correspondence/Variance information from the Denial/Correspondence (BDC) master file. It includes information about the denial/remark code received or correspondence text as applicable. It also includes some general information about the current state of the record. It does not include the change history information and specific denial information from the explanation of benefits (EOB).",
+  "description": "This table contains Denial/Remark/Correspondence/Variance/Claim Status Follow-Up information from the Denial/Correspondence (BDC) master file. It includes information about the denial/remark code received or correspondence text as applicable. It also includes some general information about the current state of the record. It does not include the change history information and specific denial information from the explanation of benefits (EOB).",
   "primaryKey": [
     {
       "columnName": "BDC_ID",
@@ -34,7 +34,7 @@
         "Correspondence",
         "Underpayment",
         "Overpayment",
-        "Payer Follow-Up"
+        "Claim Status"
       ]
     },
     {
@@ -56,6 +56,7 @@
         "Documents Need Review",
         "Documents Created",
         "Documents Sent",
+        "Appeal Started",
         "Reopened",
         "Completed",
         "Voided"
@@ -75,6 +76,7 @@
         "Reserved for future use",
         "System Auto Action",
         "PB Follow-up Automatic Activity",
+        "Claim Status",
         "RAC Correspondence",
         "ADR Correspondence",
         "HH Pre-Claim Review",
@@ -166,7 +168,9 @@
         "PB Payment Undistributed",
         "PB Original Follow-up Completed",
         "Variance Type Changed",
-        "Documents Sent"
+        "Documents Sent",
+        "Subsequent Payer Follow-Up",
+        "Appeal Submitted"
       ]
     },
     {
@@ -379,6 +383,73 @@
         "Downgrade Accepted � Agree with Payer",
         "Downgrade Overturned",
         "Downgrade Accepted � Disagree with Payer"
+      ]
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "RECONCILE_CLAIM_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of a claim when the follow-up was needed.",
+      "entries": [
+        "Received",
+        "Rejected",
+        "Accepted",
+        "Pended",
+        "In Progress",
+        "Forwarded",
+        "Adjudicated",
+        "Revised",
+        "Payment Expected",
+        "Denial Expected",
+        "Not Found",
+        "Claim Split",
+        "Data Error",
+        "System Error",
+        "Notification",
+        "Unmapped Code"
+      ]
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "INT_CONTROL_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The payer's internal control number (ICN) relevant to a follow-up. The number is provided by the payer in response to a claim, like a claim status message."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "CLAIM_RECON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The claim reconciliation record ID that was the basis for creating the denial/correspondence record."
+    },
+    {
+      "ordinalPosition": 49,
+      "name": "CLAIM_RECON_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number of the claim reconciliation contact that was the basis for creating the denial/correspondence record."
+    },
+    {
+      "ordinalPosition": 50,
+      "name": "FOLLOW_UP_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item documents the context of a follow-up, regardless of the source. The context should indicate why follow-up is needed.",
+      "entries": [
+        "Additional Documentation Request"
+      ]
+    },
+    {
+      "ordinalPosition": 51,
+      "name": "APPEAL_LLM_TEXT_GENERATED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether a denial had appeals text generated in a LLM record.",
+      "entries": [
+        "No",
+        "Yes"
       ]
     }
   ]
