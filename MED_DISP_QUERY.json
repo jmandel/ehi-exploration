@@ -1,6 +1,6 @@
 {
-  "name": "DOCS_RCVD_TXP_ORG_CLAS_RM",
-  "description": "This table extracts the related multiple response item DXR-11705.",
+  "name": "MED_DISP_QUERY",
+  "description": "This table stores metadata about when medication dispense queries were performed by external sources and reported to this database instance. This table only has data in Cosmos host environments.",
   "primaryKey": [
     {
       "columnName": "DOCUMENT_ID",
@@ -11,12 +11,8 @@
       "ordinalPosition": 2
     },
     {
-      "columnName": "GROUP_LINE",
+      "columnName": "LINE",
       "ordinalPosition": 3
-    },
-    {
-      "columnName": "VALUE_LINE",
-      "ordinalPosition": 4
     }
   ],
   "columns": [
@@ -36,49 +32,17 @@
     },
     {
       "ordinalPosition": 3,
-      "name": "GROUP_LINE",
+      "name": "LINE",
       "type": "INTEGER",
       "discontinued": false,
-      "description": "The line number for the information associated with this contact."
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
     },
     {
       "ordinalPosition": 4,
-      "name": "VALUE_LINE",
-      "type": "INTEGER",
-      "discontinued": false,
-      "description": "The line number of one of the multiple values associated with a specific group of data within this contact."
-    },
-    {
-      "ordinalPosition": 5,
       "name": "CONTACT_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "The date of this contact in calendar format."
-    },
-    {
-      "ordinalPosition": 6,
-      "name": "TXP_ORG_CLASS_C_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "Transplant Organ class list.",
-      "entries": [
-        "Lung",
-        "Pancreas",
-        "Liver",
-        "Kidney",
-        "Intestine",
-        "Heart",
-        "Islet",
-        "Face",
-        "Upper Limb",
-        "Abdominal Wall",
-        "Leg",
-        "Penis",
-        "Trachea",
-        "Uterus",
-        "Larynx",
-        "Bladder"
-      ]
     }
   ]
 }
