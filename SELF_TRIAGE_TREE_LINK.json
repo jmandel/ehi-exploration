@@ -1,0 +1,52 @@
+{
+  "name": "SELF_TRIAGE_TREE_LINK",
+  "description": "This table holds links to Self-Triage decision trees that have been sent to patients or their proxies.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINK_FORM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds the Self-Triage decision tree (LQF) ID of the tree that was linked to when a Self-Triage tree link was generated."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "LINK_FORM_ID_FORM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the form associated with the questionnaire."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "LINK_SEND_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "This item holds the UTC instant when a Self-Triage tree link was sent."
+    }
+  ]
+}

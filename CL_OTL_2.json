@@ -1,0 +1,30 @@
+{
+  "name": "CL_OTL_2",
+  "description": "This table contains information about order template records. It is a continuation of the CL_OTL table.",
+  "primaryKey": [
+    {
+      "columnName": "OTL_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "OTL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the template record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "USES_TOD_IN_PAT_SIG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient sig contains time of day indicators like \"morning\", \"noon\", \"evening\", or \"bedtime\". 1 if yes it does and I OTL 7661 will contain which times are included. 2 if no it doesn't, and that was determined either from an unsupported frequency or explicitly marking \"no\" when placing the composer. Null if the order was placed prior to this item, and therefore it isn't known.",
+      "entries": [
+        "Times of Day are used in Patient Sig",
+        "No Times of Day are used in Patient Sig"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "AWM_ORD_MEASUREMENTS",
+  "description": "Stores data pertaining to Automatic Wound Measurements usage in Orders.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this ORD record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AWM_MEASUREMENT_ROW",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the FLO IDs of all the measurement rows that were documented with Automated Wound Measurements that are associated with the order. To determine if they are pre or post debridement check item 68511"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "MEASUREMENT_PRE_DEBRIDE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not the measurement from the row in 68510 is a pre or post debridement measurement.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "name": "APPEAL_GRV_LETTER",
+  "description": "Letters that were sent or were attempted to have been sent from an appeal or grievance record.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "LETTER_SENT_DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contents of the letter that were delivered or are waiting to be delivered."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "APPEAL_GRV_LETTER_STS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Where this letter is in the generation process.",
+      "entries": [
+        "Successfully Sent",
+        "Queued",
+        "Failed",
+        "Canceled"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "LETTER_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique identifier for this letter. This column can be used to join to APPEAL_GRV_LETTER_GEN_HX.LETTER_HX_GUID."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "APPEAL_GRV_LETTER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Which letter type this line counts as. Released letters correspond to common letter types for timeliness requirements and will be automatically triggered during the workflow with no additional build.",
+      "entries": [
+        "Acknowledgement",
+        "Extension Taken",
+        "Dismissal",
+        "Upheld Decision",
+        "Overturned Decision",
+        "Request to Expedite Denial",
+        "Partially Overturned Decision",
+        "Request to Expedite Approval",
+        "Extension Denial",
+        "Decision Effectuation",
+        "Grievance Resolution"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "RECIPIENT_CLASS_EVENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipient class used to determine the specific recipient to send to."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "RECIPIENT_CLASS_EVENT_ID_EVENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the event."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "RESOLVED_FEV_SEND_TO_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specific type of the recipient found with the recipient class.",
+      "entries": [
+        "Patient",
+        "Referred By Provider",
+        "Referred To Provider",
+        "Referred To Vendor",
+        "PCP",
+        "Other",
+        "Vendor",
+        "Provider",
+        "Subscriber of Coverage",
+        "Payer of Coverage",
+        "Referred By Location/POS",
+        "Referred To Location/POS",
+        "Referring Physician",
+        "Pool",
+        "Distribution Scheme",
+        "CRM Creator",
+        "CRM Current Recipients",
+        "CRM Task Owners",
+        "Admitting Provider",
+        "Attending Provider",
+        "Treatment Team",
+        "Current PCP",
+        "Primary Transporter",
+        "Secondary Transporter",
+        "Transport Manager",
+        "Transport Sending Unit",
+        "Transport Receiving Unit",
+        "MC Coverage PCP",
+        "MC Coverage Current PCP",
+        "Referred To Department",
+        "Referred To Specialty",
+        "Care Team",
+        "IP Sign In - Sending Unit User",
+        "IP Sign In - Receiving Unit User",
+        "IP Sign In - Current Unit User",
+        "Bed Planning IB Pager - Sending Unit",
+        "Bed Planning IB Pager - Receiving Unit",
+        "Emergency Contacts",
+        "Bed Request Admitting Provider",
+        "Bed Request Attending Provider",
+        "Premium Billing Account",
+        "CC Receiver",
+        "Information Requester",
+        "Referred By Department",
+        "Transfer Center Request Owner",
+        "ADT Visit Contacts",
+        "Technician",
+        "Supervisor",
+        "Inspector",
+        "Manager",
+        "Start Location Unit Pager",
+        "End Location Unit Pager",
+        "Other Technicians",
+        "All Qualified Techs In Sector",
+        "Primary Qualified Techs In Sector",
+        "Authorized Representative",
+        "User Group Referred By Location",
+        "User Group Referred To Location",
+        "User Group Referred By Provider",
+        "User Group Referred To Provider",
+        "Operating Provider",
+        "Other Provider",
+        "Rendering Provider",
+        "Supervising Provider",
+        "Unified Communications Group - Sending Unit/Location",
+        "Unified Communications Group - Receiving Unit/Location",
+        "Unified Communications Group - Current Unit/Location",
+        "Unified Communications Group - Specific Group",
+        "Attached Chat Conversations",
+        "Follow-Up Providers",
+        "Follow-Up Locations",
+        "Trading Partner",
+        "Subscribed Payer",
+        "Prior Admission Last Attending Provider",
+        "Prior Admission Discharge Provider",
+        "Prior Admission Treatment Team",
+        "Provider Assigned to Bed",
+        "Nurse Assigned to Bed",
+        "Referred To Subspecialty",
+        "Referred For Treatment",
+        "Referred For Condition",
+        "Appointment Staff",
+        "Patient Care Organizations"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "RESOLVED_RECIPIENT_INI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The INItials of the master file containing the record of this letter's recipient."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "RESOLVED_RECIPIENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the record of this letter's recipient. The corresponding value in RESOLVED_RECIPIENT_INI indicates what table this can be used to join to."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "RESOLVED_RECIPIENT_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The GUID of this letter's recipient. This column can be used to join to MEMBER_RESP_PERSON.MEM_RESP_GUID and will be populated when column RESOLVED_FEV_SEND_TO_C is set to 58 (Authorized Representative)."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "DELIVERY_LOGIC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When resolving a delivery method for a particular recipient, this is how we chose that delivery method.",
+      "entries": [
+        "Electronic or Phyical",
+        "Electronic Only",
+        "Physical Only"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "RESOLVED_FEV_DLVR_MTHD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ideal delivery method chosen for the recipient of this letter.",
+      "entries": [
+        "Letter",
+        "Fax",
+        "Note",
+        "EDI Notification",
+        "In Basket Message",
+        "Letter Review",
+        "Extension",
+        "ADT Autoprint using table",
+        "ADT Autoprint a report",
+        "Default Letter",
+        "Default Fax",
+        "Default In Basket Message",
+        "Admission Notification",
+        "E-mail",
+        "CE Message",
+        "Page",
+        "Triage",
+        "Immediate Transfer of Care",
+        "Pend Transfer of Care",
+        "Text",
+        "MyChart Message",
+        "MyChart Letter",
+        "eReferral to PCEHR",
+        "MyChart Scheduling Ticket",
+        "Mobile App Notification",
+        "Mobile App Notification and Page",
+        "Mobile App Notification, fall back to Page",
+        "Page, fall back to Mobile App Notification",
+        "Discharge Notification",
+        "Show In Bed Planning",
+        "Generate Document",
+        "Default MyChart",
+        "Clinical Attachment",
+        "Mail",
+        "Direct Message",
+        "Communication Management",
+        "External Notification",
+        "UM Notification",
+        "Chart Abstraction Registry",
+        "Payer Platform Notification",
+        "Default Payer Platform Notification",
+        "Automatically Determine",
+        "CRM Letter",
+        "Desktop Notification",
+        "Desktop + Mobile Notification"
+      ]
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "BATCH_PRINT_LTR_HX_JOB_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If a letter was submitted to batch print to be mailed out, this is the job type that the letter was queued to.",
+      "entries": [
+        "All"
+      ]
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "BODY_SMARTTEXT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When the letter was created, this is the SmartText template that we used to generate the contents of the body."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "BODY_SMARTTEXT_ID_SMARTTEXT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the SmartText record."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "COVER_SMARTTEXT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When the letter was created, this is the SmartText template that we used to generate the cover sheet which was rendered before the body."
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "COVER_SMARTTEXT_ID_SMARTTEXT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the SmartText record."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "BACK_SMARTTEXT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "When the letter was created, this is the SmartText template that we used to generate the back sheet which was rendered after the body."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "BACK_SMARTTEXT_ID_SMARTTEXT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the SmartText record."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "RESOLVED_IB_POOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "If this letter was sent as an In Basket message, this will store the pool that we delivered to."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "RESOLVED_IB_POOL_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the In Basket registry in the HIP master file."
+    },
+    {
+      "ordinalPosition": 25,
+      "name": "RESOLVED_PROV_ADDR_UNIQUE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the provider's address when the resolved recipient is a provider. This can be used to join to CLARITY_SER_ADDR in combination with column RESOLVED_RECIPIENT_ID when RESOLVED_RECIPIENT_INI = 'SER'."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "TASK_NOTIFY",
+  "description": "Extracted data about the patient notification of upcoming tasks.",
+  "primaryKey": [
+    {
+      "columnName": "ACTIVITY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ACTIVITY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the task record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SHARE_OUTREACH_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "This is the date that the proactive outreach SMS message will be shared with the patient."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "SHARE_LTK_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Tracks the internal status of the scheduling for outbound Hello World messages. This status won't be updated after the message is actually sent. The external status can be gathered by looking at the RCH contact referenced from [I LTK 25102] to see if the message was sent. The primary function of this item is for the dual-key index with 25100, the batch job will look over LTK's that haven't been scheduled already.",
+      "entries": [
+        "Queued",
+        "Not Queued",
+        "Failed to Queue",
+        "Cancelled",
+        "Delivered"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "SHARE_LTK_CSN",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the CSN for the scheduled proactive outreach SMS message. It will be used to determine the current status of the SMS message. It will also be used as a reference point if we need to cancel the SMS message."
+    }
+  ]
+}

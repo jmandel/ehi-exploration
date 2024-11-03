@@ -1,0 +1,946 @@
+{
+  "name": "APPEAL_GRV",
+  "description": "This table contains information about an individual appeal or grievance.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CM_LOG_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance from which this record or line was extracted. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc.).",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "APPEAL_GRV_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of request this record represents. This is either an appeal or grievance.",
+      "entries": [
+        "Appeal",
+        "Grievance"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SERIES_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The series ID for the appeal/grievance. This value is shared across levels of appeal/grievance."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "EXTERNAL_IDENTIFIER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The identifier assigned to an appeal/grievance by an external entity."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "INITIATED_BY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of person which initiated the appeal or grievance.",
+      "entries": [
+        "Provider",
+        "Member",
+        "Representative",
+        "Health Plan"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "INITIATING_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "INITIATING_REP_MEM_RESP_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If this record was initiated by an authorized representative this stores their Member Responsible GUID from the member's coverage."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "SUBMISSION_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "How this appeal or grievance was submitted.",
+      "entries": [
+        "CRM",
+        "Manually Created",
+        "Tapestry Link",
+        "MyChart"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "REVIEW_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The level of review within the appeals process.",
+      "entries": [
+        "Level 1",
+        "Level 2",
+        "Level 3",
+        "Level 4",
+        "Level 5"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The member associated with the appeal or grievance."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "APPEAL_SUBJECT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "What the appeal was filed about. This is either an authorization or a claim.",
+      "entries": [
+        "Authorization",
+        "Claim"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "SUBJECT_AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Authorization that is being appealed or grieved about."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "SUBJECT_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim being appealed or grieved about."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "RESULT_AUTH_REQUEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The authorization created to effectuate the appeal decision in Epic."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "RESULT_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The resulting claim for the appeal."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "RECORD_CREATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant that this record was created."
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "RECORD_CREATE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who created this record."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "RECORD_CREATE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "URGENCY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The urgency of the appeal or grievance.",
+      "entries": [
+        "Standard",
+        "Expedited"
+      ]
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "SUBMISSION_OVRIDE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "If Submission System Instant (UTC) (I TAG 10010) is incorrect, this stores the override. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "DECISION_SYS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The system calculated date and time that a decision was made for the appeal or grievance. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 25,
+      "name": "DECISION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user that finalized the appeal decision."
+    },
+    {
+      "ordinalPosition": 26,
+      "name": "DECISION_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 27,
+      "name": "DECISION_OVRIDE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "If the System Calculated Decision Instant (UTC) (I TAG 10100) is incorrect, this will store the override. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 28,
+      "name": "APPEAL_DECISION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The decision for the appeal.",
+      "entries": [
+        "Upheld",
+        "Overturned",
+        "Partially Overturned",
+        "Dismissed",
+        "Closed"
+      ]
+    },
+    {
+      "ordinalPosition": 29,
+      "name": "TIMEFRAME_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The earliest date and time across all relevant timeliness standards that the clock for processing the appeal ot grievance begins based on the table APPEAL_GRV_TAT_MILESTONES. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "SUBMISSION_RPT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The compiled date and time an appeal or grievance was submitted to the organization. Equal to the Organization Submission instant (UTC) - Override (I TAG 10011) if it is set, otherwise Organization Submission instant (UTC) (I TAG 10010). Stored in UTC."
+    },
+    {
+      "ordinalPosition": 31,
+      "name": "SUBMISSION_SYS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The system calculated date and time that the appeal or grievance was submitted to the organization. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 32,
+      "name": "EXP_REQ_REC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the request to expedite was received. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "WAS_UPGRADED_TO_EXP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the urgency was changed from standard to expedited for this appeal or grievance. 'Y' indicates that the appeal or grievance was initially submitted with a standard urgency and then later upgraded to an expedited urgency. 'N' or NULL indicates that either the appeal or grievance was initially submitted with an expedited urgency, or the appeal or grievance was initially submitted with a standard priority, and the priority is still standard.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "EXP_REQ_DEC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that a decision was made on whether to upgrade the appeal or grievance to an expedited priority. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 35,
+      "name": "EXT_REQ_REC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the request to extend the timeframe was received. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 36,
+      "name": "EXT_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The number of days the deadline for the appeal or grievance was extended."
+    },
+    {
+      "ordinalPosition": 37,
+      "name": "EXT_REQ_DEC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time the decision was made on whether to extend the timeframe. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 38,
+      "name": "EXT_MAX_DAYS",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The maximum number of days the deadline can be extended."
+    },
+    {
+      "ordinalPosition": 39,
+      "name": "EFFECT_SYS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The system calculated date and time for when the appeal was effectuated. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 40,
+      "name": "EFFECT_OVR_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "If Effectuation System Instant (UTC) (I TAG 10050) is incorrect, this will store the override. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 41,
+      "name": "EFFECT_RPT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The compiled date and time an was effectuated. Equal to the Effectuation override instant (UTC) (I TAG 10051) if it is set, otherwise Effectuation system instant (UTC) (I TAG 10050). Stored in UTC."
+    },
+    {
+      "ordinalPosition": 42,
+      "name": "EFFECT_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time an appeal must be effectuated in order to stay compliant with all timeliness standards. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 43,
+      "name": "OVERALL_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that the appeal or grievance must be fully completed in order to stay compliant with all timeliness standards. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 44,
+      "name": "DECISION_RPT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that a decision was made for an appeal or grievance. Equal to Decision Instant (UTC) - Override (I TAG 10101) if it is set, otherwise Decision Instant (UTC) (I TAG 10100). Stored in UTC."
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "DECISION_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time a decision must be made on an appeal or grievance in order to stay compliant with all timeliness standards. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "TAT_SYS_TIME_ZONE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The system calculated time zone category ID to use for TAT calculations based on the time zone of where the appeal/grievance record was created.",
+      "entries": [
+        "Africa/Johannesburg",
+        "America/Anchorage",
+        "America/Halifax",
+        "America/Puerto_Rico",
+        "America/Chicago",
+        "America/Regina",
+        "America/New_York",
+        "AMERICA/EASTERN_NO_DST",
+        "Pacific/Honolulu",
+        "America/Denver",
+        "America/Phoenix",
+        "America/Los_Angeles",
+        "ETC/UNIVERSAL",
+        "Europe/Amsterdam",
+        "AMERICA/PACIFIC_NO_DST",
+        "America/St_Johns",
+        "Europe/London",
+        "Europe/Lisbon",
+        "Europe/Athens",
+        "Europe/Kaliningrad",
+        "Australia/Sydney",
+        "Australia/Brisbane",
+        "Australia/Lord_Howe",
+        "America/Sao_Paulo",
+        "America/Fortaleza",
+        "Africa/Cairo",
+        "Asia/Dubai",
+        "Africa/Abidjan",
+        "Africa/Accra",
+        "Africa/Addis_Ababa",
+        "Africa/Algiers",
+        "Africa/Asmara",
+        "Africa/Bamako",
+        "Africa/Bangui",
+        "Africa/Banjul",
+        "Africa/Blantyre",
+        "Africa/Brazzaville",
+        "Africa/Bujumbura",
+        "Africa/Casablanca",
+        "Africa/Conakry",
+        "Africa/Dakar",
+        "Africa/Dar_es_Salaam",
+        "Africa/Djibouti",
+        "Africa/Douala",
+        "Africa/Freetown",
+        "Africa/Gaborone",
+        "Africa/Harare",
+        "Africa/Juba",
+        "Africa/Kampala",
+        "Africa/Khartoum",
+        "Africa/Kigali",
+        "Africa/Kinshasa",
+        "Africa/Lagos",
+        "Africa/Libreville",
+        "Africa/Lome",
+        "Africa/Luanda",
+        "Africa/Lusaka",
+        "Africa/Maputo",
+        "Africa/Maseru",
+        "Africa/Mbabane",
+        "Africa/Nairobi",
+        "Africa/Ndjamena",
+        "Africa/Niamey",
+        "Africa/Nouakchott",
+        "Africa/Ouagadougou",
+        "Africa/Porto-Novo",
+        "Africa/Tripoli",
+        "Africa/Tunis",
+        "Africa/Windhoek",
+        "America/Argentina/Buenos_Aires",
+        "America/Asuncion",
+        "America/Barbados",
+        "America/Belize",
+        "America/Bogota",
+        "America/Caracas",
+        "America/Chihuahua",
+        "America/Costa_Rica",
+        "America/El_Salvador",
+        "America/Guatemala",
+        "America/Guayaquil",
+        "America/Guyana",
+        "America/Havana",
+        "America/Hermosillo",
+        "America/Jamaica",
+        "America/La_Paz",
+        "America/Lima",
+        "America/Managua",
+        "America/Mexico_City",
+        "America/Montevideo",
+        "America/Montreal",
+        "America/Nassau",
+        "America/Panama",
+        "America/Paramaribo",
+        "America/Port_of_Spain",
+        "America/Port-au-Prince",
+        "America/Recife",
+        "America/Santiago",
+        "America/Santo_Domingo",
+        "America/Tegucigalpa",
+        "America/Tijuana",
+        "Asia/Aden",
+        "Asia/Almaty",
+        "Asia/Amman",
+        "Asia/Ashgabat",
+        "Asia/Baghdad",
+        "Asia/Bahrain",
+        "Asia/Baku",
+        "Asia/Bangkok",
+        "Asia/Beirut",
+        "Asia/Bishkek",
+        "Asia/Chongqing",
+        "Asia/Colombo",
+        "Asia/Damascus",
+        "Asia/Dhaka",
+        "Asia/Dili",
+        "Asia/Dushanbe",
+        "Asia/Ho_Chi_Minh",
+        "Asia/Hong_Kong",
+        "Asia/Jakarta",
+        "Asia/Jerusalem",
+        "Asia/Kabul",
+        "Asia/Karachi",
+        "Asia/Kathmandu",
+        "Asia/Kolkata",
+        "Asia/Kuala_Lumpur",
+        "Asia/Kuwait",
+        "Asia/Manila",
+        "Asia/Muscat",
+        "Asia/Nicosia",
+        "Asia/Phnom_Penh",
+        "Asia/Qatar",
+        "Asia/Rangoon",
+        "Asia/Riyadh",
+        "Asia/Seoul",
+        "Asia/Shanghai",
+        "Asia/Singapore",
+        "Asia/Taipei",
+        "Asia/Tashkent",
+        "Asia/Tbilisi",
+        "Asia/Tokyo",
+        "Asia/Ulaanbaatar",
+        "Asia/Vientiane",
+        "Asia/Vladivostok",
+        "Asia/Yekaterinburg",
+        "Asia/Yerevan",
+        "Atlantic/Cape_Verde",
+        "Europe/Belgrade",
+        "Europe/Berlin",
+        "Europe/Brussels",
+        "Europe/Bucharest",
+        "Europe/Budapest",
+        "Europe/Chisinau",
+        "Europe/Copenhagen",
+        "Europe/Dublin",
+        "Europe/Helsinki",
+        "Europe/Istanbul",
+        "Europe/Kiev",
+        "Europe/Madrid",
+        "Europe/Malta",
+        "Europe/Minsk",
+        "Europe/Moscow",
+        "Europe/Oslo",
+        "Europe/Paris",
+        "Europe/Prague",
+        "Europe/Riga",
+        "Europe/Rome",
+        "Europe/Sofia",
+        "Europe/Stockholm",
+        "Europe/Tallinn",
+        "Europe/Tirane",
+        "Europe/Vienna",
+        "Europe/Vilnius",
+        "Europe/Warsaw",
+        "Europe/Zurich",
+        "Indian/Antananarivo",
+        "Indian/Mauritius",
+        "Pacific/Fiji",
+        "Pacific/Pohnpei",
+        "Africa/Monrovia",
+        "America/North_Dakota/Beulah",
+        "America/Bahia_Banderas",
+        "America/Goose_Bay",
+        "America/Araguaina",
+        "Atlantic/Reykjavik",
+        "Africa/Malabo",
+        "Europe/Sarajevo",
+        "Europe/Zagreb",
+        "Europe/Skopje",
+        "Europe/Podgorica",
+        "Europe/Bratislava",
+        "Europe/Ljubljana",
+        "Pacific/Auckland",
+        "America/Belem",
+        "Australia/Adelaide",
+        "Australia/Broken_Hill",
+        "Australia/Currie",
+        "Australia/Darwin",
+        "Australia/Eucla",
+        "Australia/Hobart",
+        "Australia/Lindeman",
+        "Australia/Melbourne",
+        "Australia/Perth",
+        "Pacific/Guam",
+        "(DEMO USE ONLY TIME ZONE)"
+      ]
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "TAT_OVR_TIME_ZONE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If TAT system time zone (I TAG 10500) is incorrect, this will store the category ID of the override."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "TAT_RPT_TIME_ZONE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The compiled time zone category ID to use for TAT calculations. Equal to TAT Override Time Zone (I TAG 10501) if it is set, otherwise TAT System Time Zone (I TAG 10500)."
+    },
+    {
+      "ordinalPosition": 49,
+      "name": "TIMEFRAME_START_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The earliest date and time across all relevant timeliness standards that the clock for processing the appeal or grievance begins based on the table APPEAL_GRV_TAT_MILESTONES. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 50,
+      "name": "SUBMISSION_SYS_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The system calculated date and time that the appeal or grievance was submitted to the organization. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 51,
+      "name": "SUBMISSION_OVR_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If Submission System Instant (I TAG 10910) is incorrect, this stores the override. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 52,
+      "name": "SUBMISSION_RPT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The compiled date and time an appeal or grievance was submitted to the organization. Equal to the Organization Submission instant - Override (I TAG 10911) if it is set, otherwise Organization Submission instant (I TAG 10910). Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 53,
+      "name": "EXP_REQ_REC_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the request to expedite was received. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "EXP_DEC_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that a decision was made on whether to upgrade the appeal or grievance to an expedited priority. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 55,
+      "name": "EXT_REQ_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the request to extend the timeframe was received. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "EXT_DEC_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time the decision was made on whether to extend the timeframe. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 57,
+      "name": "EFFECT_SYS_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The system calculated date and time for when the appeal was effectuated. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 58,
+      "name": "EFFECT_OVR_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If Effectuation System Instant (I TAG 10950) is incorrect, this will store the override. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 59,
+      "name": "EFFECT_RPT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The compiled date and time an appeal was effectuated. Equal to the Effectuation override instant (I TAG 10951) if it is set, otherwise Effectuation system instant (I TAG 10950). Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 60,
+      "name": "EFFECT_DUE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time an appeal must be effectuated in order to stay compliant with all timeliness standards. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 61,
+      "name": "OVERALL_DUE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that the appeal or grievance must be fully completed in order to stay compliant with all timeliness standards. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 62,
+      "name": "DECISION_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The system calculated date and time that a decision was made for the appeal or grievance. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 63,
+      "name": "DECISION_OVR_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "If the System Calculated Decision Instant (I TAG 10990) is incorrect, this will store the override. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 64,
+      "name": "DECISION_RPT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that a decision was made for an appeal or grievance. Equal to Decision Instant - Override (I TAG 10991) if it is set, otherwise Decision Instant (I TAG 10990). Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 65,
+      "name": "DECISION_DUE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time a decision must be made on an appeal or grievance in order to stay compliant with all timeliness standards. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 66,
+      "name": "GRIEVANCE_SUBJECT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The subject type category ID for the grievance. This specifies what the grievance is about.",
+      "entries": [
+        "Authorization",
+        "Claim",
+        "Appeal",
+        "Grievance",
+        "Provider",
+        "Facility",
+        "Employee",
+        "Coverage",
+        "Resource",
+        "Location",
+        "Place of Service",
+        "Business Segment",
+        "Region",
+        "Group"
+      ]
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "REASON_FOR_GRIEVANCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reason category ID for the grievance.",
+      "entries": [
+        "Quality of Care",
+        "Appeals Process",
+        "Authorization Request Process",
+        "Claims Process",
+        "Cost Change",
+        "Copayment Amount",
+        "TrOOP (True Out-of-Pocket) Costs",
+        "Pharmacy Benefits",
+        "Difficulty Contacting Plan",
+        "Involuntary Disenrollment",
+        "Plan Benefit Design",
+        "Decision to Not Expedite",
+        "Interpersonal Aspects of Care",
+        "Customer Service",
+        "Access to Care"
+      ]
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "SUBJECT_APPEAL_APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the appeal that is the subject of this grievance."
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "SUBJECT_GRIEVANC_APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the grievance that is the subject of this grievance."
+    },
+    {
+      "ordinalPosition": 70,
+      "name": "SUBJECT_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 71,
+      "name": "SUBJECT_FACILITY_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 72,
+      "name": "SUBJECT_EMPLOYEE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the employee that is the subject of this grievance."
+    },
+    {
+      "ordinalPosition": 73,
+      "name": "SUBJECT_EMPLOYEE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 74,
+      "name": "SUBJECT_RESOURCE_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 75,
+      "name": "SUBJECT_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 76,
+      "name": "SUBJECT_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 77,
+      "name": "SUBJECT_BUS_SEG_POS_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 78,
+      "name": "SUBJECT_REGION_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 79,
+      "name": "SUBJECT_GROUP_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 80,
+      "name": "SUBJECT_COVERAGE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the coverage related to this grievance."
+    },
+    {
+      "ordinalPosition": 81,
+      "name": "GRIEVANCE_INCIDENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC date and time that the incident occurred for this grievance."
+    },
+    {
+      "ordinalPosition": 82,
+      "name": "GRIEVANCE_INCIDENT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The local date and time that the incident occurred for this grievance. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    },
+    {
+      "ordinalPosition": 83,
+      "name": "EXTENSION_INITIATED_BY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the extension was initiated by the health plan, or the appeal or grievance submitter."
+    },
+    {
+      "ordinalPosition": 84,
+      "name": "DECISION_OVR_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the Decision User ID System (I TAG 10103) is incorrect, this will store the override value."
+    },
+    {
+      "ordinalPosition": 85,
+      "name": "DECISION_OVR_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 86,
+      "name": "DECISION_RPT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the Decision User ID Override (I TAG 10104) if it is set. Otherwise stores the Decision User ID System (I TAG 10103)."
+    },
+    {
+      "ordinalPosition": 87,
+      "name": "DECISION_RPT_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 88,
+      "name": "AG_REVIEW_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the appeal/grievance is being reviewed internally or externally.",
+      "entries": [
+        "Internal",
+        "External"
+      ]
+    },
+    {
+      "ordinalPosition": 89,
+      "name": "REVIEW_AGENCY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the agency responsible for processing the appeal/grievance."
+    },
+    {
+      "ordinalPosition": 90,
+      "name": "REVIEW_AGENCY_ID_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the agency."
+    },
+    {
+      "ordinalPosition": 91,
+      "name": "CASE_SENT_REVW_ENTITY_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC date and time that the appeal/grievance case file information was sent to the review entity."
+    },
+    {
+      "ordinalPosition": 92,
+      "name": "CASE_SENT_REVW_ENTY_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The local date and time that the appeal/grievance case file information was sent to the review entity. Stored in the time zone determined by column TAT_RPT_TIME_ZONE_C."
+    }
+  ]
+}

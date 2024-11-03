@@ -1,0 +1,101 @@
+{
+  "name": "PAT_ENC_CALL_CMTS",
+  "description": "This table stores information regarding the free-text comments entered in Protocols during clinical calls.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SEC_PROTOCOL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "ID of the Protocol Section within which a triager has left a comment."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "SEC_PROTOCOL_ID_PROTOCOL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The display name of the protocol."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "SEC_PROTOCOL_CNCT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "DTE of the protocol section LPT record that the comment was left on. Note that the source item is a DAT value - Clarity does not support DAT columns, so we have to transform it into a DTE."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "SEC_PROTOCOL_ROW",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Number corresponding to the Protocol Section row (I LPT 230 line) on which a triager has left a comment.\n\nSpecial case: All Negative rows do not have a corresponding I LPT 230 line, and are stored as special value \"-1\"."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "CMT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User ID of the triager who left a comment on a Nurse Triage protocol."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "CMT_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "CMT_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant (in UTC) of the last edit to this protocol comment."
+    }
+  ]
+}

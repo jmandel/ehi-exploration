@@ -1,0 +1,172 @@
+{
+  "name": "SPECIMEN_ALL_OWNERS",
+  "description": "Stores all the current, previous, and future owners for a specimen.",
+  "primaryKey": [
+    {
+      "columnName": "SPECIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the specimen record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ALL_OWNER_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores all the patients who are previous, current, or future owners of a given specimen (embryo, oocyte, or sperm)."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ALL_OWNER_COMMENTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments associated with the owner of the specimen."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "ALL_OWN_START_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the UTC instant the owner started their ownership over a particular specimen."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "ALL_OWN_END_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the UTC instant the owner ended their ownership over a particular specimen."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PREV_SPEC_REI_SPEC_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the state of the specimen (in-culture, frozen, discarded, etc.) at the instant ownership changes from active to previous for a given specimen.",
+      "entries": [
+        "Fresh",
+        "Thawed",
+        "Frozen",
+        "Discarded",
+        "Transferred to Uterus",
+        "Completed"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PREV_SPEC_EMB_SPEC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of embryology specimen (oocyte, embryo, or sperm) at the instant ownership changes from active to previous for a given specimen.",
+      "entries": [
+        "Embryo",
+        "Oocyte",
+        "Sperm"
+      ]
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "PREV_SPEC_CULT_DAY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the latest number of culture days that have occurred for the specimen when it was received in the lab at the instant ownership changes from active to previous for a given specimen."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "PREV_EXT_RTRVL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the last documented date on which the oocyte retrieval occurred since the instant their ownership had expired."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "PREV_EXT_FREEZE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the last documented date on which the specimen was frozen since the instant their ownership had expired."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "PREV_SPEC_EXT_CMTS",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the last documented comments associated with the embryology specimen that came from an external lab."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "PREV_OOCYTE_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the last patient record ID who was an oocyte contributor to the specimen at the end of an owner's period of ownership."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "PREV_OOCYTE_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last non-patient record ID who was an oocyte contributor to the specimen at the end of an owner's period of ownership."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "PREV_EGG_GAMETE_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the last type of genetic contribution of the oocyte contributor. This includes autologous, partner, anonymous donor, and directed donor.",
+      "entries": [
+        "Autologous",
+        "Partner",
+        "Known Donor",
+        "Anonymous Donor",
+        "Mixed",
+        "Embryo Donor",
+        "Oocyte Contributor and Intended Parent",
+        "Sperm Contributor and Intended Parent"
+      ]
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "PREV_SPERM_PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the last patient record ID who was a sperm contributor to the specimen at the end of an owner's period of ownership."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "PREV_SPERM_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the last non-patient record ID who was a sperm contributor to the specimen at the end of an owner's period of ownership."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "PREV_SPERM_GAMETE_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the last type of genetic contribution of the sperm contributor. This includes autologous, partner, anonymous donor, and directed donor."
+    }
+  ]
+}

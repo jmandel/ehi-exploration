@@ -1,0 +1,92 @@
+{
+  "name": "PB_COLL_PROCESS_TBL",
+  "description": "The related table for all the collections processes on a PBA.",
+  "primaryKey": [
+    {
+      "columnName": "PB_ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the account record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PB_COLL_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the collections process. Used to determine system behavior.",
+      "entries": [
+        "Awaiting Review",
+        "Active - Internal",
+        "Active - External",
+        "Inactive - Internal",
+        "Inactive - External",
+        "Deleted",
+        "Paused"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PB_COLL_STEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current step of the collections process on the account.",
+      "entries": [
+        "Paid Off",
+        "Written Off"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PB_IN_COLL_SINCE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Represents the date on which this instance entered the collections process."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "COLL_PROCESS_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The unique ID for the collection process on the account."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PB_IN_STAT_SINCE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Represents the date in which this instance entered the current status of the collections process."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PB_IN_STEP_SINCE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Represents the date in which this instance entered the current step of the collections process."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PB_ORIG_AMT_OUTST_N",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the total amount outstanding that was originally added to collections."
+    }
+  ]
+}

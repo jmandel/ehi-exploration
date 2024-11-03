@@ -325,7 +325,7 @@
         "E-mail",
         "FHIR",
         "Save to File",
-        "Outside Authorization Message",
+        "Electronic Authorization Message",
         "Suppress Result Routing",
         "Payer Platform Notification"
       ]
@@ -381,7 +381,7 @@
       "name": "ORDER_DOMAIN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Used to semantically group types of procedure orders"
+      "description": "Used to semantically group types of procedure orders."
     },
     {
       "ordinalPosition": 48,
@@ -583,10 +583,70 @@
     },
     {
       "ordinalPosition": 74,
+      "name": "ORDER_START_TM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The time when the procedure order is to start."
+    },
+    {
+      "ordinalPosition": 75,
       "name": "IMG_IS_ORD_LD_BALANCED_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Whether or not the order was ever run through the Radiant Load Balancer."
+    },
+    {
+      "ordinalPosition": 76,
+      "name": "OP_PRN_STATUS_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "PRN status of a procedure order (OP order mode only)."
+    },
+    {
+      "ordinalPosition": 77,
+      "name": "OP_PRN_STATUS_CMT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Comments about PRN status of a procedure order (OP order mode only)."
+    },
+    {
+      "ordinalPosition": 78,
+      "name": "OP_FU_WITH_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Who or what entity is responsible for a follow-up.",
+      "entries": [
+        "Me",
+        "Me or My Team",
+        "Encounter Provider",
+        "Encounter Provider or Their Team",
+        "PCP",
+        "Specific Provider",
+        "Subspecialty"
+      ]
+    },
+    {
+      "ordinalPosition": 79,
+      "name": "OP_FU_VISIT_MODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Visit mode of a follow-up order.",
+      "entries": [
+        "No Preference",
+        "In Person Only",
+        "Video Visit Only",
+        "Telephone Only"
+      ]
+    },
+    {
+      "ordinalPosition": 80,
+      "name": "OP_FU_PCP_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of PCP to follow up with if a PCP of a patient is responsible for a follow-up.",
+      "entries": [
+        "General"
+      ]
     }
   ]
 }

@@ -1,0 +1,157 @@
+{
+  "name": "MED_THERAPY_PROB_INFO",
+  "description": "This table contains basic information about a medication therapy problem.",
+  "primaryKey": [
+    {
+      "columnName": "PROBLEM_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PROBLEM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the medication therapy problem record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient encounter where this medication therapy problem was created. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CREATION_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user who created this medication therapy problem. This column is frequently used to link to the CLARITY_EMP table.",
+      "linksTo": "CLARITY_EMP"
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CREATION_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "DEPARTMENT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "EPISODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID associated with the episode that this medication therapy problem is linked to."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "MTP_CONTEXT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The context category ID for the medication therapy problem.",
+      "entries": [
+        "Medication Management Services",
+        "Regulated MTM",
+        "Specialty Pharmacy"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "RESPONSIBLE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user responsible for the resolution of this medication therapy problem."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "RESPONSIBLE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "COMMENTS_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note that contains additional information documented for this medication therapy problem."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "SOURCE_TASK_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the task record that this medication therapy problem was created from."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "CURRENT_MTP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current status of the medication therapy problem.",
+      "entries": [
+        "Unverified",
+        "In Progress",
+        "Completed",
+        "Deleted"
+      ]
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "CURRENT_MTP_RATIONALE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rationale behind why this is a medication therapy problem.",
+      "entries": [
+        "Duplicate Therapy",
+        "No medical indication at this time",
+        "Nonmedication therapy more appropriate",
+        "Addiction/recreational medication use",
+        "Treating avoidable adverse medication reaction",
+        "Preventive therapy",
+        "Untreated condition",
+        "Synergistic therapy",
+        "More effective medication available",
+        "Condition refractory to medication",
+        "Dosage form inappropriate",
+        "Contraindications present",
+        "Drug not effective for condition",
+        "Dose too low",
+        "Frequency inappropriate",
+        "Incorrect administration",
+        "Medication interaction",
+        "Incorrect storage",
+        "Order duration inappropriate",
+        "Medication requires monitoring",
+        "Undesirable effect",
+        "Unsafe medication for the patient",
+        "Allergic reaction",
+        "Dosage increase/decrease too fast",
+        "Dose too high",
+        "Does not understand instructions",
+        "More cost-effective medication available",
+        "Cannot afford medication product",
+        "Patient prefers not to take",
+        "Patient forgets to take",
+        "Medication product not available",
+        "Cannot swallow/administer medication"
+      ]
+    }
+  ]
+}

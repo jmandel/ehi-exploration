@@ -1,0 +1,68 @@
+{
+  "name": "APPEAL_GRV_TAT_MILESTONES",
+  "description": "This table holds information about turnaround time milestones for appeals and grievances. Each row corresponds to an individual milestone and the date and time associated with the milestone.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "TAT_TIME_STANDARD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The timeliness standard category ID that corresponds to this milestone.",
+      "entries": [
+        "Operational",
+        "Medicare Advantage"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "TAT_MILESTONE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The milestone type category ID for this milestone.",
+      "entries": [
+        "Overall Due",
+        "Decision Due",
+        "Effectuation Due",
+        "Start of Timeframe"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "TAT_MILE_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time associated with this milestone. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "TAT_MILE_DUE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time associated with this milestone."
+    }
+  ]
+}

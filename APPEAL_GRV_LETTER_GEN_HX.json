@@ -1,0 +1,107 @@
+{
+  "name": "APPEAL_GRV_LETTER_GEN_HX",
+  "description": "All successes, failures, and intermediate actions that occurred while generating letters.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CM_PHY_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this record or line. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "HISTORY_KEY",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "GRP 5100 is sorted by occur instant, but if the TAG record is locked by a different process when we try to log an action, we will have to wait and try again later. This means that the occur instant may not exactly correlate the order in which certain lines were logged. This item keeps track of the technical order that actions were logged."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "LETTER_HX_GUID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The letter that caused this history action will have a matching GUID in I TAG 5020."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "APPEAL_GRV_LETTER_ACT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action that occurred to cause this line to be logged.",
+      "entries": [
+        "Letter Triggered",
+        "Recipient Verified",
+        "No Recipient",
+        "SmartText Resolved",
+        "Unresolved SmartText",
+        "PDF Created",
+        "Letter Queued for Batch Print",
+        "Letter Printed",
+        "Letter Canceled",
+        "Fax Queued",
+        "Fax Succeeded",
+        "Fax Failed",
+        "In Basket Message Sent",
+        "MyChart Message Sent",
+        "PDF Failed",
+        "MyChart Message Failed",
+        "In Basket Message Failed",
+        "Letter Resubmitted",
+        "No Delivery Method"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "OCCUR_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant that the action logged in I TAG 5103 occurred."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "COMMITTING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The logged in user of the process that caused this action to occur."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "COMMITTING_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "LETTER_HX_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Any details that are too specific to be recorded with the history action (I TAG 5103), like specific error messages, can be recorded here."
+    }
+  ]
+}

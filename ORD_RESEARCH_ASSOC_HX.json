@@ -1,0 +1,89 @@
+{
+  "name": "ORD_RESEARCH_ASSOC_HX",
+  "description": "This table contains information about the changes that have occurred to the association between an order and research studies after an order has been signed. If the research association of an order has not been modified, it will not appear in this table.\n\n\nEach row is one change event for an order.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "ASSOCIATING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User ID responsible for the change on this line of this order."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ASSOCIATING_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ASSOCIATED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time when the order had its research association changed after signing."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "RESEARCH_ID_RESEARCH_STUDY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the research study record."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PREV_RESEARCH_ID_RESEARCH_STUDY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the research study record."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "RSH_CODE_FROM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the source that was used to modify the research association of this order in this modification event.",
+      "entries": [
+        "Research Association Grid",
+        "Order-Specific Question Response",
+        "Treatment Plan",
+        "Interfaced",
+        "Reflex API",
+        "SmartSet",
+        "DBC Association Popup",
+        "Post Sign Research Association Grid"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PREV_RSH_CODE_FROM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This column stores the source that was used to modify the research association in the previous modification event."
+    }
+  ]
+}

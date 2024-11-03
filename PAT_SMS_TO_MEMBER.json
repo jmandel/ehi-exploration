@@ -1,0 +1,94 @@
+{
+  "name": "PAT_SMS_TO_MEMBER",
+  "description": "Text messages sent to the member via Tapestry Auto Actions.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC date and time when a text message was sent to the member."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PHONE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The phone number to which the text message was sent."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the note record of the SMS message sent to the member."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "SMS_SMARTTEXT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the SmartText record used as the SMS message sent to the member."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "SMS_SMARTTEXT_ID_SMARTTEXT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the SmartText record."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "SMS_SETTING_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the Hello World communication template (HST) for the SMS sent to the member."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "SMS_SETTING_ID_SETTING_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Setting record name."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "FROM_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who sent the text message to the member."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "FROM_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    }
+  ]
+}

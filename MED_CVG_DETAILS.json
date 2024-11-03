@@ -931,7 +931,7 @@
       "name": "PA_REQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "Holds the category value indicating whether prior authorization is required for this medication.",
+      "description": "Holds whether prior authorization is required for this medication. This is the effective prior authorization flag after considering system overrides. The actual value returned in the RTPB response is in item LME 322.",
       "entries": [
         "Yes",
         "No",
@@ -969,6 +969,13 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item indicates if this line of coverage data was displayed to an end-user before the order was signed."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "RTPB_PA_REQ_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Holds whether prior authorization is required for this medication. This is the actual value returned in the RTPB response. Item LME 316 holds the effective prior authorization flag after considering system overrides."
     }
   ]
 }

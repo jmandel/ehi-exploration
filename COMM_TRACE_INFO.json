@@ -119,6 +119,7 @@
         "Unknown",
         "Auto-Invite Tank",
         "Auto-Invite Queue",
+        "Multiple Statuses",
         "ECS Not In Use"
       ]
     },
@@ -373,31 +374,102 @@
     },
     {
       "ordinalPosition": 48,
+      "name": "INT_EMAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The email address used to send a specific email trace: the \"from\" email address when sending email from Epic."
+    },
+    {
+      "ordinalPosition": 49,
       "name": "COMPUTED_LANGUAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the language that was computed for this trace."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 50,
       "name": "COMPUTED_LANGUAGE_ID_LANGUAGE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The language name. If the language is written and uses more than one script to represent it, the name will contain the script in parentheses after the language name."
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 51,
       "name": "USED_LANGUAGE_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contains the language that was actually used for this trace."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 52,
       "name": "USED_LANGUAGE_ID_LANGUAGE_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The language name. If the language is written and uses more than one script to represent it, the name will contain the script in parentheses after the language name."
+    },
+    {
+      "ordinalPosition": 53,
+      "name": "COMM_CHANNEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Communication channel used to send this trace.",
+      "entries": [
+        "SMS",
+        "Email",
+        "Voice",
+        "MMS",
+        "Web",
+        "Push Notification"
+      ]
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "VOICE_EVENT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Type of event for a voice call.",
+      "entries": [
+        "Started",
+        "Input",
+        "Outbound Content",
+        "Invalid Response",
+        "No Response"
+      ]
+    },
+    {
+      "ordinalPosition": 55,
+      "name": "SESS_SUMMARY_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Summary of the end state of a session. This item will only be populated on the first trace of a session.",
+      "entries": [
+        "Completed",
+        "In Progress",
+        "Incomplete",
+        "Delayed",
+        "Failed",
+        "Rejected",
+        "Timeout",
+        "Canceled",
+        "Voicemail",
+        "Line Busy",
+        "Unanswered",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "VOICE_CONVERSATION_UID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Unique ID specifically for the entire conversation. This is different from the call leg ID."
+    },
+    {
+      "ordinalPosition": 57,
+      "name": "VOICE_KEYPAD_INPUT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "DTMF (keypad) input from the voice call."
     }
   ]
 }

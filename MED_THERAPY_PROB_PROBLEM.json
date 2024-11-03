@@ -1,0 +1,197 @@
+{
+  "name": "MED_THERAPY_PROB_PROBLEM",
+  "description": "This table contains information about the medication therapy problem identified for this patient.",
+  "primaryKey": [
+    {
+      "columnName": "PROBLEM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PROBLEM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the medication therapy problem record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "MED_THERAPY_PROBLEM_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number (CSN) of the medication therapy problem contact. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient encounter where this edit happened. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "DOCUMENTING_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the user who documented changes made on this contact."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "DOCUMENTING_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "INSTANT_OF_UPDATE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant this contact was saved. This is stored in UTC time."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "MTP_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status category ID of the medication therapy problem.",
+      "entries": [
+        "Unverified",
+        "In Progress",
+        "Completed",
+        "Deleted"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "CONTACT_RESPONSIBLE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the responsible user at the time of the contact for this medication therapy problem."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "CONTACT_RESPONSIBLE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "MTP_PRIORITY_LEVEL_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The relative priority category ID of the medication therapy problem.",
+      "entries": [
+        "Low",
+        "Normal",
+        "High"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the medication therapy problem was identified."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the medication therapy problem was resolved or changed to an inactive status."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "DUE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that the next action is due for a medication therapy problem."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "MTP_RATIONALE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The rationale category ID for this medication therapy problem.",
+      "entries": [
+        "Duplicate Therapy",
+        "No medical indication at this time",
+        "Nonmedication therapy more appropriate",
+        "Addiction/recreational medication use",
+        "Treating avoidable adverse medication reaction",
+        "Preventive therapy",
+        "Untreated condition",
+        "Synergistic therapy",
+        "More effective medication available",
+        "Condition refractory to medication",
+        "Dosage form inappropriate",
+        "Contraindications present",
+        "Drug not effective for condition",
+        "Dose too low",
+        "Frequency inappropriate",
+        "Incorrect administration",
+        "Medication interaction",
+        "Incorrect storage",
+        "Order duration inappropriate",
+        "Medication requires monitoring",
+        "Undesirable effect",
+        "Unsafe medication for the patient",
+        "Allergic reaction",
+        "Dosage increase/decrease too fast",
+        "Dose too high",
+        "Does not understand instructions",
+        "More cost-effective medication available",
+        "Cannot afford medication product",
+        "Patient prefers not to take",
+        "Patient forgets to take",
+        "Medication product not available",
+        "Cannot swallow/administer medication"
+      ]
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "MTP_PROBLEM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The problem type category ID for this medication therapy problem.",
+      "entries": [
+        "Unnecessary medication therapy",
+        "Needs additional medication therapy",
+        "Ineffective medication",
+        "Dosage too low",
+        "Needs additional monitoring",
+        "Adverse medication event",
+        "Dosage too high",
+        "Adherence",
+        "Cost"
+      ]
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "MED_RELATED_NEED_MTP_TOPIC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The medication related need category ID for this medication therapy problem.",
+      "entries": [
+        "Indication",
+        "Effectiveness",
+        "Safety",
+        "Adherence"
+      ]
+    }
+  ]
+}

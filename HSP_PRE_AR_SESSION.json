@@ -98,7 +98,7 @@
         "OpTime",
         "Radiant",
         "MyChart Web",
-        "Inpatient",
+        "EpicCare Inpatient",
         "Resolute Professional Billing",
         "Emergency Dept",
         "Home Health",
@@ -130,6 +130,7 @@
         "HB Coding",
         "Auto Pay Payment Plan",
         "Distribution",
+        "Claim Accept - Balancing Adjustment",
         "Duplicated Charge",
         "Billing Charge Write-Off",
         "Transaction Classification Balancing",
@@ -296,10 +297,10 @@
     },
     {
       "ordinalPosition": 20,
-      "name": "PRIMARY_PLAN_ID_BEN_PACKAGE_NAME",
+      "name": "PRIMARY_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
+      "description": "The name of the benefit plan record."
     },
     {
       "ordinalPosition": 21,
@@ -368,6 +369,7 @@
         "CCI Edit",
         "No Supporting Documentation",
         "Service Not Performed",
+        "Self-Pay Reconciliation Across Systems",
         "Payment Received",
         "Returned Mail",
         "Other",
@@ -464,101 +466,66 @@
     },
     {
       "ordinalPosition": 35,
-      "name": "DISCOUNT_PERCENT",
-      "type": "NUMERIC",
-      "discontinued": false,
-      "description": "This item stores the discount percentage applied to the self-pay balance."
-    },
-    {
-      "ordinalPosition": 36,
-      "name": "DISCOUNT_PROGRAM_ID",
-      "type": "NUMERIC",
-      "discontinued": false,
-      "description": "This item stores the financial assistance program that the hospital account qualified for which caused the financial assistance adjustment to be applied."
-    },
-    {
-      "ordinalPosition": 37,
-      "name": "DISCOUNT_PROGRAM_ID_PROGRAM_NAME",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "The name of the financial assistance program record."
-    },
-    {
-      "ordinalPosition": 38,
       "name": "TAX_EFFECTIVE_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Stores the date used in the system that determine when this tax line went into effect."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 36,
       "name": "TAXABLE_AMT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the amount that the tax is applied to."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 37,
       "name": "TAX_PERCENT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Percent used to calculate the tax amount."
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 38,
       "name": "TAX_AMOUNT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "This column stores the amount used for the tax."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 39,
       "name": "SURCHARGE_CLAIM_PRINT_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The unique identifier of the claim print record associated with the surcharge amount of this transaction."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 40,
       "name": "TAX_RATE_DEF_CSN",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "The tax rate definition CSN used in the tax calculation."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 41,
       "name": "DEFAULT_DEPT_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 42,
       "name": "POS_ID_LOC_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the revenue location."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 43,
       "name": "EXTERN_AR_FLAG_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This column marks the account's A/R as belonging to an agency."
-    },
-    {
-      "ordinalPosition": 47,
-      "name": "DISCOUNT_COMMENT",
-      "type": "VARCHAR",
-      "discontinued": false,
-      "description": "This item stores the additional details on why the discount is posted on the hospital account."
-    },
-    {
-      "ordinalPosition": 48,
-      "name": "DISCOUNT_FIN_ASST_TRACKER_ID",
-      "type": "NUMERIC",
-      "discontinued": false,
-      "description": "The unique identifier of the financial assistance tracker that generated this discount transaction."
     }
   ]
 }

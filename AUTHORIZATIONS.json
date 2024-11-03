@@ -219,7 +219,10 @@
       "name": "UM_APPROVED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason the authorized status was assigned to this service."
+      "description": "The reason the authorized status was assigned to this service.",
+      "entries": [
+        "Overturned on Appeal"
+      ]
     },
     {
       "ordinalPosition": 28,
@@ -233,14 +236,20 @@
       "name": "UM_DENIED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason the denied status was assigned to this service."
+      "description": "The reason the denied status was assigned to this service.",
+      "entries": [
+        "Upheld on Appeal"
+      ]
     },
     {
       "ordinalPosition": 30,
       "name": "UM_DISMISSED_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason the dismissed status was assigned to this service."
+      "description": "The reason the dismissed status was assigned to this service.",
+      "entries": [
+        "Appeal Dismissed"
+      ]
     },
     {
       "ordinalPosition": 31,
@@ -254,7 +263,11 @@
       "name": "UM_PENDING_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The reason the pending status was assigned to this service."
+      "description": "The reason the pending status was assigned to this service.",
+      "entries": [
+        "Appeal Under Review",
+        "Requires Appeal Effectuation"
+      ]
     },
     {
       "ordinalPosition": 33,
@@ -268,7 +281,7 @@
       "name": "UM_DECISION_DTTM",
       "type": "DATETIME (Local)",
       "discontinued": false,
-      "description": "The date and time the authorization decision was set on the service level authorization."
+      "description": "The date and time the authorization decision was set on the service level authorization.  Note that if a service's status changes from a finalized status to another after the entire authorization request has been finalized, this column does not update with the new instant and will instead reflect the original decision instant."
     },
     {
       "ordinalPosition": 35,
@@ -422,8 +435,9 @@
       "description": "The coverage guidance source category ID for the coverage guidance request.",
       "entries": [
         "Payer Platform",
-        "Internal Request",
-        "Link Portal Request"
+        "Payer Internal Request",
+        "Link Portal Request",
+        "Provider Internal Request"
       ]
     },
     {
@@ -512,10 +526,10 @@
     },
     {
       "ordinalPosition": 65,
-      "name": "UM_CVG_GUIDANCE_PLAN_ID_BEN_PACKAGE_NAME",
+      "name": "UM_CVG_GUIDANCE_PLAN_ID_BENEFIT_PLAN_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "*** Deprecated *** In table CLARITY_EPP_OT, the column BEN_PACKAGE_NAME (CMK .2) has been deprecated.  This column already exists as BENEFIT_PACKAGE_NM (CMK .2) in table CL_CMK. To look up the deprecated column's value after the Clarity Compass upgrade, join column CLARITY_EPP_OT.BEN_PACKAGE_ID to table CL_CMK column BENEFIT_PACKAGE_ID and get the BENEFIT_PACKAGE_NM value.   The name of the benefit package for this benefit plan.The ID of the benefit package is in the column BEN_PACKAGE_ID."
+      "description": "The name of the benefit plan record."
     },
     {
       "ordinalPosition": 66,
@@ -566,7 +580,9 @@
         "Level of Care Not Appropriate",
         "Denial Response Needs Review",
         "Requires Medical Review",
-        "Experimental Service or Procedure"
+        "Experimental Service or Procedure",
+        "Peer to Peer Needed",
+        "Time Limits not Met"
       ]
     },
     {
@@ -617,6 +633,34 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "the authorization number received by Payer Platform from an external system for this service"
+    },
+    {
+      "ordinalPosition": 76,
+      "name": "UM_CVG_GUIDANCE_RESP_AGENCY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the responsible entity for determining coverage guidance for the requested service."
+    },
+    {
+      "ordinalPosition": 77,
+      "name": "UM_CVG_GUIDANCE_RESP_AGENCY_ID_AGENCY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the agency."
+    },
+    {
+      "ordinalPosition": 78,
+      "name": "AUTH_BED_DAY_TX_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the current transaction status for this bed day",
+      "entries": [
+        "New",
+        "Submitted",
+        "Waiting on Payer",
+        "Waiting on Provider",
+        "Finalized"
+      ]
     }
   ]
 }

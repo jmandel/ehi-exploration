@@ -1,0 +1,103 @@
+{
+  "name": "PAT_SVC_PROV_LIST_RECPNT",
+  "description": "This table stores information of service provider list recipients that received the list through a guest link.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "LIST_IDENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The unique ID in I EPT 97216 for the list that the recipient information is for."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "RECIPIENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider list recipient."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "RECIPIENT_CONTACT_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact method used to send the service provider list to the recipient.",
+      "entries": [
+        "Text",
+        "Email",
+        "Both"
+      ]
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "RECIPIENT_PHONE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The phone number that was used to send the service provider list to the recipient."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "RECIPIENT_EMAIL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The email that was used to send the service provider list to the recipient."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "RECIPIENT_IS_NEW_CONTACT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the recipient of a Patient Choice list is a new visit contact created when sharing the list.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "name": "APPEAL_GRV_NOTIF_TAT",
+  "description": "This table holds information about notifications that complete required turnaround time events for appeals and grievances. Each row corresponds to an individual turnaround time requirement and the communication that satisfied that requirement.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "NOTIF_TAT_TIME_STANDARD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The timeliness standard category ID that corresponds to this notification requirement.",
+      "entries": [
+        "Operational",
+        "Medicare Advantage"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "APPEAL_GRV_LETTER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The notification type category ID for this notification requirement.",
+      "entries": [
+        "Acknowledgement",
+        "Extension Taken",
+        "Dismissal",
+        "Upheld Decision",
+        "Overturned Decision",
+        "Request to Expedite Denial",
+        "Partially Overturned Decision",
+        "Request to Expedite Approval",
+        "Extension Denial",
+        "Decision Effectuation",
+        "Grievance Resolution"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NOTIF_TAT_RECIP_CLASS_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the recipient class that this notification is required to be sent to."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NOTIF_TAT_RECIP_CLASS_ID_EVENT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the event."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NOTIF_TAT_METHOD_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The category ID for how this notification is required to be sent. (Oral vs Written)",
+      "entries": [
+        "Written",
+        "Oral",
+        "Oral or Written"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "NOTIF_TAT_DUE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that this notification requirement is due. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NOTIF_TAT_OCCUR_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that this notification was submitted. NULL indicates that the notification is still outstanding. Stored in UTC."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "NOTIF_LETTER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The letter GUID (I TAG 5020) that satisfies this notification requirement."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "NOTIF_CALL_COMM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the communication that satisfies this notification requirement."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "NOTIF_TAT_DUE_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that this notification requirement is due."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "NOTIF_TAT_OCCUR_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time that this notification was submitted. NULL indicates that the notification is still outstanding."
+    }
+  ]
+}

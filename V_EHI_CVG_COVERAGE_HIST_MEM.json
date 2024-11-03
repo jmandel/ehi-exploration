@@ -9,6 +9,10 @@
     {
       "columnName": "LINE",
       "ordinalPosition": 2
+    },
+    {
+      "columnName": "INFO_LINE",
+      "ordinalPosition": 3
     }
   ],
   "columns": [
@@ -158,7 +162,7 @@
         "Change Medicare Coverage Type",
         "Change Medicare Status Reason",
         "Change Medicaid Identifier",
-        "Coverage Review Status Changed",
+        "Change Coverage Review Status",
         "Change Member Risk Adjustment Factor",
         "Add Third Party Payer Effective Period",
         "Remove Third Party Payer Effective Period",
@@ -245,9 +249,11 @@
         "Remove Member Effective Period Termination Reason",
         "Medicare Advantage Monthly Membership Report Transaction Received",
         "Medicare Advantage Monthly Membership Report Omission Transaction Created",
+        "Member Effective Periods Changed",
         "Generate COBA E01 Add Submission",
         "Generate COBA E01 Change Submission",
         "Generate COBA E01 Delete Submission",
+        "Terminate Member's Coverage",
         "Add M3P Effective Period",
         "Terminate M3P Effective Period",
         "Change M3P Effective Periods",
@@ -256,6 +262,7 @@
         "Change M3P Election Requests",
         "Add M3P Likely to Benefit",
         "Change M3P Likely to Benefit",
+        "Change Eligibility Verification Grace Period",
         "Change Member Card ID"
       ]
     },
@@ -293,6 +300,73 @@
       "type": "DATETIME",
       "discontinued": false,
       "description": "The information received date associated with the change."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "INFO_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "ITEM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The item associated with the old and new values of this line."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "IS_KEY_ITEM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the item on this line is a key item for the action associated with this line. The set values (old and new separately) of key items in the same group for the same action cannot be duplicated across other groups of that action. 'Y' indicates that the item is a key item. 'N' or NULL indicates that the item is not a key item.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "OLD_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The old value of the item on this line."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "NEW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The new value of the item on this line."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "OLD_CID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the item on this line is a category item or a networked item, the CID associated with the old value of the item on this line."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "NEW_CID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the item on this line is a category item or a networked item, the CID associated with the new value of the item on this line."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "GROUP_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "A number that groups a set of items together in an action. If the group number is 0, it means the item and its values apply to every group in the action."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC instant that the change happened."
     }
   ]
 }

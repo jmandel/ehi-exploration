@@ -1,0 +1,101 @@
+{
+  "name": "V_EHI_AUDIT_TAG",
+  "description": "This view contains audit information for appeal and grievance records for the purpose of EHI export. This view only contains data that applies to all members on a coverage. If not in the EHI context, APPEAL_GRV_AUDIT_TRAIL should be used instead.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AUDIT_TRAIL_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time that the user changed the item."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AUDIT_TRAIL_ITEM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The item that changed."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "AUDIT_TRAIL_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line that was changed."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "OLD_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value of the item prior to the change."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NEW_VALUE_INTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The value the item was changed to."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "OLD_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the value of the item prior to the change. This column shows the translated external value as of when the the item was changed."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NEW_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the value the item was changed to. This column shows the translated external value as of when the item was changed."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "AUDIT_TRAIL_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID associated with the user record who made the change. This column is frequently used to link to the CLARITY_EMP table.",
+      "linksTo": "CLARITY_EMP"
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "AUDIT_TRAIL_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "CHANGED_DATA_ELEMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Clarity table and column corresponding to the changed data."
+    }
+  ]
+}

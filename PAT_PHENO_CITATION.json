@@ -1,0 +1,65 @@
+{
+  "name": "PAT_PHENO_CITATION",
+  "description": "Citations for phenotypes extracted from notes using AI.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_PHENO_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_PHENO_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the phenotype record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CITED_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "HNO ID of the Note cited in generating this phenotype."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CITED_NOTE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "HNO CSN of the Note cited in generating this phenotype."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CITATION_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The text that serves as a citation for an extracted phenotype."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CITATION_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Stores the local instant that an extraction was generated."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "FEEDBACK_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the feedback ID from the LLM response which is used to submit feedback when the extracted PHE record is acted on by an end user."
+    }
+  ]
+}

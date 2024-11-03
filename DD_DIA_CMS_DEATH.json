@@ -135,10 +135,11 @@
       "description": "This item is used in CMS death form 2746 reporting. It stores a dialysis patient's location at the time of death.",
       "entries": [
         "Hospital",
-        "DialysisUnit",
+        "Dialysis Unit",
         "Home",
         "Other",
-        "NursingHome"
+        "Nursing Home",
+        "Unknown"
       ]
     },
     {
@@ -185,7 +186,7 @@
         "Cirrhosis",
         "Polycystic liver disease",
         "Liver failure, cause unknown or other",
-        "Genito-urinary infection",
+        "Genito-urinary infection (urinary tract infection, pyelonephrititis, renal abscess)",
         "Hepatitis C",
         "Gastro-intestinal hemorrhage",
         "Pancreatitis",
@@ -219,7 +220,8 @@
         "Hyperthyroidism",
         "Withdrawal from dialysis/uremia",
         "COVID19",
-        "COVID19 Unconfirmed"
+        "COVID19 Unconfirmed",
+        "Severe adverse medication reaction (106)"
       ]
     },
     {
@@ -326,7 +328,9 @@
         "LivingRelated",
         "LivingUnrelated",
         "Deceased",
-        "Unknown"
+        "Unknown",
+        "Multi-organ",
+        "PairedExchange"
       ]
     },
     {
@@ -361,6 +365,32 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "PAT_HAD_TRANSPLANT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient ever received a kidney transplant for this form. 'Y' indicates the patient received at least one kidney transplant. 'N' indicates the patient did not receive a kidney transplant. 'UNKNOWN' or NULL indicates that it is not known whether the patient received a kidney transplant prior to death.",
+      "entries": [
+        "Yes",
+        "No",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "WAS_ACUTE_DIALYSIS_RECEIVED_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient received a short-term (acute) course of dialysis prior to death for this form. 'Y' indicates that the patient received a short-term (acute) course of dialysis prior to death. 'N' indicates that the patient did not receive a short-term (acute) course of dialysis prior to death. 'UNKNOWN' or NULL indicate that it is not known whether the patient received a short-term (acute) course of dialysis prior to death."
+    },
+    {
+      "ordinalPosition": 35,
+      "name": "DIAL_DISC_HOSPICE_REL_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the patient's dialysis treatment was discontinued related to hospice care for this form. 'Y' indicates that the patient's dialysis treatment was discontinued related to hospice care. 'N' or NULL indicate that the patient's dialysis treatment was not discontinued or treatment was discontinued, but not related to hospice care."
     }
   ]
 }

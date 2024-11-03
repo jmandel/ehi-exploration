@@ -1,0 +1,60 @@
+{
+  "name": "ORDER_RPTD_SIG_TODS",
+  "description": "For each row in ORDER_RPTD_SIG_HX where times of day are used, this table contains the list of times of day that were selected.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this record."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "RPTSIG_TIME_OF_DAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The times of day selected when recording the patient reported frequency (i.e., time period checkboxes selected by a user entering patient reported order details).",
+      "entries": [
+        "Morning",
+        "Around Noon",
+        "Afternoon",
+        "Evening",
+        "Bedtime",
+        "As Needed",
+        "Anytime",
+        "Late Morning",
+        "None",
+        "Other"
+      ]
+    }
+  ]
+}

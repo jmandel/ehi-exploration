@@ -17,6 +17,214 @@
     },
     {
       "ordinalPosition": 2,
+      "name": "RECORD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, and others).",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "ORGANIZATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the organization that sent the invoice."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ORGANIZATION_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Organization's external name used as the display name on forms and user interfaces."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Patient ID of the member in the Payer system for whom the invoice was sent."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "MEMBER_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Member ID of the associated member for whom the invoice was sent."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CRF_RECORD_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of Claim Reference Data record. This is determined by the claims-related record the Claim Reference Data record will link to (Claim, Referal, or other).",
+      "entries": [
+        "Claim"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "LINKED_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the Claim record linked to the Claim Reference Data record."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "BILLING_PROV_NPI",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The NPI of the Billing Provider / Vendor that sent the invoice."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "BILLING_PROV_TAX_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Tax ID of the Billing Provider / Vendor that sent the invoice."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "BILLING_SYS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of the Billing System that sent the invoice.",
+      "entries": [
+        "Professional Billing",
+        "Hospital Billing",
+        "Tapestry",
+        "Healthy Planet",
+        "Payer Platform",
+        "Data Aggregation"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "HOSPITAL_ACCT_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external identifier of the Hospital Account associated with the invoice. This identifier should not be used to join to internal Hospital Account tables."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "CLAIM_INT_CONTROL_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Internal Control Number (ICN) for the claim. Each ICN points to a unique Claim record in the Payer system."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "INVOICE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of the invoice in the claim reference data set."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "CLAIM_FROM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The minimum service date on the claim."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "CLAIM_TO_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The maximum service date on the claim."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "BILLED_AMOUNT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The total of the charges on the claim."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "ORIGINAL_INVOICE_NUMBER",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The number of the original or previous invoice in a series of invoices where the previous invoice was canceled, replaced, resubmitted, or otherwise nullified."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "CANCEL_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag raised if the associated invoice is a Cancellation.",
+      "entries": [
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "REPLACE_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag raised if the associated invoice is a Replacement."
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "RESUBMIT_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag raised if the associated invoice is a Resubmission."
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Claim Reference Data record."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "PRIMARY_LINK_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant a Primary record was linked to the Claim Reference Data record."
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "CANCELLED_BY_PROV_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the associated invoice has been cancelled by the submitter."
+    },
+    {
+      "ordinalPosition": 25,
+      "name": "PAT_MRN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient's medical record number."
+    },
+    {
+      "ordinalPosition": 26,
+      "name": "FILING_ORDER_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the providers claim filing order.",
+      "entries": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Post-Tertiary",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 27,
+      "name": "REF_DATA_CLAIM_PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim print record for which the CRF record is generated from. This item is only populated on a shared instance implementation of CRF."
+    },
+    {
+      "ordinalPosition": 28,
       "name": "PROV_CLM_RECON",
       "type": "VARCHAR",
       "discontinued": false,

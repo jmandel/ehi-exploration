@@ -1,0 +1,68 @@
+{
+  "name": "SPEC_GENETIC_CONTRIBUTORS",
+  "description": "The person that an egg or sperm came from. For embryos, this table stores the egg and sperm sources used to create the embryo.",
+  "primaryKey": [
+    {
+      "columnName": "SPECIMEN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SPECIMEN_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the specimen record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "GEN_CONTRIB_NONPAT_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Non-patients who are genetic contributors to the specimen, i.e. have provided the sperm or egg. This will store external donors who don't have a chart in the system."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PAT_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the genetic contributor for a specimen is the oocyte or sperm contributor.",
+      "entries": [
+        "Intended Parent",
+        "Egg Contributor",
+        "Sperm Contributor",
+        "Pregnancy Carrier",
+        "Mitochondrial DNA Contributor"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "GAMETE_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of genetic contribution. This includes autologous, partner, anonymous donor, and directed donor.",
+      "entries": [
+        "Autologous",
+        "Partner",
+        "Known Donor",
+        "Anonymous Donor",
+        "Mixed",
+        "Embryo Donor",
+        "Oocyte Contributor and Intended Parent",
+        "Sperm Contributor and Intended Parent"
+      ]
+    }
+  ]
+}

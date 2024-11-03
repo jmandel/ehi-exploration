@@ -1,0 +1,110 @@
+{
+  "name": "PB_COLL_STEP_HX_TBL",
+  "description": "This table contains information about the history of all collection processes on a PBA. This includes the step the process moved to, the date that the move happened, and the amount of money outstanding from the transactions in collections.",
+  "primaryKey": [
+    {
+      "columnName": "PB_ACCT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PB_ACCT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the account record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PB_COLL_STEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of the collections step on the account.",
+      "entries": [
+        "Paid Off",
+        "Written Off"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "PB_MOD_HX_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Stores the history of when the collections step was modified on the account."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PB_AMT_OUTST_HX",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the history of the amount outstanding from transactions that are in collections."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "PB_COLL_STEP_NUM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The unique ID for the collection process on the account."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "WHO_COMP_STEP_HX_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of the user that completed each step in a collections process."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "WHO_COMP_STEP_HX_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "WAS_STEP_SKIP_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether this step of the collection process was manually skipped.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "PB_COLL_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the history of the collections status on the account.",
+      "entries": [
+        "Awaiting Review",
+        "Active - Internal",
+        "Active - External",
+        "Inactive - Internal",
+        "Inactive - External",
+        "Deleted",
+        "Paused"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "COLL_PHONE_CALL_COMM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the history of any CRM cases that were opened in each step of a collections process."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "DICOM_MANIFEST",
+  "description": "This table contains a manifest's study level metadata.",
+  "primaryKey": [
+    {
+      "columnName": "MANIFEST_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "MANIFEST_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the subject name record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The patient associated with the DICOM manifest"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "STUDY_UID_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "DICOM Study Instance UID (attribute 0020,000D)"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ACCESSION_NUMBER_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The internal accession number of the imaging study."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "MANIFEST_SOURCE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Source of the manifest record.",
+      "entries": [
+        "Local DICOM Query/Retrieve",
+        "External FHIR"
+      ]
+    }
+  ]
+}

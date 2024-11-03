@@ -137,7 +137,7 @@
       "name": "ORIG_MED_PA_REQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item holds a category value indicating if prior authorization is required for the medication that was originally ordered. It is calculated when data a response is filed based on data stored in the LME 300 group.",
+      "description": "This item holds a category value indicating if prior authorization is required for the medication that was originally ordered. It is calculated when a response is filed based on data stored in the LME 300 group. The value stored here is calculated after considering any PA flag overrides configured for the medication.",
       "entries": [
         "Yes",
         "No",
@@ -149,7 +149,7 @@
       "name": "PA_REQ_ACCURACY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "This item tracks the accuracy of the prior authorization flag (I LME 203). Accuracy is determined by looking at the prior authorization status on the linked order.  This item will not be populated if Medication Prior Authorization is not enabled.  This item will not be updated for orders if the PA request is started more than 30 days after signing, since the information stored in this record may no longer be accurate. In that case, this item will be set to 3-Unknown."
+      "description": "This item tracks the accuracy of the prior authorization flag (I LME 203). Accuracy is determined by looking at the prior authorization status on the linked order.  This item will not be populated if Medication Prior Authorization is not enabled for the encounter department (I DEP 17260) or system (I LSD 6670).  This item will not be updated for orders if the PA request is started more than 30 days after signing, since the information stored in this record may no longer be accurate. In that case, this item will be set to 3-Unknown.  The accuracy flag is calculated using the line where I LME 319-Primary Coverage is set to 1-Yes, and does not consider any PA overrides configured for the medication."
     }
   ]
 }

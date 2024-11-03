@@ -1,0 +1,174 @@
+{
+  "name": "DOCS_RCVD_RISK_ADJ_CAT",
+  "description": "This table stores risk adjustment categories received from outside sources.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "RAD_REF_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique reference identifier associated with the risk adjustment category."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "RAD_CALC_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of the last time the external system generated the report for the risk adjustment category."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "RAD_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The start date of the clinical evaluation period during which the risk adjustment category is documented."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "RAD_END_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The end date of the clinical evaluation period during which the risk adjustment category is documented."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "RAD_CAT_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the risk adjustment category representing the risk adjustment data."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "RAD_DESCRIPTOR",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The descriptor of the risk adjustment data, which includes the model abbreviation, version abbreviation, and the category identifier."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "RAD_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the risk adjustment category to indicate if this category is historic or suspected.",
+      "entries": [
+        "Historical",
+        "Suspected"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "RAD_EVIDENCE_NOTE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A note (HNO) about the evidence for the risk adjustment category."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "RAD_DX_ID_DX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the diagnosis."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "RAD_EXT_DATA_FILTER_REASON_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the reason why an external risk adjustment category should be filtered from the composite record.",
+      "entries": [
+        "Claim Derivation: Procedure Code Inclusion/Exclusion List",
+        "Claim Derivation: Missing Provider",
+        "Claim Derivation: Sensitive Diagnosis",
+        "Claim Derivation: Missing Procedure Start Date",
+        "Claim Derivation: Excluded Procedure Modifier",
+        "Source Organization Unknown",
+        "Source Organization Mismatch",
+        "Source Organization Is Self",
+        "Clinical Note Type Exclusion List",
+        "Clinical Note Missing Service Instant",
+        "Clinical Note Missing Last Filed Instant",
+        "Clinical Note Missing Author Name",
+        "Dispense Cancellation",
+        "Same Day as Internal Encounter",
+        "Missing or Invalid Binary URL",
+        "Filtered or Missing Source Note",
+        "DocumentReference Status not Current",
+        "Claim Derivation: Excluded Linked Diagnoses",
+        "Claim Derivation: Missing Encounter Start Date",
+        "Entered In Error",
+        "FHIR resource contained an invalid category",
+        "Condition verification status is no longer confirmed",
+        "Condition is no longer valid for this patient due to age or sex",
+        "FHIR resource has an invalid start date",
+        "Encounter FHIR resource is missing the type element",
+        "FHIR resource is missing the status element",
+        "Encounter FHIR resource is missing the class element",
+        "Encounter FHIR resource contained an unrecognized status code",
+        "Encounter FHIR resource contained a status code for a future encounter",
+        "Encounter FHIR resource contained a class code for a future encounter",
+        "FHIR resource has a future start date",
+        "FHIR resource does not have a status of completed",
+        "FHIR resource is missing the code element",
+        "Diagnosis is missing a link to an encounter",
+        "FHIR resource contains a reference to encounter not in the system",
+        "FHIR resource contained a patient reference not matching the searched for patient",
+        "Immunization FHIR Resource is missing the vaccineCode element or did not contain a CVX code",
+        "FHIR Resource is missing an effective date/time",
+        "FHIR resource contained an invalid status",
+        "Observation FHIR resource is linked to a filtered Condition FHIR resource",
+        "SDOH Assessment contains no questions",
+        "Missing required data for data type",
+        "Claim Derivation: Missing face-to-face services"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "RAD_SRC_DOCUMENT_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The contact serial number of the DXR record that owns the instance of this risk adjustment category."
+    }
+  ]
+}

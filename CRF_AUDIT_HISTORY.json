@@ -1,0 +1,135 @@
+{
+  "name": "CRF_AUDIT_HISTORY",
+  "description": "Audit History Data Model for Claim Reference Data records.",
+  "primaryKey": [
+    {
+      "columnName": "REF_DATA_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "REF_DATA_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the Claim Reference Data record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CHANGE_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant of the audit history event."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ID of the user responsible for the record event logged in the Audit History."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CHANGE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CHANGE_ACTION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The action type of the event in the record Audit History.",
+      "entries": [
+        "Create Record",
+        "Edit Item",
+        "Void Primary Record",
+        "Soft-Delete Record",
+        "Cancel Record",
+        "Submit Release of Information",
+        "Update Claim Status Subscription",
+        "Set Items to Support 275 Claim Status Request",
+        "Set Items to Support 276 Claim Status Request"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CHANGE_ITEM",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The item changed in the event of the record Audit History."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "PREVIOUS_RAW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The previous raw value of the edited item in the record."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NEW_RAW_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The new raw value of the edited item in the record."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "PREVIOUS_VENDOR_ID_VENDOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the vendor."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "NEW_VENDOR_ID_VENDOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the vendor."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "PREVIOUS_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim which was previously associated with the CRF record before the audit history event."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "NEW_CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The claim which is newly associated with the CRF record after the audit history event."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "NEW_ROI_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The release record which was created using the CRF record during the audit history event."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "NEW_IS_CANCELLED_BY_PROV_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The new is cancelled flag which was updated during the audit history event.",
+      "entries": [
+        "Yes"
+      ]
+    }
+  ]
+}

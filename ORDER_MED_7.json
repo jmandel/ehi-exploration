@@ -284,6 +284,7 @@
         "Appointment Notification - Multiple",
         "Genomic Indicator Added",
         "Genomic Variant OPA",
+        "Multi Patient Message Error",
         "Patient Information Update Request",
         "Patient Preferences Update Request",
         "Patient History Questionnaire Submission",
@@ -405,6 +406,64 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Flag to determine if I ORD 7088 - Med change reorder ID is actually a replacement ID."
+    },
+    {
+      "ordinalPosition": 29,
+      "name": "USES_TOD_IN_PAT_SIG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "If the patient sig contains time of day indicators like \"morning\", \"noon\", \"evening\", or \"bedtime\". 1 if yes it does, and I ORD 7661 will contain which times are included.  2 if no it doesn't, and that was determined either from an unsupported frequency or explicitly marking \"no\" when placing the composer. Null if the order was placed prior to this item, and therefore it isn't known.",
+      "entries": [
+        "Times of Day are used in Patient Sig",
+        "No Times of Day are used in Patient Sig"
+      ]
+    },
+    {
+      "ordinalPosition": 30,
+      "name": "TREATMENT_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID to track the treamtent group associated with this medication order."
+    },
+    {
+      "ordinalPosition": 31,
+      "name": "DISPENSE_REQUEST_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "ID to track dispense request associated with this medication order."
+    },
+    {
+      "ordinalPosition": 32,
+      "name": "ADDL_WISH_MEDICATION_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The additional wishes selection for the medication roll. Currently only used by the Netherlands.",
+      "entries": [
+        "Bewust hoge dosering",
+        "Bewust lage dosering",
+        "Bewust afwijkende toedieningsweg",
+        "Medische Noodzaak",
+        "Profylaxe",
+        "Per direct",
+        "Per rolwissel",
+        "Bewust afwijken van leeftijdsdgrenzen",
+        "Bewust van een te lage nierfunctie",
+        "Bewust van eerder gemelde overgevoeligheid"
+      ]
+    },
+    {
+      "ordinalPosition": 33,
+      "name": "ADDL_WISH_DELIVER_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The additional wishes selection for deliver. Currently only used by the Netherlands."
+    },
+    {
+      "ordinalPosition": 34,
+      "name": "ERX_DISP_QTY_SUFFICIENT_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether or not a medication is to be dispensed as Quantity Sufficient."
     }
   ]
 }

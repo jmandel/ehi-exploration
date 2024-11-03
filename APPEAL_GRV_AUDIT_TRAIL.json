@@ -1,0 +1,49 @@
+{
+  "name": "APPEAL_GRV_AUDIT_TRAIL",
+  "description": "This table contains the audit trail of item value changes for an appeal/grievance record.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AUDIT_TRAIL_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of change category ID this line in the audit trail is for.",
+      "entries": [
+        "Item Value Changed",
+        "Attachment Added",
+        "Attachment Removed"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the document attachment that was modified."
+    }
+  ]
+}

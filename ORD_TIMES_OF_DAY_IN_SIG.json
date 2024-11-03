@@ -1,0 +1,49 @@
+{
+  "name": "ORD_TIMES_OF_DAY_IN_SIG",
+  "description": "The times of day that appear in the order's patient sig. Phrases like \"Morning\", \"Noon\", \"Evening\", or \"Bedtime\".",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SIG_TIME_OF_DAY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Contains the time of day indicators used in the patient sig like \"morning\", \"noon\", \"evening\", or \"bedtime\". 1 is morning, 2 is noon, 4 is evening, and 5 is bedtime. If this contains data, then I ORD 7660 should equal 1.",
+      "entries": [
+        "Morning",
+        "Around Noon",
+        "Afternoon",
+        "Evening",
+        "Bedtime",
+        "As Needed",
+        "Anytime",
+        "Late Morning",
+        "None",
+        "Other"
+      ]
+    }
+  ]
+}
