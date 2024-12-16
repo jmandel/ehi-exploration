@@ -1,0 +1,87 @@
+{
+  "name": "HSP_HOME_LINK_VISITS",
+  "description": "This table stores information about hospital at home visits that occurred during an admission.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "HSP_ACCOUNT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The hospital account ID for a Hospital at Home linked visit"
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The start instant for a Hospital at Home linked visit"
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The end instant for a Hospital at Home linked visit"
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "VISIT_TYPE_ID_PRC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the visit type."
+    }
+  ]
+}
