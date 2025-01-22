@@ -264,7 +264,11 @@
         "Update Delinquency Status",
         "Reinvoice Account",
         "Ad Hoc Adjustment",
-        "Premium Write Off"
+        "Premium Write Off",
+        "Modify Collections Step",
+        "Start Collections",
+        "Assign Collector",
+        "Modify Collections Transactions"
       ]
     },
     {
@@ -311,6 +315,37 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The Ad Hoc transaction ID generated from the Ad Hoc Adjustment action."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "COLL_PROCESS_IDENT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores billing activity history of the id of the process modified by the billing action."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "COLL_MODIFICATION_OPT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores billing activity history for which modification option the user chooses with the Modify Collections Step action.",
+      "entries": [
+        "Complete Step",
+        "Skip Step",
+        "Toggle Pause",
+        "Delete Process"
+      ]
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "ACTION_COMP_PB_COLL_STEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Billing activity history item to store step completed by Modify Collections Step.",
+      "entries": [
+        "Paid Off",
+        "Written Off"
+      ]
     }
   ]
 }
