@@ -1,0 +1,57 @@
+{
+  "name": "ORD_NLP_ERROR",
+  "description": "This table contains information about NLP error codes and error messages for imaging orders that failed processing by Nebula.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "NLP_ERROR_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The AIServices error code or other Radiant specific error code that was returned for this order if it failed being processed by the AIEF Nebula model.",
+      "entries": [
+        "API Error",
+        "Prompt Filtered",
+        "Response Filtered",
+        "Max Tokens",
+        "Invalid Prompt",
+        "Rate Limit Hit",
+        "Max Model Length Reached",
+        "HTTP Timeout Hit",
+        "Cognitive Computing Pipeline Error",
+        "Default Error",
+        "Stuck Imaging Order"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "NLP_ERROR_MESSAGE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The specific error message that AIServices returned or Radiant specific error messages for when an order was sent to Nebula for processing but failed for one reason or another."
+    }
+  ]
+}
