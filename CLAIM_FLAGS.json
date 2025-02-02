@@ -1,0 +1,47 @@
+{
+  "name": "CLAIM_FLAGS",
+  "description": "This table holds one or more flags to identify that the claim was created for a special purpose.",
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_PRINT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CLAIM_PRINT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the claim print record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CLAIM_FLAGS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item holds one or more flags to identify that the claim was created for a special purpose.",
+      "entries": [
+        "Demand Claim",
+        "Informational Claim",
+        "Simulated Claim",
+        "CEV Cancel Claim",
+        "CEV Crossover Claim",
+        "Express Claim",
+        "Batch Scheduler Processing",
+        "Foreground Processing"
+      ]
+    }
+  ]
+}

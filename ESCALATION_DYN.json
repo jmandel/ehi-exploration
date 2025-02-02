@@ -1,0 +1,85 @@
+{
+  "name": "ESCALATION_DYN",
+  "description": "Escalation configuration options.",
+  "primaryKey": [
+    {
+      "columnName": "ESCALATION_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ESCALATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the subject name record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CAPTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Caption for the clinical attachment."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "ESC_DYN_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Escalation Path status.",
+      "entries": [
+        "Incomplete",
+        "Complete",
+        "Failed",
+        "Cancelled"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ESCALATION_LEVEL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Level in the path the escalation is currently at."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The EPT ID of the patient linked to the escalation"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "ESC_TEMPLATE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The ID of the Templated Escalation Execution linked to the escalation."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "RECORD_CREATE_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Time when record was created."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "REQUEST_PNN_PRIORITY_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Priority of the Request. It will be the same as whatever the DEX is attached to. For example, for a request attached to a TLK, it'll be the same as the message it's associated with.",
+      "entries": [
+        "Low",
+        "Normal",
+        "High",
+        "Low",
+        "Normal",
+        "Abnormal",
+        "Important",
+        "Very Important",
+        "Critical"
+      ]
+    }
+  ]
+}

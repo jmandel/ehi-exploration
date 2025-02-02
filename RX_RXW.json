@@ -1,6 +1,6 @@
 {
   "name": "RX_RXW",
-  "description": "This table contains no add single response data for ambulatory pharmacy work requests. \n\n\n\n\n\nEach work request is associated with a set of fill requests. \n\n\n\n\n\nA fill request is a contact on the order record which contains information about the specific dispense of the attached order. The patient, the order, and the order DAT is stored on the order record of the work request, which also links the work request to its associated fill request. This value lives in table RX_RXW_ORDER_INFO. \n\n\n\n\n\nEach work request is also linked to a master patient, for which the work request was originally created. Pickup priority and contact information is also stored in this record to assist in prescription filling and dispensing.",
+  "description": "This table contains no add single response data for ambulatory pharmacy work requests. \n\n\n\n\n\nEach work request is associated with a set of fill requests. \n\n\n\n\n\nA fill request is a contact on the order record which contains information about the specific dispense of the attached order. The patient, the order, and the order DAT is stored on the order record of the work request, which also links the work request to its associated fill request. This value lives in table RX_RXW_ORDER_INFO. \n\n\n\n\n\nEach work request is also linked to a patient, for which the work request was originally created. Pickup priority and contact information is also stored in this record to assist in prescription filling and dispensing.",
   "primaryKey": [
     {
       "columnName": "RECORD_ID",
@@ -173,6 +173,24 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 23,
+      "name": "DELIVERY_TIMING_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Describes when the work request should arrive at the patient if the delivery method is similar to mail or courier.",
+      "entries": [
+        "Deliver By",
+        "Deliver On"
+      ]
+    },
+    {
+      "ordinalPosition": 24,
+      "name": "RX_DELIVERY_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date when the shipment is to arrive at the patient's address."
     }
   ]
 }

@@ -1,0 +1,69 @@
+{
+  "name": "CHAT_MESSAGE_EDITS",
+  "description": "Audit history of messages that have been edited or deleted. Each line stores the time of an edit and the previous text.",
+  "primaryKey": [
+    {
+      "columnName": "CONVERSATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CONVERSATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the secure chat conversation record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "MESSAGE_EDIT_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The message line number from I TLK 3000 that has been edited. Other items in this row of the related group describe an edit to the indicated message."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "MSG_EDIT_PREV_TEXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the previous value of the message text after it was edited or deleted to keep an audit history."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "MSG_EDITED_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The time at which the edit or delete of the message text occurred."
+    }
+  ]
+}

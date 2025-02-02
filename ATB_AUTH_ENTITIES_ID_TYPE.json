@@ -1,0 +1,67 @@
+{
+  "name": "ATB_AUTH_ENTITIES_ID_TYPE",
+  "description": "The Auth Entities ID Type table contains information about the ID types (e.g. NPI) of same-line IDs associated with a single entity in the Auth Entities table.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_BUNDLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_BUNDLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the auth bundle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated entity in the auth bundle. Together with AUTH_BUNDLE_ID, this forms the foreign key to the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple entity ID type values associated with the auth bundle and the auth entitty from the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ENTITY_IDEN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Auth Entity Identifier Type for the Auth Bundle's entity.",
+      "entries": [
+        "Enterprise MRN",
+        "NPI",
+        "TIN",
+        "Member ID",
+        "Medicare ID",
+        "Medicaid ID",
+        "Taxonomy Code",
+        "Identity ID",
+        "SSN",
+        "Local Reference",
+        "Remote Reference",
+        "Payer Identifier",
+        "Patient Account Number",
+        "Local FHIR ID",
+        "Remote FHIR ID",
+        "Group Number",
+        "Member ID From Source"
+      ]
+    }
+  ]
+}

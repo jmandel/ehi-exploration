@@ -120,14 +120,14 @@
       "name": "CLM_CONTRACTUAL",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Contractual amount determined from reimbursement information for Diagnosis Related Group priced claims."
+      "description": "The contract price for this claim. � If the expected reimbursement is calculated with an Epic contract and is priced by DRG, this is the reimbursement amount calculated for the DRG before any reimbursement caps are applied. If the expected reimbursement is calculated from an external source that supports line-level reimbursement, this is the claim's total payment amount."
     },
     {
       "ordinalPosition": 15,
       "name": "CLM_EXPECTED_PRICE",
       "type": "NUMERIC",
       "discontinued": false,
-      "description": "Expected amount determined from reimbursement information for Diagnosis Related Group priced claims."
+      "description": "The expected reimbursement amount for this claim. � If the expected reimbursement is calculated with an Epic contract and is priced by DRG, this is the reimbursement amount calculated for the DRG after any reimbursement caps are applied. If the expected reimbursement is calculated from an external source that supports line-level reimbursement, this is the claim's total payment amount."
     },
     {
       "ordinalPosition": 16,
@@ -378,6 +378,13 @@
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the total expected patient responsibility for the claim."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "CLM_CAP_XR_REDUCT",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Amount that the expected reimbursement was reduced due to a reimbursement cap.   If the expected reimbursement is calculated with an Epic contract, this is the difference between claim contractual amount and expected amount if DRG pricing is used. Otherwise, this is the sum of the differences of the line contractual amounts and line expected amount.  If expected reimbursement is calculated from an external source or manually overridden, this will always return zero."
     }
   ]
 }

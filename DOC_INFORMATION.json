@@ -297,7 +297,9 @@
         "Accepted",
         "Error",
         "Replaced",
-        "Outdated"
+        "Outdated",
+        "Priority",
+        "Defaulted"
       ]
     },
     {
@@ -516,48 +518,62 @@
     },
     {
       "ordinalPosition": 34,
+      "name": "DOC_MEM_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores EPT id for the member that the document is associated with, used by Tapestry"
+    },
+    {
+      "ordinalPosition": 35,
       "name": "DOC_CLM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores Claim (CLM) ID for the claim that the document is associated with, used by Tapestry."
     },
     {
-      "ordinalPosition": 35,
+      "ordinalPosition": 36,
       "name": "DOC_CVG_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores Coverage (CVG) ID for the coverage that the document is associated with, used by Tapestry."
     },
     {
-      "ordinalPosition": 36,
+      "ordinalPosition": 37,
       "name": "DOC_NCS_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores customer service (NCS) ID for the customer relationship management (CRM) that the document is associated with, used by Tapestry."
     },
     {
-      "ordinalPosition": 37,
+      "ordinalPosition": 38,
       "name": "DOC_NMM_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores the case master (NMM) ID for the case that the document is associated with, used by Tapestry."
     },
     {
-      "ordinalPosition": 38,
+      "ordinalPosition": 39,
+      "name": "DOC_PBA_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores PBA id for the PB Account that the document is associated with, used by Tapestry"
+    },
+    {
+      "ordinalPosition": 40,
       "name": "DOC_RFL_ID",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores Referral (RFL) ID for the Referral that the document is associated with, used by Tapestry."
     },
     {
-      "ordinalPosition": 39,
+      "ordinalPosition": 41,
       "name": "DOC_SER_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
-      "ordinalPosition": 40,
+      "ordinalPosition": 42,
       "name": "RECORD_STATE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -571,63 +587,63 @@
       ]
     },
     {
-      "ordinalPosition": 41,
+      "ordinalPosition": 43,
       "name": "SOURCE_ETX_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the SmartText (ETX) ID that this document (DCS) record was created from."
     },
     {
-      "ordinalPosition": 42,
+      "ordinalPosition": 44,
       "name": "SOURCE_ETX_ID_SMARTTEXT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the SmartText record."
     },
     {
-      "ordinalPosition": 43,
+      "ordinalPosition": 45,
       "name": "DOC_HNO_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The unique ID of the note record associated with this document."
     },
     {
-      "ordinalPosition": 44,
+      "ordinalPosition": 46,
       "name": "SCAN_LWS_ID_WORKSTATION_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This is the internal workstation name."
     },
     {
-      "ordinalPosition": 45,
+      "ordinalPosition": 47,
       "name": "ESIG_SIGNED_BY",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "eSignature of person document was signed by."
     },
     {
-      "ordinalPosition": 46,
+      "ordinalPosition": 48,
       "name": "ESIGNED_REL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The relationship between the patient and the person who signed the form (self, parent, spouse, etc.)."
     },
     {
-      "ordinalPosition": 47,
+      "ordinalPosition": 49,
       "name": "DOC_SRVC_DTTM",
       "type": "DATETIME (Local)",
       "discontinued": false,
       "description": "The service date and time of the document."
     },
     {
-      "ordinalPosition": 48,
+      "ordinalPosition": 50,
       "name": "SCAN_INST_DTTM",
       "type": "DATETIME (Local)",
       "discontinued": false,
       "description": "This item stores the most clinically relevant date for the document. From top to bottom, it looks to the service date/time (I DCS 246/247), the order prioritized instant (I ORD 24), the encounter date, and the import date/time (I DCS 310/315)."
     },
     {
-      "ordinalPosition": 49,
+      "ordinalPosition": 51,
       "name": "DOC_STORAGE_LVL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -641,21 +657,21 @@
       ]
     },
     {
-      "ordinalPosition": 50,
+      "ordinalPosition": 52,
       "name": "SOURCE_DOC",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The identifier for the document (DCS) record's source document.  This column is only populated for DCS records of type Discharge Attachments. If the document was created from a SmartText (ETX) record, this column contains the ID of that ETX record. If the document was created from an HTML document in the References Activity, this column contains the unique identifier from the CRS.mdb file."
     },
     {
-      "ordinalPosition": 51,
+      "ordinalPosition": 53,
       "name": "DOC_CREAT_DEPT_ID_EXTERNAL_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
     },
     {
-      "ordinalPosition": 52,
+      "ordinalPosition": 54,
       "name": "PT_ENT_DRAW_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -666,14 +682,14 @@
       ]
     },
     {
-      "ordinalPosition": 53,
+      "ordinalPosition": 55,
       "name": "PT_ENT_DRAWING_CMT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Holds any associated comments from a patient-entered drawing question. Only present for documents (DCS) records of type 32010 used by MyChart and Welcome."
     },
     {
-      "ordinalPosition": 54,
+      "ordinalPosition": 56,
       "name": "PHOTO_APPROVED_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -690,7 +706,7 @@
       ]
     },
     {
-      "ordinalPosition": 55,
+      "ordinalPosition": 57,
       "name": "PHOTO_APRV_APPL_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -707,77 +723,77 @@
       ]
     },
     {
-      "ordinalPosition": 56,
+      "ordinalPosition": 58,
       "name": "WEB_USER_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item holds the ID of the MyChart user who created this document record, for patient-generated document records."
     },
     {
-      "ordinalPosition": 57,
+      "ordinalPosition": 59,
       "name": "NEED_ENC_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is used to denote whether a document needs to be attached to an encounter or not. For Patient level documents this would always be No. For encounter level documents, depending on whether it is attached or detached from an encounter, this would say No or Yes respectively."
     },
     {
-      "ordinalPosition": 58,
+      "ordinalPosition": 60,
       "name": "PERFORMING_PROV_ID_PROV_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
     },
     {
-      "ordinalPosition": 59,
+      "ordinalPosition": 61,
       "name": "ESIG_TMPLT_USED",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Stores a link to the template used to sign the document"
     },
     {
-      "ordinalPosition": 60,
+      "ordinalPosition": 62,
       "name": "TMPLT_SF_CNTCT",
       "type": "NUMERIC",
       "discontinued": false,
       "description": "Contact of the SmartForm used to collect information for this document."
     },
     {
-      "ordinalPosition": 61,
+      "ordinalPosition": 63,
       "name": "RESEARCH_STUDY_ID_RESEARCH_STUDY_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the research study record."
     },
     {
-      "ordinalPosition": 62,
+      "ordinalPosition": 64,
       "name": "FT_CONSENT_PROCS",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores free text procedures for consent documents"
     },
     {
-      "ordinalPosition": 63,
+      "ordinalPosition": 65,
       "name": "ORIGINAL_DOC_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Stores the link to the original (unannotated) document."
     },
     {
-      "ordinalPosition": 64,
+      "ordinalPosition": 66,
       "name": "DOC_SPECIALTY_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item can be extended to hold possible values for the specialty that a document can be associated with."
     },
     {
-      "ordinalPosition": 65,
+      "ordinalPosition": 67,
       "name": "DOC_SRVR_NAME_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the desktop integration (FDI) record that was used for scanning the document."
     },
     {
-      "ordinalPosition": 66,
+      "ordinalPosition": 68,
       "name": "DOC_SOURCE_INFO_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -870,6 +886,8 @@
         "Document Builder - Case Management",
         "Document Builder - Referrals",
         "Document Builder - Electronic Prior Authorization",
+        "Linked LDA Image",
+        "Linked Flowsheet Image",
         "Pedigree",
         "Reporting Workbench",
         "Payer Platform",
@@ -883,7 +901,7 @@
       ]
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 69,
       "name": "RX_CUST_ID_TYPE_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -900,28 +918,28 @@
       ]
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 70,
       "name": "RX_CUST_ID_NUM",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item contains the customer ID number."
     },
     {
-      "ordinalPosition": 69,
+      "ordinalPosition": 71,
       "name": "CE_SERVICE_START_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Service start date for a received Care Everywhere external authorization"
     },
     {
-      "ordinalPosition": 70,
+      "ordinalPosition": 72,
       "name": "CE_SERVICE_END_DATE",
       "type": "DATETIME",
       "discontinued": false,
       "description": "Service end date for a received Care Everywhere external authorization"
     },
     {
-      "ordinalPosition": 71,
+      "ordinalPosition": 73,
       "name": "DOC_PND_APRV_STAT_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -932,7 +950,7 @@
       ]
     },
     {
-      "ordinalPosition": 72,
+      "ordinalPosition": 74,
       "name": "DOC_REJ_RSN_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
@@ -950,35 +968,35 @@
       ]
     },
     {
-      "ordinalPosition": 73,
+      "ordinalPosition": 75,
       "name": "DOC_REJ_RSN_TEXT",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Rejection reason freetext"
     },
     {
-      "ordinalPosition": 74,
+      "ordinalPosition": 76,
       "name": "COMM_ORIG_LRP_ID",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item stores the original report (LRP) ID when a report is converted to a PDF."
     },
     {
-      "ordinalPosition": 75,
+      "ordinalPosition": 77,
       "name": "COMM_ORIG_LRP_ID_REPORT_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "The name of the report"
     },
     {
-      "ordinalPosition": 76,
+      "ordinalPosition": 78,
       "name": "CREATED_STUDY_AMENDMENT",
       "type": "INTEGER",
       "discontinued": false,
       "description": "The ID of the research study amendment considered to be the consent version signed for Research Consent type document (DCS) records. Use the RESEARCH_STUDY_ID column to link to RESEARCH_VERSION_INFO table which has the user-entered version number (STUDY_VERSION) as well as other information."
     },
     {
-      "ordinalPosition": 77,
+      "ordinalPosition": 79,
       "name": "EFF_STUDY_AMENDMENT",
       "type": "INTEGER",
       "discontinued": false,

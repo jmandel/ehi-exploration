@@ -1,0 +1,133 @@
+{
+  "name": "PAT_ENC_CLAIMS",
+  "description": "This table stores claim-related information for the patient encounter.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "EXPRESS_CLAIM_TRIGGERED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether express claims were triggered. \"Y\" indicates that Express Claims Processing was initiated for the patient encounter. \"N\" or NULL indicates that Express Claims Processing was not initiated for the patient encounter.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "EC_TRIGGERED_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "the instant of the most recent attempt to trigger Express Claims"
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "EXPR_CLM_NOT_TRGR_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "the most recent reason that Express Claims were not triggered",
+      "entries": [
+        "Encounter not closed",
+        "Claim already created",
+        "Encounter does not meet criteria",
+        "Pended charge not yet triggered",
+        "Charge in router review workqueue",
+        "Charge in holding pool",
+        "Charge in processing pool",
+        "Charge in error pool",
+        "Charge in batch",
+        "Charge in PB filer",
+        "Charge in PB charge review workqueue",
+        "Level of Service charges not triggered",
+        "E/M charges not triggered",
+        "Charge Capture, Flowsheet, or Immunization charges not triggered",
+        "Orders awaiting transmittal",
+        "Orders charges not triggered"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "NO_TRGR_INVOICE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "the invoice that was previously created"
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "NO_TRGR_UCL_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "the charge that was not ready for claim creation"
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "NO_TRGR_WORKQUEUE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "the workqueue that held the charge"
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "NO_TRGR_WORKQUEUE_ID_WORKQUEUE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the workqueue"
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "NO_TRGR_TAR_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "the charge session that was not ready for claim creation"
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "NO_TRGR_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "the order that needed charges triggered or that was awaiting transmittal"
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "NO_TRIG_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "the unprocessed charge entry batch"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "RECONCILE_MA_RA_DX_INFO",
+  "description": "This table contains reconciliation information regarding statuses of diagnoses from Medicare Advantage Risk Adjustment files.",
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_RECON_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CLAIM_RECON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the claim status update record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "MA_RA_DX_ID_DX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the diagnosis."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "MA_RA_DX_FLAG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "List of flags denoting whether corresponding diagnoses are added, deleted, or not applicable for risk adjustment for this file load.",
+      "entries": [
+        "Added",
+        "Deleted",
+        "Not Applicable"
+      ]
+    }
+  ]
+}

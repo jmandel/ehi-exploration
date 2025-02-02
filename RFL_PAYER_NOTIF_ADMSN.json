@@ -1,0 +1,83 @@
+{
+  "name": "RFL_PAYER_NOTIF_ADMSN",
+  "description": "This table contains information about notifications of admissions associated with an encounter.",
+  "primaryKey": [
+    {
+      "columnName": "REFERRAL_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "REFERRAL_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the referral record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "NOTF_MSG_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of admission notification sent to the payer organization.",
+      "entries": [
+        "Inpatient Admission Notification",
+        "Advanced Procedure Notification",
+        "Inpatient Discharge Notification",
+        "Observation Admission Notification",
+        "Observation Discharge Notification"
+      ]
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "NOTIF_MSG_SENT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The sent instant (in UTC) for the specified payer notification message."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NOTIF_MSG_REC_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant (in UTC) for the notification response received from the payer notification message that was previously sent."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NOTF_MSG_STATU_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status for the payer notification message, including Sent, Processed, Error, Manually Resolved, etc.",
+      "entries": [
+        "Sent",
+        "Received",
+        "Processed",
+        "Missing Info",
+        "Error",
+        "Filtered",
+        "Manually Resolved",
+        "Pending",
+        "Failed to Send"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NOTIF_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reference number associated to the payer notification message."
+    }
+  ]
+}

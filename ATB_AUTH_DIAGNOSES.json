@@ -1,0 +1,62 @@
+{
+  "name": "ATB_AUTH_DIAGNOSES",
+  "description": "This table contains information pertaining to the diagnosis information for an Auth Bundle.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_BUNDLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_BUNDLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the auth bundle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AUTH_DX_REF_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The reference ID number that uniquely identifies this diagnosis on an authorization."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AUTH_DX_ID_DX_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the diagnosis."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "AUTH_PA_DX_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Diagnosis Type category ID associated with the diagnosis on this line.",
+      "entries": [
+        "Principal Diagnosis",
+        "Admitting Diagnosis"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "AUTH_DX_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date associated with this diagnosis, usually meaning the first date on which this diagnosis is applicable."
+    }
+  ]
+}

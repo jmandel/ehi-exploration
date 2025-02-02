@@ -1,0 +1,196 @@
+{
+  "name": "ATB_AUTH_ENTITIES",
+  "description": "The Auth Entities table contains information about the providers and locations associated with an authorization request. A row in this table represents a single entity, with the data columns representing specific pieces of information about the entity.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_BUNDLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_BUNDLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the auth bundle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "ENTITY_ID_REF",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the entity related line. Unique among all related group lines on the Auth Bundle."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AUTH_ENTITY_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Auth Entity Type category ID for this auth entity.",
+      "entries": [
+        "Provider",
+        "Facility"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ENTITY_PROV_ID_PROV_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the service provider. This item may be hidden in a public view of the CLARITY_SER table."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "ENTITY_LOC_ID_LOC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the revenue location."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "ENTITY_DEPT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "ENTITY_VENDOR_ID_VENDOR_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the vendor."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "ENTITY_HOUSE_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The house number associated with the entity's address information."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "ENTITY_CITY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The city associated with the entity's address information."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "ENTITY_STATE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The State category ID for this auth entity's address information."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "ENTITY_ZIP",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The ZIP code associated with the entity's address information."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "ENTITY_DISTRICT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The District category ID for this auth entity's address information."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "ENTITY_COUNTY_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The County category ID for this auth entity's address information."
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "ENTITY_COUNTRY_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Country category ID for this auth entity's address information."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "ENTITY_ORG_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The entity's organization name, only used for entities that are locations (as opposed to providers)."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "ENTITY_FIRST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The entity's first name, usually relevant to provider type entities."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "ENTITY_MIDDLE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The entity's middle name, usually relevant to provider type entities."
+    },
+    {
+      "ordinalPosition": 19,
+      "name": "ENTITY_LAST_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The entity's last name, usually relevant to provider type entities."
+    },
+    {
+      "ordinalPosition": 20,
+      "name": "ENTITY_NAME_SUFFIX_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Suffix category ID for this auth entity's name information.",
+      "entries": [
+        "Sr.",
+        "Jr.",
+        "II",
+        "III",
+        "IV",
+        "V"
+      ]
+    },
+    {
+      "ordinalPosition": 21,
+      "name": "ENTITY_AUTH_ROLE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Auth Entity Role category ID for this auth entity's auth role.",
+      "entries": [
+        "Requester",
+        "Ordering Provider",
+        "Primary Care Provider",
+        "Referring Provider",
+        "Service Provider",
+        "Service Location",
+        "Service Facility",
+        "Attending Provider",
+        "Admitting Provider",
+        "Operating Provider",
+        "Service-Level Service Provider",
+        "Referring Location"
+      ]
+    },
+    {
+      "ordinalPosition": 22,
+      "name": "ENTITY_PRIMARY_TAXONOMY",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The primary taxonomy code used for this entity."
+    }
+  ]
+}

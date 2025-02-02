@@ -1,0 +1,156 @@
+{
+  "name": "APPEAL_GRV_2",
+  "description": "This table contains information about an individual appeal or grievance as an extension of APPEAL_GRV.",
+  "primaryKey": [
+    {
+      "columnName": "APPEAL_GRV_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "APPEAL_GRV_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the appeal/grievance record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "NEXT_OUTST_DECISION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding decision due requirement, in UTC. If there are no outstanding decision due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "NEXT_OUTST_DECISION_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding decision due requirement, in local time. If there are no outstanding decision due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "NEXT_OUTST_EFFECT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding effectuation due requirement, in UTC. If there are no outstanding effectuation due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "NEXT_OUTST_EFFECT_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding effectuation due requirement, in local time. If there are no outstanding effectuation due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "NEXT_OUTST_NOTIF_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding notification due requirement, in UTC. If there are no outstanding notification due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "NEXT_OUTST_NOTIF_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The date and time of the earliest outstanding notification due requirement, in local time. If there are no outstanding notification due requirements, this item will be null."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "REQUIREMENTS_COMP_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant when all required decision, effectuation, and notification requirements were met, in UTC."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "REQUIREMENTS_COMP_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "The instant when all required decision, effectuation, and notification requirements were met, in local time."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "DECISION_ON_TIME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The on time status category ID of decision timeliness requirements.",
+      "entries": [
+        "Incomplete",
+        "Completed Late",
+        "Completed On Time"
+      ]
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "EFFECTUATION_ON_TIME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The on time status category ID of effectuation timeliness requirements."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "NOTIFICATIONS_ON_TIME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The on time status category ID of notification timeliness requirements."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "OVERALL_ON_TIME_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The overall on time status category ID of the appeal or grievance, including decision, effectuation, and notification requirements."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "APPEAL_GRV_WKFL_STEP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The current workflow step category ID for the Appeal or Grievance",
+      "entries": [
+        "Intake",
+        "Submission",
+        "Initial Review",
+        "MD Review",
+        "External Decision",
+        "Finalize",
+        "Completed"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for the patient contact associated with this appeal or grievance used to associate notes. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "FILED_LATE_EXCPTNS_ALLOWED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether exceptions to the timely filing timeframe can be made for any applicable timeliness standard.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "FILED_LATE_OVERRIDE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Used if the appeal/grievance was filed late, but the system is not automatically marking it as late. Yes means the appeal/grievance was filed outside of the filing timeframe, no or blank means it was not, or the system was able to automatically determine the status in FILED_ON_TIME_C."
+    },
+    {
+      "ordinalPosition": 18,
+      "name": "DISMISSED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores whether the appeal/grievance was dismissed."
+    }
+  ]
+}

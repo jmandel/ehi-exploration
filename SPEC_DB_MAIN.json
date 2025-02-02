@@ -285,10 +285,216 @@
     },
     {
       "ordinalPosition": 38,
+      "name": "COLL_PPID_REQ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if positive patient identification (PPID) was required during the collection process (printing labels or collection documentation). Workflows that never require PPID (for example, Requisition Entry) will not populate this item."
+    },
+    {
+      "ordinalPosition": 39,
+      "name": "COLL_PSID_REQ_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates if positive specimen identification (PSID) was required during collection documentation. Workflows that never require PSID (for example, Requisition Entry) will not populate this item."
+    },
+    {
+      "ordinalPosition": 40,
+      "name": "SPECIAL_ABO_PHENOTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The nonstandard ABO category ID for the blood product specimen.",
+      "entries": [
+        "Para-Bombay",
+        "Pooled",
+        "A1",
+        "A2"
+      ]
+    },
+    {
+      "ordinalPosition": 41,
+      "name": "INTENDED_USE_ATTRIBUTE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The indended use category ID for the blood product specimen.",
+      "entries": [
+        "Directed Collection Use Only",
+        "For Emergency Use Only",
+        "Directed Collection/Biohazardous",
+        "Directed Collection/Eligible for Crossover",
+        "Intended Use Not Specified",
+        "Autologous Collection/Eligible for Crossover",
+        "For Autologous Use Only",
+        "For Autologous Use Only/Biohazardous"
+      ]
+    },
+    {
+      "ordinalPosition": 42,
+      "name": "BLOOD_GROUP_SPEC_MSG_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The blood groups special message category ID for the blood product specimen.",
+      "entries": [
+        "No ABO or Rh information is available",
+        "Autologous collection",
+        "Biohazardous",
+        "For fractionation use only",
+        "Quarantine/hold for further testing or processing",
+        "For research use only",
+        "Not for transfusion based on test results",
+        "Discard (to be destroyed)"
+      ]
+    },
+    {
+      "ordinalPosition": 43,
+      "name": "COLLECTION_TYPE_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The collection type category ID for the donor product specimen.",
+      "entries": [
+        "Not Specified",
+        "Volunteer homologous (allogeneic)",
+        "Volunteer research (Product not intended for human application)",
+        "Volunteer source",
+        "Volunteer therapeutic",
+        "Paid homologous (allogeneic)",
+        "Paid research (Product not intended for human application)",
+        "Paid source",
+        "Autologous, eligible for crossover",
+        "For autologous use only",
+        "For autologous use only, biohazard",
+        "Volunteer directed, eligible for crossover",
+        "Paid directed, eligible for crossover",
+        "For directed recipient use only",
+        "For directed recipient use only, limited exposure",
+        "Medical exception, for specified recipient only (allogeneic)",
+        "See (i.e., scan) Special Testing bar code",
+        "For directed recipient use only, biohazard",
+        "Designated",
+        "Dedicated",
+        "Designated, biohazard",
+        "Family reserved",
+        "Replacement",
+        "For allogeneic use",
+        "For autologous use. Contains allogeneic material.",
+        "Directed/Dedicated/Designated Collection Use Only",
+        "Directed/Dedicated/Designated Collection/Biohazardous",
+        "Directed/Dedicated/Designated Collection/Eligible for Crossover",
+        "For Emergency Use Only"
+      ]
+    },
+    {
+      "ordinalPosition": 44,
+      "name": "PRODUCT_COLLECTION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date at which this blood product specimen was collected. This column is populated only for certain blood product types, according to the ISBT-128 specification."
+    },
+    {
+      "ordinalPosition": 45,
+      "name": "PRODUCT_COLLECTION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The date and time at which this blood product specimen was collected. This column is populated only for certain blood product types, according to the ISBT-128 specification."
+    },
+    {
+      "ordinalPosition": 46,
+      "name": "SPECIAL_TESTING_CODE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The special testing \"N-Code\" category ID for the blood product specimen.",
+      "entries": [
+        "CMV seronegative"
+      ]
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "RBC_ANTIGEN_BARCODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a barcoded string containing antigen test info for RBC blood product specimens, according to the ISBT-128 specification."
+    },
+    {
+      "ordinalPosition": 48,
+      "name": "PLATELET_ANTIGEN_BARCODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores a barcoded string with information about platelet HLA and HPA testing for a blood product specimen, according to the ISBT-128 specification."
+    },
+    {
+      "ordinalPosition": 49,
       "name": "COLL_TIMER_EXPIRATIONS",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Indicates how many times a scan workflow timer expired after accessioning for this specimen."
+    },
+    {
+      "ordinalPosition": 50,
+      "name": "PROD_DESC_CODE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the product description code corresonding to this donor product specimen, according to the ISBT-128 specification."
+    },
+    {
+      "ordinalPosition": 51,
+      "name": "PROD_DESC_CODE_ID_PROD_DESC_CODE_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of the product description code."
+    },
+    {
+      "ordinalPosition": 52,
+      "name": "EXPIRATION_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The UTC date and time at which this specimen expires."
+    },
+    {
+      "ordinalPosition": 53,
+      "name": "FACILITY_IDENTIFIER_RECORD_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Unique ID of the submitter corresponding to the donor facility that prepared this product specimen."
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "FACILITY_IDENTIFIER_RECORD_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the submitter record."
+    },
+    {
+      "ordinalPosition": 55,
+      "name": "DESC_CODE_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Stores the CSN of the product description code for this row."
+    },
+    {
+      "ordinalPosition": 56,
+      "name": "ABO_PHENOTYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the ABO blood group type for a blood product specimen, as encoded by a Blood Groups barcode (I OVS 76010).",
+      "entries": [
+        "A",
+        "B",
+        "AB",
+        "O",
+        "Bombay",
+        "Indeterminate"
+      ]
+    },
+    {
+      "ordinalPosition": 57,
+      "name": "RHD_LAB_ANTIGEN_RESULT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the RhD type for a blood product specimen, as encoded by a Blood Groups barcode (I OVS 76010).",
+      "entries": [
+        "Positive",
+        "Negative",
+        "Indeterminate"
+      ]
     }
   ]
 }

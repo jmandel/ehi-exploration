@@ -1,0 +1,107 @@
+{
+  "name": "V_EHI_REG_ITEM_AUDIT_EAR",
+  "description": "Guarantor record audit events. This view contains audit information for guarantor records for the purpose of Electronic Health Information (EHI) export. If not in the EHI context, REG_ITEM_AUDIT_EAR and REG_ITEM_AUDIT_LINES_EAR should be used instead.",
+  "primaryKey": [
+    {
+      "columnName": "ITEM_AUDIT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ITEM_AUDIT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the audit event record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "AUDIT_INSTANT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant the audit was recorded in the UTC time zone."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "AUDIT_INSTANT_LOCAL_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "The instant the audit was recored in the local time zone where the change took place."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "Guarantor that was changed in this audit event."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CHANGED_DATA_ELEMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the Clarity table and column corresponding to the changed data."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CHANGED_ITEM_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Name of the item that was changed in the audit event."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "CHANGED_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Item line that was changed in the audit event."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "CHANGED_SUB_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Item subline that was changed in the audit event."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "OLD_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External value of the item line before the item was changed."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "NEW_VALUE_EXTERNAL",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "External value of the item line after the item was changed."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User who changed the items in this audit event."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    }
+  ]
+}

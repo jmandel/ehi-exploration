@@ -389,6 +389,7 @@
         "Cardiac Catheterization Intervention",
         "Cardiac Catheterization Intervention with Implant",
         "Structural Heart Procedure",
+        "Pediatric Cardiology Conference",
         "Congenital Catheterization",
         "Invasive Vascular",
         "Invasive Vascular - Lower Extremity Arteries",
@@ -435,6 +436,8 @@
         "Transthoracic Echocardiography",
         "Transesophageal Echocardiography",
         "Congenital Echocardiography",
+        "Congenital Transthoracic Echocardiography",
+        "Congenital Transesophageal Echocardiography",
         "Fetal Echocardiography",
         "Fetal Doppler Echocardiography",
         "Fetal 2D Echocardiography",
@@ -509,9 +512,10 @@
         "Microbiology - Culture and Workup",
         "Anatomic Pathology - General",
         "Anatomic Pathology - Cytology",
-        "Blood Bank",
+        "External Blood Bank",
         "Molecular Diagnostics",
-        "Embryology"
+        "Embryology",
+        "Donor-Recipient Compatibility - Blood"
       ]
     },
     {
@@ -558,10 +562,29 @@
     },
     {
       "ordinalPosition": 45,
+      "name": "RESULT_BULK_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of this data element within DINE.",
+      "entries": [
+        "Invalid",
+        "Valid",
+        "Inactive"
+      ]
+    },
+    {
+      "ordinalPosition": 46,
       "name": "RSLT_HAS_SEQDATA_YN",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This item is set to Yes if the result has any associated sequencing data"
+    },
+    {
+      "ordinalPosition": 47,
+      "name": "RSLT_BULK_INCL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date to compare to the change tracking window when loading flat files in bulk via DINE. If the date is within the window, but the data element is missing from the load, then the data element is invalidated."
     }
   ]
 }

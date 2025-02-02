@@ -1,0 +1,48 @@
+{
+  "name": "ATB_AUTH_ENTITIES_NUM_VAL",
+  "description": "The Auth Entities Number Value table contains information that describes, for a specific entity in the Auth Entities table, the value of the contact number type (e.g. Phone or Fax) in the matching related line.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_BUNDLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_BUNDLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the auth bundle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated entity in the auth bundle. Together with AUTH_BUNDLE_ID, this forms the foreign key to the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple entity contact values associated with the auth bundle and the auth entitty from the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ENTITY_CNTCT_VALUE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The contact value for the corresponding contact type. For example, if the type was phone, this would be a phone number."
+    }
+  ]
+}

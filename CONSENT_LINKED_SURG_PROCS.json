@@ -1,0 +1,79 @@
+{
+  "name": "CONSENT_LINKED_SURG_PROCS",
+  "description": "Contains data pertaining to the surgical procedures the consent document covers.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CONSENT_PROC_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedures attached to consent from the case, networked to the procedures list (ORP)."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONSENT_PROC_ID_PROC_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the surgical procedure record."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CONSENT_PROC_LATERALITY_LRB_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure lateralities attached to consent from the case.",
+      "entries": [
+        "Left",
+        "Right",
+        "Bilateral",
+        "N/A",
+        "Default"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CONSENT_PROC_DESCRIPTION",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The procedure descriptions attached to consent from the case."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CONSENT_PROC_CASE_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The surgical case that the surgical procedure linked to this consent is on."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "CONSENT_PROC_PANEL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The panel to which this procedure on consent belongs."
+    }
+  ]
+}

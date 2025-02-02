@@ -1,0 +1,169 @@
+{
+  "name": "COMM_TRACE_EMAIL_RECPNTS",
+  "description": "This table stores information about addresses that an email was sent to as well as the person records associated with that address.",
+  "primaryKey": [
+    {
+      "columnName": "OUTREACH_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "OUTREACH_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the outreach record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "COMM_CONTACT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the communication contact record associated with the external email addresses that an email will be sent to."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "EMAIL_ADDR_RECPNT_TYP_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The recipient type for a specific email address receiving the email.",
+      "entries": [
+        "To",
+        "Carbon Copy",
+        "Blind Carbon Copy"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the patient associated with a person receiving an email."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "MYPT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the MyChart user associated with the person receiving the email."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "ACCT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the guarantor associated with the person receiving the email."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "PAT_RELATIONSHIP_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier for the patient relationship associated with the person receiving the email."
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier for the user associated with the person receiving the email."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "COMM_ACTION_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of the email for this recipient.",
+      "entries": [
+        "Created",
+        "Queued",
+        "Sidetracked",
+        "Session Active",
+        "To Interconnect",
+        "To Cloud",
+        "Pending",
+        "Sent",
+        "Delivered",
+        "Canceled",
+        "Expired",
+        "Failed",
+        "Unknown",
+        "Auto-Invite Tank",
+        "Auto-Invite Queue",
+        "Ended",
+        "Multiple Statuses",
+        "Voice Transient Error",
+        "ECS Not In Use"
+      ]
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "NUM_TEMP_FAILURES",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The number of times an email temporarily failed to deliver before reaching a final status."
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "MARKED_SPAM_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether this recipient marked the email as spam.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "STATUS_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "UTC instant the status event (I RCH 85617) occurred for this recipient."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "STATUS_LOCAL_DTTM",
+      "type": "DATETIME (Local)",
+      "discontinued": false,
+      "description": "Local instant the status event (I RCH 85617) occurred for this recipient."
+    },
+    {
+      "ordinalPosition": 17,
+      "name": "EMAIL_ADDR_LEGACY_EXT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores the external email address of the recipient when we bridge to legacy email sending via the SMTP server. This item will not be populated on traces sent via Hello World Email. For email recipient information on Hello World traces, see COMM_TRACE_EMAIL_RECPNTS.COMM_CONTACT_ID (links to CCR record)."
+    }
+  ]
+}

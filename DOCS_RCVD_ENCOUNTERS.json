@@ -97,6 +97,7 @@
         "Research Encounter",
         "Recurring Plan",
         "Billing Exchange",
+        "Health Plan",
         "Update",
         "PCP/Clinic Change",
         "Wait List",
@@ -442,6 +443,7 @@
         "EMPTY",
         "Research Encounter",
         "Recurring Plan",
+        "Health Plan",
         "Update",
         "PCP/Clinic Change",
         "Wait List",
@@ -810,6 +812,7 @@
         "Observation FHIR resource is linked to a filtered Condition FHIR resource",
         "SDOH Assessment contains no questions",
         "Missing required data for data type",
+        "FHIR resource does not have a status of confirmed",
         "Claim Derivation: Missing face-to-face services"
       ]
     },
@@ -970,6 +973,46 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Indicates whether the encounter is an admission upgraded from an HOV  Y indicates that the encounter is an admission upgraded from HOV. N indicates that the encounter is not an admission upgraded from HOV. NULL indicates an encounter for which this information is not available."
+    },
+    {
+      "ordinalPosition": 66,
+      "name": "EVENT_BULK_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of this data element within DINE.",
+      "entries": [
+        "Invalid",
+        "Valid",
+        "Inactive"
+      ]
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "EVENT_HL7_TYPE_MAPPED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether this encoutner's Event HL7 Type was mapped based on the free text Event Encounter Type Name"
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "EVENT_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Start instant for each event in the event list in UTC."
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "EVENT_END_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "End instant for each event in the event list in UTC."
+    },
+    {
+      "ordinalPosition": 70,
+      "name": "EVENT_BULK_INCL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date to compare to the change tracking window when loading flat files in bulk via DINE. If the date is within the window, but the data element is missing from the load, then the data element is invalidated."
     }
   ]
 }

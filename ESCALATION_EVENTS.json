@@ -1,0 +1,81 @@
+{
+  "name": "ESCALATION_EVENTS",
+  "description": "Audit events for the escalation.",
+  "primaryKey": [
+    {
+      "columnName": "ESCALATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ESCALATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the subject name record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CHANGE_LOCAL_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Instant there was a change event for the escalation."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CHANGE_LEVEL",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Level in the path the change event occurred for the escalation."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "ESC_CHANGE_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Change type for the escalation.",
+      "entries": [
+        "Automatically Advanced",
+        "Manually Advanced",
+        "Request Failed",
+        "Completed",
+        "Start Request",
+        "Grab Baton",
+        "Drop Baton",
+        "Undo Completed",
+        "Cancel Request",
+        "Reminder Sent",
+        "User Declined",
+        "Added Participants",
+        "Removed Participants",
+        "No Available Users Advancement"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CHANGE_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "EMP ID of recipient who changed escalation."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "CHANGE_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    }
+  ]
+}

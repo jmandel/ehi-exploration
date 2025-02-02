@@ -1,0 +1,104 @@
+{
+  "name": "RECONCILE_MA_RA_INFO",
+  "description": "This table contains reconciliation information received from Medicare Advantage Risk Adjustment files.",
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_RECON_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CLAIM_RECON_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the claim status update record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "MA_RA_ALLOW_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Identifies the status of a claim export whether its diagnoses are allowed for risk adjustment or not.",
+      "entries": [
+        "Allowed",
+        "Disallowed",
+        "Not Applicable",
+        "Preliminary Allowable",
+        "Preliminary Disallowable",
+        "Preliminary Not Applicable",
+        "Final Reject"
+      ]
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "MA_RA_ALLOW_RSN_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates the reason why this claim export is allowed, disallowed, or not applicable for risk adjustment.",
+      "entries": [
+        "Disallowed due to CPT/HCPCS",
+        "Disallowed due to Final Year-Specific Risk-Adjustment Payment Deadline",
+        "Disallowed due to TOB",
+        "Allowed due to CPT/HCPCS Quarterly Update",
+        "Not Applicable for Risk Adjustment",
+        "Preliminary Disallowable",
+        "Preliminary Not Applicable",
+        "Final Reject",
+        "Preliminary Not Allowable due to CPT/HCPCS",
+        "Preliminary Not Allowable due to TOB"
+      ]
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "MA_RA_ENC_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Determines the encounter type of an export defined on an MAO file.",
+      "entries": [
+        "Encounter Data Record",
+        "Void to an Encounter Data Record",
+        "Replacement to an Encounter Data Record",
+        "Chart Review Record Add",
+        "Void to a Chart Review",
+        "Replacement to a Chart Review Record",
+        "Chart Review Record Delete",
+        "Void to a Chart Review Record Delete",
+        "Replacement to a Chart Review Record Delete"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "MA_RA_LINKED_PAYER_REF_NUM",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Payer's control number for an encounter data record being referenced to on a void, replacement, or linked chart review record on an MAO file."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "MA_RA_SUBMIT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "Submission date recorded for an encounter data record or chart review on an MAO-004."
+    }
+  ]
+}

@@ -119,6 +119,7 @@
         "Unknown",
         "Auto-Invite Tank",
         "Auto-Invite Queue",
+        "Ended",
         "Multiple Statuses",
         "Voice Transient Error",
         "ECS Not In Use"
@@ -456,6 +457,7 @@
         "Line Busy",
         "Unanswered",
         "Unknown",
+        "Expired",
         "Voicemail Failed"
       ]
     },
@@ -472,6 +474,27 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "DTMF (keypad) input from the voice call."
+    },
+    {
+      "ordinalPosition": 58,
+      "name": "SESSION_START_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Stores the time in UTC that a session started. For AI Agent, this item is only populated on the first trace for a conversation."
+    },
+    {
+      "ordinalPosition": 59,
+      "name": "CHAT_MESSAGE_CNT",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "Stores the number of back and forth interactions with the AI Agent. This will only be populated on the initial trace that holds session-related data."
+    },
+    {
+      "ordinalPosition": 60,
+      "name": "CLOUD_CHAT_STORAGE_SESSID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The chat session ID associated with this trace used for retrieving data stored in the chat storage cloud service."
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "name": "EPISODE_SOURCE_ORDERS",
+  "description": "Information about procedure orders from which an episode was created or updated.",
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "EPISODE_SOURCE_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of a procedure order from which the episode was created or updated."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "EPISODE_SOURCE_ORDER_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The type of a procedure order from which the episode was created or updated.",
+      "entries": [
+        "Intent",
+        "Referral"
+      ]
+    }
+  ]
+}

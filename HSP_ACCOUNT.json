@@ -100,7 +100,7 @@
       "name": "ADM_DATE_TIME",
       "type": "DATETIME (Local)",
       "discontinued": false,
-      "description": "This column stores the admission date and time associated with the hospital account. The admission date and time (I HAR 400/405) are first pulled from the coding information on the hospital account. If this data is not stored on the hospital account yet, then this will pull the data from the primary patient encounter for the hospital account. Depending on a hospital billing system definition setting, this will pull either the admission date and time (I EPT 18850/18851) or the arrival date and time (I EPT 10820/10815). If the arrival date and time is not available than the admission date and time will be used."
+      "description": "This column stores the admission date and time associated with the hospital account. The admission date and time (I HAR 400/405) are first pulled from the coding information on the hospital account. If that data is not stored on the hospital account yet, then this will use the primary encounter to determine the admission date and time. The exact items used varies based on the encounter type."
     },
     {
       "ordinalPosition": 9,
@@ -232,7 +232,7 @@
       "name": "DISCH_DATE_TIME",
       "type": "DATETIME (Local)",
       "discontinued": false,
-      "description": "This column stores the discharge date and time associated with the hospital account. The discharge date and time (I HAR 425/430) are first pulled from the coding information on the hospital account. If this data is not stored on the hospital account yet, then this will pull the discharge date and time (I EPT 18855/18856) that is stored on the primary patient encounter for the hospital account."
+      "description": "This column stores the discharge date and time associated with the hospital account. The discharge date and time (I HAR 425/430) are first pulled from the coding information on the hospital account. If that data is not stored on the hospital account yet, then this will use the primary encounter to determine the discharge date and time. The exact items used varies based on the encounter type."
     },
     {
       "ordinalPosition": 26,

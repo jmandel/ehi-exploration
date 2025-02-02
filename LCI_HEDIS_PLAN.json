@@ -1,0 +1,84 @@
+{
+  "name": "LCI_HEDIS_PLAN",
+  "description": "Clarity table for the HEDIS plan related items in LCI.",
+  "primaryKey": [
+    {
+      "columnName": "EXTERNAL_CVG_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "EXTERNAL_CVG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the external coverage record record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "HEDIS_PLAN_EFF_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The effective date for an NCQA HEDIS plan of an external coverage contact."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "HEDIS_PLAN_TERM_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The termination date for an NCQA HEDIS plan of an external coverage contact."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "HEDIS_PLAN_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The plan type for an NCQA HEDIS plan of an external coverage contact.",
+      "entries": [
+        "Commercial EPO",
+        "Commercial HMO",
+        "Commercial POS",
+        "Commercial PPO",
+        "Exchange EPO",
+        "Exchange HMO",
+        "Exchange POS",
+        "Exchange PPO",
+        "Medicaid Disabled HMO",
+        "Medicaid Dual Eligible HMO",
+        "Medicaid Low Income HMO",
+        "Medicaid Restricted Benefit HMO",
+        "Medicare Advantage HMO",
+        "Medicare Advantage POS",
+        "Medicare Advantage PPO",
+        "Medicare Cost",
+        "Medicare-Medicaid Plan",
+        "Special Needs Plan - Chronic Condition",
+        "Special Needs Plan - Institutionalized",
+        "Special Needs Plan - Dual Eligible"
+      ]
+    }
+  ]
+}

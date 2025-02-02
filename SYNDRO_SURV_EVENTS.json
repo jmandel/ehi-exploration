@@ -1,0 +1,91 @@
+{
+  "name": "SYNDRO_SURV_EVENTS",
+  "description": "Contains syndromic surveillance event information.",
+  "primaryKey": [
+    {
+      "columnName": "SYNDRO_SURV_EVENT_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SYNDRO_SURV_EVENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the syndromic surveillance event record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "RECORD_STATUS_2_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the record status (hidden, soft-deleted, etc.).",
+      "entries": [
+        "Soft Deleted",
+        "Hidden",
+        "Hidden and Soft Deleted"
+      ]
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SYNDRO_REGISTRY_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique ID of the syndrome (HFR) for the syndromic surveillance event."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "SYNDRO_REGISTRY_ID_REGISTRY_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the registry record."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient for the syndromic surveillance event."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "CONTRIBUTING_EVENT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date that the syndromic surveillance event contributes to the syndrome count."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "DEPARTMENT_ID_EXTERNAL_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The external name of the department record. This is often used in patient correspondence such as reminder letters."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "POSTAL_CODE_RAW",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The raw postal code that the syndromic surveillance event contributes to in the syndrome trend."
+    },
+    {
+      "ordinalPosition": 9,
+      "name": "HOSPITAL_ONSET_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Indicates whether the syndromic surveillance event is considered hospital onset. 'Y' indicates that the event is considered hospital onset. 'N' or NULL indicate that the event is not considered hospital onset.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    },
+    {
+      "ordinalPosition": 10,
+      "name": "RECORD_CREATION_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date the record was created."
+    }
+  ]
+}

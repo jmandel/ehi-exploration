@@ -1,0 +1,44 @@
+{
+  "name": "HX_DEMOG_SRC_DATE",
+  "description": "Historical external system identifer bundles (ID Bundles) for the claim over time.",
+  "primaryKey": [
+    {
+      "columnName": "CLAIM_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "CLAIM_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the claim info record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "SRC_FILE_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The source file dates that this claim has previously been loaded with. Used to track the most recent historical External System Identifier Bundle (ID Bundle) for each source file date."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "HX_DEMOG_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The historical External System Identifier Bundles (ID Bundles) that this claim has previously been loaded with. Used to track the unique sets of demographics and identifiers that the claim was received with from the external system. This list represents a history of the ways in which the claim has previously been linked into External System Identifier Bundles (ID Bundles) for patient matching purposes. Only the most recent REQ per source file date is tracked."
+    }
+  ]
+}

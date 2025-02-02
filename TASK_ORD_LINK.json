@@ -1,0 +1,44 @@
+{
+  "name": "TASK_ORD_LINK",
+  "description": "The Clarity table tracks orders linked to patient medication reminders. This data allows customers to understand how order changes affect medication reminder adherence in the larger picture of medication reminders being reused for associated orders.",
+  "primaryKey": [
+    {
+      "columnName": "ACTIVITY_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ACTIVITY_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the task record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "OUTPAT_ORD_INST_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "The instant a new order was linked to the patient assigned medication reminder in UTC."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "OUTPAT_ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "All orders linked to a medication reminders in order."
+    }
+  ]
+}

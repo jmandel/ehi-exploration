@@ -1,0 +1,80 @@
+{
+  "name": "DOCS_RCVD_IMAGING_STUDIES",
+  "description": "This table contains metadata about imaging studies retrieved from external sources. Each row represents a discrete imaging study received in this document.",
+  "primaryKey": [
+    {
+      "columnName": "DOCUMENT_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "CONTACT_DATE_REAL",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "DOCUMENT_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the document record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CONTACT_DATE_REAL",
+      "type": "FLOAT",
+      "discontinued": false,
+      "description": "A unique contact date in decimal format. The integer portion of the number indicates the date of contact. The digits after the decimal distinguish different contacts on the same date and are unique for each contact on that date. For example, .00 is the first/only contact, .01 is the second contact, etc."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "STUDY_RESOURCE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The logical ID of the FHIR ImagingStudy resource."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "STUDY_LOCAL_UNIQUE_IDENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The locally-assigned unique identifier for the imaging study."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "DICOM_MANIFEST_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The DICOM Manifest contact corresponding to this ImagingStudy resource."
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "STUDY_REMOVED_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether the ImagingStudy is no longer in the received imaging list. Default is 0-No.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    }
+  ]
+}

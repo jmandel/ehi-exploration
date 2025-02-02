@@ -1,0 +1,74 @@
+{
+  "name": "ESC_RESPONSIBLE_USERS",
+  "description": "Status of all responsible groups and users.",
+  "primaryKey": [
+    {
+      "columnName": "ESCALATION_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ESCALATION_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the subject name record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The IDs of the users responsible for the escalation"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "UC_GROUP_ID_RECORD_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Record name"
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "UPDATE_LOCAL_DTTM",
+      "type": "DATETIME (Attached)",
+      "discontinued": false,
+      "description": "Instant of responsible users change."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "RESP_USER_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Instant there was a change event for the escalation.",
+      "entries": [
+        "Received",
+        "Sender",
+        "Offline",
+        "Baton Holder",
+        "Declined",
+        "Forwarding",
+        "Removed"
+      ]
+    }
+  ]
+}

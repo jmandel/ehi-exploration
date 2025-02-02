@@ -1,0 +1,53 @@
+{
+  "name": "ATB_AUTH_ENTITIES_NUMTYPE",
+  "description": "The Auth Entities Number Type table contains information that describes, for a specific entity in the Auth Entities table, the type (e.g. Phone or Fax) of contact number in the matching related line.",
+  "primaryKey": [
+    {
+      "columnName": "AUTH_BUNDLE_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "AUTH_BUNDLE_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the auth bundle record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of the associated entity in the auth bundle. Together with AUTH_BUNDLE_ID, this forms the foreign key to the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple entity contact number types associated with the auth bundle and the auth entitty from the ATB_AUTH_ENTITIES table."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "ENTITY_CNTCT_TYPE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Entity Contact Type category ID for the Auth Bundle entity.",
+      "entries": [
+        "Phone Number",
+        "Fax Number",
+        "Email"
+      ]
+    }
+  ]
+}

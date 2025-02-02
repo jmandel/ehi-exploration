@@ -1,0 +1,70 @@
+{
+  "name": "HSPC_PRIOR_DAYS_HX",
+  "description": "This table contains the history of the hospice prior days on service.",
+  "primaryKey": [
+    {
+      "columnName": "SUMMARY_BLOCK_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "SUMMARY_BLOCK_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the episode record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record. Multiple pieces of information can be associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PRIOR_DAYS",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "History of the Prior Days on Service"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "EDIT_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Instant that the prior days on service item was changed"
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "EDIT_USER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "User that changed the prior days on service."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "EDIT_USER_ID_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The name of the user record. This name may be hidden."
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "PRIOR_DAYS_RTE_SRC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "This item stores whether the prior days on service was entered manually or pulled from RTE.",
+      "entries": [
+        "Manual Entry",
+        "Pulled from RTE",
+        "Set by Conversion, Source Not Available"
+      ]
+    }
+  ]
+}

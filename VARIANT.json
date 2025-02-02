@@ -32,9 +32,9 @@
         "Double heterozygous",
         "Haplotype",
         "Hemizygous",
-        "Repeat Expansion",
-        "Pharmacogenomic Genotype",
-        "Pharmacogenomic Genotype - Polygenic",
+        "Repeat expansion",
+        "Pharmacogenomic genotype",
+        "Pharmacogenomic genotype - polygenic",
         "Negative"
       ]
     },
@@ -120,7 +120,7 @@
       "name": "DNA_REGION",
       "type": "VARCHAR",
       "discontinued": false,
-      "description": "The part of the chromosome in which the variation was found on."
+      "description": "The region of a chromosome or gene where the variant is located. For example, this could be an exon, intron, regulatory region, or a functional domain."
     },
     {
       "ordinalPosition": 10,
@@ -43269,6 +43269,8 @@
         "Likely benign",
         "Benign",
         "Risk allele",
+        "Pseudodeficiency allele",
+        "Hypomorphic",
         "Tier 1 or 2: Strong or potential significance",
         "Tier 1: Strong significance",
         "Tier 2: Potential significance",
@@ -43569,41 +43571,69 @@
     },
     {
       "ordinalPosition": 66,
+      "name": "AFFECTED_EXON_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The lowest exon number affected by the variant"
+    },
+    {
+      "ordinalPosition": 67,
+      "name": "AFFECTED_EXON_END",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The highest exon number affected by the variant"
+    },
+    {
+      "ordinalPosition": 68,
+      "name": "AFFECTED_INTRON_START",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The lowest intron number affected by the variant"
+    },
+    {
+      "ordinalPosition": 69,
+      "name": "AFFECTED_INTRON_END",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The highest intron number affected by the variant"
+    },
+    {
+      "ordinalPosition": 70,
       "name": "STDRD_AMINO_ACID_CHANGE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Parsed amino acid change based off of the original amino acid change string"
     },
     {
-      "ordinalPosition": 67,
+      "ordinalPosition": 71,
       "name": "CMPT_VARIANT_MOLEC_CONSEQ_C_NAME",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Molecular consequence to be inferred from parsed amino acid change"
     },
     {
-      "ordinalPosition": 68,
+      "ordinalPosition": 72,
       "name": "CMPT_AMINO_ACID_START_CODON",
       "type": "INTEGER",
       "discontinued": false,
       "description": "Start position of amino acid change"
     },
     {
-      "ordinalPosition": 69,
+      "ordinalPosition": 73,
       "name": "CMPT_AMINO_ACID_END_CODON",
       "type": "INTEGER",
       "discontinued": false,
       "description": "End position of amino acid change"
     },
     {
-      "ordinalPosition": 70,
+      "ordinalPosition": 74,
       "name": "CMPT_AMINO_ACID_REFERENCE",
       "type": "VARCHAR",
       "discontinued": false,
       "description": "Reference amino acid that the amino acid changed \"from\""
     },
     {
-      "ordinalPosition": 71,
+      "ordinalPosition": 75,
       "name": "CMPT_AMINO_ACID_ALTERNATE",
       "type": "VARCHAR",
       "discontinued": false,

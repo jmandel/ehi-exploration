@@ -103,6 +103,65 @@
       "type": "VARCHAR",
       "discontinued": false,
       "description": "This indicates whether no follow-ups are needed for a visit."
+    },
+    {
+      "ordinalPosition": 11,
+      "name": "MCAID_INCARCERATION_BILL_CODE",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A code that indicates the encounter is billable to Medicaid due to a state-specific program for reimbursing care offered to incarcerated patients."
+    },
+    {
+      "ordinalPosition": 12,
+      "name": "MCAID_INCAR_BILL_START_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The earliest date associated with this encounter that Medicaid is billable due to a state-specific program for reimbursing care offered to incarcerated patients."
+    },
+    {
+      "ordinalPosition": 13,
+      "name": "MEDICARE_CHANGE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Question on the MSPQ RTE Integration version of the MSPQ. The question asks if there has been a change in Medicare entitlement. The three possible answers are Yes, No, and Could Not Answer.",
+      "entries": [
+        "Yes",
+        "No",
+        "Could Not Ask"
+      ]
+    },
+    {
+      "ordinalPosition": 14,
+      "name": "MSP_RTE_VERI_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The verification status for MSPQ RTE Integration. If the user manually completes the full MSPQ, this status is set to one that starts with \"User Filled Out\" based on the reason manual completion was required. Otherwise, it's set to the outcome of comparing eligibility messages from Medicare to determine if the MSPQ for this encounter can be shortened by reusing information from one of the patient's previous MSPQs.",
+      "entries": [
+        "RTE Has Changes",
+        "RTE Has No Changes",
+        "User Filled Out - Difference Found in RTE Responses",
+        "RTE Has No Changes and Patient Verified No Changes",
+        "User Filled Out - No MSPQ to Copy",
+        "User Filled Out - No RTE Response",
+        "User Filled Out - Patient Didn't Confirm No Coverage Change",
+        "User Filled Out - Questionnaire Response Prevented Copying",
+        "User Filled Out - MSPQ RTE Integration Disabled",
+        "User Filled Out - Initially Suppressed"
+      ]
+    },
+    {
+      "ordinalPosition": 15,
+      "name": "MSP_COMP_REALTIME_TX_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique RTE contact serial number of the 271 Eligibility Response associated with the encounter's date of service, compared with prior responses for MSPQ RTE Integration."
+    },
+    {
+      "ordinalPosition": 16,
+      "name": "MSP_RTE_COMP_PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number (CSN) of the encounter being used for RTE message comparison for MSPQ RTE Integration."
     }
   ]
 }

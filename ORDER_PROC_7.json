@@ -1,0 +1,46 @@
+{
+  "name": "ORDER_PROC_7",
+  "description": "The ORDER_PROC_7 table enables you to report on the procedures ordered in the clinical system. This procedure table has the same basic structure as ORDER_PROC, but was created as a seventh table to prevent ORDER_PROC_6 from getting any larger.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "CLINICAL_SEX_PARAM_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The \"Sex Parameter for Clinical Use\" (sex categorization that aligns most with the patient in the context of the current order) category ID for the order.",
+      "entries": [
+        "Female-Typical",
+        "Male-Typical",
+        "Complex",
+        "Unknown"
+      ]
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "CLINICAL_SEX_PARAM_COMMENT",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The \"Sex Parameter for Clinical Use\" (sex categorization that aligns most with the patient in the context of the current order) comments entered in the Order Composer."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CLINICAL_SEX_PARAM_UTC_DTTM",
+      "type": "DATETIME (UTC)",
+      "discontinued": false,
+      "description": "Last update date and time in UTC for Sex Parameter for Clinical Use, the sex categorization that aligns most with the patient in the context of the current order."
+    }
+  ]
+}

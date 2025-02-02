@@ -1,0 +1,104 @@
+{
+  "name": "ECHKIN_PHASE_INFO",
+  "description": "The ECHECKIN_PHASE_INFO table contains information about the \"just in time\" eCheck-In status. Each row contains information about a single phase where eCheck-In information could be asked, such as pre-arrival or post-arrival.",
+  "primaryKey": [
+    {
+      "columnName": "PAT_ENC_CSN_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "LINE",
+      "ordinalPosition": 2
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "PAT_ENC_CSN_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique contact serial number for this contact. This number is unique across all patient encounters in your system. If you use IntraConnect, this is the Unique Contact Identifier (UCI)."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this contact. Multiple pieces of information can be associated with this contact."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "PAT_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The unique ID of the patient record for this row. This column is frequently used to link to the PATIENT table.",
+      "linksTo": "PATIENT"
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "CONTACT_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date of this contact in calendar format."
+    },
+    {
+      "ordinalPosition": 5,
+      "name": "CM_CT_OWNER_ID",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The Community ID (CID) of the instance that owns this contact. This is only populated if you use IntraConnect."
+    },
+    {
+      "ordinalPosition": 6,
+      "name": "ECHKIN_PHASE_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "A given phase for just-in-time eCheck-In, to track statuses of eCheck-In at a given point in time. When used with the rest of the items in the related group, this allows retrieving phase-based status information, such as whether a patient completed all of their pre-arrival or post-arrival tasks.",
+      "entries": [
+        "Pre-Everything",
+        "Pre-Arrival",
+        "Post-Arrival",
+        "Post-Everything",
+        "Any Phase"
+      ]
+    },
+    {
+      "ordinalPosition": 7,
+      "name": "ECHKIN_PHASE_STATUS_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status for a given phase of just-in-time eCheck-In. This tracks whether a patient completed all of their tasks for a given phase, such as pre-arrival or post-arrival.",
+      "entries": [
+        "Not Offered",
+        "Not Yet Available",
+        "Not Started",
+        "In Progress",
+        "Completed",
+        "Not Needed",
+        "Not Completed",
+        "Filtered",
+        "Required - Not Offered",
+        "Required - Not Started",
+        "Required - In Progress",
+        "Required - Completed",
+        "Required - Not Needed",
+        "Optional - Not Offered",
+        "Optional - Not Started",
+        "Optional - In Progress",
+        "Optional - Completed",
+        "Optional - Not Needed"
+      ]
+    },
+    {
+      "ordinalPosition": 8,
+      "name": "ECHKIN_URL_PHASE_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Whether a URL was generated for eCheck-In during a given phase for just-in-time eCheck-In. This tracks whether a \"for all\" workflow was available, not whether a tickler was sent manually from front desk workflows.",
+      "entries": [
+        "No",
+        "Yes"
+      ]
+    }
+  ]
+}

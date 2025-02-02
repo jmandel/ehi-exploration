@@ -1011,6 +1011,8 @@
         "EIN",
         "Million EIN",
         "EIN/kg/day",
+        "mGy-cm",
+        "Hounsfield Units",
         "None / Other"
       ]
     },
@@ -1232,6 +1234,7 @@
         "Observation FHIR resource is linked to a filtered Condition FHIR resource",
         "SDOH Assessment contains no questions",
         "Missing required data for data type",
+        "FHIR resource does not have a status of confirmed",
         "Claim Derivation: Missing face-to-face services"
       ]
     },
@@ -1255,6 +1258,32 @@
       "type": "INTEGER",
       "discontinued": false,
       "description": "This item stores the serial number that is generated when receiving the document."
+    },
+    {
+      "ordinalPosition": 53,
+      "name": "IMM_RECORDED_BY_ADMIN_YN",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Flag indicating if this immunization was originally recorded by the organization administering it."
+    },
+    {
+      "ordinalPosition": 54,
+      "name": "IMM_BULK_STAT_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "The status of this data element within DINE.",
+      "entries": [
+        "Invalid",
+        "Valid",
+        "Inactive"
+      ]
+    },
+    {
+      "ordinalPosition": 55,
+      "name": "IMM_BULK_INCL_DATE",
+      "type": "DATETIME",
+      "discontinued": false,
+      "description": "The date to compare to the change tracking window when loading flat files in bulk via DINE. If the date is within the window, but the data element is missing from the load, then the data element is invalidated."
     }
   ]
 }
