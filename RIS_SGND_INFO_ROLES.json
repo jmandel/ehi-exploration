@@ -1,0 +1,59 @@
+{
+  "name": "RIS_SGND_INFO_ROLES",
+  "description": "This table contains the physicians reading role at the time they signed an imaging order.",
+  "primaryKey": [
+    {
+      "columnName": "ORDER_ID",
+      "ordinalPosition": 1
+    },
+    {
+      "columnName": "GROUP_LINE",
+      "ordinalPosition": 2
+    },
+    {
+      "columnName": "VALUE_LINE",
+      "ordinalPosition": 3
+    }
+  ],
+  "columns": [
+    {
+      "ordinalPosition": 1,
+      "name": "ORDER_ID",
+      "type": "NUMERIC",
+      "discontinued": false,
+      "description": "The unique identifier (.1 item) for the order record."
+    },
+    {
+      "ordinalPosition": 2,
+      "name": "GROUP_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number for the information associated with this record."
+    },
+    {
+      "ordinalPosition": 3,
+      "name": "VALUE_LINE",
+      "type": "INTEGER",
+      "discontinued": false,
+      "description": "The line number of one of the multiple values associated with a specific group of data within this record."
+    },
+    {
+      "ordinalPosition": 4,
+      "name": "SIGNED_READ_PHYS_SPEC_C_NAME",
+      "type": "VARCHAR",
+      "discontinued": false,
+      "description": "Stores the roles that a provider had at the time that they signed a study.",
+      "entries": [
+        "Other",
+        "Radiology",
+        "Cardiology",
+        "Ophthalmology",
+        "Obstetrics",
+        "Test Supervisor",
+        "ECG Reader",
+        "Echo Reader",
+        "SPECT Reader"
+      ]
+    }
+  ]
+}
