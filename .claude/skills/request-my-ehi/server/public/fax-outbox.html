@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fax Outbox</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    padding: 24px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  h1 { color: #1a3c5e; font-size: 1.5rem; }
+  .refresh-btn {
+    background: #1a3c5e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .refresh-btn:hover { background: #245080; }
+  .empty {
+    text-align: center;
+    color: #888;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .job-list { max-width: 900px; margin: 0 auto; }
+  .job-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .job-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .job-to {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a3c5e;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .badge-queued { background: #fef3c7; color: #92400e; }
+  .badge-sending { background: #dbeafe; color: #1e40af; }
+  .badge-delivered { background: #d1fae5; color: #065f46; }
+  .badge-failed { background: #fee2e2; color: #991b1b; }
+  .job-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  .job-meta span { white-space: nowrap; }
+  .job-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .action-btn {
+    padding: 6px 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .action-btn:hover { border-color: #999; background: #f8f9fb; }
+  .action-btn.send { border-color: #3b82f6; color: #1e40af; }
+  .action-btn.send:hover { background: #eff6ff; }
+  .action-btn.deliver { border-color: #10b981; color: #065f46; }
+  .action-btn.deliver:hover { background: #ecfdf5; }
+  .action-btn.fail { border-color: #ef4444; color: #991b1b; }
+  .action-btn.fail:hover { background: #fef2f2; }
+  .action-btn.retry { border-color: #f59e0b; color: #92400e; }
+  .action-btn.retry:hover { background: #fffbeb; }
+  .action-btn.download { border-color: #6366f1; color: #4338ca; }
+  .action-btn.download:hover { background: #eef2ff; }
+  .events {
+    margin-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+  }
+  .events summary {
+    font-size: 0.8rem;
+    color: #888;
+    cursor: pointer;
+    user-select: none;
+  }
+  .event-list {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  .event-item {
+    display: flex;
+    gap: 12px;
+    padding: 3px 0;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.75rem;
+  }
+  .event-time { color: #999; white-space: nowrap; }
+  .event-status { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Fax Outbox (Simulated)</h1>
+  <button class="refresh-btn" onclick="loadJobs()">Refresh</button>
+</div>
+<div id="content" class="empty">Loading...</div>
+
+<script>
+async function loadJobs() {
+  try {
+    const res = await fetch('/api/fax/jobs');
+    const jobs = await res.json();
+    render(jobs);
+  } catch (e) {
+    document.getElementById('content').innerHTML = '<div class="empty">Error loading fax jobs.</div>';
+  }
+}
+
+function render(jobs) {
+  const el = document.getElementById('content');
+  if (jobs.length === 0) {
+    el.className = 'empty';
+    el.textContent = 'No faxes in outbox yet. Use send-fax.mjs to queue a fax.';
+    return;
+  }
+  el.className = 'job-list';
+  el.innerHTML = jobs.map(job => {
+    const actions = getActions(job);
+    const time = new Date(job.createdAt).toLocaleString();
+    return `
+      <div class="job-card" id="job-${job.faxId}">
+        <div class="job-header">
+          <span class="job-to">${esc(job.to)}</span>
+          <span class="badge badge-${job.status}">${job.status}</span>
+        </div>
+        <div class="job-meta">
+          <span>File: ${esc(job.filename)}</span>
+          <span>Size: ${job.fileSizeKB} KB</span>
+          ${job.pages ? `<span>Pages: ${job.pages}</span>` : ''}
+          <span>Created: ${time}</span>
+          ${job.completedAt ? `<span>Completed: ${new Date(job.completedAt).toLocaleString()}</span>` : ''}
+          ${job.errorMessage ? `<span style="color:#991b1b">Error: ${esc(job.errorMessage)}</span>` : ''}
+        </div>
+        <div class="job-actions">
+          ${actions}
+          <button class="action-btn download" onclick="window.open('/api/fax/jobs/${job.faxId}/download')">View PDF</button>
+        </div>
+        <details class="events">
+          <summary>${job.events.length} event${job.events.length !== 1 ? 's' : ''}</summary>
+          <div class="event-list">
+            ${job.events.map(e => `
+              <div class="event-item">
+                <span class="event-time">${new Date(e.timestamp).toLocaleTimeString()}</span>
+                <span class="event-status">${e.status}</span>
+                <span>${e.detail ? esc(e.detail) : ''}</span>
+              </div>
+            `).join('')}
+          </div>
+        </details>
+      </div>
+    `;
+  }).join('');
+}
+
+function getActions(job) {
+  const btns = [];
+  if (job.status === 'queued') {
+    btns.push(`<button class="action-btn send" onclick="simulate('${job.faxId}','sending','Fax transmission started')">Simulate: Sending</button>`);
+    btns.push(`<button class="action-btn fail" onclick="simulate('${job.faxId}','failed','Line busy / no answer')">Simulate: Failed</button>`);
+  }
+  if (job.status === 'sending') {
+    btns.push(`<button class="action-btn deliver" onclick="simulate('${job.faxId}','delivered','Fax delivered successfully')">Simulate: Delivered</button>`);
+    btns.push(`<button class="action-btn fail" onclick="simulate('${job.faxId}','failed','Transmission error')">Simulate: Failed</button>`);
+  }
+  if (job.status === 'failed') {
+    btns.push(`<button class="action-btn retry" onclick="simulate('${job.faxId}','queued','Retry requested')">Simulate: Retry</button>`);
+  }
+  return btns.join('');
+}
+
+async function simulate(faxId, action, detail) {
+  try {
+    const res = await fetch(`/api/fax/jobs/${faxId}/simulate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action, detail }),
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      alert(err.error || 'Failed');
+      return;
+    }
+    loadJobs();
+  } catch (e) {
+    alert('Error: ' + e.message);
+  }
+}
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+loadJobs();
+// Auto-refresh every 5 seconds
+setInterval(loadJobs, 5000);
+</script>
+</body>
+</html>

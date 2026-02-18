@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sign Authorization</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+  }
+  .container {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  h1 {
+    color: #1a3c5e;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  .section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a3c5e;
+    margin-bottom: 10px;
+  }
+  .auth-text-box {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 12px;
+    background: #f8f9fb;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    color: #333;
+  }
+  .canvas-wrapper {
+    position: relative;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+    touch-action: none;
+  }
+  .canvas-wrapper.active { border-color: #1a3c5e; }
+  canvas {
+    display: block;
+    width: 100%;
+    cursor: crosshair;
+  }
+  .canvas-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .canvas-hint.hidden { opacity: 0; }
+  .clear-btn {
+    margin-top: 8px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    color: #666;
+    cursor: pointer;
+  }
+  .clear-btn:hover { border-color: #999; color: #333; }
+  .name-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+  }
+  .name-input:focus { border-color: #1a3c5e; box-shadow: 0 0 0 2px rgba(26,60,94,0.1); }
+  .checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .checkbox-row input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: #1a3c5e;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .checkbox-row label {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+    cursor: pointer;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a3c5e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover:not(:disabled) { background: #245080; }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .status.error { color: #c0392b; }
+  .status.success { color: #1a3c5e; }
+  .status h2 { margin-bottom: 8px; }
+  .spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #1a3c5e;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Loading state -->
+  <div id="loading" class="status">
+    <div class="spinner"></div>
+    <p>Loading signing session...</p>
+  </div>
+
+  <!-- Error state -->
+  <div id="error" class="status error hidden">
+    <h2>Unable to Load</h2>
+    <p id="error-message"></p>
+  </div>
+
+  <!-- Success state -->
+  <div id="success" class="status success hidden">
+    <h2>Signature Submitted</h2>
+    <p>Your signature has been securely encrypted and submitted. You can close this page.</p>
+  </div>
+
+  <!-- Main signing form -->
+  <div id="sign-form" class="hidden">
+    <h1>Authorization Signature</h1>
+    <p class="subtitle" id="signer-greeting"></p>
+
+    <div class="section">
+      <div class="section-label">Authorization Text</div>
+      <div class="auth-text-box" id="auth-text"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Your Signature</div>
+      <div class="canvas-wrapper" id="canvas-wrapper">
+        <canvas id="sig-canvas" height="150"></canvas>
+        <div class="canvas-hint" id="canvas-hint">Draw your signature here</div>
+      </div>
+      <button class="clear-btn" id="clear-btn">Clear</button>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Printed Name</div>
+      <input type="text" class="name-input" id="typed-name" placeholder="Type your full name">
+    </div>
+
+    <div class="section">
+      <div class="checkbox-row">
+        <input type="checkbox" id="cb-read">
+        <label for="cb-read">I have read and understand the authorization text above</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="cb-esign">
+        <label for="cb-esign">I consent to use an electronic signature under the ESIGN Act</label>
+      </div>
+    </div>
+
+    <button class="submit-btn" id="submit-btn" disabled>Submit Signature</button>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const $ = (s) => document.querySelector(s);
+  const sessionId = window.location.pathname.split('/sign/')[1]?.split('?')[0];
+  if (!sessionId) return showError('No session ID found in URL.');
+
+  let serverPublicKey, authText, signerName;
+  let hasDrawn = false;
+
+  // --- Load session info ---
+  try {
+    const res = await fetch(`/api/signatures/sessions/${sessionId}/info`);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      if (res.status === 410) return showError('This signing session has expired. Please request a new link.');
+      if (res.status === 409) return showError('This authorization has already been signed.');
+      return showError(err.error || 'Session not found.');
+    }
+    const data = await res.json();
+    serverPublicKey = data.publicKeyJwk;
+    authText = data.authorizationText;
+    signerName = data.signerName;
+  } catch (e) {
+    return showError('Could not connect to the server. Please try again.');
+  }
+
+  // --- Populate UI ---
+  $('#auth-text').textContent = authText;
+  if (signerName) {
+    $('#signer-greeting').textContent = `Hello ${signerName}, please review and sign below.`;
+    $('#typed-name').value = signerName;
+  } else {
+    $('#signer-greeting').textContent = 'Please review and sign below.';
+  }
+  $('#loading').classList.add('hidden');
+  $('#sign-form').classList.remove('hidden');
+
+  // --- Canvas setup ---
+  const canvas = $('#sig-canvas');
+  const ctx = canvas.getContext('2d');
+  const wrapper = $('#canvas-wrapper');
+  const dpr = Math.max(window.devicePixelRatio || 1, 2);
+
+  function resizeCanvas() {
+    const rect = wrapper.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = 150 * dpr;
+    canvas.style.height = '150px';
+    ctx.scale(dpr, dpr);
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#1a1a2e';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', () => { resizeCanvas(); hasDrawn = false; updateSubmitState(); });
+
+  let drawing = false;
+  let lastX, lastY;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches ? e.touches[0] : e;
+    return { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
+  }
+
+  function startDraw(e) {
+    e.preventDefault();
+    drawing = true;
+    const p = getPos(e);
+    lastX = p.x; lastY = p.y;
+    wrapper.classList.add('active');
+    $('#canvas-hint').classList.add('hidden');
+  }
+
+  function draw(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    const p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    lastX = p.x; lastY = p.y;
+    hasDrawn = true;
+    updateSubmitState();
+  }
+
+  function endDraw(e) {
+    if (e) e.preventDefault();
+    drawing = false;
+    wrapper.classList.remove('active');
+  }
+
+  canvas.addEventListener('pointerdown', startDraw);
+  canvas.addEventListener('pointermove', draw);
+  canvas.addEventListener('pointerup', endDraw);
+  canvas.addEventListener('pointerleave', endDraw);
+
+  $('#clear-btn').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+    hasDrawn = false;
+    $('#canvas-hint').classList.remove('hidden');
+    updateSubmitState();
+  });
+
+  // --- Form validation ---
+  function updateSubmitState() {
+    const ready = hasDrawn
+      && $('#typed-name').value.trim().length > 0
+      && $('#cb-read').checked
+      && $('#cb-esign').checked;
+    $('#submit-btn').disabled = !ready;
+  }
+
+  $('#typed-name').addEventListener('input', updateSubmitState);
+  $('#cb-read').addEventListener('change', updateSubmitState);
+  $('#cb-esign').addEventListener('change', updateSubmitState);
+
+  // --- Submit with E2EE ---
+  $('#submit-btn').addEventListener('click', async () => {
+    $('#submit-btn').disabled = true;
+    $('#submit-btn').textContent = 'Encrypting & Submitting...';
+
+    try {
+      // Get signature as PNG data URL (transparent background)
+      const sigDataUrl = canvas.toDataURL('image/png');
+
+      // Build payload
+      const payload = JSON.stringify({
+        signatureImage: sigDataUrl,
+        typedName: $('#typed-name').value.trim(),
+        consentRead: true,
+        consentEsign: true,
+        authorizationTextHash: await sha256(authText),
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+      });
+
+      // Import server's public key
+      const serverKey = await crypto.subtle.importKey(
+        'jwk', serverPublicKey, { name: 'ECDH', namedCurve: 'P-256' }, false, []
+      );
+
+      // Generate ephemeral keypair
+      const ephemeral = await crypto.subtle.generateKey(
+        { name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits']
+      );
+
+      // Derive shared secret
+      const sharedBits = await crypto.subtle.deriveBits(
+        { name: 'ECDH', public: serverKey }, ephemeral.privateKey, 256
+      );
+
+      // Use shared secret as AES-GCM key
+      const aesKey = await crypto.subtle.importKey(
+        'raw', sharedBits, 'AES-GCM', false, ['encrypt']
+      );
+
+      // Encrypt
+      const iv = crypto.getRandomValues(new Uint8Array(12));
+      const encrypted = await crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv }, aesKey, new TextEncoder().encode(payload)
+      );
+
+      // Export ephemeral public key
+      const ephPubJwk = await crypto.subtle.exportKey('jwk', ephemeral.publicKey);
+
+      // Submit
+      const res = await fetch(`/api/signatures/sessions/${sessionId}/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ciphertext: bufToBase64(encrypted),
+          iv: bufToBase64(iv),
+          ephemeralPublicKey: ephPubJwk,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || 'Submission failed');
+      }
+
+      $('#sign-form').classList.add('hidden');
+      $('#success').classList.remove('hidden');
+    } catch (e) {
+      alert('Error submitting signature: ' + e.message);
+      $('#submit-btn').disabled = false;
+      $('#submit-btn').textContent = 'Submit Signature';
+    }
+  });
+
+  // --- Helpers ---
+  function showError(msg) {
+    $('#loading').classList.add('hidden');
+    $('#error-message').textContent = msg;
+    $('#error').classList.remove('hidden');
+  }
+
+  async function sha256(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function bufToBase64(buf) {
+    return btoa(String.fromCharCode(...new Uint8Array(buf)));
+  }
+})();
+</script>
+</body>
+</html>
